@@ -329,7 +329,7 @@ body {
 .cmp-main-nav__list {
     display: flex;
     align-items: center;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-lg);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -344,11 +344,12 @@ body {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-base);
-    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     transition: all 0.2s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .cmp-main-nav__link:hover {
