@@ -147,7 +147,7 @@
     align-items: center;
     gap: var(--spacing-xl);
     margin: 0;
-    padding: var(--spacing-sm) 0;
+    padding: 0;
     line-height: 1;
 }
 
@@ -156,10 +156,12 @@
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    padding: var(--spacing-sm) var(--spacing-sm);
+    padding: 0;
+    margin: 0;
     border-radius: var(--border-radius-sm);
     transition: all 0.2s ease;
     white-space: nowrap;
+    line-height: 1;
 }
 
 .main-navigation__link:hover {
