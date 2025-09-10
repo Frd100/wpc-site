@@ -44,7 +44,7 @@ class BCGCarousel {
         this.container = container;
         this.items = container.querySelectorAll('.List12_item');
         this.currentIndex = 0;
-        this.isAutoPlaying = true;
+        this.isAutoPlaying = false; // Désactivé pour éviter le scroll automatique
         this.autoPlayInterval = null;
         this.autoPlayDelay = 5000;
         
