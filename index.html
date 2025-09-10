@@ -4,46 +4,87 @@
   <meta charset="UTF-8">
   <title>West Paris Consulting | Accueil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cabinet étudiant de conseil en stratégie et innovation, rattaché à l’Université Paris Nanterre.">
+  <meta name="description" content="Cabinet étudiant de conseil en stratégie et innovation proche de l’Université Paris Nanterre.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <nav>
-    <a href="index.html" class="nav-logo">
+    <span class="nav-logo">
       <img src="img/logo-wpc.svg" alt="Logo WPC" style="height:36px;">
       WPC
-    </a>
+    </span>
     <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
       <li><a href="conseil.html">Expertises</a></li>
       <li><a href="equipe.html">Équipe</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <main class="container">
-    <h1>West Paris Consulting</h1>
-    <p style="font-size:1.25rem; color:var(--muted); max-width:600px;">
-      Cabinet étudiant de conseil en stratégie, organisation et innovation, fondé à l’Université Paris Nanterre. Nous accompagnons associations, institutions et porteurs de projets du campus dans leurs enjeux de transformation.
-    </p>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Conseil stratégique</h3>
-        <p>Diagnostic, planification, accompagnement de projets à fort impact pour le monde associatif et institutionnel.</p>
+  <main>
+    <section class="hero">
+      <small>Bienvenue chez WPC</small>
+      <h1>Libérer le potentiel <br>des acteurs qui font avancer la société</h1>
+      <div class="hero-actions">
+        <a href="conseil.html" class="cta-btn">Découvrir nos expertises</a>
+        <a href="contact.html" class="cta-btn">Contactez-nous</a>
       </div>
-      <div class="card">
-        <h3>Transformation digitale</h3>
-        <p>Audit digital, création d’outils, amélioration de l’expérience usager, communication numérique.</p>
+    </section>
+    <!-- Carousel/Grille centrale -->
+    <div class="carousel container">
+      <div class="carousel-item">
+        <img src="img/consulting1.jpg" alt="Stratégie et innovation">
+        <div class="card-tag">ARTICLE</div>
+        <div class="carousel-item-content">
+          <h3>Accompagner la transformation associative</h3>
+          <p>Notre analyse sur la structuration du monde associatif universitaire.</p>
+          <a href="#" class="cta-btn">Lire</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Accompagnement associatif</h3>
-        <p>Structuration, gouvernance, gestion RH, développement des compétences.</p>
+      <div class="carousel-item">
+        <img src="img/consulting2.jpg" alt="Transformation digitale">
+        <div class="card-tag">DOSSIER</div>
+        <div class="carousel-item-content">
+          <h3>Digitaliser les pratiques au service du collectif</h3>
+          <p>Zoom sur nos missions d’accompagnement numérique sur le campus.</p>
+          <a href="#" class="cta-btn">Découvrir</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/consulting3.jpg" alt="Conseil organisationnel">
+        <div class="card-tag">ÉTUDE</div>
+        <div class="carousel-item-content">
+          <h3>Enquête nationale sur l’engagement étudiant</h3>
+          <p>Les résultats clés et recommandations de WPC pour 2025.</p>
+          <a href="#" class="cta-btn">Voir</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/consulting4.jpg" alt="Actualité de l'équipe">
+        <div class="card-tag">NEWS</div>
+        <div class="carousel-item-content">
+          <h3>L’équipe WPC à la Conférence Innovation</h3>
+          <p>Retour sur notre intervention à l’Université Paris Nanterre.</p>
+          <a href="#" class="cta-btn">Plus d’infos</a>
+        </div>
       </div>
     </div>
-    <a href="conseil.html" class="hero-btn" style="margin-top:1.5em;display:inline-block;">Nos expertises &rarr;</a>
+    <!-- Section newsletter/insight -->
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-content">
+        <h2>Recevez nos analyses et actualités sur l’innovation associative</h2>
+        <form>
+          <input type="email" placeholder="Votre e-mail" required>
+          <button class="cta-btn" type="submit">S’inscrire</button>
+        </form>
+      </div>
+      <img src="img/green-sky.jpg" alt="Campus Nanterre" style="height:120px;border-radius:12px;object-fit:cover;">
+    </div>
   </main>
   <footer>
-    <div>
+    <div class="footer-links">
       © 2025 West Paris Consulting – Association étudiante, Université Paris Nanterre
+      | <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener">universite-parisnanterre.fr</a>
     </div>
     <div class="footer-logos">
       <img src="img/logo-uni.svg" alt="Université Paris Nanterre" class="footer-logo">
