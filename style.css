@@ -286,9 +286,9 @@ body {
 
 /* KPMG Exact Logo */
 .cmp-logo {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .cmp-logo__inner {
@@ -326,7 +326,7 @@ body {
 .cmp-main-nav {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .cmp-main-nav__list {
