@@ -245,7 +245,6 @@ body {
 /* KPMG Exact Main Navigation */
 .cmp-header__main-nav-bar {
     background: var(--kpmg-white);
-    border-bottom: 1px solid var(--kpmg-gray-200);
     padding: var(--spacing-md) 0;
 }
 
@@ -1070,7 +1069,6 @@ body {
         font-size: var(--font-size-xs);
         padding: var(--spacing-xs) var(--spacing-sm);
     }
-    
     .cmp-menu-item-bar--inner {
         flex-direction: column;
         gap: var(--spacing-sm);
