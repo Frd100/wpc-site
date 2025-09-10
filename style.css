@@ -172,9 +172,9 @@ body {
 }
 
 .cmp-menu-item-bar--container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .cmp-menu-item-bar--inner {
@@ -182,6 +182,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
 }
 
 .cmp-menu-item {
@@ -426,7 +427,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 100%;
     height: 100%;
     z-index: 1;
 }
@@ -440,9 +441,9 @@ body {
 .cmp-hero-fbv__content {
     position: relative;
     z-index: 2;
-    width: 40%;
+    width: 50%;
     padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
-    background: #00338D;
+    background: transparent;
 }
 
 .cmp-hero-fbv__content-container {
