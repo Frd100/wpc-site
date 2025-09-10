@@ -278,6 +278,13 @@ body {
     flex: 1;
 }
 
+.cmp-header__main-nav-bar--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+
 .cmp-header__main-nav-bar--right {
     display: flex;
     align-items: center;
@@ -340,7 +347,6 @@ body {
 
 /* KPMG Exact Main Navigation */
 .cmp-main-nav {
-    flex: 1;
     display: flex;
     justify-content: center;
 }
