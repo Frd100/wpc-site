@@ -406,7 +406,7 @@ body {
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
-    background: var(--kpmg-blue-hero);
+    background: linear-gradient(135deg, #00338D 0%, #0047AB 100%);
 }
 
 .dark-theme {
@@ -425,7 +425,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 50%;
     height: 100%;
     z-index: 1;
 }
@@ -439,8 +439,9 @@ body {
 .cmp-hero-fbv__content {
     position: relative;
     z-index: 2;
-    width: 40%;
+    width: 50%;
     padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
+    background: linear-gradient(135deg, #00338D 0%, #0047AB 100%);
 }
 
 .cmp-hero-fbv__content-container {
@@ -644,7 +645,7 @@ body {
 /* KPMG Exact Secteurs Grid */
 .cmp-secteurs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-2xl);
     margin-bottom: var(--spacing-4xl);
 }
@@ -656,6 +657,7 @@ body {
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
     border: 1px solid var(--kpmg-gray-200);
+    position: relative;
 }
 
 .cmp-secteur-item:hover {
@@ -668,7 +670,6 @@ body {
     width: 60px;
     height: 60px;
     margin-bottom: var(--spacing-lg);
-    background: var(--kpmg-green);
     border-radius: var(--border-radius-md);
     display: flex;
     align-items: center;
@@ -677,12 +678,28 @@ body {
     font-size: var(--font-size-2xl);
 }
 
+.cmp-secteur-item__icon--purple {
+    background: #8B5CF6;
+}
+
 .cmp-secteur-item__title {
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
     margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.cmp-secteur-item__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--kpmg-blue);
 }
 
 .cmp-secteur-item__description {
@@ -690,6 +707,24 @@ body {
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
+}
+
+.cmp-secteur-item__link {
+    color: var(--kpmg-blue);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: color 0.2s ease;
+}
+
+.cmp-secteur-item__link:hover {
+    color: var(--kpmg-blue-dark);
+}
+
+.cmp-secteur-item__link .material-icons {
+    font-size: var(--font-size-sm);
 }
 
 /* KPMG Exact Buttons */
@@ -732,33 +767,46 @@ body {
 }
 
 /* KPMG Exact About Section */
+.cmp-about-section {
+    background: var(--kpmg-gray-900);
+    color: var(--text-white);
+    padding: var(--spacing-4xl) 0;
+    margin: var(--spacing-4xl) 0;
+}
+
 .cmp-about-content {
-    text-align: center;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-4xl) var(--spacing-2xl);
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+}
+
+.cmp-about-left {
+    text-align: left;
+}
+
+.cmp-about-right {
+    text-align: left;
 }
 
 .cmp-about-title {
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-xl);
+    color: var(--text-white);
+    margin: 0;
+    line-height: 1.2;
 }
 
 .cmp-about-description {
     font-size: var(--font-size-lg);
     line-height: 1.7;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-2xl);
-}
-
-.cmp-about-actions {
-    display: flex;
-    gap: var(--spacing-lg);
-    justify-content: center;
-    flex-wrap: wrap;
+    color: var(--text-white);
+    margin: 0;
+    opacity: 0.9;
 }
 
 /* KPMG Exact Contact Section */
@@ -865,12 +913,12 @@ body {
 /* KPMG Exact Responsive Design */
 @media (max-width: 1024px) {
     .cmp-hero-fbv__content {
-        width: 50%;
+        width: 60%;
         padding: var(--spacing-3xl) var(--spacing-2xl);
     }
     
     .cmp-hero-fbv__image {
-        width: 50%;
+        width: 40%;
     }
     
     .cmp-hero-fbv__title {
@@ -882,7 +930,18 @@ body {
     }
     
     .cmp-secteurs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cmp-about-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        text-align: center;
+    }
+    
+    .cmp-about-left,
+    .cmp-about-right {
+        text-align: center;
     }
 }
 
@@ -930,6 +989,11 @@ body {
     }
     
     .cmp-expertise-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .cmp-secteurs-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
