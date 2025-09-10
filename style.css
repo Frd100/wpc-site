@@ -258,7 +258,7 @@ body {
 
 .cmp-header__main-nav-bar--inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     min-height: 20px;
 }
@@ -267,6 +267,19 @@ body {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cmp-header__main-nav-bar--left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.cmp-header__main-nav-bar--right {
+    display: flex;
+    align-items: center;
 }
 
 /* KPMG Exact Mobile Toggle */
@@ -326,7 +339,7 @@ body {
 .cmp-main-nav {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .cmp-main-nav__list {
