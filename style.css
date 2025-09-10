@@ -117,7 +117,7 @@ body {
 .cmp-container {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
@@ -164,58 +164,6 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-/* KPMG Exact Menu Item Bar */
-.cmp-menu-item-bar {
-    background: var(--kpmg-blue);
-    border-bottom: 1px solid var(--kpmg-blue-dark);
-    padding: var(--spacing-sm) 0;
-}
-
-.cmp-menu-item-bar--container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.cmp-menu-item-bar--inner {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: var(--spacing-lg);
-    padding: 0 var(--spacing-md);
-}
-
-.cmp-menu-item {
-    display: flex;
-    align-items: center;
-}
-
-.cmp-menu-item__inner {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-md);
-    text-decoration: none;
-    color: var(--text-white);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    border-radius: var(--border-radius-md);
-    transition: all 0.2s ease;
-}
-
-.cmp-menu-item__inner:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-white);
-}
-
-.cmp-menu-item__icon {
-    font-size: var(--font-size-lg);
-    color: var(--text-white);
-}
-
-.cmp-menu-item__label {
-    font-weight: var(--font-weight-medium);
-}
 
 /* KPMG Exact PPC Navigation */
 .cmp-ppc-navigation {
@@ -405,10 +353,12 @@ body {
     align-items: center;
     overflow: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
-    background: linear-gradient(135deg, #00338D 0%, #0047AB 100%);
+    background: transparent;
 }
 
 .dark-theme {
@@ -418,15 +368,17 @@ body {
 .cmp-hero-fbv {
     position: relative;
     width: 100%;
-    min-height: 600px;
+    min-height: 80vh;
     display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .cmp-hero-fbv__image {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -436,6 +388,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
 }
 
 .cmp-hero-fbv__content {
@@ -443,7 +396,7 @@ body {
     z-index: 2;
     width: 50%;
     padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
-    background: transparent;
+    background: #00338D;
 }
 
 .cmp-hero-fbv__content-container {
