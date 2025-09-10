@@ -142,12 +142,39 @@
 
 .main-navigation__content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-xl);
     margin: 0;
     padding: var(--spacing-sm) 0 var(--spacing-md) 0;
     line-height: 1;
+}
+
+.main-navigation__logo {
+    flex: 0 0 auto;
+}
+
+.main-navigation__logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.main-navigation__logo-image {
+    height: 32px;
+    width: auto;
+    transition: transform 0.2s ease;
+}
+
+.main-navigation__logo-image:hover {
+    transform: scale(1.05);
+}
+
+.main-navigation__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+    flex: 1;
 }
 
 .main-navigation__link {
