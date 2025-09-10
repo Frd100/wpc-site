@@ -423,7 +423,7 @@ body {
 .cmp-hero-fbv {
     position: relative;
     width: 100%;
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     margin: 0;
@@ -450,7 +450,7 @@ body {
     position: relative;
     z-index: 2;
     width: 50%;
-    padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
+    padding: var(--spacing-2xl) var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl);
     background: #00338D;
 }
 
