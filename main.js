@@ -1,17 +1,12 @@
-// BCG Style Interactions
+// KPMG Style Interactions
 
-// BCG Navigation mobile
-const burgerButton = document.querySelector('[data-burger-button]');
-const burgerSvgIcon = document.querySelector('.burger-svg-icon');
-const closeSvgIcon = document.querySelector('.close-svg-icon');
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.cmp-navigation__mobile-menu-btn');
+const header = document.querySelector('.cmp-header');
 
-if (burgerButton) {
-    burgerButton.addEventListener('click', () => {
-        burgerButton.classList.toggle('active');
-        if (burgerSvgIcon && closeSvgIcon) {
-            burgerSvgIcon.style.display = burgerButton.classList.contains('active') ? 'none' : 'block';
-            closeSvgIcon.style.display = burgerButton.classList.contains('active') ? 'block' : 'none';
-        }
+if (mobileMenuBtn && header) {
+    mobileMenuBtn.addEventListener('click', () => {
+        header.classList.toggle('mobile-menu-open');
     });
 }
 
@@ -21,7 +16,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed header
+            const offsetTop = target.offsetTop - 120; // Account for fixed header
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -30,201 +25,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// BCG Header scroll effect
+// Header scroll effect
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('.Page-header');
+    const header = document.querySelector('.cmp-header');
     if (window.scrollY > 50) {
         header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = 'none';
+        header.style.background = 'rgba(255, 255, 255, 1)';
+        header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
     }
 });
 
-// BCG Style Carousel - SUPPRIMÉ pour éviter le scroll automatique
-// Le carousel BCG utilise Flickity avec autoplay, ce qui cause le scroll automatique
-// Pour l'instant, on désactive complètement le carousel
-/*
-class BCGCarousel {
-    constructor(container) {
-        this.container = container;
-        this.items = container.querySelectorAll('.List12_item');
-        this.currentIndex = 0;
-        this.isAutoPlaying = false; // Désactivé pour éviter le scroll automatique
-        this.autoPlayInterval = null;
-        this.autoPlayDelay = 5000;
-        
-        this.init();
-    }
-    
-    init() {
-        // this.setupAutoPlay(); // Complètement désactivé pour éviter le scroll automatique
-        // this.addTouchSupport(); // Désactivé temporairement
-        this.addKeyboardSupport();
-        // this.addHoverPause(); // Désactivé temporairement
-    }
-    
-    setupAutoPlay() {
-        if (this.isAutoPlaying) {
-            this.autoPlayInterval = setInterval(() => {
-                this.next();
-            }, this.autoPlayDelay);
-        }
-    }
-    
-    next() {
-        this.currentIndex = (this.currentIndex + 1) % this.items.length;
-        this.scrollToItem(this.currentIndex);
-    }
-    
-    prev() {
-        this.currentIndex = this.currentIndex === 0 ? this.items.length - 1 : this.currentIndex - 1;
-        this.scrollToItem(this.currentIndex);
-    }
-    
-    scrollToItem(index) {
-        const item = this.items[index];
-        if (item) {
-            item.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
-            });
-        }
-    }
-    
-    addTouchSupport() {
-        let startX = 0;
-        let startY = 0;
-        let isScrolling = false;
-        
-        this.container.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-            isScrolling = false;
-        });
-        
-        this.container.addEventListener('touchmove', (e) => {
-            if (!startX || !startY) return;
-            
-            const diffX = startX - e.touches[0].clientX;
-            const diffY = startY - e.touches[0].clientY;
-            
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                isScrolling = true;
-                e.preventDefault();
-            }
-        });
-        
-        this.container.addEventListener('touchend', (e) => {
-            if (!isScrolling) return;
-            
-            const diffX = startX - e.changedTouches[0].clientX;
-            const threshold = 50;
-            
-            if (Math.abs(diffX) > threshold) {
-                if (diffX > 0) {
-                    this.next();
-                } else {
-                    this.prev();
-                }
-            }
-            
-            startX = 0;
-            startY = 0;
-            isScrolling = false;
-        });
-    }
-    
-    addKeyboardSupport() {
-        // Désactivé temporairement pour éviter le scroll automatique
-        // document.addEventListener('keydown', (e) => {
-        //     if (e.key === 'ArrowLeft') {
-        //         this.prev();
-        //     } else if (e.key === 'ArrowRight') {
-        //         this.next();
-        //     }
-        // });
-    }
-    
-    addHoverPause() {
-        this.container.addEventListener('mouseenter', () => {
-            if (this.autoPlayInterval) {
-                clearInterval(this.autoPlayInterval);
-            }
-        });
-        
-        this.container.addEventListener('mouseleave', () => {
-            if (this.isAutoPlaying) {
-                this.setupAutoPlay();
-            }
-        });
-    }
+// Language selector toggle
+const langSelector = document.querySelector('.cmp-lang-selector__toggle-btn');
+if (langSelector) {
+    langSelector.addEventListener('click', () => {
+        // Toggle language dropdown (simplified for demo)
+        console.log('Language selector clicked');
+    });
 }
 
-// Initialize carousel - SUPPRIMÉ
-/*
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.List12_items');
-    if (carousel) {
-        new BCGCarousel(carousel);
-    }
-});
-*/
-
-// BCG Style Animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+// Search button functionality
+const searchBtn = document.querySelector('.cmp-navigation__search-btn');
+if (searchBtn) {
+    searchBtn.addEventListener('click', () => {
+        // Toggle search functionality (simplified for demo)
+        console.log('Search clicked');
     });
-}, observerOptions);
+}
 
-// Observer les éléments à animer
-document.querySelectorAll('.Promo20, .expertise-card, .team-card, .service-feature, .info-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease';
-    observer.observe(el);
-});
-
-// Animation des barres de graphique
-const chartBars = document.querySelectorAll('.chart-bar');
-chartBars.forEach((bar, index) => {
-    bar.style.animationDelay = `${index * 0.2}s`;
-});
-
-// BCG Style Hover Effects
-document.querySelectorAll('.Promo20, .expertise-card, .team-card, .info-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-8px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Animation des boutons
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-        btn.style.transform = 'translateY(-2px)';
-    });
-    
-    btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translateY(0)';
-    });
-});
-
-// BCG Style Form Handling
+// Contact form handling (if exists)
 const contactForm = document.querySelector('#contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -240,7 +71,7 @@ if (contactForm) {
         // Simuler l'envoi
         setTimeout(() => {
             submitBtn.innerHTML = '<span>Message envoyé !</span>';
-            submitBtn.style.background = '#10b981';
+            submitBtn.style.background = '#00A651';
             
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
@@ -252,152 +83,134 @@ if (contactForm) {
     });
 }
 
-// BCG Style Search Functionality
-const searchButton = document.querySelector('.header-search-button');
-if (searchButton) {
-    searchButton.addEventListener('click', () => {
-        // Toggle search overlay
-        const searchOverlay = document.createElement('div');
-        searchOverlay.className = 'search-overlay';
-        searchOverlay.innerHTML = `
-            <div class="search-modal">
-                <div class="search-header">
-                    <h3>Rechercher</h3>
-                    <button class="search-close">&times;</button>
-                </div>
-                <div class="search-content">
-                    <input type="text" placeholder="Rechercher sur le site..." class="search-input">
-                    <div class="search-results"></div>
-                </div>
-            </div>
-        `;
-        
-        document.body.appendChild(searchOverlay);
-        
-        // Close search
-        const closeBtn = searchOverlay.querySelector('.search-close');
-        closeBtn.addEventListener('click', () => {
-            document.body.removeChild(searchOverlay);
-        });
-        
-        // Close on overlay click
-        searchOverlay.addEventListener('click', (e) => {
-            if (e.target === searchOverlay) {
-                document.body.removeChild(searchOverlay);
-            }
-        });
-    });
-}
-
-// BCG Style Scroll Reveal
-const revealSections = () => {
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        observer.observe(section);
-    });
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-// Initialize scroll reveal
-revealSections();
-
-// BCG Style Performance Optimizations
-const lazyImages = document.querySelectorAll('img[data-src]');
-const imageObserver = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-            imageObserver.unobserve(img);
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
+    });
+}, observerOptions);
+
+// Observer les éléments à animer
+document.querySelectorAll('.cmp-expertise-item, .cmp-secteur-item, .cmp-about-content, .cmp-contact-content').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+});
+
+// Button hover effects
+document.querySelectorAll('.cmp-button').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'translateY(-2px)';
+    });
+    
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translateY(0)';
     });
 });
 
-lazyImages.forEach(img => imageObserver.observe(img));
-
-// BCG Style Smooth Reveal Animation
-const addRevealAnimation = () => {
-    const revealElements = document.querySelectorAll('.Promo20, .expertise-card, .team-card, .service-feature, .info-card');
-    
-    revealElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.1}s`;
+// Expertise items hover effects
+document.querySelectorAll('.cmp-expertise-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-4px)';
+        item.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
     });
-};
-
-// Initialize reveal animations
-addRevealAnimation();
-
-// BCG Style ModuleHeader Animation
-const animateModuleHeaders = () => {
-    const moduleHeaders = document.querySelectorAll('.ModuleHeader');
     
-    moduleHeaders.forEach(header => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const eyebrow = entry.target.querySelector('.ModuleHeader-eyebrow');
-                    const title = entry.target.querySelector('.ModuleHeader-title');
-                    const content = entry.target.querySelector('.ModuleHeader-content');
-                    
-                    if (eyebrow) {
-                        eyebrow.style.opacity = '1';
-                        eyebrow.style.transform = 'translateY(0)';
-                    }
-                    
-                    setTimeout(() => {
-                        if (title) {
-                            title.style.opacity = '1';
-                            title.style.transform = 'translateY(0)';
-                        }
-                    }, 200);
-                    
-                    setTimeout(() => {
-                        if (content) {
-                            content.style.opacity = '1';
-                            content.style.transform = 'translateY(0)';
-                        }
-                    }, 400);
-                }
-            });
-        }, { threshold: 0.3 });
-        
-        // Set initial styles
-        const eyebrow = header.querySelector('.ModuleHeader-eyebrow');
-        const title = header.querySelector('.ModuleHeader-title');
-        const content = header.querySelector('.ModuleHeader-content');
-        
-        if (eyebrow) {
-            eyebrow.style.opacity = '0';
-            eyebrow.style.transform = 'translateY(30px)';
-            eyebrow.style.transition = 'all 0.6s ease';
-        }
-        
-        if (title) {
-            title.style.opacity = '0';
-            title.style.transform = 'translateY(30px)';
-            title.style.transition = 'all 0.6s ease';
-        }
-        
-        if (content) {
-            content.style.opacity = '0';
-            content.style.transform = 'translateY(30px)';
-            content.style.transition = 'all 0.6s ease';
-        }
-        
-        observer.observe(header);
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = 'none';
     });
-};
+});
 
-// Initialize ModuleHeader animations
+// Secteur items hover effects
+document.querySelectorAll('.cmp-secteur-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-4px)';
+        item.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+    });
+});
+
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    animateModuleHeaders();
+    console.log('WPC KPMG-style site loaded successfully!');
+    
+    // Add loading animation
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
 });
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    // Responsive adjustments if needed
+    const header = document.querySelector('.cmp-header');
+    if (window.innerWidth <= 768) {
+        header.classList.add('mobile');
+    } else {
+        header.classList.remove('mobile');
+    }
+});
+
+// Add keyboard navigation support
+document.addEventListener('keydown', (e) => {
+    // ESC key to close mobile menu
+    if (e.key === 'Escape') {
+        const header = document.querySelector('.cmp-header');
+        if (header.classList.contains('mobile-menu-open')) {
+            header.classList.remove('mobile-menu-open');
+        }
+    }
+});
+
+// Add focus management for accessibility
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+    }
+});
+
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('keyboard-navigation');
+});
+
+// Performance optimization: Debounce scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Apply debounced scroll effect
+const debouncedScrollEffect = debounce(() => {
+    const header = document.querySelector('.cmp-header');
+    if (window.scrollY > 50) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 1)';
+        header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+    }
+}, 10);
+
+window.addEventListener('scroll', debouncedScrollEffect);

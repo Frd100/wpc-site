@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="bsp bluesky no-js nav-closed" lang="fr" itemscope itemtype="http://schema.org/WebPage">
+<html lang="fr-FR" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>West Paris Consulting - WPC | Association étudiante Paris Nanterre</title>
     <meta name="description" content="West Paris Consulting - Association étudiante de conseil en management, stratégie et innovation à l'Université Paris Nanterre">
     
-    <!-- BCG Exact Meta Tags -->
+    <!-- KPMG Style Meta Tags -->
     <meta property="og:url" content="https://westparisconsulting.fr/">
     <meta property="og:site_name" content="West Paris Consulting">
     <meta property="og:type" content="website">
@@ -16,638 +16,248 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <!-- BCG Exact Navigation -->
-    <header class="Page-header menu" id="menu">
-        <a href="#Page-content" class="Page-skipNav sr-only">Skip to Main</a>
-
-        <section class="Page-headerMenuLeft">
-            <button data-burger-button class="burger-icon" aria-label="Link to open BCG site menu">
-                <div>
-                    <svg class="burger-svg-icon"><use href="#list" /></svg>
-                    <svg class="close-svg-icon"><use href="#x" /></svg>
-                </div>
-            </button>
-            
-            <a href="#accueil" class="Page-headerBCGHomeButton" aria-label="Link to WPC home page">
-                <svg><use xlink:href="#wpc-logo" /></svg>
-            </a>
-        </section>
-
-        <section class="Page-headerMenuRight">
-            <div class="Page-headerSearch topbar__search desktop-only">
-                <div class="header-search-button-wrapper">
-                    <button class="header-view-search-button" aria-label="Open WPC site search input">
-                        <svg>
-                            <use xlink:href="#search-icon" />
-                        </svg>
-                    </button>
+    <!-- KPMG Exact Navigation -->
+    <header class="cmp-header" data-cmp-header>
+        <!-- Top Menu Bar -->
+        <div class="cmp-menu-item-bar" role="header" id="kpmg-accessibility-header">
+            <div class="cmp-menu-item-bar--container">
+                <div class="cmp-menu-item-bar--inner rfp">
+                    <!-- Login/User Menu -->
+                    <div class="cmp-ppc-navigation cmp-menu-item">
+                        <a type="button" class="cmp-ppc-navigation__userlogin cmp-menu-item__inner" aria-label="Login">
+                            <div class="cmp-menu-item__label"></div>
+                        </a>
+                    </div>
+                    
+                    <!-- Contact Button -->
+                    <div class="cmp-menu-item">
+                        <a class="cmp-menu-item__inner" aria-label="Accéder au formulaire de contact" href="#contact">
+                            <span class="cmp-menu-item__icon cmp-menu-item__icon--mail_outline material-icons" aria-hidden="true">mail_outline</span>
+                            <div class="cmp-menu-item__label">Contactez-nous</div>
+                        </a>
+                    </div>
+                    
+                    <!-- Language Selector -->
+                    <div class="cmp-lang-selector">
+                        <button type="button" class="cmp-lang-selector__toggle-btn cmp-menu-item__inner" aria-label="Sélectionner votre pays">
+                            <span class="cmp-lang-selector__icon cmp-lang-selector__icon--language material-icons" aria-hidden="true">language</span>
+                            <div class="cmp-lang-selector__label">France (FR)</div>
+                            <span class="material-icons cmp-lang-selector__chevron-icon" aria-hidden="true">expand_more</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            <subscription-widget-show-button class="subscription-widget__show-button subscription-widget__show-button--hide desktop-only">
-                <button aria-label="Link to subscribe">
-                    <svg><use xlink:href="#subscribe" /></svg>
-                </button>
-            </subscription-widget-show-button>
+        </div>
 
-            <login-dropdown class="user-info">
-                <div class="login-container">
-                    <button class="header-login-button" aria-label="Link to login">
-                        <svg><use xlink:href="#login-avatar-icon" /></svg>
-                    </button>
+        <!-- Main Navigation -->
+        <div class="cmp-navigation">
+            <div class="cmp-navigation__container">
+                <!-- Mobile Menu Button -->
+                <button class="cmp-navigation__mobile-menu-btn" aria-label="Menu">
+                    <span class="material-icons">menu</span>
+                </button>
+                
+                <!-- Logo -->
+                <div class="cmp-navigation__logo">
+                    <a href="#accueil" aria-label="Logo de WPC, retour à la page d'accueil">
+                        <span class="cmp-navigation__logo-text">WPC</span>
+                    </a>
                 </div>
-            </login-dropdown>
-        </section>
+                
+                <!-- Search Button -->
+                <button class="cmp-navigation__search-btn" aria-label="Rechercher">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main data-modulewell role="main">
-        <!-- Hero Section BCG Style -->
-        <section id="accueil" class="hero-section">
-            <div class="List12" data-module data-item-count="6" data-item-count-is-even="" data-items-length="6">
-                <div class="ModuleHeader" aria-labelledby="site-banner-heading" role="Banner">
-                    <div class="ModuleHeader-eyebrow">Bienvenue chez WPC</div>
-                    <h1 class="ModuleHeader-title">Libérer le potentiel de ceux qui transforment l'enseignement supérieur</h1>
-                    <div class="ModuleHeader-content">
-                        <p>West Paris Consulting accompagne la communauté universitaire de Paris Nanterre dans ses projets stratégiques, organisationnels et digitaux.</p>
+    <main role="main">
+        <!-- KPMG Hero Section -->
+        <section id="accueil" class="hero-fbv teaser cmp-hero-fbv__overlay-bg--cobalt-blue dark-theme">
+            <div class="cmp-hero-fbv" role="banner">
+                <div class="cmp-hero-fbv__image image-position-right">
+                    <div class="hero-image-placeholder">
+                        <!-- Rectangle noir temporaire en attendant les vraies images -->
                     </div>
-                </div>
-
-                <div class="List12_items-wrapper" data-items-length="6">
-                    <div class="List12_items carousel">
-                        <!-- Card 1 -->
-                        <div class="List12_item carousel-cell">
-                            <div data-promo20-container-size-hook class="Promo20-container-hook">
-                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
-                                    <div class="Promo-media">
-                                        <span class="Link">
-                                            <div class="promo-image-placeholder">
-                                                <!-- Rectangle noir temporaire en attendant les vraies images -->
-                                            </div>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="Promo-category">
-                                        <a class="Link" href="#services" data-path="strategie-organisation">Stratégie & Organisation</a>
-                                    </div>
-
-                                    <div class="Promo-content">
-                                        <div class="Promo-content_inline">
-                                            <div class="Promo-eyebrow">Expertise</div>
-                                            <div class="Promo-date">2025</div>
-                                        </div>
-                                        
-                                        <div class="Promo-title__wrapper">
-                                            <h3 class="Promo-title">
-                                                <a class="Link" href="#services" data-path="transformation-organisationnelle">Transformation organisationnelle</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="List12_item carousel-cell">
-                            <div data-promo20-container-size-hook class="Promo20-container-hook">
-                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
-                                    <div class="Promo-media">
-                                        <span class="Link">
-                                            <div class="promo-image-placeholder">
-                                                <div class="promo-icon">💻</div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="Promo-category">
-                                        <a class="Link" href="#services" data-path="innovation-digitale">Innovation Digitale</a>
-                                    </div>
-
-                                    <div class="Promo-content">
-                                        <div class="Promo-content_inline">
-                                            <div class="Promo-eyebrow">Service</div>
-                                            <div class="Promo-date">2025</div>
-                                        </div>
-                                        
-                                        <div class="Promo-title__wrapper">
-                                            <h3 class="Promo-title">
-                                                <a class="Link" href="#services" data-path="solutions-digitales">Solutions digitales sur mesure</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="List12_item carousel-cell">
-                            <div data-promo20-container-size-hook class="Promo20-container-hook">
-                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
-                                    <div class="Promo-media">
-                                        <span class="Link">
-                                            <div class="promo-image-placeholder">
-                                                <div class="promo-icon">🎯</div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="Promo-category">
-                                        <a class="Link" href="#services" data-path="accompagnement">Accompagnement</a>
-                                    </div>
-
-                                    <div class="Promo-content">
-                                        <div class="Promo-content_inline">
-                                            <div class="Promo-eyebrow">Mission</div>
-                                            <div class="Promo-date">2025</div>
-                                        </div>
-                                        
-                                        <div class="Promo-title__wrapper">
-                                            <h3 class="Promo-title">
-                                                <a class="Link" href="#services" data-path="conseil-gestion-projet">Conseil en gestion de projet</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="List12_item carousel-cell">
-                            <div data-promo20-container-size-hook class="Promo20-container-hook">
-                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
-                                    <div class="Promo-media">
-                                        <span class="Link">
-                                            <div class="promo-image-placeholder">
-                                                <div class="promo-icon">📈</div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="Promo-category">
-                                        <a class="Link" href="#services" data-path="analyses">Analyses</a>
-                                    </div>
-
-                                    <div class="Promo-content">
-                                        <div class="Promo-content_inline">
-                                            <div class="Promo-eyebrow">Étude</div>
-                                            <div class="Promo-date">2025</div>
-                                        </div>
-                                        
-                                        <div class="Promo-title__wrapper">
-                                            <h3 class="Promo-title">
-                                                <a class="Link" href="#services" data-path="enquetes-etudes">Enquêtes et études de marché</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="List12_item carousel-cell">
-                            <div data-promo20-container-size-hook class="Promo20-container-hook">
-                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
-                                    <div class="Promo-media">
-                                        <span class="Link">
-                                            <div class="promo-image-placeholder">
-                                                <div class="promo-icon">🤝</div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="Promo-category">
-                                        <a class="Link" href="#equipe" data-path="equipe">Équipe</a>
-                                    </div>
-
-                                    <div class="Promo-content">
-                                        <div class="Promo-content_inline">
-                                            <div class="Promo-eyebrow">Talent</div>
-                                            <div class="Promo-date">2025</div>
-                                        </div>
-                                        
-                                        <div class="Promo-title__wrapper">
-                                            <h3 class="Promo-title">
-                                                <a class="Link" href="#equipe" data-path="experts-pluridisciplinaires">Experts pluridisciplinaires</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </div>
-            </div>
-        </div>
-
-                        <!-- Card 6 -->
-                        <div class="List12_item carousel-cell">
-                            <div data-promo20-container-size-hook class="Promo20-container-hook">
-                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
-                                    <div class="Promo-media">
-                                        <span class="Link">
-                                            <div class="promo-image-placeholder">
-                                                <div class="promo-icon">🚀</div>
-                                            </div>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="Promo-category">
-                                        <a class="Link" href="#contact" data-path="contact">Contact</a>
-                                    </div>
-
-                                    <div class="Promo-content">
-                                        <div class="Promo-content_inline">
-                                            <div class="Promo-eyebrow">Action</div>
-                                            <div class="Promo-date">2025</div>
-                                        </div>
-                                        
-                                        <div class="Promo-title__wrapper">
-                                            <h3 class="Promo-title">
-                                                <a class="Link" href="#contact" data-path="demarrer-projet">Démarrer votre projet</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                </div>
-            </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Expertise Section -->
-        <section id="expertise" class="expertise-section">
-        <div class="container">
-            <div class="section-header">
-                    <div class="ModuleHeader-eyebrow">Notre expertise</div>
-                    <h2 class="ModuleHeader-title">Des solutions stratégiques pour l'enseignement supérieur</h2>
-                    <div class="ModuleHeader-content">
-                        <p>Nous combinons expertise académique et approche consultative pour transformer les défis universitaires en opportunités d'innovation.</p>
-            </div>
                 </div>
                 
-                <div class="expertise-grid">
-                    <div class="expertise-card">
-                        <div class="card-number">01</div>
-                        <h3>Stratégie & Organisation</h3>
-                        <p>Définition d'orientations stratégiques, restructuration organisationnelle et optimisation des processus pour les institutions universitaires.</p>
-                        <ul class="expertise-list">
-                            <li>Audit organisationnel</li>
-                            <li>Planification stratégique</li>
-                            <li>Transformation digitale</li>
-                            <li>Gouvernance optimisée</li>
-                        </ul>
+                <div class="cmp-hero-fbv__content">
+                    <div class="cmp-hero-fbv__text">
+                        <h1 class="cmp-hero-fbv__title">Cabinet d'audit et de conseil</h1>
+                        <div class="cmp-hero-fbv__description">
+                            <p>WPC accompagne le développement et la transformation des entreprises vers un nouveau modèle de prospérité, conciliant performance financière et durabilité.</p>
+                        </div>
+                        <div class="cmp-hero-fbv__cta">
+                            <a href="#contact" class="cmp-button cmp-button--primary">Contactez-nous</a>
+                        </div>
                     </div>
-                    
-                    <div class="expertise-card">
-                        <div class="card-number">02</div>
-                        <h3>Innovation & Digital</h3>
-                        <p>Accompagnement dans la digitalisation des services étudiants et le développement d'outils innovants pour la vie de campus.</p>
-                        <ul class="expertise-list">
-                            <li>Solutions digitales</li>
-                            <li>Expérience utilisateur</li>
-                            <li>Plateformes interactives</li>
-                            <li>Outils de gestion</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="expertise-card">
-                        <div class="card-number">03</div>
-                        <h3>Accompagnement Associatif</h3>
-                        <p>Support aux associations partenaires dans leur structuration, communication et développement de projets d'envergure.</p>
-                        <ul class="expertise-list">
-                            <li>Stratégie de communication</li>
-                            <li>Gestion de projet</li>
-                            <li>Développement durable</li>
-                            <li>Partenariats stratégiques</li>
-                        </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                    <div class="ModuleHeader-eyebrow">Nos services</div>
-                    <h2 class="ModuleHeader-title">Des solutions sur mesure pour votre institution</h2>
-                    <div class="ModuleHeader-content">
-                        <p>Nous adaptons notre approche consultative aux spécificités de chaque projet et aux enjeux de l'enseignement supérieur.</p>
-            </div>
-                </div>
-                
-                <div class="services-showcase">
-                    <div class="service-feature">
-                        <div class="feature-content">
-                            <div class="feature-number">01</div>
-                            <h3>Études & Analyses</h3>
-                            <p>Réalisation d'enquêtes de satisfaction, analyses de données et études de marché pour éclairer les décisions stratégiques de votre institution.</p>
-                            <div class="feature-highlights">
-                                <span class="highlight">Conception de questionnaires</span>
-                                <span class="highlight">Analyse statistique avancée</span>
-                                <span class="highlight">Rapports exécutifs</span>
-                            </div>
-                        </div>
-                        <div class="feature-visual">
-                            <div class="visual-placeholder">
-                                <div class="chart-mockup">
-                                    <div class="chart-bar" style="height: 60%"></div>
-                                    <div class="chart-bar" style="height: 80%"></div>
-                                    <div class="chart-bar" style="height: 45%"></div>
-                                    <div class="chart-bar" style="height: 90%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="service-feature reverse">
-                        <div class="feature-content">
-                            <div class="feature-number">02</div>
-                            <h3>Transformation Digitale</h3>
-                            <p>Développement d'outils et plateformes digitales pour moderniser les services étudiants et améliorer l'expérience utilisateur.</p>
-                            <div class="feature-highlights">
-                                <span class="highlight">Applications web</span>
-                                <span class="highlight">Plateformes interactives</span>
-                                <span class="highlight">Outils de gestion</span>
-                            </div>
-                        </div>
-                        <div class="feature-visual">
-                            <div class="visual-placeholder">
-                                <div class="device-mockup">
-                                    <div class="device-screen">
-                                        <div class="screen-content"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                
-                    <div class="service-feature">
-                        <div class="feature-content">
-                            <div class="feature-number">03</div>
-                            <h3>Accompagnement Stratégique</h3>
-                            <p>Support aux associations et institutions dans la définition de leur stratégie, l'optimisation de leurs processus et le développement de leurs projets.</p>
-                            <div class="feature-highlights">
-                                <span class="highlight">Planification stratégique</span>
-                                <span class="highlight">Gestion de projet</span>
-                                <span class="highlight">Formation & coaching</span>
-                            </div>
-                        </div>
-                        <div class="feature-visual">
-                            <div class="visual-placeholder">
-                                <div class="strategy-mockup">
-                                    <div class="strategy-node active"></div>
-                                    <div class="strategy-node"></div>
-                                    <div class="strategy-node"></div>
-                                    <div class="strategy-connection"></div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Équipe Section -->
-        <section id="equipe" class="team-section">
-        <div class="container">
-            <div class="section-header">
-                    <div class="ModuleHeader-eyebrow">Notre équipe</div>
-                    <h2 class="ModuleHeader-title">Des talents pluridisciplinaires au service de l'excellence</h2>
-                    <div class="ModuleHeader-content">
-                        <p>Notre équipe réunit des étudiants passionnés issus de différentes filières, unis par leur engagement pour transformer l'enseignement supérieur.</p>
-                    </div>
+        <!-- KPMG Expertises Section -->
+        <section class="cmp-container">
+            <div class="cmp-title">
+                <h2 class="cmp-title__text">Les expertises de WPC</h2>
             </div>
             
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">
-                            <div class="avatar-placeholder">AD</div>
+            <div class="cmp-expertise-grid">
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">trending_up</span>
                     </div>
-                        <h3>Alexandre Durand</h3>
-                        <p>Président - M2 Management</p>
-                    <div class="team-skills">
-                            <span>Stratégie</span>
-                            <span>Leadership</span>
-                        <span>Management</span>
-                    </div>
+                    <h3 class="cmp-expertise-item__title">ESG</h3>
                 </div>
                 
-                <div class="team-card">
-                    <div class="team-avatar">
-                            <div class="avatar-placeholder">SB</div>
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">assessment</span>
                     </div>
-                        <h3>Sophia Benali</h3>
-                        <p>VP Stratégie - M2 Droit</p>
-                    <div class="team-skills">
-                            <span>Analyse</span>
-                            <span>Conseil</span>
-                        <span>Innovation</span>
-                    </div>
+                    <h3 class="cmp-expertise-item__title">Audit et assurance</h3>
                 </div>
                 
-                <div class="team-card">
-                    <div class="team-avatar">
-                            <div class="avatar-placeholder">LF</div>
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">psychology</span>
                     </div>
-                        <h3>Lucas Fernandes</h3>
-                        <p>Responsable Digital - L3 Informatique</p>
-                    <div class="team-skills">
-                        <span>Développement</span>
-                        <span>UX/UI</span>
-                            <span>Digital</span>
-                        </div>
+                    <h3 class="cmp-expertise-item__title">IA</h3>
+                </div>
+                
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">transform</span>
                     </div>
-                    
-                    <div class="team-card">
-                        <div class="team-avatar">
-                            <div class="avatar-placeholder">AM</div>
-                        </div>
-                        <h3>Anna Moreau</h3>
-                        <p>Responsable Innovation - M1 Sciences Sociales</p>
-                        <div class="team-skills">
-                            <span>Recherche</span>
-                            <span>Innovation</span>
-                            <span>Projets</span>
+                    <h3 class="cmp-expertise-item__title">Transformation digitale</h3>
+                </div>
+                
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">business</span>
                     </div>
+                    <h3 class="cmp-expertise-item__title">Transformation des fonctions</h3>
+                </div>
+                
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">lightbulb</span>
+                    </div>
+                    <h3 class="cmp-expertise-item__title">Innovation</h3>
+                </div>
+                
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">security</span>
+                    </div>
+                    <h3 class="cmp-expertise-item__title">Gestion des risques et conformité</h3>
+                </div>
+                
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">strategy</span>
+                    </div>
+                    <h3 class="cmp-expertise-item__title">Stratégie et création de valeur</h3>
+                </div>
+                
+                <div class="cmp-expertise-item">
+                    <div class="cmp-expertise-item__icon">
+                        <span class="material-icons">gavel</span>
+                    </div>
+                    <h3 class="cmp-expertise-item__title">Droit et fiscalité</h3>
                 </div>
             </div>
-            
-            <div class="join-team">
-                    <h3>Rejoignez notre mission</h3>
-                    <p>WPC recrute des étudiants motivés et talentueux pour contribuer à nos projets d'envergure. Développez vos compétences dans un cadre professionnalisant et impactant.</p>
-                    <a href="#contact" class="primary-button">Postuler maintenant</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                    <div class="ModuleHeader-eyebrow">Contact</div>
-                    <h2 class="ModuleHeader-title">Prêt à transformer votre institution ?</h2>
-                    <div class="ModuleHeader-content">
-                        <p>Contactez-nous pour discuter de votre projet et découvrir comment WPC peut vous accompagner dans votre transformation.</p>
-                    </div>
+        <!-- KPMG Secteurs Section -->
+        <section class="cmp-container">
+            <div class="cmp-title">
+                <h2 class="cmp-title__text">Notre accompagnement sectoriel</h2>
             </div>
             
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <h3>📧 Email</h3>
-                            <p>contact@westparisconsulting.fr<br>
-                            <small>Réponse sous 24h</small></p>
+            <div class="cmp-secteurs-grid">
+                <div class="cmp-secteur-item">
+                    <div class="cmp-secteur-item__icon">
+                        <span class="material-icons">monetization_on</span>
                     </div>
-                    
-                    <div class="info-card">
-                        <h3>📍 Localisation</h3>
-                        <p>Université Paris Nanterre<br>
-                        200 Avenue de la République<br>
-                            92001 Nanterre, France</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <h3>🏫 Campus</h3>
-                        <p>Proximité La Défense<br>
-                            Accès RER A - Nanterre Université<br>
-                            <small>Métro ligne 1 - La Défense</small></p>
+                    <h3 class="cmp-secteur-item__title">Services financiers</h3>
+                    <p class="cmp-secteur-item__description">Nos équipes dédiées aux services financiers vous aident à vous transformer et à améliorer votre résilience face aux risques pour assurer votre croissance.</p>
+                    <a href="#" class="cmp-button cmp-button--secondary">En savoir plus</a>
                 </div>
                 
-                        <div class="info-card">
-                            <h3>⏰ Disponibilité</h3>
-                            <p>Lundi - Vendredi : 9h - 18h<br>
-                            <small>Rendez-vous sur campus possible</small></p>
-                        </div>
+                <div class="cmp-secteur-item">
+                    <div class="cmp-secteur-item__icon">
+                        <span class="material-icons">storefront</span>
                     </div>
-                    
-                    <div class="contact-form">
-                        <h3>Démarrons la conversation</h3>
-                        <p>Remplissez le formulaire ci-dessous et notre équipe vous recontactera rapidement.</p>
-                        
-                        <form action="#" method="POST" id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Nom complet *</label>
-                                <input type="text" id="name" name="name" required placeholder="Votre nom complet">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="organization">Institution / Organisation</label>
-                                <input type="text" id="organization" name="organization" placeholder="Votre institution">
-                        </div>
-                        
-                        <div class="form-group">
-                                <label for="subject">Type de demande</label>
-                            <select id="subject" name="subject">
-                                <option value="general">Demande générale</option>
-                                <option value="partnership">Partenariat association</option>
-                                <option value="project">Projet digital</option>
-                                    <option value="study">Étude & analyse</option>
-                                <option value="recruitment">Candidature</option>
-                                    <option value="other">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
-                        </div>
-                        
-                            <button type="submit" class="primary-button">
-                                <span>Envoyer le message</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path d="M4.16667 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                    </form>
+                    <h3 class="cmp-secteur-item__title">Biens de consommation - Distribution</h3>
+                    <p class="cmp-secteur-item__description">WPC aide les entreprises à faire preuve d'agilité pour saisir les opportunités et bénéficier d'une croissance durable.</p>
+                    <a href="#" class="cmp-button cmp-button--secondary">En savoir plus</a>
+                </div>
+                
+                <div class="cmp-secteur-item">
+                    <div class="cmp-secteur-item__icon">
+                        <span class="material-icons">wind_power</span>
+                    </div>
+                    <h3 class="cmp-secteur-item__title">Énergies et ressources naturelles</h3>
+                    <p class="cmp-secteur-item__description">WPC a mis en place des équipes spécialisées pour répondre aux besoins spécifiques du secteur de l'énergie et des ressources naturelles.</p>
+                    <a href="#" class="cmp-button cmp-button--secondary">En savoir plus</a>
+                </div>
+                
+                <div class="cmp-secteur-item">
+                    <div class="cmp-secteur-item__icon">
+                        <span class="material-icons">health_and_safety</span>
+                    </div>
+                    <h3 class="cmp-secteur-item__title">Santé et sciences de la vie</h3>
+                    <p class="cmp-secteur-item__description">Nous vous proposons une offre d'accompagnement qui tient compte de vos enjeux et qui s'adapte à chaque type de structure du secteur de la santé.</p>
+                    <a href="#" class="cmp-button cmp-button--secondary">En savoir plus</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- KPMG About Section -->
+        <section class="cmp-container cmp-about-section">
+            <div class="cmp-about-content">
+                <h2 class="cmp-about-title">WPC. Make the Difference.</h2>
+                <p class="cmp-about-description">Nous vous offrons un large éventail de prestations grâce aux compétences multidisciplinaires de nos équipes. Nos divers pôles d'expertises travaillent en étroite collaboration pour vous accompagner dans vos défis complexes et interconnectés. La vision de nos professionnels, la pertinence de leur analyse et leur maitrise des outils technologiques de pointe éclairent leurs décisions. Ils les aident à opérer de meilleurs choix et à élaborer de meilleures stratégies pour développer des perspectives qui changent la donne et font la différence.</p>
+                <div class="cmp-about-actions">
+                    <a href="#" class="cmp-button cmp-button--primary">Explorez nos insights</a>
+                    <a href="#" class="cmp-button cmp-button--secondary">Rejoignez-nous</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPMG Contact Section -->
+        <section id="contact" class="cmp-container cmp-contact-section">
+            <div class="cmp-contact-content">
+                <h2 class="cmp-contact-title">Besoin de nos services ?</h2>
+                <p class="cmp-contact-description">Échangez avec nos experts qui font la différence.</p>
+                <a href="#contact" class="cmp-button cmp-button--primary">Contactez-nous</a>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>West Paris Consulting</h3>
-                    <p>Association étudiante - Université Paris Nanterre</p>
+    <!-- KPMG Footer -->
+    <footer class="cmp-footer">
+        <div class="cmp-footer__container">
+            <div class="cmp-footer__content">
+                <div class="cmp-footer__links">
+                    <a href="#contact">Contactez-nous</a>
+                    <a href="#">Espace média</a>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Accessibilité : partiellement conforme</a>
+                    <a href="#">Politique de confidentialité et gestion des données</a>
+                    <a href="#">Notice cookies</a>
                 </div>
                 
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="#accueil">Accueil</a></li>
-                            <li><a href="#expertise">Expertise</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="link-group">
-                        <h4>Université</h4>
-                        <ul>
-                            <li><a href="https://www.parisnanterre.fr" target="_blank">Paris Nanterre</a></li>
-                            <li><a href="https://www.parisnanterre.fr/vie-etudiante" target="_blank">Vie étudiante</a></li>
-                            <li><a href="https://www.parisnanterre.fr/associations" target="_blank">Associations</a></li>
-                        </ul>
-                    </div>
+                <div class="cmp-footer__copyright">
+                    <p>© 2025 West Paris Consulting, association étudiante de l'Université Paris Nanterre. Tous droits réservés.</p>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 West Paris Consulting. Tous droits réservés.</p>
-                <p>Conformément à la charte des associations étudiantes de l'Université Paris Nanterre</p>
             </div>
         </div>
     </footer>
-
-    <!-- BCG SVG Icons -->
-    <svg style="display: none;">
-        <defs>
-            <!-- WPC Logo -->
-            <symbol id="wpc-logo" viewBox="0 0 100 100">
-                <rect width="100" height="100" fill="#000000"/>
-                <text x="50" y="60" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="24" font-weight="bold">WPC</text>
-            </symbol>
-            
-            <!-- List Icon -->
-            <symbol id="list" viewBox="0 0 24 24">
-                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-            </symbol>
-            
-            <!-- X Icon -->
-            <symbol id="x" viewBox="0 0 24 24">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-            </symbol>
-            
-            <!-- Search Icon -->
-            <symbol id="search-icon" viewBox="0 0 24 24">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-            </symbol>
-            
-            <!-- Subscribe Icon -->
-            <symbol id="subscribe" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-            </symbol>
-            
-            <!-- Login Avatar Icon -->
-            <symbol id="login-avatar-icon" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </symbol>
-            
-            <!-- Arrow Right Icon -->
-            <symbol id="arrow-right" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-            </symbol>
-        </defs>
-    </svg>
 
     <script src="main.js"></script>
 </body>
