@@ -425,7 +425,7 @@ body {
     width: 100%;
     min-height: 80vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin: 0;
     padding: 0;
 }
