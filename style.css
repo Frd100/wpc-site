@@ -347,8 +347,8 @@ body {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-sm);
-    padding: var(--spacing-sm) var(--spacing-sm);
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-sm);
     transition: all 0.2s ease;
     position: relative;
