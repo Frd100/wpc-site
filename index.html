@@ -30,12 +30,12 @@
             </div>
             
             <nav class="header-nav" role="navigation">
-                <ul class="nav-menu">
+            <ul class="nav-menu">
                     <li><a href="#expertise" class="nav-link">Expertise</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#equipe" class="nav-link">Équipe</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#equipe" class="nav-link">Équipe</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
             </nav>
             
             <div class="header-actions">
@@ -44,7 +44,7 @@
                         <path d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <a href="#contact" class="btn btn-primary">Nous contacter</a>
+                <a href="#contact" class="primary-button">Nous contacter</a>
             </div>
             
             <button class="hamburger" aria-label="Menu">
@@ -71,24 +71,31 @@
                     <div class="List12_items carousel">
                         <!-- Card 1 -->
                         <div class="List12_item carousel-cell">
-                            <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true">
-                                <div class="Promo-media">
-                                    <div class="promo-image-placeholder">
-                                        <div class="promo-icon">📊</div>
+                            <div data-promo20-container-size-hook class="Promo20-container-hook">
+                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
+                                    <div class="Promo-media">
+                                        <span class="Link">
+                                            <div class="promo-image-placeholder">
+                                                <div class="promo-icon">📊</div>
+                                            </div>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="Promo-category">
-                                    <a href="#services" class="Link">Stratégie & Organisation</a>
-                                </div>
-                                <div class="Promo-content">
-                                    <div class="Promo-content_inline">
-                                        <div class="Promo-eyebrow">Expertise</div>
-                                        <div class="Promo-date">2025</div>
+                                    
+                                    <div class="Promo-category">
+                                        <a class="Link" href="#services" data-path="strategie-organisation">Stratégie & Organisation</a>
                                     </div>
-                                    <div class="Promo-title__wrapper">
-                                        <h3 class="Promo-title">
-                                            <a href="#services" class="Link">Transformation organisationnelle</a>
-                                        </h3>
+
+                                    <div class="Promo-content">
+                                        <div class="Promo-content_inline">
+                                            <div class="Promo-eyebrow">Expertise</div>
+                                            <div class="Promo-date">2025</div>
+                                        </div>
+                                        
+                                        <div class="Promo-title__wrapper">
+                                            <h3 class="Promo-title">
+                                                <a class="Link" href="#services" data-path="transformation-organisationnelle">Transformation organisationnelle</a>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,24 +103,31 @@
 
                         <!-- Card 2 -->
                         <div class="List12_item carousel-cell">
-                            <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true">
-                                <div class="Promo-media">
-                                    <div class="promo-image-placeholder">
-                                        <div class="promo-icon">💻</div>
+                            <div data-promo20-container-size-hook class="Promo20-container-hook">
+                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
+                                    <div class="Promo-media">
+                                        <span class="Link">
+                                            <div class="promo-image-placeholder">
+                                                <div class="promo-icon">💻</div>
+                                            </div>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="Promo-category">
-                                    <a href="#services" class="Link">Innovation Digitale</a>
-                                </div>
-                                <div class="Promo-content">
-                                    <div class="Promo-content_inline">
-                                        <div class="Promo-eyebrow">Service</div>
-                                        <div class="Promo-date">2025</div>
+                                    
+                                    <div class="Promo-category">
+                                        <a class="Link" href="#services" data-path="innovation-digitale">Innovation Digitale</a>
                                     </div>
-                                    <div class="Promo-title__wrapper">
-                                        <h3 class="Promo-title">
-                                            <a href="#services" class="Link">Solutions digitales sur mesure</a>
-                                        </h3>
+
+                                    <div class="Promo-content">
+                                        <div class="Promo-content_inline">
+                                            <div class="Promo-eyebrow">Service</div>
+                                            <div class="Promo-date">2025</div>
+                                        </div>
+                                        
+                                        <div class="Promo-title__wrapper">
+                                            <h3 class="Promo-title">
+                                                <a class="Link" href="#services" data-path="solutions-digitales">Solutions digitales sur mesure</a>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -121,24 +135,31 @@
 
                         <!-- Card 3 -->
                         <div class="List12_item carousel-cell">
-                            <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true">
-                                <div class="Promo-media">
-                                    <div class="promo-image-placeholder">
-                                        <div class="promo-icon">🎯</div>
+                            <div data-promo20-container-size-hook class="Promo20-container-hook">
+                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
+                                    <div class="Promo-media">
+                                        <span class="Link">
+                                            <div class="promo-image-placeholder">
+                                                <div class="promo-icon">🎯</div>
+                                            </div>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="Promo-category">
-                                    <a href="#services" class="Link">Accompagnement</a>
-                                </div>
-                                <div class="Promo-content">
-                                    <div class="Promo-content_inline">
-                                        <div class="Promo-eyebrow">Mission</div>
-                                        <div class="Promo-date">2025</div>
+                                    
+                                    <div class="Promo-category">
+                                        <a class="Link" href="#services" data-path="accompagnement">Accompagnement</a>
                                     </div>
-                                    <div class="Promo-title__wrapper">
-                                        <h3 class="Promo-title">
-                                            <a href="#services" class="Link">Conseil en gestion de projet</a>
-                                        </h3>
+
+                                    <div class="Promo-content">
+                                        <div class="Promo-content_inline">
+                                            <div class="Promo-eyebrow">Mission</div>
+                                            <div class="Promo-date">2025</div>
+                                        </div>
+                                        
+                                        <div class="Promo-title__wrapper">
+                                            <h3 class="Promo-title">
+                                                <a class="Link" href="#services" data-path="conseil-gestion-projet">Conseil en gestion de projet</a>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -146,24 +167,31 @@
 
                         <!-- Card 4 -->
                         <div class="List12_item carousel-cell">
-                            <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true">
-                                <div class="Promo-media">
-                                    <div class="promo-image-placeholder">
-                                        <div class="promo-icon">📈</div>
+                            <div data-promo20-container-size-hook class="Promo20-container-hook">
+                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
+                                    <div class="Promo-media">
+                                        <span class="Link">
+                                            <div class="promo-image-placeholder">
+                                                <div class="promo-icon">📈</div>
+                                            </div>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="Promo-category">
-                                    <a href="#services" class="Link">Analyses</a>
-                                </div>
-                                <div class="Promo-content">
-                                    <div class="Promo-content_inline">
-                                        <div class="Promo-eyebrow">Étude</div>
-                                        <div class="Promo-date">2025</div>
+                                    
+                                    <div class="Promo-category">
+                                        <a class="Link" href="#services" data-path="analyses">Analyses</a>
                                     </div>
-                                    <div class="Promo-title__wrapper">
-                                        <h3 class="Promo-title">
-                                            <a href="#services" class="Link">Enquêtes et études de marché</a>
-                                        </h3>
+
+                                    <div class="Promo-content">
+                                        <div class="Promo-content_inline">
+                                            <div class="Promo-eyebrow">Étude</div>
+                                            <div class="Promo-date">2025</div>
+                                        </div>
+                                        
+                                        <div class="Promo-title__wrapper">
+                                            <h3 class="Promo-title">
+                                                <a class="Link" href="#services" data-path="enquetes-etudes">Enquêtes et études de marché</a>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -171,24 +199,31 @@
 
                         <!-- Card 5 -->
                         <div class="List12_item carousel-cell">
-                            <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true">
-                                <div class="Promo-media">
-                                    <div class="promo-image-placeholder">
-                                        <div class="promo-icon">🤝</div>
+                            <div data-promo20-container-size-hook class="Promo20-container-hook">
+                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
+                                    <div class="Promo-media">
+                                        <span class="Link">
+                                            <div class="promo-image-placeholder">
+                                                <div class="promo-icon">🤝</div>
+                                            </div>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="Promo-category">
-                                    <a href="#equipe" class="Link">Équipe</a>
-                                </div>
-                                <div class="Promo-content">
-                                    <div class="Promo-content_inline">
-                                        <div class="Promo-eyebrow">Talent</div>
-                                        <div class="Promo-date">2025</div>
+                                    
+                                    <div class="Promo-category">
+                                        <a class="Link" href="#equipe" data-path="equipe">Équipe</a>
                                     </div>
-                                    <div class="Promo-title__wrapper">
-                                        <h3 class="Promo-title">
-                                            <a href="#equipe" class="Link">Experts pluridisciplinaires</a>
-                                        </h3>
+
+                                    <div class="Promo-content">
+                                        <div class="Promo-content_inline">
+                                            <div class="Promo-eyebrow">Talent</div>
+                                            <div class="Promo-date">2025</div>
+                                        </div>
+                                        
+                                        <div class="Promo-title__wrapper">
+                                            <h3 class="Promo-title">
+                                                <a class="Link" href="#equipe" data-path="experts-pluridisciplinaires">Experts pluridisciplinaires</a>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -196,42 +231,49 @@
 
                         <!-- Card 6 -->
                         <div class="List12_item carousel-cell">
-                            <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true">
-                                <div class="Promo-media">
-                                    <div class="promo-image-placeholder">
-                                        <div class="promo-icon">🚀</div>
+                            <div data-promo20-container-size-hook class="Promo20-container-hook">
+                                <div class="Promo20 Promo20__card promo-block-node" data-component-type="Promo" data-module-type="list-promo" data-has-media="true" data-hidden-content-open="false">
+                                    <div class="Promo-media">
+                                        <span class="Link">
+                                            <div class="promo-image-placeholder">
+                                                <div class="promo-icon">🚀</div>
+                                            </div>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="Promo-category">
-                                    <a href="#contact" class="Link">Contact</a>
-                                </div>
-                                <div class="Promo-content">
-                                    <div class="Promo-content_inline">
-                                        <div class="Promo-eyebrow">Action</div>
-                                        <div class="Promo-date">2025</div>
+                                    
+                                    <div class="Promo-category">
+                                        <a class="Link" href="#contact" data-path="contact">Contact</a>
                                     </div>
-                                    <div class="Promo-title__wrapper">
-                                        <h3 class="Promo-title">
-                                            <a href="#contact" class="Link">Démarrer votre projet</a>
-                                        </h3>
+
+                                    <div class="Promo-content">
+                                        <div class="Promo-content_inline">
+                                            <div class="Promo-eyebrow">Action</div>
+                                            <div class="Promo-date">2025</div>
+                                        </div>
+                                        
+                                        <div class="Promo-title__wrapper">
+                                            <h3 class="Promo-title">
+                                                <a class="Link" href="#contact" data-path="demarrer-projet">Démarrer votre projet</a>
+                                            </h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </section>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <!-- Expertise Section -->
         <section id="expertise" class="expertise-section">
-            <div class="container">
-                <div class="section-header">
+        <div class="container">
+            <div class="section-header">
                     <div class="ModuleHeader-eyebrow">Notre expertise</div>
                     <h2 class="ModuleHeader-title">Des solutions stratégiques pour l'enseignement supérieur</h2>
                     <div class="ModuleHeader-content">
                         <p>Nous combinons expertise académique et approche consultative pour transformer les défis universitaires en opportunités d'innovation.</p>
-                    </div>
+            </div>
                 </div>
                 
                 <div class="expertise-grid">
@@ -269,20 +311,20 @@
                             <li>Développement durable</li>
                             <li>Partenariats stratégiques</li>
                         </ul>
-                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Services Section -->
         <section id="services" class="services-section">
-            <div class="container">
-                <div class="section-header">
+        <div class="container">
+            <div class="section-header">
                     <div class="ModuleHeader-eyebrow">Nos services</div>
                     <h2 class="ModuleHeader-title">Des solutions sur mesure pour votre institution</h2>
                     <div class="ModuleHeader-content">
                         <p>Nous adaptons notre approche consultative aux spécificités de chaque projet et aux enjeux de l'enseignement supérieur.</p>
-                    </div>
+            </div>
                 </div>
                 
                 <div class="services-showcase">
@@ -329,8 +371,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                </div>
+                
                     <div class="service-feature">
                         <div class="feature-content">
                             <div class="feature-number">03</div>
@@ -353,57 +395,57 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Équipe Section -->
         <section id="equipe" class="team-section">
-            <div class="container">
-                <div class="section-header">
+        <div class="container">
+            <div class="section-header">
                     <div class="ModuleHeader-eyebrow">Notre équipe</div>
                     <h2 class="ModuleHeader-title">Des talents pluridisciplinaires au service de l'excellence</h2>
                     <div class="ModuleHeader-content">
                         <p>Notre équipe réunit des étudiants passionnés issus de différentes filières, unis par leur engagement pour transformer l'enseignement supérieur.</p>
                     </div>
-                </div>
-                
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-avatar">
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
                             <div class="avatar-placeholder">AD</div>
-                        </div>
+                    </div>
                         <h3>Alexandre Durand</h3>
                         <p>Président - M2 Management</p>
-                        <div class="team-skills">
+                    <div class="team-skills">
                             <span>Stratégie</span>
                             <span>Leadership</span>
-                            <span>Management</span>
+                        <span>Management</span>
                         </div>
-                    </div>
-                    
-                    <div class="team-card">
-                        <div class="team-avatar">
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
                             <div class="avatar-placeholder">SB</div>
-                        </div>
+                    </div>
                         <h3>Sophia Benali</h3>
                         <p>VP Stratégie - M2 Droit</p>
-                        <div class="team-skills">
+                    <div class="team-skills">
                             <span>Analyse</span>
                             <span>Conseil</span>
-                            <span>Innovation</span>
-                        </div>
+                        <span>Innovation</span>
                     </div>
-                    
-                    <div class="team-card">
-                        <div class="team-avatar">
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
                             <div class="avatar-placeholder">LF</div>
-                        </div>
+                    </div>
                         <h3>Lucas Fernandes</h3>
                         <p>Responsable Digital - L3 Informatique</p>
-                        <div class="team-skills">
-                            <span>Développement</span>
-                            <span>UX/UI</span>
+                    <div class="team-skills">
+                        <span>Développement</span>
+                        <span>UX/UI</span>
                             <span>Digital</span>
                         </div>
                     </div>
@@ -419,46 +461,46 @@
                             <span>Innovation</span>
                             <span>Projets</span>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="join-team">
-                    <h3>Rejoignez notre mission</h3>
-                    <p>WPC recrute des étudiants motivés et talentueux pour contribuer à nos projets d'envergure. Développez vos compétences dans un cadre professionnalisant et impactant.</p>
-                    <a href="#contact" class="btn btn-primary">Postuler maintenant</a>
                 </div>
             </div>
-        </section>
+            
+            <div class="join-team">
+                    <h3>Rejoignez notre mission</h3>
+                    <p>WPC recrute des étudiants motivés et talentueux pour contribuer à nos projets d'envergure. Développez vos compétences dans un cadre professionnalisant et impactant.</p>
+                    <a href="#contact" class="primary-button">Postuler maintenant</a>
+                </div>
+        </div>
+    </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-header">
+        <div class="container">
+            <div class="section-header">
                     <div class="ModuleHeader-eyebrow">Contact</div>
                     <h2 class="ModuleHeader-title">Prêt à transformer votre institution ?</h2>
                     <div class="ModuleHeader-content">
                         <p>Contactez-nous pour discuter de votre projet et découvrir comment WPC peut vous accompagner dans votre transformation.</p>
                     </div>
-                </div>
-                
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="info-card">
-                            <h3>📧 Email</h3>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📧 Email</h3>
                             <p>contact@westparisconsulting.fr<br>
                             <small>Réponse sous 24h</small></p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <h3>📍 Localisation</h3>
-                            <p>Université Paris Nanterre<br>
-                            200 Avenue de la République<br>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📍 Localisation</h3>
+                        <p>Université Paris Nanterre<br>
+                        200 Avenue de la République<br>
                             92001 Nanterre, France</p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <h3>🏫 Campus</h3>
-                            <p>Proximité La Défense<br>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏫 Campus</h3>
+                        <p>Proximité La Défense<br>
                             Accès RER A - Nanterre Université<br>
                             <small>Métro ligne 1 - La Défense</small></p>
                         </div>
@@ -488,36 +530,36 @@
                             <div class="form-group">
                                 <label for="organization">Institution / Organisation</label>
                                 <input type="text" id="organization" name="organization" placeholder="Votre institution">
-                            </div>
-                            
-                            <div class="form-group">
+                        </div>
+                        
+                        <div class="form-group">
                                 <label for="subject">Type de demande</label>
-                                <select id="subject" name="subject">
-                                    <option value="general">Demande générale</option>
-                                    <option value="partnership">Partenariat association</option>
-                                    <option value="project">Projet digital</option>
+                            <select id="subject" name="subject">
+                                <option value="general">Demande générale</option>
+                                <option value="partnership">Partenariat association</option>
+                                <option value="project">Projet digital</option>
                                     <option value="study">Étude & analyse</option>
-                                    <option value="recruitment">Candidature</option>
+                                <option value="recruitment">Candidature</option>
                                     <option value="other">Autre</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message *</label>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
                                 <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">
+                        </div>
+                        
+                            <button type="submit" class="primary-button">
                                 <span>Envoyer le message</span>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M4.16667 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                        </form>
+                    </form>
                     </div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->

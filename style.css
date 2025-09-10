@@ -1,4 +1,4 @@
-/* BCG Exact Color Palette */
+/* BCG EXACT COLOR PALETTE - From bcg.md analysis */
 :root {
     /* Grays - BCG Exact */
     --gray-200: #F2F2F2;
@@ -20,17 +20,79 @@
     --neutral-700: #856E57;
     --neutral-200-70: #F1EEEA70;
 
-    /* Primary Colors */
-    --primary-color: var(--black);
-    --secondary-color: var(--gray-700);
-    --accent-color: var(--neutral-500);
+    /* Greens - BCG Exact */
+    --green-200: #DCF9E3;
+    --green-300: #A8F0B8;
+    --green-400: #21BF61;
+    --green-500: #197A56;
+    --green-700: #0E3E1B;
 
-    /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Accents - BCG Exact */
+    --accent-200: #7EF473;
+    --accent-300: #71DC68;
+
+    /* BCG Fonts */
+    --font-fam-bcg-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-fam-bcg-serif: 'Palatino Linotype', Palatino, Garamond, Georgia, serif;
+    --font-fam-bcg-headline: 'Cambria', 'Hoefler Text', Times, 'Times New Roman', serif;
+    --font-fam-bcg-mod: 'Palatino Linotype', Palatino, Garamond, Georgia, serif;
+
+    --font-family-primary: var(--font-fam-bcg-sans);
+    --font-family-headings: var(--font-fam-bcg-sans);
+    --font-weight-headings: 300;
+
+    /* Button Variables - BCG Exact */
+    --button-radius: 15px;
     
-    /* Spacing */
-    --section-padding: 120px 0;
-    --container-padding: 0 2rem;
+    /* Primary Button - Animated */
+    --primary_button-animated-default_state-background_color: var(--accent-200);
+    --primary_button-animated-default_state-text_color: var(--black);
+    --primary_button-animated-default_state-svg_color: var(--black);
+    
+    --primary_button-animated-hover_state-background_color: var(--accent-200);
+    --primary_button-animated-hover_state-text_color: var(--black);
+    --primary_button-animated-hover_state-svg_color: var(--black);
+    
+    --primary_button-animated-focus_state-background_color: var(--green-700);
+    --primary_button-animated-focus_state-text_color: var(--white);
+    --primary_button-animated-focus_state-svg_color: var(--white);
+    --primary_button-animated-focus_state-shadow_color: var(--green-700);
+    --primary_button-animated-focus_state-border_color: var(--white);
+    
+    --primary_button-animated-active_state-background_color: var(--green-700);
+    --primary_button-animated-active_state-text_color: var(--white);
+    --primary_button-animated-active_state-svg_color: var(--white);
+    
+    --primary_button-animated-disabled_state-background_color: var(--neutral-250);
+    --primary_button-animated-disabled_state-text_color: var(--gray-450);
+    --primary_button-animated-disabled_state-svg_color: var(--gray-450);
+
+    /* Secondary Button - Animated */
+    --secondary_button-animated-default_state-background_color: var(--white);
+    --secondary_button-animated-default_state-text_color: var(--black);
+    --secondary_button-animated-default_state-svg_color: var(--black);
+    --secondary_button-animated-default_state-border_color: var(--black);
+    
+    --secondary_button-animated-hover_state-background_color: var(--white);
+    --secondary_button-animated-hover_state-text_color: var(--black);
+    --secondary_button-animated-hover_state-svg_color: var(--black);
+    --secondary_button-animated-hover_state-border_color: var(--black);
+    
+    --secondary_button-animated-focus_state-background_color: var(--gray-700);
+    --secondary_button-animated-focus_state-text_color: var(--white);
+    --secondary_button-animated-focus_state-svg_color: var(--white);
+    --secondary_button-animated-focus_state-shadow_color: var(--gray-700);
+    --secondary_button-animated-focus_state-border_color: var(--white);
+    
+    --secondary_button-animated-active_state-background_color: var(--gray-200);
+    --secondary_button-animated-active_state-text_color: var(--black);
+    --secondary_button-animated-active_state-svg_color: var(--black);
+    --secondary_button-animated-active_state-border_color: var(--black);
+    
+    --secondary_button-animated-disabled_state-background_color: var(--white);
+    --secondary_button-animated-disabled_state-text_color: var(--gray-450);
+    --secondary_button-animated-disabled_state-svg_color: var(--gray-450);
+    --secondary_button-animated-disabled_state-border_color: var(--gray-450);
 }
 
 /* Reset */
@@ -41,7 +103,7 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: var(--font-family-primary);
     line-height: 1.6;
     color: var(--black);
     background: var(--white);
@@ -51,10 +113,10 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: var(--container-padding);
+    padding: 0 2rem;
 }
 
-/* Header - BCG Style */
+/* Header - BCG Exact Style */
 .header {
     position: fixed;
     top: 0;
@@ -154,30 +216,45 @@ body {
     background: var(--gray-200);
 }
 
-.btn {
+/* BCG Primary Button */
+.primary-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    border-radius: var(--button-radius);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     border: 2px solid transparent;
     cursor: pointer;
+    background: var(--primary_button-animated-default_state-background_color);
+    color: var(--primary_button-animated-default_state-text_color);
 }
 
-.btn-primary {
-    background: var(--black);
-    color: white;
-    border-color: var(--black);
-}
-
-.btn-primary:hover {
-    background: var(--gray-700);
-    border-color: var(--gray-700);
+.primary-button:hover {
+    background: var(--primary_button-animated-hover_state-background_color);
+    color: var(--primary_button-animated-hover_state-text_color);
     transform: translateY(-1px);
+}
+
+.primary-button:focus {
+    background: var(--primary_button-animated-focus_state-background_color);
+    color: var(--primary_button-animated-focus_state-text_color);
+    box-shadow: 0 0 0 3px var(--primary_button-animated-focus_state-shadow_color);
+    border-color: var(--primary_button-animated-focus_state-border_color);
+}
+
+.primary-button:active {
+    background: var(--primary_button-animated-active_state-background_color);
+    color: var(--primary_button-animated-active_state-text_color);
+}
+
+.primary-button:disabled {
+    background: var(--primary_button-animated-disabled_state-background_color);
+    color: var(--primary_button-animated-disabled_state-text_color);
+    cursor: not-allowed;
 }
 
 .hamburger {
@@ -197,7 +274,7 @@ body {
     border-radius: 2px;
 }
 
-/* Hero Section - BCG ModuleHeader Style */
+/* Hero Section - BCG ModuleHeader Exact Style */
 .hero-section {
     padding: 160px 0 80px;
     background: var(--neutral-200);
@@ -226,8 +303,9 @@ body {
 }
 
 .ModuleHeader-title {
+    font-family: var(--font-family-headings);
+    font-weight: var(--font-weight-headings);
     font-size: 3.5rem;
-    font-weight: 700;
     color: var(--black);
     margin-bottom: 1.5rem;
     line-height: 1.1;
@@ -241,7 +319,7 @@ body {
     margin: 0 auto;
 }
 
-/* List12 Carousel - BCG Style */
+/* List12 Carousel - BCG Exact Style */
 .List12 {
     position: relative;
 }
@@ -267,7 +345,7 @@ body {
     min-width: 350px;
 }
 
-/* Promo20 Cards - BCG Style */
+/* Promo20 Cards - BCG Exact Style */
 .Promo20 {
     background: var(--white);
     border-radius: 8px;
@@ -370,7 +448,7 @@ body {
 
 /* Sections */
 section {
-    padding: var(--section-padding);
+    padding: 120px 0;
 }
 
 .section-header {
@@ -953,8 +1031,8 @@ section {
         padding: 0 1rem;
     }
     
-    :root {
-        --section-padding: 80px 0;
+    section {
+        padding: 80px 0;
     }
     
     .List12_item {
