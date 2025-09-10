@@ -157,6 +157,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    padding: var(--spacing-sm) 0 0 0;
 }
 
 .main-navigation__logo-image {
