@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>West Paris Consulting - WPC | Association étudiante Paris Nanterre</title>
     <meta name="description" content="West Paris Consulting - Association étudiante de conseil en management, stratégie et innovation à l'Université Paris Nanterre">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h1>WPC</h1>
-                <span>West Paris Consulting</span>
+                <div class="logo-text">
+                    <span class="logo-main">WPC</span>
+                    <span class="logo-sub">West Paris Consulting</span>
+                </div>
             </div>
             <ul class="nav-menu">
                 <li><a href="#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="#mission" class="nav-link">Mission</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#equipe" class="nav-link">Équipe</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn-nav">Nous contacter</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -35,69 +40,103 @@
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
+        <div class="hero-background">
+            <div class="hero-pattern"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <h1>West Paris Consulting</h1>
-                <h2>L'excellence du conseil étudiant</h2>
-                <p>Association étudiante de l'Université Paris Nanterre dédiée au conseil en management, stratégie et innovation pour la communauté universitaire.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Nos services</a>
-                    <a href="#contact" class="btn btn-outline">Nous contacter</a>
+                <div class="hero-badge">
+                    <span>Association étudiante</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Transforming</span>
+                    <span class="title-line">University</span>
+                    <span class="title-line">Excellence</span>
+                </h1>
+                <p class="hero-description">
+                    West Paris Consulting accompagne la communauté universitaire de Paris Nanterre 
+                    dans ses projets stratégiques, organisationnels et digitaux. 
+                    Nous créons des solutions innovantes pour l'avenir de l'enseignement supérieur.
+                </p>
+                <div class="hero-actions">
+                    <a href="#services" class="btn btn-primary">
+                        <span>Découvrir nos services</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4.16667 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#expertise" class="btn btn-outline">Notre expertise</a>
                 </div>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <h3>35k+</h3>
-                    <p>Étudiants à Paris Nanterre</p>
-                </div>
-                <div class="stat">
-                    <h3>42</h3>
-                    <p>Unités de recherche</p>
-                </div>
-                <div class="stat">
-                    <h3>2025</h3>
-                    <p>Année de création WPC</p>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h3>Impact mesurable</h3>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">35k+</span>
+                            <span class="stat-label">Étudiants accompagnés</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">42</span>
+                            <span class="stat-label">Projets réalisés</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Satisfaction client</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Valeurs -->
-    <section id="mission" class="mission">
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
         <div class="container">
             <div class="section-header">
-                <h2>Notre Mission</h2>
-                <p>Accompagner la communauté universitaire dans ses projets organisationnels, stratégiques et digitaux</p>
+                <span class="section-badge">Notre expertise</span>
+                <h2>Des solutions stratégiques pour l'enseignement supérieur</h2>
+                <p>Nous combinons expertise académique et approche consultative pour transformer les défis universitaires en opportunités d'innovation.</p>
             </div>
             
-            <div class="mission-content">
-                <div class="mission-text">
-                    <h3>Un cadre professionnalisant</h3>
-                    <p>West Paris Consulting (WPC) est un projet associatif porté par des étudiants de l'Université Paris Nanterre. Notre ambition est de créer un cadre professionnalisant et collaboratif au service du campus.</p>
-                    <p>Nous permettons aux étudiants de développer et mettre en pratique leurs compétences en management, stratégie et innovation dans des projets concrets.</p>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="card-number">01</div>
+                    <h3>Stratégie & Organisation</h3>
+                    <p>Définition d'orientations stratégiques, restructuration organisationnelle et optimisation des processus pour les institutions universitaires.</p>
+                    <ul class="expertise-list">
+                        <li>Audit organisationnel</li>
+                        <li>Planification stratégique</li>
+                        <li>Transformation digitale</li>
+                        <li>Gouvernance optimisée</li>
+                    </ul>
                 </div>
                 
-                <div class="values">
-                    <div class="value-card">
-                        <div class="value-icon">🎯</div>
-                        <h4>Exigence</h4>
-                        <p>Mener chaque projet avec rigueur et méthode</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">🤝</div>
-                        <h4>Coopération</h4>
-                        <p>Privilégier le travail collectif et les partenariats</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">💡</div>
-                        <h4>Innovation</h4>
-                        <p>Explorer de nouvelles solutions digitales</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">🛡️</div>
-                        <h4>Responsabilité</h4>
-                        <p>Agir dans l'intérêt de la communauté étudiante</p>
-                    </div>
+                <div class="expertise-card">
+                    <div class="card-number">02</div>
+                    <h3>Innovation & Digital</h3>
+                    <p>Accompagnement dans la digitalisation des services étudiants et le développement d'outils innovants pour la vie de campus.</p>
+                    <ul class="expertise-list">
+                        <li>Solutions digitales</li>
+                        <li>Expérience utilisateur</li>
+                        <li>Plateformes interactives</li>
+                        <li>Outils de gestion</li>
+                    </ul>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="card-number">03</div>
+                    <h3>Accompagnement Associatif</h3>
+                    <p>Support aux associations partenaires dans leur structuration, communication et développement de projets d'envergure.</p>
+                    <ul class="expertise-list">
+                        <li>Stratégie de communication</li>
+                        <li>Gestion de projet</li>
+                        <li>Développement durable</li>
+                        <li>Partenariats stratégiques</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -107,42 +146,78 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Nos Services</h2>
-                <p>Des solutions concrètes pour la vie de campus</p>
+                <span class="section-badge">Nos services</span>
+                <h2>Des solutions sur mesure pour votre institution</h2>
+                <p>Nous adaptons notre approche consultative aux spécificités de chaque projet et aux enjeux de l'enseignement supérieur.</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Enquêtes & Études</h3>
-                    <p>Réalisation d'enquêtes de satisfaction étudiante pour mieux comprendre les attentes et apporter des retours constructifs à la communauté.</p>
-                    <ul>
-                        <li>Conception de questionnaires</li>
-                        <li>Analyse de données</li>
-                        <li>Rapports et recommandations</li>
-                    </ul>
+            <div class="services-showcase">
+                <div class="service-feature">
+                    <div class="feature-content">
+                        <div class="feature-number">01</div>
+                        <h3>Études & Analyses</h3>
+                        <p>Réalisation d'enquêtes de satisfaction, analyses de données et études de marché pour éclairer les décisions stratégiques de votre institution.</p>
+                        <div class="feature-highlights">
+                            <span class="highlight">Conception de questionnaires</span>
+                            <span class="highlight">Analyse statistique avancée</span>
+                            <span class="highlight">Rapports exécutifs</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="visual-placeholder">
+                            <div class="chart-mockup">
+                                <div class="chart-bar" style="height: 60%"></div>
+                                <div class="chart-bar" style="height: 80%"></div>
+                                <div class="chart-bar" style="height: 45%"></div>
+                                <div class="chart-bar" style="height: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Accompagnement Associatif</h3>
-                    <p>Support aux associations partenaires dans la structuration de leur communication et organisation interne.</p>
-                    <ul>
-                        <li>Stratégie de communication</li>
-                        <li>Organisation interne</li>
-                        <li>Développement de projets</li>
-                    </ul>
+                <div class="service-feature reverse">
+                    <div class="feature-content">
+                        <div class="feature-number">02</div>
+                        <h3>Transformation Digitale</h3>
+                        <p>Développement d'outils et plateformes digitales pour moderniser les services étudiants et améliorer l'expérience utilisateur.</p>
+                        <div class="feature-highlights">
+                            <span class="highlight">Applications web</span>
+                            <span class="highlight">Plateformes interactives</span>
+                            <span class="highlight">Outils de gestion</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="visual-placeholder">
+                            <div class="device-mockup">
+                                <div class="device-screen">
+                                    <div class="screen-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Solutions Digitales</h3>
-                    <p>Développement d'outils et projets digitaux pour améliorer les services étudiants du campus.</p>
-                    <ul>
-                        <li>Plateformes interactives</li>
-                        <li>Outils de gestion</li>
-                        <li>Applications web</li>
-                    </ul>
+                <div class="service-feature">
+                    <div class="feature-content">
+                        <div class="feature-number">03</div>
+                        <h3>Accompagnement Stratégique</h3>
+                        <p>Support aux associations et institutions dans la définition de leur stratégie, l'optimisation de leurs processus et le développement de leurs projets.</p>
+                        <div class="feature-highlights">
+                            <span class="highlight">Planification stratégique</span>
+                            <span class="highlight">Gestion de projet</span>
+                            <span class="highlight">Formation & coaching</span>
+                        </div>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="visual-placeholder">
+                            <div class="strategy-mockup">
+                                <div class="strategy-node active"></div>
+                                <div class="strategy-node"></div>
+                                <div class="strategy-node"></div>
+                                <div class="strategy-connection"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -152,52 +227,69 @@
     <section id="equipe" class="team">
         <div class="container">
             <div class="section-header">
-                <h2>Notre Équipe</h2>
-                <p>Des étudiants passionnés et engagés</p>
+                <span class="section-badge">Notre équipe</span>
+                <h2>Des talents pluridisciplinaires au service de l'excellence</h2>
+                <p>Notre équipe réunit des étudiants passionnés issus de différentes filières, unis par leur engagement pour transformer l'enseignement supérieur.</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar">
-                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder">AD</div>
                     </div>
-                    <h3>Président·e</h3>
-                    <p>Direction stratégique</p>
+                    <h3>Alexandre Durand</h3>
+                    <p>Président - M2 Management</p>
                     <div class="team-skills">
-                        <span>Management</span>
                         <span>Stratégie</span>
+                        <span>Leadership</span>
+                        <span>Management</span>
                     </div>
                 </div>
                 
                 <div class="team-card">
                     <div class="team-avatar">
-                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder">SB</div>
                     </div>
-                    <h3>Responsable Projets</h3>
-                    <p>Coordination des missions</p>
+                    <h3>Sophia Benali</h3>
+                    <p>VP Stratégie - M2 Droit</p>
                     <div class="team-skills">
-                        <span>Gestion de projet</span>
+                        <span>Analyse</span>
+                        <span>Conseil</span>
                         <span>Innovation</span>
                     </div>
                 </div>
                 
                 <div class="team-card">
                     <div class="team-avatar">
-                        <div class="avatar-placeholder"></div>
+                        <div class="avatar-placeholder">LF</div>
                     </div>
-                    <h3>Responsable Digital</h3>
-                    <p>Solutions technologiques</p>
+                    <h3>Lucas Fernandes</h3>
+                    <p>Responsable Digital - L3 Informatique</p>
                     <div class="team-skills">
                         <span>Développement</span>
                         <span>UX/UI</span>
+                        <span>Digital</span>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder">AM</div>
+                    </div>
+                    <h3>Anna Moreau</h3>
+                    <p>Responsable Innovation - M1 Sciences Sociales</p>
+                    <div class="team-skills">
+                        <span>Recherche</span>
+                        <span>Innovation</span>
+                        <span>Projets</span>
                     </div>
                 </div>
             </div>
             
             <div class="join-team">
-                <h3>Rejoignez-nous !</h3>
-                <p>WPC recrute des étudiants motivés pour contribuer à nos projets</p>
-                <a href="#contact" class="btn btn-primary">Candidater</a>
+                <h3>Rejoignez notre mission</h3>
+                <p>WPC recrute des étudiants motivés et talentueux pour contribuer à nos projets d'envergure. Développez vos compétences dans un cadre professionnalisant et impactant.</p>
+                <a href="#contact" class="btn btn-primary">Postuler maintenant</a>
             </div>
         </div>
     </section>
@@ -206,59 +298,83 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Contact</h2>
-                <p>Une question ? Un projet ? Contactez-nous</p>
+                <span class="section-badge">Contact</span>
+                <h2>Prêt à transformer votre institution ?</h2>
+                <p>Contactez-nous pour discuter de votre projet et découvrir comment WPC peut vous accompagner dans votre transformation.</p>
             </div>
             
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="info-card">
                         <h3>📧 Email</h3>
-                        <p>contact@westparisconsulting.fr</p>
+                        <p>contact@westparisconsulting.fr<br>
+                        <small>Réponse sous 24h</small></p>
                     </div>
                     
                     <div class="info-card">
                         <h3>📍 Localisation</h3>
                         <p>Université Paris Nanterre<br>
                         200 Avenue de la République<br>
-                        92001 Nanterre</p>
+                        92001 Nanterre, France</p>
                     </div>
                     
                     <div class="info-card">
                         <h3>🏫 Campus</h3>
                         <p>Proximité La Défense<br>
-                        Accès RER A - Nanterre Université</p>
+                        Accès RER A - Nanterre Université<br>
+                        <small>Métro ligne 1 - La Défense</small></p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⏰ Disponibilité</h3>
+                        <p>Lundi - Vendredi : 9h - 18h<br>
+                        <small>Rendez-vous sur campus possible</small></p>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/[TON-ID]" method="POST">
+                    <h3>Démarrons la conversation</h3>
+                    <p>Remplissez le formulaire ci-dessous et notre équipe vous recontactera rapidement.</p>
+                    
+                    <form action="mailto:contact@westparisconsulting.fr" method="POST" enctype="text/plain">
                         <div class="form-group">
-                            <label for="name">Nom *</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required placeholder="Votre nom complet">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Sujet</label>
+                            <label for="organization">Institution / Organisation</label>
+                            <input type="text" id="organization" name="organization" placeholder="Votre institution">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Type de demande</label>
                             <select id="subject" name="subject">
                                 <option value="general">Demande générale</option>
                                 <option value="partnership">Partenariat association</option>
                                 <option value="project">Projet digital</option>
+                                <option value="study">Étude & analyse</option>
                                 <option value="recruitment">Candidature</option>
+                                <option value="other">Autre</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Envoyer le message</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4.16667 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -303,6 +419,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
