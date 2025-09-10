@@ -326,7 +326,7 @@ body {
 .cmp-main-nav {
     flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .cmp-main-nav__list {
