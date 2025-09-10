@@ -166,8 +166,8 @@ body {
 
 /* KPMG Exact Menu Item Bar */
 .cmp-menu-item-bar {
-    background: var(--kpmg-gray-100);
-    border-bottom: 1px solid var(--kpmg-gray-200);
+    background: var(--kpmg-blue);
+    border-bottom: 1px solid var(--kpmg-blue-dark);
     padding: var(--spacing-sm) 0;
 }
 
@@ -195,7 +195,7 @@ body {
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-white);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     border-radius: var(--border-radius-md);
@@ -203,13 +203,13 @@ body {
 }
 
 .cmp-menu-item__inner:hover {
-    background: var(--kpmg-gray-200);
-    color: var(--kpmg-blue);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
 }
 
 .cmp-menu-item__icon {
     font-size: var(--font-size-lg);
-    color: var(--kpmg-blue);
+    color: var(--text-white);
 }
 
 .cmp-menu-item__label {
