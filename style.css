@@ -399,7 +399,7 @@ body {
 /* KPMG Exact Hero Section */
 .hero-fbv {
     position: relative;
-    min-height: 600px;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -425,7 +425,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 60%;
     height: 100%;
     z-index: 1;
 }
@@ -439,8 +439,8 @@ body {
 .cmp-hero-fbv__content {
     position: relative;
     z-index: 2;
-    width: 50%;
-    padding: var(--spacing-4xl) var(--spacing-2xl);
+    width: 40%;
+    padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
 }
 
 .cmp-hero-fbv__content-container {
@@ -458,19 +458,21 @@ body {
 
 .cmp-hero-fbv__title {
     font-family: var(--font-family-condensed);
-    font-size: var(--font-size-5xl);
+    font-size: 3.5rem;
     font-weight: var(--font-weight-bold);
     line-height: 1.1;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
     color: var(--text-white);
+    letter-spacing: -0.02em;
 }
 
 .cmp-hero-fbv__description {
-    font-size: var(--font-size-lg);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-2xl);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-3xl);
     color: var(--text-white);
-    opacity: 0.9;
+    opacity: 0.95;
+    max-width: 500px;
 }
 
 .cmp-hero-fbv__description p {
@@ -489,13 +491,14 @@ body {
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-base);
+    border: 2px solid var(--kpmg-blue);
     border-radius: var(--border-radius-md);
     transition: all 0.3s ease;
-    box-shadow: var(--shadow-md);
 }
 
 .cmp-hero-fbv__action-link:hover {
-    background: var(--kpmg-gray-100);
+    background: var(--kpmg-blue);
+    color: var(--kpmg-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -862,11 +865,16 @@ body {
 /* KPMG Exact Responsive Design */
 @media (max-width: 1024px) {
     .cmp-hero-fbv__content {
-        width: 60%;
+        width: 50%;
+        padding: var(--spacing-3xl) var(--spacing-2xl);
     }
     
     .cmp-hero-fbv__image {
-        width: 40%;
+        width: 50%;
+    }
+    
+    .cmp-hero-fbv__title {
+        font-size: 2.5rem;
     }
     
     .cmp-expertise-grid {
