@@ -309,9 +309,9 @@ body {
 }
 
 .cmp-logo__image {
-    height: 24px;
+    height: 32px;
     width: auto;
-    max-width: 120px;
+    max-width: 150px;
     transition: all 0.3s ease;
 }
 
