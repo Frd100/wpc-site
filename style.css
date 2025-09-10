@@ -244,7 +244,10 @@ body {
 /* KPMG Exact Main Navigation */
 .cmp-header__main-nav-bar {
     background: var(--kpmg-white);
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-md) 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .cmp-header__main-nav-bar--container {
@@ -257,6 +260,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 60px;
 }
 
 .cmp-header__main-nav-bar--column {
