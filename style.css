@@ -271,25 +271,26 @@ body {
     justify-content: space-between;
 }
 
-.cmp-header__main-nav-bar--left {
+/* KPMG Exact Navigation Structure - 3 columns */
+.cmp-header__main-nav-bar--column:first-child {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
-    flex: 1;
+    flex: 0 0 auto;
 }
 
-.cmp-header__main-nav-bar--center {
+.cmp-header__main-nav-bar--column[data-cmp-header-main-nav] {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 2;
+    flex: 1;
 }
 
-.cmp-header__main-nav-bar--right {
+.cmp-header__main-nav-bar--column:last-child {
     display: flex;
     align-items: center;
-    flex: 1;
     justify-content: flex-end;
+    flex: 0 0 auto;
 }
 
 /* KPMG Exact Mobile Toggle */
@@ -349,9 +350,10 @@ body {
 .cmp-main-nav {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-.cmp-main-nav__list {
+.cmp-main-nav__main-menu {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -360,7 +362,7 @@ body {
     padding: 0;
 }
 
-.cmp-main-nav__item {
+.cmp-main-nav__main-menu--list-item {
     display: flex;
     align-items: center;
 }
