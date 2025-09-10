@@ -6,7 +6,7 @@
     <title>West Paris Consulting - WPC | Association étudiante Paris Nanterre</title>
     <meta name="description" content="West Paris Consulting - Association étudiante de conseil en management, stratégie et innovation à l'Université Paris Nanterre">
     
-    <!-- BCG Style Meta Tags -->
+    <!-- BCG Exact Meta Tags -->
     <meta property="og:url" content="https://westparisconsulting.fr/">
     <meta property="og:site_name" content="West Paris Consulting">
     <meta property="og:type" content="website">
@@ -19,40 +19,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation BCG Style -->
-    <header class="header" role="banner">
-        <div class="header-container">
-            <div class="header-logo">
-                <a href="#accueil" class="logo-link">
-                    <span class="logo-text">WPC</span>
-                    <span class="logo-subtitle">West Paris Consulting</span>
-                </a>
-            </div>
-            
-            <nav class="header-nav" role="navigation">
-            <ul class="nav-menu">
-                    <li><a href="#expertise" class="nav-link">Expertise</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#equipe" class="nav-link">Équipe</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            </nav>
-            
-            <div class="header-actions">
-                <button class="header-search-button" aria-label="Rechercher">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <a href="#contact" class="primary-button">Nous contacter</a>
-            </div>
-            
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- BCG Exact Navigation -->
+    <header class="Page-header menu" id="menu">
+        <a href="#Page-content" class="Page-skipNav sr-only">Skip to Main</a>
+
+        <section class="Page-headerMenuLeft">
+            <button data-burger-button class="burger-icon" aria-label="Link to open BCG site menu">
+                <div>
+                    <svg class="burger-svg-icon"><use href="#list" /></svg>
+                    <svg class="close-svg-icon"><use href="#x" /></svg>
+                </div>
             </button>
-        </div>
+            
+            <a href="#accueil" class="Page-headerBCGHomeButton" aria-label="Link to WPC home page">
+                <svg><use xlink:href="#wpc-logo" /></svg>
+            </a>
+        </section>
+
+        <section class="Page-headerMenuRight">
+            <div class="Page-headerSearch topbar__search desktop-only">
+                <div class="header-search-button-wrapper">
+                    <button class="header-view-search-button" aria-label="Open WPC site search input">
+                        <svg>
+                            <use xlink:href="#search-icon" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <subscription-widget-show-button class="subscription-widget__show-button subscription-widget__show-button--hide desktop-only">
+                <button aria-label="Link to subscribe">
+                    <svg><use xlink:href="#subscribe" /></svg>
+                </button>
+            </subscription-widget-show-button>
+
+            <login-dropdown class="user-info">
+                <div class="login-container">
+                    <button class="header-login-button" aria-label="Link to login">
+                        <svg><use xlink:href="#login-avatar-icon" /></svg>
+                    </button>
+                </div>
+            </login-dropdown>
+        </section>
     </header>
 
     <main data-modulewell role="main">
@@ -76,7 +84,7 @@
                                     <div class="Promo-media">
                                         <span class="Link">
                                             <div class="promo-image-placeholder">
-                                                <div class="promo-icon">📊</div>
+                                                <!-- Rectangle noir temporaire en attendant les vraies images -->
                                             </div>
                                         </span>
                                     </div>
@@ -226,8 +234,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+            </div>
+        </div>
 
                         <!-- Card 6 -->
                         <div class="List12_item carousel-cell">
@@ -394,7 +402,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -421,7 +429,7 @@
                             <span>Stratégie</span>
                             <span>Leadership</span>
                         <span>Management</span>
-                        </div>
+                    </div>
                 </div>
                 
                 <div class="team-card">
@@ -460,7 +468,7 @@
                             <span>Recherche</span>
                             <span>Innovation</span>
                             <span>Projets</span>
-                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -468,7 +476,7 @@
                     <h3>Rejoignez notre mission</h3>
                     <p>WPC recrute des étudiants motivés et talentueux pour contribuer à nos projets d'envergure. Développez vos compétences dans un cadre professionnalisant et impactant.</p>
                     <a href="#contact" class="primary-button">Postuler maintenant</a>
-                </div>
+            </div>
         </div>
     </section>
 
@@ -503,8 +511,8 @@
                         <p>Proximité La Défense<br>
                             Accès RER A - Nanterre Université<br>
                             <small>Métro ligne 1 - La Défense</small></p>
-                        </div>
-                        
+                </div>
+                
                         <div class="info-card">
                             <h3>⏰ Disponibilité</h3>
                             <p>Lundi - Vendredi : 9h - 18h<br>
@@ -520,10 +528,10 @@
                             <div class="form-group">
                                 <label for="name">Nom complet *</label>
                                 <input type="text" id="name" name="name" required placeholder="Votre nom complet">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
                                 <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
                             </div>
                             
@@ -556,7 +564,7 @@
                                 </svg>
                             </button>
                     </form>
-                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -599,6 +607,47 @@
             </div>
         </div>
     </footer>
+
+    <!-- BCG SVG Icons -->
+    <svg style="display: none;">
+        <defs>
+            <!-- WPC Logo -->
+            <symbol id="wpc-logo" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="#000000"/>
+                <text x="50" y="60" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="24" font-weight="bold">WPC</text>
+            </symbol>
+            
+            <!-- List Icon -->
+            <symbol id="list" viewBox="0 0 24 24">
+                <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+            </symbol>
+            
+            <!-- X Icon -->
+            <symbol id="x" viewBox="0 0 24 24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </symbol>
+            
+            <!-- Search Icon -->
+            <symbol id="search-icon" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </symbol>
+            
+            <!-- Subscribe Icon -->
+            <symbol id="subscribe" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </symbol>
+            
+            <!-- Login Avatar Icon -->
+            <symbol id="login-avatar-icon" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </symbol>
+            
+            <!-- Arrow Right Icon -->
+            <symbol id="arrow-right" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </symbol>
+        </defs>
+    </svg>
 
     <script src="main.js"></script>
 </body>

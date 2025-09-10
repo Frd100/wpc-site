@@ -1,13 +1,17 @@
 // BCG Style Interactions
 
-// Navigation mobile
-const hamburger = document.querySelector('.hamburger');
-const headerNav = document.querySelector('.header-nav');
+// BCG Navigation mobile
+const burgerButton = document.querySelector('[data-burger-button]');
+const burgerSvgIcon = document.querySelector('.burger-svg-icon');
+const closeSvgIcon = document.querySelector('.close-svg-icon');
 
-if (hamburger && headerNav) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        headerNav.classList.toggle('active');
+if (burgerButton) {
+    burgerButton.addEventListener('click', () => {
+        burgerButton.classList.toggle('active');
+        if (burgerSvgIcon && closeSvgIcon) {
+            burgerSvgIcon.style.display = burgerButton.classList.contains('active') ? 'none' : 'block';
+            closeSvgIcon.style.display = burgerButton.classList.contains('active') ? 'block' : 'none';
+        }
     });
 }
 
@@ -26,9 +30,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header scroll effect
+// BCG Header scroll effect
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
+    const header = document.querySelector('.Page-header');
     if (window.scrollY > 50) {
         header.style.background = 'rgba(255, 255, 255, 0.98)';
         header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';

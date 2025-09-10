@@ -1,6 +1,6 @@
-/* BCG EXACT COLOR PALETTE - From bcg.md analysis */
+/* BCG EXACT COLOR PALETTE - From bcg.com source code */
 :root {
-    /* Grays - BCG Exact */
+    /* Grays - BCG Exact from source */
     --gray-200: #F2F2F2;
     --gray-300: #D4D4D4;
     --gray-400: #B1B1B1;
@@ -11,7 +11,7 @@
     --white: #fff;
     --charcoal: #232326;
 
-    /* Neutrals - BCG Exact */
+    /* Neutrals - BCG Exact from source */
     --neutral-200: #F1EEEA;
     --neutral-250: #DCD5CE;
     --neutral-300: #DFD7CD;
@@ -20,14 +20,14 @@
     --neutral-700: #856E57;
     --neutral-200-70: #F1EEEA70;
 
-    /* Greens - BCG Exact */
+    /* Greens - BCG Exact from source */
     --green-200: #DCF9E3;
     --green-300: #A8F0B8;
     --green-400: #21BF61;
     --green-500: #197A56;
     --green-700: #0E3E1B;
 
-    /* Accents - BCG Exact */
+    /* Accents - BCG Exact from source */
     --accent-200: #7EF473;
     --accent-300: #71DC68;
 
@@ -95,7 +95,7 @@
     --secondary_button-animated-disabled_state-border_color: var(--gray-450);
 }
 
-/* Reset */
+/* Reset *
 * {
     margin: 0;
     padding: 0;
@@ -116,8 +116,9 @@ body {
     padding: 0 2rem;
 }
 
-/* Header - BCG Exact Style */
-.header {
+/* Header - BCG Exact Style *
+/* BCG Exact Header */
+.Page-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -127,16 +128,140 @@ body {
     border-bottom: 1px solid var(--gray-200);
     z-index: 1000;
     transition: all 0.3s ease;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
 }
 
-.header-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
+.Page-headerMenuLeft {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 80px;
+    gap: 1rem;
+}
+
+.Page-headerMenuRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Page-headerBCGHomeButton {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.Page-headerBCGHomeButton svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--black);
+}
+
+.burger-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--black);
+}
+
+.Page-headerSearch {
+    position: relative;
+}
+
+.header-search-button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header-view-search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-view-search-button svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--black);
+}
+
+.subscription-widget__show-button button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-widget__show-button svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--black);
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-login-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-login-button svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--black);
+}
+
+.Page-skipNav {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--black);
+    color: var(--white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1001;
+}
+
+.Page-skipNav:focus {
+    top: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .header-logo .logo-link {
@@ -371,10 +496,21 @@ body {
 .promo-image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--neutral-300), var(--neutral-400));
+    background: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    min-height: 200px;
+}
+
+.promo-image-placeholder::before {
+    content: "IMAGE";
+    position: absolute;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.7;
 }
 
 .promo-icon {
