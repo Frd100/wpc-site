@@ -156,7 +156,7 @@
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    padding: 0;
+    padding: var(--spacing-sm) var(--spacing-sm) 0 var(--spacing-sm);
     margin: 0;
     border-radius: var(--border-radius-sm);
     transition: all 0.2s ease;
