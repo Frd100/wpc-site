@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | West Paris Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactez West Paris Consulting, cabinet étudiant de conseil à l’Université Paris Nanterre.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo-wpc.svg" alt="Logo WPC" style="height:36px;">
+      WPC
+    </a>
+    <ul class="nav-links">
+      <li><a href="conseil.html">Expertises</a></li>
+      <li><a href="equipe.html">Équipe</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h1>Contact</h1>
+    <p>
+      Un projet, une question, ou envie de nous rejoindre ?<br>
+      Écrivez-nous à <a href="mailto:contact@wpc.fr">contact@wpc.fr</a> ou remplissez le formulaire ci-dessous.
+    </p>
+    <form style="max-width:400px;margin:2em 0;" method="POST" action="mailto:contact@wpc.fr">
+      <label for="nom">Nom</label><br>
+      <input id="nom" name="nom" type="text" required style="width:100%;padding:0.7em;margin:0.3em 0 1em 0;border:1px solid var(--border);border-radius:7px;"><br>
+      <label for="email">Email</label><br>
+      <input id="email" name="email" type="email" required style="width:100%;padding:0.7em;margin:0.3em 0 1em 0;border:1px solid var(--border);border-radius:7px;"><br>
+      <label for="msg">Message</label><br>
+      <textarea id="msg" name="msg" required rows="5" style="width:100%;padding:0.7em;border:1px solid var(--border);border-radius:7px;"></textarea><br>
+      <button type="submit" class="hero-btn" style="margin-top:1em;">Envoyer</button>
+    </form>
+    <a href="index.html" class="hero-btn" style="margin-top:1.5em;display:inline-block;">Retour accueil</a>
+  </main>
+  <footer>
+    <div>
+      © 2025 West Paris Consulting – Association étudiante, Université Paris Nanterre
+    </div>
+    <div class="footer-logos">
+      <img src="img/logo-uni.svg" alt="Université Paris Nanterre" class="footer-logo">
+      <img src="img/logo-wpc.svg" alt="WPC" class="footer-logo">
+    </div>
+  </footer>
+</body>
+</html>

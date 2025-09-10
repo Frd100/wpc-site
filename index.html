@@ -2,413 +2,52 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>West Paris Consulting – Conseil étudiant en stratégie & innovation</title>
+  <title>West Paris Consulting | Accueil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="West Paris Consulting, cabinet étudiant de conseil en stratégie et innovation, accompagne les organisations et associations de l’Université Paris Nanterre.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%23002147'/><text x='50%' y='50%' font-size='32' fill='white' font-family='Arial' text-anchor='middle' dominant-baseline='central'>W</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #002147;
-      --secondary: #275198;
-      --accent: #4f7cc7;
-      --light-blue: #eaf0fa;
-      --bg: #fff;
-      --text: #1a2330;
-      --muted: #6b7c93;
-      --card-bg: #f6f8fb;
-      --border: #e0e6ef;
-    }
-    html {scroll-behavior: smooth;}
-    body {
-      margin: 0;
-      background: var(--bg);
-      font-family: 'Lato', Arial, sans-serif;
-      color: var(--text);
-      font-size: 17px;
-      line-height: 1.65;
-    }
-    /* NAV */
-    nav {
-      width: 100%;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      position: fixed;
-      top: 0; left: 0; z-index: 100;
-      padding: 0 36px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      color: var(--primary);
-      letter-spacing: 1px;
-      text-decoration: none;
-    }
-    .logo-svg {width: 36px; height: 36px;}
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 36px;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: var(--primary);
-      text-decoration: none;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 500;
-      font-size: 16px;
-      padding: 6px 0;
-      border-bottom: 2.5px solid transparent;
-      transition: border 0.2s, color 0.2s;
-    }
-    nav a:hover, nav a:focus {
-      color: var(--accent);
-      border-bottom: 2.5px solid var(--accent);
-      outline: none;
-    }
-    /* HERO */
-    header {
-      background: var(--bg);
-      color: var(--primary);
-      padding: 110px 0 60px 0;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-    .container {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .hero-title {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      line-height: 1.1;
-      color: var(--primary);
-    }
-    .hero-baseline {
-      font-size: 1.18rem;
-      color: var(--muted);
-      margin-bottom: 30px;
-      font-family: 'Lato', Arial, sans-serif;
-      max-width: 580px;
-    }
-    .hero-btn {
-      background: var(--primary);
-      color: var(--bg);
-      padding: 13px 36px;
-      border-radius: 27px;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      border: none;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(39,81,152,0.06);
-      cursor: pointer;
-      display: inline-block;
-    }
-    .hero-btn:hover, .hero-btn:focus {
-      background: var(--secondary);
-      color: var(--bg);
-      outline: none;
-    }
-    /* SECTIONS */
-    section {
-      margin: 68px auto 0 auto;
-      max-width: 1040px;
-      padding: 0 24px;
-    }
-    h2 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      color: var(--primary);
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 0 0 36px 0;
-      text-align: left;
-    }
-    /* CARTES */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 32px;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(39,81,152,0.05);
-      padding: 32px 22px 28px 22px;
-      border: 1px solid var(--border);
-      text-align: left;
-      min-height: 160px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    .card h3 {
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-size: 1.11rem;
-      color: var(--secondary);
-      margin: 0 0 13px 0;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-    /* MISSION, ENGAGEMENTS */
-    .mission-text, .engagements-text {
-      max-width: 700px;
-      margin-bottom: 35px;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-    /* EQUIPE */
-    .equipe-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 30px;
-      margin-top: 25px;
-    }
-    .member-card {
-      background: var(--light-blue);
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      padding: 22px 16px;
-      text-align: left;
-      min-height: 140px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .member-card img {
-      width: 54px; height: 54px;
-      border-radius: 50%;
-      margin-bottom: 13px;
-      object-fit: cover;
-      background: var(--bg);
-      border: 2.5px solid var(--secondary);
-    }
-    .member-card strong {
-      display: block;
-      color: var(--primary);
-      font-size: 1.03rem;
-      margin-bottom: 4px;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-    .member-card span {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-    /* CONTACT */
-    .contact-section {
-      background: var(--card-bg);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      margin-top: 70px;
-      text-align: left;
-      padding: 40px 24px;
-    }
-    .contact-section h2 {
-      color: var(--primary);
-      margin-bottom: 19px;
-    }
-    .contact-section p {
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-size: 1.03rem;
-    }
-    .contact-btn {
-      background: var(--secondary);
-      color: var(--bg);
-      padding: 11px 26px;
-      border-radius: 27px;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      border: none;
-      transition: background 0.2s, color 0.2s;
-      cursor: pointer;
-      display: inline-block;
-    }
-    .contact-btn:hover, .contact-btn:focus {
-      background: var(--primary);
-      color: var(--bg);
-      outline: none;
-    }
-    /* FOOTER */
-    footer {
-      margin-top: 64px;
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-      padding: 27px 0 17px 0;
-      font-size: 1.01rem;
-    }
-    .footer-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 8px;
-    }
-    .footer-logo {
-      height: 28px;
-      opacity: 0.85;
-      display: inline-block;
-    }
-    /* ACCESSIBILITE */
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 1px;
-    }
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      nav, .container, section, .contact-section {padding-left: 18px; padding-right: 18px;}
-    }
-    @media (max-width: 700px) {
-      nav {padding: 0 8px;}
-      header {padding-top: 90px;}
-      .hero-title {font-size: 2rem;}
-      h2 {font-size: 1.15rem;}
-      .cards-grid, .equipe-grid {gap: 16px;}
-      section, .contact-section {padding-left: 7px; padding-right: 7px;}
-    }
-    @media (max-width: 540px) {
-      nav ul {gap: 12px;}
-      section, .contact-section {padding-left: 3vw; padding-right: 3vw;}
-    }
-  </style>
+  <meta name="description" content="Cabinet étudiant de conseil en stratégie et innovation, rattaché à l’Université Paris Nanterre.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
-  <!-- NAVIGATION -->
   <nav>
-    <a href="#" class="logo-area">
-      <svg class="logo-svg" viewBox="0 0 50 50" fill="none">
-        <rect width="50" height="50" rx="10" fill="#002147"/>
-        <text x="50%" y="56%" text-anchor="middle" fill="white" font-family="Montserrat" font-size="28" font-weight="bold">W</text>
-      </svg>
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo-wpc.svg" alt="Logo WPC" style="height:36px;">
       WPC
     </a>
-    <ul>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#expertises">Expertises</a></li>
-      <li><a href="#engagements">Engagements</a></li>
-      <li><a href="#equipe">Équipe</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links">
+      <li><a href="conseil.html">Expertises</a></li>
+      <li><a href="equipe.html">Équipe</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <!-- HERO -->
-  <header>
-    <div class="container">
-      <h1 class="hero-title">
-        West Paris Consulting<br>
-        <span style="font-size:1.15rem; color:var(--secondary); font-weight:500;">Conseil étudiant en stratégie & innovation</span>
-      </h1>
-      <p class="hero-baseline">
-        Cabinet étudiant fondé à l’Université Paris Nanterre, nous accompagnons les associations et organisations dans leurs enjeux stratégiques, organisationnels et digitaux.
-      </p>
-      <a href="#mission" class="hero-btn">Découvrir</a>
-    </div>
-  </header>
-  <!-- MISSION -->
-  <section id="mission">
-    <h2>Notre mission</h2>
-    <div class="mission-text">
-      <b>West Paris Consulting</b> a pour vocation d’apporter une expertise rigoureuse et engagée au service du monde associatif et institutionnel du campus.<br><br>
-      Nous mobilisons nos compétences pour accompagner la transformation, la structuration et l’innovation au sein de la communauté universitaire, tout en offrant aux étudiants un cadre professionnalisant unique.
-    </div>
-  </section>
-  <!-- EXPERTISES -->
-  <section id="expertises">
-    <h2>Nos expertises</h2>
-    <div class="cards-grid">
+  <main class="container">
+    <h1>West Paris Consulting</h1>
+    <p style="font-size:1.25rem; color:var(--muted); max-width:600px;">
+      Cabinet étudiant de conseil en stratégie, organisation et innovation, fondé à l’Université Paris Nanterre. Nous accompagnons associations, institutions et porteurs de projets du campus dans leurs enjeux de transformation.
+    </p>
+    <div class="card-grid">
       <div class="card">
-        <h3>Stratégie & Organisation</h3>
-        <p>Diagnostic, plan d’actions, feuille de route et pilotage de projets pour associations et institutions.</p>
+        <h3>Conseil stratégique</h3>
+        <p>Diagnostic, planification, accompagnement de projets à fort impact pour le monde associatif et institutionnel.</p>
       </div>
       <div class="card">
         <h3>Transformation digitale</h3>
-        <p>Audit, conception d’outils numériques, accompagnement à la digitalisation, UX et communication digitale.</p>
+        <p>Audit digital, création d’outils, amélioration de l’expérience usager, communication numérique.</p>
       </div>
       <div class="card">
         <h3>Accompagnement associatif</h3>
-        <p>Soutien à la gouvernance, structuration interne, développement de partenariats, gestion événementielle.</p>
-      </div>
-      <div class="card">
-        <h3>Formation & Sensibilisation</h3>
-        <p>Ateliers pour responsables associatifs : gestion de projet, communication, innovation, inclusion.</p>
+        <p>Structuration, gouvernance, gestion RH, développement des compétences.</p>
       </div>
     </div>
-  </section>
-  <!-- ENGAGEMENTS -->
-  <section id="engagements">
-    <h2>Nos engagements</h2>
-    <div class="engagements-text">
-      <ul style="padding-left:1.2em; margin:0;">
-        <li style="margin-bottom:8px;">Exigence et professionnalisme dans l’accompagnement de chaque projet</li>
-        <li style="margin-bottom:8px;">Esprit d’équipe et collaboration avec nos partenaires de l’Université Paris Nanterre</li>
-        <li style="margin-bottom:8px;">Innovation responsable et ouverte, au service de la communauté</li>
-        <li style="margin-bottom:8px;">Transmission et développement des compétences étudiantes</li>
-      </ul>
-    </div>
-  </section>
-  <!-- EQUIPE -->
-  <section id="equipe">
-    <h2>L’équipe</h2>
-    <div class="equipe-grid">
-      <div class="member-card">
-        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Photo membre">
-        <strong>Alexandre Durand</strong>
-        <span>Président – Étudiant M2 Management</span>
-      </div>
-      <div class="member-card">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Photo membre">
-        <strong>Sophia Benali</strong>
-        <span>VP Stratégie – Étudiante M2 Droit</span>
-      </div>
-      <div class="member-card">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Photo membre">
-        <strong>Lucas Fernandes</strong>
-        <span>Pôle digital – Étudiant L3 Informatique</span>
-      </div>
-      <div class="member-card">
-        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Photo membre">
-        <strong>Anna Moreau</strong>
-        <span>Pôle innovation – Étudiante M1 Sciences Sociales</span>
-      </div>
-    </div>
-  </section>
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
-    <h2>Contact & partenariat</h2>
-    <p>
-      Un projet ? Besoin d’un accompagnement ou envie de rejoindre l’équipe ?<br>
-      Écrivez-nous à <a href="mailto:contact@wpc.fr" style="color:var(--accent);font-weight:700;">contact@wpc.fr</a>
-    </p>
-    <a href="mailto:contact@wpc.fr" class="contact-btn">Nous contacter</a>
-  </section>
-  <!-- FOOTER -->
+    <a href="conseil.html" class="hero-btn" style="margin-top:1.5em;display:inline-block;">Nos expertises &rarr;</a>
+  </main>
   <footer>
     <div>
-      © 2025 West Paris Consulting – Association étudiante à l’Université Paris Nanterre<br>
-      <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener" style="color:var(--secondary);font-weight:600;">universite-parisnanterre.fr</a>
+      © 2025 West Paris Consulting – Association étudiante, Université Paris Nanterre
     </div>
     <div class="footer-logos">
-      <svg class="footer-logo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#275198"/><text x="50%" y="58%" text-anchor="middle" fill="white" font-family="Montserrat" font-size="19" font-weight="bold">N</text></svg>
-      <svg class="footer-logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#002147"/><text x="50%" y="58%" text-anchor="middle" fill="#4f7cc7" font-family="Montserrat" font-size="17" font-weight="bold">WPC</text></svg>
+      <img src="img/logo-uni.svg" alt="Université Paris Nanterre" class="footer-logo">
+      <img src="img/logo-wpc.svg" alt="WPC" class="footer-logo">
     </div>
   </footer>
 </body>
