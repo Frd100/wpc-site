@@ -38,7 +38,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// BCG Style Carousel
+// BCG Style Carousel - SUPPRIMÉ pour éviter le scroll automatique
+// Le carousel BCG utilise Flickity avec autoplay, ce qui cause le scroll automatique
+// Pour l'instant, on désactive complètement le carousel
+/*
 class BCGCarousel {
     constructor(container) {
         this.container = container;
@@ -156,13 +159,15 @@ class BCGCarousel {
     }
 }
 
-// Initialize carousel
+// Initialize carousel - SUPPRIMÉ
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.querySelector('.List12_items');
     if (carousel) {
         new BCGCarousel(carousel);
     }
 });
+*/
 
 // BCG Style Animations
 const observerOptions = {
