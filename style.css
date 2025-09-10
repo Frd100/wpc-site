@@ -121,9 +121,8 @@
 }
 
 .cmp-top-banner__button:hover {
-    background: var(--kpmg-blue);
-    border-color: var(--kpmg-blue);
-    transform: translateY(-1px);
+    background: var(--kpmg-blue-dark);
+    border-color: var(--kpmg-blue-dark);
 }
 
 /* KPMG Exact Base Styles */
@@ -245,7 +244,7 @@ body {
 /* KPMG Exact Main Navigation */
 .cmp-header__main-nav-bar {
     background: var(--kpmg-white);
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
 }
 
 .cmp-header__main-nav-bar--container {
