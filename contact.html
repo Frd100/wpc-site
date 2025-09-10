@@ -10,18 +10,22 @@
 </head>
 <body>
   <nav>
-    <a href="index.html" class="nav-logo">
+    <span class="nav-logo">
       <img src="img/logo-wpc.svg" alt="Logo WPC" style="height:36px;">
       WPC
-    </a>
+    </span>
     <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
       <li><a href="conseil.html">Expertises</a></li>
       <li><a href="equipe.html">Équipe</a></li>
       <li><a href="contact.html" aria-current="page">Contact</a></li>
     </ul>
   </nav>
   <main class="container">
-    <h1>Contact</h1>
+    <section class="hero" style="margin-top:2em;">
+      <small>Contact</small>
+      <h1>Nous contacter</h1>
+    </section>
     <p>
       Un projet, une question, ou envie de nous rejoindre ?<br>
       Écrivez-nous à <a href="mailto:contact@wpc.fr">contact@wpc.fr</a> ou remplissez le formulaire ci-dessous.
@@ -33,13 +37,13 @@
       <input id="email" name="email" type="email" required style="width:100%;padding:0.7em;margin:0.3em 0 1em 0;border:1px solid var(--border);border-radius:7px;"><br>
       <label for="msg">Message</label><br>
       <textarea id="msg" name="msg" required rows="5" style="width:100%;padding:0.7em;border:1px solid var(--border);border-radius:7px;"></textarea><br>
-      <button type="submit" class="hero-btn" style="margin-top:1em;">Envoyer</button>
+      <button type="submit" class="cta-btn" style="margin-top:1em;">Envoyer</button>
     </form>
-    <a href="index.html" class="hero-btn" style="margin-top:1.5em;display:inline-block;">Retour accueil</a>
   </main>
   <footer>
-    <div>
+    <div class="footer-links">
       © 2025 West Paris Consulting – Association étudiante, Université Paris Nanterre
+      | <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener">universite-parisnanterre.fr</a>
     </div>
     <div class="footer-logos">
       <img src="img/logo-uni.svg" alt="Université Paris Nanterre" class="footer-logo">
