@@ -8,37 +8,85 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
+      background: #f9f9f9;
+      color: #333;
     }
     header {
-      background: #002147;
+      background: #002147; /* bleu sobre */
       color: white;
-      padding: 50px 20px;
+      padding: 80px 20px;
+      text-align: center;
     }
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
     }
     h1, h2 {
       margin: 20px 0;
     }
+    footer {
+      background: #002147;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
+  <!-- En-tête -->
   <header>
-    <h1>West Paris Consulting</h1>
-    <p>Association étudiante – Université Paris Nanterre</p>
+    <h1 class="title">West Paris Consulting</h1>
+    <p class="subtitle">Association étudiante – Université Paris Nanterre</p>
   </header>
-  <section>
+
+  <!-- Mission -->
+  <section class="section">
     <h2>Notre mission</h2>
     <p>Accompagner la communauté universitaire dans ses projets organisationnels, stratégiques et digitaux.</p>
   </section>
-  <section>
+
+  <!-- Valeurs -->
+  <section class="section">
     <h2>Nos valeurs</h2>
     <p>Exigence • Coopération • Innovation • Responsabilité</p>
   </section>
-  <section>
+
+  <!-- Objectifs -->
+  <section class="section">
+    <h2>Objectifs 2025–2026</h2>
+    <p>Réaliser une enquête de satisfaction, accompagner une association partenaire et développer un outil digital simple pour améliorer la vie de campus.</p>
+  </section>
+
+  <!-- Contact -->
+  <section class="section">
     <h2>Contact</h2>
     <p>Email : contact@wpc.fr (exemple)</p>
   </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>© 2025 West Paris Consulting – Université Paris Nanterre</p>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    // Animation d'entrée du header
+    gsap.from(".title", {y: -50, opacity: 0, duration: 1});
+    gsap.from(".subtitle", {y: 30, opacity: 0, duration: 1, delay: 0.5});
+
+    // Animation des sections au scroll
+    gsap.utils.toArray(".section").forEach(section => {
+      gsap.from(section, {
+        scrollTrigger: section,
+        y: 100,
+        opacity: 0,
+        duration: 1
+      });
+    });
+  </script>
 </body>
 </html>
