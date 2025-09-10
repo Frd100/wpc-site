@@ -1,11 +1,13 @@
+// BCG Style Interactions
+
 // Navigation mobile
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const headerNav = document.querySelector('.header-nav');
 
-if (hamburger && navMenu) {
+if (hamburger && headerNav) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        headerNav.classList.toggle('active');
     });
 }
 
@@ -15,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = target.offsetTop - 80; // Account for fixed header
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -24,19 +26,144 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar transparente au scroll
+// Header scroll effect
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
+    const header = document.querySelector('.header');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = 'none';
     }
 });
 
-// Animation des éléments au scroll
+// BCG Style Carousel
+class BCGCarousel {
+    constructor(container) {
+        this.container = container;
+        this.items = container.querySelectorAll('.List12_item');
+        this.currentIndex = 0;
+        this.isAutoPlaying = true;
+        this.autoPlayInterval = null;
+        this.autoPlayDelay = 5000;
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupAutoPlay();
+        this.addTouchSupport();
+        this.addKeyboardSupport();
+        this.addHoverPause();
+    }
+    
+    setupAutoPlay() {
+        if (this.isAutoPlaying) {
+            this.autoPlayInterval = setInterval(() => {
+                this.next();
+            }, this.autoPlayDelay);
+        }
+    }
+    
+    next() {
+        this.currentIndex = (this.currentIndex + 1) % this.items.length;
+        this.scrollToItem(this.currentIndex);
+    }
+    
+    prev() {
+        this.currentIndex = this.currentIndex === 0 ? this.items.length - 1 : this.currentIndex - 1;
+        this.scrollToItem(this.currentIndex);
+    }
+    
+    scrollToItem(index) {
+        const item = this.items[index];
+        if (item) {
+            item.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+    }
+    
+    addTouchSupport() {
+        let startX = 0;
+        let startY = 0;
+        let isScrolling = false;
+        
+        this.container.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isScrolling = false;
+        });
+        
+        this.container.addEventListener('touchmove', (e) => {
+            if (!startX || !startY) return;
+            
+            const diffX = startX - e.touches[0].clientX;
+            const diffY = startY - e.touches[0].clientY;
+            
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                isScrolling = true;
+                e.preventDefault();
+            }
+        });
+        
+        this.container.addEventListener('touchend', (e) => {
+            if (!isScrolling) return;
+            
+            const diffX = startX - e.changedTouches[0].clientX;
+            const threshold = 50;
+            
+            if (Math.abs(diffX) > threshold) {
+                if (diffX > 0) {
+                    this.next();
+                } else {
+                    this.prev();
+                }
+            }
+            
+            startX = 0;
+            startY = 0;
+            isScrolling = false;
+        });
+    }
+    
+    addKeyboardSupport() {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.prev();
+            } else if (e.key === 'ArrowRight') {
+                this.next();
+            }
+        });
+    }
+    
+    addHoverPause() {
+        this.container.addEventListener('mouseenter', () => {
+            if (this.autoPlayInterval) {
+                clearInterval(this.autoPlayInterval);
+            }
+        });
+        
+        this.container.addEventListener('mouseleave', () => {
+            if (this.isAutoPlaying) {
+                this.setupAutoPlay();
+            }
+        });
+    }
+}
+
+// Initialize carousel
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.List12_items');
+    if (carousel) {
+        new BCGCarousel(carousel);
+    }
+});
+
+// BCG Style Animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -52,7 +179,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observer les éléments à animer
-document.querySelectorAll('.expertise-card, .team-card, .service-feature, .info-card').forEach(el => {
+document.querySelectorAll('.Promo20, .expertise-card, .team-card, .service-feature, .info-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease';
@@ -65,95 +192,8 @@ chartBars.forEach((bar, index) => {
     bar.style.animationDelay = `${index * 0.2}s`;
 });
 
-// Parallax effect pour le hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroPattern = document.querySelector('.hero-pattern');
-    if (heroPattern) {
-        heroPattern.style.transform = `skewX(-15deg) translateX(${30 + scrolled * 0.1}%)`;
-    }
-});
-
-// Animation des statistiques du hero
-const animateCounters = () => {
-    const counters = document.querySelectorAll('.stat-number');
-    counters.forEach(counter => {
-        const target = parseInt(counter.textContent.replace(/\D/g, ''));
-        const increment = target / 50;
-        let current = 0;
-        
-        const updateCounter = () => {
-            if (current < target) {
-                current += increment;
-                counter.textContent = Math.ceil(current) + (counter.textContent.includes('+') ? '+' : '') + (counter.textContent.includes('%') ? '%' : '');
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = counter.textContent;
-            }
-        };
-        
-        updateCounter();
-    });
-};
-
-// Déclencher l'animation des compteurs quand le hero est visible
-const heroObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounters();
-            heroObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    heroObserver.observe(heroSection);
-}
-
-// Effet de typing pour le titre principal
-const typeWriter = (element, text, speed = 100) => {
-    let i = 0;
-    element.innerHTML = '';
-    
-    const type = () => {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    };
-    
-    type();
-};
-
-// Animation des titres de section
-const animateTitles = () => {
-    const titles = document.querySelectorAll('.section-header h2');
-    titles.forEach(title => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    title.style.opacity = '1';
-                    title.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.3 });
-        
-        title.style.opacity = '0';
-        title.style.transform = 'translateY(30px)';
-        title.style.transition = 'all 0.8s ease';
-        observer.observe(title);
-    });
-};
-
-// Initialiser les animations
-document.addEventListener('DOMContentLoaded', () => {
-    animateTitles();
-});
-
-// Effet de hover pour les cartes
-document.querySelectorAll('.expertise-card, .team-card, .info-card').forEach(card => {
+// BCG Style Hover Effects
+document.querySelectorAll('.Promo20, .expertise-card, .team-card, .info-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-8px) scale(1.02)';
     });
@@ -174,27 +214,7 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 });
 
-// Effet de révélation progressive pour les sections
-const revealSections = () => {
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        observer.observe(section);
-    });
-};
-
-// Initialiser les révélation de sections
-revealSections();
-
-// Gestion du formulaire de contact
+// BCG Style Form Handling
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -222,7 +242,64 @@ if (contactForm) {
     });
 }
 
-// Performance: Lazy loading des images
+// BCG Style Search Functionality
+const searchButton = document.querySelector('.header-search-button');
+if (searchButton) {
+    searchButton.addEventListener('click', () => {
+        // Toggle search overlay
+        const searchOverlay = document.createElement('div');
+        searchOverlay.className = 'search-overlay';
+        searchOverlay.innerHTML = `
+            <div class="search-modal">
+                <div class="search-header">
+                    <h3>Rechercher</h3>
+                    <button class="search-close">&times;</button>
+                </div>
+                <div class="search-content">
+                    <input type="text" placeholder="Rechercher sur le site..." class="search-input">
+                    <div class="search-results"></div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(searchOverlay);
+        
+        // Close search
+        const closeBtn = searchOverlay.querySelector('.search-close');
+        closeBtn.addEventListener('click', () => {
+            document.body.removeChild(searchOverlay);
+        });
+        
+        // Close on overlay click
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) {
+                document.body.removeChild(searchOverlay);
+            }
+        });
+    });
+}
+
+// BCG Style Scroll Reveal
+const revealSections = () => {
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(section);
+    });
+};
+
+// Initialize scroll reveal
+revealSections();
+
+// BCG Style Performance Optimizations
 const lazyImages = document.querySelectorAll('img[data-src]');
 const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -237,14 +314,80 @@ const imageObserver = new IntersectionObserver((entries) => {
 
 lazyImages.forEach(img => imageObserver.observe(img));
 
-// Smooth reveal animation pour les éléments
+// BCG Style Smooth Reveal Animation
 const addRevealAnimation = () => {
-    const revealElements = document.querySelectorAll('.expertise-card, .team-card, .service-feature, .info-card');
+    const revealElements = document.querySelectorAll('.Promo20, .expertise-card, .team-card, .service-feature, .info-card');
     
     revealElements.forEach((el, index) => {
         el.style.animationDelay = `${index * 0.1}s`;
     });
 };
 
-// Initialiser les animations de révélation
+// Initialize reveal animations
 addRevealAnimation();
+
+// BCG Style ModuleHeader Animation
+const animateModuleHeaders = () => {
+    const moduleHeaders = document.querySelectorAll('.ModuleHeader');
+    
+    moduleHeaders.forEach(header => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const eyebrow = entry.target.querySelector('.ModuleHeader-eyebrow');
+                    const title = entry.target.querySelector('.ModuleHeader-title');
+                    const content = entry.target.querySelector('.ModuleHeader-content');
+                    
+                    if (eyebrow) {
+                        eyebrow.style.opacity = '1';
+                        eyebrow.style.transform = 'translateY(0)';
+                    }
+                    
+                    setTimeout(() => {
+                        if (title) {
+                            title.style.opacity = '1';
+                            title.style.transform = 'translateY(0)';
+                        }
+                    }, 200);
+                    
+                    setTimeout(() => {
+                        if (content) {
+                            content.style.opacity = '1';
+                            content.style.transform = 'translateY(0)';
+                        }
+                    }, 400);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        // Set initial styles
+        const eyebrow = header.querySelector('.ModuleHeader-eyebrow');
+        const title = header.querySelector('.ModuleHeader-title');
+        const content = header.querySelector('.ModuleHeader-content');
+        
+        if (eyebrow) {
+            eyebrow.style.opacity = '0';
+            eyebrow.style.transform = 'translateY(30px)';
+            eyebrow.style.transition = 'all 0.6s ease';
+        }
+        
+        if (title) {
+            title.style.opacity = '0';
+            title.style.transform = 'translateY(30px)';
+            title.style.transition = 'all 0.6s ease';
+        }
+        
+        if (content) {
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(30px)';
+            content.style.transition = 'all 0.6s ease';
+        }
+        
+        observer.observe(header);
+    });
+};
+
+// Initialize ModuleHeader animations
+document.addEventListener('DOMContentLoaded', () => {
+    animateModuleHeaders();
+});
