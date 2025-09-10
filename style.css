@@ -130,13 +130,15 @@
 .main-navigation {
     background: var(--kpmg-white);
     border-bottom: 1px solid var(--kpmg-gray-200);
-    padding: var(--spacing-sm) 0;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
 }
 
 .main-navigation__container {
     max-width: 100%;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    margin: 0;
+    padding: 0;
 }
 
 .main-navigation__content {
@@ -144,6 +146,9 @@
     justify-content: center;
     align-items: center;
     gap: var(--spacing-xl);
+    margin: 0;
+    padding: var(--spacing-sm) 0;
+    line-height: 1;
 }
 
 .main-navigation__link {
@@ -151,7 +156,7 @@
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     transition: all 0.2s ease;
     white-space: nowrap;
