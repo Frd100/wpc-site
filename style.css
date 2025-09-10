@@ -425,7 +425,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 60%;
     height: 100%;
     z-index: 1;
 }
@@ -439,9 +439,9 @@ body {
 .cmp-hero-fbv__content {
     position: relative;
     z-index: 2;
-    width: 50%;
+    width: 40%;
     padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
-    background: linear-gradient(135deg, #00338D 0%, #0047AB 100%);
+    background: #00338D;
 }
 
 .cmp-hero-fbv__content-container {
@@ -913,12 +913,12 @@ body {
 /* KPMG Exact Responsive Design */
 @media (max-width: 1024px) {
     .cmp-hero-fbv__content {
-        width: 60%;
+        width: 50%;
         padding: var(--spacing-3xl) var(--spacing-2xl);
     }
     
     .cmp-hero-fbv__image {
-        width: 40%;
+        width: 50%;
     }
     
     .cmp-hero-fbv__title {
