@@ -149,7 +149,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 0;
-    padding: var(--spacing-sm) 0 var(--spacing-md) 0;
+    padding: var(--spacing-md) 0 var(--spacing-md) 0;
     line-height: 1;
     gap: var(--spacing-2xl);
 }
