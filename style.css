@@ -142,11 +142,12 @@
 
 .main-navigation__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0;
     padding: var(--spacing-sm) 0 var(--spacing-md) 0;
     line-height: 1;
+    gap: var(--spacing-2xl);
 }
 
 .main-navigation__logo {
@@ -172,10 +173,10 @@
 
 .main-navigation__links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-xl);
-    flex: 1;
+    flex: 0 0 auto;
 }
 
 .main-navigation__link {
