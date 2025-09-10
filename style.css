@@ -116,9 +116,9 @@ body {
 
 .cmp-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0;
 }
 
 .aem-Grid {
@@ -172,7 +172,7 @@ body {
 }
 
 .cmp-menu-item-bar--container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
@@ -260,7 +260,7 @@ body {
 }
 
 .cmp-header__main-nav-bar--container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
@@ -403,6 +403,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
+    width: 100%;
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
@@ -531,8 +532,8 @@ body {
 }
 
 .utils-padding-horizontal--medium {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-2xl);
+    padding-right: var(--spacing-2xl);
 }
 
 .cmp-column-control {
@@ -775,7 +776,7 @@ body {
 }
 
 .cmp-about-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     display: grid;
@@ -867,7 +868,7 @@ body {
 }
 
 .cmp-footer__container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
