@@ -52,10 +52,10 @@ class BCGCarousel {
     }
     
     init() {
-        this.setupAutoPlay();
-        this.addTouchSupport();
+        // this.setupAutoPlay(); // Complètement désactivé pour éviter le scroll automatique
+        // this.addTouchSupport(); // Désactivé temporairement
         this.addKeyboardSupport();
-        this.addHoverPause();
+        // this.addHoverPause(); // Désactivé temporairement
     }
     
     setupAutoPlay() {
@@ -131,13 +131,14 @@ class BCGCarousel {
     }
     
     addKeyboardSupport() {
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                this.prev();
-            } else if (e.key === 'ArrowRight') {
-                this.next();
-            }
-        });
+        // Désactivé temporairement pour éviter le scroll automatique
+        // document.addEventListener('keydown', (e) => {
+        //     if (e.key === 'ArrowLeft') {
+        //         this.prev();
+        //     } else if (e.key === 'ArrowRight') {
+        //         this.next();
+        //     }
+        // });
     }
     
     addHoverPause() {
