@@ -129,7 +129,6 @@
 /* Navigation principale */
 .main-navigation {
     background: var(--kpmg-white);
-    border-bottom: 1px solid var(--kpmg-gray-200);
     padding: 0;
     margin: 0;
     line-height: 1;
