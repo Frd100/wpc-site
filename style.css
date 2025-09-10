@@ -271,19 +271,31 @@ body {
     justify-content: space-between;
 }
 
+/* Override pour la structure 3 colonnes */
+.cmp-header__main-nav-bar--inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 20px;
+    width: 100%;
+}
+
 /* KPMG Exact Navigation Structure - 3 columns */
 .cmp-header__main-nav-bar--column:first-child {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
     flex: 0 0 auto;
+    min-width: 0;
 }
 
 .cmp-header__main-nav-bar--column[data-cmp-header-main-nav] {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
 }
 
 .cmp-header__main-nav-bar--column:last-child {
@@ -291,6 +303,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     flex: 0 0 auto;
+    min-width: 0;
 }
 
 /* KPMG Exact Mobile Toggle */
