@@ -215,7 +215,7 @@ document.querySelectorAll('.btn').forEach(btn => {
 });
 
 // BCG Style Form Handling
-const contactForm = document.querySelector('.contact-form form');
+const contactForm = document.querySelector('#contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
