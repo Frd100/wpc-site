@@ -215,7 +215,7 @@
 }
 
 .main-navigation__link:hover::after {
-    width: 100%;
+    width: calc(100% - var(--spacing-sm) * 2);
 }
 
 /* KPMG Exact Base Styles */
