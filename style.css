@@ -200,10 +200,10 @@
 .main-navigation__link::after {
     content: '';
     position: absolute;
-    bottom: var(--spacing-xs);
+    bottom: 0;
     left: 50%;
     width: 0;
-    height: 2px;
+    height: 3px;
     background: var(--kpmg-blue);
     transition: all 0.3s ease;
     transform: translateX(-50%);
