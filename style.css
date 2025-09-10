@@ -205,24 +205,12 @@ body {
     position: relative;
 }
 
-.hero-image-placeholder {
+.hero-image {
     width: 100%;
     height: 400px;
-    background: #000000;
+    object-fit: cover;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.hero-image-placeholder::before {
-    content: "IMAGE HERO";
-    position: absolute;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: var(--font-weight-medium);
-    opacity: 0.7;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .cmp-hero-fbv__title {
@@ -418,15 +406,35 @@ body {
 
 /* KPMG Contact Section */
 .cmp-contact-section {
-    background: var(--kpmg-blue);
-    color: var(--text-white);
+    position: relative;
     border-radius: 12px;
+    overflow: hidden;
     text-align: center;
 }
 
+.cmp-contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.contact-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .cmp-contact-content {
+    position: relative;
+    z-index: 2;
     max-width: 600px;
     margin: 0 auto;
+    padding: 4rem 2rem;
+    background: rgba(0, 51, 141, 0.9);
+    color: var(--text-white);
 }
 
 .cmp-contact-title {
