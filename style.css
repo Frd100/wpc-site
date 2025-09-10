@@ -244,8 +244,8 @@ body {
 /* KPMG Exact Main Navigation */
 .cmp-header__main-nav-bar {
     background: var(--kpmg-white);
-    padding: var(--spacing-sm) 0;
-    min-height: 60px;
+    padding: var(--spacing-md) 0;
+    min-height: 80px;
     display: flex;
     align-items: center;
 }
@@ -260,7 +260,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 40px;
+    min-height: 60px;
 }
 
 .cmp-header__main-nav-bar--column {
@@ -423,7 +423,7 @@ body {
 .cmp-hero-fbv {
     position: relative;
     width: 100%;
-    min-height: 60vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     margin: 0;
@@ -450,7 +450,7 @@ body {
     position: relative;
     z-index: 2;
     width: 50%;
-    padding: var(--spacing-2xl) var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl);
+    padding: var(--spacing-4xl) var(--spacing-3xl) var(--spacing-4xl) var(--spacing-2xl);
     background: #00338D;
 }
 
