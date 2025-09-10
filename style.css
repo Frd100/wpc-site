@@ -84,6 +84,46 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* WPC Top Banner */
+.cmp-top-banner {
+    background: var(--kpmg-blue-dark);
+    width: 100%;
+    padding: var(--spacing-sm) 0;
+    position: relative;
+    z-index: 1001;
+}
+
+.cmp-top-banner__container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.cmp-top-banner__content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cmp-top-banner__button {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--text-white);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease;
+}
+
+.cmp-top-banner__button:hover {
+    background: var(--text-white);
+    color: var(--kpmg-blue-dark);
+    transform: translateY(-1px);
+}
+
 /* KPMG Exact Base Styles */
 * {
     margin: 0;
@@ -1020,6 +1060,15 @@ body {
 }
 
 @media (max-width: 768px) {
+    .cmp-top-banner__content {
+        justify-content: center;
+    }
+    
+    .cmp-top-banner__button {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
     .cmp-menu-item-bar--inner {
         flex-direction: column;
         gap: var(--spacing-sm);
