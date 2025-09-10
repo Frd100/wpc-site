@@ -1,216 +1,353 @@
-// KPMG Style Interactions
+// KPMG Exact JavaScript - Clone Parfait
 
-// Mobile menu toggle
-const mobileMenuBtn = document.querySelector('.cmp-navigation__mobile-menu-btn');
-const header = document.querySelector('.cmp-header');
-
-if (mobileMenuBtn && header) {
-    mobileMenuBtn.addEventListener('click', () => {
-        header.classList.toggle('mobile-menu-open');
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // KPMG Exact Mobile Navigation
+    const mobileToggle = document.querySelector('[data-cmp-mobile-toggle]');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            
+            // Toggle mobile menu visibility
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('mobile-menu--open');
+            }
+            
+            // Toggle body scroll
+            document.body.classList.toggle('mobile-menu-open');
+        });
+    }
+    
+    // KPMG Exact Smooth Scrolling
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
-}
-
-// Smooth scrolling pour les liens d'ancrage
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 120; // Account for fixed header
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+    
+    // KPMG Exact Header Scroll Effect
+    const header = document.querySelector('.cmp-header');
+    let lastScrollY = window.scrollY;
+    
+    function updateHeaderOnScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (header) {
+            if (currentScrollY > 100) {
+                header.classList.add('header--scrolled');
+            } else {
+                header.classList.remove('header--scrolled');
+            }
+            
+            // Hide/show header on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                header.classList.add('header--hidden');
+            } else {
+                header.classList.remove('header--hidden');
+            }
+        }
+        
+        lastScrollY = currentScrollY;
+    }
+    
+    // Throttle scroll event
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeaderOnScroll);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', function() {
+        requestTick();
+        ticking = false;
+    });
+    
+    // KPMG Exact Language Selector
+    const langSelector = document.querySelector('.cmp-lang-selector__toggle-btn');
+    const langDropdown = document.querySelector('.language-selector__side-navbar');
+    
+    if (langSelector && langDropdown) {
+        langSelector.addEventListener('click', function() {
+            const isOpen = langDropdown.classList.contains('language-selector--open');
+            
+            if (isOpen) {
+                langDropdown.classList.remove('language-selector--open');
+                this.setAttribute('aria-expanded', 'false');
+            } else {
+                langDropdown.classList.add('language-selector--open');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+        
+        // Close language selector when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!langSelector.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('language-selector--open');
+                langSelector.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    
+    // KPMG Exact Search Toggle
+    const searchToggle = document.querySelector('.cmp-search-toggle__inner');
+    const searchForm = document.querySelector('.cmp-search-form');
+    
+    if (searchToggle && searchForm) {
+        searchToggle.addEventListener('click', function() {
+            const isOpen = searchForm.classList.contains('search-form--open');
+            
+            if (isOpen) {
+                searchForm.classList.remove('search-form--open');
+                this.setAttribute('aria-expanded', 'false');
+            } else {
+                searchForm.classList.add('search-form--open');
+                this.setAttribute('aria-expanded', 'true');
+                // Focus on search input
+                const searchInput = searchForm.querySelector('input[type="search"]');
+                if (searchInput) {
+                    setTimeout(() => searchInput.focus(), 100);
+                }
+            }
+        });
+    }
+    
+    // KPMG Exact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Envoi en cours...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                submitButton.textContent = 'Message envoyé !';
+                submitButton.style.background = '#00B04F';
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    submitButton.style.background = '';
+                }, 3000);
+            }, 2000);
+        });
+    }
+    
+    // KPMG Exact Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.cmp-expertise-item, .cmp-secteur-item, .cmp-about-content');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+    
+    // KPMG Exact Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+        // ESC key closes modals/dropdowns
+        if (e.key === 'Escape') {
+            // Close mobile menu
+            if (mobileMenu && mobileMenu.classList.contains('mobile-menu--open')) {
+                mobileToggle.click();
+            }
+            
+            // Close language selector
+            if (langDropdown && langDropdown.classList.contains('language-selector--open')) {
+                langSelector.click();
+            }
+            
+            // Close search form
+            if (searchForm && searchForm.classList.contains('search-form--open')) {
+                searchToggle.click();
+            }
         }
     });
-});
-
-// Header scroll effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.cmp-header');
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 1)';
-        header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+    
+    // KPMG Exact Accessibility Enhancements
+    const focusableElements = document.querySelectorAll(
+        'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    // Trap focus in mobile menu when open
+    function trapFocus(element) {
+        const focusableContent = element.querySelectorAll(focusableElements);
+        const firstFocusableElement = focusableContent[0];
+        const lastFocusableElement = focusableContent[focusableContent.length - 1];
+        
+        element.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                if (e.shiftKey) {
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            }
+        });
     }
+    
+    if (mobileMenu) {
+        trapFocus(mobileMenu);
+    }
+    
+    // KPMG Exact Performance Optimizations
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    lazyImages.forEach(img => {
+        imageObserver.observe(img);
+    });
+    
+    // KPMG Exact Error Handling
+    window.addEventListener('error', function(e) {
+        console.error('KPMG Clone Error:', e.error);
+    });
+    
+    // KPMG Exact Analytics (placeholder)
+    function trackEvent(eventName, eventData) {
+        // Placeholder for analytics tracking
+        console.log('Analytics Event:', eventName, eventData);
+    }
+    
+    // Track button clicks
+    const trackableButtons = document.querySelectorAll('.cmp-button, .cmp-hero-fbv__action-link');
+    trackableButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const buttonText = this.textContent.trim();
+            trackEvent('button_click', {
+                button_text: buttonText,
+                button_href: this.href || '#',
+                page: window.location.pathname
+            });
+        });
+    });
+    
+    // KPMG Exact Console Welcome
+    console.log('%c🎯 KPMG Clone Parfait - WPC', 'color: #00338D; font-size: 20px; font-weight: bold;');
+    console.log('%cSite développé avec la structure exacte de KPMG', 'color: #00B04F; font-size: 14px;');
+    console.log('%cToutes les classes et interactions reproduites à l\'identique', 'color: #6C757D; font-size: 12px;');
+    
 });
 
-// Language selector toggle
-const langSelector = document.querySelector('.cmp-lang-selector__toggle-btn');
-if (langSelector) {
-    langSelector.addEventListener('click', () => {
-        // Toggle language dropdown (simplified for demo)
-        console.log('Language selector clicked');
-    });
-}
-
-// Search button functionality
-const searchBtn = document.querySelector('.cmp-navigation__search-btn');
-if (searchBtn) {
-    searchBtn.addEventListener('click', () => {
-        // Toggle search functionality (simplified for demo)
-        console.log('Search clicked');
-    });
-}
-
-// Contact form handling (if exists)
-const contactForm = document.querySelector('#contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Animation de soumission
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = '<span>Envoi en cours...</span>';
-        submitBtn.disabled = true;
-        
-        // Simuler l'envoi
-        setTimeout(() => {
-            submitBtn.innerHTML = '<span>Message envoyé !</span>';
-            submitBtn.style.background = '#00A651';
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.background = '';
-                contactForm.reset();
-            }, 2000);
-        }, 1000);
-    });
-}
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+// KPMG Exact Utility Functions
+const KPMGUtils = {
+    // Debounce function for performance
+    debounce: function(func, wait, immediate) {
+        let timeout;
+        return function executedFunction() {
+            const context = this;
+            const args = arguments;
+            const later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    },
+    
+    // Throttle function for scroll events
+    throttle: function(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    },
+    
+    // Check if element is in viewport
+    isInViewport: function(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    },
+    
+    // Get element offset
+    getOffset: function(element) {
+        const rect = element.getBoundingClientRect();
+        return {
+            top: rect.top + window.scrollY,
+            left: rect.left + window.scrollX
+        };
+    }
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+// KPMG Exact CSS Classes for JavaScript
+const KPMGClasses = {
+    mobileMenuOpen: 'mobile-menu-open',
+    headerScrolled: 'header--scrolled',
+    headerHidden: 'header--hidden',
+    languageSelectorOpen: 'language-selector--open',
+    searchFormOpen: 'search-form--open',
+    animateIn: 'animate-in',
+    lazy: 'lazy'
+};
 
-// Observer les éléments à animer
-document.querySelectorAll('.cmp-expertise-item, .cmp-secteur-item, .cmp-about-content, .cmp-contact-content').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease';
-    observer.observe(el);
-});
-
-// Button hover effects
-document.querySelectorAll('.cmp-button').forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-        btn.style.transform = 'translateY(-2px)';
-    });
-    
-    btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translateY(0)';
-    });
-});
-
-// Expertise items hover effects
-document.querySelectorAll('.cmp-expertise-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-4px)';
-        item.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-        item.style.boxShadow = 'none';
-    });
-});
-
-// Secteur items hover effects
-document.querySelectorAll('.cmp-secteur-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-4px)';
-        item.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
-    });
-    
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-        item.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-    });
-});
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('WPC KPMG-style site loaded successfully!');
-    
-    // Add loading animation
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// Handle window resize
-window.addEventListener('resize', () => {
-    // Responsive adjustments if needed
-    const header = document.querySelector('.cmp-header');
-    if (window.innerWidth <= 768) {
-        header.classList.add('mobile');
-    } else {
-        header.classList.remove('mobile');
-    }
-});
-
-// Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // ESC key to close mobile menu
-    if (e.key === 'Escape') {
-        const header = document.querySelector('.cmp-header');
-        if (header.classList.contains('mobile-menu-open')) {
-            header.classList.remove('mobile-menu-open');
-        }
-    }
-});
-
-// Add focus management for accessibility
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-        document.body.classList.add('keyboard-navigation');
-    }
-});
-
-document.addEventListener('mousedown', () => {
-    document.body.classList.remove('keyboard-navigation');
-});
-
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+// Export for potential module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { KPMGUtils, KPMGClasses };
 }
-
-// Apply debounced scroll effect
-const debouncedScrollEffect = debounce(() => {
-    const header = document.querySelector('.cmp-header');
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 1)';
-        header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
-    }
-}, 10);
-
-window.addEventListener('scroll', debouncedScrollEffect);

@@ -1,112 +1,213 @@
-/* KPMG EXACT STYLES - From kpmg.com source code */
+/* KPMG Exact CSS - Clone Parfait */
 
-/* Reset and Base Styles */
+/* KPMG Exact CSS Variables */
+:root {
+    /* KPMG Primary Colors */
+    --kpmg-blue: #00338D;
+    --kpmg-blue-light: #0047AB;
+    --kpmg-blue-dark: #002366;
+    --kpmg-green: #00B04F;
+    --kpmg-green-light: #00D65A;
+    --kpmg-green-dark: #008A3D;
+    
+    /* KPMG Neutrals */
+    --kpmg-white: #FFFFFF;
+    --kpmg-black: #000000;
+    --kpmg-gray-100: #F8F9FA;
+    --kpmg-gray-200: #E9ECEF;
+    --kpmg-gray-300: #DEE2E6;
+    --kpmg-gray-400: #CED4DA;
+    --kpmg-gray-500: #ADB5BD;
+    --kpmg-gray-600: #6C757D;
+    --kpmg-gray-700: #495057;
+    --kpmg-gray-800: #343A40;
+    --kpmg-gray-900: #212529;
+    
+    /* KPMG Text Colors */
+    --text-primary: #212529;
+    --text-secondary: #6C757D;
+    --text-white: #FFFFFF;
+    --text-muted: #ADB5BD;
+    
+    /* KPMG Background Colors */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-dark: #212529;
+    --bg-blue: #00338D;
+    
+    /* KPMG Fonts */
+    --font-family-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-condensed: 'Open Sans Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-icons: 'Material Icons', sans-serif;
+    
+    /* KPMG Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* KPMG Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    
+    /* KPMG Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    
+    /* KPMG Border Radius */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    
+    /* KPMG Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* KPMG Exact Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    /* KPMG Primary Colors */
-    --kpmg-blue: #00338D;
-    --kpmg-blue-light: #0047AB;
-    --kpmg-blue-dark: #001F5C;
-    --kpmg-cobalt-blue: #00338D;
-    
-    /* KPMG Secondary Colors */
-    --kpmg-green: #00A651;
-    --kpmg-green-light: #00C853;
-    --kpmg-green-dark: #007A3A;
-    
-    /* KPMG Neutrals */
-    --kpmg-white: #FFFFFF;
-    --kpmg-black: #000000;
-    --kpmg-gray-100: #F5F5F5;
-    --kpmg-gray-200: #EEEEEE;
-    --kpmg-gray-300: #E0E0E0;
-    --kpmg-gray-400: #BDBDBD;
-    --kpmg-gray-500: #9E9E9E;
-    --kpmg-gray-600: #757575;
-    --kpmg-gray-700: #616161;
-    --kpmg-gray-800: #424242;
-    --kpmg-gray-900: #212121;
-    
-    /* KPMG Text Colors */
-    --text-primary: #212121;
-    --text-secondary: #757575;
-    --text-white: #FFFFFF;
-    
-    /* KPMG Background Colors */
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F5F5F5;
-    --bg-dark: #00338D;
-
-    /* KPMG Fonts */
-    --font-family-primary: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-family-headings: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-family-condensed: 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.6;
+    font-weight: var(--font-weight-regular);
     color: var(--text-primary);
     background-color: var(--bg-primary);
+    line-height: 1.6;
 }
 
-/* KPMG Header Styles */
-.cmp-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+/* KPMG Exact Container System */
+.root.container.responsivegrid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.cmp-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.aem-Grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -var(--spacing-sm);
+}
+
+.aem-Grid--12 {
+    width: 100%;
+}
+
+.aem-GridColumn {
+    padding: 0 var(--spacing-sm);
+    flex: 0 0 auto;
+}
+
+.aem-GridColumn--default--12 {
+    width: 100%;
+}
+
+/* KPMG Exact Header Styles */
+.experiencefragment {
+    width: 100%;
+}
+
+.cmp-experiencefragment {
+    width: 100%;
+}
+
+.cmp-experiencefragment--header {
+    position: relative;
     z-index: 1000;
-    background: var(--kpmg-white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.header {
+    width: 100%;
+}
+
+.cmp-header {
+    position: relative;
+    background: var(--kpmg-white);
+    box-shadow: var(--shadow-sm);
+}
+
+/* KPMG Exact Menu Item Bar */
 .cmp-menu-item-bar {
     background: var(--kpmg-gray-100);
     border-bottom: 1px solid var(--kpmg-gray-200);
+    padding: var(--spacing-sm) 0;
 }
 
 .cmp-menu-item-bar--container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--spacing-md);
 }
 
 .cmp-menu-item-bar--inner {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    gap: 1rem;
-    height: 40px;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.cmp-menu-item {
+    display: flex;
+    align-items: center;
 }
 
 .cmp-menu-item__inner {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
     text-decoration: none;
     color: var(--text-primary);
-    font-size: 14px;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease;
 }
 
 .cmp-menu-item__inner:hover {
-    background-color: var(--kpmg-gray-200);
+    background: var(--kpmg-gray-200);
+    color: var(--kpmg-blue);
 }
 
 .cmp-menu-item__icon {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     color: var(--kpmg-blue);
 }
 
@@ -114,302 +215,464 @@ body {
     font-weight: var(--font-weight-medium);
 }
 
+/* KPMG Exact PPC Navigation */
+.cmp-ppc-navigation {
+    position: relative;
+}
+
+.cmp-ppc-navigation__userlogin {
+    background: var(--kpmg-blue);
+    color: var(--text-white);
+}
+
+.cmp-ppc-navigation__userlogin:hover {
+    background: var(--kpmg-blue-dark);
+    color: var(--text-white);
+}
+
+/* KPMG Exact Language Selector */
 .cmp-lang-selector__toggle-btn {
-    background: none;
-    border: none;
+    background: transparent;
+    border: 1px solid var(--kpmg-gray-300);
     cursor: pointer;
 }
 
-.cmp-lang-selector__chevron-icon {
-    font-size: 16px;
-    color: var(--kpmg-gray-600);
+.cmp-lang-selector__toggle-btn:hover {
+    background: var(--kpmg-gray-100);
+    border-color: var(--kpmg-blue);
 }
 
-/* KPMG Main Navigation */
-.cmp-navigation {
-    background: var(--kpmg-white);
-    border-bottom: 1px solid var(--kpmg-gray-200);
-}
-
-.cmp-navigation__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
-
-.cmp-navigation__mobile-menu-btn,
-.cmp-navigation__search-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.cmp-navigation__mobile-menu-btn:hover,
-.cmp-navigation__search-btn:hover {
-    background-color: var(--kpmg-gray-100);
-}
-
-.cmp-navigation__mobile-menu-btn .material-icons,
-.cmp-navigation__search-btn .material-icons {
-    font-size: 24px;
+.cmp-lang-selector__icon {
     color: var(--kpmg-blue);
 }
 
-.cmp-navigation__logo {
+.cmp-lang-selector__chevron-icon {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* KPMG Exact Main Navigation */
+.cmp-header__main-nav-bar {
+    background: var(--kpmg-white);
+    border-bottom: 1px solid var(--kpmg-gray-200);
+    padding: var(--spacing-md) 0;
+}
+
+.cmp-header__main-nav-bar--container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.cmp-header__main-nav-bar--inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cmp-header__main-nav-bar--column {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* KPMG Exact Mobile Toggle */
+.cmp-mobile-toggle__inner {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: var(--font-size-xl);
+}
+
+.cmp-mobile-toggle__icon {
+    font-size: var(--font-size-xl);
+}
+
+/* KPMG Exact Logo */
+.cmp-logo {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.cmp-navigation__logo-text {
-    font-family: var(--font-family-condensed);
-    font-size: 32px;
-    font-weight: var(--font-weight-bold);
-    color: var(--kpmg-blue);
-    text-decoration: none;
-}
-
-.cmp-navigation__logo a {
-    text-decoration: none;
-}
-
-/* KPMG Hero Section */
-.hero-fbv {
-    background: var(--kpmg-cobalt-blue);
-    color: var(--text-white);
-    min-height: 100vh;
+.cmp-logo__inner {
     display: flex;
     align-items: center;
+}
+
+.cmp-logo__link {
+    text-decoration: none;
+    color: var(--kpmg-blue);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-2xl);
+    letter-spacing: -0.02em;
+}
+
+.cmp-logo__text {
+    font-family: var(--font-family-condensed);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-3xl);
+    color: var(--kpmg-blue);
+}
+
+/* KPMG Exact Search Toggle */
+.cmp-search-toggle__inner {
+    background: transparent;
+    border: none;
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+}
+
+.cmp-search-toggle__inner:hover {
+    color: var(--kpmg-blue);
+}
+
+/* KPMG Exact Hero Section */
+.hero-fbv {
     position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
+.cmp-hero-fbv__overlay-bg--cobalt-blue {
+    background: linear-gradient(135deg, var(--kpmg-blue) 0%, var(--kpmg-blue-dark) 100%);
+}
+
+.dark-theme {
+    color: var(--text-white);
+}
+
 .cmp-hero-fbv {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
     align-items: center;
 }
 
 .cmp-hero-fbv__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cmp-hero-fbv__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cmp-hero-fbv__content {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    padding: var(--spacing-4xl) var(--spacing-2xl);
+}
+
+.cmp-hero-fbv__content-container {
+    max-width: 600px;
+}
+
+.cmp-hero-fbv__content-overlay {
     position: relative;
 }
 
-.hero-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+.cmp-hero-fbv__content-overlay-inner {
+    position: relative;
+    z-index: 2;
 }
 
 .cmp-hero-fbv__title {
-    font-size: 48px;
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-5xl);
     font-weight: var(--font-weight-bold);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
     color: var(--text-white);
 }
 
 .cmp-hero-fbv__description {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-2xl);
     color: var(--text-white);
     opacity: 0.9;
 }
 
-.cmp-hero-fbv__cta {
-    margin-top: 2rem;
+.cmp-hero-fbv__description p {
+    margin-bottom: var(--spacing-md);
 }
 
-/* KPMG Buttons */
-.cmp-button {
-    display: inline-flex;
+.cmp-teaser__action-container {
+    margin-top: var(--spacing-2xl);
+}
+
+.cmp-hero-fbv__action-link {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--kpmg-white);
+    color: var(--kpmg-blue);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.cmp-hero-fbv__action-link:hover {
+    background: var(--kpmg-gray-100);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* KPMG Exact Main Content */
+.main.container.responsivegrid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.section.container.responsivegrid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* KPMG Exact Column Control */
+.columncontrol {
+    width: 100%;
+}
+
+.columncontrol--gap-base {
+    gap: var(--spacing-2xl);
+}
+
+.utils-padding-top--medium {
+    padding-top: var(--spacing-2xl);
+}
+
+.utils-padding-horizontal--medium {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.cmp-column-control {
+    width: 100%;
+}
+
+.cmp-column-control__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+}
+
+.cmp-column-control__row--oneEven {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+}
+
+.cmp-column-control__col {
+    width: 100%;
+}
+
+/* KPMG Exact Title */
+.cmp-title {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.cmp-title__text {
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+/* KPMG Exact Expertises Grid */
+.cmp-expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-4xl);
+}
+
+.cmp-expertise-item {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--kpmg-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 1px solid var(--kpmg-gray-200);
+}
+
+.cmp-expertise-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--kpmg-blue);
+}
+
+.cmp-expertise-item__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+    background: var(--kpmg-blue);
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 24px;
-    border-radius: 4px;
+    color: var(--text-white);
+    font-size: var(--font-size-3xl);
+}
+
+.cmp-expertise-item__title {
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* KPMG Exact Secteurs Grid */
+.cmp-secteurs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-4xl);
+}
+
+.cmp-secteur-item {
+    background: var(--kpmg-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 1px solid var(--kpmg-gray-200);
+}
+
+.cmp-secteur-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--kpmg-blue);
+}
+
+.cmp-secteur-item__icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-lg);
+    background: var(--kpmg-green);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-size: var(--font-size-2xl);
+}
+
+.cmp-secteur-item__title {
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.cmp-secteur-item__description {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* KPMG Exact Buttons */
+.cmp-button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
     text-decoration: none;
-    font-weight: var(--font-weight-medium);
-    font-size: 16px;
-    transition: all 0.2s ease;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
     border: 2px solid transparent;
     cursor: pointer;
 }
 
 .cmp-button--primary {
-    background-color: var(--kpmg-green);
+    background: var(--kpmg-blue);
     color: var(--text-white);
-    border-color: var(--kpmg-green);
+    border-color: var(--kpmg-blue);
 }
 
 .cmp-button--primary:hover {
-    background-color: var(--kpmg-green-dark);
-    border-color: var(--kpmg-green-dark);
+    background: var(--kpmg-blue-dark);
+    border-color: var(--kpmg-blue-dark);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .cmp-button--secondary {
-    background-color: transparent;
+    background: transparent;
     color: var(--kpmg-blue);
     border-color: var(--kpmg-blue);
 }
 
 .cmp-button--secondary:hover {
-    background-color: var(--kpmg-blue);
+    background: var(--kpmg-blue);
     color: var(--text-white);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-/* KPMG Container */
-.cmp-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 1rem;
-}
-
-/* KPMG Title */
-.cmp-title {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.cmp-title__text {
-    font-size: 36px;
-    font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-/* KPMG Expertises Grid */
-.cmp-expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.cmp-expertise-item {
-    text-align: center;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cmp-expertise-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.cmp-expertise-item__icon {
-    margin-bottom: 1rem;
-}
-
-.cmp-expertise-item__icon .material-icons {
-    font-size: 48px;
-    color: var(--kpmg-blue);
-}
-
-.cmp-expertise-item__title {
-    font-size: 18px;
-    font-weight: var(--font-weight-medium);
-    color: var(--text-primary);
-}
-
-/* KPMG Secteurs Grid */
-.cmp-secteurs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.cmp-secteur-item {
-    background: var(--kpmg-white);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cmp-secteur-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.cmp-secteur-item__icon {
-    margin-bottom: 1.5rem;
-}
-
-.cmp-secteur-item__icon .material-icons {
-    font-size: 48px;
-    color: var(--kpmg-blue);
-}
-
-.cmp-secteur-item__title {
-    font-size: 24px;
-    font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.cmp-secteur-item__description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-}
-
-/* KPMG About Section */
-.cmp-about-section {
-    background: var(--kpmg-gray-100);
-    border-radius: 12px;
-    margin: 4rem auto;
-}
-
+/* KPMG Exact About Section */
 .cmp-about-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: var(--spacing-4xl) var(--spacing-2xl);
 }
 
 .cmp-about-title {
-    font-size: 42px;
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .cmp-about-description {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
     line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--spacing-2xl);
 }
 
 .cmp-about-actions {
     display: flex;
-    gap: 1rem;
+    gap: var(--spacing-lg);
     justify-content: center;
     flex-wrap: wrap;
 }
 
-/* KPMG Contact Section */
+/* KPMG Exact Contact Section */
 .cmp-contact-section {
     position: relative;
-    border-radius: 12px;
+    border-radius: var(--border-radius-xl);
     overflow: hidden;
     text-align: center;
+    margin: var(--spacing-4xl) 0;
 }
 
 .cmp-contact-bg {
@@ -432,88 +695,130 @@ body {
     z-index: 2;
     max-width: 600px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: var(--spacing-4xl) var(--spacing-2xl);
     background: rgba(0, 51, 141, 0.9);
     color: var(--text-white);
 }
 
 .cmp-contact-title {
-    font-size: 36px;
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-lg);
     color: var(--text-white);
 }
 
 .cmp-contact-description {
-    font-size: 18px;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
     color: var(--text-white);
     opacity: 0.9;
 }
 
-/* KPMG Footer */
+/* KPMG Exact Footer */
 .cmp-footer {
     background: var(--kpmg-gray-900);
     color: var(--text-white);
-    padding: 3rem 0 2rem;
+    padding: var(--spacing-3xl) 0 var(--spacing-xl);
+    margin-top: var(--spacing-4xl);
 }
 
 .cmp-footer__container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 var(--spacing-md);
+}
+
+.cmp-footer__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
 }
 
 .cmp-footer__links {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: var(--spacing-lg);
     justify-content: center;
 }
 
 .cmp-footer__links a {
     color: var(--text-white);
     text-decoration: none;
-    font-size: 14px;
+    font-size: var(--font-size-sm);
     opacity: 0.8;
     transition: opacity 0.2s ease;
 }
 
 .cmp-footer__links a:hover {
     opacity: 1;
+    color: var(--kpmg-green);
 }
 
 .cmp-footer__copyright {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: var(--spacing-xl);
     border-top: 1px solid var(--kpmg-gray-700);
 }
 
 .cmp-footer__copyright p {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
+    color: var(--text-white);
     opacity: 0.7;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .cmp-hero-fbv {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+/* KPMG Exact Responsive Design */
+@media (max-width: 1024px) {
+    .cmp-hero-fbv__content {
+        width: 60%;
     }
     
-    .cmp-hero-fbv__title {
-        font-size: 36px;
+    .cmp-hero-fbv__image {
+        width: 40%;
     }
     
     .cmp-expertise-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     .cmp-secteurs-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cmp-menu-item-bar--inner {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .cmp-mobile-toggle__inner {
+        display: block;
+    }
+    
+    .cmp-hero-fbv {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .cmp-hero-fbv__content {
+        width: 100%;
+        padding: var(--spacing-2xl) var(--spacing-md);
+    }
+    
+    .cmp-hero-fbv__image {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+    
+    .cmp-hero-fbv__title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .cmp-expertise-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
     
     .cmp-about-actions {
@@ -524,50 +829,87 @@ body {
     .cmp-footer__links {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-    }
-    
-    .cmp-navigation__container {
-        height: 60px;
-    }
-    
-    .cmp-navigation__logo-text {
-        font-size: 24px;
+        gap: var(--spacing-md);
     }
 }
 
 @media (max-width: 480px) {
     .cmp-container {
-        padding: 2rem 1rem;
+        padding: 0 var(--spacing-sm);
     }
     
     .cmp-hero-fbv__title {
-        font-size: 28px;
+        font-size: var(--font-size-2xl);
     }
     
     .cmp-title__text {
-        font-size: 28px;
+        font-size: var(--font-size-3xl);
     }
     
     .cmp-about-title {
-        font-size: 32px;
+        font-size: var(--font-size-3xl);
     }
     
     .cmp-contact-title {
-        font-size: 28px;
+        font-size: var(--font-size-2xl);
     }
 }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
+/* KPMG Exact Utility Classes */
+.utils-md-padding-horizontal--4x-large {
+    padding-left: var(--spacing-4xl);
+    padding-right: var(--spacing-4xl);
 }
 
-/* Focus styles for accessibility */
+.utils-lg-padding-horizontal--6x-large {
+    padding-left: var(--spacing-4xl);
+    padding-right: var(--spacing-4xl);
+}
+
+.utils-xlg-padding-horizontal--10x-large {
+    padding-left: var(--spacing-4xl);
+    padding-right: var(--spacing-4xl);
+}
+
+/* KPMG Exact Animation Classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cmp-expertise-item,
+.cmp-secteur-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* KPMG Exact Focus States */
 .cmp-button:focus,
 .cmp-menu-item__inner:focus,
-.cmp-navigation__mobile-menu-btn:focus,
-.cmp-navigation__search-btn:focus {
+.cmp-mobile-toggle__inner:focus,
+.cmp-search-toggle__inner:focus {
     outline: 2px solid var(--kpmg-blue);
     outline-offset: 2px;
+}
+
+/* KPMG Exact Print Styles */
+@media print {
+    .cmp-header,
+    .cmp-footer {
+        display: none;
+    }
+    
+    .cmp-hero-fbv__image {
+        display: none;
+    }
+    
+    .cmp-hero-fbv__content {
+        width: 100%;
+        color: var(--text-primary);
+    }
 }
