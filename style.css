@@ -201,7 +201,6 @@ body {
 .cmp-header {
     position: relative;
     background: var(--kpmg-white);
-    box-shadow: var(--shadow-sm);
 }
 
 
