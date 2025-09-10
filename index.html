@@ -1,95 +1,308 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>West Paris Consulting | Accueil</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cabinet étudiant de conseil en stratégie et innovation proche de l’Université Paris Nanterre.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Paris Consulting - WPC | Association étudiante Paris Nanterre</title>
+    <meta name="description" content="West Paris Consulting - Association étudiante de conseil en management, stratégie et innovation à l'Université Paris Nanterre">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <span class="nav-logo">
-      <img src="img/logo-wpc.svg" alt="Logo WPC" style="height:36px;">
-      WPC
-    </span>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="conseil.html">Expertises</a></li>
-      <li><a href="equipe.html">Équipe</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section class="hero">
-      <small>Bienvenue chez WPC</small>
-      <h1>Libérer le potentiel de ceux qui font avancer la société</h1>
-      <div class="hero-actions">
-        <a href="conseil.html" class="cta-btn">Découvrir nos expertises</a>
-        <a href="contact.html" class="cta-btn">Contactez-nous</a>
-      </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>WPC</h1>
+                <span>West Paris Consulting</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#mission" class="nav-link">Mission</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#equipe" class="nav-link">Équipe</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>West Paris Consulting</h1>
+                <h2>L'excellence du conseil étudiant</h2>
+                <p>Association étudiante de l'Université Paris Nanterre dédiée au conseil en management, stratégie et innovation pour la communauté universitaire.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Nos services</a>
+                    <a href="#contact" class="btn btn-outline">Nous contacter</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>35k+</h3>
+                    <p>Étudiants à Paris Nanterre</p>
+                </div>
+                <div class="stat">
+                    <h3>42</h3>
+                    <p>Unités de recherche</p>
+                </div>
+                <div class="stat">
+                    <h3>2025</h3>
+                    <p>Année de création WPC</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- Carousel/Grille centrale -->
-    <div class="carousel container">
-      <div class="carousel-item">
-        <img src="img/consulting1.jpg" alt="Stratégie et innovation">
-        <div class="card-tag">ARTICLE</div>
-        <div class="carousel-item-content">
-          <h3>Accompagner la transformation associative</h3>
-          <p>Notre analyse sur la structuration du monde associatif universitaire.</p>
-          <a href="#" class="cta-btn">Lire</a>
+
+    <!-- Mission & Valeurs -->
+    <section id="mission" class="mission">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Mission</h2>
+                <p>Accompagner la communauté universitaire dans ses projets organisationnels, stratégiques et digitaux</p>
+            </div>
+            
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h3>Un cadre professionnalisant</h3>
+                    <p>West Paris Consulting (WPC) est un projet associatif porté par des étudiants de l'Université Paris Nanterre. Notre ambition est de créer un cadre professionnalisant et collaboratif au service du campus.</p>
+                    <p>Nous permettons aux étudiants de développer et mettre en pratique leurs compétences en management, stratégie et innovation dans des projets concrets.</p>
+                </div>
+                
+                <div class="values">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h4>Exigence</h4>
+                        <p>Mener chaque projet avec rigueur et méthode</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h4>Coopération</h4>
+                        <p>Privilégier le travail collectif et les partenariats</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <h4>Innovation</h4>
+                        <p>Explorer de nouvelles solutions digitales</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🛡️</div>
+                        <h4>Responsabilité</h4>
+                        <p>Agir dans l'intérêt de la communauté étudiante</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/consulting2.jpg" alt="Transformation digitale">
-        <div class="card-tag">DOSSIER</div>
-        <div class="carousel-item-content">
-          <h3>Digitaliser les pratiques au service du collectif</h3>
-          <p>Zoom sur nos missions d’accompagnement numérique sur le campus.</p>
-          <a href="#" class="cta-btn">Découvrir</a>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services</h2>
+                <p>Des solutions concrètes pour la vie de campus</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Enquêtes & Études</h3>
+                    <p>Réalisation d'enquêtes de satisfaction étudiante pour mieux comprendre les attentes et apporter des retours constructifs à la communauté.</p>
+                    <ul>
+                        <li>Conception de questionnaires</li>
+                        <li>Analyse de données</li>
+                        <li>Rapports et recommandations</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Accompagnement Associatif</h3>
+                    <p>Support aux associations partenaires dans la structuration de leur communication et organisation interne.</p>
+                    <ul>
+                        <li>Stratégie de communication</li>
+                        <li>Organisation interne</li>
+                        <li>Développement de projets</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Solutions Digitales</h3>
+                    <p>Développement d'outils et projets digitaux pour améliorer les services étudiants du campus.</p>
+                    <ul>
+                        <li>Plateformes interactives</li>
+                        <li>Outils de gestion</li>
+                        <li>Applications web</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/consulting3.jpg" alt="Conseil organisationnel">
-        <div class="card-tag">ÉTUDE</div>
-        <div class="carousel-item-content">
-          <h3>Enquête nationale sur l’engagement étudiant</h3>
-          <p>Les résultats clés et recommandations de WPC pour 2025.</p>
-          <a href="#" class="cta-btn">Voir</a>
+    </section>
+
+    <!-- Équipe -->
+    <section id="equipe" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Équipe</h2>
+                <p>Des étudiants passionnés et engagés</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <h3>Président·e</h3>
+                    <p>Direction stratégique</p>
+                    <div class="team-skills">
+                        <span>Management</span>
+                        <span>Stratégie</span>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <h3>Responsable Projets</h3>
+                    <p>Coordination des missions</p>
+                    <div class="team-skills">
+                        <span>Gestion de projet</span>
+                        <span>Innovation</span>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <h3>Responsable Digital</h3>
+                    <p>Solutions technologiques</p>
+                    <div class="team-skills">
+                        <span>Développement</span>
+                        <span>UX/UI</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="join-team">
+                <h3>Rejoignez-nous !</h3>
+                <p>WPC recrute des étudiants motivés pour contribuer à nos projets</p>
+                <a href="#contact" class="btn btn-primary">Candidater</a>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/consulting4.jpg" alt="Actualité de l'équipe">
-        <div class="card-tag">NEWS</div>
-        <div class="carousel-item-content">
-          <h3>L’équipe WPC à la Conférence Innovation</h3>
-          <p>Retour sur notre intervention à l’Université Paris Nanterre.</p>
-          <a href="#" class="cta-btn">Plus d’infos</a>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p>Une question ? Un projet ? Contactez-nous</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📧 Email</h3>
+                        <p>contact@westparisconsulting.fr</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📍 Localisation</h3>
+                        <p>Université Paris Nanterre<br>
+                        200 Avenue de la République<br>
+                        92001 Nanterre</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🏫 Campus</h3>
+                        <p>Proximité La Défense<br>
+                        Accès RER A - Nanterre Université</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/[TON-ID]" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject" name="subject">
+                                <option value="general">Demande générale</option>
+                                <option value="partnership">Partenariat association</option>
+                                <option value="project">Projet digital</option>
+                                <option value="recruitment">Candidature</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- Section newsletter/insight -->
-    <div class="footer-newsletter">
-      <div class="footer-newsletter-content">
-        <h2>Recevez nos analyses et actualités sur l’innovation associative</h2>
-        <form>
-          <input type="email" placeholder="Votre e-mail" required>
-          <button class="cta-btn" type="submit">S’inscrire</button>
-        </form>
-      </div>
-      <img src="img/green-sky.jpg" alt="Campus Nanterre" style="height:120px;border-radius:12px;object-fit:cover;">
-    </div>
-  </main>
-  <footer>
-    <div class="footer-links">
-      © 2025 West Paris Consulting – Association étudiante, Université Paris Nanterre
-      | <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener">universite-parisnanterre.fr</a>
-    </div>
-    <div class="footer-logos">
-      <img src="img/logo-uni.svg" alt="Université Paris Nanterre" class="footer-logo">
-      <img src="img/logo-wpc.svg" alt="WPC" class="footer-logo">
-    </div>
-  </footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>West Paris Consulting</h3>
+                    <p>Association étudiante - Université Paris Nanterre</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#accueil">Accueil</a></li>
+                            <li><a href="#mission">Mission</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Université</h4>
+                        <ul>
+                            <li><a href="https://www.parisnanterre.fr" target="_blank">Paris Nanterre</a></li>
+                            <li><a href="#" target="_blank">Vie étudiante</a></li>
+                            <li><a href="#" target="_blank">Associations</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 West Paris Consulting. Tous droits réservés.</p>
+                <p>Conformément à la charte des associations étudiantes de l'Université Paris Nanterre</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
