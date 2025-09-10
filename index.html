@@ -2,326 +2,267 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>West Paris Consulting – Cabinet étudiant en stratégie & innovation</title>
+  <title>West Paris Consulting – Conseil étudiant en stratégie & innovation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="West Paris Consulting, cabinet étudiant en stratégie et innovation, accompagne les organisations et associations de l’Université Paris Nanterre dans leurs projets.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%23002147'/><text x='50%' y='50%' font-size='32' fill='white' font-family='Arial' text-anchor='middle' dominant-baseline='central'>W</text></svg>">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,400|Lato:400,700&display=swap" rel="stylesheet">
+  <meta name="description" content="West Paris Consulting, cabinet étudiant de conseil en stratégie et innovation, accompagne les organisations et associations de l’Université Paris Nanterre.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='64' height='64' fill='%23002147'/><text x='50%' y='50%' font-size='32' fill='white' font-family='Arial' text-anchor='middle' dominant-baseline='central'>W</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #002147;
-      --secondary: #0070f3;
-      --accent: #ffa800;
-      --bg: #f7f8fa;
-      --white: #fff;
-      --grey: #e9e9e9;
-      --text: #222;
-      --shadow: 0 4px 16px rgba(0,33,71,0.08);
+      --secondary: #275198;
+      --accent: #4f7cc7;
+      --light-blue: #eaf0fa;
+      --bg: #fff;
+      --text: #1a2330;
+      --muted: #6b7c93;
+      --card-bg: #f6f8fb;
+      --border: #e0e6ef;
     }
-    html { scroll-behavior: smooth;}
+    html {scroll-behavior: smooth;}
     body {
       margin: 0;
+      background: var(--bg);
       font-family: 'Lato', Arial, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      font-size: 17px;
+      line-height: 1.65;
     }
-    /* NAVIGATION */
+    /* NAV */
     nav {
-      background: var(--primary);
-      color: var(--white);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 36px;
-      position: fixed;
       width: 100%;
-      top: 0; left: 0;
-      z-index: 1000;
-      box-shadow: var(--shadow);
-      min-height: 60px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: fixed;
+      top: 0; left: 0; z-index: 100;
+      padding: 0 36px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .logo-area {
       display: flex;
       align-items: center;
-      gap: 12px;
-    }
-    .logo-svg {
-      width: 36px; height: 36px; display: block;
-    }
-    .logo-title {
+      gap: 10px;
       font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 22px;
-      letter-spacing: 2px;
-      color: var(--white);
+      color: var(--primary);
+      letter-spacing: 1px;
+      text-decoration: none;
     }
+    .logo-svg {width: 36px; height: 36px;}
     nav ul {
       list-style: none;
       display: flex;
-      gap: 30px;
-      margin: 0; padding: 0;
+      gap: 36px;
+      margin: 0;
+      padding: 0;
     }
     nav a {
-      color: var(--white);
+      color: var(--primary);
       text-decoration: none;
-      font-size: 15px;
       font-family: 'Montserrat', Arial, sans-serif;
-      position: relative;
+      font-weight: 500;
+      font-size: 16px;
       padding: 6px 0;
-      transition: color 0.2s;
+      border-bottom: 2.5px solid transparent;
+      transition: border 0.2s, color 0.2s;
     }
-    nav a:focus, nav a:hover {
+    nav a:hover, nav a:focus {
       color: var(--accent);
+      border-bottom: 2.5px solid var(--accent);
       outline: none;
-    }
-    .burger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-      margin-left: 24px;
-    }
-    .burger span {
-      height: 3px;
-      width: 25px;
-      background: var(--white);
-      border-radius: 3px;
-      transition: 0.3s;
     }
     /* HERO */
     header {
-      background: linear-gradient(110deg, var(--primary) 60%, var(--secondary) 100%);
-      color: var(--white);
+      background: var(--bg);
+      color: var(--primary);
+      padding: 110px 0 60px 0;
       text-align: left;
-      padding: 150px 0 90px 0;
-      position: relative;
-      min-height: 440px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-bottom: 1px solid var(--border);
     }
-    .hero-content {
-      max-width: 700px;
-      margin-left: 3vw;
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .hero-title {
-      font-size: 2.7rem;
       font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.6rem;
       font-weight: 700;
-      margin-bottom: 24px;
-      line-height: 1.15;
+      margin-bottom: 18px;
+      line-height: 1.1;
+      color: var(--primary);
     }
     .hero-baseline {
-      font-size: 1.2rem;
-      margin-bottom: 24px;
-      font-weight: 400;
-      letter-spacing: 1px;
-      color: #e3e8f0;
+      font-size: 1.18rem;
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-family: 'Lato', Arial, sans-serif;
+      max-width: 580px;
     }
     .hero-btn {
-      background: var(--accent);
-      color: var(--primary);
-      padding: 14px 34px;
-      border-radius: 30px;
-      font-size: 1rem;
+      background: var(--primary);
+      color: var(--bg);
+      padding: 13px 36px;
+      border-radius: 27px;
       font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1rem;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,33,71,0.08);
+      border: none;
       transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(39,81,152,0.06);
+      cursor: pointer;
+      display: inline-block;
     }
     .hero-btn:hover, .hero-btn:focus {
       background: var(--secondary);
-      color: var(--white);
+      color: var(--bg);
       outline: none;
     }
-    .hero-img {
-      position: absolute;
-      right: 4vw; bottom: 0;
-      width: 300px; max-width: 40vw;
-      opacity: 0.7;
-      pointer-events: none;
-      display: block;
-    }
-    /* SECTION */
+    /* SECTIONS */
     section {
-      max-width: 1050px;
-      margin: 80px auto;
-      background: var(--white);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      padding: 60px 36px;
-      text-align: left;
+      margin: 68px auto 0 auto;
+      max-width: 1040px;
+      padding: 0 24px;
     }
-    section:not(:first-of-type) {margin-top: 40px;}
     h2 {
-      font-size: 2rem;
       font-family: 'Montserrat', Arial, sans-serif;
       color: var(--primary);
-      margin-bottom: 32px;
-      text-align: center;
-    }
-    /* EXPERTISE */
-    .expertises {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 32px;
-      margin-bottom: 24px;
-    }
-    .expertise-card {
-      background: var(--bg);
-      border-radius: 10px;
-      padding: 32px 22px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,33,71,0.05);
-      transition: transform 0.18s;
-    }
-    .expertise-card:hover {transform: translateY(-4px) scale(1.03);}
-    .expertise-card h3 {
-      color: var(--secondary);
-      margin-bottom: 12px;
-      font-size: 1.18rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-    }
-    /* METHODO */
-    .metho-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .metho-step {
-      flex: 1 1 180px;
-      background: var(--grey);
-      border-radius: 8px;
-      text-align: center;
-      padding: 24px 12px;
-      min-width: 150px;
-      margin-bottom: 10px;
-    }
-    .metho-step strong {
-      display: block;
-      color: var(--accent);
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    /* PROJETS / REAL */
-    .projets-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 32px;
-    }
-    .projet-card {
-      background: var(--bg);
-      border-radius: 10px;
-      padding: 24px 20px;
-      box-shadow: 0 2px 8px rgba(0,33,71,0.05);
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 36px 0;
       text-align: left;
     }
-    .projet-card h3 {
-      margin-top: 0;
-      color: var(--secondary);
-      font-size: 1rem;
-      margin-bottom: 8px;
+    /* CARTES */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 32px;
     }
-    .projet-card p {margin: 0;}
-    .projet-card .projet-tag {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--primary);
-      font-size: 0.85rem;
-      padding: 2px 10px;
-      border-radius: 7px;
-      margin-top: 8px;
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(39,81,152,0.05);
+      padding: 32px 22px 28px 22px;
+      border: 1px solid var(--border);
+      text-align: left;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .card h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.11rem;
+      color: var(--secondary);
+      margin: 0 0 13px 0;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    /* MISSION, ENGAGEMENTS */
+    .mission-text, .engagements-text {
+      max-width: 700px;
+      margin-bottom: 35px;
+      color: var(--muted);
+      font-size: 1.08rem;
     }
     /* EQUIPE */
-    .equipe-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 30px;
+      margin-top: 25px;
     }
     .member-card {
-      background: var(--grey);
-      border-radius: 12px;
-      padding: 24px 18px;
-      text-align: center;
-      min-width: 170px;
-      box-shadow: 0 2px 8px rgba(0,33,71,0.04);
+      background: var(--light-blue);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 22px 16px;
+      text-align: left;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
     .member-card img {
-      width: 64px; height: 64px;
+      width: 54px; height: 54px;
       border-radius: 50%;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
       object-fit: cover;
-      background: var(--white);
-      border: 2px solid var(--secondary);
+      background: var(--bg);
+      border: 2.5px solid var(--secondary);
     }
     .member-card strong {
       display: block;
       color: var(--primary);
-      font-size: 1.08rem;
+      font-size: 1.03rem;
       margin-bottom: 4px;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
     .member-card span {
-      color: #666;
-      font-size: 0.97rem;
+      color: var(--muted);
+      font-size: 0.98rem;
     }
     /* CONTACT */
     .contact-section {
-      background: var(--primary);
-      color: var(--white);
-      box-shadow: none;
-      text-align: center;
-      border-radius: 14px;
-      margin-bottom: 48px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-top: 70px;
+      text-align: left;
+      padding: 40px 24px;
     }
     .contact-section h2 {
-      color: var(--white);
-      margin-bottom: 18px;
+      color: var(--primary);
+      margin-bottom: 19px;
     }
-    .contact-section a {
-      color: var(--accent);
-      text-decoration: underline;
-      font-weight: bold;
+    .contact-section p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1.03rem;
     }
     .contact-btn {
-      background: var(--accent);
-      color: var(--primary);
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-size: 1.1rem;
+      background: var(--secondary);
+      color: var(--bg);
+      padding: 11px 26px;
+      border-radius: 27px;
       font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1rem;
       text-decoration: none;
-      margin-top: 16px;
-      display: inline-block;
+      border: none;
       transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      display: inline-block;
     }
     .contact-btn:hover, .contact-btn:focus {
-      background: var(--secondary);
-      color: var(--white);
+      background: var(--primary);
+      color: var(--bg);
       outline: none;
     }
     /* FOOTER */
     footer {
-      background: #1c253b;
-      color: #cfd8e5;
+      margin-top: 64px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       text-align: center;
-      padding: 28px 6px 16px 6px;
-      font-size: 0.98rem;
-    }
-    .footer-links {
-      margin-bottom: 12px;
-      font-size: 0.96rem;
+      padding: 27px 0 17px 0;
+      font-size: 1.01rem;
     }
     .footer-logos {
-      margin-top: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 16px;
+      margin-top: 8px;
     }
     .footer-logo {
       height: 28px;
@@ -330,174 +271,104 @@
     }
     /* ACCESSIBILITE */
     :focus-visible {
-      outline: 2.5px solid var(--accent);
-      outline-offset: 2px;
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
     }
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      .hero-img { display: none; }
-      section, .contact-section { padding: 32px 12vw;}
+      nav, .container, section, .contact-section {padding-left: 18px; padding-right: 18px;}
     }
     @media (max-width: 700px) {
-      nav { padding: 0 16px;}
-      .hero-content { margin-left: 0;}
-      header { padding: 110px 0 60px 0;}
-      section, .contact-section { padding: 25px 4vw;}
-      .metho-list { flex-direction: column; gap: 20px;}
+      nav {padding: 0 8px;}
+      header {padding-top: 90px;}
+      .hero-title {font-size: 2rem;}
+      h2 {font-size: 1.15rem;}
+      .cards-grid, .equipe-grid {gap: 16px;}
+      section, .contact-section {padding-left: 7px; padding-right: 7px;}
     }
-    @media (max-width: 600px) {
-      .burger { display: flex;}
-      nav ul {
-        position: absolute;
-        top: 58px; right: 0; left: 0;
-        background: var(--primary);
-        flex-direction: column;
-        gap: 0;
-        display: none;
-      }
-      nav ul.open { display: flex;}
-      nav ul li {
-        border-top: 1px solid #1c253b;
-        text-align: center;
-        padding: 12px 0;
-      }
-      nav ul li:first-child {border-top: none;}
+    @media (max-width: 540px) {
+      nav ul {gap: 12px;}
+      section, .contact-section {padding-left: 3vw; padding-right: 3vw;}
     }
   </style>
 </head>
 <body>
   <!-- NAVIGATION -->
   <nav>
-    <div class="logo-area">
-      <!-- SVG LOGO: stylisé, modifiable -->
+    <a href="#" class="logo-area">
       <svg class="logo-svg" viewBox="0 0 50 50" fill="none">
-        <rect width="50" height="50" rx="10" fill="#0070f3"/>
-        <text x="50%" y="56%" text-anchor="middle" fill="white" font-family="Montserrat" font-size="26" font-weight="bold">W</text>
+        <rect width="50" height="50" rx="10" fill="#002147"/>
+        <text x="50%" y="56%" text-anchor="middle" fill="white" font-family="Montserrat" font-size="28" font-weight="bold">W</text>
       </svg>
-      <span class="logo-title">WPC</span>
-    </div>
-    <div class="burger" id="burger" tabindex="0" aria-label="Menu mobile" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
-      <li><a href="#cabinet">Cabinet</a></li>
+      WPC
+    </a>
+    <ul>
+      <li><a href="#mission">Mission</a></li>
       <li><a href="#expertises">Expertises</a></li>
-      <li><a href="#methode">Méthodologie</a></li>
-      <li><a href="#projets">Réalisations</a></li>
+      <li><a href="#engagements">Engagements</a></li>
       <li><a href="#equipe">Équipe</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
   <!-- HERO -->
   <header>
-    <div class="hero-content">
-      <h1 class="hero-title">West Paris Consulting<br>
-        <span style="font-size: 1.2rem; color: var(--accent); font-weight: 500;">Cabinet étudiant en stratégie & innovation</span>
+    <div class="container">
+      <h1 class="hero-title">
+        West Paris Consulting<br>
+        <span style="font-size:1.15rem; color:var(--secondary); font-weight:500;">Conseil étudiant en stratégie & innovation</span>
       </h1>
-      <p class="hero-baseline">Nous accompagnons les organisations et associations de l’Université Paris Nanterre dans leurs projets stratégiques, organisationnels et digitaux.<br>
-        <span style="color:#fff; font-weight:500; font-size:1rem;">Association étudiante, engagée pour l’innovation et la réussite collective sur le campus.</span>
+      <p class="hero-baseline">
+        Cabinet étudiant fondé à l’Université Paris Nanterre, nous accompagnons les associations et organisations dans leurs enjeux stratégiques, organisationnels et digitaux.
       </p>
-      <a href="#cabinet" class="hero-btn">Découvrir le cabinet</a>
+      <a href="#mission" class="hero-btn">Découvrir</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" alt="Consulting meeting" class="hero-img" loading="lazy">
   </header>
-
-  <!-- SECTION CABINET -->
-  <section id="cabinet">
-    <h2>Qui sommes-nous&nbsp;?</h2>
-    <p>
-      <strong>West Paris Consulting</strong> est le cabinet étudiant de conseil en stratégie et innovation de <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener" style="color:var(--secondary);font-weight:bold;">l’Université Paris Nanterre</a>.
-      <br><br>
-      Notre mission&nbsp;: <b>apporter un regard neuf et agile</b> sur les enjeux des associations, services universitaires, et partenaires du campus. Nous mettons nos expertises au service de la transformation digitale, de l’organisation et du développement associatif, tout en offrant aux étudiants un cadre professionnalisant pour grandir et s’engager.
-    </p>
+  <!-- MISSION -->
+  <section id="mission">
+    <h2>Notre mission</h2>
+    <div class="mission-text">
+      <b>West Paris Consulting</b> a pour vocation d’apporter une expertise rigoureuse et engagée au service du monde associatif et institutionnel du campus.<br><br>
+      Nous mobilisons nos compétences pour accompagner la transformation, la structuration et l’innovation au sein de la communauté universitaire, tout en offrant aux étudiants un cadre professionnalisant unique.
+    </div>
   </section>
-
-  <!-- SECTION EXPERTISES -->
+  <!-- EXPERTISES -->
   <section id="expertises">
     <h2>Nos expertises</h2>
-    <div class="expertises">
-      <div class="expertise-card">
-        <h3>Conseil en stratégie</h3>
-        <p>Définition, planification et pilotage de projets stratégiques pour associations et institutions.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Stratégie & Organisation</h3>
+        <p>Diagnostic, plan d’actions, feuille de route et pilotage de projets pour associations et institutions.</p>
       </div>
-      <div class="expertise-card">
+      <div class="card">
         <h3>Transformation digitale</h3>
-        <p>Conception d’outils numériques, audit digital, amélioration UX, mise en place de solutions innovantes.</p>
+        <p>Audit, conception d’outils numériques, accompagnement à la digitalisation, UX et communication digitale.</p>
       </div>
-      <div class="expertise-card">
-        <h3>Organisation & RH</h3>
-        <p>Optimisation des processus, structuration associative, gestion du changement, accompagnement au recrutement.</p>
-      </div>
-      <div class="expertise-card">
+      <div class="card">
         <h3>Accompagnement associatif</h3>
-        <p>Soutien personnalisé aux associations étudiantes dans leur développement, leur communication et leur gouvernance.</p>
+        <p>Soutien à la gouvernance, structuration interne, développement de partenariats, gestion événementielle.</p>
+      </div>
+      <div class="card">
+        <h3>Formation & Sensibilisation</h3>
+        <p>Ateliers pour responsables associatifs : gestion de projet, communication, innovation, inclusion.</p>
       </div>
     </div>
   </section>
-
-  <!-- SECTION METHODO -->
-  <section id="methode">
-    <h2>Notre méthodologie</h2>
-    <div class="metho-list">
-      <div class="metho-step">
-        <strong>1. Diagnostic</strong>
-        Analyse des besoins, entretiens, observation terrain.
-      </div>
-      <div class="metho-step">
-        <strong>2. Co-construction</strong>
-        Ateliers collaboratifs, idéation et prototypage avec les parties prenantes.
-      </div>
-      <div class="metho-step">
-        <strong>3. Recommandations</strong>
-        Restitution d’un plan d’action sur-mesure, livrables professionnels.
-      </div>
-      <div class="metho-step">
-        <strong>4. Accompagnement</strong>
-        Suivi de la mise en œuvre et formation des équipes.
-      </div>
+  <!-- ENGAGEMENTS -->
+  <section id="engagements">
+    <h2>Nos engagements</h2>
+    <div class="engagements-text">
+      <ul style="padding-left:1.2em; margin:0;">
+        <li style="margin-bottom:8px;">Exigence et professionnalisme dans l’accompagnement de chaque projet</li>
+        <li style="margin-bottom:8px;">Esprit d’équipe et collaboration avec nos partenaires de l’Université Paris Nanterre</li>
+        <li style="margin-bottom:8px;">Innovation responsable et ouverte, au service de la communauté</li>
+        <li style="margin-bottom:8px;">Transmission et développement des compétences étudiantes</li>
+      </ul>
     </div>
   </section>
-
-  <!-- SECTION PROJETS / REALISATIONS -->
-  <section id="projets">
-    <h2>Réalisations & projets</h2>
-    <div class="projets-list">
-      <div class="projet-card">
-        <h3>Enquête de besoins étudiants</h3>
-        <p>
-          Conception et analyse d’une grande enquête auprès de 800 étudiants de Nanterre pour mieux orienter les actions du campus.
-        </p>
-        <div class="projet-tag">Stratégie</div>
-      </div>
-      <div class="projet-card">
-        <h3>Refonte digitale d’une association</h3>
-        <p>
-          Audit et création d’un nouveau site web, accompagnement à la communication numérique, ateliers UX pour une asso partenaire.
-        </p>
-        <div class="projet-tag">Digital</div>
-      </div>
-      <div class="projet-card">
-        <h3>Ateliers innovation</h3>
-        <p>
-          Organisation d’ateliers d’idéation et de prototypage pour étudiants et associations, en partenariat avec le Pôle Innovation.
-        </p>
-        <div class="projet-tag">Innovation</div>
-      </div>
-      <div class="projet-card">
-        <h3>Formation à la gestion de projet</h3>
-        <p>
-          Animation de modules de formation pour responsables associatifs sur la gestion agile et le pilotage d’équipe.
-        </p>
-        <div class="projet-tag">Formation</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION EQUIPE -->
+  <!-- EQUIPE -->
   <section id="equipe">
-    <h2>L’équipe WPC</h2>
-    <div class="equipe-list">
+    <h2>L’équipe</h2>
+    <div class="equipe-grid">
       <div class="member-card">
         <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Photo membre">
         <strong>Alexandre Durand</strong>
@@ -519,64 +390,26 @@
         <span>Pôle innovation – Étudiante M1 Sciences Sociales</span>
       </div>
     </div>
-    <p style="text-align:center; margin-top:28px;">
-      <a href="#contact" class="hero-btn" style="font-size:1rem;">Nous rejoindre&nbsp;!</a>
-    </p>
   </section>
-
-  <!-- SECTION CONTACT -->
+  <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <h2>Contact & partenariat</h2>
     <p>
-      Une idée de projet&nbsp;? Besoin d’un accompagnement ou envie de rejoindre le cabinet&nbsp;?<br>
-      Écrivez-nous à <a href="mailto:contact@wpc.fr">contact@wpc.fr</a> ou sur LinkedIn.
+      Un projet ? Besoin d’un accompagnement ou envie de rejoindre l’équipe ?<br>
+      Écrivez-nous à <a href="mailto:contact@wpc.fr" style="color:var(--accent);font-weight:700;">contact@wpc.fr</a>
     </p>
     <a href="mailto:contact@wpc.fr" class="contact-btn">Nous contacter</a>
   </section>
-
   <!-- FOOTER -->
   <footer>
-    <div class="footer-links">
+    <div>
       © 2025 West Paris Consulting – Association étudiante à l’Université Paris Nanterre<br>
-      <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener" style="color:#ffa800;">universite-parisnanterre.fr</a>
-      | <a href="#cabinet" style="color:#ffa800;">Mentions légales</a>
+      <a href="https://www.parisnanterre.fr/" target="_blank" rel="noopener" style="color:var(--secondary);font-weight:600;">universite-parisnanterre.fr</a>
     </div>
     <div class="footer-logos">
-      <!-- Logo Université Paris Nanterre (libre de droit, stylisé SVG) -->
-      <svg class="footer-logo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#0070f3"/><text x="50%" y="58%" text-anchor="middle" fill="white" font-family="Montserrat" font-size="19" font-weight="bold">N</text></svg>
-      <svg class="footer-logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#002147"/><text x="50%" y="58%" text-anchor="middle" fill="#ffa800" font-family="Montserrat" font-size="17" font-weight="bold">WPC</text></svg>
+      <svg class="footer-logo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#275198"/><text x="50%" y="58%" text-anchor="middle" fill="white" font-family="Montserrat" font-size="19" font-weight="bold">N</text></svg>
+      <svg class="footer-logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#002147"/><text x="50%" y="58%" text-anchor="middle" fill="#4f7cc7" font-family="Montserrat" font-size="17" font-weight="bold">WPC</text></svg>
     </div>
   </footer>
-
-  <!-- SCRIPTS BURGER NAV & ANIM GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script>
-    // Burger menu mobile
-    const burger = document.getElementById('burger');
-    const navlinks = document.getElementById('nav-links');
-    burger.addEventListener('click', () => {
-      navlinks.classList.toggle('open');
-      burger.setAttribute('aria-expanded', navlinks.classList.contains('open'));
-    });
-    burger.addEventListener('keypress', (e) => {
-      if (e.key === "Enter" || e.key === " ") burger.click();
-    });
-
-    // Animations GSAP
-    gsap.from(".hero-title", {y: -40, opacity: 0, duration: 1});
-    gsap.from(".hero-baseline", {y: 30, opacity: 0, duration: 1, delay: 0.4});
-    gsap.from(".hero-btn", {scale: 0.8, opacity: 0, duration: 0.8, delay: 0.8});
-
-    gsap.utils.toArray("section").forEach(section => {
-      gsap.from(section.children, {
-        scrollTrigger: section,
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.14
-      });
-    });
-  </script>
 </body>
 </html>
