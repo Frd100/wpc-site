@@ -767,6 +767,100 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+/* WPC Nanterre Section */
+.cmp-nanterre-section {
+    background: var(--kpmg-white);
+    padding: var(--spacing-4xl) 0;
+    margin: var(--spacing-4xl) 0;
+}
+
+.cmp-nanterre-content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+}
+
+.cmp-nanterre-left {
+    position: relative;
+}
+
+.cmp-nanterre-image {
+    position: relative;
+    border-radius: var(--border-radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.nanterre-university-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.nanterre-university-image:hover {
+    transform: scale(1.02);
+}
+
+.cmp-nanterre-right {
+    padding: var(--spacing-2xl);
+}
+
+.cmp-nanterre-text {
+    max-width: 500px;
+}
+
+.cmp-nanterre-subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--kpmg-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-md);
+}
+
+.cmp-nanterre-title {
+    font-family: var(--font-family-condensed);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.cmp-nanterre-description {
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.cmp-nanterre-button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--kpmg-green);
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--border-radius-md);
+    transition: all 0.3s ease;
+    border: 2px solid var(--kpmg-green);
+}
+
+.cmp-nanterre-button:hover {
+    background: var(--kpmg-green-dark);
+    border-color: var(--kpmg-green-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 /* KPMG Exact About Section */
 .cmp-about-section {
     background: var(--kpmg-gray-900);
@@ -934,6 +1028,20 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .cmp-nanterre-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        text-align: center;
+    }
+    
+    .cmp-nanterre-right {
+        text-align: center;
+    }
+    
+    .cmp-nanterre-text {
+        max-width: 100%;
+    }
+    
     .cmp-about-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-2xl);
@@ -997,6 +1105,14 @@ body {
     .cmp-secteurs-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+    }
+    
+    .cmp-nanterre-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .nanterre-university-image {
+        height: 300px;
     }
     
     .cmp-about-actions {
