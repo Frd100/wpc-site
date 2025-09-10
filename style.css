@@ -91,6 +91,7 @@
     padding: var(--spacing-sm) 0;
     position: relative;
     z-index: 1001;
+    margin: 0;
 }
 
 .cmp-top-banner__container {
@@ -210,6 +211,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    margin-top: 0;
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
