@@ -271,102 +271,12 @@ body {
     justify-content: space-between;
 }
 
-/* Simple header: Logo à gauche, Recherche à droite */
+/* Header vide - juste la structure de base */
 .cmp-header__main-nav-bar--inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     min-height: 20px;
     width: 100%;
-}
-
-.cmp-header__main-nav-bar--column:first-child {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
-
-.cmp-header__main-nav-bar--column:last-child {
-    display: flex;
-    align-items: center;
-}
-
-/* KPMG Exact Mobile Toggle */
-.cmp-mobile-toggle__inner {
-    display: none;
-    background: transparent;
-    border: none;
-    padding: var(--spacing-sm);
-    cursor: pointer;
-    color: var(--text-primary);
-    font-size: var(--font-size-xl);
-}
-
-.cmp-mobile-toggle__icon {
-    font-size: var(--font-size-xl);
-}
-
-/* KPMG Exact Logo */
-.cmp-logo {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.cmp-logo__inner {
-    display: flex;
-    align-items: center;
-}
-
-.cmp-logo__link {
-    text-decoration: none;
-    color: var(--kpmg-blue);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-2xl);
-    letter-spacing: -0.02em;
-}
-
-.cmp-logo__text {
-    font-family: var(--font-family-condensed);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-3xl);
-    color: var(--kpmg-blue);
-}
-
-.cmp-logo__image {
-    height: 32px;
-    width: auto;
-    max-width: 150px;
-    transition: all 0.3s ease;
-}
-
-.cmp-logo__image:hover {
-    transform: scale(1.05);
-}
-
-
-/* KPMG Exact Search Toggle */
-.cmp-search-toggle__inner {
-    background: transparent;
-    border: none;
-    padding: var(--spacing-sm) var(--spacing-md);
-    cursor: pointer;
-    color: var(--text-primary);
-    font-size: var(--font-size-base);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    border-radius: var(--border-radius-sm);
-    transition: all 0.2s ease;
-}
-
-.cmp-search-toggle__inner:hover {
-    color: var(--kpmg-blue);
-    background: var(--kpmg-gray-100);
-}
-
-.cmp-search-toggle__text {
-    font-weight: var(--font-weight-medium);
 }
 
 /* KPMG Exact Hero Section */
