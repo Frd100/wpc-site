@@ -1556,8 +1556,8 @@ body {
 .contact-form-container {
     background: #F5F6FA;
     padding: var(--spacing-2xl);
-    border: 1px solid var(--wpc-gray-200);
-    border-radius: var(--border-radius-md);
+    border: none;
+    border-radius: 0;
     max-width: 900px;
     margin: 0 auto;
 }
