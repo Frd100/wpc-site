@@ -366,7 +366,7 @@ body {
 
 .cmp-hero-fbv__title {
     font-family: var(--font-family-condensed);
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: var(--font-weight-bold);
     line-height: 1.1;
     margin-bottom: var(--spacing-xl);
