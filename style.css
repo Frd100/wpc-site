@@ -219,6 +219,122 @@
     width: calc(100% - var(--spacing-sm) * 2);
 }
 
+/* WPC Services Section */
+.cmp-services-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cmp-services-content {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+}
+
+.cmp-services-left {
+    flex: 0 0 40%;
+    background: #DDF7F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl);
+}
+
+.cmp-services-text {
+    max-width: 500px;
+}
+
+.cmp-services-subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--kpmg-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-md);
+}
+
+.cmp-services-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.cmp-services-description {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.cmp-services-button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--kpmg-blue);
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease;
+}
+
+.cmp-services-button:hover {
+    background: var(--kpmg-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.cmp-services-right {
+    flex: 0 0 60%;
+    background: var(--kpmg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.cmp-services-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cmp-services-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .cmp-services-left {
+        flex: 1;
+        padding: var(--spacing-2xl);
+    }
+    
+    .cmp-services-right {
+        flex: 1;
+        min-height: 300px;
+    }
+    
+    .cmp-services-title {
+        font-size: var(--font-size-2xl);
+    }
+}
+
 /* KPMG Exact Base Styles */
 * {
     margin: 0;
