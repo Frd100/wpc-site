@@ -166,6 +166,7 @@
 .main-navigation__logo-image {
     height: 32px;
     width: auto;
+    max-width: 200px;
     transition: transform 0.2s ease;
 }
 
