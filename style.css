@@ -1020,7 +1020,7 @@ body {
 
 .main-navigation__links {
     position: fixed;
-    top: 80px;
+    top: 100px;
     left: 0;
     right: 0;
     width: 100%;
@@ -1041,7 +1041,7 @@ body {
     opacity: 1;
     visibility: visible;
     display: flex;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 100px);
 }
 
 .main-navigation__link {
