@@ -347,6 +347,28 @@ const KPMGClasses = {
     lazy: 'lazy'
 };
 
+// WPC Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', function() {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const links = mobileMenu.querySelectorAll('.main-navigation__link');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+});
+
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { KPMGUtils, KPMGClasses };
