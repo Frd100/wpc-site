@@ -1319,21 +1319,19 @@ body {
 
 .cmp-contact-section {
     padding: var(--spacing-4xl) 0;
-    background: var(--wpc-gray-100);
+    background: #F5F6FA;
 }
 
 .cmp-contact-content {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4xl);
-    align-items: start;
 }
 
-.cmp-contact-left {
-    padding-right: var(--spacing-xl);
+.cmp-contact-form-container {
+    background: #F5F6FA;
+    padding: var(--spacing-4xl);
+    border: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-contact-title {
@@ -1343,19 +1341,24 @@ body {
     color: var(--text-primary);
     margin: 0 0 var(--spacing-lg) 0;
     line-height: 1.2;
+    text-align: center;
 }
 
 .cmp-contact-description {
     font-size: var(--font-size-lg);
     line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+    text-align: center;
 }
 
 .cmp-contact-info {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-contact-info-item {
@@ -1383,11 +1386,7 @@ body {
     line-height: 1.5;
 }
 
-.cmp-contact-right {
-    background: var(--wpc-white);
-    padding: var(--spacing-2xl);
-    border: 1px solid var(--wpc-gray-200);
-}
+/* Supprimé - plus utilisé */
 
 .cmp-contact-form {
     display: flex;
@@ -1501,13 +1500,10 @@ body {
 
 /* Responsive Contact */
 @media (max-width: 768px) {
-    .cmp-contact-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-2xl);
-    }
-    
-    .cmp-contact-left {
-        padding-right: 0;
+    .cmp-contact-info {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
     }
     
     .cmp-contact-title {
@@ -1516,6 +1512,10 @@ body {
     
     .cmp-contact-hero__title {
         font-size: 2.5rem;
+    }
+    
+    .cmp-contact-form-container {
+        padding: var(--spacing-2xl);
     }
 }
 
