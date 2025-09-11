@@ -1386,8 +1386,7 @@ body {
 .cmp-contact-right {
     background: var(--wpc-white);
     padding: var(--spacing-2xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
+    border: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-contact-form {
@@ -1414,11 +1413,10 @@ body {
 .cmp-form-select,
 .cmp-form-textarea {
     padding: var(--spacing-md);
-    border: 2px solid var(--wpc-gray-300);
-    border-radius: var(--border-radius-md);
+    border: 1px solid var(--wpc-gray-300);
     font-size: var(--font-size-base);
     font-family: var(--font-family-primary);
-    transition: all 0.3s ease;
+    transition: border-color 0.2s ease;
     background: var(--wpc-white);
 }
 
@@ -1427,7 +1425,6 @@ body {
 .cmp-form-textarea:focus {
     outline: none;
     border-color: var(--wpc-blue);
-    box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1);
 }
 
 .cmp-form-textarea {
@@ -1443,29 +1440,63 @@ body {
     padding: var(--spacing-lg) var(--spacing-2xl);
     background: var(--wpc-blue);
     color: var(--wpc-white);
-    border: none;
-    border-radius: var(--border-radius-md);
+    border: 1px solid var(--wpc-blue);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     font-family: var(--font-family-primary);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .cmp-contact-submit:hover {
     background: var(--wpc-blue-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    border-color: var(--wpc-blue-dark);
 }
 
 .cmp-contact-submit:active {
-    transform: translateY(0);
+    background: var(--wpc-blue-dark);
 }
 
 .cmp-contact-submit .material-icons {
     font-size: 1.25rem;
+}
+
+/* Checkbox RGPD */
+.cmp-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.cmp-checkbox {
+    margin: 0;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--wpc-blue);
+}
+
+.cmp-checkbox-text {
+    flex: 1;
+}
+
+.cmp-privacy-link,
+.cmp-rights-link {
+    color: var(--wpc-blue);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.cmp-privacy-link:hover,
+.cmp-rights-link:hover {
+    color: var(--wpc-blue-dark);
 }
 
 /* Responsive Contact */
