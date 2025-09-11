@@ -1305,6 +1305,26 @@ body {
 }
 
 /* ===== PAGE MÉTHODES ===== */
+.cmp-methodes-hero {
+    background: var(--kpmg-blue);
+    padding: var(--spacing-4xl) 0;
+    text-align: center;
+}
+
+.cmp-methodes-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.cmp-methodes-hero__title {
+    font-family: var(--font-family-condensed);
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-white);
+    margin: 0;
+}
+
 .cmp-methodes-section {
     width: 100%;
     margin: 0;
@@ -1312,40 +1332,22 @@ body {
 }
 
 .cmp-methodes-content {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
-.cmp-methode-item {
-    display: flex;
-    margin-bottom: var(--spacing-4xl);
-    background: var(--kpmg-white);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    border: 1px solid var(--kpmg-gray-200);
+.cmp-methode-simple {
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--kpmg-gray-200);
 }
 
-.cmp-methode-number {
-    background: var(--kpmg-blue);
-    color: var(--text-white);
-    font-family: var(--font-family-condensed);
-    font-size: 2rem;
-    font-weight: var(--font-weight-bold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 80px;
-    padding: var(--spacing-lg);
+.cmp-methode-simple:last-of-type {
+    border-bottom: none;
 }
 
-.cmp-methode-content {
-    flex: 1;
-    padding: var(--spacing-2xl);
-}
-
-.cmp-methode-title {
+.cmp-methode-simple__title {
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
@@ -1353,36 +1355,11 @@ body {
     margin-bottom: var(--spacing-lg);
 }
 
-.cmp-methode-activities {
-    margin-bottom: var(--spacing-lg);
-}
-
-.cmp-activity-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: var(--spacing-md);
-    gap: var(--spacing-sm);
-}
-
-.cmp-activity-item .material-icons {
-    color: var(--kpmg-blue);
-    font-size: 20px;
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-.cmp-activity-item span:last-child {
+.cmp-methode-simple__text {
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
     color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.cmp-methode-deliverable {
-    background: var(--kpmg-gray-100);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius-md);
-    border-left: 4px solid var(--kpmg-green);
-    color: var(--text-primary);
-    font-size: var(--font-size-base);
+    margin: 0;
 }
 
 /* Section Limites */
