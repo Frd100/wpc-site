@@ -1326,7 +1326,7 @@ body {
 .cmp-contact-content {
     max-width: 600px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0;
 }
 
 .cmp-contact-form-container {
