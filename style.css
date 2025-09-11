@@ -1031,7 +1031,6 @@ body {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1000;
-    display: none;
 }
 
 .main-navigation__links.active {
