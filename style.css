@@ -1324,8 +1324,8 @@ body {
 }
 
 .cmp-contact-content {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 0;
 }
 
@@ -1334,8 +1334,8 @@ body {
     padding: var(--spacing-3xl);
     border: 1px solid var(--wpc-gray-200);
     border-radius: var(--border-radius-md);
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
 }
