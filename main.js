@@ -1,8 +1,8 @@
-// KPMG Exact JavaScript - Clone Parfait
+// WPC Site JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // KPMG Exact Mobile Navigation
+    // WPC Mobile Navigation
     const mobileToggle = document.querySelector('[data-cmp-mobile-toggle]');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 // Show success message
                 submitButton.textContent = 'Message envoyé !';
-                submitButton.style.background = '#00B04F';
+                submitButton.style.background = '#00338D';
                 
                 // Reset form
                 this.reset();
@@ -275,15 +275,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // KPMG Exact Console Welcome
-    console.log('%c🎯 KPMG Clone Parfait - WPC', 'color: #00338D; font-size: 20px; font-weight: bold;');
-    console.log('%cSite développé avec la structure exacte de KPMG', 'color: #00B04F; font-size: 14px;');
+    // WPC Console Welcome
+    console.log('%c🎯 West Paris Consulting', 'color: #00338D; font-size: 20px; font-weight: bold;');
+    console.log('%cSite développé pour West Paris Consulting', 'color: #00338D; font-size: 14px;');
     console.log('%cToutes les classes et interactions reproduites à l\'identique', 'color: #6C757D; font-size: 12px;');
     
 });
 
-// KPMG Exact Utility Functions
-const KPMGUtils = {
+// WPC Utility Functions
+const WPCUtils = {
     // Debounce function for performance
     debounce: function(func, wait, immediate) {
         let timeout;
@@ -336,8 +336,8 @@ const KPMGUtils = {
     }
 };
 
-// KPMG Exact CSS Classes for JavaScript
-const KPMGClasses = {
+// WPC CSS Classes for JavaScript
+const WPCClasses = {
     mobileMenuOpen: 'mobile-menu-open',
     headerScrolled: 'header--scrolled',
     headerHidden: 'header--hidden',
@@ -371,5 +371,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { KPMGUtils, KPMGClasses };
+    module.exports = { WPCUtils, WPCClasses };
 }

@@ -1,47 +1,44 @@
-/* KPMG Exact CSS - Clone Parfait */
+/* WPC Site CSS */
 
-/* KPMG Exact CSS Variables */
+/* WPC CSS Variables */
 :root {
-    /* KPMG Primary Colors - Exact from image */
-    --kpmg-blue: #00338D;
-    --kpmg-blue-light: #0047AB;
-    --kpmg-blue-dark: #002366;
-    --kpmg-blue-hero: #1A365D;
-    --kpmg-green: #00B04F;
-    --kpmg-green-light: #00D65A;
-    --kpmg-green-dark: #008A3D;
+    /* WPC Primary Colors */
+    --wpc-blue: #00338D;
+    --wpc-blue-light: #0047AB;
+    --wpc-blue-dark: #002366;
+    --wpc-blue-hero: #1A365D;
     
-    /* KPMG Neutrals */
-    --kpmg-white: #FFFFFF;
-    --kpmg-black: #000000;
-    --kpmg-gray-100: #F8F9FA;
-    --kpmg-gray-200: #E9ECEF;
-    --kpmg-gray-300: #DEE2E6;
-    --kpmg-gray-400: #CED4DA;
-    --kpmg-gray-500: #ADB5BD;
-    --kpmg-gray-600: #6C757D;
-    --kpmg-gray-700: #495057;
-    --kpmg-gray-800: #343A40;
-    --kpmg-gray-900: #212529;
+    /* WPC Neutrals */
+    --wpc-white: #FFFFFF;
+    --wpc-black: #000000;
+    --wpc-gray-100: #F8F9FA;
+    --wpc-gray-200: #E9ECEF;
+    --wpc-gray-300: #DEE2E6;
+    --wpc-gray-400: #CED4DA;
+    --wpc-gray-500: #ADB5BD;
+    --wpc-gray-600: #6C757D;
+    --wpc-gray-700: #495057;
+    --wpc-gray-800: #343A40;
+    --wpc-gray-900: #212529;
     
-    /* KPMG Text Colors */
+    /* WPC Text Colors */
     --text-primary: #212529;
     --text-secondary: #6C757D;
     --text-white: #FFFFFF;
     --text-muted: #ADB5BD;
     
-    /* KPMG Background Colors */
+    /* WPC Background Colors */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8F9FA;
     --bg-dark: #212529;
     --bg-blue: #00338D;
     
-    /* KPMG Fonts */
+    /* WPC Fonts */
     --font-family-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-condensed: 'Open Sans Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-icons: 'Material Icons', sans-serif;
     
-    /* KPMG Font Weights */
+    /* WPC Font Weights */
     --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
@@ -49,7 +46,7 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     
-    /* KPMG Font Sizes */
+    /* WPC Font Sizes */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -61,7 +58,7 @@
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
     
-    /* KPMG Spacing */
+    /* WPC Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -71,13 +68,13 @@
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
     
-    /* KPMG Border Radius */
+    /* WPC Border Radius */
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
     --border-radius-lg: 0.75rem;
     --border-radius-xl: 1rem;
     
-    /* KPMG Shadows */
+    /* WPC Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -133,7 +130,7 @@
 
 /* Navigation principale */
 .main-navigation {
-    background: var(--kpmg-white);
+    background: var(--wpc-white);
     padding: 0;
     margin: 0;
     line-height: 1;
@@ -241,7 +238,7 @@
     right: var(--spacing-sm);
     width: 0;
     height: 3px;
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     transition: all 0.3s ease;
     margin: 0 auto;
 }
@@ -286,7 +283,7 @@
 .cmp-services-subtitle {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-md);
@@ -310,7 +307,7 @@
 .cmp-services-button {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     color: var(--text-white);
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
@@ -322,7 +319,7 @@
 }
 
 .cmp-services-button:hover {
-    background: var(--kpmg-blue-dark);
+    background: var(--wpc-blue-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -339,17 +336,17 @@
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
     background: transparent;
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     border-radius: 20px;
     text-decoration: none;
     transition: all 0.2s ease;
-    border: 2px solid var(--kpmg-blue);
+    border: 2px solid var(--wpc-blue);
 }
 
 .cmp-domain-tag:hover {
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     color: var(--text-white);
     transform: translateY(-1px);
 }
@@ -357,7 +354,7 @@
 .cmp-domain-link {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     text-decoration: underline;
@@ -366,12 +363,12 @@
 }
 
 .cmp-domain-link:hover {
-    color: var(--kpmg-blue-dark);
+    color: var(--wpc-blue-dark);
 }
 
 .cmp-services-right {
     flex: 0 0 50%;
-    background: var(--kpmg-white);
+    background: var(--wpc-white);
     padding: 0;
     position: relative;
     box-sizing: border-box;
@@ -439,29 +436,29 @@ body {
 }
 
 .cmp-ppc-navigation__userlogin {
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     color: var(--text-white);
 }
 
 .cmp-ppc-navigation__userlogin:hover {
-    background: var(--kpmg-blue-dark);
+    background: var(--wpc-blue-dark);
     color: var(--text-white);
 }
 
 /* KPMG Exact Language Selector */
 .cmp-lang-selector__toggle-btn {
     background: transparent;
-    border: 1px solid var(--kpmg-gray-300);
+    border: 1px solid var(--wpc-gray-300);
     cursor: pointer;
 }
 
 .cmp-lang-selector__toggle-btn:hover {
-    background: var(--kpmg-gray-100);
-    border-color: var(--kpmg-blue);
+    background: var(--wpc-gray-100);
+    border-color: var(--wpc-blue);
 }
 
 .cmp-lang-selector__icon {
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
 }
 
 .cmp-lang-selector__chevron-icon {
@@ -513,8 +510,11 @@ body {
 .cmp-hero-fbv__image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center top;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .cmp-hero-fbv__content {
@@ -570,19 +570,19 @@ body {
 .cmp-hero-fbv__action-link {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
-    background: var(--kpmg-white);
-    color: var(--kpmg-blue);
+    background: var(--wpc-white);
+    color: var(--wpc-blue);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-base);
-    border: 1px solid var(--kpmg-blue);
+    border: 1px solid var(--wpc-blue);
     border-radius: 50px;
     transition: all 0.3s ease;
 }
 
 .cmp-hero-fbv__action-link:hover {
-    background: var(--kpmg-white);
-    color: var(--kpmg-blue);
+    background: var(--wpc-white);
+    color: var(--wpc-blue);
 }
 
 
@@ -663,7 +663,7 @@ body {
 }
 
 .cmp-title__link-text {
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-base);
@@ -671,12 +671,12 @@ body {
 }
 
 .cmp-title__link-text:hover {
-    color: var(--kpmg-blue-dark);
+    color: var(--wpc-blue-dark);
 }
 
 .cmp-title__link .material-icons {
     font-size: var(--font-size-lg);
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
 }
 
 /* KPMG Exact Expertises Grid */
@@ -690,24 +690,24 @@ body {
 .cmp-expertise-item {
     text-align: center;
     padding: var(--spacing-2xl);
-    background: var(--kpmg-white);
+    background: var(--wpc-white);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
-    border: 1px solid var(--kpmg-gray-200);
+    border: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-expertise-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--kpmg-blue);
+    border-color: var(--wpc-blue);
 }
 
 .cmp-expertise-item__icon {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-lg);
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -739,26 +739,26 @@ body {
 }
 
 .cmp-button--primary {
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     color: var(--text-white);
-    border-color: var(--kpmg-blue);
+    border-color: var(--wpc-blue);
 }
 
 .cmp-button--primary:hover {
-    background: var(--kpmg-blue-dark);
-    border-color: var(--kpmg-blue-dark);
+    background: var(--wpc-blue-dark);
+    border-color: var(--wpc-blue-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .cmp-button--secondary {
     background: transparent;
-    color: var(--kpmg-blue);
-    border-color: var(--kpmg-blue);
+    color: var(--wpc-blue);
+    border-color: var(--wpc-blue);
 }
 
 .cmp-button--secondary:hover {
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -766,7 +766,7 @@ body {
 
 /* WPC Nanterre Section */
 .cmp-nanterre-section {
-    background: var(--kpmg-white);
+    background: var(--wpc-white);
     padding: var(--spacing-4xl) 0;
     margin: var(--spacing-4xl) 0;
 }
@@ -814,7 +814,7 @@ body {
 .cmp-nanterre-subtitle {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-md);
@@ -836,31 +836,10 @@ body {
     margin-bottom: var(--spacing-2xl);
 }
 
-.cmp-nanterre-button {
-    display: inline-block;
-    padding: var(--spacing-lg) var(--spacing-2xl);
-    background: var(--kpmg-green);
-    color: var(--text-white);
-    text-decoration: none;
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--border-radius-md);
-    transition: all 0.3s ease;
-    border: 2px solid var(--kpmg-green);
-}
-
-.cmp-nanterre-button:hover {
-    background: var(--kpmg-green-dark);
-    border-color: var(--kpmg-green-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
 
 /* KPMG Exact About Section */
 .cmp-about-section {
-    background: var(--kpmg-gray-900);
+    background: var(--wpc-gray-900);
     color: var(--text-white);
     padding: var(--spacing-4xl) 0;
     margin: var(--spacing-4xl) 0;
@@ -952,7 +931,7 @@ body {
 
 /* KPMG Exact Footer */
 .cmp-footer {
-    background: var(--kpmg-gray-900);
+    background: var(--wpc-gray-900);
     color: var(--text-white);
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
     margin-top: var(--spacing-4xl);
@@ -987,13 +966,13 @@ body {
 
 .cmp-footer__links a:hover {
     opacity: 1;
-    color: var(--kpmg-green);
+    color: var(--wpc-blue);
 }
 
 .cmp-footer__copyright {
     text-align: center;
     padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--kpmg-gray-700);
+    border-top: 1px solid var(--wpc-gray-700);
 }
 
 .cmp-footer__copyright p {
@@ -1041,7 +1020,7 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--kpmg-white);
+    background: var(--wpc-white);
     flex-direction: column;
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-md);
@@ -1063,7 +1042,7 @@ body {
 .main-navigation__link {
     padding: var(--spacing-md);
     text-align: center;
-    border-bottom: 1px solid var(--kpmg-gray-200);
+    border-bottom: 1px solid var(--wpc-gray-200);
     width: 100%;
 }
 
@@ -1109,15 +1088,18 @@ body {
     position: relative;
     width: 100%;
     height: 300px;
+    margin: 0;
+    padding: 0;
 }
 
 .cmp-hero-fbv__content {
     order: 2;
     width: 100%;
     padding: var(--spacing-2xl) var(--spacing-md);
-    background: var(--kpmg-blue-hero);
+    background: var(--wpc-blue-hero);
     position: static;
     transform: none;
+    margin: 0;
 }
 
 
@@ -1176,7 +1158,7 @@ body {
         right: 0;
         width: 0;
         height: 3px;
-        background: var(--kpmg-blue);
+        background: var(--wpc-blue);
         transition: all 0.3s ease;
         margin: 0 auto;
     }
@@ -1298,13 +1280,13 @@ body {
 .cmp-menu-item__inner:focus,
 .cmp-mobile-toggle__inner:focus,
 .cmp-search-toggle__inner:focus {
-    outline: 2px solid var(--kpmg-blue);
+    outline: 2px solid var(--wpc-blue);
     outline-offset: 2px;
 }
 
 /* ===== PAGE MÉTHODES ===== */
 .cmp-methodes-hero {
-    background: var(--kpmg-blue);
+    background: var(--wpc-blue);
     padding: var(--spacing-4xl) 0;
     text-align: center;
 }
@@ -1380,7 +1362,7 @@ body {
 .cmp-methode-simple {
     margin-bottom: var(--spacing-3xl);
     padding-bottom: var(--spacing-2xl);
-    border-bottom: 1px solid var(--kpmg-gray-200);
+    border-bottom: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-methode-simple:last-of-type {
@@ -1405,7 +1387,7 @@ body {
 
 /* Navigation active */
 .main-navigation__link.active {
-    color: var(--kpmg-blue);
+    color: var(--wpc-blue);
     font-weight: var(--font-weight-semibold);
 }
 
