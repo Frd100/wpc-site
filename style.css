@@ -229,7 +229,7 @@
 .cmp-services-content {
     display: flex;
     width: 100%;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .cmp-services-left {
@@ -304,6 +304,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .services-image {
@@ -311,6 +312,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 /* Responsive */
