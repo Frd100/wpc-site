@@ -1647,13 +1647,13 @@ body {
     background: var(--wpc-blue);
     color: var(--wpc-white);
     border: none;
-    border-radius: var(--border-radius-sm);
+    border-radius: 50px;
     font-size: 0.875rem;
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-primary);
     cursor: pointer;
     transition: background-color 0.2s ease;
-    width: 100%;
+    width: auto;
     margin-top: var(--spacing-md);
     box-shadow: none;
 }
