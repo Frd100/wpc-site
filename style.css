@@ -1018,21 +1018,22 @@ body {
 }
 
 .main-navigation__links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     background: var(--wpc-white);
     flex-direction: column;
     padding: var(--spacing-lg);
+    padding-top: 80px;
     box-shadow: var(--shadow-md);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 1000;
-    max-height: 0;
-    overflow: hidden;
+    z-index: 9999;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .main-navigation__links.active {
@@ -1040,7 +1041,6 @@ body {
     opacity: 1;
     visibility: visible;
     display: flex;
-    max-height: 500px;
 }
 
 .main-navigation__link {
