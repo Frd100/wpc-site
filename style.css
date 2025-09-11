@@ -1572,7 +1572,7 @@ body {
 
 .form-title {
     font-family: var(--font-family-condensed);
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
     margin: 0 0 var(--spacing-sm) 0;
@@ -1743,7 +1743,7 @@ body {
     }
     
     .form-title {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
     }
     
     .contact-form-container {
