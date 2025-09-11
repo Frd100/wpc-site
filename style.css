@@ -1031,6 +1031,8 @@ body {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
 }
 
 .main-navigation__links.active {
@@ -1038,6 +1040,7 @@ body {
     opacity: 1;
     visibility: visible;
     display: flex;
+    max-height: 500px;
 }
 
 .main-navigation__link {
