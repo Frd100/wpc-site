@@ -1751,6 +1751,97 @@ body {
     }
 }
 
+/* ===== PAGE CONFIDENTIALITÉ ===== */
+.confidentialite-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-4xl) var(--spacing-lg);
+}
+
+.confidentialite-content {
+    background: var(--wpc-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.confidentialite-content h2 {
+    font-family: var(--font-family-condensed);
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--wpc-blue);
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.last-updated {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: var(--spacing-xl);
+    font-size: 0.9rem;
+}
+
+.confidentialite-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--wpc-gray-200);
+}
+
+.confidentialite-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.confidentialite-section h3 {
+    font-family: var(--font-family-condensed);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--wpc-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+.confidentialite-section p {
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.confidentialite-section ul {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.confidentialite-section li {
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.confidentialite-section strong {
+    color: var(--wpc-blue);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Responsive Confidentialité */
+@media (max-width: 768px) {
+    .confidentialite-container {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .confidentialite-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .confidentialite-content h2 {
+        font-size: 2rem;
+    }
+    
+    .confidentialite-section h3 {
+        font-size: 1.25rem;
+    }
+}
+
 /* ===== PAGE MÉTHODES ===== */
 .cmp-methodes-hero {
     background: var(--wpc-blue);
