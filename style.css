@@ -1297,27 +1297,44 @@ body {
         padding: var(--spacing-sm) var(--spacing-md);
     }
     
-    /* Desktop hero - carré à gauche de l'image */
+    /* Desktop hero - image en arrière-plan, carré par-dessus */
     .cmp-hero-fbv {
-        flex-direction: row;
+        position: relative;
         min-height: 80vh;
+        display: flex;
+        align-items: center;
     }
     
     .cmp-hero-fbv__image {
-        order: 2;
-        flex: 1;
-        height: 80vh;
-        min-height: 600px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        order: unset;
+        flex: unset;
+    }
+    
+    .cmp-hero-fbv__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
     
     .cmp-hero-fbv__content {
-        order: 1;
-        flex: 0 0 50%;
+        position: relative;
+        z-index: 2;
+        width: 50%;
+        max-width: 600px;
+        padding: var(--spacing-3xl);
+        background: #00338D;
+        margin-left: 0;
+        order: unset;
+        flex: unset;
         position: static;
         transform: none;
-        width: auto;
-        max-width: none;
-        padding: var(--spacing-3xl);
         display: flex;
         align-items: center;
         justify-content: center;
