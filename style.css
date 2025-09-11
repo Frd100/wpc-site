@@ -1284,6 +1284,209 @@ body {
     outline-offset: 2px;
 }
 
+/* ===== PAGE CONTACT ===== */
+.cmp-contact-hero {
+    background: var(--wpc-blue);
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.cmp-contact-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.cmp-contact-hero__title {
+    font-family: var(--font-family-condensed);
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-white);
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+.cmp-contact-hero__subtitle {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    color: var(--text-white);
+    margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+.cmp-contact-section {
+    padding: var(--spacing-4xl) 0;
+    background: var(--wpc-gray-100);
+}
+
+.cmp-contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: start;
+}
+
+.cmp-contact-left {
+    padding-right: var(--spacing-xl);
+}
+
+.cmp-contact-title {
+    font-family: var(--font-family-condensed);
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-lg) 0;
+    line-height: 1.2;
+}
+
+.cmp-contact-description {
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.cmp-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.cmp-contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.cmp-contact-info-item .material-icons {
+    color: var(--wpc-blue);
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.cmp-contact-info-item strong {
+    display: block;
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.cmp-contact-info-item p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.cmp-contact-right {
+    background: var(--wpc-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.cmp-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.cmp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.cmp-form-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cmp-form-input,
+.cmp-form-select,
+.cmp-form-textarea {
+    padding: var(--spacing-md);
+    border: 2px solid var(--wpc-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-primary);
+    transition: all 0.3s ease;
+    background: var(--wpc-white);
+}
+
+.cmp-form-input:focus,
+.cmp-form-select:focus,
+.cmp-form-textarea:focus {
+    outline: none;
+    border-color: var(--wpc-blue);
+    box-shadow: 0 0 0 3px rgba(0, 51, 141, 0.1);
+}
+
+.cmp-form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.cmp-contact-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    background: var(--wpc-blue);
+    color: var(--wpc-white);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-family-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cmp-contact-submit:hover {
+    background: var(--wpc-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.cmp-contact-submit:active {
+    transform: translateY(0);
+}
+
+.cmp-contact-submit .material-icons {
+    font-size: 1.25rem;
+}
+
+/* Responsive Contact */
+@media (max-width: 768px) {
+    .cmp-contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+    
+    .cmp-contact-left {
+        padding-right: 0;
+    }
+    
+    .cmp-contact-title {
+        font-size: 2rem;
+    }
+    
+    .cmp-contact-hero__title {
+        font-size: 2.5rem;
+    }
+}
+
 /* ===== PAGE MÉTHODES ===== */
 .cmp-methodes-hero {
     background: var(--wpc-blue);
