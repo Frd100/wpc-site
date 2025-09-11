@@ -569,14 +569,14 @@ body {
 
 .cmp-hero-fbv__action-link {
     display: inline-block;
-    padding: var(--spacing-lg) var(--spacing-2xl);
+    padding: var(--spacing-md) var(--spacing-xl);
     background: var(--kpmg-white);
     color: var(--kpmg-blue);
     text-decoration: none;
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-medium);
     font-size: var(--font-size-base);
-    border: 2px solid var(--kpmg-blue);
-    border-radius: var(--border-radius-md);
+    border: 1px solid var(--kpmg-blue);
+    border-radius: var(--border-radius-xl);
     transition: all 0.3s ease;
 }
 
