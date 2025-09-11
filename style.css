@@ -1322,7 +1322,18 @@ body {
     font-size: 3rem;
     font-weight: var(--font-weight-bold);
     color: var(--text-white);
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+.cmp-methodes-hero__subtitle {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    color: var(--text-white);
     margin: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
 }
 
 .cmp-methodes-section {
