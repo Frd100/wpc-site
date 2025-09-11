@@ -581,10 +581,8 @@ body {
 }
 
 .cmp-hero-fbv__action-link:hover {
-    background: var(--kpmg-blue);
-    color: var(--kpmg-white);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    background: var(--kpmg-white);
+    color: var(--kpmg-blue);
 }
 
 
