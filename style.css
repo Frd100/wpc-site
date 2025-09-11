@@ -573,7 +573,7 @@ body {
     background: var(--wpc-white);
     color: var(--wpc-blue);
     text-decoration: none;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-bold);
     font-size: var(--font-size-base);
     border: 1px solid var(--wpc-blue);
     border-radius: 50px;
