@@ -1550,7 +1550,7 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: var(--spacing-4xl) 0;
-    background: #F5F6FA;
+    background: var(--wpc-white);
 }
 
 .contact-form-container {
@@ -1558,7 +1558,7 @@ body {
     padding: var(--spacing-2xl);
     border: 1px solid var(--wpc-gray-200);
     border-radius: var(--border-radius-md);
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
