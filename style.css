@@ -1020,7 +1020,8 @@ body {
 
 .main-navigation__links {
     position: fixed;
-    top: 80px;
+    top: auto;
+    bottom: 100%;
     left: 0;
     right: 0;
     width: 100%;
@@ -1028,7 +1029,7 @@ body {
     flex-direction: column;
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
-    transform: translateY(-100%);
+    transform: translateY(100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
