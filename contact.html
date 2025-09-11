@@ -117,10 +117,10 @@
                     <div class="cmp-contact-section">
                         <div class="cmp-contact-content">
                             <div class="cmp-contact-form-container">
-                                <h2 class="cmp-contact-title">Parlons de votre projet</h2>
+                                <p class="cmp-contact-mandatory">* Les champs marqués d'un astérisque sont obligatoires pour nous permettre de traiter votre demande.</p>
+                                <h2 class="cmp-contact-title">Exprimez votre besoin</h2>
                                 <p class="cmp-contact-description">
-                                    Que vous soyez une association, une entreprise ou une organisation, nous sommes là pour vous accompagner. 
-                                    Notre approche étudiante apporte un regard neuf et des solutions créatives à vos défis.
+                                    Notre équipe examinera votre demande et s'engage à la traiter dans les meilleurs délais.
                                 </p>
                                 <form class="cmp-contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                                     <!-- Champ anti-spam caché -->
@@ -128,37 +128,71 @@
                                         <label>Ne remplissez pas ce champ si vous êtes humain: <input name="bot-field"></label>
                                     </div>
                                     
-                                    <div class="cmp-form-group">
-                                        <label for="name" class="cmp-form-label">Nom complet *</label>
-                                        <input type="text" id="name" name="name" class="cmp-form-input" required>
+                                    <div class="cmp-form-row">
+                                        <div class="cmp-form-group">
+                                            <label for="subject" class="cmp-form-label">Type de demande *</label>
+                                            <select id="subject" name="subject" class="cmp-form-select" required>
+                                                <option value="">Sélectionnez un type</option>
+                                                <option value="etude">Étude et enquête</option>
+                                                <option value="benchmark">Benchmark et diagnostic</option>
+                                                <option value="communication">Communication et contenus</option>
+                                                <option value="organisation">Organisation et outils</option>
+                                                <option value="projet-campus">Projet campus</option>
+                                                <option value="autre">Autre</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="cmp-form-row">
+                                        <div class="cmp-form-group">
+                                            <label for="firstname" class="cmp-form-label">Prénom *</label>
+                                            <input type="text" id="firstname" name="firstname" class="cmp-form-input" required>
+                                        </div>
+                                        <div class="cmp-form-group">
+                                            <label for="lastname" class="cmp-form-label">Nom *</label>
+                                            <input type="text" id="lastname" name="lastname" class="cmp-form-input" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="cmp-form-row">
+                                        <div class="cmp-form-group">
+                                            <label for="email" class="cmp-form-label">Email *</label>
+                                            <input type="email" id="email" name="email" class="cmp-form-input" required>
+                                        </div>
+                                        <div class="cmp-form-group">
+                                            <label for="phone" class="cmp-form-label">N° de téléphone *</label>
+                                            <input type="tel" id="phone" name="phone" class="cmp-form-input" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="cmp-form-row">
+                                        <div class="cmp-form-group">
+                                            <label for="city" class="cmp-form-label">Ville *</label>
+                                            <input type="text" id="city" name="city" class="cmp-form-input" required>
+                                        </div>
+                                        <div class="cmp-form-group">
+                                            <label for="organization" class="cmp-form-label">Entreprise</label>
+                                            <input type="text" id="organization" name="organization" class="cmp-form-input">
+                                        </div>
+                                    </div>
+
+                                    <div class="cmp-form-row">
+                                        <div class="cmp-form-group">
+                                            <label for="employees" class="cmp-form-label">Nombre de salariés *</label>
+                                            <select id="employees" name="employees" class="cmp-form-select" required>
+                                                <option value="">Sélectionnez</option>
+                                                <option value="1-10">1-10</option>
+                                                <option value="11-50">11-50</option>
+                                                <option value="51-200">51-200</option>
+                                                <option value="201-500">201-500</option>
+                                                <option value="500+">500+</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="cmp-form-group">
-                                        <label for="email" class="cmp-form-label">Email *</label>
-                                        <input type="email" id="email" name="email" class="cmp-form-input" required>
-                                    </div>
-
-                                    <div class="cmp-form-group">
-                                        <label for="organization" class="cmp-form-label">Organisation</label>
-                                        <input type="text" id="organization" name="organization" class="cmp-form-input">
-                                    </div>
-
-                                    <div class="cmp-form-group">
-                                        <label for="subject" class="cmp-form-label">Sujet *</label>
-                                        <select id="subject" name="subject" class="cmp-form-select" required>
-                                            <option value="">Sélectionnez un sujet</option>
-                                            <option value="etude">Étude et enquête</option>
-                                            <option value="benchmark">Benchmark et diagnostic</option>
-                                            <option value="communication">Communication et contenus</option>
-                                            <option value="organisation">Organisation et outils</option>
-                                            <option value="projet-campus">Projet campus</option>
-                                            <option value="autre">Autre</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="cmp-form-group">
-                                        <label for="message" class="cmp-form-label">Message *</label>
-                                        <textarea id="message" name="message" class="cmp-form-textarea" rows="5" required placeholder="Décrivez votre projet ou votre demande..."></textarea>
+                                        <label for="message" class="cmp-form-label">Votre message *</label>
+                                        <textarea id="message" name="message" class="cmp-form-textarea" rows="4" required placeholder="Descriptif de votre besoin*"></textarea>
                                     </div>
 
                                     <div class="cmp-form-group">
@@ -175,8 +209,7 @@
                                     </div>
 
                                     <button type="submit" class="cmp-contact-submit">
-                                        <span class="material-icons">send</span>
-                                        Envoyer le message
+                                        Envoyer ma demande
                                     </button>
                                 </form>
                                 
