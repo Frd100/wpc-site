@@ -1020,8 +1020,7 @@ body {
 
 .main-navigation__links {
     position: fixed;
-    top: auto;
-    bottom: 100%;
+    top: 80px;
     left: 0;
     right: 0;
     width: 100%;
@@ -1029,21 +1028,20 @@ body {
     flex-direction: column;
     padding: var(--spacing-lg);
     box-shadow: none;
-    transform: translateY(100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 10000;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
+    max-height: 0;
+    overflow: hidden;
     border: none;
 }
 
 .main-navigation__links.active {
-    transform: translateY(0);
     opacity: 1;
     visibility: visible;
     display: flex;
+    max-height: calc(100vh - 80px);
 }
 
 .main-navigation__link {
