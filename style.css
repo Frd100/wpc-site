@@ -1249,15 +1249,14 @@ body {
         max-width: 600px;
         padding: var(--spacing-3xl);
         background: #00338D;
-        margin-left: 0;
+        margin: 0 auto;
         order: unset;
         flex: unset;
         position: static;
         transform: none;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        margin-left: var(--spacing-2xl);
+        justify-content: center;
     }
     
 }
