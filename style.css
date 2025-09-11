@@ -1287,7 +1287,7 @@ body {
 /* ===== PAGE MÉTHODES ===== */
 .cmp-methodes-hero {
     background: var(--wpc-blue);
-    padding: var(--spacing-4xl) 0;
+    padding: var(--spacing-2xl) 0;
     text-align: center;
 }
 
