@@ -1336,6 +1336,37 @@ body {
     opacity: 0.95;
 }
 
+/* Fil d'Ariane */
+.cmp-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+}
+
+.cmp-breadcrumb__link {
+    color: var(--text-white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.cmp-breadcrumb__link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.cmp-breadcrumb__separator {
+    color: var(--text-white);
+    opacity: 0.6;
+}
+
+.cmp-breadcrumb__current {
+    color: var(--text-white);
+    font-weight: var(--font-weight-medium);
+}
+
 .cmp-methodes-section {
     width: 100%;
     margin: 0;
