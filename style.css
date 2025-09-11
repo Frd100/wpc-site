@@ -1244,17 +1244,17 @@ body {
     }
     
     .cmp-hero-fbv__content {
-        position: relative;
+        position: absolute;
         z-index: 2;
         width: 50%;
         max-width: 600px;
         padding: var(--spacing-3xl);
         background: #00338D;
-        margin-left: var(--spacing-2xl);
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
         order: unset;
         flex: unset;
-        position: static;
-        transform: none;
         display: flex;
         align-items: center;
         justify-content: flex-start;
