@@ -1018,41 +1018,66 @@ body {
     justify-content: space-between;
 }
 
+/* Desktop navigation - styles normaux */
 .main-navigation__links {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: var(--wpc-white);
-    flex-direction: column;
-    padding: var(--spacing-lg);
-    box-shadow: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 10000;
-    max-height: 0;
-    overflow: hidden;
-    border: none;
-}
-
-.main-navigation__links.active {
-    opacity: 1;
-    visibility: visible;
     display: flex;
-    max-height: calc(100vh - 100px);
+    align-items: center;
+    gap: var(--spacing-lg);
 }
 
+/* Mobile navigation - styles spécifiques */
+@media (max-width: 768px) {
+    .main-navigation__links {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: var(--wpc-white);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 10000;
+        max-height: 0;
+        overflow: hidden;
+        border: none;
+    }
+
+    .main-navigation__links.active {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        max-height: calc(100vh - 100px);
+    }
+}
+
+/* Desktop navigation links - styles normaux */
 .main-navigation__link {
-    padding: var(--spacing-md);
-    text-align: center;
-    border-bottom: 1px solid var(--wpc-gray-200);
-    width: 100%;
+    color: var(--wpc-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.main-navigation__link:last-child {
-    border-bottom: none;
+.main-navigation__link:hover {
+    color: var(--wpc-primary);
+}
+
+/* Mobile navigation links - styles spécifiques */
+@media (max-width: 768px) {
+    .main-navigation__link {
+        padding: var(--spacing-md);
+        text-align: center;
+        border-bottom: 1px solid var(--wpc-gray-200);
+        width: 100%;
+    }
+
+    .main-navigation__link:last-child {
+        border-bottom: none;
+    }
 }
 
 /* Mobile services section */
