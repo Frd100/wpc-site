@@ -1222,6 +1222,7 @@ body {
         min-height: 80vh;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     
     .cmp-hero-fbv__image {
@@ -1249,7 +1250,6 @@ body {
         max-width: 600px;
         padding: var(--spacing-3xl);
         background: #00338D;
-        margin: 0 auto;
         order: unset;
         flex: unset;
         position: static;
@@ -1257,6 +1257,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
     
 }
