@@ -61,7 +61,7 @@
     </div>
 
     <!-- Navigation principale -->
-    <nav class="main-navigation" role="navigation" aria-label="Navigation principale">
+    <nav class="main-navigation">
         <div class="main-navigation__container">
             <div class="main-navigation__content">
                 <!-- Logo à gauche -->
@@ -71,39 +71,35 @@
                     </a>
                 </div>
                 
+                <!-- Bouton hamburger mobile (caché sur desktop) -->
+                <button class="main-navigation__toggle" id="mobile-menu-toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
                 <!-- Liens de navigation -->
                 <div class="main-navigation__links" id="mobile-menu">
                     <a href="index.html" class="main-navigation__link">Accueil</a>
                     <a href="index.html#domaines" class="main-navigation__link">Nos Domaines</a>
-                    <a href="methodes.html" class="main-navigation__link">Nos Méthodes</a>
+                    <a href="methodes.html" class="main-navigation__link">Notre Démarche</a>
                     <a href="index.html#qui-sommes-nous" class="main-navigation__link">Qui Sommes-Nous</a>
                     <a href="contact.html" class="main-navigation__link active">Contact</a>
-                </div>
-
-                <!-- Bouton hamburger -->
-                <div class="main-navigation__actions">
-                    <button class="cmp-mobile-toggle" data-cmp-mobile-toggle="" aria-label="Ouvrir le menu mobile">
-                        <span class="cmp-mobile-toggle__inner">
-                            <span class="hamburger-line"></span>
-                            <span class="hamburger-line"></span>
-                            <span class="hamburger-line"></span>
-                        </span>
-                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section Contact -->
-    <div class="cmp-contact-hero">
-        <div class="cmp-contact-hero__container">
+    <div class="cmp-methodes-hero">
+        <div class="cmp-methodes-hero__container">
             <nav class="cmp-breadcrumb">
                 <a href="index.html" class="cmp-breadcrumb__link">Accueil</a>
                 <span class="cmp-breadcrumb__separator">></span>
                 <span class="cmp-breadcrumb__current">Contact</span>
             </nav>
-            <h1 class="cmp-contact-hero__title">Contactez-Nous</h1>
-            <p class="cmp-contact-hero__subtitle">Une question ? Un projet ? Notre équipe étudiante est là pour vous accompagner dans vos défis de transformation et d'innovation.</p>
+            <h1 class="cmp-methodes-hero__title">Contact</h1>
+            <p class="cmp-methodes-hero__subtitle">Exprimez votre besoin</p>
         </div>
     </div>
 
