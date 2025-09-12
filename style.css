@@ -1091,14 +1091,18 @@ body {
         filter: none;
     }
     
-    /* Section contact en bas du menu mobile */
+    /* Section contact en bas du menu mobile - bandeau gris */
     .mobile-menu-contact {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: auto;
-        padding-top: var(--spacing-2xl);
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: var(--spacing-md) var(--spacing-lg);
+        background: #212529;
+        border-radius: 0;
+        margin-left: calc(-1 * var(--spacing-xl));
+        margin-right: calc(-1 * var(--spacing-xl));
+        margin-bottom: calc(-1 * var(--spacing-xl));
     }
     
     .mobile-menu-contact__item {
@@ -1108,6 +1112,12 @@ body {
         color: #FFFFFF !important;
         font-size: var(--font-size-base);
         font-weight: var(--font-weight-medium);
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+    }
+    
+    .mobile-menu-contact__item:hover {
+        opacity: 0.8;
     }
     
     .mobile-menu-contact__item .material-icons {
@@ -1138,7 +1148,7 @@ body {
 
 @media (max-width: 768px) {
     .main-navigation__toggle {
-        display: flex !important;
+        display: none !important; /* Cacher le bouton toggle sur mobile */
         position: relative;
         z-index: 10001;
     }
