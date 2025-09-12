@@ -122,7 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (mobileToggle && mobileMenu) {
         // Toggle menu on button click
-        mobileToggle.addEventListener('click', function() {
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Empêche la propagation vers document
             const isOpen = mobileMenu.classList.contains('active');
             console.log('Menu clicked, isOpen:', isOpen); // Debug
             
@@ -143,8 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                closeMenu();
+            if (mobileMenu.classList.contains('active') && 
+                !mobileToggle.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                // Petit délai pour éviter les conflits
+                setTimeout(() => {
+                    if (mobileMenu.classList.contains('active')) {
+                        closeMenu();
+                    }
+                }, 10);
             }
         });
         
