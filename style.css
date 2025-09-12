@@ -1101,7 +1101,7 @@ body {
 
     .main-navigation__toggle .material-icons {
         font-size: 24px;
-        color: var(--wpc-white);
+        color: #212529;
         transition: all 0.3s ease;
     }
 
