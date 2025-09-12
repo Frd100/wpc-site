@@ -153,7 +153,7 @@
 
 .main-navigation__content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: var(--spacing-md) 0 var(--spacing-md) 0;
@@ -1035,6 +1035,7 @@ body {
         overflow-y: auto;
         justify-content: space-between;
         box-shadow: none;
+        display: flex; /* Afficher quand le menu est ouvert */
     }
     
     /* Bouton de fermeture dans le menu mobile */
@@ -1154,6 +1155,11 @@ body {
     }
 
 @media (max-width: 768px) {
+    /* Cacher les liens de navigation sur mobile */
+    .main-navigation__links {
+        display: none;
+    }
+    
     .main-navigation__toggle {
         display: flex !important; /* Garder le bouton visible */
         position: relative;
