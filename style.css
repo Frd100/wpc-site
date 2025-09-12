@@ -1038,6 +1038,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 10001; /* Au-dessus du menu */
 }
 
 .hamburger-line {
@@ -1050,7 +1051,9 @@ body {
 
 @media (max-width: 768px) {
     .main-navigation__toggle {
-        display: flex;
+        display: flex !important;
+        position: relative;
+        z-index: 10001;
     }
     
     /* Hamburger button active state */

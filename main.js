@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileToggle.classList.add('active');
             mobileToggle.setAttribute('aria-expanded', 'true');
             mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
-            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            // Pas de blocage du scroll - on laisse l'utilisateur scroll
         }
         
         function closeMenu() {
@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileToggle.classList.remove('active');
             mobileToggle.setAttribute('aria-expanded', 'false');
             mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
-            document.body.style.overflow = ''; // Restore scroll
         }
     }
 });
