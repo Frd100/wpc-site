@@ -187,6 +187,9 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileToggle.setAttribute('aria-expanded', 'true');
         mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
         
+        // Ajouter classe au body pour cacher le bouton toggle
+        body.classList.add('mobile-menu-open');
+        
         // Empêcher le scroll du body
         body.style.overflow = 'hidden';
         body.style.position = 'fixed';
@@ -201,6 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        
+        // Retirer classe du body pour réafficher le bouton toggle
+        body.classList.remove('mobile-menu-open');
         
         // Restaurer le scroll
         body.style.overflow = '';

@@ -1031,23 +1031,24 @@ body {
         padding: 60px var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
         transform: translateY(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1001;
+        z-index: 10002; /* Plus haut que le bouton toggle (10001) */
         overflow-y: auto;
         justify-content: space-between;
         box-shadow: none;
     }
     
-    /* Bouton de fermeture dans le menu mobile */
+    /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
     .main-navigation__links::before {
         content: "✕";
         position: absolute;
         top: var(--spacing-lg);
         left: var(--spacing-lg);
+        right: auto; /* S'assurer qu'il n'est pas à droite */
         color: #FFFFFF !important;
         font-size: 24px;
         font-weight: bold;
         cursor: pointer;
-        z-index: 10002;
+        z-index: 10003; /* Plus haut que le menu (10002) */
         text-shadow: none;
         filter: none;
     }
@@ -1158,14 +1159,26 @@ body {
     
     /* Afficher le menu quand il est actif */
     .main-navigation__links.active {
-        display: flex;
-        transform: translateY(0);
+        display: flex !important;
+        transform: translateY(0) !important;
     }
     
     .main-navigation__toggle {
         display: flex !important; /* Garder le bouton visible */
         position: relative;
         z-index: 10001;
+    }
+    
+    /* Cacher le bouton toggle quand le menu est ouvert */
+    .mobile-menu-open .main-navigation__toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    /* Cacher aussi l'icône close du bouton toggle */
+    .mobile-menu-open .main-navigation__toggle .close-icon {
+        display: none !important;
     }
     
     /* Menu/Close icon toggle */
