@@ -1013,6 +1013,7 @@ body {
     /* Navigation collée en haut sur mobile */
     .main-navigation {
         top: 0;
+        padding: 0; /* Pas de padding sur mobile */
     }
     
     body {
