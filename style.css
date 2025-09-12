@@ -1077,11 +1077,18 @@ body {
     color: var(--wpc-primary);
 }
 
-/* Focus styles for accessibility */
-.main-navigation__link:focus,
-.main-navigation__toggle:focus,
-.cmp-button:focus,
-.cmp-hero-fbv__action-link:focus {
+/* Focus styles for accessibility - only for keyboard navigation */
+.main-navigation__link:focus:not(:focus-visible),
+.main-navigation__toggle:focus:not(:focus-visible),
+.cmp-button:focus:not(:focus-visible),
+.cmp-hero-fbv__action-link:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.main-navigation__link:focus-visible,
+.main-navigation__toggle:focus-visible,
+.cmp-button:focus-visible,
+.cmp-hero-fbv__action-link:focus-visible {
     outline: 2px solid var(--wpc-blue);
     outline-offset: 2px;
     border-radius: 2px;
