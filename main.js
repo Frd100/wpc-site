@@ -166,16 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu when scrolling
-        let scrollTimeout;
-        window.addEventListener('scroll', function() {
-            if (mobileMenu.classList.contains('active')) {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    closeMenu();
-                }, 150);
-            }
-        });
+        // Menu with absolute position follows scroll naturally
+        // No need to close on scroll
         
         // Functions to open/close menu
         function openMenu() {
