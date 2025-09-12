@@ -120,6 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     
+    console.log('Mobile toggle found:', !!mobileToggle);
+    console.log('Mobile menu found:', !!mobileMenu);
+    
     if (mobileToggle && mobileMenu) {
         // Toggle menu on button click
         mobileToggle.addEventListener('click', function(e) {
