@@ -1005,19 +1005,24 @@ body {
 
 /* Mobile navigation - styles spécifiques */
 @media (max-width: 768px) {
+    /* Cacher le bandeau gris sur mobile */
+    .cmp-top-banner {
+        display: none;
+    }
+    
     body {
-        padding-top: 110px; /* Bandeau (40px) + Navigation (70px) */
+        padding-top: 70px; /* Juste la navigation */
     }
     
     .main-navigation__links {
         position: fixed;
-        top: 110px; /* Sous le bandeau (40px) + navigation (70px) */
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         background: var(--wpc-blue);
         flex-direction: column;
-        padding: var(--spacing-xl);
+        padding: 60px var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
         transform: translateY(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
