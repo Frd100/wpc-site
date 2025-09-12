@@ -145,6 +145,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Fermer au clic sur le bouton de fermeture (pseudo-élément)
+    mobileMenu.addEventListener('click', function(e) {
+        // Vérifier si le clic est dans la zone du bouton de fermeture (haut gauche)
+        const rect = mobileMenu.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const clickY = e.clientY - rect.top;
+        
+        // Zone du bouton de fermeture (haut gauche, 60px x 60px)
+        if (clickX <= 60 && clickY <= 60) {
+            closeMenu();
+        }
+    });
+    
     // Fermer au clic extérieur
     document.addEventListener('click', function(e) {
         if (mobileMenu.classList.contains('active') && 
