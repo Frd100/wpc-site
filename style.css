@@ -1071,6 +1071,18 @@ body {
         filter: none;
     }
     
+    /* S'assurer que les chevrons sont bien alignés à droite */
+    .main-navigation__link::after {
+        content: ">";
+        color: #FFFFFF !important;
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-bold);
+        text-shadow: none;
+        filter: none;
+        flex-shrink: 0; /* Empêcher le chevron de rétrécir */
+        margin-left: auto; /* Pousser le chevron à droite */
+    }
+    
     .main-navigation__link:hover {
         background-color: rgba(255, 255, 255, 0.1);
     }
@@ -1079,15 +1091,6 @@ body {
         border-bottom: none;
     }
     
-    /* Ajouter des chevrons après chaque lien */
-    .main-navigation__link::after {
-        content: ">";
-        color: #FFFFFF !important;
-        font-size: var(--font-size-lg);
-        font-weight: var(--font-weight-bold);
-        text-shadow: none;
-        filter: none;
-    }
     
     /* Section contact en bas du menu mobile - bandeau gris */
     .mobile-menu-contact {
@@ -1101,6 +1104,9 @@ body {
         margin-left: calc(-1 * var(--spacing-xl));
         margin-right: calc(-1 * var(--spacing-xl));
         margin-bottom: calc(-1 * var(--spacing-xl));
+        width: calc(100% + 2 * var(--spacing-xl)); /* S'étendre sur toute la largeur */
+        position: relative;
+        left: calc(-1 * var(--spacing-xl)); /* Compenser le padding du parent */
     }
     
     .mobile-menu-contact__item {
