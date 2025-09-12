@@ -1033,7 +1033,8 @@ body {
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
         overflow-y: auto;
-        justify-content: flex-start;
+        justify-content: space-between;
+        box-shadow: none;
     }
     
     /* Bouton de fermeture dans le menu mobile */
@@ -1042,11 +1043,13 @@ body {
         position: absolute;
         top: var(--spacing-lg);
         left: var(--spacing-lg);
-        color: var(--wpc-white);
+        color: #FFFFFF !important;
         font-size: 24px;
         font-weight: bold;
         cursor: pointer;
         z-index: 10002;
+        text-shadow: none;
+        filter: none;
     }
     
     .main-navigation__links.active {
@@ -1057,15 +1060,17 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-lg) 0;
+        padding: var(--spacing-xl) 0;
         text-align: left;
         width: 100%;
-        color: var(--wpc-white);
+        color: #FFFFFF !important;
         font-size: var(--font-size-lg);
         font-weight: var(--font-weight-medium);
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: none;
         transition: background-color 0.2s ease;
+        text-shadow: none;
+        filter: none;
     }
     
     .main-navigation__link:hover {
@@ -1079,9 +1084,35 @@ body {
     /* Ajouter des chevrons après chaque lien */
     .main-navigation__link::after {
         content: ">";
-        color: var(--wpc-white);
+        color: #FFFFFF !important;
         font-size: var(--font-size-lg);
         font-weight: var(--font-weight-bold);
+        text-shadow: none;
+        filter: none;
+    }
+    
+    /* Section contact en bas du menu mobile */
+    .mobile-menu-contact {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        padding-top: var(--spacing-2xl);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .mobile-menu-contact__item {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        color: #FFFFFF !important;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-medium);
+    }
+    
+    .mobile-menu-contact__item .material-icons {
+        font-size: 20px;
+        color: #FFFFFF !important;
     }
 }
 
