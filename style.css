@@ -1035,7 +1035,6 @@ body {
         overflow-y: auto;
         justify-content: space-between;
         box-shadow: none;
-        display: flex; /* Afficher quand le menu est ouvert */
     }
     
     /* Bouton de fermeture dans le menu mobile */
@@ -1053,9 +1052,6 @@ body {
         filter: none;
     }
     
-    .main-navigation__links.active {
-        transform: translateY(0);
-    }
     
     .main-navigation__link {
         display: flex;
@@ -1155,9 +1151,15 @@ body {
     }
 
 @media (max-width: 768px) {
-    /* Cacher les liens de navigation sur mobile */
+    /* Cacher les liens de navigation sur mobile par défaut */
     .main-navigation__links {
         display: none;
+    }
+    
+    /* Afficher le menu quand il est actif */
+    .main-navigation__links.active {
+        display: flex;
+        transform: translateY(0);
     }
     
     .main-navigation__toggle {
