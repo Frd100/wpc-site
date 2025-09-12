@@ -166,6 +166,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Close menu when scrolling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (mobileMenu.classList.contains('active')) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    closeMenu();
+                }, 150);
+            }
+        });
+        
         // Functions to open/close menu
         function openMenu() {
             mobileMenu.classList.add('active');

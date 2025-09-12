@@ -990,8 +990,8 @@ body {
 /* Mobile navigation - styles spécifiques */
 @media (max-width: 768px) {
     .main-navigation__links {
-        position: fixed;
-        top: 80px;
+        position: absolute;
+        top: 120px;
         left: 0;
         right: 0;
         width: 100%;
@@ -1012,7 +1012,7 @@ body {
         opacity: 1;
         visibility: visible;
         display: flex;
-        max-height: calc(100vh - 80px);
+        max-height: calc(100vh - 120px);
     }
     
     .main-navigation__link {
