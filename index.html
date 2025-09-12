@@ -39,6 +39,36 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="style.css?v=2">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "West Paris Consulting",
+        "alternateName": "WPC",
+        "url": "https://westparisconsulting.fr",
+        "logo": "https://westparisconsulting.fr/logo.svg",
+        "description": "Association étudiante de l'Université Paris Nanterre qui accompagne entreprises et organisations dans leurs projets de transformation et d'innovation.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "200 Avenue de la République",
+            "addressLocality": "Nanterre",
+            "postalCode": "92000",
+            "addressCountry": "FR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "farid.seridj4@gmail.com",
+            "contactType": "customer service"
+        },
+        "foundingDate": "2024",
+        "memberOf": {
+            "@type": "Organization",
+            "name": "Université Paris Nanterre"
+        }
+    }
+    </script>
 </head>
 
 <body class="page basicpage" id="page-wpc-main" data-cmp-link-accessibility-enabled="" data-cmp-link-accessibility-text="s'ouvre dans un nouvel onglet" data-cmp-data-layer-enabled="">
@@ -72,14 +102,14 @@
                 </div>
                 
                 <!-- Bouton hamburger mobile (caché sur desktop) -->
-                <button class="main-navigation__toggle" id="mobile-menu-toggle">
+                <button class="main-navigation__toggle" id="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                 </button>
                 
                 <!-- Liens de navigation -->
-                    <div class="main-navigation__links" id="mobile-menu">
+                    <div class="main-navigation__links" id="mobile-menu" role="navigation" aria-label="Menu principal">
                         <a href="#accueil" class="main-navigation__link">Accueil</a>
                         <a href="#domaines" class="main-navigation__link">Nos Domaines</a>
                         <a href="methodes.html" class="main-navigation__link">Nos Méthodes</a>
@@ -101,7 +131,7 @@
                         <source media="(min-width: 1024px)" srcset="homepage.png">
                         <source media="(min-width: 768px)" srcset="homepage.png">
                         <source media="(min-width: 360px)" srcset="homepage-mobile.png">
-                        <img src="homepage.png" aria-hidden="true" alt="">
+                        <img src="homepage.png" alt="" aria-hidden="true">
                     </picture>
                 </div>
 
@@ -151,7 +181,7 @@
                 </div>
                 <div class="cmp-services-right">
                     <div class="cmp-services-image">
-                        <img src="home2.png" alt="Nos domaines d'intervention WPC" class="services-image">
+                        <img src="home2.png" alt="Nos domaines d'intervention WPC" class="services-image" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -182,7 +212,7 @@
                 <div id="section-wpc-contact" class="cmp-container">
                     <div class="cmp-contact-section">
                         <div class="cmp-contact-bg">
-                            <img src="contact-bg.jpg" alt="Contact WPC" class="contact-bg-image">
+                            <img src="contact-bg.jpg" alt="Contact WPC" class="contact-bg-image" loading="lazy">
                         </div>
                         <div class="cmp-contact-content">
                             <h2 class="cmp-contact-title">Rejoignez notre association !</h2>
@@ -206,8 +236,8 @@
                     <a href="#demarche">Notre Démarche</a>
                     <a href="#qui-sommes-nous">Qui Sommes-Nous</a>
                     <a href="confidentialite.html">Politique de Confidentialité</a>
-                    <a href="#">Mentions légales</a>
-                    <a href="#">Accessibilité : partiellement conforme</a>
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="accessibilite.html">Accessibilité : partiellement conforme</a>
                 </div>
                 
                 <div class="cmp-footer__copyright">

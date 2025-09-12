@@ -72,14 +72,14 @@
                 </div>
                 
                 <!-- Bouton hamburger mobile (caché sur desktop) -->
-                <button class="main-navigation__toggle" id="mobile-menu-toggle">
+                <button class="main-navigation__toggle" id="mobile-menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                 </button>
                 
                 <!-- Liens de navigation -->
-                <div class="main-navigation__links" id="mobile-menu">
+                <div class="main-navigation__links" id="mobile-menu" role="navigation" aria-label="Menu principal">
                     <a href="index.html" class="main-navigation__link">Accueil</a>
                     <a href="index.html#domaines" class="main-navigation__link">Nos Domaines</a>
                     <a href="methodes.html" class="main-navigation__link">Nos Méthodes</a>
@@ -114,7 +114,7 @@
                         <p class="mandatory-text">* Les champs marqués d'un astérisque sont obligatoires pour nous permettre de traiter votre demande.</p>
                         <p class="form-description">Notre équipe examinera votre demande et s'engage à la traiter dans les meilleurs délais.</p>
                         
-                        <form class="contact-form" name="contact" method="POST" action="https://formsubmit.co/9b744888923e9bbbf53f99ac75adf917">
+                        <form class="contact-form" name="contact" method="POST" action="https://formsubmit.co/9b744888923e9bbbf53f99ac75adf917" id="contact-form">
                             <!-- Champ anti-spam caché -->
                             <div style="display: none;">
                                 <label>Ne remplissez pas ce champ si vous êtes humain: <input name="bot-field"></label>
@@ -238,13 +238,17 @@
         <div class="cmp-footer__container">
             <div class="cmp-footer__content">
                 <div class="cmp-footer__links">
-                    <a href="index.html#contact">Contactez-nous</a>
+                    <a href="contact.html">Contactez-nous</a>
+                    <a href="index.html">Accueil</a>
+                    <a href="index.html#domaines">Nos Domaines</a>
                     <a href="methodes.html">Nos Méthodes</a>
                     <a href="index.html#qui-sommes-nous">Qui Sommes-Nous</a>
                     <a href="confidentialite.html">Politique de Confidentialité</a>
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="accessibilite.html">Accessibilité : partiellement conforme</a>
                 </div>
                 <div class="cmp-footer__copyright">
-                    <p>&copy; 2024 West Paris Consulting. Tous droits réservés.</p>
+                    <p>© 2025 West Paris Consulting, association étudiante de l'Université Paris Nanterre. Tous droits réservés.</p>
                 </div>
             </div>
         </div>

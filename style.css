@@ -1052,6 +1052,17 @@ body {
         display: flex;
         max-height: calc(100vh - 100px);
     }
+    
+    .main-navigation__link {
+        padding: var(--spacing-md);
+        text-align: center;
+        border-bottom: 1px solid var(--wpc-gray-200);
+        width: 100%;
+    }
+
+    .main-navigation__link:last-child {
+        border-bottom: none;
+    }
 }
 
 /* Desktop navigation links - styles normaux */
@@ -1066,19 +1077,16 @@ body {
     color: var(--wpc-primary);
 }
 
-/* Mobile navigation links - styles spécifiques */
-@media (max-width: 768px) {
-    .main-navigation__link {
-        padding: var(--spacing-md);
-        text-align: center;
-        border-bottom: 1px solid var(--wpc-gray-200);
-        width: 100%;
-    }
-
-    .main-navigation__link:last-child {
-        border-bottom: none;
-    }
+/* Focus styles for accessibility */
+.main-navigation__link:focus,
+.main-navigation__toggle:focus,
+.cmp-button:focus,
+.cmp-hero-fbv__action-link:focus {
+    outline: 2px solid var(--wpc-blue);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
+
 
 /* Mobile services section */
 .cmp-services-content {
