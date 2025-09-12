@@ -87,7 +87,7 @@
     width: 100%;
     padding: var(--spacing-sm) 0;
     position: relative;
-    z-index: 1001;
+    z-index: 999;
     margin: 0;
 }
 
