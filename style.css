@@ -134,7 +134,7 @@
 /* Navigation principale */
 .main-navigation {
     position: fixed; /* Fixe pour rester en haut */
-    top: 40px; /* Sous le bandeau gris */
+    top: 40px; /* Sous le bandeau gris sur desktop */
     left: 0;
     right: 0;
     background: var(--wpc-white);
@@ -1010,8 +1010,13 @@ body {
         display: none;
     }
     
+    /* Navigation collée en haut sur mobile */
+    .main-navigation {
+        top: 0;
+    }
+    
     body {
-        padding-top: 70px; /* Juste la navigation */
+        padding-top: 0; /* Pas de padding, navigation collée en haut */
     }
     
     .main-navigation__links {
