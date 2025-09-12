@@ -2,24 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // WPC Mobile Navigation
-    const mobileToggle = document.querySelector('[data-cmp-mobile-toggle]');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            // Toggle mobile menu visibility
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('mobile-menu--open');
-            }
-            
-            // Toggle body scroll
-            document.body.classList.toggle('mobile-menu-open');
-        });
-    }
     
     // WPC Smooth Scrolling
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
@@ -133,25 +115,61 @@ const WPCClasses = {
     lazy: 'lazy'
 };
 
-// WPC Mobile Menu Toggle
+// WPC Mobile Menu Toggle - Implementation complète
 document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileToggle && mobileMenu) {
+        // Toggle menu on button click
         mobileToggle.addEventListener('click', function() {
-            mobileToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
+            const isOpen = mobileMenu.classList.contains('active');
+            
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
         
         // Close menu when clicking on a link
         const links = mobileMenu.querySelectorAll('.main-navigation__link');
         links.forEach(link => {
             link.addEventListener('click', function() {
-                mobileToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
+                closeMenu();
             });
         });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                closeMenu();
+            }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+        
+        // Functions to open/close menu
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            mobileToggle.classList.add('active');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+            document.body.style.overflow = ''; // Restore scroll
+        }
     }
 });
 

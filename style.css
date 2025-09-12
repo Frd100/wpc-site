@@ -1063,6 +1063,46 @@ body {
     .main-navigation__link:last-child {
         border-bottom: none;
     }
+    
+    /* Hamburger button active state */
+    .main-navigation__toggle.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .main-navigation__toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .main-navigation__toggle.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Hamburger button styles */
+.main-navigation__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background: var(--wpc-text);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+@media (max-width: 768px) {
+    .main-navigation__toggle {
+        display: flex;
+    }
 }
 
 /* Desktop navigation links - styles normaux */
