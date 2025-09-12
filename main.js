@@ -115,74 +115,89 @@ const WPCClasses = {
     lazy: 'lazy'
 };
 
-// WPC Mobile Menu Toggle - Implementation complète
+// WPC Mobile Menu Toggle - Implementation optimisée selon Perplexity
 document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
     
-    console.log('Mobile toggle found:', !!mobileToggle);
-    console.log('Mobile menu found:', !!mobileMenu);
+    if (!mobileToggle || !mobileMenu) return;
     
-    if (mobileToggle && mobileMenu) {
-        // Toggle menu on button click
-        mobileToggle.addEventListener('click', function(e) {
-            e.stopPropagation(); // Empêche la propagation vers document
-            const isOpen = mobileMenu.classList.contains('active');
-            console.log('Menu clicked, isOpen:', isOpen); // Debug
-            
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
+    // Toggle menu
+    mobileToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         
-        // Close menu when clicking on a link
-        const links = mobileMenu.querySelectorAll('.main-navigation__link');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                closeMenu();
-            });
-        });
+        const isOpen = mobileMenu.classList.contains('active');
         
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (mobileMenu.classList.contains('active') && 
-                !mobileToggle.contains(e.target) && 
-                !mobileMenu.contains(e.target)) {
-                // Petit délai pour éviter les conflits
-                setTimeout(() => {
-                    if (mobileMenu.classList.contains('active')) {
-                        closeMenu();
-                    }
-                }, 10);
-            }
-        });
-        
-        // Close menu with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-        
-        // Menu with absolute position follows scroll naturally
-        // No need to close on scroll
-        
-        // Functions to open/close menu
-        function openMenu() {
-            mobileMenu.classList.add('active');
-            mobileToggle.classList.add('active');
-            mobileToggle.setAttribute('aria-expanded', 'true');
-            mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
-            // Pas de blocage du scroll - on laisse l'utilisateur scroll
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
         }
+    });
+    
+    // Fermer au clic sur un lien
+    const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMenu();
+        });
+    });
+    
+    // Fermer au clic extérieur
+    document.addEventListener('click', function(e) {
+        if (mobileMenu.classList.contains('active') && 
+            !mobileToggle.contains(e.target) && 
+            !mobileMenu.contains(e.target)) {
+            closeMenu();
+        }
+    });
+    
+    // Fermer avec Échap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    // Fermer lors du redimensionnement vers desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+            closeMenu();
+        }
+    });
+    
+    function openMenu() {
+        mobileMenu.classList.add('active');
+        mobileToggle.classList.add('active');
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
         
-        function closeMenu() {
-            mobileMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        // Empêcher le scroll du body
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.top = `-${window.scrollY}px`;
+        body.style.width = '100%';
+    }
+    
+    function closeMenu() {
+        const scrollY = body.style.top;
+        
+        mobileMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        
+        // Restaurer le scroll
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.top = '';
+        body.style.width = '';
+        
+        // Restaurer la position de scroll
+        if (scrollY) {
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
         }
     }
 });
