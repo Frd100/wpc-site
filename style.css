@@ -1148,12 +1148,16 @@ body {
 
 @media (max-width: 768px) {
     .main-navigation__toggle {
-        display: none !important; /* Cacher le bouton toggle sur mobile */
+        display: flex !important; /* Garder le bouton visible */
         position: relative;
         z-index: 10001;
     }
     
     /* Menu/Close icon toggle */
+    .main-navigation__toggle .close-icon {
+        display: none; /* Cacher l'icône close par défaut */
+    }
+    
     .main-navigation__toggle.active .menu-icon {
         display: none;
     }
