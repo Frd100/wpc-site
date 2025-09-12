@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Toggle menu on button click
         mobileToggle.addEventListener('click', function() {
             const isOpen = mobileMenu.classList.contains('active');
+            console.log('Menu clicked, isOpen:', isOpen); // Debug
             
             if (isOpen) {
                 closeMenu();
