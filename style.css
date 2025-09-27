@@ -493,8 +493,8 @@ body {
 
 .cmp-hero-fbv__image img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    object-fit: scale-down;
     object-position: center center;
     margin: 0;
     padding: 0;
