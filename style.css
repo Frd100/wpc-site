@@ -1405,15 +1405,15 @@ body {
         z-index: 2;
         width: auto;
         max-width: 600px;
-        padding: var(--spacing-3xl);
         background: #00338D;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        left: 50px;
+        top: 0;
+        height: 100%;
+        padding: var(--spacing-2xl) var(--spacing-3xl);
         order: unset;
         flex: unset;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         text-align: left;
     }
