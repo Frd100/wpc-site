@@ -475,7 +475,7 @@ body {
 .cmp-hero-fbv {
     position: relative;
     width: 100%;
-    min-height: 80vh;
+    height: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -1321,7 +1321,7 @@ body {
     /* Desktop hero - image en arrière-plan, carré par-dessus */
     .cmp-hero-fbv {
         position: relative;
-        min-height: 80vh;
+        height: auto;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
