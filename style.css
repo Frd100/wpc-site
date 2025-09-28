@@ -535,6 +535,7 @@ body {
     margin-bottom: var(--spacing-xl);
     color: var(--text-white);
     opacity: 0.95;
+    font-weight: var(--font-weight-bold);
 }
 
 .cmp-teaser__action-container {
@@ -1442,7 +1443,7 @@ body {
         margin-left: 120px;
         align-self: stretch;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         padding: var(--spacing-2xl) var(--spacing-3xl);
     }
     
