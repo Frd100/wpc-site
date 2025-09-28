@@ -68,6 +68,11 @@
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
     
+    /* WPC Responsive Spacing */
+    --banner-height: 2.5rem; /* 40px équivalent mais adaptatif */
+    --nav-offset: 2.5rem; /* Offset de la navigation */
+    --hero-margin-compensation: -2.5rem; /* Compensation pour coller l'image */
+    
     /* WPC Border Radius */
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
@@ -128,13 +133,13 @@
 }
 
 .cmp-top-banner__button .material-icons {
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px en rem */
 }
 
 /* Navigation principale */
 .main-navigation {
     position: fixed; /* Fixe pour rester en haut */
-    top: 40px; /* Sous le bandeau gris sur desktop */
+    top: var(--banner-height); /* Sous le bandeau gris sur desktop */
     left: 0;
     right: 0;
     background: var(--wpc-white);
@@ -174,9 +179,9 @@
 }
 
 .main-navigation__logo-image {
-    height: 32px;
+    height: 2rem; /* 32px en rem */
     width: auto;
-    max-width: 200px;
+    max-width: 12.5rem; /* 200px en rem */
     transition: transform 0.2s ease;
 }
 
@@ -493,7 +498,7 @@ body {
     grid-template-rows: auto;
     margin: 0;
     padding: 0;
-    margin-top: -40px; /* Compenser l'espace du bandeau gris */
+    margin-top: var(--hero-margin-compensation); /* Compenser l'espace du bandeau gris */
 }
 
 .cmp-hero-fbv__image {
@@ -987,9 +992,9 @@ body {
     padding: var(--spacing-xs) var(--spacing-sm);
 }
 
-.cmp-top-banner__button .material-icons {
-    font-size: 16px;
-}
+    .cmp-top-banner__button .material-icons {
+        font-size: 1rem; /* 16px en rem */
+    }
 
 
 .main-navigation__content {
@@ -1292,6 +1297,47 @@ body {
 
 
 
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* Très petits écrans (mobile) */
+@media (max-width: 480px) {
+    :root {
+        --banner-height: 0; /* Pas de bandeau sur mobile */
+        --hero-margin-compensation: 0; /* Pas de compensation */
+    }
+}
+
+/* Petits écrans (tablettes) */
+@media (min-width: 481px) and (max-width: 768px) {
+    :root {
+        --banner-height: 2.25rem; /* Légèrement plus petit */
+        --hero-margin-compensation: -2.25rem;
+    }
+}
+
+/* Écrans moyens (laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --banner-height: 2.5rem; /* Valeur par défaut */
+        --hero-margin-compensation: -2.5rem;
+    }
+}
+
+/* Grands écrans (desktop) */
+@media (min-width: 1025px) {
+    :root {
+        --banner-height: 2.75rem; /* Légèrement plus grand */
+        --hero-margin-compensation: -2.75rem;
+    }
+}
+
+/* Très grands écrans (4K+) */
+@media (min-width: 1920px) {
+    :root {
+        --banner-height: 3rem; /* Plus grand pour les très grands écrans */
+        --hero-margin-compensation: -3rem;
+    }
+}
+
 /* ===== DESKTOP ENHANCEMENTS ===== */
 @media (min-width: 769px) {
     /* Desktop top banner */
@@ -1305,7 +1351,7 @@ body {
     }
     
     .cmp-top-banner__button .material-icons {
-        font-size: 18px;
+        font-size: 1.125rem; /* 18px en rem */
     }
     
     
@@ -1389,7 +1435,7 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-content: flex-start;
-        margin-top: -40px; /* Compenser l'espace du bandeau gris sur desktop */
+        margin-top: var(--hero-margin-compensation); /* Compenser l'espace du bandeau gris sur desktop */
     }
     
     .cmp-hero-fbv__image {
