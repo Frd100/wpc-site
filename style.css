@@ -493,7 +493,7 @@ body {
     grid-template-rows: auto;
     margin: 0;
     padding: 0;
-    margin-top: 0;
+    margin-top: -40px; /* Compenser l'espace du bandeau gris */
 }
 
 .cmp-hero-fbv__image {
@@ -1264,6 +1264,7 @@ body {
         display: flex;
         flex-direction: column;
         min-height: auto;
+        margin-top: 0; /* Pas de compensation sur mobile */
     }
     
     .cmp-hero-fbv__image {
@@ -1388,6 +1389,7 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-content: flex-start;
+        margin-top: -40px; /* Compenser l'espace du bandeau gris sur desktop */
     }
     
     .cmp-hero-fbv__image {
