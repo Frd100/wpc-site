@@ -503,7 +503,7 @@ body {
     z-index: 2;
     width: 300px;
     background: #0077b6;
-    margin-left: 50px;
+    margin-left: 20px;
     align-self: stretch;
 }
 
@@ -1346,7 +1346,7 @@ body {
         z-index: 2;
         width: 300px;
         background: #0077b6;
-        margin-left: 50px;
+        margin-left: 20px;
         align-self: stretch;
     }
     
