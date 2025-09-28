@@ -137,15 +137,15 @@
 
 /* Navigation principale */
 .main-navigation {
-    position: fixed; /* Fixe pour rester en haut */
-    top: 0; /* Collé en haut sans bandeau */
-    left: 0;
-    right: 0;
+    position: static; /* Plus fixe - navigation normale */
+    top: auto;
+    left: auto;
+    right: auto;
     background: var(--wpc-white);
     padding: var(--spacing-sm) 0 0 0; /* Padding top léger */
     margin: 0;
     line-height: 1;
-    z-index: 1000;
+    z-index: auto;
     transition: transform 0.3s ease;
 }
 
@@ -999,9 +999,9 @@ body {
         display: none;
     }
     
-    /* Navigation collée en haut sur mobile */
+    /* Navigation normale sur mobile */
     .main-navigation {
-        top: 0;
+        position: static;
         padding: 0; /* Pas de padding sur mobile */
     }
     
