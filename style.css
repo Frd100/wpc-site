@@ -1493,7 +1493,7 @@ body {
 /* ===== PAGE CONTACT ===== */
 .cmp-contact-hero {
     background: var(--wpc-blue);
-    padding: var(--spacing-2xl) 0;
+    padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
 }
 
@@ -2049,7 +2049,7 @@ body {
 /* ===== PAGE MÉTHODES ===== */
 .cmp-methodes-hero {
     background: var(--wpc-blue);
-    padding: var(--spacing-2xl) 0;
+    padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
 }
 
