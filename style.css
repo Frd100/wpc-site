@@ -550,7 +550,7 @@ body {
     text-decoration: none;
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-base);
-    border: 1px solid var(--wpc-blue);
+    border: none;
     border-radius: 50px;
     transition: all 0.3s ease;
 }
