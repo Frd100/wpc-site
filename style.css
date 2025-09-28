@@ -507,7 +507,7 @@ body {
     width: auto;
     max-width: 600px;
     padding: var(--spacing-2xl) var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl);
-    background: #00338D;
+    background: #007AFF;
     display: flex;
     align-items: center;
 }
@@ -1277,7 +1277,7 @@ body {
     order: 2;
     width: 100%;
     padding: var(--spacing-2xl) var(--spacing-md);
-    background: #00338D;
+    background: #007AFF;
     position: static;
     transform: none;
     margin: 0;
@@ -1405,7 +1405,7 @@ body {
         z-index: 2;
         width: auto;
         max-width: 600px;
-        background: #00338D;
+        background: #007AFF;
         left: 50px;
         top: 0;
         height: 100%;
