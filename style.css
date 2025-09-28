@@ -459,14 +459,13 @@ body {
 /* KPMG Exact Hero Section */
 .hero-fbv {
     position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+    min-height: auto; /* Supprimer la hauteur fixe */
+    display: block; /* Changer de flex à block */
     overflow: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-top: 0;
+    margin-top: var(--hero-margin-compensation); /* Appliquer la compensation au conteneur parent */
 }
 
 /* Supprimer l'espace entre header et image */
@@ -498,7 +497,7 @@ body {
     grid-template-rows: auto;
     margin: 0;
     padding: 0;
-    margin-top: var(--hero-margin-compensation); /* Compenser l'espace du bandeau gris */
+    margin-top: 0; /* Compensation appliquée au conteneur parent */
 }
 
 .cmp-hero-fbv__image {
@@ -1304,6 +1303,10 @@ body {
         --banner-height: 0; /* Pas de bandeau sur mobile */
         --hero-margin-compensation: 0; /* Pas de compensation */
     }
+    
+    .hero-fbv {
+        margin-top: 0; /* Pas de compensation sur mobile */
+    }
 }
 
 /* Petits écrans (tablettes) */
@@ -1435,7 +1438,7 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-content: flex-start;
-        margin-top: var(--hero-margin-compensation); /* Compenser l'espace du bandeau gris sur desktop */
+        margin-top: 0; /* Compensation appliquée au conteneur parent */
     }
     
     .cmp-hero-fbv__image {
