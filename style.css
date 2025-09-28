@@ -464,7 +464,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-top: -40px; /* Baisser la position verticale */
+    transform: translateY(-40px); /* Baisser la position verticale avec transform */
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
@@ -1252,7 +1252,7 @@ body {
 /* Mobile hero - image en haut, carré en bas */
 @media (max-width: 768px) {
     .hero-fbv {
-        margin-top: -20px; /* Baisser la position verticale mobile */
+        transform: translateY(-20px); /* Baisser la position verticale mobile avec transform */
     }
     
     .cmp-hero-fbv {
