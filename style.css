@@ -69,8 +69,8 @@
     --spacing-4xl: 6rem;
     
     /* WPC Responsive Spacing */
-    --banner-height: 2.5rem; /* 40px équivalent mais adaptatif */
-    --nav-offset: 2.5rem; /* Offset de la navigation */
+    --banner-height: 0; /* Bandeau supprimé */
+    --nav-offset: 0; /* Pas d'offset nécessaire */
     
     /* WPC Border Radius */
     --border-radius-sm: 0.25rem;
@@ -138,7 +138,7 @@
 /* Navigation principale */
 .main-navigation {
     position: fixed; /* Fixe pour rester en haut */
-    top: var(--banner-height); /* Sous le bandeau gris sur desktop */
+    top: 0; /* Collé en haut sans bandeau */
     left: 0;
     right: 0;
     background: var(--wpc-white);
@@ -1290,35 +1290,35 @@ body {
 /* Très petits écrans (mobile) */
 @media (max-width: 480px) {
     :root {
-        --banner-height: 0; /* Pas de bandeau sur mobile */
+        --banner-height: 0; /* Bandeau supprimé */
     }
 }
 
 /* Petits écrans (tablettes) */
 @media (min-width: 481px) and (max-width: 768px) {
     :root {
-        --banner-height: 2.25rem; /* Légèrement plus petit */
+        --banner-height: 0; /* Bandeau supprimé */
     }
 }
 
 /* Écrans moyens (laptops) */
 @media (min-width: 769px) and (max-width: 1024px) {
     :root {
-        --banner-height: 2.5rem; /* Valeur par défaut */
+        --banner-height: 0; /* Bandeau supprimé */
     }
 }
 
 /* Grands écrans (desktop) */
 @media (min-width: 1025px) {
     :root {
-        --banner-height: 2.75rem; /* Légèrement plus grand */
+        --banner-height: 0; /* Bandeau supprimé */
     }
 }
 
 /* Très grands écrans (4K+) */
 @media (min-width: 1920px) {
     :root {
-        --banner-height: 3rem; /* Plus grand pour les très grands écrans */
+        --banner-height: 0; /* Bandeau supprimé */
     }
 }
 
