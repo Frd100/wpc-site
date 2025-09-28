@@ -518,10 +518,10 @@ body {
 
 .cmp-hero-fbv__title {
     font-family: var(--font-family-condensed);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: var(--font-weight-bold);
-    line-height: 1.1;
-    margin: 0;
+    line-height: 1.2;
+    margin: 0 0 var(--spacing-lg) 0;
     color: var(--text-white);
     letter-spacing: -0.02em;
     text-shadow: none;
@@ -554,8 +554,10 @@ body {
 }
 
 .cmp-hero-fbv__action-link:hover {
-    background: var(--wpc-white);
-    color: var(--wpc-blue);
+    background: var(--wpc-blue);
+    color: var(--wpc-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 
