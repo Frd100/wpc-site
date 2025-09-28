@@ -470,6 +470,12 @@ body {
     padding-top: 0;
 }
 
+/* Coller l'image directement à la navigation */
+.hero-fbv {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
     background: transparent;
 }
@@ -493,6 +499,8 @@ body {
 .cmp-hero-fbv__image {
     grid-area: 1 / 1;
     z-index: 1;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .cmp-hero-fbv__image img {
