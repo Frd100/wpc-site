@@ -400,7 +400,7 @@ body {
 /* Compenser la navigation fixe sur desktop */
 @media (min-width: 769px) {
     body {
-        padding-top: 120px; /* Bandeau (40px) + Navigation (80px) */
+        padding-top: 0; /* Supprimer le padding pour coller l'image */
     }
 }
 
