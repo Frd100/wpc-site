@@ -1370,6 +1370,7 @@ body {
     .main-navigation__content {
         justify-content: center;
         gap: var(--spacing-2xl);
+        padding: var(--spacing-md) 0 var(--spacing-md) 0;
     }
     
     .main-navigation__links {
@@ -1391,6 +1392,9 @@ body {
         border-bottom: none;
         width: auto;
         position: relative;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-medium);
+        color: var(--text-primary);
     }
     
     .main-navigation__link::after {
