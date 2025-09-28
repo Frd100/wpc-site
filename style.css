@@ -71,10 +71,6 @@
     /* WPC Responsive Spacing */
     --banner-height: 2.5rem; /* 40px équivalent mais adaptatif */
     --nav-offset: 2.5rem; /* Offset de la navigation */
-    --hero-margin-compensation: -2.5rem; /* Compensation pour coller l'image */
-    
-    /* Debug - forcer la compensation */
-    --debug-hero-margin: -2.5rem;
     
     /* WPC Border Radius */
     --border-radius-sm: 0.25rem;
@@ -468,7 +464,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-top: var(--debug-hero-margin); /* Debug - forcer la compensation */
+    margin-top: 0; /* Pas de compensation - laisser l'espace naturel */
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
@@ -1255,15 +1251,10 @@ body {
 
 /* Mobile hero - image en haut, carré en bas */
 @media (max-width: 768px) {
-    .hero-fbv {
-        margin-top: 0; /* Pas de compensation sur mobile */
-    }
-    
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
         min-height: auto;
-        margin-top: 0; /* Pas de compensation sur mobile */
     }
     
     .cmp-hero-fbv__image {
@@ -1296,7 +1287,6 @@ body {
 @media (max-width: 480px) {
     :root {
         --banner-height: 0; /* Pas de bandeau sur mobile */
-        --hero-margin-compensation: 0; /* Pas de compensation */
     }
 }
 
@@ -1304,7 +1294,6 @@ body {
 @media (min-width: 481px) and (max-width: 768px) {
     :root {
         --banner-height: 2.25rem; /* Légèrement plus petit */
-        --hero-margin-compensation: -2.25rem;
     }
 }
 
@@ -1312,7 +1301,6 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
     :root {
         --banner-height: 2.5rem; /* Valeur par défaut */
-        --hero-margin-compensation: -2.5rem;
     }
 }
 
@@ -1320,7 +1308,6 @@ body {
 @media (min-width: 1025px) {
     :root {
         --banner-height: 2.75rem; /* Légèrement plus grand */
-        --hero-margin-compensation: -2.75rem;
     }
 }
 
@@ -1328,7 +1315,6 @@ body {
 @media (min-width: 1920px) {
     :root {
         --banner-height: 3rem; /* Plus grand pour les très grands écrans */
-        --hero-margin-compensation: -3rem;
     }
 }
 
