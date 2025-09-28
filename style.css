@@ -506,10 +506,11 @@ body {
 .cmp-hero-fbv__content {
     grid-area: 1 / 1;
     z-index: 2;
-    width: 300px;
+    width: 400px;
     background: #0066FF;
-    margin-left: 160px;
+    margin-left: 120px;
     align-self: stretch;
+    height: 400px;
     display: flex;
     align-items: center;
     padding: var(--spacing-2xl) var(--spacing-3xl);
@@ -1437,10 +1438,11 @@ body {
     .cmp-hero-fbv__content {
         grid-area: 1 / 1;
         z-index: 2;
-        width: 300px;
+        width: 400px;
         background: #0066FF;
-        margin-left: 160px;
+        margin-left: 120px;
         align-self: stretch;
+    height: 400px;
         display: flex;
         align-items: flex-start;
         padding: var(--spacing-2xl) var(--spacing-3xl);
