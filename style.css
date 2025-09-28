@@ -178,9 +178,9 @@
 }
 
 .main-navigation__logo-image {
-    height: 3rem; /* 48px en rem - logo plus grand */
+    height: 2.5rem; /* 40px en rem - logo ajusté */
     width: auto;
-    max-width: 15rem; /* 240px en rem */
+    max-width: 12.5rem; /* 200px en rem */
     transition: transform 0.2s ease;
 }
 
