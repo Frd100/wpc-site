@@ -463,7 +463,7 @@ body {
     overflow: hidden;
     width: 100%;
     margin: 0;
-    padding: 60px 0 0 0; /* Padding top pour pousser l'image vers le bas */
+    padding: 120px 0 0 0; /* Padding top augmenté pour pousser l'image vers le bas */
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
@@ -1251,7 +1251,7 @@ body {
 /* Mobile hero - image en haut, carré en bas */
 @media (max-width: 768px) {
     .hero-fbv {
-        padding: 40px 0 0 0; /* Padding top mobile pour pousser l'image vers le bas */
+        padding: 80px 0 0 0; /* Padding top mobile augmenté pour pousser l'image vers le bas */
     }
     
     .cmp-hero-fbv {
