@@ -570,6 +570,15 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.cmp-hero-fbv__action-link .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cmp-hero-fbv__action-link:hover .arrow {
+    transform: translateX(4px);
+}
+
 
 
 /* KPMG Exact Main Content */
