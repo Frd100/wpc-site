@@ -464,6 +464,12 @@ body {
     margin-top: 0;
 }
 
+/* Supprimer l'espace entre header et image */
+.hero-fbv.teaser {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
     background: transparent;
 }
@@ -481,6 +487,7 @@ body {
     grid-template-rows: auto;
     margin: 0;
     padding: 0;
+    margin-top: 0;
 }
 
 .cmp-hero-fbv__image {
