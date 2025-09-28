@@ -264,7 +264,7 @@
 .cmp-services-subtitle {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
-    color: var(--wpc-blue);
+    color: var(--wpc-white);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-md);
@@ -273,7 +273,7 @@
 .cmp-services-title {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
+    color: var(--wpc-white);
     margin-bottom: var(--spacing-lg);
     line-height: 1.2;
 }
@@ -281,7 +281,7 @@
 .cmp-services-description {
     font-size: var(--font-size-base);
     line-height: 1.6;
-    color: var(--text-primary);
+    color: var(--wpc-white);
     margin-bottom: var(--spacing-2xl);
 }
 
