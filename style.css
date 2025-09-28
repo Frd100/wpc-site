@@ -572,6 +572,8 @@ body {
 
 .cmp-hero-fbv__action-link .arrow {
     margin-left: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     transition: transform 0.3s ease;
 }
 
