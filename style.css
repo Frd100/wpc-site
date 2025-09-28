@@ -464,7 +464,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-top: 0; /* Pas de compensation - laisser l'espace naturel */
+    margin-top: -56px; /* Coller à l'extrémité de la navigation desktop */
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
@@ -1251,6 +1251,10 @@ body {
 
 /* Mobile hero - image en haut, carré en bas */
 @media (max-width: 768px) {
+    .hero-fbv {
+        margin-top: -32px; /* Coller à l'extrémité de la navigation mobile */
+    }
+    
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
