@@ -2218,3 +2218,124 @@ body {
         color: var(--text-primary);
     }
 }
+
+/* ===== PAGE ÉQUIPE ===== */
+.cmp-equipe-hero {
+    background: var(--wpc-blue);
+    color: var(--wpc-white);
+    padding: 80px 0 var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.cmp-equipe-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cmp-equipe-hero__title {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--wpc-white);
+}
+
+.cmp-equipe-hero__subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--wpc-white);
+    opacity: 0.9;
+}
+
+.cmp-equipe-section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.cmp-equipe-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cmp-membre-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-3xl);
+    padding: var(--spacing-xl);
+    background: var(--wpc-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cmp-membre-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cmp-membre-image {
+    flex: 0 0 200px;
+    margin-right: var(--spacing-xl);
+}
+
+.membre-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--border-radius-md);
+    object-fit: cover;
+    border: 3px solid var(--wpc-blue);
+}
+
+.cmp-membre-info {
+    flex: 1;
+}
+
+.cmp-membre-name {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.cmp-membre-role {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--wpc-blue);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.cmp-membre-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Responsive pour l'équipe */
+@media (max-width: 768px) {
+    .cmp-equipe-hero__title {
+        font-size: 2.5rem;
+    }
+    
+    .cmp-equipe-hero__subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .cmp-membre-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-lg);
+    }
+    
+    .cmp-membre-image {
+        flex: none;
+        margin-right: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .membre-photo {
+        width: 150px;
+        height: 150px;
+    }
+}
