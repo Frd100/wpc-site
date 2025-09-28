@@ -157,7 +157,7 @@
 
 .main-navigation__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0;
     padding: var(--spacing-md) 0 var(--spacing-md) 0;
@@ -178,9 +178,9 @@
 }
 
 .main-navigation__logo-image {
-    height: 2rem; /* 32px en rem */
+    height: 3rem; /* 48px en rem - logo plus grand */
     width: auto;
-    max-width: 12.5rem; /* 200px en rem */
+    max-width: 15rem; /* 240px en rem */
     transition: transform 0.2s ease;
 }
 
@@ -982,7 +982,7 @@ body {
 
 
 .main-navigation__content {
-    justify-content: space-between;
+    justify-content: center;
 }
 
 /* Desktop navigation - styles normaux */
@@ -1335,7 +1335,7 @@ body {
     
     
     .main-navigation__content {
-        justify-content: flex-start;
+        justify-content: center;
         gap: var(--spacing-2xl);
     }
     
