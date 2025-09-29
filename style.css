@@ -233,11 +233,25 @@
     width: calc(100% - var(--spacing-sm) * 2);
 }
 
+/* WPC New Section */
+.cmp-new-section {
+    width: 100%;
+    background: #2351FF;
+    padding: 0;
+    margin: 0;
+}
+
+.cmp-new-section__container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* WPC Services Section */
 .cmp-services-section {
     width: 100%;
     margin: 0;
-    padding: var(--spacing-4xl) 0 0 0;
+    padding: 0;
 }
 
 .cmp-services-content {
@@ -262,11 +276,11 @@
 }
 
 .cmp-services-subtitle {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--wpc-white);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-transform: none;
+    letter-spacing: 0.05em;
     margin-bottom: var(--spacing-md);
 }
 
