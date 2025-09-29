@@ -2435,30 +2435,6 @@ body {
     flex-wrap: wrap;
 }
 
-.cmp-org-treasury {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-}
-
-.cmp-org-section-title {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-    color: var(--wpc-blue);
-    text-align: center;
-    margin: 0 0 var(--spacing-lg) 0;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.cmp-org-treasury-members {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-xl);
-    flex-wrap: wrap;
-}
 
 .cmp-member-card {
     display: flex;
@@ -2540,11 +2516,6 @@ body {
 /* Responsive pour l'organigramme */
 @media (max-width: 768px) {
     .cmp-org-main-team {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .cmp-org-treasury-members {
         flex-direction: column;
         align-items: center;
     }
