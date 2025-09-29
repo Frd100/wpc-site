@@ -230,7 +230,7 @@
 }
 
 .main-navigation__link:hover::after {
-    display: none;
+    width: 100%;
 }
 
 /* WPC New Section */
@@ -1483,7 +1483,7 @@ body {
     }
     
     .main-navigation__link:hover::after {
-        display: none;
+        width: 100%;
     }
     
     /* Desktop services section */
