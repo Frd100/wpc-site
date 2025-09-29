@@ -2412,3 +2412,155 @@ body {
     }
 }
 
+/* WPC Organigramme */
+.cmp-org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cmp-org-president {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.cmp-org-main-team {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.cmp-org-treasury {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.cmp-org-section-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--wpc-blue);
+    text-align: center;
+    margin: 0 0 var(--spacing-lg) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.cmp-org-treasury-members {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.cmp-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--wpc-white);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    max-width: 250px;
+}
+
+.cmp-member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cmp-member-avatar {
+    margin-bottom: var(--spacing-md);
+}
+
+.cmp-avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background: #E5E7EB;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cmp-avatar-placeholder .material-icons {
+    font-size: 48px;
+    color: #9CA3AF;
+}
+
+.cmp-member-info {
+    width: 100%;
+}
+
+.cmp-member-name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-xs) 0;
+    line-height: 1.2;
+}
+
+.cmp-member-role {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--wpc-blue);
+    margin: 0 0 var(--spacing-sm) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cmp-member-linkedin {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-sm);
+}
+
+.cmp-member-linkedin .material-icons {
+    font-size: 20px;
+    color: #0077B5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cmp-member-linkedin .material-icons:hover {
+    color: #005885;
+}
+
+/* Responsive pour l'organigramme */
+@media (max-width: 768px) {
+    .cmp-org-main-team {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cmp-org-treasury-members {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cmp-member-card {
+        min-width: 180px;
+        max-width: 200px;
+    }
+    
+    .cmp-avatar-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .cmp-avatar-placeholder .material-icons {
+        font-size: 40px;
+    }
+}
+
