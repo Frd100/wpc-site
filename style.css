@@ -2215,7 +2215,7 @@ body {
 
 /* Navigation active */
 .main-navigation__link.active {
-    color: var(--wpc-blue);
+    color: var(--text-primary);
     font-weight: var(--font-weight-medium);
 }
 
