@@ -270,6 +270,41 @@
     opacity: 0.95;
 }
 
+/* WPC About Section White */
+.cmp-about-section-white {
+    width: 100%;
+    background: var(--wpc-white);
+    padding: var(--spacing-4xl) 0;
+    margin: 0;
+}
+
+.cmp-about-section-white__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cmp-about-section-white__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cmp-about-section-white__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.2;
+}
+
+.cmp-about-section-white__description {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
 /* WPC Services Section */
 .cmp-services-section {
     width: 100%;
