@@ -552,7 +552,7 @@ body {
 
 .cmp-hero-fbv__action-link {
     display: inline-block;
-    padding: var(--spacing-md) var(--spacing-xl);
+    padding: var(--spacing-sm) var(--spacing-xl);
     background: var(--wpc-white);
     color: #000000;
     text-decoration: none;
