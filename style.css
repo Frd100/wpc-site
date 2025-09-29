@@ -225,12 +225,13 @@
 }
 
 .main-navigation__link:hover {
-    color: var(--text-primary);
+    color: #4169E1;
     background: none;
 }
 
 .main-navigation__link:hover::after {
     width: 100%;
+    transition: none;
 }
 
 /* WPC New Section */
@@ -1484,6 +1485,7 @@ body {
     
     .main-navigation__link:hover::after {
         width: 100%;
+        transition: none;
     }
     
     /* Desktop services section */
@@ -2255,7 +2257,7 @@ body {
 }
 
 .main-navigation__link.active::after {
-    width: calc(100% - var(--spacing-sm) * 2);
+    display: none;
 }
 
 /* Responsive pour les méthodes */
