@@ -202,7 +202,7 @@
     text-decoration: none;
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-medium);
-    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
     margin: 0;
     border-radius: var(--border-radius-sm);
     transition: none;
@@ -1387,7 +1387,7 @@ body {
     }
     
     .main-navigation__link {
-        padding: var(--spacing-sm) var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
         text-align: left;
         border-bottom: none;
         width: auto;
