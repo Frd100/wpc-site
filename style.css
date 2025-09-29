@@ -220,7 +220,7 @@
     width: 0;
     height: 3px;
     background: #4169E1;
-    transition: all 0.3s ease;
+    transition: none;
     margin: 0 auto;
 }
 
@@ -1479,7 +1479,7 @@ body {
         width: 0;
         height: 3px;
         background: #4169E1;
-        transition: all 0.3s ease;
+        transition: none;
         margin: 0 auto;
     }
     
