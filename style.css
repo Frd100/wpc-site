@@ -219,7 +219,7 @@
     right: var(--spacing-sm);
     width: 0;
     height: 3px;
-    background: var(--wpc-blue);
+    background: #4169E1;
     transition: all 0.3s ease;
     margin: 0 auto;
 }
@@ -360,7 +360,7 @@
 .cmp-services-button {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--text-white);
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
@@ -399,7 +399,7 @@
 }
 
 .cmp-domain-tag:hover {
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--text-white);
     transform: translateY(-1px);
 }
@@ -496,7 +496,7 @@ body {
 }
 
 .cmp-ppc-navigation__userlogin {
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--text-white);
 }
 
@@ -776,7 +776,7 @@ body {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-lg);
-    background: var(--wpc-blue);
+    background: #4169E1;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -808,7 +808,7 @@ body {
 }
 
 .cmp-button--primary {
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--text-white);
     border-color: var(--wpc-blue);
 }
@@ -827,7 +827,7 @@ body {
 }
 
 .cmp-button--secondary:hover {
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -1110,7 +1110,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--wpc-blue);
+        background: #4169E1;
         flex-direction: column;
         padding: 60px var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
         transform: translateY(-100%);
@@ -1477,7 +1477,7 @@ body {
         right: 0;
         width: 0;
         height: 3px;
-        background: var(--wpc-blue);
+        background: #4169E1;
         transition: all 0.3s ease;
         margin: 0 auto;
     }
@@ -1593,7 +1593,7 @@ body {
 
 /* ===== PAGE CONTACT ===== */
 .cmp-contact-hero {
-    background: var(--wpc-blue);
+    background: #4169E1;
     padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
 }
@@ -1764,7 +1764,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg) var(--spacing-2xl);
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--wpc-white);
     border: none;
     border-radius: var(--border-radius-sm);
@@ -1949,7 +1949,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--wpc-white);
     border: none;
     border-radius: 50px;
@@ -2149,7 +2149,7 @@ body {
 
 /* ===== PAGE MÉTHODES ===== */
 .cmp-methodes-hero {
-    background: var(--wpc-blue);
+    background: #4169E1;
     padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
 }
@@ -2293,7 +2293,7 @@ body {
 
 /* ===== PAGE ÉQUIPE ===== */
 .cmp-equipe-hero {
-    background: var(--wpc-blue);
+    background: #4169E1;
     color: var(--wpc-white);
     padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
