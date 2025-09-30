@@ -225,7 +225,7 @@
 }
 
 .main-navigation__link:hover {
-    color: #4169E1;
+    color: #4169E1 !important;
     background: none;
 }
 
@@ -1296,7 +1296,7 @@ body {
 }
 
 .main-navigation__link:hover {
-    color: #4169E1;
+    color: #4169E1 !important;
 }
 
 /* Focus styles for accessibility - only for keyboard navigation */
