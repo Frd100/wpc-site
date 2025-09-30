@@ -911,8 +911,8 @@ body {
 .cmp-about-section {
     background: var(--wpc-gray-900);
     color: var(--text-white);
-    padding: var(--spacing-4xl) 0;
-    margin: var(--spacing-4xl) 0;
+    padding: 0;
+    margin: 0;
 }
 
 .cmp-about-content {
