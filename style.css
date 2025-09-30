@@ -200,7 +200,7 @@
 .main-navigation__link {
     color: var(--text-primary);
     text-decoration: none;
-    font-size: var(--font-size-base);
+    font-size: 18px;
     font-weight: var(--font-weight-medium);
     padding: var(--spacing-sm) var(--spacing-md);
     margin: 0;
@@ -352,7 +352,7 @@
 }
 
 .cmp-services-description {
-    font-size: var(--font-size-base);
+    font-size: 18px;
     line-height: 1.6;
     color: var(--wpc-white);
     margin-bottom: var(--spacing-2xl);
@@ -736,7 +736,7 @@ body {
     color: var(--wpc-blue);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-base);
+    font-size: 18px;
     transition: color 0.2s ease;
 }
 
@@ -801,7 +801,7 @@ body {
     padding: var(--spacing-lg) var(--spacing-2xl);
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-base);
+    font-size: 18px;
     border-radius: var(--border-radius-md);
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -1200,7 +1200,7 @@ body {
         align-items: center;
         gap: var(--spacing-sm);
         color: #FFFFFF;
-        font-size: var(--font-size-base);
+        font-size: 18px;
         font-weight: var(--font-weight-medium);
         cursor: pointer;
         transition: opacity 0.2s ease;
@@ -1432,7 +1432,7 @@ body {
     }
     
     .cmp-top-banner__button {
-        font-size: var(--font-size-base);
+        font-size: 18px;
         padding: var(--spacing-xs) var(--spacing-lg);
     }
     
@@ -1466,7 +1466,7 @@ body {
         border-bottom: none;
         width: auto;
         position: relative;
-        font-size: var(--font-size-base);
+        font-size: 18px;
         font-weight: var(--font-weight-medium);
         color: var(--text-primary);
     }
@@ -1514,7 +1514,7 @@ body {
     }
     
     .cmp-domain-tag {
-        font-size: var(--font-size-base);
+        font-size: 18px;
         padding: var(--spacing-sm) var(--spacing-md);
     }
     
@@ -1667,7 +1667,7 @@ body {
 }
 
 .cmp-contact-description {
-    font-size: var(--font-size-base);
+    font-size: 18px;
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-2xl);
@@ -1743,7 +1743,7 @@ body {
     padding: var(--spacing-md);
     border: 1px solid var(--wpc-gray-300);
     border-radius: var(--border-radius-sm);
-    font-size: var(--font-size-base);
+    font-size: 18px;
     font-family: var(--font-family-primary);
     transition: border-color 0.2s ease;
     background: var(--wpc-white);
@@ -1771,7 +1771,7 @@ body {
     color: var(--wpc-white);
     border: none;
     border-radius: var(--border-radius-sm);
-    font-size: var(--font-size-base);
+    font-size: 18px;
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-primary);
     cursor: pointer;
