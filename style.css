@@ -275,14 +275,14 @@
 .cmp-about-section-white {
     width: 100%;
     background: var(--wpc-white);
-    padding: var(--spacing-4xl) 0;
+    padding: 0;
     margin: 0;
 }
 
 .cmp-about-section-white__container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: var(--spacing-4xl) var(--spacing-lg);
 }
 
 .cmp-about-section-white__content {
