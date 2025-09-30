@@ -1169,7 +1169,8 @@ body {
     }
     
     .main-navigation__link:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        color: #4169E1;
+        background: none;
     }
     
     .main-navigation__link:last-child {
@@ -1295,7 +1296,7 @@ body {
 }
 
 .main-navigation__link:hover {
-    color: var(--wpc-primary);
+    color: #4169E1;
 }
 
 /* Focus styles for accessibility - only for keyboard navigation */
@@ -2257,7 +2258,7 @@ body {
 }
 
 .main-navigation__link.active:hover {
-    color: #4169E1;
+    color: #4169E1 !important;
 }
 
 .main-navigation__link.active::after {
