@@ -198,7 +198,7 @@
 
 
 .main-navigation__link {
-    color: #424651;
+    color: #424651 !important;
     text-decoration: none;
     font-size: 17px;
     font-weight: var(--font-weight-medium);
@@ -2253,7 +2253,7 @@ body {
 
 /* Navigation active */
 .main-navigation__link.active {
-    color: #424651;
+        color: #424651 !important;
     font-weight: var(--font-weight-medium);
 }
 
