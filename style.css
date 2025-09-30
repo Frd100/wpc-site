@@ -1292,7 +1292,7 @@ body {
     color: var(--wpc-text);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: none;
 }
 
 .main-navigation__link:hover {
