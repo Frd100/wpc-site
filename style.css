@@ -2256,8 +2256,12 @@ body {
     font-weight: var(--font-weight-medium);
 }
 
+.main-navigation__link.active:hover {
+    color: #4169E1;
+}
+
 .main-navigation__link.active::after {
-    display: none;
+    display: block;
 }
 
 /* Responsive pour les méthodes */
