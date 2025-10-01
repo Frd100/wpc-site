@@ -2302,7 +2302,7 @@ body {
 .cmp-equipe-hero {
     background: #033DCC;
     color: var(--wpc-white);
-    padding: 80px 0 var(--spacing-2xl) 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -2328,13 +2328,13 @@ body {
 }
 
 .cmp-equipe-section {
-    padding: var(--spacing-4xl) 0;
+    padding: 0;
 }
 
 .cmp-equipe-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: 60px var(--spacing-lg);
 }
 
 .cmp-membre-card {
