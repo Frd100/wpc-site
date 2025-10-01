@@ -215,13 +215,12 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 3px;
     background: #033DCC;
     transition: none;
     width: 0;
-    margin: 0 auto;
 }
 
 .main-navigation__link:hover {
@@ -230,7 +229,7 @@
 }
 
 .main-navigation__link:hover::after {
-    width: 100%;
+    width: 80%;
     transition: none;
 }
 
@@ -1475,17 +1474,16 @@ body {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
         height: 3px;
         background: #033DCC;
         transition: none;
         width: 0;
-        margin: 0 auto;
     }
     
     .main-navigation__link:hover::after {
-        width: 100%;
+        width: 80%;
         transition: none;
     }
     
