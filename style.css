@@ -7,7 +7,7 @@
     --wpc-blue-light: #0047AB;
     --wpc-blue-dark: #002366;
     --wpc-blue-hero: #1A365D;
-    
+
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
     --wpc-black: #000000;
@@ -20,24 +20,24 @@
     --wpc-gray-700: #495057;
     --wpc-gray-800: #343A40;
     --wpc-gray-900: #212529;
-    
+
     /* WPC Text Colors */
     --text-primary: #212529;
     --text-secondary: #6C757D;
     --text-white: #FFFFFF;
     --text-muted: #ADB5BD;
-    
+
     /* WPC Background Colors */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8F9FA;
     --bg-dark: #212529;
     --bg-blue: #00338D;
-    
+
     /* WPC Fonts */
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-condensed: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-icons: 'Material Icons', sans-serif;
-    
+
     /* WPC Font Weights */
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -45,7 +45,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-    
+
     /* WPC Font Sizes */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -57,7 +57,7 @@
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
-    
+
     /* WPC Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -67,17 +67,19 @@
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
-    
+
     /* WPC Responsive Spacing */
-    --banner-height: 0; /* Bandeau supprimé */
-    --nav-offset: 0; /* Pas d'offset nécessaire */
-    
+    --banner-height: 0;
+    /* Bandeau supprimé */
+    --nav-offset: 0;
+    /* Pas d'offset nécessaire */
+
     /* WPC Border Radius */
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
     --border-radius-lg: 0.75rem;
     --border-radius-xl: 1rem;
-    
+
     /* WPC Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -132,17 +134,20 @@
 }
 
 .cmp-top-banner__button .material-icons {
-    font-size: 1.125rem; /* 18px en rem */
+    font-size: 1.125rem;
+    /* 18px en rem */
 }
 
 /* Navigation principale */
 .main-navigation {
-    position: static; /* Plus fixe - navigation normale */
+    position: static;
+    /* Plus fixe - navigation normale */
     top: auto;
     left: auto;
     right: auto;
     background: var(--wpc-white);
-    padding: var(--spacing-sm) 0 0 0; /* Padding top léger */
+    padding: var(--spacing-sm) 0 0 0;
+    /* Padding top léger */
     margin: 0;
     line-height: 1;
     z-index: auto;
@@ -178,9 +183,11 @@
 }
 
 .main-navigation__logo-image {
-    height: 3rem; /* 48px en rem - logo légèrement agrandi */
+    height: 3rem;
+    /* 48px en rem - logo légèrement agrandi */
     width: auto;
-    max-width: 15rem; /* 240px en rem */
+    max-width: 15rem;
+    /* 240px en rem */
     transition: transform 0.2s ease;
 }
 
@@ -229,7 +236,7 @@
 }
 
 .main-navigation__link:hover::after {
-    width: 80%;
+    width: calc(100% - 2rem);
     transition: none;
 }
 
@@ -476,7 +483,8 @@ body {
 /* Compenser la navigation fixe sur desktop */
 @media (min-width: 769px) {
     body {
-        padding-top: 0; /* Supprimer le padding pour coller l'image */
+        padding-top: 0;
+        /* Supprimer le padding pour coller l'image */
     }
 }
 
@@ -535,7 +543,8 @@ body {
     overflow: hidden;
     width: 100%;
     margin: 0;
-    padding: 0; /* Plus de padding - collé à la navigation */
+    padding: 0;
+    /* Plus de padding - collé à la navigation */
 }
 
 .cmp-hero-fbv__overlay-bg--cobalt-blue {
@@ -555,7 +564,8 @@ body {
     grid-template-rows: auto;
     margin: 0;
     padding: 0;
-    margin-top: 0; /* Compensation appliquée au conteneur parent */
+    margin-top: 0;
+    /* Compensation appliquée au conteneur parent */
 }
 
 .cmp-hero-fbv__image {
@@ -1058,7 +1068,8 @@ body {
 
 /* Mobile styles are the base (no media query needed) */
 body {
-    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll on mobile */
 }
 
 /* Mobile top banner */
@@ -1071,9 +1082,10 @@ body {
     padding: var(--spacing-xs) var(--spacing-sm);
 }
 
-    .cmp-top-banner__button .material-icons {
-        font-size: 1rem; /* 16px en rem */
-    }
+.cmp-top-banner__button .material-icons {
+    font-size: 1rem;
+    /* 16px en rem */
+}
 
 
 .main-navigation__content {
@@ -1089,21 +1101,24 @@ body {
 
 /* Mobile navigation - styles spécifiques */
 @media (max-width: 768px) {
+
     /* Cacher le bandeau gris sur mobile */
     .cmp-top-banner {
         display: none;
     }
-    
+
     /* Navigation normale sur mobile */
     .main-navigation {
         position: static;
-        padding: 0; /* Pas de padding sur mobile */
+        padding: 0;
+        /* Pas de padding sur mobile */
     }
-    
+
     body {
-        padding-top: 0; /* Pas de padding, navigation collée en haut */
+        padding-top: 0;
+        /* Pas de padding, navigation collée en haut */
     }
-    
+
     .main-navigation__links {
         position: fixed;
         top: 0;
@@ -1115,29 +1130,32 @@ body {
         padding: 60px var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
         transform: translateY(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 10002; /* Plus haut que le bouton toggle (10001) */
+        z-index: 10002;
+        /* Plus haut que le bouton toggle (10001) */
         overflow-y: auto;
         justify-content: space-between;
         box-shadow: none;
     }
-    
+
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
     .main-navigation__links::before {
         content: "✕";
         position: absolute;
         top: var(--spacing-lg);
         left: var(--spacing-lg);
-        right: auto; /* S'assurer qu'il n'est pas à droite */
+        right: auto;
+        /* S'assurer qu'il n'est pas à droite */
         color: #FFFFFF;
         font-size: 24px;
         font-weight: bold;
         cursor: pointer;
-        z-index: 10003; /* Plus haut que le menu (10002) */
+        z-index: 10003;
+        /* Plus haut que le menu (10002) */
         text-shadow: none;
         filter: none;
     }
-    
-    
+
+
     .main-navigation__link {
         display: flex;
         justify-content: space-between;
@@ -1154,7 +1172,7 @@ body {
         text-shadow: none;
         filter: none;
     }
-    
+
     /* S'assurer que les chevrons sont bien alignés à droite */
     .main-navigation__link::after {
         content: ">";
@@ -1163,20 +1181,22 @@ body {
         font-weight: var(--font-weight-bold);
         text-shadow: none;
         filter: none;
-        flex-shrink: 0; /* Empêcher le chevron de rétrécir */
-        margin-left: auto; /* Pousser le chevron à droite */
+        flex-shrink: 0;
+        /* Empêcher le chevron de rétrécir */
+        margin-left: auto;
+        /* Pousser le chevron à droite */
     }
-    
+
     .main-navigation__link:hover {
         color: #4169E1;
         background: none;
     }
-    
+
     .main-navigation__link:last-child {
         border-bottom: none;
     }
-    
-    
+
+
     /* Section contact en bas du menu mobile - bandeau gris */
     .mobile-menu-contact {
         display: flex;
@@ -1189,11 +1209,13 @@ body {
         margin-left: calc(-1 * var(--spacing-xl));
         margin-right: calc(-1 * var(--spacing-xl));
         margin-bottom: calc(-1 * var(--spacing-xl));
-        width: calc(100% + 2 * var(--spacing-xl)); /* S'étendre sur toute la largeur */
+        width: calc(100% + 2 * var(--spacing-xl));
+        /* S'étendre sur toute la largeur */
         position: relative;
-        left: calc(-1 * var(--spacing-xl)); /* Compenser le padding du parent */
+        left: calc(-1 * var(--spacing-xl));
+        /* Compenser le padding du parent */
     }
-    
+
     .mobile-menu-contact__item {
         display: flex;
         align-items: center;
@@ -1204,11 +1226,11 @@ body {
         cursor: pointer;
         transition: opacity 0.2s ease;
     }
-    
+
     .mobile-menu-contact__item:hover {
         opacity: 0.8;
     }
-    
+
     .mobile-menu-contact__item .material-icons {
         font-size: 20px;
         color: #FFFFFF;
@@ -1236,51 +1258,54 @@ body {
     justify-content: center;
 }
 
-    .main-navigation__toggle .material-icons {
-        font-size: 24px;
-        color: #212529;
-        transition: all 0.3s ease;
-    }
+.main-navigation__toggle .material-icons {
+    font-size: 24px;
+    color: #212529;
+    transition: all 0.3s ease;
+}
 
 @media (max-width: 768px) {
+
     /* Cacher les liens de navigation sur mobile par défaut */
     .main-navigation__links {
         display: none;
     }
-    
+
     /* Afficher le menu quand il est actif */
     .main-navigation__links.active {
         display: flex;
         transform: translateY(0);
     }
-    
+
     .main-navigation__toggle {
-        display: flex; /* Garder le bouton visible */
+        display: flex;
+        /* Garder le bouton visible */
         position: relative;
         z-index: 10001;
     }
-    
+
     /* Cacher le bouton toggle quand le menu est ouvert */
     .mobile-menu-open .main-navigation__toggle {
         display: none;
         visibility: hidden;
         opacity: 0;
     }
-    
+
     /* Cacher aussi l'icône close du bouton toggle */
     .mobile-menu-open .main-navigation__toggle .close-icon {
         display: none;
     }
-    
+
     /* Menu/Close icon toggle */
     .main-navigation__toggle .close-icon {
-        display: none; /* Cacher l'icône close par défaut */
+        display: none;
+        /* Cacher l'icône close par défaut */
     }
-    
+
     .main-navigation__toggle.active .menu-icon {
         display: none;
     }
-    
+
     .main-navigation__toggle.active .close-icon {
         display: block;
     }
@@ -1346,15 +1371,16 @@ body {
 /* Mobile hero - image en haut, carré en bas */
 @media (max-width: 768px) {
     .hero-fbv {
-        padding: 0; /* Plus de padding mobile - collé à la navigation */
+        padding: 0;
+        /* Plus de padding mobile - collé à la navigation */
     }
-    
+
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
         min-height: auto;
     }
-    
+
     .cmp-hero-fbv__image {
         order: 1;
         grid-area: unset;
@@ -1364,7 +1390,7 @@ body {
         margin: 0;
         padding: 0;
     }
-    
+
     .cmp-hero-fbv__content {
         position: absolute;
         left: 0;
@@ -1373,12 +1399,12 @@ body {
         padding: var(--spacing-lg);
         z-index: 2;
     }
-    
+
     .cmp-hero-fbv__main-title {
         font-size: 2.5rem;
         margin-bottom: var(--spacing-sm);
     }
-    
+
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
         margin-bottom: var(--spacing-md);
@@ -1391,61 +1417,68 @@ body {
 /* Très petits écrans (mobile) */
 @media (max-width: 480px) {
     :root {
-        --banner-height: 0; /* Bandeau supprimé */
+        --banner-height: 0;
+        /* Bandeau supprimé */
     }
 }
 
 /* Petits écrans (tablettes) */
 @media (min-width: 481px) and (max-width: 768px) {
     :root {
-        --banner-height: 0; /* Bandeau supprimé */
+        --banner-height: 0;
+        /* Bandeau supprimé */
     }
 }
 
 /* Écrans moyens (laptops) */
 @media (min-width: 769px) and (max-width: 1024px) {
     :root {
-        --banner-height: 0; /* Bandeau supprimé */
+        --banner-height: 0;
+        /* Bandeau supprimé */
     }
 }
 
 /* Grands écrans (desktop) */
 @media (min-width: 1025px) {
     :root {
-        --banner-height: 0; /* Bandeau supprimé */
+        --banner-height: 0;
+        /* Bandeau supprimé */
     }
 }
 
 /* Très grands écrans (4K+) */
 @media (min-width: 1920px) {
     :root {
-        --banner-height: 0; /* Bandeau supprimé */
+        --banner-height: 0;
+        /* Bandeau supprimé */
     }
 }
 
 /* ===== DESKTOP ENHANCEMENTS ===== */
 @media (min-width: 769px) {
+
     /* Desktop top banner */
     .cmp-top-banner__content {
         justify-content: flex-end;
     }
-    
+
     .cmp-top-banner__button {
         font-size: 17px;
         padding: var(--spacing-xs) var(--spacing-lg);
     }
-    
+
     .cmp-top-banner__button .material-icons {
-        font-size: 1.125rem; /* 18px en rem */
+        font-size: 1.125rem;
+        /* 18px en rem */
     }
-    
-    
+
+
     .main-navigation__content {
         justify-content: center;
         gap: var(--spacing-2xl);
         padding: var(--spacing-md) 0 var(--spacing-md) 0;
     }
-    
+
     .main-navigation__links {
         position: static;
         display: flex;
@@ -1458,7 +1491,7 @@ body {
         padding: 0;
         gap: var(--spacing-xl);
     }
-    
+
     .main-navigation__link {
         padding: var(--spacing-sm) var(--spacing-md);
         text-align: left;
@@ -1469,7 +1502,7 @@ body {
         font-weight: var(--font-weight-medium);
         color: var(--text-primary);
     }
-    
+
     .main-navigation__link::after {
         content: '';
         position: absolute;
@@ -1481,41 +1514,41 @@ body {
         transition: none;
         width: 0;
     }
-    
+
     .main-navigation__link:hover::after {
-        width: 80%;
+        width: calc(100% - 2rem);
         transition: none;
     }
-    
+
     /* Desktop services section */
     .cmp-services-content {
         flex-direction: row;
         height: 80vh;
         min-height: 600px;
     }
-    
+
     .cmp-services-left {
         order: 0;
         flex: 0 0 50%;
         padding: var(--spacing-3xl);
     }
-    
+
     .cmp-services-right {
         order: 0;
         flex: 0 0 50%;
         min-height: auto;
     }
-    
+
     .cmp-domains-tags {
         flex-wrap: wrap;
         gap: var(--spacing-sm);
     }
-    
+
     .cmp-domain-tag {
         font-size: 17px;
         padding: var(--spacing-sm) var(--spacing-md);
     }
-    
+
     /* Desktop hero - image en arrière-plan, carré par-dessus */
     .cmp-hero-fbv {
         position: relative;
@@ -1524,22 +1557,23 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         justify-content: flex-start;
-        margin-top: 0; /* Compensation appliquée au conteneur parent */
+        margin-top: 0;
+        /* Compensation appliquée au conteneur parent */
     }
-    
+
     .cmp-hero-fbv__image {
         grid-area: 1 / 1;
         z-index: 1;
         order: unset;
     }
-    
+
     .cmp-hero-fbv__image img {
         width: 100%;
         height: auto;
         object-fit: scale-down;
         object-position: center center;
     }
-    
+
     .cmp-hero-fbv__content {
         position: absolute;
         left: 0;
@@ -1548,7 +1582,7 @@ body {
         padding: var(--spacing-2xl);
         z-index: 2;
     }
-    
+
 }
 
 /* KPMG Exact Utility Classes */
@@ -1573,6 +1607,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1833,21 +1868,21 @@ body {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
     }
-    
+
     .cmp-contact-info {
         flex-direction: column;
         gap: var(--spacing-lg);
         text-align: center;
     }
-    
+
     .cmp-contact-title {
         font-size: 1.75rem;
     }
-    
+
     .cmp-contact-hero__title {
         font-size: 2.5rem;
     }
-    
+
     .cmp-contact-form-container {
         padding: var(--spacing-2xl);
     }
@@ -2041,17 +2076,17 @@ body {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
     }
-    
+
     .contact-info {
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
     }
-    
+
     .form-title {
         font-size: 1.75rem;
     }
-    
+
     .contact-form-container {
         padding: var(--spacing-lg);
     }
@@ -2134,15 +2169,15 @@ body {
     .confidentialite-container {
         padding: var(--spacing-lg) var(--spacing-md);
     }
-    
+
     .confidentialite-content {
         padding: var(--spacing-lg);
     }
-    
+
     .confidentialite-content h2 {
         font-size: 2rem;
     }
-    
+
     .confidentialite-section h3 {
         font-size: 1.25rem;
     }
@@ -2251,7 +2286,7 @@ body {
 
 /* Navigation active */
 .main-navigation__link.active {
-        color: #424651 !important;
+    color: #424651 !important;
     font-weight: var(--font-weight-medium);
 }
 
@@ -2268,12 +2303,12 @@ body {
     .cmp-methode-item {
         flex-direction: column;
     }
-    
+
     .cmp-methode-number {
         min-width: auto;
         padding: var(--spacing-md);
     }
-    
+
     .cmp-methode-content {
         padding: var(--spacing-lg);
     }
@@ -2281,15 +2316,16 @@ body {
 
 /* KPMG Exact Print Styles */
 @media print {
+
     .cmp-header,
     .cmp-footer {
         display: none;
     }
-    
+
     .cmp-hero-fbv__image {
         display: none;
     }
-    
+
     .cmp-hero-fbv__content {
         width: 100%;
         color: var(--text-primary);
@@ -2394,23 +2430,23 @@ body {
     .cmp-equipe-hero__title {
         font-size: 2.5rem;
     }
-    
+
     .cmp-equipe-hero__subtitle {
         font-size: 1.125rem;
     }
-    
+
     .cmp-membre-card {
         flex-direction: column;
         text-align: center;
         padding: var(--spacing-lg);
     }
-    
+
     .cmp-membre-image {
         flex: none;
         margin-right: 0;
         margin-bottom: var(--spacing-lg);
     }
-    
+
     .membre-photo {
         width: 150px;
         height: 150px;
@@ -2524,19 +2560,18 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cmp-member-card {
         min-width: 180px;
         max-width: 200px;
     }
-    
+
     .cmp-avatar-placeholder {
         width: 100px;
         height: 100px;
     }
-    
+
     .cmp-avatar-placeholder .material-icons {
         font-size: 40px;
     }
 }
-
