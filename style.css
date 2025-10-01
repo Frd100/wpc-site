@@ -2334,13 +2334,13 @@ body {
 .cmp-equipe-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
 }
 
 .cmp-membre-card {
     display: flex;
     align-items: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: 0;
     padding: var(--spacing-xl);
     background: var(--wpc-white);
     border-radius: var(--border-radius-md);
