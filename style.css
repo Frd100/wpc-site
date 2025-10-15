@@ -26,18 +26,18 @@
     --text-secondary: #6C757D;
     --text-white: #FFFFFF;
     --text-muted: #ADB5BD;
-    
+
     /* WPC Background Colors */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8F9FA;
     --bg-dark: #212529;
     --bg-blue: #00338D;
-    
+
     /* WPC Fonts */
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-condensed: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-icons: 'Material Icons', sans-serif;
-    
+
     /* WPC Font Weights */
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -45,7 +45,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-    
+
     /* WPC Font Sizes */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -57,7 +57,7 @@
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
-    
+
     /* WPC Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -67,7 +67,7 @@
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
-    
+
     /* WPC Responsive Spacing */
     --banner-height: 0;
     /* Bandeau supprimé */
@@ -79,7 +79,7 @@
     --border-radius-md: 0.5rem;
     --border-radius-lg: 0.75rem;
     --border-radius-xl: 1rem;
-    
+
     /* WPC Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -1242,11 +1242,11 @@ body {
     .mobile-menu-contact {
         display: none;
     }
-    }
-    
+}
+
 /* Mobile menu toggle button styles */
 .main-navigation__toggle {
-        display: none;
+    display: none;
     width: 40px;
     height: 40px;
     background: transparent;
@@ -1343,11 +1343,11 @@ body {
 
 /* Mobile services section */
 .cmp-services-content {
-        flex-direction: column;
+    flex-direction: column;
     height: auto;
-        min-height: auto;
-    }
-    
+    min-height: auto;
+}
+
 .cmp-services-left {
     order: 1;
     padding: var(--spacing-2xl) var(--spacing-lg);
@@ -1380,7 +1380,7 @@ body {
         flex-direction: column;
         min-height: auto;
     }
-    
+
     .cmp-hero-fbv__image {
         order: 1;
         grid-area: unset;
@@ -2217,8 +2217,7 @@ body {
     width: 100%;
     margin: 0;
     padding: var(--spacing-4xl) 0;
-    background: #051B2C;
-    color: var(--wpc-white);
+    background: var(--wpc-white);
 }
 
 .cmp-domaines-content {
@@ -2230,7 +2229,7 @@ body {
 .cmp-domaines-title {
     font-size: 2.5rem;
     font-weight: var(--font-weight-bold);
-    color: var(--wpc-white);
+    color: var(--text-primary);
     margin: 0 0 var(--spacing-lg) 0;
     text-align: center;
 }
@@ -2238,10 +2237,9 @@ body {
 .cmp-domaines-description {
     font-size: 1.125rem;
     line-height: 1.6;
-    color: var(--wpc-white);
+    color: var(--text-secondary);
     margin: 0 0 var(--spacing-3xl) 0;
     text-align: center;
-    opacity: 0.9;
 }
 
 .cmp-domaines-grid {
@@ -2252,22 +2250,15 @@ body {
 }
 
 .cmp-domaine-pole {
-    background: rgba(255, 255, 255, 0.1);
     padding: var(--spacing-2xl);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.cmp-domaine-pole:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-4px);
+    border: 1px solid var(--wpc-gray-200);
+    border-radius: var(--border-radius-md);
 }
 
 .cmp-domaine-pole__title {
     font-size: 1.5rem;
     font-weight: var(--font-weight-bold);
-    color: var(--wpc-white);
+    color: var(--text-primary);
     margin: 0 0 var(--spacing-lg) 0;
     text-align: left;
 }
@@ -2279,16 +2270,15 @@ body {
 }
 
 .cmp-domaine-pole__services li {
-    color: var(--wpc-white);
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
     padding-left: var(--spacing-md);
     position: relative;
-    opacity: 0.9;
 }
 
 .cmp-domaine-pole__services li::before {
     content: "•";
-    color: #033DCC;
+    color: var(--wpc-blue);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -2324,30 +2314,34 @@ body {
     text-align: center;
 }
 
-/* Timeline Styles */
+/* Timeline Styles - Horizontale */
 .cmp-timeline {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
-    max-width: 800px;
+    flex-direction: row;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
     margin: 0 auto;
     padding: var(--spacing-2xl) 0;
+    overflow-x: auto;
 }
 
 .cmp-timeline-step {
     display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-lg);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
     position: relative;
+    flex: 1;
 }
 
 .cmp-timeline-step:not(:last-child)::after {
     content: '';
     position: absolute;
-    left: 24px;
-    top: 60px;
-    width: 2px;
-    height: calc(100% + var(--spacing-2xl));
+    top: 24px;
+    left: calc(50% + 24px);
+    width: calc(100% - 48px);
+    height: 2px;
     background: #033DCC;
     z-index: 1;
 }
@@ -2366,15 +2360,15 @@ body {
     flex-shrink: 0;
     z-index: 2;
     position: relative;
+    margin-bottom: var(--spacing-lg);
 }
 
 .cmp-timeline-step__content {
-    flex: 1;
-    padding-top: var(--spacing-sm);
+    width: 100%;
 }
 
 .cmp-timeline-step__title {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
     margin: 0 0 var(--spacing-sm) 0;
@@ -2382,8 +2376,8 @@ body {
 }
 
 .cmp-timeline-step__description {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.875rem;
+    line-height: 1.5;
     color: var(--text-secondary);
     margin: 0;
 }
@@ -2489,6 +2483,29 @@ body {
     .cmp-processus-title {
         font-size: 2rem;
     }
+
+    .cmp-timeline {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .cmp-timeline-step {
+        flex-direction: row;
+        text-align: left;
+        min-width: auto;
+    }
+
+    .cmp-timeline-step:not(:last-child)::after {
+        top: calc(50% + 24px);
+        left: 24px;
+        width: 2px;
+        height: calc(100% + var(--spacing-xl));
+    }
+
+    .cmp-timeline-step__number {
+        margin-bottom: 0;
+        margin-right: var(--spacing-lg);
+    }
 }
 
 /* KPMG Exact Print Styles */
@@ -2498,11 +2515,11 @@ body {
     .cmp-footer {
         display: none;
     }
-    
+
     .cmp-hero-fbv__image {
         display: none;
     }
-    
+
     .cmp-hero-fbv__content {
         width: 100%;
         color: var(--text-primary);
