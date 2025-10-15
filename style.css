@@ -26,18 +26,18 @@
     --text-secondary: #6C757D;
     --text-white: #FFFFFF;
     --text-muted: #ADB5BD;
-
+    
     /* WPC Background Colors */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8F9FA;
     --bg-dark: #212529;
     --bg-blue: #00338D;
-
+    
     /* WPC Fonts */
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-condensed: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-icons: 'Material Icons', sans-serif;
-
+    
     /* WPC Font Weights */
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -45,7 +45,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-
+    
     /* WPC Font Sizes */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -57,7 +57,7 @@
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
-
+    
     /* WPC Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -67,7 +67,7 @@
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
-
+    
     /* WPC Responsive Spacing */
     --banner-height: 0;
     /* Bandeau supprimé */
@@ -79,7 +79,7 @@
     --border-radius-md: 0.5rem;
     --border-radius-lg: 0.75rem;
     --border-radius-xl: 1rem;
-
+    
     /* WPC Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -1242,11 +1242,11 @@ body {
     .mobile-menu-contact {
         display: none;
     }
-}
-
+    }
+    
 /* Mobile menu toggle button styles */
 .main-navigation__toggle {
-    display: none;
+        display: none;
     width: 40px;
     height: 40px;
     background: transparent;
@@ -1343,11 +1343,11 @@ body {
 
 /* Mobile services section */
 .cmp-services-content {
-    flex-direction: column;
+        flex-direction: column;
     height: auto;
-    min-height: auto;
-}
-
+        min-height: auto;
+    }
+    
 .cmp-services-left {
     order: 1;
     padding: var(--spacing-2xl) var(--spacing-lg);
@@ -1380,7 +1380,7 @@ body {
         flex-direction: column;
         min-height: auto;
     }
-
+    
     .cmp-hero-fbv__image {
         order: 1;
         grid-area: unset;
@@ -2212,6 +2212,118 @@ body {
     opacity: 0.9;
 }
 
+/* Domaines Styles */
+.cmp-domaines-section {
+    width: 100%;
+    margin: 0;
+    padding: var(--spacing-4xl) 0;
+    background: #051B2C;
+    color: var(--wpc-white);
+}
+
+.cmp-domaines-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cmp-domaines-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--wpc-white);
+    margin: 0 0 var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.cmp-domaines-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--wpc-white);
+    margin: 0 0 var(--spacing-3xl) 0;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.cmp-domaines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.cmp-domaine-pole {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cmp-domaine-pole:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.cmp-domaine-pole__title {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--wpc-white);
+    margin: 0 0 var(--spacing-lg) 0;
+    text-align: left;
+}
+
+.cmp-domaine-pole__services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cmp-domaine-pole__services li {
+    color: var(--wpc-white);
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+    opacity: 0.9;
+}
+
+.cmp-domaine-pole__services li::before {
+    content: "•";
+    color: #033DCC;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Processus Section */
+.cmp-processus-section {
+    width: 100%;
+    margin: 0;
+    padding: var(--spacing-4xl) 0;
+    background: var(--wpc-white);
+}
+
+.cmp-processus-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cmp-processus-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.cmp-processus-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0 0 var(--spacing-3xl) 0;
+    text-align: center;
+}
+
 /* Timeline Styles */
 .cmp-timeline {
     display: flex;
@@ -2359,19 +2471,23 @@ body {
     display: block;
 }
 
-/* Responsive pour le fonctionnement */
+/* Responsive pour les domaines */
 @media (max-width: 768px) {
-    .cmp-fonctionnement-item {
-        flex-direction: column;
+    .cmp-domaines-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 
-    .cmp-fonctionnement-number {
-        min-width: auto;
-        padding: var(--spacing-md);
-    }
-
-    .cmp-fonctionnement-content {
+    .cmp-domaine-pole {
         padding: var(--spacing-lg);
+    }
+
+    .cmp-domaines-title {
+        font-size: 2rem;
+    }
+
+    .cmp-processus-title {
+        font-size: 2rem;
     }
 }
 
@@ -2382,11 +2498,11 @@ body {
     .cmp-footer {
         display: none;
     }
-
+    
     .cmp-hero-fbv__image {
         display: none;
     }
-
+    
     .cmp-hero-fbv__content {
         width: 100%;
         color: var(--text-primary);
