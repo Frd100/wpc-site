@@ -110,10 +110,10 @@
                                             name="bot-field"></label>
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="subject">Type de demande *</label>
-                                        <select id="subject" name="subject" required>
+                                <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px;">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="subject" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Type de demande *</label>
+                                        <select id="subject" name="subject" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                                             <option value="">Sélectionnez un type</option>
                                             <option value="etude">Étude et enquête</option>
                                             <option value="benchmark">Benchmark et diagnostic</option>
@@ -125,43 +125,43 @@
                                     </div>
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="firstname">Prénom *</label>
-                                        <input type="text" id="firstname" name="firstname" required>
+                                <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px;">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="firstname" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Prénom *</label>
+                                        <input type="text" id="firstname" name="firstname" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="lastname">Nom *</label>
-                                        <input type="text" id="lastname" name="lastname" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" id="email" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">N° de téléphone *</label>
-                                        <input type="tel" id="phone" name="phone" required>
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="lastname" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Nom *</label>
+                                        <input type="text" id="lastname" name="lastname" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                                     </div>
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="city">Ville *</label>
-                                        <input type="text" id="city" name="city" required>
+                                <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px;">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Email *</label>
+                                        <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="organization">Entreprise</label>
-                                        <input type="text" id="organization" name="organization">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">N° de téléphone *</label>
+                                        <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                                     </div>
                                 </div>
 
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="employees">Nombre de salariés *</label>
-                                        <select id="employees" name="employees" required>
+                                <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px;">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="city" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Ville *</label>
+                                        <input type="text" id="city" name="city" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                                    </div>
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="organization" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Entreprise</label>
+                                        <input type="text" id="organization" name="organization" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                                    </div>
+                                </div>
+
+                                <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 20px;">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label for="employees" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Nombre de salariés *</label>
+                                        <select id="employees" name="employees" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
                                             <option value="">Sélectionnez</option>
                                             <option value="1-10">1-10</option>
                                             <option value="11-50">11-50</option>
@@ -172,32 +172,37 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="message">Votre message *</label>
-                                    <textarea id="message" name="message" rows="4" required
-                                        placeholder="Votre message*"></textarea>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Votre message *</label>
+                                    <textarea id="message" name="message" rows="4" required placeholder="Votre message*" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; resize: vertical;"></textarea>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="description">Descriptif de votre besoin *</label>
-                                    <textarea id="description" name="description" rows="4" required
-                                        placeholder="Descriptif de votre besoin*"></textarea>
+                                <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="description" style="display: block; margin-bottom: 8px; font-weight: 500; color: #333;">Descriptif de votre besoin *</label>
+                                    <textarea id="description" name="description" rows="4" required placeholder="Descriptif de votre besoin*" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; resize: vertical;"></textarea>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" style="margin-bottom: 30px;">
                                     <div style="display: flex; align-items: flex-start; gap: 10px;">
                                         <input type="checkbox" name="rgpd" required style="margin-top: 5px;">
                                         <div style="font-size: 14px; line-height: 1.5;">
-                                            <span>En soumettant ce formulaire j'accepte que mes données personnelles soient traitées par West Paris Consulting à des fins d'information, d'organisation d'événements ou de prospection commerciale.</span>
+                                            <span>En soumettant ce formulaire j'accepte que mes données personnelles
+                                                soient traitées par West Paris Consulting à des fins d'information,
+                                                d'organisation d'événements ou de prospection commerciale.</span>
                                             <br><br>
-                                            <span>Consultez notre </span><a href="confidentialite.html" class="privacy-link">Politique de confidentialité</a><span> en ligne pour obtenir plus d'informations.</span>
+                                            <span>Consultez notre </span><a href="confidentialite.html"
+                                                class="privacy-link">Politique de confidentialité</a><span> en ligne
+                                                pour obtenir plus d'informations.</span>
                                             <br><br>
-                                            <span>Vous pouvez exercer vos droits relatifs au traitement des données personnelles vous concernant en cliquant sur le lien ci-après : </span><a href="exercer-mes-droits.html" class="rights-link">j'exerce mes droits</a><span>.</span>
+                                            <span>Vous pouvez exercer vos droits relatifs au traitement des données
+                                                personnelles vous concernant en cliquant sur le lien ci-après :
+                                            </span><a href="exercer-mes-droits.html" class="rights-link">j'exerce mes
+                                                droits</a><span>.</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <button type="submit" class="submit-button">
+                                <button type="submit" class="submit-button" style="background: #051B2C; color: white; padding: 15px 30px; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s ease;">
                                     Envoyer ma demande
                                 </button>
                             </form>
