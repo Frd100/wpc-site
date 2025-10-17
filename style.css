@@ -1119,23 +1119,32 @@ body {
         /* Pas de padding, navigation collée en haut */
     }
 
-    /* Logo à gauche, hamburger à droite sur mobile */
+    /* Hamburger à gauche, Logo au centre sur mobile */
     .main-navigation__content {
-        justify-content: space-between !important;
-        /* Logo à gauche, hamburger à droite */
-        padding: var(--spacing-md) var(--spacing-lg);
+        justify-content: center !important;
+        /* Logo au centre */
+        padding: var(--spacing-md) var(--spacing-sm);
+        /* Réduire la largeur de la navigation */
+        position: relative;
     }
 
     .main-navigation__logo {
-        order: 1;
-        /* Logo en premier */
+        order: 2;
+        /* Logo au centre */
+    }
+
+    .main-navigation__logo-image {
+        width: 80px;
+        /* Réduire la taille du logo sur mobile */
+        height: auto;
     }
 
     .main-navigation__toggle {
-        order: 2;
-        /* Hamburger en dernier */
-        margin-left: auto;
-        /* Pousser à droite */
+        order: 1;
+        /* Hamburger en premier */
+        position: absolute;
+        left: var(--spacing-xs);
+        /* Très proche de l'extrémité gauche */
     }
 
     .main-navigation__links {
