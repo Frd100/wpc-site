@@ -1439,7 +1439,8 @@ body {
     }
 
     .cmp-hero-fbv__main-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        /* Réduit de 2.5rem à 2rem pour mobile */
         margin-bottom: var(--spacing-md);
         color: white;
     }
