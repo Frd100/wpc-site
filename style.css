@@ -1187,10 +1187,9 @@ body {
     .main-navigation__link {
         display: flex;
         justify-content: space-between;
-        /* Titre à gauche, chevron à droite */
         align-items: center;
-        padding: var(--spacing-md) 0;
-        /* Espacement normal */
+        padding: var(--spacing-sm) 0;
+        /* Espacement réduit (0.5rem au lieu de 1rem) */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
@@ -1198,7 +1197,6 @@ body {
         font-weight: 600;
         text-decoration: none;
         border-bottom: none;
-        /* Plus de tirés */
         transition: opacity 0.2s ease;
         position: relative;
     }
