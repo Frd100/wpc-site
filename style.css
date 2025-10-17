@@ -1156,28 +1156,29 @@ body {
         background: #033DCC;
         flex-direction: column;
         padding: 60px 0 0 0;
-        /* Pas de padding horizontal pour dividers pleine largeur */
         transform: translateY(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 10002;
         overflow-y: auto;
         justify-content: flex-start;
         box-shadow: none;
+        border-radius: 0;
+        /* Pas d'arrondi */
     }
 
     /* Dividers qui remplissent tout l'écran après les liens */
     .main-navigation__links::after {
         content: "";
         flex: 1;
-        /* Prend tout l'espace restant */
-        background: repeating-linear-gradient(
-            to bottom,
-            transparent 0,
-            transparent 60px,
-            rgba(255, 255, 255, 0.2) 60px,
-            rgba(255, 255, 255, 0.2) 61px
-        );
-        /* Dividers répétés jusqu'en bas */
+        width: 100%;
+        background-image: repeating-linear-gradient(to bottom,
+                transparent 0,
+                transparent 59px,
+                rgba(255, 255, 255, 0.2) 59px,
+                rgba(255, 255, 255, 0.2) 60px);
+        background-size: 100% 60px;
+        border-radius: 0;
+        overflow: hidden;
     }
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
