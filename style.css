@@ -1119,6 +1119,25 @@ body {
         /* Pas de padding, navigation collée en haut */
     }
 
+    /* Logo à gauche, hamburger à droite sur mobile */
+    .main-navigation__content {
+        justify-content: space-between !important;
+        /* Logo à gauche, hamburger à droite */
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .main-navigation__logo {
+        order: 1;
+        /* Logo en premier */
+    }
+
+    .main-navigation__toggle {
+        order: 2;
+        /* Hamburger en dernier */
+        margin-left: auto;
+        /* Pousser à droite */
+    }
+
     .main-navigation__links {
         position: fixed;
         top: 0;
