@@ -1172,15 +1172,15 @@ body {
         top: var(--spacing-lg);
         left: var(--spacing-lg);
         right: auto;
-        /* S'assurer qu'il n'est pas à droite */
-        color: #FFFFFF;
-        font-size: 24px;
-        font-weight: bold;
+        color: #FFFFFF !important;
+        font-size: 32px;
+        /* Plus grand */
+        font-weight: 300;
+        /* Moins gras, plus élégant */
         cursor: pointer;
         z-index: 10003;
-        /* Plus haut que le menu (10002) */
-        text-shadow: none;
-        filter: none;
+        opacity: 1;
+        /* Bien visible */
     }
 
 
@@ -1188,32 +1188,34 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-lg) 0;
+        /* Réduit de xl à lg */
         text-align: left;
         width: 100%;
-        color: #FFFFFF;
-        font-size: var(--font-size-lg);
-        font-weight: var(--font-weight-medium);
+        color: #FFFFFF !important;
+        /* Force le blanc */
+        font-size: 1.25rem;
+        /* Augmenté pour meilleure lisibilité */
+        font-weight: 600;
+        /* Plus gras */
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        /* Tiré blanc semi-transparent */
-        transition: background-color 0.2s ease;
-        text-shadow: none;
-        filter: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Tiré plus subtil */
+        transition: opacity 0.2s ease;
     }
 
-    /* S'assurer que les chevrons sont bien alignés à droite */
+    /* S'assurer que les chevrons sont bien visibles */
     .main-navigation__link::after {
-        content: ">";
-        color: #FFFFFF;
-        font-size: var(--font-size-lg);
-        font-weight: var(--font-weight-bold);
-        text-shadow: none;
-        filter: none;
+        content: "›";
+        /* Chevron plus épais */
+        color: #FFFFFF !important;
+        font-size: 2rem;
+        /* Beaucoup plus grand */
+        font-weight: 300;
+        /* Moins gras pour équilibrer */
         flex-shrink: 0;
-        /* Empêcher le chevron de rétrécir */
         margin-left: auto;
-        /* Pousser le chevron à droite */
+        opacity: 0.9;
     }
 
     .main-navigation__link:hover {
