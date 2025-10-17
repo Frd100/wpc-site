@@ -1188,17 +1188,23 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-xs) 0;
-        /* Espacement minimal (0.25rem = 4px) */
+        padding: var(--spacing-md) 0;
+        /* Espacement normal pour les dividers */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
         text-decoration: none;
-        border-bottom: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Divider blanc subtil */
         transition: opacity 0.2s ease;
         position: relative;
+    }
+
+    /* Pas de divider après le dernier lien */
+    .main-navigation__link:last-child {
+        border-bottom: none;
     }
 
     /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
