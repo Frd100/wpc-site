@@ -2772,3 +2772,249 @@ body {
         font-size: 40px;
     }
 }
+
+/* ========================================
+   CLASSES UTILITAIRES POUR STYLES RÉPÉTITIFS
+   ======================================== */
+
+/* Hero sections communes */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    background-color: #051B2C;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Sections avec background gris */
+.section-gray {
+    background-color: #F5F6FA;
+    padding: 40px 0;
+}
+
+.section-white {
+    background: white;
+    padding: 40px;
+}
+
+/* Conteneurs centrés */
+.container-centered {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Styles de formulaires */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Boutons */
+.btn-primary {
+    background: #051B2C;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #0a2a3f;
+}
+
+/* Cartes équipe */
+.team-card {
+    background: white;
+    border: none;
+    box-shadow: none;
+    padding: 20px;
+    margin: 0;
+    border-radius: 0;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-avatar {
+    width: 200px;
+    height: 200px;
+    background-color: #F5F6FA;
+    border: none;
+    flex-shrink: 0;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-name {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.team-role {
+    margin: 0 0 10px 0;
+    color: #000000;
+    font-weight: 345;
+    font-size: 16px;
+}
+
+.team-link {
+    color: #0077b6;
+    text-decoration: none;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.team-link-icon {
+    width: 24px;
+    height: 24px;
+    fill: #0077b6;
+}
+
+/* Grille équipe */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Sections about */
+.about-section {
+    background-color: #F5F6FA;
+    padding: 0;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.about-paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 0.6;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utilitaires */
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
