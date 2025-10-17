@@ -1167,7 +1167,8 @@ body {
         font-size: var(--font-size-lg);
         font-weight: var(--font-weight-medium);
         text-decoration: none;
-        border-bottom: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        /* Tiré blanc semi-transparent */
         transition: background-color 0.2s ease;
         text-shadow: none;
         filter: none;
@@ -1368,7 +1369,7 @@ body {
     padding: var(--spacing-sm) var(--spacing-md);
 }
 
-/* Mobile hero - image en haut, carré en bas */
+/* Mobile hero - image en haut, contenu en bas */
 @media (max-width: 768px) {
     .hero-fbv {
         padding: 0;
@@ -1379,6 +1380,8 @@ body {
         display: flex;
         flex-direction: column;
         min-height: auto;
+        background: #1A365D;
+        /* Fond bleu pour la section contenu */
     }
 
     .cmp-hero-fbv__image {
@@ -1392,22 +1395,31 @@ body {
     }
 
     .cmp-hero-fbv__content {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: var(--spacing-lg);
-        z-index: 2;
+        order: 2;
+        /* Contenu APRÈS l'image */
+        position: relative;
+        /* Plus de position absolute */
+        left: auto;
+        top: auto;
+        transform: none;
+        /* Plus de transform */
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        /* Plus de padding */
+        z-index: auto;
+        background: #1A365D;
+        /* Fond bleu */
     }
 
     .cmp-hero-fbv__main-title {
         font-size: 2.5rem;
-        margin-bottom: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+        color: white;
     }
 
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
-        margin-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        color: white;
     }
 }
 
