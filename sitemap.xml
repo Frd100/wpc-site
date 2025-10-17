@@ -7,7 +7,7 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://westparisconsulting.fr/methodes.html</loc>
+        <loc>https://westparisconsulting.fr/domaines.html</loc>
         <lastmod>2024-12-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -20,6 +20,24 @@
     </url>
     <url>
         <loc>https://westparisconsulting.fr/confidentialite.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://westparisconsulting.fr/equipe.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://westparisconsulting.fr/mentions-legales.html</loc>
+        <lastmod>2024-12-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://westparisconsulting.fr/exercer-mes-droits.html</loc>
         <lastmod>2024-12-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
