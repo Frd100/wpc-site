@@ -3024,3 +3024,28 @@ body {
 .mt-2 {
     margin-top: 2rem;
 }
+
+/* Classes pour pages légales */
+.legal-section {
+    margin-bottom: 25px;
+}
+
+.legal-title {
+    color: #051B2C;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.legal-text {
+    margin: 0;
+    line-height: 1.8;
+    color: #333;
+    font-size: 16px;
+}
+
+.legal-content {
+    line-height: 1.8;
+    color: #333;
+    font-size: 16px;
+}
