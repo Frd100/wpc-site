@@ -1187,31 +1187,23 @@ body {
     .main-navigation__link {
         display: flex;
         justify-content: space-between;
+        /* Titre à gauche, chevron à droite */
         align-items: center;
-        padding: var(--spacing-lg) 0;
+        padding: var(--spacing-md) 0 var(--spacing-xs) 0;
+        /* Peu d'espace en bas pour la ligne */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
         text-decoration: none;
-        border-bottom: none;
-        /* Pas de border-bottom */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        /* Ligne EN DESSOUS */
         transition: opacity 0.2s ease;
         position: relative;
-        /* Pour le pseudo-élément */
     }
 
-    /* Ligne horizontale entre le texte et le chevron */
-    .main-navigation__link::before {
-        content: "";
-        flex: 1;
-        /* Prend tout l'espace disponible */
-        height: 1px;
-        background: rgba(255, 255, 255, 0.3);
-        margin: 0 var(--spacing-md);
-        /* Espacement autour de la ligne */
-    }
+    /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
 
     /* S'assurer que les chevrons sont bien visibles */
     .main-navigation__link::after {
