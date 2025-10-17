@@ -1166,20 +1166,21 @@ body {
         /* Pas d'arrondi */
     }
 
-    /* Dividers qui remplissent tout l'écran après les liens */
+    /* Dividers qui continuent jusqu'en bas - exactement comme un lien vide */
     .main-navigation__links::after {
         content: "";
+        display: block;
+        height: auto;
         flex: 1;
         width: 100%;
-        background-image: repeating-linear-gradient(to bottom,
-                transparent 0,
-                transparent calc(1.25rem * 1.5 + 2rem - 1px),
-                /* hauteur texte + padding vertical - 1px pour le divider */
-                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem - 1px),
-                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem));
-        /* Même hauteur exacte qu'un lien */
-        border-radius: 0;
-        overflow: hidden;
+        background-image: repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0px,
+            rgba(255, 255, 255, 0) calc(1.25rem * 1.2 + 2rem),
+            /* Hauteur = font-size * line-height + padding */
+            rgba(255, 255, 255, 0.2) calc(1.25rem * 1.2 + 2rem),
+            rgba(255, 255, 255, 0.2) calc(1.25rem * 1.2 + 2rem + 1px)
+        );
     }
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
