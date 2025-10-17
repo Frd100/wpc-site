@@ -2883,15 +2883,21 @@ body {
 .team-card {
     background: white;
     border: none;
-    box-shadow: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 0;
-    border-radius: 0;
+    border-radius: 8px;
     aspect-ratio: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .team-avatar {
@@ -2902,6 +2908,11 @@ body {
     flex-shrink: 0;
     border-radius: 50%;
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .team-info {
@@ -2912,12 +2923,13 @@ body {
     margin: 0 0 5px 0;
     font-size: 22px;
     font-weight: 600;
+    color: #051B2C;
 }
 
 .team-role {
     margin: 0 0 10px 0;
-    color: #000000;
-    font-weight: 345;
+    color: #666;
+    font-weight: 400;
     font-size: 16px;
 }
 
@@ -2927,12 +2939,22 @@ body {
     display: inline-block;
     width: 24px;
     height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.team-link:hover {
+    transform: scale(1.1);
 }
 
 .team-link-icon {
     width: 24px;
     height: 24px;
     fill: #0077b6;
+    transition: fill 0.2s ease;
+}
+
+.team-link:hover .team-link-icon {
+    fill: #005a8b;
 }
 
 /* Grille équipe */
