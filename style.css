@@ -1159,9 +1159,9 @@ body {
         transform: translateY(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 10002;
-        /* Plus haut que le bouton toggle (10001) */
         overflow-y: auto;
-        justify-content: space-between;
+        justify-content: flex-start;
+        /* Liens groupés en haut au lieu d'étalés */
         box-shadow: none;
     }
 
