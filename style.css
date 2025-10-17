@@ -1205,18 +1205,10 @@ body {
 
     /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
 
-    /* S'assurer que les chevrons sont bien visibles */
+    /* Supprimer les chevrons */
     .main-navigation__link::after {
-        content: "›";
-        /* Chevron plus épais */
-        color: #FFFFFF !important;
-        font-size: 2rem;
-        /* Beaucoup plus grand */
-        font-weight: 300;
-        /* Moins gras pour équilibrer */
-        flex-shrink: 0;
-        margin-left: auto;
-        opacity: 0.9;
+        display: none;
+        /* Plus de chevrons › */
     }
 
     .main-navigation__link:hover {
