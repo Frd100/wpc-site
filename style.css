@@ -1173,10 +1173,11 @@ body {
         width: 100%;
         background-image: repeating-linear-gradient(to bottom,
                 transparent 0,
-                transparent 59px,
-                rgba(255, 255, 255, 0.2) 59px,
-                rgba(255, 255, 255, 0.2) 60px);
-        background-size: 100% 60px;
+                transparent calc(1.25rem * 1.5 + 2rem - 1px),
+                /* hauteur texte + padding vertical - 1px pour le divider */
+                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem - 1px),
+                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem));
+        /* Même hauteur exacte qu'un lien */
         border-radius: 0;
         overflow: hidden;
     }
