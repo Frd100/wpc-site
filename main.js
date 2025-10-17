@@ -1,18 +1,33 @@
-// WPC Site JavaScript
+/**
+ * WPC Site JavaScript
+ * Main script for West Paris Consulting website
+ * 
+ * Features:
+ * - Smooth scrolling for anchor links
+ * - Contact form feedback
+ * - Mobile menu management
+ * - Utility functions for performance optimization
+ */
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    
-    // WPC Smooth Scrolling
+    /**
+     * SMOOTH SCROLLING
+     * Gère le défilement fluide vers les ancres (#section)
+     * Améliore l'expérience utilisateur lors de la navigation interne
+     */
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
+            
+            // Ignore les liens "#" seuls
             if (href === '#') return;
             
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
+                // Défilement fluide vers la cible
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -21,19 +36,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // WPC Form Feedback
+    /**
+     * CONTACT FORM FEEDBACK
+     * Affiche un état de chargement lors de la soumission du formulaire
+     * Le formulaire utilise FormSubmit.co qui redirige l'utilisateur après soumission
+     */
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             
-            // Show loading state
+            // Affichage de l'état de chargement
             submitButton.textContent = 'Envoi en cours...';
             submitButton.disabled = true;
             submitButton.style.opacity = '0.7';
             
-            // Reset button after 3 seconds (form will redirect to FormSubmit)
+            // Réinitialisation après 3 secondes (le formulaire sera redirigé par FormSubmit)
             setTimeout(() => {
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
@@ -50,9 +69,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-// WPC Utility Functions
+/**
+ * WPC UTILITY FUNCTIONS
+ * Collection de fonctions utilitaires pour optimiser les performances
+ * et améliorer l'expérience utilisateur
+ */
 const WPCUtils = {
-    // Debounce function for performance
+    /**
+     * DEBOUNCE
+     * Limite l'exécution d'une fonction en attendant la fin d'une série d'appels
+     * Utile pour les champs de recherche, les redimensionnements de fenêtre, etc.
+     * 
+     * @param {Function} func - La fonction à débouncer
+     * @param {Number} wait - Délai d'attente en millisecondes
+     * @param {Boolean} immediate - Si true, exécute immédiatement
+     * @returns {Function} Fonction débouncée
+     */
     debounce: function(func, wait, immediate) {
         let timeout;
         return function executedFunction() {
@@ -69,7 +101,15 @@ const WPCUtils = {
         };
     },
     
-    // Throttle function for scroll events
+    /**
+     * THROTTLE
+     * Limite le nombre d'exécutions d'une fonction dans un intervalle de temps
+     * Idéal pour les événements de scroll, resize, etc.
+     * 
+     * @param {Function} func - La fonction à throttler
+     * @param {Number} limit - Intervalle minimum entre deux exécutions (ms)
+     * @returns {Function} Fonction throttlée
+     */
     throttle: function(func, limit) {
         let inThrottle;
         return function() {
@@ -115,15 +155,29 @@ const WPCClasses = {
     lazy: 'lazy'
 };
 
-// WPC Mobile Menu Toggle - Implementation optimisée selon Perplexity
+/**
+ * MOBILE MENU MANAGEMENT
+ * Gestion du menu mobile avec toggle du hamburger
+ * Implémentation optimisée pour les performances
+ * 
+ * Fonctionnalités :
+ * - Toggle du menu via le bouton hamburger
+ * - Fermeture automatique lors du clic sur un lien
+ * - Fermeture lors du clic en dehors du menu
+ * - Gestion du scroll lors de l'ouverture/fermeture
+ */
 document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const body = document.body;
     
+    // Vérification que les éléments existent avant de continuer
     if (!mobileToggle || !mobileMenu) return;
     
-    // Toggle menu
+    /**
+     * Toggle du menu mobile
+     * Gère l'ouverture/fermeture et l'animation du bouton hamburger
+     */
     mobileToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
