@@ -1189,16 +1189,16 @@ body {
         justify-content: space-between;
         /* Titre à gauche, chevron à droite */
         align-items: center;
-        padding: var(--spacing-md) 0 var(--spacing-xs) 0;
-        /* Peu d'espace en bas pour la ligne */
+        padding: var(--spacing-md) 0;
+        /* Espacement normal */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        /* Ligne EN DESSOUS */
+        border-bottom: none;
+        /* Plus de tirés */
         transition: opacity 0.2s ease;
         position: relative;
     }
