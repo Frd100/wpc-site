@@ -1188,8 +1188,8 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-sm) 0;
-        /* Espacement réduit (0.5rem au lieu de 1rem) */
+        padding: var(--spacing-xs) 0;
+        /* Espacement minimal (0.25rem = 4px) */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
