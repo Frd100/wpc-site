@@ -1155,14 +1155,29 @@ body {
         bottom: 0;
         background: #033DCC;
         flex-direction: column;
-        padding: 60px var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+        padding: 60px 0 0 0;
+        /* Pas de padding horizontal pour dividers pleine largeur */
         transform: translateY(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 10002;
         overflow-y: auto;
         justify-content: flex-start;
-        /* Liens groupés en haut au lieu d'étalés */
         box-shadow: none;
+    }
+
+    /* Dividers qui remplissent tout l'écran après les liens */
+    .main-navigation__links::after {
+        content: "";
+        flex: 1;
+        /* Prend tout l'espace restant */
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 60px,
+            rgba(255, 255, 255, 0.2) 60px,
+            rgba(255, 255, 255, 0.2) 61px
+        );
+        /* Dividers répétés jusqu'en bas */
     }
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
@@ -1188,8 +1203,8 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-md) 0;
-        /* Espacement normal pour les dividers */
+        padding: var(--spacing-md) var(--spacing-xl);
+        /* Padding horizontal pour le texte */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
@@ -1197,14 +1212,11 @@ body {
         font-weight: 600;
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        /* Divider blanc subtil */
+        /* Divider pleine largeur */
         transition: opacity 0.2s ease;
         position: relative;
-    }
-
-    /* Pas de divider après le dernier lien */
-    .main-navigation__link:last-child {
-        border-bottom: none;
+        margin: 0;
+        /* Pas de margin pour que le divider touche les bords */
     }
 
     /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
