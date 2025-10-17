@@ -1189,19 +1189,28 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: var(--spacing-lg) 0;
-        /* Réduit de xl à lg */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
-        /* Force le blanc */
         font-size: 1.25rem;
-        /* Augmenté pour meilleure lisibilité */
         font-weight: 600;
-        /* Plus gras */
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        /* Tiré plus subtil */
+        border-bottom: none;
+        /* Pas de border-bottom */
         transition: opacity 0.2s ease;
+        position: relative;
+        /* Pour le pseudo-élément */
+    }
+
+    /* Ligne horizontale entre le texte et le chevron */
+    .main-navigation__link::before {
+        content: "";
+        flex: 1;
+        /* Prend tout l'espace disponible */
+        height: 1px;
+        background: rgba(255, 255, 255, 0.3);
+        margin: 0 var(--spacing-md);
+        /* Espacement autour de la ligne */
     }
 
     /* S'assurer que les chevrons sont bien visibles */
