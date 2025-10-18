@@ -1167,6 +1167,13 @@ body {
     }
 
     /* Plus besoin de ::after gradient - on utilise des spans vides dans le HTML */
+    
+    /* Liens vides - texte transparent pour garder la hauteur */
+    .main-navigation__link--empty {
+        color: transparent !important;
+        pointer-events: none;
+        /* Pas cliquable */
+    }
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
     .main-navigation__links::before {
