@@ -123,50 +123,25 @@
                                     <h2 class="legal-title legal-title-main">
                                         Exercer vos droits</h2>
 
-                                    <form id="droits-form" class="droits-form">
-
-                                        <div class="form-row">
-                                            <div class="form-group">
-                                                <label for="prenom" class="form-label">Prénom *</label>
-                                                <input type="text" id="prenom" name="prenom" required
-                                                    class="form-input">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="nom" class="form-label">Nom *</label>
-                                                <input type="text" id="nom" name="nom" required class="form-input">
-                                            </div>
+                                    <div class="droits-form">
+                                        <p class="legal-text">
+                                            Pour exercer vos droits relatifs au traitement de vos données personnelles, 
+                                            vous pouvez nous contacter directement par email.
+                                        </p>
+                                        
+                                        <div style="text-align: center; margin: 2rem 0;">
+                                            <a href="mailto:contact@westparisconsulting.fr?subject=Exercice%20de%20mes%20droits%20RGPD&body=Bonjour,%0A%0AJe%20souhaite%20exercer%20mes%20droits%20relatifs%20au%20traitement%20de%20mes%20données%20personnelles.%0A%0AType%20de%20demande%20:%20%0A%0ADétails%20de%20ma%20demande%20:%20%0A%0AMes%20coordonnées%20:%0A-%20Nom%20:%20%0A-%20Prénom%20:%20%0A-%20Email%20:%20%0A%0AMerci%20pour%20votre%20traitement.%0A%0ACordialement" 
+                                               class="btn-primary" 
+                                               style="display: inline-block; padding: 12px 24px; text-decoration: none; color: white; background-color: #033DCC; border-radius: 4px; font-weight: 500;">
+                                                Envoyer ma demande par email
+                                            </a>
                                         </div>
-
-                                        <div class="form-group mb-2">
-                                            <label for="email" class="form-label">Email *</label>
-                                            <input type="email" id="email" name="email" required class="form-input">
-                                        </div>
-
-                                        <div class="form-group mb-2">
-                                            <label for="type-demande" class="form-label">Type de demande *</label>
-                                            <select id="type-demande" name="type-demande" required class="form-select">
-                                                <option value="">Sélectionnez un type de demande</option>
-                                                <option value="acces">Droit d'accès</option>
-                                                <option value="rectification">Droit de rectification</option>
-                                                <option value="effacement">Droit à l'effacement</option>
-                                                <option value="limitation">Droit à la limitation</option>
-                                                <option value="portabilité">Droit à la portabilité</option>
-                                                <option value="autre">Autre</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group mb-3">
-                                            <label for="message" class="form-label">Message *</label>
-                                            <textarea id="message" name="message" rows="5" required
-                                                placeholder="Décrivez votre demande en détail..."
-                                                class="form-textarea"></textarea>
-                                        </div>
-
-                                        <button type="submit" class="btn-primary">
-                                            Envoyer ma demande
-                                        </button>
-
-                                    </form>
+                                        
+                                        <p class="legal-text" style="font-size: 0.875rem; color: #666; margin-top: 1rem;">
+                                            <strong>Note :</strong> En cliquant sur ce bouton, votre client email s'ouvrira avec un message pré-rempli. 
+                                            Vous pourrez le personnaliser avant de l'envoyer.
+                                        </p>
+                                    </div>
 
                                 </div>
 
@@ -201,57 +176,6 @@
     </div>
 
     <script src="main.js"></script>
-    <script>
-        // Gestion du formulaire RGPD avec mailto
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('droits-form');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // Récupération des données du formulaire
-                const prenom = document.getElementById('prenom').value;
-                const nom = document.getElementById('nom').value;
-                const email = document.getElementById('email').value;
-                const typeDemande = document.getElementById('type-demande').value;
-                const message = document.getElementById('message').value;
-
-                // Validation des champs obligatoires
-                if (!prenom || !nom || !email || !typeDemande || !message) {
-                    alert('Veuillez remplir tous les champs obligatoires.');
-                    return;
-                }
-
-                // Construction de l'email
-                const emailSubject = `Demande RGPD - ${typeDemande} - ${prenom} ${nom}`;
-                const emailBody = `Bonjour,
-
-Je souhaite exercer mon droit RGPD suivant : ${typeDemande}
-
-Informations personnelles :
-- Nom : ${nom}
-- Prénom : ${prenom}
-- Email : ${email}
-
-Détail de ma demande :
-${message}
-
-Cordialement,
-${prenom} ${nom}`;
-
-                // Encodage pour mailto
-                const encodedSubject = encodeURIComponent(emailSubject);
-                const encodedBody = encodeURIComponent(emailBody);
-
-                // Ouverture du client email
-                const mailtoLink = `mailto:contact@westparisconsulting.fr?subject=${encodedSubject}&body=${encodedBody}`;
-                window.location.href = mailtoLink;
-
-                // Message de confirmation
-                alert('Votre client email va s\'ouvrir avec votre demande pré-remplie. Veuillez envoyer l\'email pour finaliser votre demande.');
-            });
-        });
-    </script>
 </body>
 
 </html>
