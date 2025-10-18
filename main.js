@@ -61,6 +61,52 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /**
+     * CENTRALIZED NAVIGATION LOADER
+     * Fetches nav.html and injects it into the placeholder.
+     * This ensures the navigation is consistent across all pages.
+     */
+    function loadNav() {
+        fetch('nav.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                const navPlaceholder = document.getElementById('nav-placeholder');
+                if (navPlaceholder) {
+                    navPlaceholder.innerHTML = data;
+                    setActiveNavLink();
+                    initializeMobileMenu(); // Re-initialize menu logic
+                }
+            })
+            .catch(error => {
+                console.error('Error loading navigation:', error);
+                // Optionally, display an error message to the user
+            });
+    }
+
+    /**
+     * Sets the 'active' class on the current page's navigation link.
+     */
+    function setActiveNavLink() {
+        // Correctly handle root path for index.html
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.main-navigation__link');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Load the navigation as soon as the DOM is ready
+    loadNav();
+
     // WPC Console Welcome (development only)
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         console.log('%c🎯 West Paris Consulting', 'color: #00338D; font-size: 20px; font-weight: bold;');
@@ -157,16 +203,9 @@ const WPCClasses = {
 
 /**
  * MOBILE MENU MANAGEMENT
- * Gestion du menu mobile avec toggle du hamburger
- * Implémentation optimisée pour les performances
- * 
- * Fonctionnalités :
- * - Toggle du menu via le bouton hamburger
- * - Fermeture automatique lors du clic sur un lien
- * - Fermeture lors du clic en dehors du menu
- * - Gestion du scroll lors de l'ouverture/fermeture
+ * Cette fonction est maintenant appelée après le chargement de la nav
  */
-document.addEventListener('DOMContentLoaded', function () {
+function initializeMobileMenu() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const body = document.body;
@@ -195,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
     menuLinks.forEach(link => {
         link.addEventListener('click', function () {
-            closeMenu();
+            // Ne ferme pas immédiatement pour laisser le temps à la navigation de se faire
         });
     });
 
@@ -229,11 +268,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Fermer lors du redimensionnement vers desktop
-    window.addEventListener('resize', function () {
+    window.addEventListener('resize', WPCUtils.debounce(function () {
         if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
             closeMenu();
         }
-    });
+    }, 200));
 
     function openMenu() {
         mobileMenu.classList.add('active');
@@ -245,14 +284,16 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.add('mobile-menu-open');
 
         // Empêcher le scroll du body
+        const scrollY = window.scrollY;
         body.style.overflow = 'hidden';
         body.style.position = 'fixed';
-        body.style.top = `-${window.scrollY}px`;
+        body.style.top = `-${scrollY}px`;
         body.style.width = '100%';
+        body.dataset.scrollY = scrollY;
     }
 
     function closeMenu() {
-        const scrollY = body.style.top;
+        const scrollY = body.dataset.scrollY || '0';
 
         mobileMenu.classList.remove('active');
         mobileToggle.classList.remove('active');
@@ -269,11 +310,10 @@ document.addEventListener('DOMContentLoaded', function () {
         body.style.width = '';
 
         // Restaurer la position de scroll
-        if (scrollY) {
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-        }
+        window.scrollTo(0, parseInt(scrollY));
     }
-});
+}
+
 
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
