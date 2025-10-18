@@ -1325,7 +1325,9 @@ body {
     .main-navigation__toggle {
         display: flex;
         /* Garder le bouton visible */
-        position: relative;
+        position: absolute;
+        left: var(--spacing-xs);
+        /* Collé à l'extrémité gauche */
         z-index: 10001;
     }
 
