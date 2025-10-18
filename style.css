@@ -2153,6 +2153,11 @@ body {
         padding: var(--spacing-2xl) var(--spacing-lg);
         /* Plus de padding vertical et horizontal pour éviter d'être collé aux extrémités */
     }
+
+    .contact-form-section {
+        padding: var(--spacing-4xl) var(--spacing-lg);
+        /* Ajouter du padding horizontal à la section pour éviter que la zone grise soit collée */
+    }
 }
 
 /* ===== PAGE CONFIDENTIALITÉ ===== */
