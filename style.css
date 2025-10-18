@@ -2150,8 +2150,8 @@ body {
     }
 
     .contact-form-container {
-        padding: 20px;
-        /* Même padding que les cartes équipe */
+        padding: 15px;
+        /* Padding réduit pour le formulaire */
     }
 
     .contact-form-section {
