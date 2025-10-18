@@ -1958,7 +1958,7 @@ body {
 
 .contact-form-container {
     background: #F5F6FA;
-    padding: var(--spacing-2xl);
+    padding: 15px;
     border: none;
     border-radius: 0;
     max-width: 900px;
@@ -2149,10 +2149,6 @@ body {
         font-size: 1.75rem;
     }
 
-    .contact-form-container {
-        padding: 15px !important;
-        /* Padding réduit pour le formulaire - force l'application */
-    }
 
     .contact-form-section {
         padding: var(--spacing-lg);
