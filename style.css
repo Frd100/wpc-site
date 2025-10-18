@@ -2150,7 +2150,8 @@ body {
     }
 
     .contact-form-container {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        /* Plus de padding vertical et horizontal pour éviter d'être collé aux extrémités */
     }
 }
 
