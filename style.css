@@ -1202,7 +1202,7 @@ body {
     }
 
 
-    .main-navigation__link {
+    body .main-navigation__links .main-navigation__link {
         display: flex;
         align-items: center;
         /* Centre verticalement le span enfant */
@@ -1235,7 +1235,7 @@ body {
         display: none;
     }
 
-    .main-navigation__link:hover {
+    body .main-navigation__links .main-navigation__link:hover {
         color: #4169E1;
         background: none;
     }
@@ -3320,11 +3320,6 @@ select.form-input {
         /* Réduit pour "Une expertise étudiante au service de l'impact local" */
     }
 
-    /* Titre de la page Nos Domaines (avec style inline) */
-    #page-wpc-methodes h1[style] {
-        font-size: 2.5rem;
-        /* Force la réduction malgré le style inline */
-    }
 
     /* Cartes équipe empilées verticalement sur mobile */
     body .cmp-equipe-section .team-grid {
