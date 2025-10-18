@@ -1184,10 +1184,11 @@ body {
         /* Pleine largeur */
         box-sizing: border-box;
         /* Padding inclus dans la largeur */
-        padding: var(--spacing-lg) var(--spacing-xl) 1rem var(--spacing-xl);
-        /* Padding Haut, Horizontal, Bas */
+        padding: 1.2rem var(--spacing-xl);
+        /* Padding symétrique pour un meilleur centrage vertical */
         color: #FFFFFF !important;
-        font-size: 24px;
+        font-size: 22px;
+        /* Taille légèrement réduite */
         font-weight: 300;
         cursor: pointer;
         z-index: 10003;
@@ -1200,10 +1201,10 @@ body {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding: 1rem var(--spacing-xl);
-        /* Padding réduit pour moins d'espace */
-        min-height: 3rem;
-        /* Hauteur réduite */
+        padding: 0 var(--spacing-xl);
+        /* Padding horizontal uniquement */
+        height: 4rem;
+        /* Hauteur fixe pour un centrage vertical parfait */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
