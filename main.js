@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Ignore les liens "#" seuls
             if (href === '#') return;
-
+            
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
@@ -35,31 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
-    /**
-     * CONTACT FORM FEEDBACK
-     * Affiche un état de chargement lors de la soumission du formulaire
-     * Le formulaire utilise FormSubmit.co qui redirige l'utilisateur après soumission
-     */
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-
-            // Affichage de l'état de chargement
-            submitButton.textContent = 'Envoi en cours...';
-            submitButton.disabled = true;
-            submitButton.style.opacity = '0.7';
-
-            // Réinitialisation après 3 secondes (le formulaire sera redirigé par FormSubmit)
-            setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-                submitButton.style.opacity = '1';
-            }, 3000);
-        });
-    }
+    
 
     /**
      * CENTRALIZED NAVIGATION LOADER
@@ -103,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
+    
     // Load the navigation as soon as the DOM is ready
     loadNav();
 
@@ -146,7 +122,7 @@ const WPCUtils = {
             if (callNow) func.apply(context, args);
         };
     },
-
+    
     /**
      * THROTTLE
      * Limite le nombre d'exécutions d'une fonction dans un intervalle de temps
@@ -168,7 +144,7 @@ const WPCUtils = {
             }
         };
     },
-
+    
     // Check if element is in viewport
     isInViewport: function (element) {
         const rect = element.getBoundingClientRect();
@@ -179,7 +155,7 @@ const WPCUtils = {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     },
-
+    
     // Get element offset
     getOffset: function (element) {
         const rect = element.getBoundingClientRect();
