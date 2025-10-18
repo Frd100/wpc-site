@@ -1166,7 +1166,7 @@ body {
         /* Pas d'arrondi */
     }
 
-    /* Dividers qui continuent jusqu'en bas - maintenant avec line-height 1.5 explicite */
+    /* Dividers qui continuent jusqu'en bas - hauteur fixe 4rem comme les liens */
     .main-navigation__links::after {
         content: "";
         display: block;
@@ -1174,10 +1174,10 @@ body {
         width: 100%;
         background: repeating-linear-gradient(to bottom,
                 transparent 0,
-                transparent calc(1.25rem * 1.5 + 2rem),
-                /* font-size * line-height + padding-top + padding-bottom */
-                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem),
-                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem + 1px));
+                transparent 4rem,
+                /* Même hauteur que min-height du lien */
+                rgba(255, 255, 255, 0.2) 4rem,
+                rgba(255, 255, 255, 0.2) calc(4rem + 1px));
     }
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
@@ -1203,21 +1203,23 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-md) var(--spacing-xl);
+        padding: 1.5rem var(--spacing-xl);
+        /* Padding vertical fixe en rem pour calcul précis */
+        min-height: 4rem;
+        /* Hauteur minimale fixe pour uniformité */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
-        line-height: 1.5;
-        /* Line-height explicite */
+        line-height: 1;
+        /* Line-height 1 pour contrôle total */
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         transition: opacity 0.2s ease;
         position: relative;
         margin: 0;
         box-sizing: border-box;
-        /* Important pour calcul précis */
     }
 
     /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
