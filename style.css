@@ -2540,13 +2540,6 @@ body {
         padding: var(--spacing-lg);
     }
 
-    .cmp-domaines-title {
-        font-size: 2rem;
-    }
-
-    .cmp-processus-title {
-        font-size: 2rem;
-    }
 
     .cmp-timeline {
         flex-direction: column;
