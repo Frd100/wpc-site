@@ -1183,7 +1183,7 @@ body {
         left: var(--spacing-lg);
         right: auto;
         color: #FFFFFF !important;
-        font-size: 32px;
+        font-size: 24px;
         font-weight: 300;
         cursor: pointer;
         z-index: 10003;
@@ -1231,9 +1231,6 @@ body {
         background: none;
     }
 
-    .main-navigation__link:last-child {
-        border-bottom: none;
-    }
 
 
     /* Section contact en bas du menu mobile - bandeau gris */
