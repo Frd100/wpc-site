@@ -3223,6 +3223,14 @@ body {
         /* Force la réduction malgré le style inline */
     }
 
+    /* Cartes équipe empilées verticalement sur mobile */
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        /* Une seule colonne sur mobile */
+        gap: var(--spacing-lg) !important;
+        /* Plus d'espace entre les cartes */
+    }
+
     .droits-form .form-row {
         flex-direction: column;
         gap: 0;
