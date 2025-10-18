@@ -1176,53 +1176,44 @@ body {
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
     .main-navigation__links::before {
-        content: "✕";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        /* Pleine largeur */
-        box-sizing: border-box;
-        /* Padding inclus dans la largeur */
-        padding: 1.2rem var(--spacing-xl);
-        /* Padding symétrique pour un meilleur centrage vertical */
-        color: #FFFFFF !important;
-        font-size: 28px;
-        /* Taille augmentée */
-        font-weight: 300;
-        cursor: pointer;
-        z-index: 10003;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        /* Divider pleine largeur */
+        display: none;
+        /* Remplacé par un élément HTML pour la cohérence */
     }
 
-
-    .main-navigation__link {
+    /*
+     * Style unifié pour tous les items du menu mobile (X et liens)
+     * Garantit une hauteur et un espacement identiques.
+     */
+    .main-navigation__item {
         display: flex;
         align-items: center;
-        /* Centre verticalement le span enfant */
-        padding: 0 var(--spacing-xl);
-        /* Padding horizontal uniquement */
-        height: 4rem;
-        /* Hauteur fixe pour un centrage vertical parfait */
-        text-align: left;
         width: 100%;
+        height: 4.5rem;
+        /* Hauteur fixe et uniforme pour tous */
+        padding: 0 var(--spacing-xl);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    /* Style spécifique pour le texte des liens */
+    .main-navigation__link {
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
-        line-height: 1;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        transition: opacity 0.2s ease;
-        position: relative;
-        margin: 0;
-        box-sizing: border-box;
     }
-
-    /* Styles pour le texte à l'intérieur du lien */
-    .main-navigation__link span {
+    
+    /* Style pour le span contenant le texte, pour tous les items */
+    .main-navigation__item span {
         display: block;
-        /* Assure que le span est un bloc pour le centrage */
+        line-height: 1; /* Empêche les hauteurs de ligne de fausser le centrage */
+    }
+    
+    /* Style spécifique pour le X */
+    #mobile-menu-close-button span {
+        font-size: 28px;
+        font-weight: 300;
     }
 
     /* Masquer les chevrons (si présents) */
