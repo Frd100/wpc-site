@@ -2150,8 +2150,8 @@ body {
     }
 
     .contact-form-container {
-        padding: 15px;
-        /* Padding réduit pour le formulaire */
+        padding: 15px !important;
+        /* Padding réduit pour le formulaire - force l'application */
     }
 
     .contact-form-section {
