@@ -2156,6 +2156,106 @@ body {
     }
 }
 
+/* ===== PAGE NOUS REJOINDRE ===== */
+.nous-rejoindre-hero {
+    background: #033DCC;
+    color: var(--wpc-white);
+    padding: var(--spacing-4xl) 0;
+    text-align: center;
+}
+
+.nous-rejoindre-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.nous-rejoindre-hero__title {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--wpc-white);
+}
+
+.nous-rejoindre-hero__subtitle {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-normal);
+    margin: 0;
+    color: var(--wpc-white);
+    opacity: 0.9;
+}
+
+/* Styles pour les champs spécifiques au formulaire nous rejoindre */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.form-file {
+    border: 2px dashed #d1d5db;
+    background: #f9fafb;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease;
+}
+
+.form-file:hover {
+    border-color: var(--wpc-blue);
+    background: #f0f9ff;
+}
+
+.form-file:focus {
+    border-color: var(--wpc-blue);
+    background: #f0f9ff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3, 61, 204, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-checkbox {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.checkbox-label {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.checkbox-label a {
+    color: var(--wpc-blue);
+    text-decoration: underline;
+}
+
+.checkbox-label a:hover {
+    color: #1e40af;
+}
+
+/* Responsive pour nous rejoindre */
+@media (max-width: 768px) {
+    .nous-rejoindre-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .nous-rejoindre-hero__subtitle {
+        font-size: 1.125rem;
+    }
+}
+
 /* ===== PAGE CONFIDENTIALITÉ ===== */
 .confidentialite-container {
     max-width: 800px;
