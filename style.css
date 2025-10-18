@@ -1167,7 +1167,7 @@ body {
     }
 
     /* Plus besoin de ::after gradient - on utilise des spans vides dans le HTML */
-    
+
     /* Liens vides - texte transparent pour garder la hauteur */
     .main-navigation__link--empty {
         color: transparent !important;
@@ -1184,13 +1184,14 @@ body {
         right: auto;
         color: #FFFFFF !important;
         font-size: 32px;
-        /* Plus grand */
         font-weight: 300;
-        /* Moins gras, plus élégant */
         cursor: pointer;
         z-index: 10003;
         opacity: 1;
-        /* Bien visible */
+        padding-bottom: var(--spacing-lg);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Divider en dessous du X */
+        width: calc(100% - var(--spacing-lg) * 2);
     }
 
 
