@@ -1471,26 +1471,6 @@ body {
         display: none;
     }
 
-    /* Réduire la taille des titres sur mobile */
-    .hero-title {
-        font-size: 2.5rem;
-        /* Réduit de 3rem à 2.5rem */
-    }
-
-    .form-title {
-        font-size: 1.5rem;
-        /* Réduit de 2rem à 1.5rem */
-    }
-
-    .legal-title-main {
-        font-size: 1.3rem;
-        /* Réduit de 1.8rem à 1.3rem */
-    }
-
-    .legal-title-sub {
-        font-size: 1rem;
-        /* Réduit de 1.2rem à 1rem */
-    }
 }
 
 
@@ -3181,6 +3161,27 @@ body {
     .cmp-droits-info,
     .cmp-droits-form {
         padding: 20px;
+    }
+
+    /* Réduire la taille des titres sur mobile - règles prioritaires */
+    .hero-title {
+        font-size: 2.5rem !important;
+        /* Réduit de 3rem à 2.5rem */
+    }
+
+    .form-title {
+        font-size: 1.5rem !important;
+        /* Réduit de 2rem à 1.5rem */
+    }
+
+    .legal-title-main {
+        font-size: 1.3rem !important;
+        /* Réduit de 1.8rem à 1.3rem */
+    }
+
+    .legal-title-sub {
+        font-size: 1rem !important;
+        /* Réduit de 1.2rem à 1rem */
     }
 
     .droits-form .form-row {
