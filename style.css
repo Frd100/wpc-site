@@ -1967,7 +1967,7 @@ body {
 
 .mandatory-text {
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: #000000;
     font-style: italic;
     margin: 0 0 var(--spacing-sm) 0;
     text-align: left;
