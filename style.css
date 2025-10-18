@@ -1197,13 +1197,13 @@ body {
 
     .main-navigation__link {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding: 1rem var(--spacing-xl);
         /* Padding réduit pour moins d'espace */
         min-height: 3rem;
         /* Hauteur réduite */
-        text-align: center;
+        text-align: left;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
