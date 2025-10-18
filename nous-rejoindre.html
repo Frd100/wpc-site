@@ -49,40 +49,18 @@
 <body class="page basicpage" id="page-wpc-nous-rejoindre" data-cmp-link-accessibility-enabled=""
     data-cmp-link-accessibility-text="s'ouvre dans un nouvel onglet" data-cmp-data-layer-enabled="">
 
-    <!-- WPC Header -->
-    <header class="cmp-header">
-        <nav class="main-navigation">
-            <div class="main-navigation__content">
-                <a href="index.html" class="main-navigation__logo">
-                    <img src="logo-wpc.png" alt="West Paris Consulting" class="main-navigation__logo-image">
-                </a>
-                <button class="main-navigation__toggle" aria-label="Menu">
-                    <span class="menu-icon material-icons">menu</span>
-                    <span class="close-icon material-icons">close</span>
-                </button>
-                <div class="main-navigation__links">
-                    <a href="index.html">Accueil</a>
-                    <a href="domaines.html">Nos Domaines</a>
-                    <a href="equipe.html">Notre Équipe</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="nous-rejoindre.html">Nous rejoindre</a>
-                    <a href="mentions-legales.html">Mentions légales</a>
-                    <a href="confidentialite.html">Politique de Confidentialité</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div class="root container responsivegrid">
 
-    <!-- WPC Hero Section -->
-    <section class="cmp-hero-fbv">
-        <div class="cmp-hero-fbv__container">
-            <div class="cmp-hero-fbv__content">
-                <h1 class="cmp-hero-fbv__main-title">Rejoignez notre équipe</h1>
-                <h2 class="cmp-hero-fbv__subtitle">Développez vos compétences en conseil et participez à des projets
-                    concrets avec West Paris Consulting</h2>
+        <!-- Navigation Placeholder -->
+        <div id="nav-placeholder"></div>
+
+        <!-- Hero Section Nous Rejoindre -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Nous rejoindre</h1>
+                <p class="hero-subtitle">Développez vos compétences en conseil et participez à des projets concrets avec West Paris Consulting</p>
             </div>
         </div>
-    </section>
 
     <!-- WPC Main Content -->
     <main class="main container responsivegrid aem-GridColumn aem-GridColumn--default--12">
@@ -163,7 +141,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="motivation" class="form-label">Pourquoi souhaitez-vous rejoindre WPC ? *</label>
+                                <label for="motivation" class="form-label">Pourquoi souhaitez-vous rejoindre WPC ?
+                                    *</label>
                                 <textarea id="motivation" name="motivation" class="form-textarea" rows="4" required
                                     placeholder="Décrivez votre motivation et ce que vous souhaitez apporter à l'association..."></textarea>
                             </div>
@@ -191,7 +170,8 @@
 
                             <div class="form-group">
                                 <label for="lettre" class="form-label">Lettre de motivation (PDF, DOC, DOCX)</label>
-                                <input type="file" id="lettre" name="lettre" class="form-input" accept=".pdf,.doc,.docx">
+                                <input type="file" id="lettre" name="lettre" class="form-input"
+                                    accept=".pdf,.doc,.docx">
                             </div>
 
                             <div class="form-group checkbox-group">
@@ -210,7 +190,8 @@
                             </div>
 
                             <div class="form-actions">
-                                <button type="submit" class="cmp-button cmp-button--primary">Envoyer ma candidature</button>
+                                <button type="submit" class="cmp-button cmp-button--primary">Envoyer ma
+                                    candidature</button>
                             </div>
                         </form>
                     </div>
@@ -241,6 +222,9 @@
             </div>
         </div>
     </footer>
+
+        </div>
+    </div>
 
     <!-- WPC Scripts -->
     <script src="script.js"></script>
