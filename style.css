@@ -2150,13 +2150,13 @@ body {
     }
 
     .contact-form-container {
-        padding: var(--spacing-2xl) var(--spacing-lg);
-        /* Plus de padding vertical et horizontal pour éviter d'être collé aux extrémités */
+        padding: 20px;
+        /* Même padding que les cartes équipe */
     }
 
     .contact-form-section {
-        padding: var(--spacing-4xl) var(--spacing-lg);
-        /* Ajouter du padding horizontal à la section pour éviter que la zone grise soit collée */
+        padding: var(--spacing-lg);
+        /* Même espacement que la grille équipe */
     }
 }
 
