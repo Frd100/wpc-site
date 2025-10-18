@@ -1166,19 +1166,7 @@ body {
         /* Pas d'arrondi */
     }
 
-    /* Dividers qui continuent jusqu'en bas - hauteur fixe 4rem comme les liens */
-    .main-navigation__links::after {
-        content: "";
-        display: block;
-        flex: 1;
-        width: 100%;
-        background: repeating-linear-gradient(to bottom,
-                transparent 0,
-                transparent 4rem,
-                /* Même hauteur que min-height du lien */
-                rgba(255, 255, 255, 0.2) 4rem,
-                rgba(255, 255, 255, 0.2) calc(4rem + 1px));
-    }
+    /* Plus besoin de ::after gradient - on utilise des spans vides dans le HTML */
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
     .main-navigation__links::before {
