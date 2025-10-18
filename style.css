@@ -1184,8 +1184,13 @@ body {
         /* Pleine largeur */
         box-sizing: border-box;
         /* Padding inclus dans la largeur */
-        padding: 1.2rem var(--spacing-xl);
-        /* Padding symétrique pour un meilleur centrage vertical */
+        padding: 0 var(--spacing-xl);
+        /* Padding horizontal uniquement pour uniformiser */
+        height: 4rem;
+        /* Hauteur identique aux liens */
+        display: flex;
+        align-items: center;
+        /* Centre verticalement le X */
         color: #FFFFFF !important;
         font-size: 28px;
         /* Taille augmentée */
