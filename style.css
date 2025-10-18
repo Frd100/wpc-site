@@ -2151,8 +2151,8 @@ body {
 
 
     .contact-form-section {
-        padding: var(--spacing-lg);
-        /* Même espacement que la grille équipe */
+        padding: var(--spacing-lg) var(--spacing-lg);
+        /* Même espacement que la grille équipe - horizontal ET vertical */
     }
 }
 
