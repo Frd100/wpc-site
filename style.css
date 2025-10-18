@@ -1423,38 +1423,31 @@ body {
     }
 
     .cmp-hero-fbv {
-        display: flex;
-        flex-direction: column;
-        min-height: auto;
+        position: relative;
+        min-height: 400px;
+        /* Hauteur fixe pour contenir l'image et le contenu */
         background: #1A365D;
-        /* Fond bleu pour la section contenu */
     }
 
     .cmp-hero-fbv__image {
-        order: 1;
-        grid-area: unset;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 250px;
-        /* Réduit de 300px à 250px pour laisser plus de place au texte */
-        margin: 0;
-        padding: 0;
+        height: 100%;
+        z-index: 1;
     }
 
     .cmp-hero-fbv__content {
-        order: 2;
-        /* Contenu APRÈS l'image */
-        position: relative;
-        /* Plus de position absolute */
-        left: auto;
-        top: auto;
-        transform: none;
-        /* Plus de transform */
-        padding: var(--spacing-3xl) var(--spacing-lg);
-        /* Padding augmenté pour plus d'espace */
-        z-index: auto;
-        background: #1A365D;
-        /* Fond bleu */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* Collé en bas de l'image */
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        z-index: 2;
+        background: rgba(26, 54, 93, 0.95);
+        /* Fond bleu semi-transparent */
     }
 
     .cmp-hero-fbv__main-title {
