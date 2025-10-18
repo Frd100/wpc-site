@@ -1198,9 +1198,10 @@ body {
 
 
     .main-navigation__link {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        display: grid;
+        /* Utiliser Grid pour un centrage plus robuste */
+        place-items: center start;
+        /* Centre verticalement, aligne à gauche horizontalement */
         padding: 0 var(--spacing-xl);
         /* Padding horizontal uniquement */
         height: 4rem;
