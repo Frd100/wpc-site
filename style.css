@@ -1188,28 +1188,27 @@ body {
         cursor: pointer;
         z-index: 10003;
         opacity: 1;
-        padding-bottom: var(--spacing-lg);
+        padding-bottom: 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        /* Divider en dessous du X */
+        /* Divider uniforme en dessous du X */
         width: calc(100% - var(--spacing-lg) * 2);
     }
 
 
     .main-navigation__link {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        padding: 1.5rem var(--spacing-xl);
-        /* Padding vertical fixe en rem pour calcul précis */
-        min-height: 4rem;
-        /* Hauteur minimale fixe pour uniformité */
-        text-align: left;
+        padding: 1rem var(--spacing-xl);
+        /* Padding réduit pour moins d'espace */
+        min-height: 3rem;
+        /* Hauteur réduite */
+        text-align: center;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1;
-        /* Line-height 1 pour contrôle total */
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         transition: opacity 0.2s ease;
