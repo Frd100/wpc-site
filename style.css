@@ -1187,8 +1187,8 @@ body {
         padding: 1.2rem var(--spacing-xl);
         /* Padding symétrique pour un meilleur centrage vertical */
         color: #FFFFFF !important;
-        font-size: 22px;
-        /* Taille légèrement réduite */
+        font-size: 28px;
+        /* Taille augmentée */
         font-weight: 300;
         cursor: pointer;
         z-index: 10003;

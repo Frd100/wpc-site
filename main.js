@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Correctly handle root path for index.html
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.main-navigation__link');
-        
+
         navLinks.forEach(link => {
             const linkPage = link.getAttribute('href');
             if (linkPage === currentPage) {
