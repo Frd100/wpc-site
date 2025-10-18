@@ -2151,8 +2151,8 @@ body {
 
 
     .contact-form-section {
-        padding: var(--spacing-4xl) 10px;
-        /* Padding vertical 4xl, horizontal 10px pour ne pas coller aux bords */
+        padding: var(--spacing-4xl) 15px;
+        /* Padding vertical 4xl, horizontal 15px pour ne pas coller aux bords */
     }
 }
 
