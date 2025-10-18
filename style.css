@@ -26,18 +26,18 @@
     --text-secondary: #6C757D;
     --text-white: #FFFFFF;
     --text-muted: #ADB5BD;
-
+    
     /* WPC Background Colors */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8F9FA;
     --bg-dark: #212529;
     --bg-blue: #00338D;
-
+    
     /* WPC Fonts */
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-condensed: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-icons: 'Material Icons', sans-serif;
-
+    
     /* WPC Font Weights */
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -45,7 +45,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-
+    
     /* WPC Font Sizes */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -57,7 +57,7 @@
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
     --font-size-6xl: 3.75rem;
-
+    
     /* WPC Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -67,7 +67,7 @@
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
-
+    
     /* WPC Responsive Spacing */
     --banner-height: 0;
     /* Bandeau supprimé */
@@ -79,7 +79,7 @@
     --border-radius-md: 0.5rem;
     --border-radius-lg: 0.75rem;
     --border-radius-xl: 1rem;
-
+    
     /* WPC Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -1229,12 +1229,12 @@ body {
         display: block;
         /* Assure que le span est un bloc pour le centrage */
     }
-
+    
     /* Masquer les chevrons (si présents) */
     .main-navigation__link::after {
         display: none;
     }
-
+    
     body .main-navigation__links .main-navigation__link:hover {
         color: #4169E1;
         background: none;
@@ -1390,11 +1390,11 @@ body {
 
 /* Mobile services section */
 .cmp-services-content {
-    flex-direction: column;
+        flex-direction: column;
     height: auto;
-    min-height: auto;
-}
-
+        min-height: auto;
+    }
+    
 .cmp-services-left {
     order: 1;
     padding: var(--spacing-2xl) var(--spacing-lg);
@@ -1429,7 +1429,7 @@ body {
         background: #1A365D;
         /* Fond bleu pour la section contenu */
     }
-
+    
     .cmp-hero-fbv__image {
         order: 1;
         /* Image EN PREMIER */
@@ -1953,11 +1953,11 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: var(--spacing-4xl) 0;
-    background: var(--wpc-white);
+    background: #F5F6FA;
 }
 
 .contact-form-container {
-    background: #F5F6FA;
+    background: var(--wpc-white);
     padding: 20px;
     border: none;
     border-radius: 0;
@@ -2676,11 +2676,11 @@ select.form-input {
     .cmp-footer {
         display: none;
     }
-
+    
     .cmp-hero-fbv__image {
         display: none;
     }
-
+    
     .cmp-hero-fbv__content {
         width: 100%;
         color: var(--text-primary);
