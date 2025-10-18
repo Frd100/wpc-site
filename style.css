@@ -3184,6 +3184,46 @@ body {
         /* Réduit de 1.2rem à 1rem */
     }
 
+    .legal-title {
+        font-size: 1.1rem !important;
+        /* Réduit pour les titres légaux */
+    }
+
+    .cmp-domaines-title {
+        font-size: 1.8rem !important;
+        /* Réduit pour "Nos domaines d'intervention" */
+    }
+
+    .cmp-processus-title {
+        font-size: 1.8rem !important;
+        /* Réduit pour "Notre processus de collaboration" */
+    }
+
+    .cmp-domaine-pole__title {
+        font-size: 1.3rem !important;
+        /* Réduit pour les titres des pôles */
+    }
+
+    .cmp-timeline-step__title {
+        font-size: 1.2rem !important;
+        /* Réduit pour les titres des étapes */
+    }
+
+    .about-title {
+        font-size: 1.5rem !important;
+        /* Réduit pour "Notre ancrage à Nanterre" */
+    }
+
+    .cmp-services-subtitle {
+        font-size: 1.3rem !important;
+        /* Réduit pour "Nos expertises au service de votre développement" */
+    }
+
+    .cmp-about-section-white__title {
+        font-size: 1.5rem !important;
+        /* Réduit pour "Une expertise étudiante au service de l'impact local" */
+    }
+
     .droits-form .form-row {
         flex-direction: column;
         gap: 0;
