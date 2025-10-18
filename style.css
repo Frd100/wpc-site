@@ -1120,8 +1120,8 @@ body {
     }
 
     /* Hamburger à gauche, Logo au centre sur mobile */
-    .main-navigation__content {
-        justify-content: center !important;
+    body .main-navigation .main-navigation__content {
+        justify-content: center;
         /* Logo au centre */
         padding: var(--spacing-md) var(--spacing-sm);
         /* Réduire la largeur de la navigation */
@@ -1168,8 +1168,8 @@ body {
     }
 
     /* Liens vides - texte transparent pour garder la hauteur */
-    .main-navigation__link--empty {
-        color: transparent !important;
+    body .main-navigation .main-navigation__link--empty {
+        color: transparent;
         pointer-events: none;
         /* Pas cliquable */
     }
@@ -1191,7 +1191,7 @@ body {
         display: flex;
         align-items: center;
         /* Centre verticalement le X */
-        color: #FFFFFF !important;
+        color: #FFFFFF;
         font-size: 28px;
         /* Taille augmentée */
         font-weight: 300;
@@ -1212,7 +1212,7 @@ body {
         /* Hauteur fixe pour un centrage vertical parfait */
         text-align: left;
         width: 100%;
-        color: #FFFFFF !important;
+        color: #FFFFFF;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1;
@@ -3260,77 +3260,77 @@ select.form-input {
     }
 
     /* Réduire la taille des titres sur mobile - règles prioritaires */
-    .hero-title {
-        font-size: 2.5rem !important;
+    body .hero-section .hero-title {
+        font-size: 2.5rem;
         /* Réduit de 3rem à 2.5rem */
     }
 
-    .form-title {
-        font-size: 1.5rem !important;
+    body .contact-form-container .form-title {
+        font-size: 1.5rem;
         /* Réduit de 2rem à 1.5rem */
     }
 
-    .legal-title-main {
-        font-size: 1.3rem !important;
+    body .legal-content .legal-title-main {
+        font-size: 1.3rem;
         /* Réduit de 1.8rem à 1.3rem */
     }
 
-    .legal-title-sub {
-        font-size: 1rem !important;
+    body .legal-content .legal-title-sub {
+        font-size: 1rem;
         /* Réduit de 1.2rem à 1rem */
     }
 
-    .legal-title {
-        font-size: 1.1rem !important;
+    body .legal-content .legal-title {
+        font-size: 1.1rem;
         /* Réduit pour les titres légaux */
     }
 
-    .cmp-domaines-title {
-        font-size: 1.8rem !important;
+    body .cmp-domaines-section .cmp-domaines-title {
+        font-size: 1.8rem;
         /* Réduit pour "Nos domaines d'intervention" */
     }
 
-    .cmp-processus-title {
-        font-size: 1.8rem !important;
+    body .cmp-processus-section .cmp-processus-title {
+        font-size: 1.8rem;
         /* Réduit pour "Notre processus de collaboration" */
     }
 
-    .cmp-domaine-pole__title {
-        font-size: 1.3rem !important;
+    body .cmp-domaine-pole .cmp-domaine-pole__title {
+        font-size: 1.3rem;
         /* Réduit pour les titres des pôles */
     }
 
-    .cmp-timeline-step__title {
-        font-size: 1.2rem !important;
+    body .cmp-timeline-step .cmp-timeline-step__title {
+        font-size: 1.2rem;
         /* Réduit pour les titres des étapes */
     }
 
-    .about-title {
-        font-size: 1.5rem !important;
+    body .cmp-about-section .about-title {
+        font-size: 1.5rem;
         /* Réduit pour "Notre ancrage à Nanterre" */
     }
 
-    .cmp-services-subtitle {
-        font-size: 1.3rem !important;
+    body .cmp-services-section .cmp-services-subtitle {
+        font-size: 1.3rem;
         /* Réduit pour "Nos expertises au service de votre développement" */
     }
 
-    .cmp-about-section-white__title {
-        font-size: 1.5rem !important;
+    body .cmp-about-section-white .cmp-about-section-white__title {
+        font-size: 1.5rem;
         /* Réduit pour "Une expertise étudiante au service de l'impact local" */
     }
 
     /* Titre de la page Nos Domaines (avec style inline) */
-    #page-wpc-methodes h1 {
-        font-size: 2.5rem !important;
+    #page-wpc-methodes h1[style] {
+        font-size: 2.5rem;
         /* Force la réduction malgré le style inline */
     }
 
     /* Cartes équipe empilées verticalement sur mobile */
-    .team-grid {
-        grid-template-columns: 1fr !important;
+    body .cmp-equipe-section .team-grid {
+        grid-template-columns: 1fr;
         /* Une seule colonne sur mobile */
-        gap: var(--spacing-lg) !important;
+        gap: var(--spacing-lg);
         /* Plus d'espace entre les cartes */
     }
 
