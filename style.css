@@ -1958,7 +1958,7 @@ body {
 
 .contact-form-container {
     background: #F5F6FA;
-    padding: 15px;
+    padding: 20px;
     border: none;
     border-radius: 0;
     max-width: 900px;
@@ -2151,8 +2151,8 @@ body {
 
 
     .contact-form-section {
-        padding: var(--spacing-lg) var(--spacing-lg);
-        /* Même espacement que la grille équipe - horizontal ET vertical */
+        padding: var(--spacing-4xl) 10px;
+        /* Padding vertical 4xl, horizontal 10px pour ne pas coller aux bords */
     }
 }
 
