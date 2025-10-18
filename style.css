@@ -3217,6 +3217,12 @@ body {
         /* Réduit pour "Une expertise étudiante au service de l'impact local" */
     }
 
+    /* Titre de la page Nos Domaines (avec style inline) */
+    #page-wpc-methodes h1 {
+        font-size: 2.5rem !important;
+        /* Force la réduction malgré le style inline */
+    }
+
     .droits-form .form-row {
         flex-direction: column;
         gap: 0;
