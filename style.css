@@ -1166,19 +1166,18 @@ body {
         /* Pas d'arrondi */
     }
 
-    /* Dividers qui continuent jusqu'en bas - exactement comme un lien vide */
+    /* Dividers qui continuent jusqu'en bas - maintenant avec line-height 1.5 explicite */
     .main-navigation__links::after {
         content: "";
         display: block;
-        height: auto;
         flex: 1;
         width: 100%;
-        background-image: repeating-linear-gradient(to bottom,
-                rgba(255, 255, 255, 0) 0px,
-                rgba(255, 255, 255, 0) calc(1.25rem * 1.2 + 2rem),
-                /* Hauteur = font-size * line-height + padding */
-                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.2 + 2rem),
-                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.2 + 2rem + 1px));
+        background: repeating-linear-gradient(to bottom,
+                transparent 0,
+                transparent calc(1.25rem * 1.5 + 2rem),
+                /* font-size * line-height + padding-top + padding-bottom */
+                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem),
+                rgba(255, 255, 255, 0.2) calc(1.25rem * 1.5 + 2rem + 1px));
     }
 
     /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
@@ -1205,19 +1204,20 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: var(--spacing-md) var(--spacing-xl);
-        /* Padding horizontal pour le texte */
         text-align: left;
         width: 100%;
         color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
+        line-height: 1.5;
+        /* Line-height explicite */
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        /* Divider pleine largeur */
         transition: opacity 0.2s ease;
         position: relative;
         margin: 0;
-        /* Pas de margin pour que le divider touche les bords */
+        box-sizing: border-box;
+        /* Important pour calcul précis */
     }
 
     /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
