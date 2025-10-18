@@ -1198,10 +1198,9 @@ body {
 
 
     .main-navigation__link {
-        display: grid;
-        /* Utiliser Grid pour un centrage plus robuste */
-        place-items: center start;
-        /* Centre verticalement, aligne à gauche horizontalement */
+        display: flex;
+        align-items: center;
+        /* Centre verticalement le span enfant */
         padding: 0 var(--spacing-xl);
         /* Padding horizontal uniquement */
         height: 4rem;
@@ -1220,12 +1219,15 @@ body {
         box-sizing: border-box;
     }
 
-    /* Supprimer l'ancien ::before qui faisait la ligne au milieu */
+    /* Styles pour le texte à l'intérieur du lien */
+    .main-navigation__link span {
+        display: block;
+        /* Assure que le span est un bloc pour le centrage */
+    }
 
-    /* Supprimer les chevrons */
+    /* Masquer les chevrons (si présents) */
     .main-navigation__link::after {
         display: none;
-        /* Plus de chevrons › */
     }
 
     .main-navigation__link:hover {
