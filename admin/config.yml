@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: Frd100/wpc-site
-  branch: main
+  name: test-repo
 
 media_folder: "images/actualites"
 public_folder: "/images/actualites"
