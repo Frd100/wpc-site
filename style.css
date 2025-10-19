@@ -3288,6 +3288,71 @@ select.form-input {
     transform: translateX(3px);
 }
 
+/* Styles pour le contenu des actualités */
+.actualite-content {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.actualite-content h1,
+.actualite-content h2,
+.actualite-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.actualite-content h1 {
+    font-size: 1.5rem;
+}
+
+.actualite-content h2 {
+    font-size: 1.3rem;
+}
+
+.actualite-content h3 {
+    font-size: 1.1rem;
+}
+
+.actualite-content p {
+    margin-bottom: 1rem;
+}
+
+.actualite-content strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.actualite-content em {
+    font-style: italic;
+}
+
+.actualite-content ul,
+.actualite-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.actualite-content li {
+    margin-bottom: 0.5rem;
+}
+
+.actualite-content hr {
+    border: none;
+    border-top: 1px solid var(--wpc-gray-300);
+    margin: 2rem 0;
+}
+
+.actualite-content blockquote {
+    border-left: 4px solid var(--wpc-blue);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
 /* Responsive pour actualités */
 @media (max-width: 768px) {
     .cmp-actualites-section {
