@@ -1952,7 +1952,7 @@ body {
 
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
-    padding: var(--spacing-lg) 0;
+    padding: 40px 0;
     background: var(--wpc-white);
 }
 
