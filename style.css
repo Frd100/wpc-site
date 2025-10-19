@@ -1952,13 +1952,13 @@ body {
 
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
-    padding: var(--spacing-4xl) 0;
+    padding: 0;
     background: var(--wpc-white);
 }
 
 .contact-form-container {
     background: #F5F6FA;
-    padding: 20px;
+    padding: var(--spacing-xl) var(--spacing-lg);
     border: none;
     border-radius: 0;
     max-width: 900px;
