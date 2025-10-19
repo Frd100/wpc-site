@@ -3222,37 +3222,14 @@ select.form-input {
 
 .cmp-actualite-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cmp-actualite-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.actualite-image {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-}
-
-.actualite-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.cmp-actualite-card:hover .actualite-image img {
-    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 30px;
+    border-left: 4px solid var(--wpc-blue);
 }
 
 .cmp-actualite-info {
-    padding: 30px;
+    /* Styles pour le contenu des actualités */
 }
 
 .actualite-meta {
@@ -3311,47 +3288,33 @@ select.form-input {
     transform: translateX(3px);
 }
 
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 15px;
-    font-weight: 400;
-}
-
 /* Responsive pour actualités */
 @media (max-width: 768px) {
     .cmp-actualites-section {
         padding: 40px 0;
     }
-    
+
     .cmp-actualites-content {
         padding: 0 15px;
     }
-    
+
     .cmp-actualite-card {
         margin-bottom: 30px;
     }
-    
-    .actualite-image {
-        height: 200px;
-    }
-    
-    .cmp-actualite-info {
+
+    .cmp-actualite-card {
         padding: 20px;
     }
-    
+
     .cmp-actualite-title {
         font-size: 1.3rem;
     }
-    
+
     .actualite-meta {
         flex-direction: column;
         gap: 5px;
     }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
+
 }
 
 /* Page Exercer mes droits RGPD */
