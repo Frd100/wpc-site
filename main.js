@@ -83,11 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load the navigation as soon as the DOM is ready
     loadNav();
 
-    // WPC Console Welcome (development only)
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console.log('%c🎯 West Paris Consulting', 'color: #00338D; font-size: 20px; font-weight: bold;');
-        console.log('%cSite développé pour West Paris Consulting', 'color: #00338D; font-size: 14px;');
-    }
 
 });
 
