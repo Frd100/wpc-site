@@ -255,30 +255,53 @@
         function markdownToHtml(markdown) {
             let html = markdown;
 
-            // Titres
-            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-
-            // Gras et italique
-            html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
-            // Listes non ordonnées
-            html = html.replace(/^\- (.+)$/gim, '<li>$1</li>');
-            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-
-            // Séparateurs
-            html = html.replace(/^---$/gim, '<hr>');
-
-            // Paragraphes
+            // Traitement des paragraphes d'abord (avant de casser avec split)
             html = html.split('\n\n').map(para => {
                 para = para.trim();
-                if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<hr')) {
-                    return para;
+                if (!para) return '';
+
+                // Titres
+                if (para.match(/^### /)) {
+                    return para.replace(/^### (.*$)/gim, '<h3>$1</h3>');
                 }
-                return para ? `<p>${para}</p>` : '';
+                if (para.match(/^## /)) {
+                    return para.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+                }
+                if (para.match(/^# /)) {
+                    return para.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+                }
+
+                // Séparateurs
+                if (para.match(/^---$/)) {
+                    return para.replace(/^---$/gim, '<hr>');
+                }
+
+                // Listes non ordonnées
+                if (para.match(/^\- /)) {
+                    const listItems = para.split('\n').map(item => {
+                        if (item.match(/^\- /)) {
+                            return item.replace(/^\- (.+)$/gim, '<li>$1</li>');
+                        }
+                        return item;
+                    }).join('');
+                    return `<ul>${listItems}</ul>`;
+                }
+
+                // Pour les autres paragraphes, traiter le contenu inline
+                let processedPara = para;
+
+                // Images Markdown
+                processedPara = processedPara.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;">');
+
+                // Liens Markdown
+                processedPara = processedPara.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
+
+                // Gras et italique
+                processedPara = processedPara.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+                processedPara = processedPara.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                processedPara = processedPara.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+                return `<p>${processedPara}</p>`;
             }).join('\n');
 
             return html;
