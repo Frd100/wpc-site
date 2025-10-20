@@ -269,6 +269,12 @@
             html = html.replace(/^\- (.+)$/gim, '<li>$1</li>');
             html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
 
+            // Images Markdown
+            html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;">');
+
+            // Liens Markdown
+            html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
+
             // Séparateurs
             html = html.replace(/^---$/gim, '<hr>');
 
