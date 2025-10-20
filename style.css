@@ -2440,12 +2440,12 @@ select.form-input {
     padding: var(--spacing-2xl);
     border: none;
     border-radius: 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: none;
     transition: box-shadow 0.2s ease;
 }
 
 .cmp-domaine-pole:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .cmp-domaine-pole__title {
