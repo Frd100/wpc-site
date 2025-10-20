@@ -2937,22 +2937,23 @@ select.form-input {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     overflow: hidden;
-    background-color: #051B2C;
+    background-color: #FFFFFF;
     height: 250px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
 }
 
 .hero-content {
-    text-align: center;
-    color: white;
+    text-align: left;
+    color: #212529;
 }
 
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
-    color: white;
+    color: #212529;
 }
 
 /* Sections avec background gris */
