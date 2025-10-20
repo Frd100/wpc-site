@@ -2620,7 +2620,7 @@ select.form-input {
 
 /* Navigation active */
 .main-navigation__link.active {
-    color: #424651;
+    color: var(--text-primary);
     font-weight: var(--font-weight-medium);
 }
 
