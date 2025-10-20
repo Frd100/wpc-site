@@ -2938,7 +2938,7 @@ select.form-input {
     margin-left: calc(-50vw + 50%);
     overflow: hidden;
     background-color: #FFFFFF;
-    height: 250px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
