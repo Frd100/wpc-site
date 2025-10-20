@@ -2436,9 +2436,16 @@ select.form-input {
 }
 
 .cmp-domaine-pole {
+    background: white;
     padding: var(--spacing-2xl);
-    border: 1px solid var(--wpc-gray-200);
-    border-radius: var(--border-radius-md);
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease;
+}
+
+.cmp-domaine-pole:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .cmp-domaine-pole__title {
