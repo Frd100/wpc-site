@@ -2749,7 +2749,7 @@ select.form-input {
 }
 
 .cmp-equipe-content {
-    max-width: 1250px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
 }
