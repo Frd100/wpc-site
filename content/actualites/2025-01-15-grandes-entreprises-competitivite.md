@@ -1,5 +1,5 @@
 ---
-title: "Complémentarité PME et grandes entreprises"
+title: "Complémentarité PME et grandes entreprises : un enjeu stratégique"
 date: 2025-07-03
 author: West Paris Consulting
 excerpt: Renforcer la collaboration entre petites, moyennes et grandes

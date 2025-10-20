@@ -1,5 +1,5 @@
 ---
-title: "Transition énergétique française"
+title: "Transition énergétique française : défis et opportunités"
 date: "2024-09-17"
 author: "West Paris Consulting"
 excerpt: "Bien que mieux logée que certains de ses voisins européens, la France connaît actuellement une dépendance énergétique qui nécessite une transformation profonde de son modèle énergétique."
