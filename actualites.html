@@ -108,43 +108,10 @@
 
     <!-- Scripts -->
     <script src="main.js"></script>
-    
-    <!-- Script de chargement des actualités depuis Decap CMS -->
+
+    <!-- Script de chargement des actualités (version simple) -->
     <script>
-        // Fonction pour parser le front matter YAML
-        function parseFrontMatter(content) {
-            const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-            if (!match) return null;
-            
-            const frontMatter = {};
-            const lines = match[1].split('\n');
-            lines.forEach(line => {
-                const [key, ...valueParts] = line.split(':');
-                if (key && valueParts.length) {
-                    const value = valueParts.join(':').trim();
-                    frontMatter[key.trim()] = value.replace(/^["']|["']$/g, '');
-                }
-            });
-            
-            return {
-                data: frontMatter,
-                content: match[2].trim()
-            };
-        }
-
-        // Fonction pour convertir Markdown basique en HTML
-        function markdownToHtml(markdown) {
-            return markdown
-                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-                .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-                .replace(/\*(.*)\*/gim, '<em>$1</em>')
-                .replace(/\n\n/gim, '</p><p>')
-                .replace(/^(.+)$/gim, '<p>$1</p>');
-        }
-
-        // Charger les actualités depuis GitHub
+        // Charger les actualités depuis les fichiers Markdown
         async function loadActualites() {
             const container = document.getElementById('actualites-container');
             
@@ -165,15 +132,7 @@
                         .map(async file => {
                             const contentResponse = await fetch(file.download_url);
                             const content = await contentResponse.text();
-                            const parsed = parseFrontMatter(content);
-                            
-                            if (!parsed) return null;
-                            
-                            return {
-                                ...parsed.data,
-                                body: parsed.content,
-                                filename: file.name
-                            };
+                            return parseMarkdownFile(content);
                         })
                 );
                 
@@ -204,7 +163,7 @@
                                 </div>
                                 <h3 class="cmp-actualite-title">${actualite.title}</h3>
                                 <p class="cmp-actualite-excerpt">${actualite.excerpt}</p>
-                                <div class="actualite-content">${markdownToHtml(actualite.body)}</div>
+                                <div class="actualite-content">${actualite.body}</div>
                             </div>
                         </article>
                     `;
@@ -214,6 +173,27 @@
                 console.error('Erreur lors du chargement des actualités:', error);
                 container.innerHTML = '<p style="text-align: center; color: #d00;">Erreur lors du chargement des actualités.</p>';
             }
+        }
+
+        // Parser un fichier Markdown avec front matter
+        function parseMarkdownFile(content) {
+            const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+            if (!match) return null;
+            
+            const frontMatter = {};
+            const lines = match[1].split('\n');
+            lines.forEach(line => {
+                const [key, ...valueParts] = line.split(':');
+                if (key && valueParts.length) {
+                    const value = valueParts.join(':').trim();
+                    frontMatter[key.trim()] = value.replace(/^["']|["']$/g, '');
+                }
+            });
+            
+            return {
+                ...frontMatter,
+                body: match[2].trim()
+            };
         }
 
         // Charger au chargement de la page
