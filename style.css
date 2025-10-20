@@ -200,7 +200,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     flex: 0 0 auto;
 }
 
@@ -208,7 +208,7 @@
 .main-navigation__link {
     color: #424651;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
     padding: var(--spacing-sm) var(--spacing-md);
     margin: 0;
@@ -1572,7 +1572,7 @@ body {
         opacity: 1;
         visibility: visible;
         padding: 0;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-md);
     }
 
     .main-navigation__link {
@@ -1581,7 +1581,7 @@ body {
         border-bottom: none;
         width: auto;
         position: relative;
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 400;
         color: var(--text-primary);
     }
