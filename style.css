@@ -1232,7 +1232,17 @@ body {
     }
 
     body .main-navigation__links .main-navigation__link:hover {
-        color: #4169E1;
+        color: white;
+        background: none;
+    }
+
+    body .main-navigation__links .main-navigation__link:active {
+        color: white;
+        background: none;
+    }
+
+    body .main-navigation__links .main-navigation__link:focus {
+        color: white;
         background: none;
     }
 
