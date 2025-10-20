@@ -43,11 +43,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body class="page basicpage" id="page-wpc-actualites" data-cmp-link-accessibility-enabled=""
-    data-cmp-link-accessibility-text="s'ouvre dans un nouvel onglet" data-cmp-data-layer-enabled="">
+    data-cmp-link-accessibility-text="s'ouvre dans un nouvel onglet" data-cmp-link-accessibility-enabled="">
 
     <div class="root container responsivegrid">
 
@@ -67,8 +67,8 @@
                 <div class="section container responsivegrid">
 
                     <!-- Section Actualités -->
-                    <div id="section-wpc-actualites" class="cmp-container">
-                        <div class="cmp-actualites-section" style="background-color: #F5F6FA; padding: 40px 0;">
+                    <div id="section-wpc-actualites" class="cmp-container section-gray">
+                        <div class="cmp-actualites-section">
                             <div class="cmp-actualites-content">
                                 <!-- Les actualités seront chargées dynamiquement ici via Decap CMS -->
                                 <div id="actualites-container">
@@ -103,7 +103,6 @@
                 </div>
             </div>
         </footer>
-
     </div>
 
     <!-- Scripts -->
@@ -314,12 +313,9 @@
             return div.innerHTML;
         }
 
-        // Charger après que la navigation soit chargée
+        // Charger au chargement de la page
         document.addEventListener('DOMContentLoaded', function () {
-            // Attendre que la navigation soit chargée avant de charger les actualités
-            setTimeout(() => {
-                loadActualites();
-            }, 100);
+            loadActualites();
         });
     </script>
 </body>
