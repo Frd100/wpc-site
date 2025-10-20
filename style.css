@@ -3141,7 +3141,7 @@ select.form-input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
     justify-content: center;
     width: 100%;
