@@ -3275,7 +3275,7 @@ select.form-input {
 
 .actualite-date {
     font-weight: 500;
-    color: var(--wpc-blue);
+    color: #212529;
 }
 
 .actualite-author {
