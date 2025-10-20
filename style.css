@@ -163,7 +163,7 @@
 
 .main-navigation__content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0;
     padding: var(--spacing-md) 0 var(--spacing-md) 0;
@@ -198,7 +198,7 @@
 
 .main-navigation__links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-lg);
     flex: 0 0 auto;
@@ -1090,7 +1090,7 @@ body {
 
 
 .main-navigation__content {
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* Desktop navigation - styles normaux */
@@ -1557,7 +1557,7 @@ body {
 
 
     .main-navigation__content {
-        justify-content: center;
+        justify-content: flex-start;
         gap: var(--spacing-2xl);
         padding: var(--spacing-md) 0 var(--spacing-md) 0;
     }
