@@ -191,7 +191,56 @@
 
             } catch (error) {
                 console.error('Erreur lors du chargement des actualités:', error);
-                container.innerHTML = '<p style="text-align: center; color: #d00;">Erreur lors du chargement des actualités.</p>';
+                // Fallback : afficher un article de démonstration
+                const demoArticle = {
+                    title: "West Paris Consulting : une nouvelle génération d'étudiants au service des projets du campus",
+                    date: "2025-10-20",
+                    author: "West Paris Consulting",
+                    excerpt: "Créée par des étudiants de l'Université Paris Nanterre, West Paris Consulting accompagne associations, services universitaires et petites structures dans leurs projets de communication, de stratégie et de digitalisation.",
+                    body: `![](/assets/images/ladefense.webp)
+
+### **Une initiative née sur le campus de Nanterre**
+
+West Paris Consulting (WPC) est une association étudiante fondée en 2025 par des étudiants passionnés de management, de stratégie et d'innovation numérique.
+
+L'idée est simple : permettre aux étudiants de mettre leurs compétences au service de projets concrets, tout en offrant aux acteurs du campus (associations, laboratoires, entreprises locales, services universitaires) **un accompagnement professionnel et accessible**.
+
+### **Une approche conseil adaptée au milieu étudiant**
+
+Contrairement à une agence commerciale classique, WPC fonctionne sur un modèle **associatif, collaboratif et responsable**.
+
+Chaque mission est encadrée par des étudiants en management, communication ou numérique, avec un souci constant de clarté, de pédagogie et d'impact.
+
+Les domaines d'intervention incluent :
+
+*   **Stratégie & communication** (positionnement, plan d'action, storytelling)
+*   **Design & identité visuelle** (logo, supports print et web)
+*   **Transformation digitale** (création de sites vitrines, outils collaboratifs, automatisation légère)
+
+Grâce à cette approche hybride, WPC se positionne comme **le partenaire naturel des structures du campus** souhaitant gagner en visibilité et professionnaliser leur communication.`
+                };
+
+                const date = new Date(demoArticle.date).toLocaleDateString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                const htmlContent = markdownToHtml(demoArticle.body);
+
+                container.innerHTML = `
+                    <article class="cmp-actualite-card">
+                        <div class="cmp-actualite-info">
+                            <div class="actualite-meta">
+                                <span class="actualite-date">${date}</span>
+                                <span class="actualite-author">Par ${demoArticle.author}</span>
+                            </div>
+                            <h3 class="cmp-actualite-title">${demoArticle.title}</h3>
+                            <p class="cmp-actualite-excerpt">${demoArticle.excerpt}</p>
+                            <div class="actualite-preview">${htmlContent}</div>
+                        </div>
+                    </article>
+                `;
             }
         }
 
