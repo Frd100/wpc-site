@@ -3140,7 +3140,7 @@ select.form-input {
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: center;
