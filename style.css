@@ -2421,9 +2421,9 @@ select.form-input {
 }
 
 .cmp-domaines-description {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: #212529;
     margin: 0 0 var(--spacing-3xl) 0;
     text-align: center;
 }
