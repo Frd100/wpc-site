@@ -41,4 +41,3 @@ Développer des clusters d'innovation qui rassemblent entreprises, universités 
 
 ## Conclusion
 
-La complémentarité entre entreprises de toutes tailles n'est pas seulement souhaitable, elle est nécessaire pour maintenir la compétitivité française dans un monde globalisé. Cette collaboration doit être encouragée par des politiques publiques adaptées et une volonté commune des acteurs économiques.
