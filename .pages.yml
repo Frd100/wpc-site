@@ -39,8 +39,7 @@ content:
         required: true
       - name: type
         label: Type de publication
-        type: string
-        widget: select
+        type: select
         options:
           - Article
           - Rapport
