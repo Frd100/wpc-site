@@ -2942,7 +2942,7 @@ select.form-input {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 2rem;
+    padding-left: 4rem;
 }
 
 .hero-content {
