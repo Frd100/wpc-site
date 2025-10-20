@@ -3567,26 +3567,19 @@ select.form-input {
     align-items: center;
     gap: 8px;
     padding: var(--spacing-sm) var(--spacing-xl);
-    background: var(--wpc-white);
-    color: #2351FF;
+    background: #2351FF;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
     border: none;
     border-radius: 0;
-    transition: all 0.3s ease;
+    transition: none;
     box-shadow: none;
 }
 
-.btn-secondary:hover {
-    background: var(--wpc-white);
-    color: #2351FF;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(35, 81, 255, 0.3);
-}
-
 .btn-secondary .material-icons {
-    color: #2351FF;
+    color: white;
 }
 
 /* Responsive pour article */
