@@ -1012,10 +1012,11 @@ body {
 
 /* KPMG Exact Footer */
 .cmp-footer {
-    background: var(--wpc-gray-900);
-    color: var(--text-white);
+    background: white;
+    color: var(--text-primary);
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
     margin: 0;
+    border-top: 1px solid #D0D0D0;
 }
 
 .cmp-footer__container {
@@ -1038,7 +1039,7 @@ body {
 }
 
 .cmp-footer__links a {
-    color: var(--text-white);
+    color: var(--text-primary);
     text-decoration: none;
     font-size: var(--font-size-sm);
     opacity: 0.8;
@@ -1053,12 +1054,12 @@ body {
 .cmp-footer__copyright {
     text-align: center;
     padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--wpc-gray-700);
+    border-top: 1px solid #D0D0D0;
 }
 
 .cmp-footer__copyright p {
     font-size: var(--font-size-sm);
-    color: var(--text-white);
+    color: var(--text-primary);
     opacity: 0.7;
 }
 
