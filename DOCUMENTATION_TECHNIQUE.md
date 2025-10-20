@@ -116,7 +116,7 @@ wpc-site/
 
 ### 2.8. Pages légales
 
--   `confidentialite.html`, `mentions-legales.html`, `exercer-mes-droits.html` : Contenu statique informant les utilisateurs sur les aspects légaux et la gestion de leurs données, en conformité avec le RGPD. La page "Exercer mes droits" utilise un lien `mailto` pour pré-remplir un email.
+- `confidentialite.html`, `mentions-legales.html`, `exercer-mes-droits.html` : Contenu statique informant les utilisateurs sur les aspects légaux et la gestion de leurs données, en conformité avec le RGPD. La page "Exercer mes droits" utilise un lien `mailto` pour pré-remplir un email.
 
 ### 2.9. Navigation (`nav.html`)
 
@@ -354,8 +354,61 @@ Contenu de l'article en Markdown...
 -   **Heatmaps** : Analyse du comportement utilisateur
 -   **A/B Testing** : Tests d'optimisation de l'interface
 
+## 11. Structure des articles actuels
+
+### 11.1. Articles publiés
+
+Le site contient actuellement plusieurs articles d'actualités :
+
+1. **"La simulation neuronale avancée au service de l'accélération et de la performance du développement de produits industriels"**
+   - Date : 2025-01-30
+   - Type : Article
+   - Auteur : West Paris Consulting
+   - Contenu : Analyse de l'impact de l'IA sur l'industrie manufacturière
+
+2. **"Grandes et petites entreprises : plus de complémentarité pour plus de compétitivité"**
+   - Date : 2025-07-03
+   - Type : Étude
+   - Auteur : West Paris Consulting
+   - Contenu : Analyse de la collaboration inter-entreprises
+
+### 11.2. Système de gestion des articles
+
+- **Front Matter YAML** : Métadonnées structurées pour chaque article
+- **Parsing automatique** : Conversion Markdown vers HTML
+- **Filtrage** : Seuls les articles avec `published: true` sont affichés
+- **Types multiples** : Support de différents types de publications
+
+## 12. Conformité et légalité
+
+### 12.1. RGPD
+
+- **Politique de confidentialité** : Page dédiée expliquant la collecte et le traitement des données
+- **Exercice des droits** : Page permettant aux utilisateurs d'exercer leurs droits RGPD
+- **Externalisation** : Utilisation de Tally pour les formulaires, simplifiant la conformité
+
+### 12.2. Mentions légales
+
+- **Informations complètes** : Nom de l'association, adresse, responsable de publication
+- **Hébergement** : Informations sur GitHub Pages
+- **Contact** : Coordonnées de l'association
+
+## 13. Optimisations techniques
+
+### 13.1. Chargement des ressources
+
+- **Preconnect** : Optimisation du chargement des polices Google Fonts
+- **Lazy loading** : Images chargées uniquement quand nécessaire
+- **Cache busting** : Versioning des fichiers CSS pour forcer le rechargement
+
+### 13.2. API GitHub
+
+- **Limites de taux** : Gestion des 60 requêtes/heure de l'API GitHub
+- **Fallback** : Gestion des erreurs de chargement
+- **Parsing robuste** : Support de différents formats de front matter
+
 ---
 
-*Documentation mise à jour le : $(date)*
-*Version du site : 2.0*
-*Dernière modification : Ajout du système CMS et optimisations UX*
+*Documentation mise à jour le : 20 janvier 2025*
+*Version du site : 2.1*
+*Dernière modification : Analyse complète et mise à jour de la documentation technique*
