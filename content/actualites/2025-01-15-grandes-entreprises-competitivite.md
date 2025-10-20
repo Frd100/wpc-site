@@ -6,7 +6,7 @@ author: West Paris Consulting
 excerpt: Renforcer la collaboration entre petites, moyennes et grandes
   entreprises au service de la compétitivité et de la résilience économique
   française.
-type: idgef
+type: Étude
 published: true
 ---
 ![Image d'illustration](https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop)
@@ -40,4 +40,3 @@ Mettre en place des dispositifs de co-traitance et de sous-traitance plus transp
 Développer des clusters d'innovation qui rassemblent entreprises, universités et collectivités locales.
 
 ## Conclusion
-
