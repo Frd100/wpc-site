@@ -1,0 +1,31 @@
+title: West Paris Consulting
+
+collections:
+  - name: actualites
+    label: Actualités
+    path: content/actualites
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: date
+        label: Date de publication
+        type: date
+        required: true
+      - name: author
+        label: Auteur
+        type: string
+        required: true
+      - name: excerpt
+        label: Résumé
+        type: text
+        required: true
+      - name: body
+        label: Contenu
+        type: rich-text
+        required: true
+      - name: published
+        label: Publié
+        type: boolean
+        default: true
