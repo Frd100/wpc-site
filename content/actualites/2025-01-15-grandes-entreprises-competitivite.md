@@ -10,7 +10,6 @@ type: Étude
 banner: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop"
 published: true
 ---
-![Image d'illustration](https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop)
 
 ## Introduction
 

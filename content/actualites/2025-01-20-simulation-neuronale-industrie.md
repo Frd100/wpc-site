@@ -8,7 +8,6 @@ banner: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&h=600&
 published: true
 ---
 
-![Image d'illustration](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop)
 
 ## Révolution technologique en cours
 

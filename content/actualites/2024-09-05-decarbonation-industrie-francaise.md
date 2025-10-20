@@ -8,7 +8,6 @@ banner: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=6
 published: true
 ---
 
-![Image d'illustration](https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=400&fit=crop)
 
 ## Introduction
 

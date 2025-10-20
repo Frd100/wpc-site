@@ -8,7 +8,6 @@ banner: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=6
 published: true
 ---
 
-![Image d'illustration](https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&h=400&fit=crop)
 
 ## Contexte énergétique français
 
