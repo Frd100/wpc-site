@@ -222,13 +222,14 @@
 .main-navigation__link::after {
     content: '';
     position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100%;
+    left: 0;
+    right: 0;
     height: 1px;
     background: #033DCC;
     transition: none;
     width: 0;
+    margin: 0 auto;
 }
 
 .main-navigation__link:hover {
@@ -1564,13 +1565,14 @@ body {
     .main-navigation__link::after {
         content: '';
         position: absolute;
-        bottom: -1px;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 100%;
+        left: 0;
+        right: 0;
         height: 1px;
         background: #033DCC;
         transition: none;
         width: 0;
+        margin: 0 auto;
     }
 
     .main-navigation__link:hover::after {
