@@ -179,7 +179,7 @@
                         .replace(/-+/g, '-')
                         .trim('-');
 
-                            return `
+                    return `
                                 <article class="cmp-actualite-card">
                                     <img src="${imageUrl}" alt="${safeTitle}" class="article-image" onclick="window.location.href='article.html?slug=${slug}&file=${encodeURIComponent(actualite.filename)}'" onerror="this.src='https://via.placeholder.com/400x200/00AAF4/FFFFFF?text=Article'">
                                     <div class="article-content">

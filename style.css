@@ -3295,7 +3295,7 @@ select.form-input {
 }
 
 .cmp-actualite-title:hover {
-    color: var(--wpc-blue);
+    color: #033DCC;
     text-decoration: underline;
 }
 
