@@ -3672,14 +3672,14 @@ select.form-input {
 
     /* Réduire la taille des titres sur mobile - règles prioritaires */
     body .hero-section .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
         /* Réduit de 3rem à 2.5rem */
-        text-align: center;
+        text-align: center !important;
     }
 
     body .hero-section .hero-subtitle {
-        text-align: center;
-        font-size: 1.1rem;
+        text-align: center !important;
+        font-size: 1.1rem !important;
     }
 
     body .contact-form-container .form-title {
