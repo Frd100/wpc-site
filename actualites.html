@@ -138,12 +138,12 @@
 
                 // Debug : afficher tous les articles (publiés et non publiés)
                 console.log('Tous les articles chargés:', actualites);
-                
+
                 // Filtrer les actualités publiées et trier par date
                 const publishedActualites = actualites
                     .filter(a => a && (a.published === true || a.published === 'true'))
                     .sort((a, b) => new Date(b.date) - new Date(a.date));
-                
+
                 console.log('Articles publiés:', publishedActualites);
 
                 // Afficher les actualités
