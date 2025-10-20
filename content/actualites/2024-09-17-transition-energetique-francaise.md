@@ -1,5 +1,5 @@
 ---
-title: "Assurer la transition du système énergétique français vers un modèle souverain, durable et bas-carbone"
+title: "Transition énergétique française"
 date: "2024-09-17"
 author: "West Paris Consulting"
 excerpt: "Bien que mieux logée que certains de ses voisins européens, la France connaît actuellement une dépendance énergétique qui nécessite une transformation profonde de son modèle énergétique."

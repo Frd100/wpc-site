@@ -1,5 +1,5 @@
 ---
-title: "Décarbonation de l'industrie française : convertir l'impératif en opportunité"
+title: "Décarbonation industrielle française"
 date: "2024-09-05"
 author: "West Paris Consulting"
 excerpt: "Enseignements d'une analyse comparative entre les industries françaises et allemandes sur les scopes 1 et 2 de l'empreinte carbone."

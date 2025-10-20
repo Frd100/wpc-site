@@ -1,6 +1,5 @@
 ---
-title: "Grandes et petites entreprises : plus de complémentarité pour plus de
-  compétitivité"
+title: "Complémentarité PME et grandes entreprises"
 date: 2025-07-03
 author: West Paris Consulting
 excerpt: Renforcer la collaboration entre petites, moyennes et grandes

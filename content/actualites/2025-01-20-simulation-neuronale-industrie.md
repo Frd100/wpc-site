@@ -1,5 +1,5 @@
 ---
-title: "La simulation neuronale avancée au service de l'accélération et de la performance du développement de produits industriels"
+title: "Simulation neuronale et développement industriel"
 date: "2025-01-30"
 author: "West Paris Consulting"
 excerpt: "La simulation neuronale avancée révolutionne la manière dont les entreprises abordent les défis associés à l'optimisation des processus de développement de produits industriels."
