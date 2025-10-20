@@ -3252,15 +3252,15 @@ select.form-input {
 }
 
 .cmp-actualites-content {
-    max-width: 1225px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Grille d'articles - 3 colonnes sur desktop */
+/* Grille d'articles - 4 colonnes sur desktop */
 .articles-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-bottom: 40px;
 }
