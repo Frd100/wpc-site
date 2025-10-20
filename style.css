@@ -200,7 +200,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     flex: 0 0 auto;
 }
 
@@ -209,7 +209,7 @@
     color: #424651;
     text-decoration: none;
     font-size: 17px;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-regular);
     padding: var(--spacing-sm) var(--spacing-md);
     margin: 0;
     border-radius: var(--border-radius-sm);
@@ -1547,7 +1547,7 @@ body {
         opacity: 1;
         visibility: visible;
         padding: 0;
-        gap: var(--spacing-xl);
+        gap: var(--spacing-lg);
     }
 
     .main-navigation__link {
@@ -2642,7 +2642,7 @@ select.form-input {
 
     .cmp-timeline {
         flex-direction: column;
-        gap: var(--spacing-xl);
+        gap: var(--spacing-lg);
     }
 
     .cmp-timeline::before {
