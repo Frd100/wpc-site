@@ -314,8 +314,13 @@
             return div.innerHTML;
         }
 
-        // Charger au chargement de la page
-        document.addEventListener('DOMContentLoaded', loadActualites);
+        // Charger après que la navigation soit chargée
+        document.addEventListener('DOMContentLoaded', function () {
+            // Attendre que la navigation soit chargée avant de charger les actualités
+            setTimeout(() => {
+                loadActualites();
+            }, 100);
+        });
     </script>
 </body>
 
