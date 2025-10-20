@@ -222,7 +222,7 @@
 .main-navigation__link::after {
     content: '';
     position: absolute;
-    top: calc(100% + 20px);
+    top: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
     height: 5px;
@@ -1589,7 +1589,7 @@ body {
     .main-navigation__link::after {
         content: '';
         position: absolute;
-        top: calc(100% + 20px);
+        top: calc(100% + 15px);
         left: 50%;
         transform: translateX(-50%);
         height: 5px;
