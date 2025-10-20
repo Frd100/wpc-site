@@ -3671,6 +3671,15 @@ select.form-input {
     }
 
     /* Réduire la taille des titres sur mobile - règles prioritaires */
+    .hero-section {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .hero-section .hero-content {
+        text-align: center;
+    }
+
     .hero-section .hero-content .hero-title {
         font-size: 2.5rem;
         /* Réduit de 3rem à 2.5rem */
