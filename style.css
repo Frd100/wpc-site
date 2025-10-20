@@ -2941,8 +2941,8 @@ select.form-input {
     height: 250px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 4rem;
+    justify-content: center;
+    padding-left: 0;
 }
 
 .hero-content {
