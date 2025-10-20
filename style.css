@@ -2713,7 +2713,7 @@ select.form-input {
 }
 
 .cmp-equipe-section {
-    padding: 35px 0;
+    padding: 0;
 }
 
 .cmp-equipe-content {
@@ -2967,7 +2967,7 @@ select.form-input {
 /* Sections avec background gris */
 .section-gray {
     background-color: #F5F6FA;
-    padding: 45px 0;
+    padding: 40px 0;
 }
 
 .section-white {
@@ -3216,7 +3216,7 @@ select.form-input {
 /* Page Actualités */
 .cmp-actualites-section {
     width: 100%;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .cmp-actualites-content {
