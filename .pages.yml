@@ -28,6 +28,7 @@ content:
         - published
       sort:
         - date
+        - title
       default:
         sort: date
         order: desc
