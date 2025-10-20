@@ -1,9 +1,36 @@
+media:
+  - name: images
+    label: Images
+    input: assets/images
+    output: /assets/images
+    extensions:
+      - jpg
+      - jpeg
+      - png
+      - gif
+      - webp
+      - svg
+
 content:
   - name: actualites
     label: Actualités
     type: collection
     path: content/actualites
+    filename: "{year}-{month}-{day}-{title}.md"
     format: yaml-frontmatter
+    view:
+      layout: list
+      primary: title
+      fields:
+        - title
+        - date
+        - author
+        - published
+      sort:
+        - date
+      default:
+        sort: date
+        order: desc
     fields:
       - name: title
         label: Titre

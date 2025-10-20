@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Ignore les liens "#" seuls
             if (href === '#') return;
-            
+
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    
+
 
     /**
      * CENTRALIZED NAVIGATION LOADER
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-    
+
     // Load the navigation as soon as the DOM is ready
     loadNav();
 
@@ -117,7 +117,7 @@ const WPCUtils = {
             if (callNow) func.apply(context, args);
         };
     },
-    
+
     /**
      * THROTTLE
      * Limite le nombre d'exécutions d'une fonction dans un intervalle de temps
@@ -139,7 +139,7 @@ const WPCUtils = {
             }
         };
     },
-    
+
     // Check if element is in viewport
     isInViewport: function (element) {
         const rect = element.getBoundingClientRect();
@@ -150,7 +150,7 @@ const WPCUtils = {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     },
-    
+
     // Get element offset
     getOffset: function (element) {
         const rect = element.getBoundingClientRect();
