@@ -222,10 +222,10 @@
 .main-navigation__link::after {
     content: '';
     position: absolute;
-    top: 100%;
+    top: calc(100% + 1px);
     left: 50%;
     transform: translateX(-50%);
-    height: 3px;
+    height: 2px;
     background: #033DCC;
     transition: none;
     width: 0;
@@ -1564,10 +1564,10 @@ body {
     .main-navigation__link::after {
         content: '';
         position: absolute;
-        top: 100%;
+        top: calc(100% + 1px);
         left: 50%;
         transform: translateX(-50%);
-        height: 3px;
+        height: 2px;
         background: #033DCC;
         transition: none;
         width: 0;
