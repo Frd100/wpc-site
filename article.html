@@ -190,9 +190,12 @@
                 frontMatter[key] = value;
             });
             
+            // Si pas de champ 'body' dans le front matter, utiliser le contenu après ---
+            const body = frontMatter.body || match[2].trim();
+            
             return {
                 ...frontMatter,
-                body: match[2].trim()
+                body: body
             };
         }
 
@@ -242,3 +245,4 @@
 </body>
 
 </html>
+
