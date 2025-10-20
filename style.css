@@ -1454,12 +1454,14 @@ body {
         /* Réduit de 2.5rem à 2rem pour mobile */
         margin-bottom: var(--spacing-md);
         color: white;
+        text-align: center;
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-bottom: var(--spacing-lg);
         color: white;
+        text-align: center;
     }
 
     /* Masquer l'image La Défense sur mobile */
