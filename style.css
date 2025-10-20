@@ -3671,15 +3671,15 @@ select.form-input {
     }
 
     /* Réduire la taille des titres sur mobile - règles prioritaires */
-    body .hero-section .hero-title {
-        font-size: 2.5rem !important;
+    .hero-section .hero-content .hero-title {
+        font-size: 2.5rem;
         /* Réduit de 3rem à 2.5rem */
-        text-align: center !important;
+        text-align: center;
     }
 
-    body .hero-section .hero-subtitle {
-        text-align: center !important;
-        font-size: 1.1rem !important;
+    .hero-section .hero-content .hero-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
     }
 
     body .contact-form-container .form-title {
