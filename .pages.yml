@@ -3,32 +3,20 @@ media:
     label: Images
     input: assets/images
     output: /assets/images
-    extensions:
-      - jpg
-      - jpeg
-      - png
-      - gif
-      - webp
-      - svg
+    extensions: [jpg, jpeg, png, gif, webp, svg]
 
 content:
   - name: actualites
     label: Actualités
     type: collection
     path: content/actualites
-    filename: "{year}-{month}-{day}-{slug}.md"
     format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{slug}.md"
     view:
       layout: list
       primary: title
-      fields:
-        - title
-        - date
-        - author
-        - published
-      sort:
-        - date
-        - title
+      fields: [title, date, author, published]
+      sort: [date, title]
       default:
         sort: date
         order: desc
@@ -49,11 +37,11 @@ content:
         label: Résumé
         type: text
         required: true
-      - name: body
-        label: Contenu
-        type: rich-text
-        required: true
       - name: published
         label: Publié
         type: boolean
         default: true
+      - name: body
+        label: Contenu
+        type: rich-text
+        required: true
