@@ -4,6 +4,7 @@ date: "2025-01-30"
 author: "West Paris Consulting"
 excerpt: "La simulation neuronale avancée révolutionne la manière dont les entreprises abordent les défis associés à l'optimisation des processus de développement de produits industriels."
 type: "Article"
+banner: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&h=600&fit=crop"
 published: true
 ---
 

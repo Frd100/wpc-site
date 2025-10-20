@@ -7,6 +7,7 @@ excerpt: Renforcer la collaboration entre petites, moyennes et grandes
   entreprises au service de la compétitivité et de la résilience économique
   française.
 type: Étude
+banner: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop"
 published: true
 ---
 ![Image d'illustration](https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop)
@@ -39,4 +40,3 @@ Mettre en place des dispositifs de co-traitance et de sous-traitance plus transp
 
 Développer des clusters d'innovation qui rassemblent entreprises, universités et collectivités locales.
 
-## Conclusion

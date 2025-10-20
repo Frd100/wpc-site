@@ -4,6 +4,7 @@ date: "2024-09-17"
 author: "West Paris Consulting"
 excerpt: "Bien que mieux logée que certains de ses voisins européens, la France connaît actuellement une dépendance énergétique qui nécessite une transformation profonde de son modèle énergétique."
 type: "Article"
+banner: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=600&fit=crop"
 published: true
 ---
 
