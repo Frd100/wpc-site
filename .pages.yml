@@ -41,18 +41,12 @@ content:
         label: Type de publication
         type: select
         options:
-          - label: Article
-            value: Article
-          - label: Rapport
-            value: Rapport
-          - label: Étude
-            value: Étude
-          - label: Publication
-            value: Publication
-          - label: Analyse
-            value: Analyse
-          - label: Recherche
-            value: Recherche
+          - Article
+          - Rapport
+          - Étude
+          - Publication
+          - Analyse
+          - Recherche
         default: Article
         required: true
       - name: published
