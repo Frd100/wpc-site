@@ -242,6 +242,7 @@ Contenu de l'article en Markdown...
 ### 6.1. Performance
 
 -   **Images WebP** : Utilisation du format d'image WebP, plus léger que les formats traditionnels.
+-   **Optimisation FFmpeg** : Compression avancée des médias avec FFmpeg pour des tailles optimales (homepage.webp: 128K, homepage-mobile.webp: 24K).
 -   **Lazy Loading** : L'attribut `loading="lazy"` est utilisé sur les images pour ne les charger que lorsqu'elles deviennent visibles.
 -   **Cache busting** : Versioning des fichiers CSS (`?v=2`) pour forcer le rechargement.
 -   **API GitHub** : Gestion des limites de taux (60 requêtes/heure) avec fallback.
@@ -381,6 +382,7 @@ Le site contient actuellement plusieurs articles d'actualités :
 - **Preconnect** : Optimisation du chargement des polices Google Fonts
 - **Lazy loading** : Images chargées uniquement quand nécessaire
 - **Cache busting** : Versioning des fichiers CSS pour forcer le rechargement
+- **Optimisation médias** : FFmpeg utilisé pour la compression avancée des images WebP (total médias ~800K)
 
 ### 12.2. API GitHub
 
