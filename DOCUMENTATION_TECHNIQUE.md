@@ -334,29 +334,10 @@ Contenu de l'article en Markdown...
 -   **Navigation clavier** : Support complet de la navigation au clavier
 -   **Contraste** : Couleurs optimisées pour la lisibilité
 
-## 10. Recommandations futures
 
-### 10.1. Performance
+## 10. Structure des articles actuels
 
--   **Minification** : Minifier les fichiers CSS et JS en production
--   **CDN** : Utilisation d'un CDN pour les ressources statiques
--   **Compression** : Activation de la compression gzip
-
-### 10.2. Fonctionnalités
-
--   **Recherche** : Ajout d'une fonction de recherche dans les articles
--   **Filtres** : Filtrage des articles par type ou date
--   **Pagination** : Gestion des grandes listes d'articles
-
-### 10.3. Analytics
-
--   **Google Analytics** : Intégration pour le suivi des performances
--   **Heatmaps** : Analyse du comportement utilisateur
--   **A/B Testing** : Tests d'optimisation de l'interface
-
-## 11. Structure des articles actuels
-
-### 11.1. Articles publiés
+### 10.1. Articles publiés
 
 Le site contient actuellement plusieurs articles d'actualités :
 
@@ -372,36 +353,36 @@ Le site contient actuellement plusieurs articles d'actualités :
    - Auteur : West Paris Consulting
    - Contenu : Analyse de la collaboration inter-entreprises
 
-### 11.2. Système de gestion des articles
+### 10.2. Système de gestion des articles
 
 - **Front Matter YAML** : Métadonnées structurées pour chaque article
 - **Parsing automatique** : Conversion Markdown vers HTML
 - **Filtrage** : Seuls les articles avec `published: true` sont affichés
 - **Types multiples** : Support de différents types de publications
 
-## 12. Conformité et légalité
+## 11. Conformité et légalité
 
-### 12.1. RGPD
+### 11.1. RGPD
 
 - **Politique de confidentialité** : Page dédiée expliquant la collecte et le traitement des données
 - **Exercice des droits** : Page permettant aux utilisateurs d'exercer leurs droits RGPD
 - **Externalisation** : Utilisation de Tally pour les formulaires, simplifiant la conformité
 
-### 12.2. Mentions légales
+### 11.2. Mentions légales
 
 - **Informations complètes** : Nom de l'association, adresse, responsable de publication
 - **Hébergement** : Informations sur GitHub Pages
 - **Contact** : Coordonnées de l'association
 
-## 13. Optimisations techniques
+## 12. Optimisations techniques
 
-### 13.1. Chargement des ressources
+### 12.1. Chargement des ressources
 
 - **Preconnect** : Optimisation du chargement des polices Google Fonts
 - **Lazy loading** : Images chargées uniquement quand nécessaire
 - **Cache busting** : Versioning des fichiers CSS pour forcer le rechargement
 
-### 13.2. API GitHub
+### 12.2. API GitHub
 
 - **Limites de taux** : Gestion des 60 requêtes/heure de l'API GitHub
 - **Fallback** : Gestion des erreurs de chargement
