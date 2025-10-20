@@ -2938,11 +2938,11 @@ select.form-input {
     margin-left: calc(-50vw + 50%);
     overflow: hidden;
     background-color: #FFFFFF;
-    height: 220px;
+    height: 250px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-left: 0;
+    justify-content: flex-start;
+    padding-left: 2rem;
 }
 
 .hero-content {
