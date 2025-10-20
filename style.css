@@ -2522,7 +2522,7 @@ select.form-input {
 .cmp-timeline::before {
     content: '';
     position: absolute;
-    top: 48px;
+    top: 24px;
     left: 24px;
     right: 24px;
     height: 2px;
