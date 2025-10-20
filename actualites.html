@@ -149,44 +149,52 @@
                     return;
                 }
 
-                container.innerHTML = publishedActualites.map(actualite => {
-                    const date = new Date(actualite.date).toLocaleDateString('fr-FR', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
+                container.innerHTML = `
+                    <div class="articles-grid">
+                        ${publishedActualites.map(actualite => {
+                            const date = new Date(actualite.date).toLocaleDateString('fr-FR', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            });
 
-                    // Échapper le HTML pour éviter les injections
-                    const safeTitle = escapeHtml(actualite.title);
-                    const safeAuthor = escapeHtml(actualite.author);
-                    const safeExcerpt = escapeHtml(actualite.excerpt);
+                            // Échapper le HTML pour éviter les injections
+                            const safeTitle = escapeHtml(actualite.title);
+                            const safeAuthor = escapeHtml(actualite.author);
+                            const safeExcerpt = escapeHtml(actualite.excerpt);
+                            const safeType = escapeHtml(actualite.type || 'Article');
 
-                    // Convertir le Markdown en HTML
-                    const htmlContent = markdownToHtml(actualite.body);
+                            // Extraire l'image du contenu Markdown
+                            const imageMatch = actualite.body.match(/!\[.*?\]\((.*?)\)/);
+                            const imageUrl = imageMatch ? imageMatch[1] : 'https://via.placeholder.com/400x200/00AAF4/FFFFFF?text=Article';
 
-                    // Créer un slug pour l'URL
-                    const slug = actualite.title
-                        .toLowerCase()
-                        .replace(/[^a-z0-9\s-]/g, '')
-                        .replace(/\s+/g, '-')
-                        .replace(/-+/g, '-')
-                        .trim('-');
+                            // Convertir le Markdown en HTML
+                            const htmlContent = markdownToHtml(actualite.body);
 
-                    return `
-                        <article class="cmp-actualite-card">
-                            <div class="cmp-actualite-info">
-                                <div class="actualite-meta">
-                                    <span class="actualite-date">${date}</span>
-                                    <span class="actualite-author">Par ${safeAuthor}</span>
-                                </div>
-                                <h3 class="cmp-actualite-title">${safeTitle}</h3>
-                                <p class="cmp-actualite-excerpt">${safeExcerpt}</p>
-                                <div class="actualite-preview">${htmlContent.substring(0, 200)}${htmlContent.length > 200 ? '...' : ''}</div>
-                                <a href="article.html?slug=${slug}&file=${encodeURIComponent(actualite.filename)}" class="actualite-link">Lire la suite</a>
-                            </div>
-                        </article>
-                    `;
-                }).join('');
+                            // Créer un slug pour l'URL
+                            const slug = actualite.title
+                                .toLowerCase()
+                                .replace(/[^a-z0-9\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim('-');
+
+                            return `
+                                <article class="cmp-actualite-card" onclick="window.location.href='article.html?slug=${slug}&file=${encodeURIComponent(actualite.filename)}'">
+                                    <img src="${imageUrl}" alt="${safeTitle}" class="article-image" onerror="this.src='https://via.placeholder.com/400x200/00AAF4/FFFFFF?text=Article'">
+                                    <div class="article-content">
+                                        <div class="article-type">${safeType}</div>
+                                        <h3 class="cmp-actualite-title">${safeTitle}</h3>
+                                        <div class="actualite-meta">
+                                            <span class="actualite-date">${date}</span>
+                                        </div>
+                                        <p class="cmp-actualite-excerpt">${safeExcerpt}</p>
+                                    </div>
+                                </article>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
 
             } catch (error) {
                 console.error('Erreur lors du chargement des actualités:', error);
