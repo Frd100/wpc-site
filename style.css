@@ -1228,22 +1228,22 @@ body {
 
     /* Masquer les chevrons (si présents) */
     .main-navigation__link::after {
-        display: none !important;
-        content: none !important;
-        background: none !important;
-        width: 0 !important;
-        height: 0 !important;
+        display: none;
+        content: none;
+        background: none;
+        width: 0;
+        height: 0;
     }
 
     /* Supprimer tous les effets de stroke sur mobile */
     .main-navigation__link:hover::after,
     .main-navigation__link:active::after,
     .main-navigation__link:focus::after {
-        display: none !important;
-        content: none !important;
-        background: none !important;
-        width: 0 !important;
-        height: 0 !important;
+        display: none;
+        content: none;
+        background: none;
+        width: 0;
+        height: 0;
     }
 
     body .main-navigation__links .main-navigation__link:hover {
