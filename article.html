@@ -297,8 +297,8 @@
                 document.getElementById('article-hero-meta').innerHTML = metaHtml;
 
                 // Mettre à jour l'image de la hero section
-                if (article.image) {
-                    document.getElementById('article-hero-image').style.backgroundImage = `url(${article.image})`;
+                if (article.banner) {
+                    document.getElementById('article-hero-image').style.backgroundImage = `url(${article.banner})`;
                 }
 
                 // Mettre à jour le contenu
@@ -344,6 +344,8 @@
                 date: frontMatter.date || new Date().toISOString().split('T')[0],
                 author: frontMatter.author || 'Auteur inconnu',
                 excerpt: frontMatter.excerpt || '',
+                banner: frontMatter.banner || '',
+                type: frontMatter.type || 'Article',
                 body: body,
                 published: frontMatter.published !== false && frontMatter.published !== 'false'
             };
