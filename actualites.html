@@ -109,8 +109,6 @@
     <!-- Scripts -->
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" integrity="sha384-lvMyg7Hq5p5zH2Qqz8bH0f4QZZo2YF5yI2S7o8q7n2pPZV6q2mR8vQ2XnZVb7WcJ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js" integrity="sha384-z8b4l3mKqz7E2m8M2x3m3oQ2m7qz7+GxqvK1rXq2pT9xV1Z2G3gTtJp8jv2lKfQx" crossorigin="anonymous"></script>
 
     <!-- Script de chargement des actualités -->
     <script>
@@ -152,17 +150,7 @@
                     return;
                 }
 
-                // Pagination
-                const pageSize = 6;
-                let currentPage = 1;
-
-                function renderPage(page) {
-                    currentPage = page;
-                    const start = (page - 1) * pageSize;
-                    const end = start + pageSize;
-                    const pageItems = publishedActualites.slice(start, end);
-
-                    container.innerHTML = pageItems.map(actualite => {
+                container.innerHTML = publishedActualites.map(actualite => {
                     const date = new Date(actualite.date).toLocaleDateString('fr-FR', {
                         year: 'numeric',
                         month: 'long',
@@ -174,22 +162,16 @@
                     const safeAuthor = escapeHtml(actualite.author);
                     const safeExcerpt = escapeHtml(actualite.excerpt);
 
-                    // Convertir le Markdown en HTML sécurisé (marked + DOMPurify si dispo)
-                    const rawHtml = (typeof window !== 'undefined' && window.marked)
-                        ? window.marked.parse(actualite.body || '')
-                        : markdownToHtml(actualite.body || '');
-                    const htmlContent = (typeof window !== 'undefined' && window.DOMPurify)
-                        ? window.DOMPurify.sanitize(rawHtml)
-                        : rawHtml;
+                    // Convertir le Markdown en HTML
+                    const htmlContent = markdownToHtml(actualite.body);
 
-                    // Créer un slug pour l'URL (normalisation sans accents)
-                    const slug = (actualite.title || '')
-                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    // Créer un slug pour l'URL
+                    const slug = actualite.title
                         .toLowerCase()
                         .replace(/[^a-z0-9\s-]/g, '')
                         .replace(/\s+/g, '-')
                         .replace(/-+/g, '-')
-                        .replace(/^-+|-+$/g, '');
+                        .trim('-');
 
                     return `
                         <article class="cmp-actualite-card">
@@ -205,44 +187,7 @@
                             </div>
                         </article>
                     `;
-                    }).join('');
-
-                    renderPagination();
-                }
-
-                function renderPagination() {
-                    const totalPages = Math.ceil(publishedActualites.length / pageSize);
-                    let paginationHtml = '';
-                    if (totalPages > 1) {
-                        paginationHtml += '<div class="pagination">';
-                        // Prev
-                        paginationHtml += `<button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} data-page="prev">Précédent</button>`;
-                        // Numbers
-                        for (let p = 1; p <= totalPages; p++) {
-                            paginationHtml += `<button class="page-btn ${p === currentPage ? 'active' : ''}" data-page="${p}">${p}</button>`;
-                        }
-                        // Next
-                        paginationHtml += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} data-page="next">Suivant</button>`;
-                        paginationHtml += '</div>';
-                    }
-
-                    container.insertAdjacentHTML('beforeend', paginationHtml);
-
-                    const buttons = container.querySelectorAll('.page-btn');
-                    buttons.forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const val = btn.getAttribute('data-page');
-                            const total = Math.ceil(publishedActualites.length / pageSize);
-                            if (val === 'prev' && currentPage > 1) return renderPage(currentPage - 1);
-                            if (val === 'next' && currentPage < total) return renderPage(currentPage + 1);
-                            const num = parseInt(val, 10);
-                            if (!isNaN(num)) renderPage(num);
-                        });
-                    });
-                }
-
-                // Render first page
-                renderPage(1);
+                }).join('');
 
             } catch (error) {
                 console.error('Erreur lors du chargement des actualités:', error);
