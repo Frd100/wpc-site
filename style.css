@@ -197,7 +197,7 @@
 
 .main-navigation__links {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: var(--spacing-xl);
     flex: 0 0 auto;
@@ -1093,11 +1093,6 @@ body {
 }
 
 /* Desktop navigation - styles normaux */
-.main-navigation__links {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
 
 /* Mobile navigation - styles spécifiques */
 @media (max-width: 768px) {
