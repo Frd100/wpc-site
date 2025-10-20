@@ -1,9 +1,9 @@
-title: West Paris Consulting
-
-collections:
+content:
   - name: actualites
     label: Actualités
+    type: collection
     path: content/actualites
+    format: yaml-frontmatter
     fields:
       - name: title
         label: Titre
