@@ -42,6 +42,69 @@
 
     <link rel="stylesheet" href="style.css?v=2">
     <style>
+        /* Hero Section Article */
+        .article-hero-section {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .article-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .article-hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+
+        .article-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: white;
+        }
+
+        .article-hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .article-hero-meta span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .article-hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
         /* Styles spécifiques pour la page article */
         .cmp-article-section {
             max-width: 1200px;
@@ -51,20 +114,6 @@
 
         .cmp-article-content {
             padding: 0;
-        }
-
-        .article-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .article-meta {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
         }
 
         .article-content {
@@ -103,12 +152,25 @@
         }
 
         @media (max-width: 768px) {
-            .cmp-article-section {
-                padding: 15px;
+            .article-hero-section {
+                height: 50vh;
+                min-height: 300px;
             }
 
-            .article-title {
+            .article-hero-content {
+                padding: 0 1rem;
+            }
+
+            .article-hero-title {
                 font-size: 2rem;
+            }
+
+            .article-hero-meta {
+                font-size: 0.8rem;
+            }
+
+            .cmp-article-section {
+                padding: 15px;
             }
         }
     </style>
@@ -122,6 +184,19 @@
         <!-- Navigation Placeholder -->
         <div id="nav-placeholder"></div>
 
+        <!-- Hero Section Article -->
+        <div class="article-hero-section" id="article-hero">
+            <div class="article-hero-image" id="article-hero-image">
+                <!-- Image de l'article -->
+            </div>
+            <div class="article-hero-content">
+                <div class="article-hero-meta" id="article-hero-meta">
+                    <!-- Métadonnées de l'article -->
+                </div>
+                <h1 class="article-hero-title" id="article-hero-title">Chargement...</h1>
+            </div>
+        </div>
+
         <!-- Contenu principal -->
         <main class="main container responsivegrid aem-GridColumn aem-GridColumn--default--12">
             <div id="main-wpc-content" class="cmp-container">
@@ -130,10 +205,6 @@
                     <!-- Article complet -->
                     <article class="cmp-article-section">
                         <div class="cmp-article-content">
-                            <h1 class="article-title" id="article-title">Chargement...</h1>
-                            <div class="article-meta" id="article-meta">
-                                <!-- Métadonnées de l'article -->
-                            </div>
                             <div class="article-content" id="article-content">
                                 <!-- Contenu de l'article -->
                             </div>
@@ -205,21 +276,30 @@
 
                 // Mettre à jour le titre de la page
                 document.title = `${article.title} - West Paris Consulting`;
-                document.getElementById('article-title').textContent = article.title;
+                document.getElementById('article-hero-title').textContent = article.title;
 
-                // Mettre à jour les métadonnées
+                // Mettre à jour les métadonnées dans la hero section
                 const date = new Date(article.date).toLocaleDateString('fr-FR', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                 });
 
-                document.getElementById('article-meta').innerHTML = `
-                    <div class="article-meta-content">
-                        <span class="article-date">${date}</span>
-                        <span class="article-author">Par ${escapeHtml(article.author)}</span>
-                    </div>
+                let metaHtml = `
+                    <span class="article-date">${date}</span>
+                    <span class="article-author">Par ${escapeHtml(article.author)}</span>
                 `;
+
+                if (article.type) {
+                    metaHtml += `<span class="article-type">${escapeHtml(article.type)}</span>`;
+                }
+
+                document.getElementById('article-hero-meta').innerHTML = metaHtml;
+
+                // Mettre à jour l'image de la hero section
+                if (article.image) {
+                    document.getElementById('article-hero-image').style.backgroundImage = `url(${article.image})`;
+                }
 
                 // Mettre à jour le contenu
                 const htmlContent = markdownToHtml(article.body);
