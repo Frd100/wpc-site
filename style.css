@@ -2431,7 +2431,7 @@ select.form-input {
 .cmp-domaines-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-lg);
     margin-top: var(--spacing-2xl);
 }
 
