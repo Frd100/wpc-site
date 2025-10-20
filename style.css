@@ -3563,21 +3563,23 @@ select.form-input {
 }
 
 .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: var(--wpc-gray-200);
-    color: var(--text-primary);
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background: var(--wpc-white);
+    color: #000000;
     text-decoration: none;
-    border-radius: 6px;
     font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0;
     transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background: var(--wpc-gray-300);
+    background: #00AAF4;
+    color: #000000;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive pour article */
