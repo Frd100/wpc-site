@@ -1949,11 +1949,11 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: 40px 0;
-    background: var(--wpc-white);
+    background: #F5F6FA;
 }
 
 .contact-form-container {
-    background: #F5F6FA;
+    background: var(--wpc-white);
     padding: var(--spacing-xl) var(--spacing-lg);
     border: none;
     border-radius: 0;
