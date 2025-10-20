@@ -109,7 +109,7 @@
     <!-- Scripts -->
     <script src="main.js"></script>
 
-    <!-- Script de chargement des actualités (version simple) -->
+    <!-- Script de chargement des actualités -->
     <script>
         // Charger les actualités depuis les fichiers Markdown
         async function loadActualites() {
@@ -136,9 +136,9 @@
                         })
                 );
                 
-                // Filtrer et trier
+                // Filtrer les actualités publiées et trier par date
                 const publishedActualites = actualites
-                    .filter(a => a && a.published === 'true')
+                    .filter(a => a && (a.published === true || a.published === 'true'))
                     .sort((a, b) => new Date(b.date) - new Date(a.date));
                 
                 // Afficher les actualités
@@ -154,16 +154,24 @@
                         day: 'numeric'
                     });
                     
+                    // Échapper le HTML pour éviter les injections
+                    const safeTitle = escapeHtml(actualite.title);
+                    const safeAuthor = escapeHtml(actualite.author);
+                    const safeExcerpt = escapeHtml(actualite.excerpt);
+                    
+                    // Convertir le Markdown en HTML
+                    const htmlContent = markdownToHtml(actualite.body);
+                    
                     return `
                         <article class="cmp-actualite-card">
                             <div class="cmp-actualite-info">
                                 <div class="actualite-meta">
                                     <span class="actualite-date">${date}</span>
-                                    <span class="actualite-author">Par ${actualite.author}</span>
+                                    <span class="actualite-author">Par ${safeAuthor}</span>
                                 </div>
-                                <h3 class="cmp-actualite-title">${actualite.title}</h3>
-                                <p class="cmp-actualite-excerpt">${actualite.excerpt}</p>
-                                <div class="actualite-content">${actualite.body}</div>
+                                <h3 class="cmp-actualite-title">${safeTitle}</h3>
+                                <p class="cmp-actualite-excerpt">${safeExcerpt}</p>
+                                <div class="actualite-content">${htmlContent}</div>
                             </div>
                         </article>
                     `;
@@ -175,7 +183,7 @@
             }
         }
 
-        // Parser un fichier Markdown avec front matter
+        // Parser un fichier Markdown avec front matter YAML
         function parseMarkdownFile(content) {
             const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
             if (!match) return null;
@@ -183,17 +191,66 @@
             const frontMatter = {};
             const lines = match[1].split('\n');
             lines.forEach(line => {
-                const [key, ...valueParts] = line.split(':');
-                if (key && valueParts.length) {
-                    const value = valueParts.join(':').trim();
-                    frontMatter[key.trim()] = value.replace(/^["']|["']$/g, '');
-                }
+                const colonIndex = line.indexOf(':');
+                if (colonIndex === -1) return;
+                
+                const key = line.substring(0, colonIndex).trim();
+                let value = line.substring(colonIndex + 1).trim();
+                
+                // Supprimer les guillemets
+                value = value.replace(/^["']|["']$/g, '');
+                
+                // Convertir les booléens
+                if (value === 'true') value = true;
+                if (value === 'false') value = false;
+                
+                frontMatter[key] = value;
             });
             
             return {
                 ...frontMatter,
                 body: match[2].trim()
             };
+        }
+
+        // Convertir Markdown en HTML
+        function markdownToHtml(markdown) {
+            let html = markdown;
+            
+            // Titres
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Gras et italique
+            html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+            
+            // Listes non ordonnées
+            html = html.replace(/^\- (.+)$/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+            
+            // Séparateurs
+            html = html.replace(/^---$/gim, '<hr>');
+            
+            // Paragraphes
+            html = html.split('\n\n').map(para => {
+                para = para.trim();
+                if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<hr')) {
+                    return para;
+                }
+                return para ? `<p>${para}</p>` : '';
+            }).join('\n');
+            
+            return html;
+        }
+
+        // Échapper le HTML pour éviter les injections XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         // Charger au chargement de la page
