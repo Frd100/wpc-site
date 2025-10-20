@@ -10,26 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- WPC Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://westparisconsulting.fr/actualites.html">
-    <meta property="og:title" content="Actualités - West Paris Consulting">
-    <meta property="og:description"
-        content="Découvrez les dernières actualités et événements de West Paris Consulting. Restez informé de nos projets et initiatives étudiantes.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://westparisconsulting.fr/article.html">
+    <meta property="og:title" content="Article - West Paris Consulting">
+    <meta property="og:description" content="Lire l'article complet de West Paris Consulting">
     <meta property="og:site_name" content="WPC">
     <meta property="og:image" content="homepage.webp">
     <meta property="og:locale" content="fr_FR">
 
-    <meta property="twitter:url" content="https://westparisconsulting.fr/actualites.html">
-    <meta property="twitter:title" content="Actualités - West Paris Consulting">
-    <meta property="twitter:description"
-        content="Découvrez les dernières actualités et événements de West Paris Consulting. Restez informé de nos projets et initiatives étudiantes.">
+    <meta property="twitter:url" content="https://westparisconsulting.fr/article.html">
+    <meta property="twitter:title" content="Article - West Paris Consulting">
+    <meta property="twitter:description" content="Lire l'article complet de West Paris Consulting">
     <meta property="twitter:creator" content="@WestParisConsulting">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:image" content="homepage.webp">
 
-    <title>Actualités - West Paris Consulting</title>
-    <meta name="description"
-        content="Découvrez les dernières actualités et événements de West Paris Consulting. Restez informé de nos projets et initiatives étudiantes.">
+    <title>Article - West Paris Consulting</title>
+    <meta name="description" content="Lire l'article complet de West Paris Consulting">
 
     <!-- WPC Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +43,7 @@
     <link rel="stylesheet" href="style.css?v=2">
 </head>
 
-<body class="page basicpage" id="page-wpc-actualites" data-cmp-link-accessibility-enabled=""
+<body class="page basicpage" id="page-wpc-article" data-cmp-link-accessibility-enabled=""
     data-cmp-link-accessibility-text="s'ouvre dans un nouvel onglet" data-cmp-data-layer-enabled="">
 
     <div class="root container responsivegrid">
@@ -54,10 +51,10 @@
         <!-- Navigation Placeholder -->
         <div id="nav-placeholder"></div>
 
-        <!-- Hero Section Actualités -->
+        <!-- Hero Section Article -->
         <div class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">Actualités</h1>
+                <h1 class="hero-title" id="article-title">Chargement...</h1>
             </div>
         </div>
 
@@ -66,17 +63,23 @@
             <div id="main-wpc-content" class="cmp-container">
                 <div class="section container responsivegrid">
 
-                    <!-- Section Actualités -->
-                    <div id="section-wpc-actualites" class="cmp-container section-gray">
-                        <div class="cmp-actualites-section">
-                            <div class="cmp-actualites-content">
-                                <!-- Les actualités seront chargées dynamiquement ici via Decap CMS -->
-                                <div id="actualites-container">
-                                    <!-- Contenu dynamique -->
-                                </div>
+                    <!-- Article complet -->
+                    <article class="cmp-article-section">
+                        <div class="cmp-article-content">
+                            <div class="article-meta" id="article-meta">
+                                <!-- Métadonnées de l'article -->
+                            </div>
+                            <div class="article-content" id="article-content">
+                                <!-- Contenu de l'article -->
+                            </div>
+                            <div class="article-actions">
+                                <a href="actualites.html" class="btn-secondary">
+                                    <span class="material-icons">arrow_back</span>
+                                    Retour aux actualités
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                 </div>
             </div>
@@ -108,87 +111,58 @@
 
     <!-- Scripts -->
     <script src="main.js"></script>
-
-    <!-- Script de chargement des actualités -->
+    
+    <!-- Script de chargement de l'article -->
     <script>
-        // Charger les actualités depuis les fichiers Markdown
-        async function loadActualites() {
-            const container = document.getElementById('actualites-container');
-
+        // Charger l'article spécifique
+        async function loadArticle() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const filename = urlParams.get('file');
+            
+            if (!filename) {
+                document.getElementById('article-content').innerHTML = '<p style="text-align: center; color: #d00;">Article non trouvé.</p>';
+                return;
+            }
+            
             try {
-                // Récupérer la liste des fichiers
-                const response = await fetch('https://api.github.com/repos/Frd100/wpc-site/contents/content/actualites');
-                const files = await response.json();
-
-                if (!Array.isArray(files) || files.length === 0) {
-                    container.innerHTML = '<p style="text-align: center; color: #666;">Aucune actualité pour le moment.</p>';
+                // Charger le fichier spécifique
+                const response = await fetch(`https://api.github.com/repos/Frd100/wpc-site/contents/content/actualites/${filename}`);
+                const file = await response.json();
+                
+                const contentResponse = await fetch(file.download_url);
+                const content = await contentResponse.text();
+                const article = parseMarkdownFile(content);
+                
+                if (!article) {
+                    document.getElementById('article-content').innerHTML = '<p style="text-align: center; color: #d00;">Erreur lors du chargement de l\'article.</p>';
                     return;
                 }
-
-                // Charger le contenu de chaque fichier
-                const actualites = await Promise.all(
-                    files
-                        .filter(file => file.name.endsWith('.md'))
-                        .map(async file => {
-                            const contentResponse = await fetch(file.download_url);
-                            const content = await contentResponse.text();
-                            return parseMarkdownFile(content);
-                        })
-                );
-
-                // Filtrer les actualités publiées et trier par date
-                const publishedActualites = actualites
-                    .filter(a => a && (a.published === true || a.published === 'true'))
-                    .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                // Afficher les actualités
-                if (publishedActualites.length === 0) {
-                    container.innerHTML = '<p style="text-align: center; color: #666;">Aucune actualité publiée pour le moment.</p>';
-                    return;
-                }
-
-                container.innerHTML = publishedActualites.map(actualite => {
-                    const date = new Date(actualite.date).toLocaleDateString('fr-FR', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-
-                    // Échapper le HTML pour éviter les injections
-                    const safeTitle = escapeHtml(actualite.title);
-                    const safeAuthor = escapeHtml(actualite.author);
-                    const safeExcerpt = escapeHtml(actualite.excerpt);
-
-                    // Convertir le Markdown en HTML
-                    const htmlContent = markdownToHtml(actualite.body);
-
-                    // Créer un slug pour l'URL
-                    const slug = actualite.title
-                        .toLowerCase()
-                        .replace(/[^a-z0-9\s-]/g, '')
-                        .replace(/\s+/g, '-')
-                        .replace(/-+/g, '-')
-                        .trim('-');
-
-                    return `
-                        <article class="cmp-actualite-card">
-                            <div class="cmp-actualite-info">
-                                <div class="actualite-meta">
-                                    <span class="actualite-date">${date}</span>
-                                    <span class="actualite-author">Par ${safeAuthor}</span>
-                                </div>
-                                <h3 class="cmp-actualite-title">${safeTitle}</h3>
-                                <p class="cmp-actualite-excerpt">${safeExcerpt}</p>
-                                <div class="actualite-preview">${htmlContent.substring(0, 200)}${htmlContent.length > 200 ? '...' : ''}</div>
-                                <a href="article.html?slug=${slug}&file=${encodeURIComponent(actualite.filename)}" class="actualite-link">Lire la suite</a>
-                            </div>
-                        </article>
-                    `;
-                }).join('');
-
+                
+                // Mettre à jour le titre de la page
+                document.title = `${article.title} - West Paris Consulting`;
+                document.getElementById('article-title').textContent = article.title;
+                
+                // Mettre à jour les métadonnées
+                const date = new Date(article.date).toLocaleDateString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                document.getElementById('article-meta').innerHTML = `
+                    <div class="article-meta-content">
+                        <span class="article-date">${date}</span>
+                        <span class="article-author">Par ${escapeHtml(article.author)}</span>
+                    </div>
+                `;
+                
+                // Mettre à jour le contenu
+                const htmlContent = markdownToHtml(article.body);
+                document.getElementById('article-content').innerHTML = htmlContent;
+                
             } catch (error) {
-                console.error('Erreur lors du chargement des actualités:', error);
-                container.innerHTML = '<p style="text-align: center; color: #d00;">Erreur lors du chargement des actualités.</p>';
+                console.error('Erreur lors du chargement de l\'article:', error);
+                document.getElementById('article-content').innerHTML = '<p style="text-align: center; color: #d00;">Erreur lors du chargement de l\'article.</p>';
             }
         }
 
@@ -196,26 +170,26 @@
         function parseMarkdownFile(content) {
             const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
             if (!match) return null;
-
+            
             const frontMatter = {};
             const lines = match[1].split('\n');
             lines.forEach(line => {
                 const colonIndex = line.indexOf(':');
                 if (colonIndex === -1) return;
-
+                
                 const key = line.substring(0, colonIndex).trim();
                 let value = line.substring(colonIndex + 1).trim();
-
+                
                 // Supprimer les guillemets
                 value = value.replace(/^["']|["']$/g, '');
-
+                
                 // Convertir les booléens
                 if (value === 'true') value = true;
                 if (value === 'false') value = false;
-
+                
                 frontMatter[key] = value;
             });
-
+            
             return {
                 ...frontMatter,
                 body: match[2].trim()
@@ -225,24 +199,24 @@
         // Convertir Markdown en HTML
         function markdownToHtml(markdown) {
             let html = markdown;
-
+            
             // Titres
             html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
             html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
             html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-
+            
             // Gras et italique
             html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
             html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
             html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
+            
             // Listes non ordonnées
             html = html.replace(/^\- (.+)$/gim, '<li>$1</li>');
             html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-
+            
             // Séparateurs
             html = html.replace(/^---$/gim, '<hr>');
-
+            
             // Paragraphes
             html = html.split('\n\n').map(para => {
                 para = para.trim();
@@ -251,7 +225,7 @@
                 }
                 return para ? `<p>${para}</p>` : '';
             }).join('\n');
-
+            
             return html;
         }
 
@@ -263,7 +237,7 @@
         }
 
         // Charger au chargement de la page
-        document.addEventListener('DOMContentLoaded', loadActualites);
+        document.addEventListener('DOMContentLoaded', loadArticle);
     </script>
 </body>
 
