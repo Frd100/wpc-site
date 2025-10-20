@@ -16,7 +16,7 @@ content:
     label: Actualités
     type: collection
     path: content/actualites
-    filename: "{year}-{month}-{day}-{title}.md"
+    filename: "{year}-{month}-{day}-{slug}.md"
     format: yaml-frontmatter
     view:
       layout: list
