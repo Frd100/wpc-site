@@ -291,7 +291,7 @@
                 let processedPara = para;
 
                 // Images Markdown
-                processedPara = processedPara.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;">');
+                processedPara = processedPara.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;" onerror="this.style.display=\'none\'">');
 
                 // Liens Markdown
                 processedPara = processedPara.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
