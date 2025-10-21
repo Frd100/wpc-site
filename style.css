@@ -1472,8 +1472,8 @@ body {
         display: flex;
         flex-direction: column;
         min-height: auto;
-        background: #F5F6FA;
-        /* Fond gris pour la section contenu */
+        background: #1D49E3;
+        /* Fond bleu pour la section contenu */
     }
 
     .cmp-hero-fbv__image {
@@ -1495,8 +1495,8 @@ body {
         transform: none;
         padding: var(--spacing-2xl) var(--spacing-lg);
         z-index: 2;
-        background: #F5F6FA;
-        /* Fond gris pour la section contenu */
+        background: #1D49E3;
+        /* Fond bleu pour la section contenu */
         text-align: left;
     }
 
@@ -1504,14 +1504,14 @@ body {
         font-size: 2rem;
         /* Réduit de 2.5rem à 2rem pour mobile */
         margin-bottom: var(--spacing-md);
-        color: #212529;
+        color: white;
         text-align: left;
     }
 
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
         margin-bottom: var(--spacing-lg);
-        color: #666666;
+        color: white;
         text-align: left;
     }
 
