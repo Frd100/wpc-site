@@ -560,21 +560,30 @@ body {
 .cmp-hero-fbv {
     position: relative;
     width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     margin: 0;
     padding: 0;
     margin-top: 0;
-    /* Compensation appliquée au conteneur parent */
+    background: #051B2C;
+    /* Fond bleu foncé */
 }
 
 .cmp-hero-fbv__image {
-    grid-area: 1 / 1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
-    margin-top: 0;
-    padding-top: 0;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .cmp-hero-fbv__image img {
@@ -589,11 +598,13 @@ body {
 
 .cmp-hero-fbv__content {
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: var(--spacing-2xl);
     z-index: 2;
+    text-align: center;
+    max-width: 800px;
 }
 
 .cmp-hero-fbv__content-container {
@@ -1448,32 +1459,34 @@ body {
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
-        min-height: auto;
-        background: #1E4ADE;
-        /* Fond bleu pour la section contenu */
+        min-height: 100vh;
+        background: #051B2C;
+        /* Fond bleu foncé */
     }
 
     .cmp-hero-fbv__image {
-        order: 1;
-        /* Image EN PREMIER */
-        position: relative;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
-        height: 300px;
+        max-width: 600px;
+        height: auto;
         margin: 0;
         padding: 0;
+        z-index: 1;
     }
 
     .cmp-hero-fbv__content {
-        order: 2;
-        /* Contenu EN DESSOUS de l'image */
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        padding: var(--spacing-2xl) var(--spacing-lg);
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: var(--spacing-lg);
         z-index: 2;
-        background: #1E4ADE;
-        /* Fond bleu pour la section contenu */
+        text-align: center;
+        max-width: 90%;
+        background: transparent;
     }
 
     .cmp-hero-fbv__main-title {
