@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     const bubbleImage = document.querySelector('.cmp-hero-fbv__image');
     const heroSection = document.querySelector('.cmp-hero-fbv');
-    
+
     if (bubbleImage && heroSection) {
         window.addEventListener('scroll', function () {
             const scrolled = window.pageYOffset;
             const heroRect = heroSection.getBoundingClientRect();
-            
+
             // Effet de parallaxe seulement si la section est visible
             if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
                 const rate = scrolled * 0.3; // Vitesse de parallaxe plus lente
