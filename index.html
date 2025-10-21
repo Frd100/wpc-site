@@ -127,7 +127,7 @@
                 <!-- Lecteur YouTube à droite -->
                 <div class="cmp-about-image about-image">
                     <div id="player"
-                        style="width: 400px; height: 225px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border: 2px solid #ddd;">
+                        style="width: 400px; height: 225px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
                         <p>Chargement du lecteur YouTube...</p>
                     </div>
                 </div>
@@ -228,8 +228,8 @@
                     height: 225,
                     videoId: 'CWOC7CBeFVw',
                     playerVars: {
-                        start: 60,
-                        end: 75,
+                        start: 58,
+                        end: 77,
                         loop: 1,
                         playlist: 'CWOC7CBeFVw',
                         controls: 0,
@@ -261,7 +261,7 @@
 
         function onPlayerStateChange(event) {
             if (event.data === YT.PlayerState.ENDED) {
-                player.seekTo(60);
+                player.seekTo(58);
                 player.playVideo();
             }
         }
