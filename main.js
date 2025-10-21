@@ -12,6 +12,20 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /**
+     * PARALLAX EFFECT FOR BUBBLE IMAGE
+     * Effet de parallaxe pour l'image bubble - reste fixe pendant le scroll
+     * Crée l'illusion que l'image disparaît sous le conteneur
+     */
+    const bubbleImage = document.querySelector('.cmp-hero-fbv__image');
+    if (bubbleImage) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5; // Vitesse de parallaxe (ajustable)
+            bubbleImage.style.transform = `translateX(-50%) translateY(${rate}px)`;
+        });
+    }
+
+    /**
      * SMOOTH SCROLLING
      * Gère le défilement fluide vers les ancres (#section)
      * Améliore l'expérience utilisateur lors de la navigation interne
