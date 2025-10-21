@@ -116,7 +116,7 @@ wpc-site/
 
 ### 2.8. Pages légales
 
-- `confidentialite.html`, `mentions-legales.html`, `exercer-mes-droits.html` : Contenu statique informant les utilisateurs sur les aspects légaux et la gestion de leurs données, en conformité avec le RGPD. La page "Exercer mes droits" utilise un lien `mailto` pour pré-remplir un email.
+-   `confidentialite.html`, `mentions-legales.html`, `exercer-mes-droits.html` : Contenu statique informant les utilisateurs sur les aspects légaux et la gestion de leurs données, en conformité avec le RGPD. La page "Exercer mes droits" utilise un lien `mailto` pour pré-remplir un email.
 
 ### 2.9. Navigation (`nav.html`)
 
@@ -242,7 +242,6 @@ Contenu de l'article en Markdown...
 ### 6.1. Performance
 
 -   **Images WebP** : Utilisation du format d'image WebP, plus léger que les formats traditionnels.
--   **Optimisation FFmpeg** : Compression avancée des médias avec FFmpeg pour des tailles optimales (homepage.webp: 128K, homepage-mobile.webp: 24K).
 -   **Lazy Loading** : L'attribut `loading="lazy"` est utilisé sur les images pour ne les charger que lorsqu'elles deviennent visibles.
 -   **Cache busting** : Versioning des fichiers CSS (`?v=2`) pour forcer le rechargement.
 -   **API GitHub** : Gestion des limites de taux (60 requêtes/heure) avec fallback.
@@ -335,63 +334,28 @@ Contenu de l'article en Markdown...
 -   **Navigation clavier** : Support complet de la navigation au clavier
 -   **Contraste** : Couleurs optimisées pour la lisibilité
 
+## 10. Recommandations futures
 
-## 10. Structure des articles actuels
+### 10.1. Performance
 
-### 10.1. Articles publiés
+-   **Minification** : Minifier les fichiers CSS et JS en production
+-   **CDN** : Utilisation d'un CDN pour les ressources statiques
+-   **Compression** : Activation de la compression gzip
 
-Le site contient actuellement plusieurs articles d'actualités :
+### 10.2. Fonctionnalités
 
-1. **"La simulation neuronale avancée au service de l'accélération et de la performance du développement de produits industriels"**
-   - Date : 2025-01-30
-   - Type : Article
-   - Auteur : West Paris Consulting
-   - Contenu : Analyse de l'impact de l'IA sur l'industrie manufacturière
+-   **Recherche** : Ajout d'une fonction de recherche dans les articles
+-   **Filtres** : Filtrage des articles par type ou date
+-   **Pagination** : Gestion des grandes listes d'articles
 
-2. **"Grandes et petites entreprises : plus de complémentarité pour plus de compétitivité"**
-   - Date : 2025-07-03
-   - Type : Étude
-   - Auteur : West Paris Consulting
-   - Contenu : Analyse de la collaboration inter-entreprises
+### 10.3. Analytics
 
-### 10.2. Système de gestion des articles
-
-- **Front Matter YAML** : Métadonnées structurées pour chaque article
-- **Parsing automatique** : Conversion Markdown vers HTML
-- **Filtrage** : Seuls les articles avec `published: true` sont affichés
-- **Types multiples** : Support de différents types de publications
-
-## 11. Conformité et légalité
-
-### 11.1. RGPD
-
-- **Politique de confidentialité** : Page dédiée expliquant la collecte et le traitement des données
-- **Exercice des droits** : Page permettant aux utilisateurs d'exercer leurs droits RGPD
-- **Externalisation** : Utilisation de Tally pour les formulaires, simplifiant la conformité
-
-### 11.2. Mentions légales
-
-- **Informations complètes** : Nom de l'association, adresse, responsable de publication
-- **Hébergement** : Informations sur GitHub Pages
-- **Contact** : Coordonnées de l'association
-
-## 12. Optimisations techniques
-
-### 12.1. Chargement des ressources
-
-- **Preconnect** : Optimisation du chargement des polices Google Fonts
-- **Lazy loading** : Images chargées uniquement quand nécessaire
-- **Cache busting** : Versioning des fichiers CSS pour forcer le rechargement
-- **Optimisation médias** : FFmpeg utilisé pour la compression avancée des images WebP (total médias ~800K)
-
-### 12.2. API GitHub
-
-- **Limites de taux** : Gestion des 60 requêtes/heure de l'API GitHub
-- **Fallback** : Gestion des erreurs de chargement
-- **Parsing robuste** : Support de différents formats de front matter
+-   **Google Analytics** : Intégration pour le suivi des performances
+-   **Heatmaps** : Analyse du comportement utilisateur
+-   **A/B Testing** : Tests d'optimisation de l'interface
 
 ---
 
-*Documentation mise à jour le : 20 janvier 2025*
-*Version du site : 2.1*
-*Dernière modification : Analyse complète et mise à jour de la documentation technique*
+*Documentation mise à jour le : $(date)*
+*Version du site : 2.0*
+*Dernière modification : Ajout du système CMS et optimisations UX*
