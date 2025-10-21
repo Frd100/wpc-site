@@ -229,7 +229,6 @@
                     videoId: 'CWOC7CBeFVw',
                     playerVars: {
                         start: 8,
-                        end: 23,
                         loop: 1,
                         playlist: 'CWOC7CBeFVw',
                         controls: 0,
@@ -257,12 +256,27 @@
             player.mute();
             // Lancer la vidéo automatiquement
             player.playVideo();
+            // Démarrer la vérification du temps
+            setInterval(checkTime, 1000);
         }
 
         function onPlayerStateChange(event) {
+            // Vérifier toutes les secondes si on a dépassé 23s
+            if (event.data === YT.PlayerState.PLAYING) {
+                checkTime();
+            }
             if (event.data === YT.PlayerState.ENDED) {
                 player.seekTo(8);
                 player.playVideo();
+            }
+        }
+        
+        function checkTime() {
+            if (player && player.getCurrentTime) {
+                const currentTime = player.getCurrentTime();
+                if (currentTime >= 23) {
+                    player.seekTo(8);
+                }
             }
         }
 
