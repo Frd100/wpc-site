@@ -124,10 +124,13 @@
                         faisant de nous le pont idéal entre l'excellence académique et les défis du monde professionnel.
                     </p>
                 </div>
-                <!-- Image à droite -->
+                <!-- Lecteur YouTube à droite -->
                 <div class="cmp-about-image about-image">
-                    <img src="ladefense.webp"
-                        alt="Vue sur le parvis de La Défense, illustrant l'ancrage de West Paris Consulting à Nanterre">
+                    <div id="player"></div>
+                    <div style="margin-top:10px;">
+                        <button id="playBtn">▶️ Lecture</button>
+                        <button id="pauseBtn">⏸️ Pause</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -206,6 +209,48 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: 'CWOC7CBeFVw', // ID de ta vidéo
+                playerVars: {
+                    start: 60,       // début (en secondes)
+                    end: 75,         // fin (en secondes)
+                    loop: 1,
+                    playlist: 'CWOC7CBeFVw',
+                    controls: 0,
+                    modestbranding: 1,
+                    showinfo: 0,
+                    rel: 0,
+                    fs: 0,
+                    mute: 1,         // vidéo muette
+                    autoplay: 0
+                },
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Met le son à 0 par sécurité (même si mute=1)
+            player.mute();
+        }
+
+        function onPlayerStateChange(event) {
+            // Relance automatiquement la boucle
+            if (event.data === YT.PlayerState.ENDED) {
+                player.seekTo(60); // recommence à 60s
+                player.playVideo();
+            }
+        }
+
+        document.getElementById('playBtn').onclick = () => player.playVideo();
+        document.getElementById('pauseBtn').onclick = () => player.pauseVideo();
+    </script>
 </body>
 
 </html>
