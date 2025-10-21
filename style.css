@@ -1460,35 +1460,32 @@ body {
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
-        background: #051B2C;
-        /* Fond bleu foncé */
+        min-height: auto;
+        background: #1E4ADE;
+        /* Fond bleu pour la section contenu */
     }
 
     .cmp-hero-fbv__image {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        order: 1;
+        /* Image EN PREMIER */
+        position: relative;
         width: 100%;
-        max-width: 500px;
-        height: 40vh;
+        height: 300px;
         margin: 0;
         padding: 0;
-        z-index: 1;
     }
 
     .cmp-hero-fbv__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: var(--spacing-lg);
+        order: 2;
+        /* Contenu EN DESSOUS de l'image */
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        padding: var(--spacing-2xl) var(--spacing-lg);
         z-index: 2;
-        text-align: center;
-        max-width: 90%;
-        width: 100%;
-        background: transparent;
+        background: #1E4ADE;
+        /* Fond bleu pour la section contenu */
     }
 
     .cmp-hero-fbv__main-title {
