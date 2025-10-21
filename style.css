@@ -1520,13 +1520,14 @@ body {
 /* Styles pour le lecteur YouTube */
 #player {
     width: 100%;
-    height: 400px;
+    height: 225px;
     max-width: 400px;
     margin: 0 auto;
     display: block;
 }
 
-#playBtn, #pauseBtn {
+#playBtn,
+#pauseBtn {
     background: #1E4ADE;
     color: white;
     border: none;
@@ -1537,7 +1538,8 @@ body {
     font-size: 14px;
 }
 
-#playBtn:hover, #pauseBtn:hover {
+#playBtn:hover,
+#pauseBtn:hover {
     background: #0D3BC7;
 }
 

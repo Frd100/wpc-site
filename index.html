@@ -126,12 +126,17 @@
                 </div>
                 <!-- Lecteur YouTube à droite -->
                 <div class="cmp-about-image about-image">
-                    <div id="player" style="width: 400px; height: 400px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border: 2px solid #ddd;">
+                    <div id="player"
+                        style="width: 400px; height: 225px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border: 2px solid #ddd;">
                         <p>Chargement du lecteur YouTube...</p>
                     </div>
                     <div style="margin-top:10px; text-align: center;">
-                        <button id="playBtn" style="background: #1E4ADE; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer;">▶️ Lecture</button>
-                        <button id="pauseBtn" style="background: #1E4ADE; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer;">⏸️ Pause</button>
+                        <button id="playBtn"
+                            style="background: #1E4ADE; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer;">▶️
+                            Lecture</button>
+                        <button id="pauseBtn"
+                            style="background: #1E4ADE; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer;">⏸️
+                            Pause</button>
                     </div>
                 </div>
             </div>
@@ -214,7 +219,7 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let player;
-        
+
         // Vérifier si l'API YouTube est chargée
         function checkYouTubeAPI() {
             if (typeof YT !== 'undefined' && YT.Player) {
@@ -223,12 +228,12 @@
                 setTimeout(checkYouTubeAPI, 100);
             }
         }
-        
+
         function initPlayer() {
             try {
                 player = new YT.Player('player', {
                     width: 400,
-                    height: 400,
+                    height: 225,
                     videoId: 'CWOC7CBeFVw',
                     playerVars: {
                         start: 60,
@@ -254,38 +259,38 @@
                 document.getElementById('player').innerHTML = '<p>Erreur de chargement du lecteur YouTube</p>';
             }
         }
-        
+
         function onPlayerReady(event) {
             console.log('Lecteur YouTube prêt');
             player.mute();
         }
-        
+
         function onPlayerStateChange(event) {
             if (event.data === YT.PlayerState.ENDED) {
                 player.seekTo(60);
                 player.playVideo();
             }
         }
-        
+
         function onPlayerError(event) {
             console.error('Erreur du lecteur YouTube:', event.data);
             document.getElementById('player').innerHTML = '<p>Erreur de lecture de la vidéo</p>';
         }
-        
+
         // Initialiser quand l'API est prête
         function onYouTubeIframeAPIReady() {
             console.log('API YouTube chargée');
             initPlayer();
         }
-        
+
         // Démarrer la vérification
         checkYouTubeAPI();
-        
+
         // Gestion des boutons
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const playBtn = document.getElementById('playBtn');
             const pauseBtn = document.getElementById('pauseBtn');
-            
+
             if (playBtn) {
                 playBtn.onclick = () => {
                     if (player && player.playVideo) {
@@ -293,7 +298,7 @@
                     }
                 };
             }
-            
+
             if (pauseBtn) {
                 pauseBtn.onclick = () => {
                     if (player && player.pauseVideo) {
