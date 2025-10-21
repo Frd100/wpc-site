@@ -13,15 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
-     * Effet de parallaxe pour l'image bubble - reste fixe pendant le scroll
-     * Crée l'illusion que l'image disparaît sous le conteneur
+     * Effet de parallaxe subtil pour l'image bubble dans le conteneur
+     * L'image reste dans le conteneur mais bouge légèrement pendant le scroll
      */
     const bubbleImage = document.querySelector('.cmp-hero-fbv__image');
-    if (bubbleImage) {
-        window.addEventListener('scroll', function() {
+    const heroSection = document.querySelector('.cmp-hero-fbv');
+    
+    if (bubbleImage && heroSection) {
+        window.addEventListener('scroll', function () {
             const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5; // Vitesse de parallaxe (ajustable)
-            bubbleImage.style.transform = `translateX(-50%) translateY(${rate}px)`;
+            const heroRect = heroSection.getBoundingClientRect();
+            
+            // Effet de parallaxe seulement si la section est visible
+            if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
+                const rate = scrolled * 0.3; // Vitesse de parallaxe plus lente
+                bubbleImage.style.transform = `translateX(-50%) translateY(${rate}px)`;
+            }
         });
     }
 
