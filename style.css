@@ -606,6 +606,7 @@ body {
     text-align: center;
     max-width: 800px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .cmp-hero-fbv__content-container {
@@ -621,6 +622,7 @@ body {
     color: var(--text-white);
     letter-spacing: -0.02em;
     text-shadow: none;
+    text-align: center;
 }
 
 .cmp-hero-fbv__subtitle {
@@ -631,6 +633,7 @@ body {
     margin: 0 0 var(--spacing-xl) 0;
     color: var(--text-white);
     opacity: 0.95;
+    text-align: center;
 }
 
 .cmp-hero-fbv__description {
@@ -644,6 +647,7 @@ body {
 
 .cmp-teaser__action-container {
     margin-top: var(--spacing-lg);
+    text-align: center;
 }
 
 .cmp-hero-fbv__action-link {
