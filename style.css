@@ -3619,15 +3619,10 @@ select.form-input {
 }
 
 .btn-secondary .arrow {
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    transition: transform 0.3s ease;
     color: white;
-}
-
-.btn-secondary:hover .arrow {
-    transform: translateX(4px);
 }
 
 /* Responsive pour article */
