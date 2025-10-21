@@ -575,13 +575,13 @@ body {
 
 .cmp-hero-fbv__image {
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
     width: 100%;
     max-width: 600px;
-    height: 50vh;
+    height: 60vh;
     margin: 0;
     padding: 0;
 }
@@ -607,6 +607,7 @@ body {
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .cmp-hero-fbv__content-container {
@@ -1663,19 +1664,28 @@ body {
     /* Desktop hero - image en arrière-plan, carré par-dessus */
     .cmp-hero-fbv {
         position: relative;
-        height: auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        height: 100vh;
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
         margin-top: 0;
+        background: #051B2C;
         /* Compensation appliquée au conteneur parent */
     }
 
     .cmp-hero-fbv__image {
-        grid-area: 1 / 1;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1;
-        order: unset;
+        width: 100%;
+        max-width: 600px;
+        height: 60vh;
+        margin: 0;
+        padding: 0;
     }
 
     .cmp-hero-fbv__image img {
@@ -1687,11 +1697,16 @@ body {
 
     .cmp-hero-fbv__content {
         position: absolute;
-        left: 0;
         top: 50%;
-        transform: translateY(-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
         padding: var(--spacing-2xl);
         z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
 
 }
