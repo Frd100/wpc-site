@@ -228,8 +228,8 @@
                     height: 225,
                     videoId: 'CWOC7CBeFVw',
                     playerVars: {
-                        start: 58,
-                        end: 77,
+                        start: 7,
+                        end: 23,
                         loop: 1,
                         playlist: 'CWOC7CBeFVw',
                         controls: 0,
@@ -261,7 +261,7 @@
 
         function onPlayerStateChange(event) {
             if (event.data === YT.PlayerState.ENDED) {
-                player.seekTo(58);
+                player.seekTo(7);
                 player.playVideo();
             }
         }
