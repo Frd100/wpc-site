@@ -580,8 +580,8 @@ body {
     transform: translateX(-50%);
     z-index: 1;
     width: 100%;
-    max-width: 800px;
-    height: auto;
+    max-width: 600px;
+    height: 50vh;
     margin: 0;
     padding: 0;
 }
@@ -589,8 +589,8 @@ body {
 .cmp-hero-fbv__image img {
     width: 100%;
     height: auto;
-    object-fit: scale-down;
-    object-position: center center;
+    object-fit: contain;
+    object-position: center bottom;
     margin: 0;
     padding: 0;
     display: block;
@@ -598,13 +598,14 @@ body {
 
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     padding: var(--spacing-2xl);
     z-index: 2;
     text-align: center;
     max-width: 800px;
+    width: 100%;
 }
 
 .cmp-hero-fbv__content-container {
@@ -1470,8 +1471,8 @@ body {
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        max-width: 600px;
-        height: auto;
+        max-width: 500px;
+        height: 40vh;
         margin: 0;
         padding: 0;
         z-index: 1;
@@ -1479,13 +1480,14 @@ body {
 
     .cmp-hero-fbv__content {
         position: absolute;
-        top: 15%;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         padding: var(--spacing-lg);
         z-index: 2;
         text-align: center;
         max-width: 90%;
+        width: 100%;
         background: transparent;
     }
 
