@@ -4,8 +4,8 @@
 :root {
     /* WPC Primary Colors */
     --wpc-blue: #1E4ADE;
-    --wpc-blue-light: #0047AB;
-    --wpc-blue-dark: #002366;
+    --wpc-blue-light: #1E4ADE;
+    --wpc-blue-dark: #1E4ADE;
     --wpc-blue-hero: #1A365D;
 
     /* WPC Neutrals */
@@ -648,7 +648,7 @@ body {
 }
 
 .cmp-hero-fbv__action-link:hover {
-    background: #00AAF4;
+    background: #1E4ADE;
     color: #000000;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -1449,7 +1449,7 @@ body {
         display: flex;
         flex-direction: column;
         min-height: auto;
-        background: #1A365D;
+        background: #1E4ADE;
         /* Fond bleu pour la section contenu */
     }
 
@@ -1472,7 +1472,7 @@ body {
         transform: none;
         padding: var(--spacing-2xl) var(--spacing-lg);
         z-index: 2;
-        background: #1A365D;
+        background: #1E4ADE;
         /* Fond bleu pour la section contenu */
     }
 
