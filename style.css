@@ -575,7 +575,7 @@ body {
 
 .cmp-hero-fbv__image {
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -1677,7 +1677,7 @@ body {
 
     .cmp-hero-fbv__image {
         position: absolute;
-        bottom: 0;
+        bottom: -5px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
