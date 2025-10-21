@@ -246,7 +246,7 @@
                         rel: 0,
                         fs: 0,
                         mute: 1,
-                        autoplay: 0
+                        autoplay: 1
                     },
                     events: {
                         onReady: onPlayerReady,
@@ -263,6 +263,8 @@
         function onPlayerReady(event) {
             console.log('Lecteur YouTube prêt');
             player.mute();
+            // Lancer la vidéo automatiquement
+            player.playVideo();
         }
 
         function onPlayerStateChange(event) {
