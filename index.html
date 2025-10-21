@@ -126,10 +126,12 @@
                 </div>
                 <!-- Lecteur YouTube à droite -->
                 <div class="cmp-about-image about-image">
-                    <div id="player"></div>
-                    <div style="margin-top:10px;">
-                        <button id="playBtn">▶️ Lecture</button>
-                        <button id="pauseBtn">⏸️ Pause</button>
+                    <div id="player" style="width: 400px; height: 400px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border: 2px solid #ddd;">
+                        <p>Chargement du lecteur YouTube...</p>
+                    </div>
+                    <div style="margin-top:10px; text-align: center;">
+                        <button id="playBtn" style="background: #1E4ADE; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer;">▶️ Lecture</button>
+                        <button id="pauseBtn" style="background: #1E4ADE; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer;">⏸️ Pause</button>
                     </div>
                 </div>
             </div>
@@ -212,44 +214,94 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                videoId: 'CWOC7CBeFVw', // ID de ta vidéo
-                playerVars: {
-                    start: 60,       // début (en secondes)
-                    end: 75,         // fin (en secondes)
-                    loop: 1,
-                    playlist: 'CWOC7CBeFVw',
-                    controls: 0,
-                    modestbranding: 1,
-                    showinfo: 0,
-                    rel: 0,
-                    fs: 0,
-                    mute: 1,         // vidéo muette
-                    autoplay: 0
-                },
-                events: {
-                    onReady: onPlayerReady,
-                    onStateChange: onPlayerStateChange
-                }
-            });
+        
+        // Vérifier si l'API YouTube est chargée
+        function checkYouTubeAPI() {
+            if (typeof YT !== 'undefined' && YT.Player) {
+                initPlayer();
+            } else {
+                setTimeout(checkYouTubeAPI, 100);
+            }
         }
-
+        
+        function initPlayer() {
+            try {
+                player = new YT.Player('player', {
+                    width: 400,
+                    height: 400,
+                    videoId: 'CWOC7CBeFVw',
+                    playerVars: {
+                        start: 60,
+                        end: 75,
+                        loop: 1,
+                        playlist: 'CWOC7CBeFVw',
+                        controls: 0,
+                        modestbranding: 1,
+                        showinfo: 0,
+                        rel: 0,
+                        fs: 0,
+                        mute: 1,
+                        autoplay: 0
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange,
+                        onError: onPlayerError
+                    }
+                });
+            } catch (error) {
+                console.error('Erreur lors de l\'initialisation du lecteur YouTube:', error);
+                document.getElementById('player').innerHTML = '<p>Erreur de chargement du lecteur YouTube</p>';
+            }
+        }
+        
         function onPlayerReady(event) {
-            // Met le son à 0 par sécurité (même si mute=1)
+            console.log('Lecteur YouTube prêt');
             player.mute();
         }
-
+        
         function onPlayerStateChange(event) {
-            // Relance automatiquement la boucle
             if (event.data === YT.PlayerState.ENDED) {
-                player.seekTo(60); // recommence à 60s
+                player.seekTo(60);
                 player.playVideo();
             }
         }
-
-        document.getElementById('playBtn').onclick = () => player.playVideo();
-        document.getElementById('pauseBtn').onclick = () => player.pauseVideo();
+        
+        function onPlayerError(event) {
+            console.error('Erreur du lecteur YouTube:', event.data);
+            document.getElementById('player').innerHTML = '<p>Erreur de lecture de la vidéo</p>';
+        }
+        
+        // Initialiser quand l'API est prête
+        function onYouTubeIframeAPIReady() {
+            console.log('API YouTube chargée');
+            initPlayer();
+        }
+        
+        // Démarrer la vérification
+        checkYouTubeAPI();
+        
+        // Gestion des boutons
+        document.addEventListener('DOMContentLoaded', function() {
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            
+            if (playBtn) {
+                playBtn.onclick = () => {
+                    if (player && player.playVideo) {
+                        player.playVideo();
+                    }
+                };
+            }
+            
+            if (pauseBtn) {
+                pauseBtn.onclick = () => {
+                    if (player && player.pauseVideo) {
+                        player.pauseVideo();
+                    }
+                };
+            }
+        });
     </script>
 </body>
 
