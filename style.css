@@ -1477,13 +1477,8 @@ body {
     }
 
     .cmp-hero-fbv__image {
-        order: 1;
-        /* Image EN PREMIER */
-        position: relative;
-        width: 100%;
-        height: 300px;
-        margin: 0;
-        padding: 0;
+        display: none;
+        /* Masquer l'image bubble sur mobile */
     }
 
     .cmp-hero-fbv__content {
