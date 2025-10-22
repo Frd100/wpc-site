@@ -1536,6 +1536,11 @@ body {
         max-width: 100%;
     }
 
+    /* Masquer le rectangle bleu derrière l'iframe sur mobile */
+    .about-image div[style*="background: #0D3BC7"] {
+        display: none !important;
+    }
+
     /* Section "Notre ancrage à Nanterre" en colonne sur mobile */
     .about-container {
         flex-direction: column;
