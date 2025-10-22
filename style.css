@@ -2074,6 +2074,15 @@ body {
         text-align: center;
     }
 
+    /* Ordre des éléments de contact sur mobile */
+    .contact-info-item:first-child {
+        order: 1; /* Email en premier */
+    }
+
+    .contact-info-item:last-child {
+        order: 2; /* Adresse en second */
+    }
+
     .cmp-contact-title {
         font-size: 1.75rem;
     }
@@ -2280,6 +2289,15 @@ body {
         flex-direction: column;
         gap: var(--spacing-md);
         text-align: center;
+    }
+
+    /* Ordre des éléments de contact sur mobile pour nous-rejoindre */
+    .contact-info .contact-info-item:first-child {
+        order: 1; /* Email en premier */
+    }
+
+    .contact-info .contact-info-item:last-child {
+        order: 2; /* Adresse en second */
     }
 
     .form-title {
