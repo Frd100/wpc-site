@@ -1483,6 +1483,7 @@ body {
         display: flex;
         flex-direction: column;
         min-height: 25vh;
+        height: 25vh;
         background: white;
         /* Fond blanc pour la section contenu */
     }
@@ -1557,6 +1558,13 @@ body {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+    }
+
+    /* Override desktop hero styles for mobile */
+    .cmp-hero-fbv {
+        height: 25vh;
+        min-height: 25vh;
+        background: white;
     }
 
 }
