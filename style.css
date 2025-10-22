@@ -658,13 +658,13 @@ body {
 
     /* Bouton bleu sur mobile */
     .cmp-hero-fbv__action-link {
-        background: #1E4ADE;
-        color: white;
+        background: #1E4ADE !important;
+        color: white !important;
     }
 
     .cmp-hero-fbv__action-link:hover {
-        background: #0D3BC7;
-        color: white;
+        background: #0D3BC7 !important;
+        color: white !important;
     }
 }
 
@@ -1534,6 +1534,24 @@ body {
         width: 100%;
         height: 200px;
         max-width: 100%;
+    }
+
+    /* Section "Notre ancrage à Nanterre" en colonne sur mobile */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        order: 1;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .about-image {
+        order: 2;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
 }
