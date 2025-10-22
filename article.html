@@ -41,160 +41,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="style.css?v=2">
-    <style>
-        /* Hero Section Article */
-        .article-hero-section {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .article-hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .article-hero-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.50);
-        }
-
-        .article-hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-left: 4rem;
-            padding: 0 2rem;
-            padding-top: 14rem;
-            color: white;
-        }
-
-        .article-hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: white;
-            line-height: 1.2;
-        }
-
-        .article-hero-meta span {
-            color: white;
-            font-weight: 400;
-            vertical-align: baseline;
-            display: inline-block;
-        }
-
-        .meta-separator {
-            margin: 0 0.5rem;
-            opacity: 0.7;
-            vertical-align: baseline;
-        }
-
-        .article-type {
-            text-transform: capitalize;
-            vertical-align: baseline;
-            font-size: inherit;
-        }
-
-        .article-hero-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0;
-            padding-right: 4rem;
-            color: white;
-        }
-
-        /* Styles spécifiques pour la page article */
-        .cmp-article-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 10px;
-        }
-
-        .cmp-article-content {
-            padding: 0;
-        }
-
-        .article-content {
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-
-        .article-content h2 {
-            font-size: 1.8rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .article-content h3 {
-            font-size: 1.4rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #444;
-        }
-
-        .article-content p {
-            margin-bottom: 20px;
-        }
-
-        .article-content img {
-            margin: 20px 0;
-            border-radius: 0;
-            box-shadow: none;
-        }
-
-        .article-actions {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 768px) {
-            .article-hero-section {
-                height: 50vh;
-                min-height: 300px;
-            }
-
-            .article-hero-content {
-                padding: 0 1rem;
-                margin-left: 0;
-                padding-top: 5rem;
-                text-align: center;
-            }
-
-            .article-hero-title {
-                font-size: 2rem;
-                padding-right: 2rem;
-            }
-
-            .article-hero-meta {
-                font-size: 0.7rem;
-            }
-
-            .cmp-article-section {
-                padding: 15px;
-            }
-        }
-    </style>
 </head>
 
 <body class="page basicpage" id="page-wpc-article" data-cmp-link-accessibility-enabled=""
@@ -206,15 +52,9 @@
         <div id="nav-placeholder"></div>
 
         <!-- Hero Section Article -->
-        <div class="article-hero-section" id="article-hero">
-            <div class="article-hero-image" id="article-hero-image">
-                <!-- Image de l'article -->
-            </div>
-            <div class="article-hero-content">
-                <h1 class="article-hero-title" id="article-hero-title">Chargement...</h1>
-                <div class="article-hero-meta" id="article-hero-meta">
-                    <!-- Métadonnées de l'article -->
-                </div>
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title" id="article-title">Chargement...</h1>
             </div>
         </div>
 
@@ -226,12 +66,16 @@
                     <!-- Article complet -->
                     <article class="cmp-article-section">
                         <div class="cmp-article-content">
+                            <div class="article-meta" id="article-meta">
+                                <!-- Métadonnées de l'article -->
+                            </div>
                             <div class="article-content" id="article-content">
                                 <!-- Contenu de l'article -->
                             </div>
                             <div class="article-actions">
                                 <a href="actualites.html" class="btn-secondary">
-                                    <span class="arrow">←</span> Retour aux actualités
+                                    <span class="material-icons">arrow_back</span>
+                                    Retour aux actualités
                                 </a>
                             </div>
                         </div>
@@ -296,32 +140,21 @@
 
                 // Mettre à jour le titre de la page
                 document.title = `${article.title} - West Paris Consulting`;
-                document.getElementById('article-hero-title').textContent = article.title;
+                document.getElementById('article-title').textContent = article.title;
 
-                // Mettre à jour les métadonnées dans la hero section
+                // Mettre à jour les métadonnées
                 const date = new Date(article.date).toLocaleDateString('fr-FR', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                 });
 
-                let metaParts = [
-                    `<span class="article-date">${date}</span>`,
-                    `<span class="article-author">Par ${escapeHtml(article.author)}</span>`
-                ];
-
-                if (article.type) {
-                    metaParts.push(`<span class="article-type">${escapeHtml(article.type.toLowerCase())}</span>`);
-                }
-
-                let metaHtml = metaParts.join(' <span class="meta-separator">|</span> ');
-
-                document.getElementById('article-hero-meta').innerHTML = metaHtml;
-
-                // Mettre à jour l'image de la hero section
-                if (article.banner) {
-                    document.getElementById('article-hero-image').style.backgroundImage = `url(${article.banner})`;
-                }
+                document.getElementById('article-meta').innerHTML = `
+                    <div class="article-meta-content">
+                        <span class="article-date">${date}</span>
+                        <span class="article-author">Par ${escapeHtml(article.author)}</span>
+                    </div>
+                `;
 
                 // Mettre à jour le contenu
                 const htmlContent = markdownToHtml(article.body);
@@ -366,8 +199,6 @@
                 date: frontMatter.date || new Date().toISOString().split('T')[0],
                 author: frontMatter.author || 'Auteur inconnu',
                 excerpt: frontMatter.excerpt || '',
-                banner: frontMatter.banner || '',
-                type: frontMatter.type || 'Article',
                 body: body,
                 published: frontMatter.published !== false && frontMatter.published !== 'false'
             };
@@ -377,53 +208,30 @@
         function markdownToHtml(markdown) {
             let html = markdown;
 
-            // Traitement des paragraphes d'abord (avant de casser avec split)
+            // Titres
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+
+            // Gras et italique
+            html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+            html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+            // Listes non ordonnées
+            html = html.replace(/^\- (.+)$/gim, '<li>$1</li>');
+            html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+
+            // Séparateurs
+            html = html.replace(/^---$/gim, '<hr>');
+
+            // Paragraphes
             html = html.split('\n\n').map(para => {
                 para = para.trim();
-                if (!para) return '';
-
-                // Titres
-                if (para.match(/^### /)) {
-                    return para.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+                if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<hr')) {
+                    return para;
                 }
-                if (para.match(/^## /)) {
-                    return para.replace(/^## (.*$)/gim, '<h2>$1</h2>');
-                }
-                if (para.match(/^# /)) {
-                    return para.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-                }
-
-                // Séparateurs
-                if (para.match(/^---$/)) {
-                    return para.replace(/^---$/gim, '<hr>');
-                }
-
-                // Listes non ordonnées
-                if (para.match(/^\- /)) {
-                    const listItems = para.split('\n').map(item => {
-                        if (item.match(/^\- /)) {
-                            return item.replace(/^\- (.+)$/gim, '<li>$1</li>');
-                        }
-                        return item;
-                    }).join('');
-                    return `<ul>${listItems}</ul>`;
-                }
-
-                // Pour les autres paragraphes, traiter le contenu inline
-                let processedPara = para;
-
-                // Images Markdown
-                processedPara = processedPara.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%;height:auto;" onerror="this.style.display=\'none\'">');
-
-                // Liens Markdown
-                processedPara = processedPara.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
-
-                // Gras et italique
-                processedPara = processedPara.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-                processedPara = processedPara.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-                processedPara = processedPara.replace(/\*(.+?)\*/g, '<em>$1</em>');
-
-                return `<p>${processedPara}</p>`;
+                return para ? `<p>${para}</p>` : '';
             }).join('\n');
 
             return html;
