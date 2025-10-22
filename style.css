@@ -1576,7 +1576,7 @@ body {
 @media (max-width: 768px) {
     #player {
         width: 100%;
-        height: 215px;
+        height: 210px;
         max-width: 100%;
     }
 }
