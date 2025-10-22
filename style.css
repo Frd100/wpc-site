@@ -1482,8 +1482,8 @@ body {
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
-        min-height: 25vh;
-        height: 25vh;
+        min-height: 35vh;
+        height: 35vh;
         background: white;
         /* Fond blanc pour la section contenu */
     }
@@ -1562,8 +1562,8 @@ body {
 
     /* Override desktop hero styles for mobile */
     .cmp-hero-fbv {
-        height: 25vh;
-        min-height: 25vh;
+        height: 35vh;
+        min-height: 35vh;
         background: white;
     }
 
