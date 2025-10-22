@@ -1482,7 +1482,7 @@ body {
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
-        min-height: 30vh;
+        min-height: 25vh;
         background: white;
         /* Fond blanc pour la section contenu */
     }
@@ -1499,7 +1499,7 @@ body {
         left: auto;
         top: auto;
         transform: none;
-        padding: var(--spacing-2xl) var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-lg);
         z-index: 2;
         background: white;
         /* Fond blanc pour la section contenu */
@@ -1516,7 +1516,7 @@ body {
 
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
         color: #212529;
         text-align: left;
     }
