@@ -1533,7 +1533,7 @@ body {
     /* Ajuster la vidéo pour mobile */
     #player {
         width: 100%;
-        height: 200px;
+        height: 150px;
         max-width: 100%;
     }
 
