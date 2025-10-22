@@ -3066,24 +3066,6 @@ select.form-input {
     padding: 40px 0;
 }
 
-/* Section domaines avec fond bleu foncé */
-.section-domaines {
-    background-color: #051B2B;
-    padding: 40px 0;
-}
-
-/* Styles pour les éléments dans la section domaines avec fond bleu */
-.section-domaines .cmp-domaines-description {
-    color: white;
-}
-
-.section-domaines .cmp-domaine-pole__title {
-    color: white;
-}
-
-.section-domaines .cmp-domaine-pole__services li {
-    color: #E0E0E0;
-}
 
 .section-white {
     background: white;
