@@ -655,6 +655,17 @@ body {
     .cmp-teaser__action-container {
         text-align: left;
     }
+
+    /* Bouton bleu sur mobile */
+    .cmp-hero-fbv__action-link {
+        background: #1E4ADE;
+        color: white;
+    }
+
+    .cmp-hero-fbv__action-link:hover {
+        background: #0D3BC7;
+        color: white;
+    }
 }
 
 .cmp-hero-fbv__action-link {
@@ -1471,9 +1482,9 @@ body {
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
-        min-height: 50vh;
-        background: #1D49E3;
-        /* Fond bleu pour la section contenu */
+        min-height: 40vh;
+        background: white;
+        /* Fond blanc pour la section contenu */
     }
 
     .cmp-hero-fbv__image {
@@ -1490,8 +1501,8 @@ body {
         transform: none;
         padding: var(--spacing-2xl) var(--spacing-lg);
         z-index: 2;
-        background: #1D49E3;
-        /* Fond bleu pour la section contenu */
+        background: white;
+        /* Fond blanc pour la section contenu */
         text-align: left;
     }
 
@@ -1499,20 +1510,30 @@ body {
         font-size: 2rem;
         /* Réduit de 2.5rem à 2rem pour mobile */
         margin-bottom: var(--spacing-md);
-        color: white;
+        color: #212529;
         text-align: left;
     }
 
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
         margin-bottom: var(--spacing-lg);
-        color: white;
+        color: #212529;
         text-align: left;
     }
 
-    /* Masquer l'image La Défense sur mobile */
+    /* Afficher la vidéo sur mobile */
     .cmp-about-image {
-        display: none;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Ajuster la vidéo pour mobile */
+    #player {
+        width: 100%;
+        height: 200px;
+        max-width: 100%;
     }
 
 }
