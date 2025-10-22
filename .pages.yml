@@ -15,7 +15,7 @@ content:
     view:
       layout: list
       primary: title
-      fields: [title, date, author, published]
+      fields: [title, date, author, type, banner, published]
       sort: [date, title]
       default:
         sort: date
@@ -37,6 +37,30 @@ content:
         label: Résumé
         type: text
         required: true
+      - name: type
+        label: Type de publication
+        type: select
+        options:
+          values:
+            - label: Article
+              value: Article
+            - label: Rapport
+              value: Rapport
+            - label: Étude
+              value: Étude
+            - label: Publication
+              value: Publication
+            - label: Analyse
+              value: Analyse
+            - label: Recherche
+              value: Recherche
+        default: Article
+        required: true
+      - name: banner
+        label: Image de bannière
+        type: image
+        required: true
+        hint: "Cette image sera utilisée comme background de la hero section et image de preview dans la liste des articles"
       - name: published
         label: Publié
         type: boolean

@@ -58,7 +58,7 @@
         <div class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Actualités</h1>
-                <p class="hero-subtitle">Découvrez nos dernières publications et analyses</p>
+                <p class="hero-subtitle">Découvrez nos dernières publications.</p>
             </div>
         </div>
 
@@ -165,9 +165,8 @@
                     const safeExcerpt = escapeHtml(actualite.excerpt);
                     const safeType = escapeHtml(actualite.type || 'Article');
 
-                    // Extraire l'image du contenu Markdown
-                    const imageMatch = actualite.body.match(/!\[.*?\]\((.*?)\)/);
-                    const imageUrl = imageMatch ? imageMatch[1] : 'https://via.placeholder.com/400x200/00AAF4/FFFFFF?text=Article';
+                    // Utiliser l'image de bannière
+                    const imageUrl = actualite.banner || 'https://via.placeholder.com/400x200/00AAF4/FFFFFF?text=Article';
 
                     // Convertir le Markdown en HTML
                     const htmlContent = markdownToHtml(actualite.body);
@@ -226,6 +225,8 @@
                         date: data.date || new Date().toISOString().split('T')[0],
                         author: data.author || 'Auteur inconnu',
                         excerpt: data.excerpt || '',
+                        banner: data.banner || '',
+                        type: data.type || 'Article',
                         body: (parsed.content || '').trim(),
                         published: isPublished(data.published)
                     };
@@ -254,6 +255,8 @@
                 date: frontMatter.date || new Date().toISOString().split('T')[0],
                 author: frontMatter.author || 'Auteur inconnu',
                 excerpt: frontMatter.excerpt || '',
+                banner: frontMatter.banner || '',
+                type: frontMatter.type || 'Article',
                 body: (match[2] || '').trim(),
                 published: isPublished(frontMatter.published)
             };
