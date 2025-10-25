@@ -710,6 +710,8 @@ body {
 .cmp-hero-fbv__action-container {
     text-align: center;
     margin-top: var(--spacing-lg);
+    position: relative;
+    z-index: 10;
 }
 
 .cmp-hero-fbv__action-link {
@@ -3030,7 +3032,6 @@ select.form-input {
     margin-bottom: 1rem;
 }
 
-
 .cmp-hero-fbv__content .split {
     font-size: 4.2rem;
     font-weight: 700;
@@ -3049,6 +3050,8 @@ select.form-input {
     line-height: 1.4;
     margin: var(--spacing-lg) 0;
     font-weight: 700;
+    min-height: 3rem;
+    display: block;
     text-align: left;
 }
 
