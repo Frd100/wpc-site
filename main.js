@@ -179,16 +179,16 @@ document.addEventListener('DOMContentLoaded', function () {
             // Masquer les caractères initialement
             gsap.set(splitSubtitle.chars, {
                 opacity: 0,
-                scale: 0.3
+                y: "100%"
             });
 
             // Animation lettre par lettre du sous-titre
             gsap.to(splitSubtitle.chars, {
                 opacity: 1,
-                scale: 1,
-                duration: 0.4,
-                stagger: 0.03,
-                ease: "back.out(1.7)",
+                y: "0%",
+                duration: 0.5,
+                stagger: 0.04,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
