@@ -18,8 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function initTitleScrollAnimation() {
         // Vérifier si on est sur mobile
         if (window.innerWidth > 768) {
+            console.log('Animation Nanterre: Desktop détecté, animation désactivée');
             return;
         }
+
+        console.log('Animation Nanterre: Mobile détecté, initialisation...');
 
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
             console.error('GSAP ou plugins non chargés');
@@ -29,9 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
         const aboutSection = document.querySelector('.cmp-about-section');
-        const splitElement = document.querySelector('.split');
-
+        const splitElement = document.querySelector('.cmp-about-section .split');
+        
+        console.log('Animation Nanterre: Section trouvée:', aboutSection);
+        console.log('Animation Nanterre: Split element trouvé:', splitElement);
+        
         if (!aboutSection || !splitElement) {
+            console.log('Animation Nanterre: Éléments non trouvés, arrêt');
             return;
         }
 
@@ -52,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Animation de révélation avec masquage des lignes
+        console.log('Animation Nanterre: Configuration de l\'animation...');
         gsap.to(splitTitle.words, {
             y: "0%",
             duration: 0.8,
@@ -61,7 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 trigger: aboutSection,
                 start: "top 70%",
                 end: "bottom 30%",
-                toggleActions: "play none none none"
+                toggleActions: "play none none none",
+                onStart: () => console.log('Animation Nanterre: Animation déclenchée!'),
+                onComplete: () => console.log('Animation Nanterre: Animation terminée!')
             }
         });
 
