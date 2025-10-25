@@ -712,6 +712,10 @@ body {
     margin-top: var(--spacing-lg);
     position: relative;
     z-index: 10;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cmp-hero-fbv__action-link {
@@ -3050,9 +3054,10 @@ select.form-input {
     line-height: 1.4;
     margin: var(--spacing-lg) 0;
     font-weight: 700;
-    min-height: 3rem;
+    min-height: 4rem;
     display: block;
     text-align: left;
+    position: relative;
 }
 
 /* Taille de font pour mobile */
