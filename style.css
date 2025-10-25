@@ -669,6 +669,19 @@ body {
         text-align: left;
     }
 
+    /* Réduction du padding latéral sur mobile pour plus d'espace */
+    .main-navigation__container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .cmp-hero-fbv__content {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .cmp-about-section .cmp-about-container {
+        padding: var(--spacing-2xl) var(--spacing-sm);
+    }
+
     /* Bouton bleu sur mobile - spécificité élevée */
     .cmp-hero-fbv .cmp-hero-fbv__action-link {
         background: #1E4ADE;
