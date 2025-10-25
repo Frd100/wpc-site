@@ -168,30 +168,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Animation de masque pour le sous-titre
+        // Animation lettre par lettre pour le sous-titre
         const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
         if (subtitle) {
             const splitSubtitle = new SplitText(subtitle, {
-                type: "words,lines",
-                wordsClass: "word",
-                linesClass: "line"
+                type: "chars",
+                charsClass: "char"
             });
 
-            // Masquer les lignes du sous-titre
-            gsap.set(splitSubtitle.lines, {
-                overflow: "hidden"
+            // Masquer les caractères initialement
+            gsap.set(splitSubtitle.chars, {
+                opacity: 0,
+                y: 20,
+                rotationX: -90
             });
 
-            gsap.set(splitSubtitle.words, {
-                y: "100%"
-            });
-
-            // Animation de révélation du sous-titre
-            gsap.to(splitSubtitle.words, {
-                y: "0%",
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power2.out",
+            // Animation lettre par lettre du sous-titre
+            gsap.to(splitSubtitle.chars, {
+                opacity: 1,
+                y: 0,
+                rotationX: 0,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: "back.out(1.7)",
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
@@ -279,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 // Cache the navigation HTML
                 window.navCache = data;
-                
+
                 const navPlaceholder = document.getElementById('nav-placeholder');
                 if (navPlaceholder) {
                     navPlaceholder.innerHTML = data;
