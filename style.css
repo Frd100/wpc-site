@@ -4036,22 +4036,20 @@ select.form-input {
         /* Réduit pour les titres des étapes */
     }
 
-    body .cmp-about-section .about-title {
-        font-size: 4rem;
-        /* Augmenté drastiquement pour "Notre ancrage à Nanterre" sur mobile */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
+    body .cmp-about-section .container {
         text-align: center;
+        margin-bottom: 2rem;
     }
 
-    body .cmp-about-section .about-title .word {
-        opacity: 0;
-        transform: translateY(50px);
+    body .cmp-about-section .split {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #000000;
+        line-height: 1.2;
+        margin: 0;
     }
 
-    body .cmp-about-section .about-title .nanterre-red {
+    body .cmp-about-section .split .word {
         color: #dc2626;
         font-weight: 800;
     }

@@ -29,16 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
         const aboutSection = document.querySelector('.about-section');
-        const aboutTitle = document.querySelector('.about-title');
+        const splitElement = document.querySelector('.split');
         
-        if (!aboutSection || !aboutTitle) {
+        if (!aboutSection || !splitElement) {
             return;
         }
 
-        // SplitText pour séparer les mots
-        const splitTitle = new SplitText(aboutTitle, {
-            type: "words",
-            wordsClass: "word"
+        // SplitText pour séparer les mots et lignes
+        const splitTitle = new SplitText(splitElement, {
+            type: "words,lines",
+            wordsClass: "word",
+            linesClass: "line"
         });
 
         // Animation GSAP avec prepareText
