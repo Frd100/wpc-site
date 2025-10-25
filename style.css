@@ -1673,6 +1673,17 @@ body {
         text-align: left;
     }
 
+    .cmp-hero-fbv__action-container {
+        margin-left: calc(-1 * var(--spacing-sm));
+        margin-right: calc(-1 * var(--spacing-sm));
+    }
+
+    .cmp-hero-fbv__action-link {
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+    }
+
     .cmp-hero-fbv__main-title {
         font-size: 2rem;
         /* Réduit de 2.5rem à 2rem pour mobile */
