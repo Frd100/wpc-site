@@ -64,6 +64,23 @@ document.addEventListener('DOMContentLoaded', function () {
      * This ensures the navigation is consistent across all pages.
      */
     function loadNav() {
+        // Vérifier si la navigation est déjà en cache
+        if (window.navCache) {
+            const navPlaceholder = document.getElementById('nav-placeholder');
+            if (navPlaceholder) {
+                navPlaceholder.innerHTML = window.navCache;
+                setActiveNavLink();
+                initializeMobileMenu();
+            }
+            return;
+        }
+
+        // Afficher un indicateur de chargement
+        const navPlaceholder = document.getElementById('nav-placeholder');
+        if (navPlaceholder) {
+            navPlaceholder.innerHTML = '<div style="height: 60px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;"><div style="width: 20px; height: 20px; border: 2px solid #ddd; border-top: 2px solid #1E4ADE; border-radius: 50%; animation: spin 1s linear infinite;"></div></div>';
+        }
+
         fetch('nav.html')
             .then(response => {
                 if (!response.ok) {
@@ -72,6 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.text();
             })
             .then(data => {
+                // Mettre en cache la navigation
+                window.navCache = data;
+                
                 const navPlaceholder = document.getElementById('nav-placeholder');
                 if (navPlaceholder) {
                     navPlaceholder.innerHTML = data;
@@ -81,7 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => {
                 console.error('Error loading navigation:', error);
-                // Optionally, display an error message to the user
+                // Afficher une navigation de fallback
+                const navPlaceholder = document.getElementById('nav-placeholder');
+                if (navPlaceholder) {
+                    navPlaceholder.innerHTML = '<nav class="main-navigation"><div class="main-navigation__container"><div class="main-navigation__content"><div class="main-navigation__logo"><a href="index.html" class="main-navigation__logo-link"><img src="logo.svg" alt="WPC Logo" class="main-navigation__logo-image" loading="lazy"></a></div><div class="main-navigation__links"><a href="index.html" class="main-navigation__link"><span>Accueil</span></a><a href="domaines.html" class="main-navigation__link"><span>Nos Domaines</span></a><a href="equipe.html" class="main-navigation__link"><span>Notre Équipe</span></a><a href="actualites.html" class="main-navigation__link"><span>Actualités</span></a><a href="contact.html" class="main-navigation__link"><span>Contact</span></a></div></div></div></nav>';
+                }
             });
     }
 
@@ -99,6 +123,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.classList.add('active');
             }
         });
+    }
+
+    // Pré-charger la navigation pour éviter les délais
+    if (!window.navCache) {
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                window.navCache = data;
+            })
+            .catch(error => console.error('Error pre-loading navigation:', error));
     }
 
     // Load the navigation as soon as the DOM is ready

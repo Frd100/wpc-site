@@ -1145,16 +1145,16 @@ body {
         gap: var(--spacing-2xl);
         margin-left: 0;
     }
-    
+
     .cmp-footer__navigation {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
-    
+
     .cmp-footer__contact-info {
         text-align: center;
     }
-    
+
     .cmp-footer__nav-section {
         text-align: center;
     }
@@ -1224,6 +1224,12 @@ body {
 }
 
 /* ===== MOBILE-FIRST RESPONSIVE DESIGN ===== */
+
+/* Animation pour le spinner de chargement */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /* Mobile styles are the base (no media query needed) */
 body {
