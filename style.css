@@ -1143,16 +1143,16 @@ body {
         grid-template-columns: 1fr;
         gap: var(--spacing-2xl);
     }
-    
+
     .cmp-footer__navigation {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
     }
-    
+
     .cmp-footer__contact-info {
         text-align: center;
     }
-    
+
     .cmp-footer__nav-section {
         text-align: center;
     }
