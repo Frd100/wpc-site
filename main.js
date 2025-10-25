@@ -476,12 +476,34 @@ function initializeMobileMenu() {
         body.style.top = `-${scrollY}px`;
         body.style.width = '100%';
         body.dataset.scrollY = scrollY;
+
+        // Animation GSAP : glissement depuis la gauche
+        if (typeof gsap !== 'undefined') {
+            gsap.fromTo(mobileMenu, 
+                { x: "-100%", opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
+            );
+        }
     }
 
     function closeMenu() {
         const scrollY = body.dataset.scrollY || '0';
 
-        mobileMenu.classList.remove('active');
+        // Animation GSAP : glissement vers la gauche
+        if (typeof gsap !== 'undefined') {
+            gsap.to(mobileMenu, {
+                x: "-100%",
+                opacity: 0,
+                duration: 0.3,
+                ease: "power2.in",
+                onComplete: () => {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        } else {
+            mobileMenu.classList.remove('active');
+        }
+
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
