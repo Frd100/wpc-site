@@ -1144,7 +1144,7 @@ body {
         gap: var(--spacing-lg);
         align-items: center;
     }
-    
+
     .cmp-footer__contact-item {
         justify-content: center;
         text-align: center;
@@ -1161,6 +1161,7 @@ body {
         height: 100%;
         z-index: 1;
         overflow: hidden;
+        background: transparent;
     }
     
     .cmp-hero-fbv__video-bg iframe {
@@ -1172,6 +1173,7 @@ body {
         transform: translate(-50%, -50%) scale(1.2);
         border: none;
         pointer-events: none;
+        background: transparent;
     }
     
     /* Assurer que le contenu reste au-dessus de la vidéo */
@@ -1190,6 +1192,11 @@ body {
         height: 100%;
         background: rgba(0, 0, 0, 0.4);
         z-index: 1;
+    }
+    
+    /* Supprimer le fond blanc du hero section sur mobile */
+    .cmp-hero-fbv {
+        background: transparent !important;
     }
 }
 
