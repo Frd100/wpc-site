@@ -1677,6 +1677,8 @@ body {
         width: 100%;
         text-align: center;
         border-radius: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
     }
 
     .cmp-hero-fbv__main-title {
