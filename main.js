@@ -352,10 +352,20 @@ if (typeof module !== 'undefined' && module.exports) {
  */
 function initHeroVideoBackground() {
     // Vérifier si on est sur mobile
-    if (window.innerWidth > 768) return;
+    if (window.innerWidth > 768) {
+        console.log('Desktop détecté, vidéo background ignorée');
+        return;
+    }
 
+    console.log('Mobile détecté, initialisation de la vidéo background');
+    
     const videoContainer = document.getElementById('hero-video-bg');
-    if (!videoContainer) return;
+    if (!videoContainer) {
+        console.error('Conteneur hero-video-bg non trouvé');
+        return;
+    }
+
+    console.log('Conteneur trouvé, création de la vidéo');
 
     // Créer l'élément vidéo WebP
     const video = document.createElement('video');
@@ -368,9 +378,17 @@ function initHeroVideoBackground() {
     video.style.height = '100%';
     video.style.objectFit = 'cover';
     video.style.objectPosition = 'center';
+    video.style.backgroundColor = 'red'; // Debug: fond rouge pour voir si la vidéo est là
+
+    // Ajouter des événements de debug
+    video.addEventListener('loadstart', () => console.log('Vidéo: loadstart'));
+    video.addEventListener('loadeddata', () => console.log('Vidéo: loadeddata'));
+    video.addEventListener('canplay', () => console.log('Vidéo: canplay'));
+    video.addEventListener('error', (e) => console.error('Erreur vidéo:', e));
 
     // Ajouter la vidéo au conteneur
     videoContainer.appendChild(video);
+    console.log('Vidéo ajoutée au conteneur');
 }
 
 // Initialiser la vidéo background au chargement de la page
