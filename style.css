@@ -1694,7 +1694,7 @@ body {
     .cmp-hero-fbv {
         height: 60vh;
         min-height: 60vh;
-        background: transparent;
+        background: #F5F6FA;
     }
 
 }
