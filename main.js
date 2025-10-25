@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const aboutSection = document.querySelector('.cmp-about-section');
         const splitElement = document.querySelector('.cmp-about-section .split');
-        
+
         console.log('Animation Nanterre: Section trouvée:', aboutSection);
         console.log('Animation Nanterre: Split element trouvé:', splitElement);
-        
+
         if (!aboutSection || !splitElement) {
             console.log('Animation Nanterre: Éléments non trouvés, arrêt');
             return;
