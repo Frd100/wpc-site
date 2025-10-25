@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 // Mettre en cache la navigation
                 window.navCache = data;
-                
+
                 const navPlaceholder = document.getElementById('nav-placeholder');
                 if (navPlaceholder) {
                     navPlaceholder.innerHTML = data;
@@ -348,40 +348,33 @@ if (typeof module !== 'undefined' && module.exports) {
 
 /**
  * VIDEO BACKGROUND POUR MOBILE
- * Charge une vidéo YouTube en arrière-plan du hero section sur mobile uniquement
+ * Charge une vidéo MP4 en arrière-plan du hero section sur mobile uniquement
  */
 function initHeroVideoBackground() {
     // Vérifier si on est sur mobile
     if (window.innerWidth > 768) return;
-    
+
     const videoContainer = document.getElementById('hero-video-bg');
     if (!videoContainer) return;
-    
-    // Créer l'iframe YouTube
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/CWOC7CBeFVw?autoplay=1&mute=1&loop=1&playlist=CWOC7CBeFVw&controls=0&showinfo=0&rel=0&start=8&end=23';
-    iframe.allow = 'autoplay; encrypted-media';
-    iframe.allowFullscreen = true;
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = 'none';
-    
-    // Ajouter l'iframe au conteneur
-    videoContainer.appendChild(iframe);
+
+    // Créer l'élément vidéo MP4
+    const video = document.createElement('video');
+    video.src = 'herosectionvideo.mp4';
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.style.width = '100%';
+    video.style.height = '100%';
+    video.style.objectFit = 'cover';
+    video.style.objectPosition = 'center';
+
+    // Ajouter la vidéo au conteneur
+    videoContainer.appendChild(video);
 }
 
 // Initialiser la vidéo background au chargement de la page
-document.addEventListener('DOMContentLoaded', function() {
-    // Attendre que l'API YouTube soit chargée
-    if (typeof YT !== 'undefined' && YT.Player) {
-        initHeroVideoBackground();
-    } else {
-        // Attendre que l'API soit chargée
-        const checkYouTubeAPI = setInterval(() => {
-            if (typeof YT !== 'undefined' && YT.Player) {
-                clearInterval(checkYouTubeAPI);
-                initHeroVideoBackground();
-            }
-        }, 100);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    // Charger directement la vidéo MP4 (plus besoin d'attendre l'API YouTube)
+    initHeroVideoBackground();
 });
