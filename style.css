@@ -160,14 +160,15 @@
     min-height: 80px;
     /* Hauteur approximative de la navigation */
     display: block;
-    background: #F5F6FA; /* Même gris que le hero section */
+    background: #F5F6FA;
+    /* Même gris que le hero section */
 }
 
 /* Navigation grise sur mobile */
 @media (max-width: 768px) {
     .main-navigation {
         background: #F5F6FA;
-        border-bottom: 1px solid #E5E7EB;
+        border-bottom: 1px solid #F5F6FA;
     }
 }
 
