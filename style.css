@@ -1065,6 +1065,42 @@ body {
     gap: var(--spacing-xl);
 }
 
+.cmp-footer__contact {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cmp-footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    text-align: left;
+}
+
+.cmp-footer__contact-item .material-icons {
+    color: var(--wpc-blue);
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.cmp-footer__contact-item strong {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.cmp-footer__contact-item p {
+    font-size: var(--font-size-xs);
+    color: var(--text-primary);
+    opacity: 0.8;
+    margin: 0;
+    line-height: 1.4;
+}
+
 .cmp-footer__links {
     display: flex;
     flex-wrap: wrap;
@@ -1100,6 +1136,20 @@ body {
 /* Responsive styles moved to Mobile-First section above */
 
 /* Responsive styles moved to Mobile-First section above */
+
+/* Footer contact responsive */
+@media (max-width: 768px) {
+    .cmp-footer__contact {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+    
+    .cmp-footer__contact-item {
+        justify-content: center;
+        text-align: center;
+    }
+}
 
 /* ===== MOBILE-FIRST RESPONSIVE DESIGN ===== */
 
@@ -1581,7 +1631,7 @@ body {
         object-fit: cover;
         object-position: center;
     }
-    
+
     /* Forcer l'iframe YouTube à remplir complètement le conteneur */
     #player iframe {
         width: 100% !important;
