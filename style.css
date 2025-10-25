@@ -1625,14 +1625,14 @@ body {
         font-size: 2rem;
         /* Réduit de 2.5rem à 2rem pour mobile */
         margin-bottom: var(--spacing-md);
-        color: #212529;
+        color: white;
         text-align: left;
     }
 
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
         margin-bottom: var(--spacing-md);
-        color: #212529;
+        color: white;
         text-align: left;
     }
 
