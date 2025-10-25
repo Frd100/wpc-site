@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const heroSection = document.querySelector('.cmp-hero-fbv');
         const splitElement = document.querySelector('.cmp-hero-fbv .split');
-        
+
         if (!heroSection || !splitElement) {
             return;
         }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             y: "100%"
         });
 
-        // Animation de révélation avec masquage des lignes
+        // Animation de révélation avec masquage des lignes pour le titre
         gsap.to(splitTitle.words, {
             y: "0%",
             duration: 0.8,
@@ -118,6 +118,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleActions: "play none none none"
             }
         });
+
+        // Animation de masque pour le sous-titre
+        const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
+        if (subtitle) {
+            const splitSubtitle = new SplitText(subtitle, {
+                type: "words,lines",
+                wordsClass: "word",
+                linesClass: "line"
+            });
+
+            // Masquer les lignes du sous-titre
+            gsap.set(splitSubtitle.lines, {
+                overflow: "hidden"
+            });
+
+            gsap.set(splitSubtitle.words, {
+                y: "100%"
+            });
+
+            // Animation de révélation du sous-titre
+            gsap.to(splitSubtitle.words, {
+                y: "0%",
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
     }
 
     // Initialiser l'effet SplitText pour la hero section
