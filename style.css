@@ -3022,7 +3022,7 @@ select.form-input {
 }
 
 .cmp-hero-fbv__content .split {
-    font-size: 4.2rem;
+    font-size: clamp(2rem, 8vw, 4.2rem);
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
@@ -3054,7 +3054,7 @@ select.form-input {
     }
 
     .cmp-hero-fbv__content .split {
-        font-size: 2.5rem;
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
         white-space: nowrap;
         line-height: 1.1;
     }
