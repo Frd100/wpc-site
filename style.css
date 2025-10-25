@@ -1666,7 +1666,7 @@ body {
         left: 0;
         right: 0;
         transform: none;
-        padding: var(--spacing-lg) var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-sm);
         z-index: 2;
         background: #F5F6FA;
         /* Fond gris */
@@ -3501,6 +3501,12 @@ select.form-input {
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 40px 12px;
+    }
 }
 
 .about-text {
