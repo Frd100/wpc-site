@@ -1689,7 +1689,7 @@ body {
 /* Ajuster la vidéo pour mobile - doit être après la règle générale */
 @media (max-width: 768px) {
     #player {
-        display: none;
+        display: none !important;
     }
 }
 
