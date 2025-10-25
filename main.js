@@ -35,20 +35,28 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // SplitText pour séparer les mots et lignes
+        // SplitText pour séparer les mots et lignes avec masquage
         const splitTitle = new SplitText(splitElement, {
             type: "words,lines",
             wordsClass: "word",
             linesClass: "line"
         });
 
-        // Animation GSAP avec prepareText
-        gsap.set(splitTitle.words, {
-            opacity: 0,
-            y: 50
+        // Masquer les lignes initialement
+        gsap.set(splitTitle.lines, {
+            overflow: "hidden"
         });
 
-        let tl = gsap.timeline({
+        gsap.set(splitTitle.words, {
+            y: "100%"
+        });
+
+        // Animation de révélation avec masquage des lignes
+        gsap.to(splitTitle.words, {
+            y: "0%",
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
             scrollTrigger: {
                 trigger: aboutSection,
                 start: "top 70%",
@@ -57,34 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        tl.to(splitTitle.words, {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.3,
-            ease: "power2.out"
-        });
-
-        // Bouton replay
-        const replayBtn = document.getElementById('replay-btn');
-        if (replayBtn) {
-            replayBtn.addEventListener('click', () => {
-                // Réinitialiser l'animation
-                gsap.set(splitTitle.words, {
-                    opacity: 0,
-                    y: 50
-                });
-
-                // Relancer l'animation plus lentement
-                gsap.to(splitTitle.words, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    stagger: 0.5,
-                    ease: "power2.out"
-                });
-            });
-        }
     }
 
     // Initialiser l'animation du titre
@@ -92,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /**
      * EFFET SPLIT POUR HERO SECTION
-     * Animation de texte avec GSAP SplitText
+     * Animation de texte avec GSAP SplitText et masquage des lignes
      */
     function initHeroSplitText() {
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
@@ -104,29 +84,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const heroSection = document.querySelector('.cmp-hero-fbv');
         const splitElement = document.querySelector('.cmp-hero-fbv .split');
-
+        
         if (!heroSection || !splitElement) {
             return;
         }
 
-        // SplitText pour séparer les mots et lignes
+        // SplitText pour séparer les mots et lignes avec masquage
         const splitTitle = new SplitText(splitElement, {
             type: "words,lines",
             wordsClass: "word",
             linesClass: "line"
         });
 
-        // Animation GSAP
-        gsap.set(splitTitle.words, {
-            opacity: 0,
-            y: 50
+        // Masquer les lignes initialement
+        gsap.set(splitTitle.lines, {
+            overflow: "hidden"
         });
 
+        gsap.set(splitTitle.words, {
+            y: "100%"
+        });
+
+        // Animation de révélation avec masquage des lignes
         gsap.to(splitTitle.words, {
-            opacity: 1,
-            y: 0,
+            y: "0%",
             duration: 0.8,
-            stagger: 0.3,
+            stagger: 0.1,
             ease: "power2.out",
             scrollTrigger: {
                 trigger: heroSection,
