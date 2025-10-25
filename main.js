@@ -138,24 +138,45 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Animation d'écriture pour le titre avec préservation du <br>
-        const originalTitleText = splitElement.textContent;
+        // Animation d'écriture pour le titre ligne par ligne
+        const line1 = splitElement.querySelector('.line1');
+        const line2 = splitElement.querySelector('.line2');
         
-        // Vider le titre initialement mais garder le <br>
-        splitElement.innerHTML = "<br>";
-        
-        // Animation d'écriture du titre
-        gsap.to(splitElement, {
-            text: originalTitleText,
-            duration: 2.5,
-            ease: "none",
-            scrollTrigger: {
-                trigger: heroSection,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none none"
-            }
-        });
+        if (line1 && line2) {
+            const originalLine1 = line1.textContent;
+            const originalLine2 = line2.textContent;
+            
+            // Vider les lignes initialement
+            gsap.set(line1, { text: "" });
+            gsap.set(line2, { text: "" });
+            
+            // Animation de la première ligne
+            gsap.to(line1, {
+                text: originalLine1,
+                duration: 1.2,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            // Animation de la deuxième ligne avec délai
+            gsap.to(line2, {
+                text: originalLine2,
+                duration: 1.2,
+                ease: "none",
+                delay: 1.2,
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
 
         // Animation d'écriture pour le sous-titre
         const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
