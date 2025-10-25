@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             y: "100%"
         });
 
-        // Animation de révélation avec masquage des lignes
+        // Animation de révélation avec masquage des lignes pour le titre
         console.log('Animation Nanterre: Configuration de l\'animation...');
         gsap.to(splitTitle.words, {
             y: "0%",
@@ -74,6 +74,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 onComplete: () => console.log('Animation Nanterre: Animation terminée!')
             }
         });
+
+        // Animation de masquage pour les paragraphes
+        const paragraphs = document.querySelectorAll('.cmp-about-section .about-paragraph');
+        if (paragraphs.length > 0) {
+            console.log('Animation Nanterre: Paragraphes trouvés:', paragraphs.length);
+            
+            // SplitText pour chaque paragraphe
+            paragraphs.forEach((paragraph, index) => {
+                const splitParagraph = new SplitText(paragraph, {
+                    type: "words,lines",
+                    wordsClass: "word",
+                    linesClass: "line"
+                });
+
+                // Masquer les lignes initialement
+                gsap.set(splitParagraph.lines, {
+                    overflow: "hidden"
+                });
+
+                gsap.set(splitParagraph.words, {
+                    y: "100%"
+                });
+
+                // Animation de révélation avec délai pour chaque paragraphe
+                gsap.to(splitParagraph.words, {
+                    y: "0%",
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    delay: 0.5 + (index * 0.3), // Délai progressif
+                    scrollTrigger: {
+                        trigger: aboutSection,
+                        start: "top 70%",
+                        end: "bottom 30%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            });
+        }
 
     }
 
