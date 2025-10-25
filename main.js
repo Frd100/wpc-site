@@ -168,27 +168,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Animation lettre par lettre pour le sous-titre
+        // Animation d'écriture pour le sous-titre
         const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
         if (subtitle) {
-            const splitSubtitle = new SplitText(subtitle, {
-                type: "chars",
-                charsClass: "char"
+            const originalText = subtitle.textContent;
+            
+            // Vider le texte initialement
+            gsap.set(subtitle, {
+                text: ""
             });
 
-            // Masquer les caractères initialement
-            gsap.set(splitSubtitle.chars, {
-                opacity: 0,
-                y: "100%"
-            });
-
-            // Animation lettre par lettre du sous-titre
-            gsap.to(splitSubtitle.chars, {
-                opacity: 1,
-                y: "0%",
-                duration: 0.5,
-                stagger: 0.04,
-                ease: "power2.out",
+            // Animation d'écriture lettre par lettre
+            gsap.to(subtitle, {
+                text: originalText,
+                duration: 2,
+                ease: "none",
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
