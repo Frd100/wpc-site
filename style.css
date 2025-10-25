@@ -2986,6 +2986,13 @@ select.form-input {
     display: inline-block;
 }
 
+/* Taille de font pour mobile */
+@media (max-width: 768px) {
+    .text-scramble__text {
+        font-size: 2rem;
+    }
+}
+
 #scramble-cursor {
     width: 20px;
     height: 20px;
