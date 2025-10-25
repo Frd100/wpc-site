@@ -1229,9 +1229,9 @@ body {
         z-index: 1;
     }
 
-    /* Supprimer le fond blanc du hero section sur mobile */
+    /* Fond gris pour le hero section sur mobile */
     .cmp-hero-fbv {
-        background: transparent;
+        background: #F5F6FA;
     }
 }
 
@@ -1619,8 +1619,8 @@ body {
         flex-direction: column;
         min-height: 60vh;
         height: 60vh;
-        background: transparent;
-        /* Fond transparent pour laisser passer la vidéo */
+        background: #F5F6FA;
+        /* Fond gris */
     }
 
     .cmp-hero-fbv__image {
@@ -1638,8 +1638,8 @@ body {
         transform: none;
         padding: var(--spacing-lg) var(--spacing-lg);
         z-index: 2;
-        background: transparent;
-        /* Fond transparent pour laisser passer la vidéo */
+        background: #F5F6FA;
+        /* Fond gris */
         text-align: left;
     }
 

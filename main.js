@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        const aboutSection = document.querySelector('.about-section');
+        const aboutSection = document.querySelector('.cmp-about-section');
         const splitElement = document.querySelector('.split');
 
         if (!aboutSection || !splitElement) {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const heroSection = document.querySelector('.cmp-hero-fbv');
         const splitElement = document.querySelector('.cmp-hero-fbv .split');
-        
+
         if (!heroSection || !splitElement) {
             return;
         }
