@@ -1153,6 +1153,15 @@ body {
 
 /* Video Background pour Mobile uniquement */
 @media (max-width: 768px) {
+    /* Forcer la transparence sur tous les éléments du hero */
+    .hero-fbv,
+    .hero-fbv.teaser,
+    .cmp-hero-fbv__overlay-bg--cobalt-blue,
+    .dark-theme,
+    .cmp-button--standard-width {
+        background: transparent;
+    }
+    
     .cmp-hero-fbv__video-bg {
         position: absolute;
         top: 0;
@@ -1163,7 +1172,7 @@ body {
         overflow: hidden;
         background: transparent;
     }
-
+    
     .cmp-hero-fbv__video-bg iframe {
         position: absolute;
         top: 50%;
@@ -1175,13 +1184,14 @@ body {
         pointer-events: none;
         background: transparent;
     }
-
+    
     /* Assurer que le contenu reste au-dessus de la vidéo */
     .cmp-hero-fbv__content {
         position: relative;
         z-index: 2;
+        background: transparent;
     }
-
+    
     /* Overlay sombre pour améliorer la lisibilité du texte */
     .cmp-hero-fbv__video-bg::after {
         content: '';
@@ -1193,7 +1203,7 @@ body {
         background: rgba(0, 0, 0, 0.4);
         z-index: 1;
     }
-
+    
     /* Supprimer le fond blanc du hero section sur mobile */
     .cmp-hero-fbv {
         background: transparent;
@@ -1601,8 +1611,8 @@ body {
         transform: none;
         padding: var(--spacing-lg) var(--spacing-lg);
         z-index: 2;
-        background: white;
-        /* Fond blanc pour la section contenu */
+        background: transparent;
+        /* Fond transparent pour laisser passer la vidéo */
         text-align: left;
     }
 
