@@ -138,28 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // SplitText pour séparer les mots et lignes avec masquage
-        const splitTitle = new SplitText(splitElement, {
-            type: "words,lines",
-            wordsClass: "word",
-            linesClass: "line"
+        // Animation d'écriture pour le titre
+        const originalTitleText = splitElement.textContent;
+        
+        // Vider le titre initialement
+        gsap.set(splitElement, {
+            text: ""
         });
 
-        // Masquer les lignes initialement
-        gsap.set(splitTitle.lines, {
-            overflow: "hidden"
-        });
-
-        gsap.set(splitTitle.words, {
-            y: "100%"
-        });
-
-        // Animation de révélation avec masquage des lignes pour le titre
-        gsap.to(splitTitle.words, {
-            y: "0%",
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power2.out",
+        // Animation d'écriture du titre
+        gsap.to(splitElement, {
+            text: originalTitleText,
+            duration: 2.5,
+            ease: "none",
             scrollTrigger: {
                 trigger: heroSection,
                 start: "top 80%",
@@ -172,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
         if (subtitle) {
             const originalText = subtitle.textContent;
-            
+
             // Vider le texte initialement
             gsap.set(subtitle, {
                 text: ""
