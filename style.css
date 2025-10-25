@@ -697,7 +697,7 @@ body {
         color: white;
         white-space: nowrap;
         min-width: max-content;
-        font-size: 0.8rem;
+        font-size: 1.5rem;
         padding: var(--spacing-sm) var(--spacing-lg);
     }
 
