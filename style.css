@@ -1689,18 +1689,7 @@ body {
 /* Ajuster la vidéo pour mobile - doit être après la règle générale */
 @media (max-width: 768px) {
     #player {
-        width: 100%;
-        height: 199px;
-        max-width: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    /* Forcer l'iframe YouTube à remplir complètement le conteneur */
-    #player iframe {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
+        display: none;
     }
 }
 
