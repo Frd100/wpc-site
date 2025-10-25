@@ -399,6 +399,9 @@ function initializeMobileMenu() {
     // Vérification que les éléments existent avant de continuer
     if (!mobileToggle || !mobileMenu) return;
 
+    // Initialiser la position du menu (caché à gauche)
+    mobileMenu.style.transform = 'translateX(-100%)';
+
     /**
      * Toggle du menu mobile
      * Gère l'ouverture/fermeture et l'animation du bouton hamburger
@@ -483,6 +486,9 @@ function initializeMobileMenu() {
                 { x: "-100%" },
                 { x: 0, duration: 0.3, ease: "power2.out" }
             );
+        } else {
+            // Fallback CSS si GSAP pas disponible
+            mobileMenu.style.transform = 'translateX(0)';
         }
     }
 
@@ -500,7 +506,11 @@ function initializeMobileMenu() {
                 }
             });
         } else {
-            mobileMenu.classList.remove('active');
+            // Fallback CSS si GSAP pas disponible
+            mobileMenu.style.transform = 'translateX(-100%)';
+            setTimeout(() => {
+                mobileMenu.classList.remove('active');
+            }, 300);
         }
 
         mobileToggle.classList.remove('active');
