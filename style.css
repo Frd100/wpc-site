@@ -4037,8 +4037,8 @@ select.form-input {
     }
 
     body .cmp-about-section .about-title {
-        font-size: 1.5rem;
-        /* Réduit pour "Notre ancrage à Nanterre" */
+        font-size: 3rem;
+        /* Augmenté drastiquement pour "Notre ancrage à Nanterre" sur mobile */
     }
 
     body .cmp-services-section .cmp-services-subtitle {
