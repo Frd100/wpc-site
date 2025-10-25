@@ -569,8 +569,8 @@ body {
     margin: 0;
     padding: 0;
     margin-top: 0;
-    background: #051B2C;
-    /* Fond bleu foncé */
+    background: #F5F6FA;
+    /* Fond gris comme la section du bas */
 }
 
 .cmp-hero-fbv__image {
@@ -3011,11 +3011,11 @@ select.form-input {
         width: 95%;
         text-align: center;
     }
-    
+
     .cmp-hero-fbv__content .split {
         font-size: 2rem;
     }
-    
+
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
         margin: var(--spacing-md) 0;
@@ -4098,24 +4098,6 @@ select.form-input {
         font-weight: 800;
     }
 
-    .replay-button {
-        background: #1E4ADE;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .replay-button:hover {
-        background: #0D3BC7;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
 
     body .cmp-services-section .cmp-services-subtitle {
         font-size: 1.3rem;
