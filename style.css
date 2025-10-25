@@ -1000,7 +1000,7 @@ body {
 
 /* KPMG Exact About Section */
 .cmp-about-section {
-    background: var(--wpc-gray-900);
+    background: #202229;
     color: var(--text-white);
     padding: 0;
     margin: 0;
