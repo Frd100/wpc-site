@@ -12,8 +12,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /**
-     * ANIMATION TITRE "NOTRE ANCRAGE À NANTERRE" AU SCROLL
-     * Effet d'apparition verticale des mots au scroll sur mobile uniquement
+     * ANIMATION TITRE "NOTRE ANCRAGE À NANTERRE" AVEC GSAP PREPARETEXT
+     * Animation professionnelle avec GSAP sur mobile uniquement
      */
     function initTitleScrollAnimation() {
         // Vérifier si on est sur mobile
@@ -21,33 +21,45 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const aboutSection = document.querySelector('.about-section');
-        const titleWords = document.querySelectorAll('.about-title .word');
-
-        if (!aboutSection || !titleWords.length) {
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou plugins non chargés');
             return;
         }
 
-        // Observer pour déclencher l'animation quand la section entre dans le viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Animation simple mot par mot
-                    titleWords.forEach((word, index) => {
-                        setTimeout(() => {
-                            word.classList.add('visible');
-                        }, index * 300); // 300ms entre chaque mot
-                    });
-                    
-                    // Arrêter d'observer après le premier déclenchement
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.3 // Déclencher quand 30% de la section est visible
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        const aboutSection = document.querySelector('.about-section');
+        const aboutTitle = document.querySelector('.about-title');
+        
+        if (!aboutSection || !aboutTitle) {
+            return;
+        }
+
+        // SplitText pour séparer les mots
+        const splitTitle = new SplitText(aboutTitle, {
+            type: "words",
+            wordsClass: "word"
         });
 
-        observer.observe(aboutSection);
+        // Animation GSAP avec prepareText
+        gsap.set(splitTitle.words, {
+            opacity: 0,
+            y: 50
+        });
+
+        gsap.to(splitTitle.words, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: aboutSection,
+                start: "top 70%",
+                end: "bottom 30%",
+                toggleActions: "play none none none"
+            }
+        });
     }
 
     // Initialiser l'animation du titre
