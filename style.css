@@ -673,6 +673,10 @@ body {
     .cmp-hero-fbv .cmp-hero-fbv__action-link {
         background: #1E4ADE;
         color: white;
+        white-space: nowrap;
+        min-width: max-content;
+        font-size: 0.8rem;
+        padding: var(--spacing-sm) var(--spacing-lg);
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
@@ -699,6 +703,8 @@ body {
     border: none;
     border-radius: 0;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: max-content;
 }
 
 .cmp-hero-fbv__action-link:hover {
