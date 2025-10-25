@@ -67,6 +67,74 @@ document.addEventListener('DOMContentLoaded', function () {
     initTitleScrollAnimation();
 
     /**
+     * EFFET SCRAMBLETEXT POUR HERO SECTION
+     * Animation de texte avec effet de brouillage
+     */
+    function initScrambleText() {
+        const originalText = document.getElementById('scramble-text-original');
+        const scrambleTexts = document.querySelectorAll('.text-scramble__text span');
+        const cursor = document.getElementById('scramble-cursor');
+        
+        if (!originalText || !scrambleTexts.length) {
+            return;
+        }
+
+        const text = originalText.textContent;
+        const words = text.split(' ');
+        
+        // Fonction pour générer des caractères aléatoires
+        function getRandomChar() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+            return chars[Math.floor(Math.random() * chars.length)];
+        }
+
+        // Fonction pour animer un mot
+        function animateWord(wordIndex, targetWord) {
+            const span = scrambleTexts[wordIndex];
+            if (!span) return;
+
+            const iterations = 10;
+            let iteration = 0;
+
+            const interval = setInterval(() => {
+                span.textContent = targetWord
+                    .split('')
+                    .map((char, index) => {
+                        if (index < iteration) {
+                            return targetWord[index];
+                        }
+                        return getRandomChar();
+                    })
+                    .join('');
+
+                if (iteration >= targetWord.length) {
+                    clearInterval(interval);
+                    span.textContent = targetWord;
+                }
+
+                iteration += 1 / 3;
+            }, 50);
+        }
+
+        // Animer tous les mots avec un délai
+        words.forEach((word, index) => {
+            setTimeout(() => {
+                animateWord(index, word);
+            }, index * 200);
+        });
+
+        // Afficher le curseur après l'animation
+        setTimeout(() => {
+            if (cursor) {
+                cursor.style.display = 'inline-block';
+            }
+        }, words.length * 200 + 500);
+    }
+
+    // Initialiser l'effet ScrambleText
+    initScrambleText();
+
+    /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
      * Effet de parallaxe subtil pour l'image bubble dans le conteneur
      * L'image reste dans le conteneur mais bouge légèrement pendant le scroll
