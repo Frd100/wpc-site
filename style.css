@@ -598,16 +598,21 @@ body {
 
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
     padding: var(--spacing-2xl);
     z-index: 2;
-    text-align: center;
-    max-width: 1200px;
-    width: 95%;
     box-sizing: border-box;
-    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.hero-text-container {
+    max-width: 500px;
+    width: 100%;
 }
 
 .cmp-hero-fbv__content-container {
@@ -2984,12 +2989,36 @@ select.form-input {
     color: #000000;
     line-height: 1.2;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cmp-hero-fbv__subtitle {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.4;
+    margin: var(--spacing-lg) 0;
+    font-weight: 400;
 }
 
 /* Taille de font pour mobile */
 @media (max-width: 768px) {
+    .cmp-hero-fbv__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+        text-align: center;
+    }
+    
     .cmp-hero-fbv__content .split {
         font-size: 2rem;
+    }
+    
+    .cmp-hero-fbv__subtitle {
+        font-size: 1rem;
+        margin: var(--spacing-md) 0;
     }
 }
 
