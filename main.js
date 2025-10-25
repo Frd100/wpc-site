@@ -477,11 +477,11 @@ function initializeMobileMenu() {
         body.style.width = '100%';
         body.dataset.scrollY = scrollY;
 
-        // Animation GSAP : glissement depuis la gauche
+        // Animation GSAP : glissement simple depuis la gauche
         if (typeof gsap !== 'undefined') {
             gsap.fromTo(mobileMenu, 
-                { x: "-100%", opacity: 0 },
-                { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
+                { x: "-100%" },
+                { x: 0, duration: 0.3, ease: "power2.out" }
             );
         }
     }
@@ -489,11 +489,10 @@ function initializeMobileMenu() {
     function closeMenu() {
         const scrollY = body.dataset.scrollY || '0';
 
-        // Animation GSAP : glissement vers la gauche
+        // Animation GSAP : glissement simple vers la gauche
         if (typeof gsap !== 'undefined') {
             gsap.to(mobileMenu, {
                 x: "-100%",
-                opacity: 0,
                 duration: 0.3,
                 ease: "power2.in",
                 onComplete: () => {
