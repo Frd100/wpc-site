@@ -357,9 +357,9 @@ function initHeroVideoBackground() {
     const videoContainer = document.getElementById('hero-video-bg');
     if (!videoContainer) return;
 
-    // Créer l'élément vidéo MP4
+    // Créer l'élément vidéo WebP
     const video = document.createElement('video');
-    video.src = 'herosectionvideo.mp4';
+    video.src = 'herosectionvideo.webp';
     video.autoplay = true;
     video.muted = true;
     video.loop = true;
