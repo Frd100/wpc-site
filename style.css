@@ -2965,52 +2965,24 @@ select.form-input {
 }
 
 /* ===== EFFET SCRAMBLETEXT POUR HERO SECTION ===== */
-.text-scramble__content {
-    position: relative;
+/* ===== EFFET SPLIT POUR HERO SECTION ===== */
+.cmp-hero-fbv__content .container {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-#scramble-text-original {
-    opacity: 0;
-    position: absolute;
-    left: -9999px;
-}
-
-.text-scramble__text {
+.cmp-hero-fbv__content .split {
     font-size: 3.5rem;
     font-weight: 700;
     color: #000000;
     line-height: 1.2;
-    margin: 0 0 1rem 0;
-    position: relative;
-    display: inline-block;
+    margin: 0;
 }
 
 /* Taille de font pour mobile */
 @media (max-width: 768px) {
-    .text-scramble__text {
+    .cmp-hero-fbv__content .split {
         font-size: 2rem;
-    }
-}
-
-#scramble-cursor {
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    vertical-align: middle;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
     }
 }
 

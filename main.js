@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     opacity: 0,
                     y: 50
                 });
-                
+
                 // Relancer l'animation plus lentement
                 gsap.to(splitTitle.words, {
                     opacity: 1,
@@ -91,72 +91,54 @@ document.addEventListener('DOMContentLoaded', function () {
     initTitleScrollAnimation();
 
     /**
-     * EFFET SCRAMBLETEXT POUR HERO SECTION
-     * Animation de texte avec effet de brouillage
+     * EFFET SPLIT POUR HERO SECTION
+     * Animation de texte avec GSAP SplitText
      */
-    function initScrambleText() {
-        const originalText = document.getElementById('scramble-text-original');
-        const scrambleTexts = document.querySelectorAll('.text-scramble__text span');
-        const cursor = document.getElementById('scramble-cursor');
-
-        if (!originalText || !scrambleTexts.length) {
+    function initHeroSplitText() {
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou plugins non chargés');
             return;
         }
 
-        const text = originalText.textContent;
-        const words = text.split(' ');
+        gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        // Fonction pour générer des caractères aléatoires
-        function getRandomChar() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
-            return chars[Math.floor(Math.random() * chars.length)];
+        const heroSection = document.querySelector('.cmp-hero-fbv');
+        const splitElement = document.querySelector('.cmp-hero-fbv .split');
+        
+        if (!heroSection || !splitElement) {
+            return;
         }
 
-        // Fonction pour animer un mot
-        function animateWord(wordIndex, targetWord) {
-            const span = scrambleTexts[wordIndex];
-            if (!span) return;
-
-            const iterations = 10;
-            let iteration = 0;
-
-            const interval = setInterval(() => {
-                span.textContent = targetWord
-                    .split('')
-                    .map((char, index) => {
-                        if (index < iteration) {
-                            return targetWord[index];
-                        }
-                        return getRandomChar();
-                    })
-                    .join('');
-
-                if (iteration >= targetWord.length) {
-                    clearInterval(interval);
-                    span.textContent = targetWord;
-                }
-
-                iteration += 1 / 3;
-            }, 50);
-        }
-
-        // Animer tous les mots avec un délai
-        words.forEach((word, index) => {
-            setTimeout(() => {
-                animateWord(index, word);
-            }, index * 200);
+        // SplitText pour séparer les mots et lignes
+        const splitTitle = new SplitText(splitElement, {
+            type: "words,lines",
+            wordsClass: "word",
+            linesClass: "line"
         });
 
-        // Afficher le curseur après l'animation
-        setTimeout(() => {
-            if (cursor) {
-                cursor.style.display = 'inline-block';
+        // Animation GSAP
+        gsap.set(splitTitle.words, {
+            opacity: 0,
+            y: 50
+        });
+
+        gsap.to(splitTitle.words, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: heroSection,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none"
             }
-        }, words.length * 200 + 500);
+        });
     }
 
-    // Initialiser l'effet ScrambleText
-    initScrambleText();
+    // Initialiser l'effet SplitText pour la hero section
+    initHeroSplitText();
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
