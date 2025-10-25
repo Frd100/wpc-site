@@ -152,13 +152,15 @@
     line-height: 1;
     z-index: auto;
     transition: transform 0.3s ease;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #F5F6FA;
 }
 
 /* Réserver l'espace pour éviter les sauts de layout */
 #nav-placeholder {
-    min-height: 80px; /* Hauteur approximative de la navigation */
+    min-height: 80px;
+    /* Hauteur approximative de la navigation */
     display: block;
+    background: #F5F6FA; /* Même gris que le hero section */
 }
 
 /* Navigation grise sur mobile */
