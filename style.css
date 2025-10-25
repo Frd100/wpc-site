@@ -1153,6 +1153,7 @@ body {
 
 /* Video Background pour Mobile uniquement */
 @media (max-width: 768px) {
+
     /* Forcer la transparence sur tous les éléments du hero */
     .hero-fbv,
     .hero-fbv.teaser,
@@ -1161,7 +1162,7 @@ body {
     .cmp-button--standard-width {
         background: transparent;
     }
-    
+
     .cmp-hero-fbv__video-bg {
         position: absolute;
         top: 0;
@@ -1172,26 +1173,26 @@ body {
         overflow: hidden;
         background: transparent;
     }
-    
+
     .cmp-hero-fbv__video-bg iframe {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 200%;
-        height: 200%;
-        transform: translate(-50%, -50%) scale(1.2);
+        width: 300%;
+        height: 300%;
+        transform: translate(-50%, -50%) scale(1.5);
         border: none;
         pointer-events: none;
         background: transparent;
     }
-    
+
     /* Assurer que le contenu reste au-dessus de la vidéo */
     .cmp-hero-fbv__content {
         position: relative;
         z-index: 2;
         background: transparent;
     }
-    
+
     /* Overlay sombre pour améliorer la lisibilité du texte */
     .cmp-hero-fbv__video-bg::after {
         content: '';
@@ -1203,7 +1204,7 @@ body {
         background: rgba(0, 0, 0, 0.4);
         z-index: 1;
     }
-    
+
     /* Supprimer le fond blanc du hero section sur mobile */
     .cmp-hero-fbv {
         background: transparent;
@@ -1591,10 +1592,10 @@ body {
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
-        min-height: 40vh;
-        height: 40vh;
+        min-height: 60vh;
+        height: 60vh;
         background: transparent;
-        /* Fond blanc pour la section contenu */
+        /* Fond transparent pour laisser passer la vidéo */
     }
 
     .cmp-hero-fbv__image {
@@ -1665,8 +1666,8 @@ body {
 
     /* Override desktop hero styles for mobile */
     .cmp-hero-fbv {
-        height: 40vh;
-        min-height: 40vh;
+        height: 60vh;
+        min-height: 60vh;
         background: transparent;
     }
 
