@@ -1180,10 +1180,7 @@ body {
         height: 100%;
         z-index: 1;
         overflow: hidden;
-        background: blue;
-        /* Debug: fond bleu pour voir le conteneur */
-        border: 2px solid red;
-        /* Debug: bordure rouge */
+        background: transparent;
     }
 
     .cmp-hero-fbv__video-bg video {

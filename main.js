@@ -348,24 +348,19 @@ if (typeof module !== 'undefined' && module.exports) {
 
 /**
  * VIDEO BACKGROUND POUR MOBILE
- * Charge une vidéo MP4 en arrière-plan du hero section sur mobile uniquement
+ * Charge une vidéo WebP en arrière-plan du hero section sur mobile uniquement
  */
 function initHeroVideoBackground() {
     // Vérifier si on est sur mobile
     if (window.innerWidth > 768) {
-        console.log('Desktop détecté, vidéo background ignorée');
         return;
     }
-
-    console.log('Mobile détecté, initialisation de la vidéo background');
-
+    
     const videoContainer = document.getElementById('hero-video-bg');
     if (!videoContainer) {
         console.error('Conteneur hero-video-bg non trouvé');
         return;
     }
-
-    console.log('Conteneur trouvé, création de la vidéo');
 
     // Créer l'élément vidéo WebP
     const video = document.createElement('video');
@@ -378,21 +373,24 @@ function initHeroVideoBackground() {
     video.style.height = '100%';
     video.style.objectFit = 'cover';
     video.style.objectPosition = 'center';
-    video.style.backgroundColor = 'red'; // Debug: fond rouge pour voir si la vidéo est là
-
-    // Ajouter des événements de debug
-    video.addEventListener('loadstart', () => console.log('Vidéo: loadstart'));
-    video.addEventListener('loadeddata', () => console.log('Vidéo: loadeddata'));
-    video.addEventListener('canplay', () => console.log('Vidéo: canplay'));
+    // Ajouter des événements pour s'assurer que la vidéo fonctionne
+    video.addEventListener('loadstart', () => console.log('Vidéo: Chargement démarré'));
+    video.addEventListener('loadeddata', () => console.log('Vidéo: Données chargées'));
+    video.addEventListener('canplay', () => console.log('Vidéo: Prête à jouer'));
     video.addEventListener('error', (e) => console.error('Erreur vidéo:', e));
+    
+    // S'assurer que la boucle fonctionne parfaitement
+    video.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    });
 
     // Ajouter la vidéo au conteneur
     videoContainer.appendChild(video);
-    console.log('Vidéo ajoutée au conteneur');
 }
 
 // Initialiser la vidéo background au chargement de la page
 document.addEventListener('DOMContentLoaded', function () {
-    // Charger directement la vidéo MP4 (plus besoin d'attendre l'API YouTube)
+    // Charger directement la vidéo WebP
     initHeroVideoBackground();
 });
