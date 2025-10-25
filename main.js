@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const aboutSection = document.querySelector('.about-section');
         const titleWords = document.querySelectorAll('.about-title .word');
-        
+
         if (!aboutSection || !titleWords.length) {
             return;
         }
@@ -32,11 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Déclencher l'animation des mots avec un délai progressif
+                    // Effet d'ondulation spectaculaire
                     titleWords.forEach((word, index) => {
                         setTimeout(() => {
                             word.classList.add('visible');
-                        }, index * 300); // 300ms entre chaque mot
+                            
+                            // Effet de pulsation pour "Nanterre"
+                            if (word.classList.contains('nanterre-red')) {
+                                setTimeout(() => {
+                                    word.style.animation = 'pulse 0.6s ease-in-out';
+                                }, 200);
+                            }
+                        }, index * 400); // 400ms entre chaque mot pour plus de dramatisme
                     });
                     
                     // Arrêter d'observer après le premier déclenchement
@@ -44,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }, {
-            threshold: 0.3 // Déclencher quand 30% de la section est visible
+            threshold: 0.2 // Déclencher plus tôt pour plus d'impact
         });
-        
+
         observer.observe(aboutSection);
     }
 
@@ -363,7 +370,7 @@ function initHeroVideoBackground() {
     if (window.innerWidth > 768) {
         return;
     }
-    
+
     const videoContainer = document.getElementById('hero-video-bg');
     if (!videoContainer) {
         console.error('Conteneur hero-video-bg non trouvé');

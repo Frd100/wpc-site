@@ -4037,28 +4037,46 @@ select.form-input {
     }
 
     body .cmp-about-section .about-title {
-        font-size: 3rem;
+        font-size: 4rem;
         /* Augmenté drastiquement pour "Notre ancrage à Nanterre" sur mobile */
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+        align-items: center;
+        gap: 0.8rem;
+        text-align: center;
     }
 
     body .cmp-about-section .about-title .word {
         opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease-out;
+        transform: translateY(80px) scale(0.8);
+        transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        filter: blur(10px);
     }
 
     body .cmp-about-section .about-title .word.visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 
     body .cmp-about-section .about-title .nanterre-red {
         color: #dc2626;
-        font-weight: 800;
+        font-weight: 900;
+        text-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    }
+
+    /* Animation de pulsation pour "Nanterre" */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+            text-shadow: 0 0 30px rgba(220, 38, 38, 0.8);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 
     body .cmp-services-section .cmp-services-subtitle {
