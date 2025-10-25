@@ -1673,11 +1673,6 @@ body {
         text-align: left;
     }
 
-    .cmp-hero-fbv__action-container {
-        margin-left: calc(-1 * var(--spacing-sm));
-        margin-right: calc(-1 * var(--spacing-sm));
-    }
-
     .cmp-hero-fbv__action-link {
         width: 100%;
         text-align: center;
