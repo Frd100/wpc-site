@@ -1189,7 +1189,7 @@ body {
         left: 50%;
         width: 400%;
         height: 400%;
-        transform: translate(-50%, -50%) scale(2);
+        transform: translate(-50%, -50%) scale(2.2);
         border: none;
         pointer-events: none;
         background: transparent;
@@ -1227,8 +1227,13 @@ body {
 
 /* Animation pour le spinner de chargement */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Mobile styles are the base (no media query needed) */
