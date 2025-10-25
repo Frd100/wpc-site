@@ -3057,9 +3057,9 @@ select.form-input {
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin: var(--spacing-md) 0;
-        font-weight: 700;
+        font-weight: 500;
     }
 }
 
