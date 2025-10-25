@@ -358,7 +358,7 @@ function initHeroVideoBackground() {
     }
 
     console.log('Mobile détecté, initialisation de la vidéo background');
-    
+
     const videoContainer = document.getElementById('hero-video-bg');
     if (!videoContainer) {
         console.error('Conteneur hero-video-bg non trouvé');
