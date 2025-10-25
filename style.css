@@ -2995,8 +2995,16 @@ select.form-input {
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ===== PAGE ÉQUIPE ===== */
@@ -4070,9 +4078,28 @@ select.form-input {
         margin: 0;
     }
 
-    body .cmp-about-section .split .word {
+    body .cmp-about-section .split .nanterre-red {
         color: #dc2626;
         font-weight: 800;
+    }
+
+    .replay-button {
+        background: #1E4ADE;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .replay-button:hover {
+        background: #0D3BC7;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     body .cmp-services-section .cmp-services-subtitle {

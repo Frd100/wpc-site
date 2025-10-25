@@ -48,12 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             y: 50
         });
 
-        gsap.to(splitTitle.words, {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.3,
-            ease: "power2.out",
+        let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: aboutSection,
                 start: "top 70%",
@@ -61,6 +56,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleActions: "play none none none"
             }
         });
+
+        tl.to(splitTitle.words, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: "power2.out"
+        });
+
+        // Bouton replay
+        const replayBtn = document.getElementById('replay-btn');
+        if (replayBtn) {
+            replayBtn.addEventListener('click', () => {
+                // Réinitialiser l'animation
+                gsap.set(splitTitle.words, {
+                    opacity: 0,
+                    y: 50
+                });
+                
+                // Relancer l'animation plus lentement
+                gsap.to(splitTitle.words, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    stagger: 0.5,
+                    ease: "power2.out"
+                });
+            });
+        }
     }
 
     // Initialiser l'animation du titre
@@ -74,14 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const originalText = document.getElementById('scramble-text-original');
         const scrambleTexts = document.querySelectorAll('.text-scramble__text span');
         const cursor = document.getElementById('scramble-cursor');
-        
+
         if (!originalText || !scrambleTexts.length) {
             return;
         }
 
         const text = originalText.textContent;
         const words = text.split(' ');
-        
+
         // Fonction pour générer des caractères aléatoires
         function getRandomChar() {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
