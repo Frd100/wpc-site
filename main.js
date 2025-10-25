@@ -314,7 +314,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
 /**
  * VIDEO BACKGROUND POUR MOBILE
- * Charge une vidéo WebM en arrière-plan du hero section sur mobile uniquement
+ * Charge une iframe YouTube en arrière-plan du hero section sur mobile uniquement
  */
 function initHeroVideoBackground() {
     // Vérifier si on est sur mobile
@@ -328,32 +328,21 @@ function initHeroVideoBackground() {
         return;
     }
 
-    // Créer l'élément vidéo WebM
-    const video = document.createElement('video');
-    video.src = 'herosectionvideo.webm';
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.style.width = '100%';
-    video.style.height = '100%';
-    video.style.objectFit = 'cover';
-    video.style.objectPosition = 'center';
-    // Ajouter des événements pour s'assurer que la vidéo fonctionne
-    video.addEventListener('error', (e) => console.error('Erreur vidéo:', e));
+    // Créer l'iframe YouTube
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/CWOC7CBeFVw?autoplay=1&mute=1&loop=1&playlist=CWOC7CBeFVw&controls=0&showinfo=0&rel=0&start=8&end=23';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
 
-    // S'assurer que la boucle fonctionne parfaitement
-    video.addEventListener('ended', function () {
-        this.currentTime = 0;
-        this.play();
-    });
-
-    // Ajouter la vidéo au conteneur
-    videoContainer.appendChild(video);
+    // Ajouter l'iframe au conteneur
+    videoContainer.appendChild(iframe);
 }
 
 // Initialiser la vidéo background au chargement de la page
 document.addEventListener('DOMContentLoaded', function () {
-    // Charger directement la vidéo WebM
+    // Charger directement l'iframe YouTube
     initHeroVideoBackground();
 });
