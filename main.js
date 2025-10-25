@@ -12,6 +12,48 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /**
+     * ANIMATION TITRE "NOTRE ANCRAGE À NANTERRE" AU SCROLL
+     * Effet d'apparition verticale des mots au scroll sur mobile uniquement
+     */
+    function initTitleScrollAnimation() {
+        // Vérifier si on est sur mobile
+        if (window.innerWidth > 768) {
+            return;
+        }
+
+        const aboutSection = document.querySelector('.about-section');
+        const titleWords = document.querySelectorAll('.about-title .word');
+        
+        if (!aboutSection || !titleWords.length) {
+            return;
+        }
+
+        // Observer pour déclencher l'animation quand la section entre dans le viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Déclencher l'animation des mots avec un délai progressif
+                    titleWords.forEach((word, index) => {
+                        setTimeout(() => {
+                            word.classList.add('visible');
+                        }, index * 300); // 300ms entre chaque mot
+                    });
+                    
+                    // Arrêter d'observer après le premier déclenchement
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3 // Déclencher quand 30% de la section est visible
+        });
+        
+        observer.observe(aboutSection);
+    }
+
+    // Initialiser l'animation du titre
+    initTitleScrollAnimation();
+
+    /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
      * Effet de parallaxe subtil pour l'image bubble dans le conteneur
      * L'image reste dans le conteneur mais bouge légèrement pendant le scroll
