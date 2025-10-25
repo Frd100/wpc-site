@@ -138,17 +138,17 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Animation d'écriture pour le titre
-        const originalTitleText = splitElement.textContent;
+        // Animation d'écriture pour le titre avec préservation du <br>
+        const originalTitleHTML = splitElement.innerHTML;
         
         // Vider le titre initialement
         gsap.set(splitElement, {
-            text: ""
+            innerHTML: ""
         });
 
-        // Animation d'écriture du titre
+        // Animation d'écriture du titre avec HTML
         gsap.to(splitElement, {
-            text: originalTitleText,
+            innerHTML: originalTitleHTML,
             duration: 2.5,
             ease: "none",
             scrollTrigger: {
