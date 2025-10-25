@@ -155,6 +155,14 @@
     border-bottom: 1px solid #E5E7EB;
 }
 
+/* Navigation grise sur mobile */
+@media (max-width: 768px) {
+    .main-navigation {
+        background: #F5F6FA;
+        border-bottom: 1px solid #E5E7EB;
+    }
+}
+
 .main-navigation__container {
     max-width: 100%;
     margin: 0;
