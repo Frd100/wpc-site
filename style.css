@@ -693,7 +693,7 @@ body {
 
     /* Bouton bleu sur mobile - spécificité élevée */
     .cmp-hero-fbv .cmp-hero-fbv__action-link {
-        background: #1E4ADE;
+        background: #2351FF;
         color: white;
         white-space: nowrap;
         min-width: max-content;
@@ -702,7 +702,7 @@ body {
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
-        background: #0D3BC7;
+        background: #1A3FE6;
         color: white;
     }
 }
