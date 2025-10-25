@@ -1688,20 +1688,6 @@ body {
 }
 
 /* Styles pour le lecteur YouTube */
-#player {
-    width: 100%;
-    height: 225px;
-    max-width: 400px;
-    margin: 0 auto;
-    display: block;
-}
-
-/* Ajuster la vidéo pour mobile - spécificité élevée */
-@media (max-width: 768px) {
-    .cmp-about-section #player {
-        display: none;
-    }
-}
 
 #playBtn,
 #pauseBtn {

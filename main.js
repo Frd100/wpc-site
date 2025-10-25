@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const aboutSection = document.querySelector('.about-section');
         const splitElement = document.querySelector('.split');
-        
+
         if (!aboutSection || !splitElement) {
             return;
         }
@@ -366,38 +366,3 @@ function initializeMobileMenu() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { WPCUtils, WPCClasses };
 }
-
-/**
- * VIDEO BACKGROUND POUR MOBILE
- * Charge une iframe YouTube en arrière-plan du hero section sur mobile uniquement
- */
-function initHeroVideoBackground() {
-    // Vérifier si on est sur mobile
-    if (window.innerWidth > 768) {
-        return;
-    }
-
-    const videoContainer = document.getElementById('hero-video-bg');
-    if (!videoContainer) {
-        console.error('Conteneur hero-video-bg non trouvé');
-        return;
-    }
-
-    // Créer l'iframe YouTube
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/CWOC7CBeFVw?autoplay=1&mute=1&loop=1&playlist=CWOC7CBeFVw&controls=0&showinfo=0&rel=0&start=8&end=23';
-    iframe.allow = 'autoplay; encrypted-media';
-    iframe.allowFullscreen = true;
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
-    iframe.style.border = 'none';
-
-    // Ajouter l'iframe au conteneur
-    videoContainer.appendChild(iframe);
-}
-
-// Initialiser la vidéo background au chargement de la page
-document.addEventListener('DOMContentLoaded', function () {
-    // Charger directement l'iframe YouTube
-    initHeroVideoBackground();
-});
