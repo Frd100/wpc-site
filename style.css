@@ -1329,7 +1329,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #F5F6FA;
+        background-color: #051B2C;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1505,7 +1505,7 @@ body {
 
 .main-navigation__toggle .material-icons {
     font-size: 24px;
-    color: #374151;
+    color: #051B2C;
     transition: all 0.3s ease;
 }
 
