@@ -141,19 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // Animation d'écriture pour le titre ligne par ligne
         const line1 = splitElement.querySelector('.line1');
         const line2 = splitElement.querySelector('.line2');
-        
+
         if (line1 && line2) {
             const originalLine1 = line1.textContent;
             const originalLine2 = line2.textContent;
-            
+
             // Vider les lignes initialement
             gsap.set(line1, { text: "" });
             gsap.set(line2, { text: "" });
-            
+
             // Animation de la première ligne
             gsap.to(line1, {
                 text: originalLine1,
-                duration: 1.2,
+                duration: 0.8,
                 ease: "none",
                 scrollTrigger: {
                     trigger: heroSection,
@@ -166,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Animation de la deuxième ligne avec délai
             gsap.to(line2, {
                 text: originalLine2,
-                duration: 1.2,
+                duration: 0.8,
                 ease: "none",
-                delay: 1.2,
+                delay: 0.8,
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
