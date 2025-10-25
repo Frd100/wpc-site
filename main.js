@@ -258,6 +258,17 @@ document.addEventListener('DOMContentLoaded', function () {
      * This ensures the navigation is consistent across all pages.
      */
     function loadNav() {
+        // Check if navigation is already cached
+        if (window.navCache) {
+            const navPlaceholder = document.getElementById('nav-placeholder');
+            if (navPlaceholder) {
+                navPlaceholder.innerHTML = window.navCache;
+                setActiveNavLink();
+                initializeMobileMenu();
+            }
+            return;
+        }
+
         fetch('nav.html')
             .then(response => {
                 if (!response.ok) {
@@ -266,6 +277,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 return response.text();
             })
             .then(data => {
+                // Cache the navigation HTML
+                window.navCache = data;
+                
                 const navPlaceholder = document.getElementById('nav-placeholder');
                 if (navPlaceholder) {
                     navPlaceholder.innerHTML = data;
