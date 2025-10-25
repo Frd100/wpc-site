@@ -656,15 +656,15 @@ body {
         text-align: left;
     }
 
-    /* Bouton bleu sur mobile */
-    .cmp-hero-fbv__action-link {
-        background: #1E4ADE !important;
-        color: white !important;
+    /* Bouton bleu sur mobile - spécificité élevée */
+    .cmp-hero-fbv .cmp-hero-fbv__action-link {
+        background: #1E4ADE;
+        color: white;
     }
 
-    .cmp-hero-fbv__action-link:hover {
-        background: #0D3BC7 !important;
-        color: white !important;
+    .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
+        background: #0D3BC7;
+        color: white;
     }
 }
 
@@ -1655,9 +1655,9 @@ body {
     }
 
 
-    /* Masquer le rectangle bleu derrière l'iframe sur mobile */
-    .about-image div[style*="background: #0D3BC7"] {
-        display: none !important;
+    /* Masquer le rectangle bleu derrière l'iframe sur mobile - spécificité élevée */
+    .cmp-about-section .about-image div[style*="background: #0D3BC7"] {
+        display: none;
     }
 
     /* Section "Notre ancrage à Nanterre" en colonne sur mobile */
@@ -1696,10 +1696,10 @@ body {
     display: block;
 }
 
-/* Ajuster la vidéo pour mobile - doit être après la règle générale */
+/* Ajuster la vidéo pour mobile - spécificité élevée */
 @media (max-width: 768px) {
-    #player {
-        display: none !important;
+    .cmp-about-section #player {
+        display: none;
     }
 }
 
