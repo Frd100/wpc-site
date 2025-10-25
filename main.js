@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const paragraphs = document.querySelectorAll('.cmp-about-section .about-paragraph');
         if (paragraphs.length > 0) {
             console.log('Animation Nanterre: Paragraphes trouvés:', paragraphs.length);
-            
+
             // SplitText pour chaque paragraphe
             paragraphs.forEach((paragraph, index) => {
                 const splitParagraph = new SplitText(paragraph, {
