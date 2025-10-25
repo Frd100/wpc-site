@@ -3045,7 +3045,7 @@ select.form-input {
 @media (max-width: 768px) {
     .cmp-hero-fbv__content {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 95%;
@@ -3059,7 +3059,7 @@ select.form-input {
     .cmp-hero-fbv__subtitle {
         font-size: 1.2rem;
         margin: var(--spacing-md) 0;
-        font-weight: 500;
+        font-weight: 700;
     }
 }
 
