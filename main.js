@@ -311,3 +311,43 @@ function initializeMobileMenu() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { WPCUtils, WPCClasses };
 }
+
+/**
+ * VIDEO BACKGROUND POUR MOBILE
+ * Charge une vidéo YouTube en arrière-plan du hero section sur mobile uniquement
+ */
+function initHeroVideoBackground() {
+    // Vérifier si on est sur mobile
+    if (window.innerWidth > 768) return;
+    
+    const videoContainer = document.getElementById('hero-video-bg');
+    if (!videoContainer) return;
+    
+    // Créer l'iframe YouTube
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/CWOC7CBeFVw?autoplay=1&mute=1&loop=1&playlist=CWOC7CBeFVw&controls=0&showinfo=0&rel=0&start=8&end=23';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    
+    // Ajouter l'iframe au conteneur
+    videoContainer.appendChild(iframe);
+}
+
+// Initialiser la vidéo background au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+    // Attendre que l'API YouTube soit chargée
+    if (typeof YT !== 'undefined' && YT.Player) {
+        initHeroVideoBackground();
+    } else {
+        // Attendre que l'API soit chargée
+        const checkYouTubeAPI = setInterval(() => {
+            if (typeof YT !== 'undefined' && YT.Player) {
+                clearInterval(checkYouTubeAPI);
+                initHeroVideoBackground();
+            }
+        }, 100);
+    }
+});

@@ -1151,6 +1151,48 @@ body {
     }
 }
 
+/* Video Background pour Mobile uniquement */
+@media (max-width: 768px) {
+    .cmp-hero-fbv__video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .cmp-hero-fbv__video-bg iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        transform: translate(-50%, -50%) scale(1.2);
+        border: none;
+        pointer-events: none;
+    }
+    
+    /* Assurer que le contenu reste au-dessus de la vidéo */
+    .cmp-hero-fbv__content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Overlay sombre pour améliorer la lisibilité du texte */
+    .cmp-hero-fbv__video-bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+}
+
 /* ===== MOBILE-FIRST RESPONSIVE DESIGN ===== */
 
 /* Mobile styles are the base (no media query needed) */
