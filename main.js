@@ -32,18 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Effet d'ondulation spectaculaire
+                    // Animation simple mot par mot
                     titleWords.forEach((word, index) => {
                         setTimeout(() => {
                             word.classList.add('visible');
-                            
-                            // Effet de pulsation pour "Nanterre"
-                            if (word.classList.contains('nanterre-red')) {
-                                setTimeout(() => {
-                                    word.style.animation = 'pulse 0.6s ease-in-out';
-                                }, 200);
-                            }
-                        }, index * 400); // 400ms entre chaque mot pour plus de dramatisme
+                        }, index * 300); // 300ms entre chaque mot
                     });
                     
                     // Arrêter d'observer après le premier déclenchement
@@ -51,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }, {
-            threshold: 0.2 // Déclencher plus tôt pour plus d'impact
+            threshold: 0.3 // Déclencher quand 30% de la section est visible
         });
 
         observer.observe(aboutSection);
