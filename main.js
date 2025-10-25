@@ -146,49 +146,36 @@ document.addEventListener('DOMContentLoaded', function () {
             const originalLine1 = line1.textContent;
             const originalLine2 = line2.textContent;
             
-            // Créer des éléments masqués pour l'animation
-            const line1Mask = document.createElement('div');
-            line1Mask.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; transform-origin: left;';
-            line1.parentNode.style.position = 'relative';
-            line1.parentNode.appendChild(line1Mask);
-            
-            const line2Mask = document.createElement('div');
-            line2Mask.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; transform-origin: left;';
-            line2.parentNode.style.position = 'relative';
-            line2.parentNode.appendChild(line2Mask);
+            // Vider les lignes initialement
+            gsap.set(line1, { text: "" });
+            gsap.set(line2, { text: "" });
             
             // Animation de la première ligne
-            gsap.fromTo(line1Mask, 
-                { scaleX: 1 },
-                { 
-                    scaleX: 0,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
+            gsap.to(line1, {
+                text: originalLine1,
+                duration: 0.8,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
                 }
-            );
+            });
             
             // Animation de la deuxième ligne avec délai
-            gsap.fromTo(line2Mask, 
-                { scaleX: 1 },
-                { 
-                    scaleX: 0,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    delay: 0.8,
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
+            gsap.to(line2, {
+                text: originalLine2,
+                duration: 0.8,
+                ease: "none",
+                delay: 0.8,
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
                 }
-            );
+            });
         }
 
         // Animation d'écriture pour le sous-titre
@@ -196,28 +183,24 @@ document.addEventListener('DOMContentLoaded', function () {
         if (subtitle) {
             const originalText = subtitle.textContent;
             
-            // Créer un masque pour le sous-titre
-            const subtitleMask = document.createElement('div');
-            subtitleMask.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; transform-origin: left;';
-            subtitle.style.position = 'relative';
-            subtitle.appendChild(subtitleMask);
+            // Vider le sous-titre initialement
+            gsap.set(subtitle, {
+                text: ""
+            });
             
             // Animation d'écriture du sous-titre
-            gsap.fromTo(subtitleMask, 
-                { scaleX: 1 },
-                { 
-                    scaleX: 0,
-                    duration: 2,
-                    ease: "power2.out",
-                    delay: 1.6, // Après l'animation du titre
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
+            gsap.to(subtitle, {
+                text: originalText,
+                duration: 2,
+                ease: "none",
+                delay: 1.6, // Après l'animation du titre
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
                 }
-            );
+            });
         }
     }
 

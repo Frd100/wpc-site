@@ -629,6 +629,7 @@ body {
     z-index: 2;
     box-sizing: border-box;
     display: flex;
+    min-height: 400px; /* Hauteur minimale pour éviter les décalages */
     align-items: flex-start;
     justify-content: flex-end;
 }
