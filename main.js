@@ -141,20 +141,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // Animation d'écriture pour le titre ligne par ligne
         const line1 = splitElement.querySelector('.line1');
         const line2 = splitElement.querySelector('.line2');
-
+        
         if (line1 && line2) {
             const originalLine1 = line1.textContent;
             const originalLine2 = line2.textContent;
-
-            // Vider les lignes initialement
-            gsap.set(line1, { text: "" });
-            gsap.set(line2, { text: "" });
-
+            
+            // Garder le contenu visible mais masquer avec opacity
+            gsap.set(line1, { opacity: 0 });
+            gsap.set(line2, { opacity: 0 });
+            
             // Animation de la première ligne
             gsap.to(line1, {
-                text: originalLine1,
+                opacity: 1,
                 duration: 0.8,
-                ease: "none",
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
@@ -165,9 +165,9 @@ document.addEventListener('DOMContentLoaded', function () {
             
             // Animation de la deuxième ligne avec délai
             gsap.to(line2, {
-                text: originalLine2,
+                opacity: 1,
                 duration: 0.8,
-                ease: "none",
+                ease: "power2.out",
                 delay: 0.8,
                 scrollTrigger: {
                     trigger: heroSection,
@@ -181,18 +181,17 @@ document.addEventListener('DOMContentLoaded', function () {
         // Animation d'écriture pour le sous-titre
         const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
         if (subtitle) {
-            const originalText = subtitle.textContent;
-
-            // Vider le texte initialement
+            // Masquer le sous-titre initialement avec opacity
             gsap.set(subtitle, {
-                text: ""
+                opacity: 0
             });
 
-            // Animation d'écriture lettre par lettre
+            // Animation d'apparition du sous-titre
             gsap.to(subtitle, {
-                text: originalText,
-                duration: 2,
-                ease: "none",
+                opacity: 1,
+                duration: 1.5,
+                ease: "power2.out",
+                delay: 1.6, // Après l'animation du titre
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",

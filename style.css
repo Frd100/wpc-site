@@ -3058,6 +3058,7 @@ select.form-input {
     display: block;
     text-align: left;
     position: relative;
+    overflow: hidden;
 }
 
 /* Taille de font pour mobile */
