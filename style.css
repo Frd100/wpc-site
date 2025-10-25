@@ -1180,7 +1180,8 @@ body {
         height: 100%;
         z-index: 1;
         overflow: hidden;
-        background: transparent;
+        background: blue; /* Debug temporaire */
+        border: 3px solid red; /* Debug temporaire */
     }
 
     .cmp-hero-fbv__video-bg video {

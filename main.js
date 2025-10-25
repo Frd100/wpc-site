@@ -319,14 +319,19 @@ if (typeof module !== 'undefined' && module.exports) {
 function initHeroVideoBackground() {
     // Vérifier si on est sur mobile
     if (window.innerWidth > 768) {
+        console.log('Desktop détecté, vidéo ignorée');
         return;
     }
-
+    
+    console.log('Mobile détecté, largeur:', window.innerWidth);
+    
     const videoContainer = document.getElementById('hero-video-bg');
     if (!videoContainer) {
         console.error('Conteneur hero-video-bg non trouvé');
         return;
     }
+    
+    console.log('Conteneur trouvé, création vidéo');
 
     // Créer l'élément vidéo WebP
     const video = document.createElement('video');
@@ -339,6 +344,8 @@ function initHeroVideoBackground() {
     video.style.height = '100%';
     video.style.objectFit = 'cover';
     video.style.objectPosition = 'center';
+    video.style.backgroundColor = 'red'; // Debug temporaire
+    video.style.border = '3px solid yellow'; // Debug temporaire
     // Ajouter des événements pour s'assurer que la vidéo fonctionne
     video.addEventListener('loadstart', () => console.log('Vidéo: Chargement démarré'));
     video.addEventListener('loadeddata', () => console.log('Vidéo: Données chargées'));
