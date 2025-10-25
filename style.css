@@ -3536,7 +3536,7 @@ select.form-input {
 .about-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
@@ -3544,7 +3544,7 @@ select.form-input {
 .about-paragraph {
     font-size: 1rem;
     line-height: 1.5;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 
@@ -4147,7 +4147,7 @@ select.form-input {
     body .cmp-about-section .split {
         font-size: 4rem;
         font-weight: 700;
-        color: #000000;
+        color: #ffffff;
         line-height: 1.2;
         margin: 0;
     }
