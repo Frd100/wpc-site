@@ -399,12 +399,9 @@ function initializeMobileMenu() {
     // Vérification que les éléments existent avant de continuer
     if (!mobileToggle || !mobileMenu) return;
 
-    // Initialiser la position du menu (caché à gauche)
-    mobileMenu.style.transform = 'translateX(-100%)';
-
     /**
-     * Toggle du menu mobile
-     * Gère l'ouverture/fermeture et l'animation du bouton hamburger
+     * Toggle du menu mobile - Version simple
+     * Juste toggle de classe, CSS gère l'animation
      */
     mobileToggle.addEventListener('click', function (e) {
         e.preventDefault();
@@ -479,40 +476,12 @@ function initializeMobileMenu() {
         body.style.top = `-${scrollY}px`;
         body.style.width = '100%';
         body.dataset.scrollY = scrollY;
-
-        // Animation GSAP : glissement simple depuis la gauche
-        if (typeof gsap !== 'undefined') {
-            gsap.fromTo(mobileMenu, 
-                { x: "-100%" },
-                { x: 0, duration: 0.3, ease: "power2.out" }
-            );
-        } else {
-            // Fallback CSS si GSAP pas disponible
-            mobileMenu.style.transform = 'translateX(0)';
-        }
     }
 
     function closeMenu() {
         const scrollY = body.dataset.scrollY || '0';
 
-        // Animation GSAP : glissement simple vers la gauche
-        if (typeof gsap !== 'undefined') {
-            gsap.to(mobileMenu, {
-                x: "-100%",
-                duration: 0.3,
-                ease: "power2.in",
-                onComplete: () => {
-                    mobileMenu.classList.remove('active');
-                }
-            });
-        } else {
-            // Fallback CSS si GSAP pas disponible
-            mobileMenu.style.transform = 'translateX(-100%)';
-            setTimeout(() => {
-                mobileMenu.classList.remove('active');
-            }, 300);
-        }
-
+        mobileMenu.classList.remove('active');
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
