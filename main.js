@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function () {
         words.forEach(word => {
             const wordSpan = document.createElement('span');
             wordSpan.className = 'word';
+
+            // Appliquer la classe rouge pour "Nanterre"
+            if (word === 'Nanterre') {
+                wordSpan.className += ' nanterre-red';
+            }
+
             wordSpan.textContent = word;
             lineDiv.appendChild(wordSpan);
         });

@@ -3562,7 +3562,7 @@ select.form-input {
     -moz-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    height: 50px;
+    height: 60px;
     padding: 1rem;
     border-radius: 10px;
     display: flex;
@@ -3570,6 +3570,16 @@ select.form-input {
     justify-content: center;
     min-width: fit-content;
     margin: 0.25rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.about-title-container .word.nanterre-red {
+    color: #dc2626 !important;
+    background-image: none !important;
+    -webkit-text-fill-color: #dc2626 !important;
+    -moz-text-fill-color: #dc2626 !important;
+    text-fill-color: #dc2626 !important;
 }
 
 .about-title-container sup {
