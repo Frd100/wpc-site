@@ -742,9 +742,10 @@ body {
         /* Permettre les retours à la ligne */
     }
 
-    /* Bouton plaquette isolé de l'animation du sous-titre */
+    /* Bouton plaquette - même logique que mobile */
     .cmp-hero-fbv__action-container {
-        margin-top: 2rem; /* Espace fixe avec le sous-titre */
+        margin-top: var(--spacing-3xl); /* Même que mobile */
+        height: auto; /* Même que mobile */
         display: flex;
         align-items: center;
         justify-content: center;
