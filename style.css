@@ -1528,10 +1528,6 @@ body {
     border-radius: 8px;
 }
 
-/* Hover effect - pas de couleur bleue */
-.main-navigation__toggle:hover .hamburger-line {
-    opacity: 0.8;
-}
 
 @media (max-width: 768px) {
 
