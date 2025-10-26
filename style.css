@@ -816,6 +816,7 @@ body {
         min-height: 4rem;
         height: 80px;
         text-align: left;
+        color: #000000; /* Ajouté pour mobile */
         font-weight: 600;
         /* Réduit de 800 à 600 */
     }
