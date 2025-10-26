@@ -134,14 +134,18 @@ document.addEventListener('DOMContentLoaded', function () {
         if (aboutSubtitle) {
             const originalText = aboutSubtitle.textContent;
 
-            // Vider le texte initialement
+            // Vider le texte initialement et forcer l'alignement
             gsap.set(aboutSubtitle, {
-                text: ""
+                text: "",
+                textAlign: "left",  // Forcer l'alignement à gauche
+                x: 0                // Forcer la position horizontale
             });
 
             // Animation d'écriture lettre par lettre (identique à la hero)
             gsap.to(aboutSubtitle, {
                 text: originalText,
+                textAlign: "left",  // Maintenir l'alignement pendant l'animation
+                x: 0,               // Maintenir la position pendant l'animation
                 duration: 2,
                 ease: "none",
                 scrollTrigger: {
