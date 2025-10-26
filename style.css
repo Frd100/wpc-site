@@ -2991,18 +2991,6 @@ select.form-input {
     /* Changé de hidden à visible pour desktop */
 }
 
-.cmp-hero-fbv__content .split {
-    font-size: 4.2rem;
-    font-weight: 700;
-    color: #000000;
-    line-height: 1.1;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: left;
-    white-space: nowrap;
-}
-
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
     color: #000000;
@@ -3020,78 +3008,73 @@ select.form-input {
 }
 
 
-/* Taille de font pour mobile */
-@media (max-width: 768px) {
-    .cmp-hero-fbv__content {
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 95%;
-        text-align: left;
-    }
+/* ===== RÈGLES MOBILE ET DESKTOP RÉORGANISÉES ===== */
 
-    .cmp-hero-fbv__content .container {
-        height: 100px;
-        /* Remettre la hauteur fixe pour mobile */
-        overflow: hidden;
-        /* Remettre overflow hidden pour mobile */
-        text-align: left;
-        /* Explicitement aligné à gauche pour mobile */
-    }
-
-    .cmp-hero-fbv__content .split {
-        font-size: clamp(1.8rem, 8vw, 3rem);
-        white-space: nowrap;
-        line-height: 1.1;
-        text-align: left;
-        /* Explicitement aligné à gauche pour mobile */
-    }
-
-    .cmp-hero-fbv__subtitle {
-        font-size: 1.4rem;
-        margin: var(--spacing-md) 0;
-        font-weight: 700;
-        min-height: 4rem;
-        height: 80px;
-    }
-
+/* Règles de base pour mobile (mobile-first) */
+.cmp-hero-fbv__content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    text-align: left;
+    padding: var(--spacing-lg) var(--spacing-sm);
 }
 
-/* Règles spécifiques pour desktop uniquement - APRÈS mobile pour avoir la priorité */
+.cmp-hero-fbv__content .container {
+    height: 100px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.cmp-hero-fbv__content .split {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    white-space: nowrap;
+    line-height: 1.1;
+    text-align: left;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cmp-hero-fbv__subtitle {
+    font-size: 1.4rem;
+    margin: var(--spacing-md) 0;
+    font-weight: 700;
+    min-height: 4rem;
+    height: 80px;
+    text-align: left;
+}
+
+/* Règles desktop - APRÈS mobile pour avoir la priorité */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
         top: 60%;
-        /* Baissé de 50% à 60% pour descendre le contenu */
         width: 80%;
-        /* Largeur plus large pour desktop pour ne pas contraindre le titre */
         padding: var(--spacing-lg);
-        /* Réduire le padding pour donner plus d'espace au titre */
+        text-align: center;
     }
 
     .cmp-hero-fbv__content .container {
         margin-bottom: 2rem;
-        /* Augmenté de 1rem à 2rem pour plus d'espace */
         text-align: center;
-        /* Centrer le conteneur sur desktop */
         max-width: 1000px;
-        /* Largeur maximale pour éviter que le titre soit trop étalé */
-    }
-
-    .cmp-hero-fbv__subtitle {
-        margin: 0 0 var(--spacing-2xl) 0;
-        /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) */
-        text-align: center;
-        /* Centrer le sous-titre sur desktop */
+        height: auto;
+        overflow: visible;
     }
 
     .cmp-hero-fbv__content .split {
         text-align: center;
-        /* Centré pour desktop */
         white-space: nowrap;
-        /* S'assurer que le titre reste sur une ligne */
         display: block;
-        /* Forcer l'affichage en bloc pour le centrage */
+        font-size: 4.2rem;
+    }
+
+    .cmp-hero-fbv__subtitle {
+        margin: 0 0 var(--spacing-2xl) 0;
+        text-align: center;
     }
 }
 
