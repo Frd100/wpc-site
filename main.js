@@ -24,57 +24,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Animation Nanterre: Mobile détecté, initialisation...');
 
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP ou plugins non chargés');
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou ScrollTrigger non chargé');
             return;
         }
 
-        gsap.registerPlugin(SplitText, ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-        // === ANIMATION DU TITRE (INDÉPENDANTE) ===
+        // === NOUVELLE ANIMATION DU TITRE (SANS SPLITTEXT) ===
         const titleContainer = document.querySelector('.about-title-container');
-        const splitElement = document.querySelector('.about-title-container .split');
+        const titleElement = document.querySelector('.about-title-container .split');
 
         console.log('Animation Titre: Conteneur trouvé:', titleContainer);
-        console.log('Animation Titre: Split element trouvé:', splitElement);
+        console.log('Animation Titre: Element trouvé:', titleElement);
 
-        if (titleContainer && splitElement) {
-            // SplitText pour séparer les mots et lignes avec masquage
-            const splitTitle = new SplitText(splitElement, {
-                type: "words,lines",
-                wordsClass: "word",
-                linesClass: "line"
+        if (titleContainer && titleElement) {
+            // Diviser le titre en lettres individuelles
+            const originalText = titleElement.textContent;
+            const letters = originalText.split('');
+            titleElement.textContent = '';
+
+            // Créer un span pour chaque lettre
+            letters.forEach(letter => {
+                const span = document.createElement('span');
+                span.textContent = letter === ' ' ? '\u00A0' : letter; // Espace insécable
+                span.style.display = 'inline-block';
+                span.style.transform = 'translateY(100%)';
+                span.style.opacity = '0';
+                titleElement.appendChild(span);
             });
 
-            // Masquer les lignes initialement SEULEMENT sur le titre
-            gsap.set(splitTitle.lines, {
-                overflow: "hidden"
-            });
-
-            gsap.set(splitTitle.words, {
-                y: "100%"
-            });
-
-            // Animation de révélation avec masquage des lignes pour le titre
+            // Animation de glissement des lettres vers le haut
             console.log('Animation Titre: Configuration de l\'animation...');
-            gsap.to(splitTitle.words, {
-                y: "0%",
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power2.out",
+            gsap.to('.about-title-container .split span', {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: 'power2.out',
                 scrollTrigger: {
-                    trigger: titleContainer, // Trigger spécifique au titre
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none",
+                    trigger: titleContainer,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none none',
                     onStart: () => console.log('Animation Titre: Animation déclenchée!'),
-                    onComplete: () => {
-                        console.log('Animation Titre: Animation terminée!');
-                        // Restaurer l'overflow normal après l'animation
-                        gsap.set(splitTitle.lines, {
-                            overflow: "visible"
-                        });
-                    }
+                    onComplete: () => console.log('Animation Titre: Animation terminée!')
                 }
             });
         }
