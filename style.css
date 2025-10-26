@@ -738,7 +738,7 @@ body {
     .cmp-hero-fbv__content {
         top: 60%;
         width: 80%;
-        padding: var(--spacing-lg);
+        padding: 0; /* Supprimer complètement le padding */
         text-align: center;
         justify-content: center;
     }
@@ -746,7 +746,8 @@ body {
     .cmp-hero-fbv__content .container {
         margin-bottom: 2rem;
         text-align: center;
-        max-width: none; /* Supprimer la limite de 1000px */
+        max-width: none;
+        /* Supprimer la limite de 1000px */
         height: auto;
         overflow: visible;
     }
