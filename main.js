@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
         const aboutSection = document.querySelector('.cmp-about-section');
-        const splitElement = document.querySelector('.cmp-about-section .split');
+        const splitElement = document.querySelector('.about-title-container .split');
 
         console.log('Animation Nanterre: Section trouvée:', aboutSection);
         console.log('Animation Nanterre: Split element trouvé:', splitElement);
