@@ -3022,19 +3022,25 @@ select.form-input {
 /* Règles spécifiques pour desktop uniquement */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
-        top: 60%; /* Baissé de 50% à 60% pour descendre le contenu */
+        top: 60%;
+        /* Baissé de 50% à 60% pour descendre le contenu */
     }
-    
+
     .cmp-hero-fbv__content .container {
-        margin-bottom: 2rem; /* Augmenté de 1rem à 2rem pour plus d'espace */
+        margin-bottom: 2rem;
+        /* Augmenté de 1rem à 2rem pour plus d'espace */
+        text-align: center; /* Centrer le conteneur sur desktop */
     }
-    
+
     .cmp-hero-fbv__subtitle {
-        margin: 0 0 var(--spacing-2xl) 0; /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) */
+        margin: 0 0 var(--spacing-2xl) 0;
+        /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) */
+        text-align: center; /* Centrer le sous-titre sur desktop */
     }
-    
+
     .cmp-hero-fbv__content .split {
-        text-align: center; /* Centré pour desktop */
+        text-align: center;
+        /* Centré pour desktop */
     }
 }
 
