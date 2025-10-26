@@ -3572,15 +3572,18 @@ select.form-input {
     -moz-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    height: 80px;
-    padding: 0.2rem 1.2rem;
+    height: 100px;
+    /* Augmenté de 80px à 100px */
+    padding: 0.3rem 1.5rem;
+    /* Augmenté le padding */
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: fit-content;
     margin: 0.25rem 0;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    /* Augmenté de 3rem à 3.5rem */
     font-weight: 500;
 }
 
