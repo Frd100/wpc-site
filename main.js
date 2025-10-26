@@ -188,37 +188,59 @@ document.addEventListener('DOMContentLoaded', function () {
             const isDesktop = window.innerWidth >= 769;
 
             if (isDesktop) {
-                // Desktop : Animation typewriter activée
-                // Vider les lignes initialement
-                gsap.set(line1, { text: "" });
-                gsap.set(line2, { text: "" });
-
-                // Animation de la première ligne
-                gsap.to(line1, {
-                    text: originalLine1,
-                    duration: 0.7,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
+                // Desktop : Animation masked line
+                // Créer la structure pour l'animation masked line
+                const container = splitElement.parentElement;
+                
+                // Créer les divs .line pour chaque ligne
+                const line1Div = document.createElement('div');
+                line1Div.className = 'line';
+                const line1Span = document.createElement('span');
+                line1Span.textContent = originalLine1;
+                line1Div.appendChild(line1Span);
+                
+                const line2Div = document.createElement('div');
+                line2Div.className = 'line';
+                const line2Span = document.createElement('span');
+                line2Span.textContent = originalLine2;
+                line2Div.appendChild(line2Span);
+                
+                // Remplacer le contenu du split
+                splitElement.innerHTML = '';
+                splitElement.appendChild(line1Div);
+                splitElement.appendChild(line2Div);
+                
+                // Animation masked line
+                gsap.fromTo(line1Span, 
+                    { y: "100%" },
+                    {
+                        y: "0%",
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: heroSection,
+                            start: "top 80%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none none"
+                        }
                     }
-                });
-
-                // Animation de la deuxième ligne avec délai
-                gsap.to(line2, {
-                    text: originalLine2,
-                    duration: 0.7,
-                    ease: "none",
-                    delay: 0.7,
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
+                );
+                
+                gsap.fromTo(line2Span, 
+                    { y: "100%" },
+                    {
+                        y: "0%",
+                        duration: 0.8,
+                        ease: "power2.out",
+                        delay: 0.3,
+                        scrollTrigger: {
+                            trigger: heroSection,
+                            start: "top 80%",
+                            end: "bottom 20%",
+                            toggleActions: "play none none none"
+                        }
                     }
-                });
+                );
             } else {
                 // Mobile : Animation normale
                 // Vider les lignes initialement
