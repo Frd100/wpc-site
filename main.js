@@ -428,14 +428,14 @@ function initializeMobileMenu() {
         if (menuTimeline && buttonTimeline) return; // Déjà initialisées
 
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
-        
+
         // Définir l'état initial du menu
         gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
         gsap.set(menuLinks, { x: -50, opacity: 0 });
-        
+
         // Timeline du menu avec Slide Reveal
         menuTimeline = gsap.timeline({ paused: true });
-        
+
         // Animation du conteneur du menu (slide depuis la gauche)
         menuTimeline.fromTo(mobileMenu, {
             x: "-100%",
@@ -461,7 +461,7 @@ function initializeMobileMenu() {
 
         // Timeline du bouton hamburger
         buttonTimeline = gsap.timeline({ paused: true });
-        
+
         // Animation des lignes pour former un X
         buttonTimeline.to(hamburgerLines[0], {
             rotation: 45,
@@ -489,7 +489,7 @@ function initializeMobileMenu() {
      */
     function toggleButtonAnimation() {
         initSlideRevealAnimations();
-        
+
         if (isMenuOpen) {
             buttonTimeline.play(); // Hamburger → X
         } else {
@@ -502,7 +502,7 @@ function initializeMobileMenu() {
      */
     function toggleMenuAnimation() {
         initSlideRevealAnimations();
-        
+
         if (isMenuOpen) {
             menuTimeline.play(); // Ouverture
         } else {
@@ -520,8 +520,8 @@ function initializeMobileMenu() {
     });
 
     // Fermer au clic sur un lien
-    const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
-    menuLinks.forEach(link => {
+    const menuLinksElements = mobileMenu.querySelectorAll('.main-navigation__link');
+    menuLinksElements.forEach(link => {
         link.addEventListener('click', function () {
             // Ne ferme pas immédiatement pour laisser le temps à la navigation de se faire
         });
