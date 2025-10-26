@@ -701,7 +701,7 @@ body {
     text-align: center;
     max-width: none;
     height: auto;
-    overflow: visible;
+    overflow: hidden; /* Empêcher le mouvement du sous-titre/bouton pendant l'animation */
 }
 
 .cmp-hero-fbv__content .split {
