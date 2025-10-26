@@ -147,7 +147,7 @@
     top: auto;
     left: auto;
     right: auto;
-    background: var(--wpc-white);
+    background: #F5F6FA; /* Gris au lieu de blanc */
     padding: var(--spacing-sm) 0 0 0;
     /* Padding top léger */
     margin: 0;
@@ -157,7 +157,7 @@
     border-bottom: 1px solid #F5F6FA;
 }
 
-/* Réserver l'espace pour éviter les sauts de layout */
+/* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
 #nav-placeholder {
     min-height: 80px;
     /* Hauteur approximative de la navigation */
@@ -725,7 +725,8 @@ body {
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
     margin: 0 0 var(--spacing-2xl) 0;
-    font-weight: 600; /* Réduit de 800 à 600 */
+    font-weight: 600;
+    /* Réduit de 800 à 600 */
     color: #000000;
     line-height: 1.4;
     display: block;
@@ -751,7 +752,8 @@ body {
 
     /* Bouton plaquette - remonté sur desktop */
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-xl); /* Réduit de 3xl à xl pour remonter */
+        margin-top: var(--spacing-xl);
+        /* Réduit de 3xl à xl pour remonter */
         height: auto;
         display: flex;
         align-items: center;
@@ -799,12 +801,14 @@ body {
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1.6rem; /* Augmenté de 1.4rem à 1.6rem pour mobile */
+        font-size: 1.6rem;
+        /* Augmenté de 1.4rem à 1.6rem pour mobile */
         margin: var(--spacing-md) 0;
         min-height: 4rem;
         height: 80px;
         text-align: left;
-        font-weight: 600; /* Réduit de 800 à 600 */
+        font-weight: 600;
+        /* Réduit de 800 à 600 */
     }
 }
 
@@ -843,7 +847,8 @@ body {
 .cmp-hero-fbv__subtitle {
     font-family: var(--font-family-primary);
     font-size: 1.25rem;
-    font-weight: 600; /* Réduit de 800 à 600 */
+    font-weight: 600;
+    /* Réduit de 800 à 600 */
     line-height: 1.4;
     margin: 0 0 var(--spacing-xl) 0;
     color: #000000;
