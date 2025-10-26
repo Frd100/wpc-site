@@ -417,35 +417,41 @@ function initializeMobileMenu() {
 
     let isMenuOpen = false;
 
-    // Variables pour les animations GSAP réversibles
-    let menuTimeline = null;
-    let buttonTimeline = null;
+    // Variables pour les animations GSAP interruptibles
+    let menuOpenTween = null;
+    let menuCloseTween = null;
+    let buttonOpenTween = null;
+    let buttonCloseTween = null;
 
     /**
-     * Initialisation de la timeline du menu (réversible fluide)
+     * Animation d'ouverture du menu (interruptible)
      */
-    function initMenuTimeline() {
-        if (menuTimeline) return; // Déjà initialisée
+    function animateMenuOpen() {
+        // Arrêter toute animation de fermeture en cours
+        if (menuCloseTween) {
+            menuCloseTween.kill();
+            menuCloseTween = null;
+        }
 
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
-
-        // Définir l'état initial du menu (fermé)
+        
+        // Définir l'état initial
         gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
         gsap.set(menuLinks, { x: -50, opacity: 0 });
-
-        // Timeline avec reversed: true pour animation fluide dans les deux sens
-        menuTimeline = gsap.timeline({ paused: true, reversed: true });
-
-        // Animation du conteneur du menu (slide depuis la gauche)
-        menuTimeline.to(mobileMenu, {
+        
+        // Créer une timeline pour l'ouverture
+        menuOpenTween = gsap.timeline();
+        
+        // Animation du conteneur du menu
+        menuOpenTween.to(mobileMenu, {
             x: "0%",
             opacity: 1,
             duration: 0.4,
             ease: "power2.out"
         }, 0);
 
-        // Animation des liens du menu (révélation progressive)
-        menuTimeline.to(menuLinks, {
+        // Animation des liens du menu
+        menuOpenTween.to(menuLinks, {
             x: 0,
             opacity: 1,
             duration: 0.3,
@@ -455,29 +461,67 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Initialisation de la timeline du bouton (réversible fluide)
+     * Animation de fermeture du menu (interruptible)
      */
-    function initButtonTimeline() {
-        if (buttonTimeline) return; // Déjà initialisée
+    function animateMenuClose() {
+        // Arrêter toute animation d'ouverture en cours
+        if (menuOpenTween) {
+            menuOpenTween.kill();
+            menuOpenTween = null;
+        }
 
-        // Timeline avec reversed: true pour animation fluide dans les deux sens
-        buttonTimeline = gsap.timeline({ paused: true, reversed: true });
+        const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
+        
+        // Créer une timeline pour la fermeture
+        menuCloseTween = gsap.timeline();
+        
+        // Animation des liens du menu (disparition progressive)
+        menuCloseTween.to(menuLinks, {
+            x: -50,
+            opacity: 0,
+            duration: 0.2,
+            stagger: 0.05,
+            ease: "power2.in"
+        }, 0);
 
+        // Animation du conteneur du menu
+        menuCloseTween.to(mobileMenu, {
+            x: "-100%",
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.in",
+            delay: 0.1
+        }, 0);
+    }
+
+    /**
+     * Animation d'ouverture du bouton (interruptible)
+     */
+    function animateButtonOpen() {
+        // Arrêter toute animation de fermeture en cours
+        if (buttonCloseTween) {
+            buttonCloseTween.kill();
+            buttonCloseTween = null;
+        }
+
+        // Créer une timeline pour l'ouverture
+        buttonOpenTween = gsap.timeline();
+        
         // Animation des lignes pour former un X
-        buttonTimeline.to(hamburgerLines[0], {
+        buttonOpenTween.to(hamburgerLines[0], {
             rotation: 45,
             y: 8.5,
             duration: 0.15,
             ease: "power2.out"
         }, 0);
 
-        buttonTimeline.to(hamburgerLines[1], {
+        buttonOpenTween.to(hamburgerLines[1], {
             opacity: 0,
             duration: 0.1,
             ease: "power2.out"
         }, 0);
 
-        buttonTimeline.to(hamburgerLines[2], {
+        buttonOpenTween.to(hamburgerLines[2], {
             rotation: -45,
             y: -8.5,
             duration: 0.15,
@@ -486,28 +530,60 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Contrôle de l'animation du bouton (play/reverse fluide)
+     * Animation de fermeture du bouton (interruptible)
+     */
+    function animateButtonClose() {
+        // Arrêter toute animation d'ouverture en cours
+        if (buttonOpenTween) {
+            buttonOpenTween.kill();
+            buttonOpenTween = null;
+        }
+
+        // Créer une timeline pour la fermeture
+        buttonCloseTween = gsap.timeline();
+        
+        // Animation des lignes pour revenir au hamburger
+        buttonCloseTween.to(hamburgerLines[0], {
+            rotation: 0,
+            y: 0,
+            duration: 0.15,
+            ease: "power2.out"
+        }, 0);
+
+        buttonCloseTween.to(hamburgerLines[1], {
+            opacity: 1,
+            duration: 0.1,
+            ease: "power2.out",
+            delay: 0.03
+        }, 0);
+
+        buttonCloseTween.to(hamburgerLines[2], {
+            rotation: 0,
+            y: 0,
+            duration: 0.15,
+            ease: "power2.out"
+        }, 0);
+    }
+
+    /**
+     * Contrôle de l'animation du bouton (interruptible)
      */
     function toggleButtonAnimation() {
-        initButtonTimeline();
-        
         if (isMenuOpen) {
-            buttonTimeline.play(); // Hamburger → X
+            animateButtonOpen(); // Hamburger → X
         } else {
-            buttonTimeline.reverse(); // X → Hamburger
+            animateButtonClose(); // X → Hamburger
         }
     }
 
     /**
-     * Contrôle de l'animation du menu (play/reverse fluide)
+     * Contrôle de l'animation du menu (interruptible)
      */
     function toggleMenuAnimation() {
-        initMenuTimeline();
-        
         if (isMenuOpen) {
-            menuTimeline.play(); // Ouverture
+            animateMenuOpen(); // Ouverture
         } else {
-            menuTimeline.reverse(); // Fermeture
+            animateMenuClose(); // Fermeture
         }
     }
 
