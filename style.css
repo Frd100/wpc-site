@@ -809,17 +809,6 @@ body {
         text-align: left;
     }
 
-    .cmp-hero-fbv__subtitle {
-        font-size: 1.8rem;
-        /* Augmenté de 1.6rem à 1.8rem pour mobile */
-        margin: var(--spacing-md) 0;
-        min-height: 4rem;
-        height: 80px;
-        text-align: left;
-        color: #000000; /* Ajouté pour mobile */
-        font-weight: 600;
-        /* Réduit de 800 à 600 */
-    }
 }
 
 
@@ -864,6 +853,21 @@ body {
     color: #000000;
     opacity: 0.95;
     text-align: center;
+}
+
+/* MOBILE OVERRIDE pour le sous-titre hero - APRÈS les règles générales */
+@media (max-width: 768px) {
+    .cmp-hero-fbv__subtitle {
+        font-size: 1.8rem;
+        /* Augmenté de 1.6rem à 1.8rem pour mobile */
+        margin: var(--spacing-md) 0;
+        min-height: 4rem;
+        height: 80px;
+        text-align: left; /* Override le text-align: center de la règle générale */
+        color: #000000;
+        font-weight: 600;
+        /* Réduit de 800 à 600 */
+    }
 }
 
 .cmp-hero-fbv__description {
