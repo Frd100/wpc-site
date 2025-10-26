@@ -1345,7 +1345,6 @@ body {
         padding-top: 6rem;
         /* Augmenté pour laisser de l'espace au bouton hamburger */
         transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
         z-index: 10002;
         overflow-y: auto;
     }

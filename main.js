@@ -418,6 +418,36 @@ function initializeMobileMenu() {
     let isMenuOpen = false;
 
     /**
+     * Animation GSAP pour ouvrir le menu avec effet de diffusion
+     */
+    function animateMenuOpen() {
+        // Animation du conteneur du menu (slide depuis la gauche)
+        gsap.fromTo(mobileMenu, {
+            x: "-100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            duration: 0.4,
+            ease: "power2.out"
+        });
+
+        // Animation des liens du menu (révélation progressive)
+        const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
+        gsap.fromTo(menuLinks, {
+            x: -50,
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            duration: 0.3,
+            stagger: 0.1,
+            ease: "power2.out",
+            delay: 0.2
+        });
+    }
+
+    /**
      * Animation GSAP pour transformer hamburger en X
      */
     function animateToX() {
@@ -523,6 +553,9 @@ function initializeMobileMenu() {
 
         // Animation GSAP pour transformer en X
         animateToX();
+        
+        // Animation GSAP pour ouvrir le menu avec effet de diffusion
+        animateMenuOpen();
 
         // Empêcher le scroll du body
         const scrollY = window.scrollY;
@@ -544,6 +577,9 @@ function initializeMobileMenu() {
 
         // Animation GSAP pour revenir au hamburger
         animateToHamburger();
+        
+        // Animation GSAP pour fermer le menu
+        animateMenuClose();
 
         // Restaurer le scroll
         body.style.overflow = '';
