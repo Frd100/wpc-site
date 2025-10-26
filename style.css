@@ -1692,11 +1692,11 @@ body {
         text-align: left;
     }
 
-    .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-xl) !important;
-        /* Espacement du bouton sur mobile - force l'application */
-        height: auto !important;
-        /* Hauteur auto pour éviter le chevauchement - force l'application */
+    .cmp-hero-fbv .cmp-hero-fbv__action-container {
+        margin-top: var(--spacing-xl);
+        /* Espacement du bouton sur mobile - spécificité élevée */
+        height: auto;
+        /* Hauteur auto pour éviter le chevauchement - spécificité élevée */
     }
 
     .cmp-hero-fbv__action-link {
