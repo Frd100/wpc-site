@@ -425,20 +425,20 @@ function initializeMobileMenu() {
         gsap.to(hamburgerLines[0], {
             rotation: 45,
             y: 8.5,
-            duration: 0.2,
+            duration: 0.15,
             ease: "power2.out"
         });
         
         gsap.to(hamburgerLines[1], {
             opacity: 0,
-            duration: 0.15,
+            duration: 0.1,
             ease: "power2.out"
         });
         
         gsap.to(hamburgerLines[2], {
             rotation: -45,
             y: -8.5,
-            duration: 0.2,
+            duration: 0.15,
             ease: "power2.out"
         });
     }
@@ -450,21 +450,21 @@ function initializeMobileMenu() {
         gsap.to(hamburgerLines[0], {
             rotation: 0,
             y: 0,
-            duration: 0.2,
+            duration: 0.15,
             ease: "power2.out"
         });
         
         gsap.to(hamburgerLines[1], {
             opacity: 1,
-            duration: 0.15,
+            duration: 0.1,
             ease: "power2.out",
-            delay: 0.05
+            delay: 0.03
         });
         
         gsap.to(hamburgerLines[2], {
             rotation: 0,
             y: 0,
-            duration: 0.2,
+            duration: 0.15,
             ease: "power2.out"
         });
     }
