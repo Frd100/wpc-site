@@ -709,14 +709,15 @@ body {
 
 .cmp-hero-fbv__action-container {
     text-align: center;
-    margin-top: var(--spacing-xl); /* Augmenté de var(--spacing-lg) à var(--spacing-xl) */
+    margin-top: var(--spacing-xl);
+    /* Augmenté de var(--spacing-lg) à var(--spacing-xl) */
     position: relative;
     z-index: 10;
     min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: auto; /* Changé de 80px à auto pour éviter le chevauchement */
     /* Hauteur fixe pour réserver l'espace du bouton */
 }
 
