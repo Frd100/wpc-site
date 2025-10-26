@@ -184,36 +184,46 @@ document.addEventListener('DOMContentLoaded', function () {
             const originalLine1 = line1.textContent;
             const originalLine2 = line2.textContent;
 
-            // Vider les lignes initialement
-            gsap.set(line1, { text: "" });
-            gsap.set(line2, { text: "" });
+            // Vérifier si on est sur desktop (largeur >= 769px)
+            const isDesktop = window.innerWidth >= 769;
+            
+            if (isDesktop) {
+                // Desktop : Pas d'animation, texte directement visible
+                gsap.set(line1, { text: originalLine1 });
+                gsap.set(line2, { text: originalLine2 });
+            } else {
+                // Mobile : Animation normale
+                // Vider les lignes initialement
+                gsap.set(line1, { text: "" });
+                gsap.set(line2, { text: "" });
 
-            // Animation de la première ligne
-            gsap.to(line1, {
-                text: originalLine1,
-                duration: 0.7,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: heroSection,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none"
-                }
-            });
+                // Animation de la première ligne
+                gsap.to(line1, {
+                    text: originalLine1,
+                    duration: 0.7,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: heroSection,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none none"
+                    }
+                });
 
-            // Animation de la deuxième ligne avec délai
-            gsap.to(line2, {
-                text: originalLine2,
-                duration: 0.7,
-                ease: "none",
-                delay: 0.7,
-                scrollTrigger: {
-                    trigger: heroSection,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none"
-                }
-            });
+                // Animation de la deuxième ligne avec délai
+                gsap.to(line2, {
+                    text: originalLine2,
+                    duration: 0.7,
+                    ease: "none",
+                    delay: 0.7,
+                    scrollTrigger: {
+                        trigger: heroSection,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            }
         }
 
         // Animation d'écriture pour le sous-titre
@@ -221,23 +231,32 @@ document.addEventListener('DOMContentLoaded', function () {
         if (subtitle) {
             const originalText = subtitle.textContent;
 
-            // Vider le texte initialement
-            gsap.set(subtitle, {
-                text: ""
-            });
+            // Vérifier si on est sur desktop (largeur >= 769px)
+            const isDesktop = window.innerWidth >= 769;
+            
+            if (isDesktop) {
+                // Desktop : Pas d'animation, texte directement visible
+                gsap.set(subtitle, { text: originalText });
+            } else {
+                // Mobile : Animation normale
+                // Vider le texte initialement
+                gsap.set(subtitle, {
+                    text: ""
+                });
 
-            // Animation d'écriture lettre par lettre
-            gsap.to(subtitle, {
-                text: originalText,
-                duration: 2,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: heroSection,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none"
-                }
-            });
+                // Animation d'écriture lettre par lettre
+                gsap.to(subtitle, {
+                    text: originalText,
+                    duration: 2,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: heroSection,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            }
         }
 
     }

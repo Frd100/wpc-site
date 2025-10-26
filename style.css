@@ -733,7 +733,7 @@ body {
     position: relative;
 }
 
-/* DESKTOP OVERRIDE - SPÉCIFICITÉ PLUS ÉLEVÉE */
+/* DESKTOP OVERRIDE - TITRE VIERGE */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
         top: 60%;
@@ -741,7 +741,6 @@ body {
         padding: var(--spacing-lg);
         text-align: center;
         justify-content: center;
-        /* Centrer le contenu */
     }
 
     .cmp-hero-fbv__content .container {
@@ -752,31 +751,25 @@ body {
         overflow: visible;
     }
 
-    /* Spécificité plus élevée pour surcharger les règles de base */
+    /* TITRE VIERGE - AUCUNE ANIMATION, STYLE SIMPLE */
     .cmp-hero-fbv__content .split {
-        text-align: center !important;
-        /* Forcer le centrage */
-        white-space: nowrap;
-        display: block;
         font-size: 4.2rem;
+        font-weight: 700;
         color: #000000;
-        /* Maintenir la couleur noire */
-        width: 100%;
-        margin: 0 auto;
-    }
-    
-    /* Forcer l'alignement des spans à l'intérieur du titre */
-    .cmp-hero-fbv__content .split span {
-        text-align: center !important;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        line-height: 1.1;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         display: block;
+        white-space: normal;
     }
 
     .cmp-hero-fbv__subtitle {
         margin: 0 0 var(--spacing-2xl) 0;
-        text-align: center !important;
-        /* Forcer le centrage */
+        text-align: center;
         color: #000000;
-        /* Maintenir la couleur noire */
     }
 }
 
