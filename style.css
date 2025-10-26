@@ -700,8 +700,8 @@ body {
     margin-bottom: 2rem;
     text-align: center;
     max-width: none;
-    height: auto;
-    overflow: visible; /* Remettre visible car overflow est maintenant sur hero-text-container */
+    height: 120px; /* Hauteur fixe comme sur mobile */
+    overflow: hidden; /* Comme sur mobile */
 }
 
 .cmp-hero-fbv__content .split {
@@ -766,7 +766,6 @@ body {
     max-width: none;
     /* Desktop : pas de limite */
     width: 100%;
-    overflow: hidden; /* Empêcher le mouvement du sous-titre/bouton pendant l'animation */
     /* text-align hérité du parent */
 }
 
