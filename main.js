@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             linesClass: "line"
         });
 
-        // Masquer les lignes initialement
+        // Masquer les lignes initialement SEULEMENT sur le titre
         gsap.set(splitTitle.lines, {
             overflow: "hidden"
         });
@@ -71,7 +71,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 end: "bottom 30%",
                 toggleActions: "play none none none",
                 onStart: () => console.log('Animation Nanterre: Animation déclenchée!'),
-                onComplete: () => console.log('Animation Nanterre: Animation terminée!')
+                onComplete: () => {
+                    console.log('Animation Nanterre: Animation terminée!');
+                    // Restaurer l'overflow normal après l'animation pour éviter les conflits
+                    gsap.set(splitTitle.lines, {
+                        overflow: "visible"
+                    });
+                }
             }
         });
 
