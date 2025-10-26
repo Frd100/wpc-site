@@ -127,6 +127,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleActions: "play none none none"
             }
         });
+
+        // === ANIMATION DU SOUS-TITRE (IDENTIQUE À LA HERO) ===
+        const aboutSubtitle = document.querySelector('.about-subtitle');
+
+        if (aboutSubtitle) {
+            const originalText = aboutSubtitle.textContent;
+
+            // Vider le texte initialement
+            gsap.set(aboutSubtitle, {
+                text: ""
+            });
+
+            // Animation d'écriture lettre par lettre (identique à la hero)
+            gsap.to(aboutSubtitle, {
+                text: originalText,
+                duration: 2,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: aboutSubtitle,
+                    start: "top 60%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
     }
 
     // Initialiser l'animation du titre
