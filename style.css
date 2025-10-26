@@ -3,12 +3,12 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* WPC Primary Colors */
-    --wpc-blue: #1E4ADE;
-    --wpc-blue-light: #1E4ADE;
-    --wpc-blue-dark: #1E4ADE;
-    --wpc-blue-hero: #1A365D;
-    --wpc-blue-button: #2351FF;
-    --wpc-blue-button-hover: #1A3FE6;
+    --primary-blue: #2351FF;
+    --primary-blue-light: #2351FF;
+    --primary-blue-dark: #1A3FE6;
+    --primary-blue-hero: #1A365D;
+    --primary-blue-button: #2351FF;
+    --primary-blue-button-hover: #1A3FE6;
 
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
@@ -252,13 +252,13 @@
     left: 50%;
     transform: translateX(-50%);
     height: 5px;
-    background: #1E4ADE;
+    background: #2351FF;
     transition: none;
     width: 0;
 }
 
 .main-navigation__link:hover {
-    color: #1E4ADE;
+    color: #2351FF;
     background: none;
 }
 
@@ -270,7 +270,7 @@
 /* WPC New Section */
 .cmp-new-section {
     width: 100%;
-    background: var(--wpc-blue-button);
+    background: var(--primary-blue-button);
     padding: 0;
     margin: 0;
     min-height: 350px;
@@ -394,7 +394,7 @@
 .cmp-services-button {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-xl);
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--text-white);
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
@@ -406,7 +406,7 @@
 }
 
 .cmp-services-button:hover {
-    background: var(--wpc-blue-dark);
+    background: var(--primary-blue-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -423,17 +423,17 @@
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
     background: transparent;
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     border-radius: 20px;
     text-decoration: none;
     transition: all 0.2s ease;
-    border: 2px solid var(--wpc-blue);
+    border: 2px solid var(--primary-blue);
 }
 
 .cmp-domain-tag:hover {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--text-white);
     transform: translateY(-1px);
 }
@@ -441,7 +441,7 @@
 .cmp-domain-link {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     text-decoration: underline;
@@ -450,7 +450,7 @@
 }
 
 .cmp-domain-link:hover {
-    color: var(--wpc-blue-dark);
+    color: var(--primary-blue-dark);
 }
 
 .cmp-services-right {
@@ -530,12 +530,12 @@ body {
 }
 
 .cmp-ppc-navigation__userlogin {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--text-white);
 }
 
 .cmp-ppc-navigation__userlogin:hover {
-    background: var(--wpc-blue-dark);
+    background: var(--primary-blue-dark);
     color: var(--text-white);
 }
 
@@ -548,11 +548,11 @@ body {
 
 .cmp-lang-selector__toggle-btn:hover {
     background: var(--wpc-gray-100);
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
 }
 
 .cmp-lang-selector__icon {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
 }
 
 .cmp-lang-selector__chevron-icon {
@@ -809,7 +809,7 @@ body {
 }
 
 .cmp-title__link-text {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
     font-size: 17px;
@@ -817,12 +817,12 @@ body {
 }
 
 .cmp-title__link-text:hover {
-    color: var(--wpc-blue-dark);
+    color: var(--primary-blue-dark);
 }
 
 .cmp-title__link .material-icons {
     font-size: var(--font-size-lg);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
 }
 
 /* KPMG Exact Expertises Grid */
@@ -846,14 +846,14 @@ body {
 .cmp-expertise-item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
 }
 
 .cmp-expertise-item__icon {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-lg);
-    background: #1E4ADE;
+    background: #2351FF;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -885,26 +885,26 @@ body {
 }
 
 .cmp-button--primary {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--text-white);
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
 }
 
 .cmp-button--primary:hover {
-    background: var(--wpc-blue-dark);
-    border-color: var(--wpc-blue-dark);
+    background: var(--primary-blue-dark);
+    border-color: var(--primary-blue-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
 .cmp-button--secondary {
     background: transparent;
-    color: var(--wpc-blue);
-    border-color: var(--wpc-blue);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .cmp-button--secondary:hover {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -960,7 +960,7 @@ body {
 .cmp-nanterre-subtitle {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: var(--spacing-md);
@@ -1147,7 +1147,7 @@ body {
 
 .cmp-footer__nav-links a:hover {
     opacity: 1;
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
 }
 
 .cmp-footer__copyright {
@@ -1524,7 +1524,7 @@ body {
 
 /* Focus styles - accessible */
 .main-navigation__toggle:focus-visible {
-    outline: 2px solid var(--wpc-blue);
+    outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
     border-radius: 8px;
 }
@@ -1577,7 +1577,7 @@ body {
 }
 
 .main-navigation__link:hover {
-    color: #1E4ADE;
+    color: #2351FF;
 }
 
 /* Focus styles for accessibility - only for keyboard navigation */
@@ -1592,7 +1592,7 @@ body {
 .main-navigation__toggle:focus-visible,
 .cmp-button:focus-visible,
 .cmp-hero-fbv__action-link:focus-visible {
-    outline: 2px solid var(--wpc-blue);
+    outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
     border-radius: 2px;
 }
@@ -1676,13 +1676,13 @@ body {
         border-radius: 0;
         font-size: 1.1rem;
         font-weight: 600;
-        background: var(--wpc-blue-button);
+        background: var(--primary-blue-button);
         color: white;
         padding: var(--spacing-md) var(--spacing-lg);
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
-        background: var(--wpc-blue-button-hover);
+        background: var(--primary-blue-button-hover);
         color: white;
     }
 
@@ -1809,7 +1809,7 @@ body {
         left: 50%;
         transform: translateX(-50%);
         height: 5px;
-        background: #1E4ADE;
+        background: #2351FF;
         transition: none;
         width: 0;
     }
@@ -1936,13 +1936,13 @@ body {
 .cmp-menu-item__inner:focus,
 .cmp-mobile-toggle__inner:focus,
 .cmp-search-toggle__inner:focus {
-    outline: 2px solid var(--wpc-blue);
+    outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
 }
 
 /* ===== PAGE CONTACT ===== */
 .cmp-contact-hero {
-    background: #1E4ADE;
+    background: #2351FF;
     padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
 }
@@ -2037,7 +2037,7 @@ body {
 }
 
 .cmp-contact-info-item .material-icons {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     font-size: 1.5rem;
     margin-top: 0.25rem;
 }
@@ -2099,7 +2099,7 @@ body {
 .cmp-form-select:focus,
 .cmp-form-textarea:focus {
     outline: none;
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
 }
 
 .cmp-form-textarea {
@@ -2112,7 +2112,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg) var(--spacing-2xl);
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--wpc-white);
     border: none;
     border-radius: var(--border-radius-sm);
@@ -2127,11 +2127,11 @@ body {
 }
 
 .cmp-contact-submit:hover {
-    background: var(--wpc-blue-dark);
+    background: var(--primary-blue-dark);
 }
 
 .cmp-contact-submit:active {
-    background: var(--wpc-blue-dark);
+    background: var(--primary-blue-dark);
 }
 
 .cmp-contact-submit .material-icons {
@@ -2155,7 +2155,7 @@ body {
     flex-shrink: 0;
     width: 16px;
     height: 16px;
-    accent-color: var(--wpc-blue);
+    accent-color: var(--primary-blue);
 }
 
 .cmp-checkbox-text {
@@ -2164,14 +2164,14 @@ body {
 
 .cmp-privacy-link,
 .cmp-rights-link {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     text-decoration: underline;
     transition: color 0.2s ease;
 }
 
 .cmp-privacy-link:hover,
 .cmp-rights-link:hover {
-    color: var(--wpc-blue-dark);
+    color: var(--primary-blue-dark);
 }
 
 /* Responsive Contact */
@@ -2295,7 +2295,7 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
 }
 
 .form-group textarea {
@@ -2308,7 +2308,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--wpc-white);
     border: none;
     border-radius: 50px;
@@ -2323,7 +2323,7 @@ body {
 }
 
 .submit-button:hover {
-    background: var(--wpc-blue-dark);
+    background: var(--primary-blue-dark);
 }
 
 .checkbox-label {
@@ -2337,7 +2337,7 @@ body {
 
 .checkbox-label input[type="checkbox"] {
     margin: 0;
-    accent-color: var(--wpc-blue);
+    accent-color: var(--primary-blue);
 }
 
 .checkbox-text {
@@ -2346,13 +2346,13 @@ body {
 
 .privacy-link,
 .rights-link {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     text-decoration: underline;
 }
 
 .privacy-link:hover,
 .rights-link:hover {
-    color: var(--wpc-blue-dark);
+    color: var(--primary-blue-dark);
 }
 
 .contact-info {
@@ -2430,7 +2430,7 @@ body {
 
 /* ===== PAGE NOUS REJOINDRE ===== */
 .nous-rejoindre-hero {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--wpc-white);
     padding: var(--spacing-4xl) 0;
     text-align: center;
@@ -2467,12 +2467,12 @@ body {
 }
 
 .form-input[type="file"]:hover {
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
     background: #f0f9ff;
 }
 
 .form-input[type="file"]:focus {
-    border-color: var(--wpc-blue);
+    border-color: var(--primary-blue);
     background: #f0f9ff;
     outline: none;
     box-shadow: 0 0 0 3px rgba(3, 61, 204, 0.1);
@@ -2510,7 +2510,7 @@ select.form-input {
 }
 
 .checkbox-label a {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     text-decoration: underline;
 }
 
@@ -2547,7 +2547,7 @@ select.form-input {
     font-family: var(--font-family-condensed);
     font-size: 2.5rem;
     font-weight: var(--font-weight-bold);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     margin-bottom: var(--spacing-sm);
     text-align: center;
 }
@@ -2575,7 +2575,7 @@ select.form-input {
     font-family: var(--font-family-condensed);
     font-size: 1.5rem;
     font-weight: var(--font-weight-semibold);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     margin-bottom: var(--spacing-md);
 }
 
@@ -2597,7 +2597,7 @@ select.form-input {
 }
 
 .confidentialite-section strong {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     font-weight: var(--font-weight-semibold);
 }
 
@@ -2622,7 +2622,7 @@ select.form-input {
 
 /* ===== PAGE NOTRE FONCTIONNEMENT ===== */
 .cmp-fonctionnement-hero {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--wpc-white);
     padding: 0;
     text-align: center;
@@ -2722,7 +2722,7 @@ select.form-input {
 
 .cmp-domaine-pole__services li::before {
     content: "•";
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -2777,7 +2777,7 @@ select.form-input {
     left: 24px;
     right: 24px;
     height: 2px;
-    background: #1E4ADE;
+    background: #2351FF;
     z-index: 1;
 }
 
@@ -2795,7 +2795,7 @@ select.form-input {
 .cmp-timeline-step__number {
     width: 48px;
     height: 48px;
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--wpc-white);
     border-radius: 50%;
     display: flex;
@@ -2904,7 +2904,7 @@ select.form-input {
 }
 
 .main-navigation__link.active:hover {
-    color: #1E4ADE;
+    color: #2351FF;
 }
 
 .main-navigation__link.active::after {
@@ -3035,7 +3035,7 @@ select.form-input {
 
 /* ===== PAGE ÉQUIPE ===== */
 .cmp-equipe-hero {
-    background: #1E4ADE;
+    background: #2351FF;
     color: var(--wpc-white);
     padding: 0;
     text-align: center;
@@ -3098,7 +3098,7 @@ select.form-input {
     height: 200px;
     border-radius: var(--border-radius-md);
     object-fit: cover;
-    border: 3px solid var(--wpc-blue);
+    border: 3px solid var(--primary-blue);
 }
 
 .cmp-membre-info {
@@ -3115,7 +3115,7 @@ select.form-input {
 .cmp-membre-role {
     font-size: 1.125rem;
     font-weight: var(--font-weight-semibold);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     margin: 0 0 var(--spacing-md) 0;
 }
 
@@ -3232,7 +3232,7 @@ select.form-input {
 .cmp-member-role {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     margin: 0 0 var(--spacing-sm) 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -3662,7 +3662,7 @@ select.form-input {
 }
 
 .cmp-actualite-title:hover {
-    color: #1E4ADE;
+    color: #2351FF;
     text-decoration: underline;
 }
 
@@ -3678,7 +3678,7 @@ select.form-input {
 }
 
 .actualite-link {
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
@@ -3688,7 +3688,7 @@ select.form-input {
 }
 
 .actualite-link:hover {
-    color: var(--wpc-blue-dark);
+    color: var(--primary-blue-dark);
     text-decoration: underline;
 }
 
@@ -3759,7 +3759,7 @@ select.form-input {
 }
 
 .actualite-content blockquote {
-    border-left: 4px solid var(--wpc-blue);
+    border-left: 4px solid var(--primary-blue);
     padding-left: 1rem;
     margin: 1rem 0;
     font-style: italic;
@@ -3794,7 +3794,7 @@ select.form-input {
 
 .article-date {
     font-weight: 500;
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
 }
 
 .article-author {
@@ -3825,13 +3825,13 @@ select.form-input {
 
 .article-content h1 {
     font-size: 2rem;
-    border-bottom: 2px solid var(--wpc-blue);
+    border-bottom: 2px solid var(--primary-blue);
     padding-bottom: 0.5rem;
 }
 
 .article-content h2 {
     font-size: 1.5rem;
-    color: var(--wpc-blue);
+    color: var(--primary-blue);
 }
 
 .article-content h3 {
@@ -3868,7 +3868,7 @@ select.form-input {
 }
 
 .article-content blockquote {
-    border-left: 4px solid var(--wpc-blue);
+    border-left: 4px solid var(--primary-blue);
     padding-left: 1.5rem;
     margin: 2rem 0;
     font-style: italic;
@@ -3890,7 +3890,7 @@ select.form-input {
     align-items: center;
     gap: 8px;
     padding: var(--spacing-sm) var(--spacing-xl);
-    background: #1E4ADE;
+    background: #2351FF;
     color: white;
     text-decoration: none;
     font-weight: 500;
