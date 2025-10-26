@@ -716,6 +716,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 80px; /* Hauteur fixe pour réserver l'espace du bouton */
 }
 
 .cmp-hero-fbv__action-link {
@@ -3034,6 +3035,8 @@ select.form-input {
 .cmp-hero-fbv__content .container {
     text-align: left;
     margin-bottom: 1rem;
+    height: 120px; /* Hauteur fixe pour réserver l'espace du titre */
+    overflow: hidden;
 }
 
 .cmp-hero-fbv__content .split {
@@ -3058,6 +3061,8 @@ select.form-input {
     display: block;
     text-align: left;
     position: relative;
+    height: 80px; /* Hauteur fixe pour réserver l'espace du sous-titre */
+    overflow: hidden;
 }
 
 /* Taille de font pour mobile */
