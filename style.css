@@ -3540,8 +3540,7 @@ select.form-input {
     max-width: 90vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    /* Alignement à gauche au lieu de center */
+    align-items: center;
     border-radius: 9px;
     padding: 2rem 0;
 }
@@ -3628,6 +3627,12 @@ select.form-input {
     /* S'assurer que le sous-titre n'est pas affecté par SplitText */
     isolation: isolate;
     /* Créer un nouveau contexte d'empilement */
+}
+
+/* Forcer l'alignement à gauche pour le sous-titre uniquement */
+.about-title-container .container .about-subtitle {
+    align-self: flex-start !important;
+    text-align: left !important;
 }
 
 .about-image {
