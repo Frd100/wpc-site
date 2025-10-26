@@ -697,11 +697,13 @@ body {
 }
 
 .cmp-hero-fbv__content .container {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem; /* Augmenter l'espace entre titre et sous-titre */
     text-align: center;
     max-width: none;
-    height: 120px; /* Hauteur fixe comme sur mobile */
-    overflow: hidden; /* Comme sur mobile */
+    height: 120px;
+    /* Hauteur fixe comme sur mobile */
+    overflow: hidden;
+    /* Comme sur mobile */
 }
 
 .cmp-hero-fbv__content .split {
