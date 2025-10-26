@@ -428,9 +428,9 @@ function initializeMobileMenu() {
         if (menuTimeline) return; // Déjà initialisée
 
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
-        
+
         menuTimeline = gsap.timeline({ paused: true });
-        
+
         // Animation du conteneur du menu (slide depuis la gauche)
         menuTimeline.fromTo(mobileMenu, {
             x: "-100%",
@@ -462,7 +462,7 @@ function initializeMobileMenu() {
         if (buttonTimeline) return; // Déjà initialisée
 
         buttonTimeline = gsap.timeline({ paused: true });
-        
+
         // Animation des lignes pour former un X
         buttonTimeline.to(hamburgerLines[0], {
             rotation: 45,
@@ -492,9 +492,9 @@ function initializeMobileMenu() {
         initButtonTimeline();
         
         if (isMenuOpen) {
-            buttonTimeline.reverse(); // X → Hamburger
-        } else {
             buttonTimeline.play(); // Hamburger → X
+        } else {
+            buttonTimeline.reverse(); // X → Hamburger
         }
     }
 
@@ -505,9 +505,9 @@ function initializeMobileMenu() {
         initMenuTimeline();
         
         if (isMenuOpen) {
-            menuTimeline.reverse(); // Fermeture
-        } else {
             menuTimeline.play(); // Ouverture
+        } else {
+            menuTimeline.reverse(); // Fermeture
         }
     }
 
@@ -554,7 +554,7 @@ function initializeMobileMenu() {
     function toggleMenu() {
         // Basculer l'état
         isMenuOpen = !isMenuOpen;
-        
+
         if (isMenuOpen) {
             // Ouvrir le menu
             mobileMenu.classList.add('active');
