@@ -755,7 +755,7 @@ body {
         align-items: center;
     }
 
-    .split .line {
+    .cmp-hero-fbv__content .split .line {
         width: 100%;
         height: 120px;
         position: relative;
@@ -763,7 +763,7 @@ body {
         display: block;
     }
 
-    .split .line span {
+    .cmp-hero-fbv__content .split .line span {
         position: absolute;
         top: 50%;
         left: 50%;
