@@ -810,8 +810,7 @@ body {
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1.6rem;
-        /* Augmenté de 1.4rem à 1.6rem pour mobile */
+        font-size: 1.8rem; /* Augmenté de 1.6rem à 1.8rem pour mobile */
         margin: var(--spacing-md) 0;
         min-height: 4rem;
         height: 80px;
