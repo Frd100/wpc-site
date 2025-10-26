@@ -3607,11 +3607,11 @@ select.form-input {
 
 /* Style pour le sous-titre about avec animation - INDÉPENDANT */
 .about-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.8rem; /* Augmenté de 1.4rem à 1.8rem */
     font-weight: 700;
     line-height: 1.4;
     color: #FFFFFF;
-    margin: 0;
+    margin: 2rem 0 0 0; /* Augmenté l'espacement du haut de 0 à 2rem */
     display: inline-block;
     /* Contrôle du positionnement */
     text-align: left;
