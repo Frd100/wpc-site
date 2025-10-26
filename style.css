@@ -858,8 +858,8 @@ body {
 /* MOBILE OVERRIDE pour le sous-titre hero - APRÈS les règles générales */
 @media (max-width: 768px) {
     .cmp-hero-fbv__subtitle {
-        font-size: 1.8rem;
-        /* Augmenté de 1.6rem à 1.8rem pour mobile */
+        font-size: 1.6rem;
+        /* Réduit de 1.8rem à 1.6rem pour mobile */
         margin: var(--spacing-md) 0;
         min-height: 4rem;
         height: 80px;
