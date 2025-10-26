@@ -741,11 +741,18 @@ body {
         white-space: normal;
         /* Permettre les retours à la ligne */
     }
+    
+    .cmp-hero-fbv__subtitle {
+        overflow: hidden; /* Empêcher l'animation d'impacter le bouton */
+        height: 80px; /* Hauteur fixe pour contenir l'animation */
+    }
 
     /* Bouton plaquette - même logique que mobile */
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-3xl); /* Même que mobile */
-        height: auto; /* Même que mobile */
+        margin-top: var(--spacing-3xl);
+        /* Même que mobile */
+        height: auto;
+        /* Même que mobile */
         display: flex;
         align-items: center;
         justify-content: center;
