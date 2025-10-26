@@ -622,22 +622,25 @@ body {
 
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 50%;
-    height: 100%;
+    height: auto;
     padding: var(--spacing-2xl);
     z-index: 2;
     box-sizing: border-box;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 
 .hero-text-container {
     max-width: 500px;
     width: 100%;
+    text-align: center;
 }
 
 .cmp-hero-fbv__content-container {
@@ -2979,7 +2982,7 @@ select.form-input {
 /* ===== EFFET SCRAMBLETEXT POUR HERO SECTION ===== */
 /* ===== EFFET SPLIT POUR HERO SECTION ===== */
 .cmp-hero-fbv__content .container {
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
     /* Remis à 1rem */
     height: 100px;
