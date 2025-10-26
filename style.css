@@ -761,8 +761,8 @@ body {
 
     /* Bouton plaquette - remonté sur desktop */
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-xl);
-        /* Réduit de 3xl à xl pour remonter */
+        margin-top: var(--spacing-lg);
+        /* Réduit de xl à lg pour remonter encore plus */
         height: auto;
         display: flex;
         align-items: center;
