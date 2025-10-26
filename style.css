@@ -1644,11 +1644,6 @@ body {
         /* Collé aux autres sections */
     }
 
-    /* Forcer l'alignement à gauche pour le sous-titre about sur mobile */
-    .cmp-about-section .about-subtitle {
-        text-align: left;
-        /* Pour que l'animation commence à gauche comme la hero section */
-    }
 
     .cmp-hero-fbv {
         display: flex;
@@ -1736,12 +1731,15 @@ body {
     /* Section "Notre ancrage à Nanterre" en colonne sur mobile */
     .about-container {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
+        /* Alignement à gauche comme la hero section */
     }
 
     .about-text {
         order: 1;
         margin-bottom: var(--spacing-lg);
+        text-align: left;
+        /* Forcer l'alignement à gauche du texte */
     }
 
     .about-image {
