@@ -170,7 +170,7 @@
 /* Mobile : hauteur réduite */
 @media (max-width: 768px) {
     #nav-placeholder {
-        min-height: 70px;
+        min-height: 75px;
         /* Mobile : plus petit */
     }
 }
@@ -863,7 +863,8 @@ body {
         margin: var(--spacing-md) 0;
         min-height: 4rem;
         height: 80px;
-        text-align: left; /* Override le text-align: center de la règle générale */
+        text-align: left;
+        /* Override le text-align: center de la règle générale */
         color: #000000;
         font-weight: 600;
         /* Réduit de 800 à 600 */
