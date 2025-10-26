@@ -128,21 +128,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // === ANIMATION DU SOUS-TITRE (RÉVÉLATION PROGRESSIVE) ===
+        // === ANIMATION DU SOUS-TITRE (TYPEWRITER COMME HERO) ===
         const aboutSubtitle = document.querySelector('.about-subtitle');
 
         if (aboutSubtitle) {
-            // Animation de révélation progressive avec clipPath
-            gsap.fromTo(aboutSubtitle, {
-                clipPath: "inset(100% 0% 0% 0%)", // Masqué par le haut
-                opacity: 0,
-                y: 30
-            }, {
-                clipPath: "inset(0% 0% 0% 0%)", // Complètement visible
-                opacity: 1,
-                y: 0,
-                duration: 1.5,
-                ease: "power2.out",
+            const originalText = aboutSubtitle.textContent;
+
+            // Vider le texte initialement
+            gsap.set(aboutSubtitle, {
+                text: ""
+            });
+
+            // Animation d'écriture lettre par lettre (identique à la hero)
+            gsap.to(aboutSubtitle, {
+                text: originalText,
+                duration: 2,
+                ease: "none",
                 scrollTrigger: {
                     trigger: aboutSubtitle,
                     start: "top 70%",

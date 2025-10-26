@@ -3613,6 +3613,7 @@ select.form-input {
     position: relative;
     min-height: 4rem;
     height: 80px;
+    /* Hauteur fixe pour éviter le changement de layout */
     overflow: visible;
     /* S'assurer que le sous-titre n'est pas affecté par SplitText */
     isolation: isolate;
