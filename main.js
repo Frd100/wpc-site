@@ -416,13 +416,24 @@ function initializeMobileMenu() {
     if (!mobileToggle || !mobileMenu || hamburgerLines.length === 0) return;
 
     let isMenuOpen = false;
+    
+    // Variables pour les animations GSAP interruptibles
+    let menuOpenTween = null;
+    let menuCloseTween = null;
+    let buttonTween = null;
 
     /**
-     * Animation GSAP pour ouvrir le menu avec effet de diffusion
+     * Animation GSAP pour ouvrir le menu avec effet de diffusion (interruptible)
      */
     function animateMenuOpen() {
+        // Arrêter toute animation de fermeture en cours
+        if (menuCloseTween) {
+            menuCloseTween.kill();
+            menuCloseTween = null;
+        }
+
         // Animation du conteneur du menu (slide depuis la gauche)
-        gsap.fromTo(mobileMenu, {
+        const menuContainerTween = gsap.fromTo(mobileMenu, {
             x: "-100%",
             opacity: 0
         }, {
@@ -434,7 +445,7 @@ function initializeMobileMenu() {
 
         // Animation des liens du menu (révélation progressive)
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
-        gsap.fromTo(menuLinks, {
+        const linksTween = gsap.fromTo(menuLinks, {
             x: -50,
             opacity: 0
         }, {
@@ -445,58 +456,117 @@ function initializeMobileMenu() {
             ease: "power2.out",
             delay: 0.2
         });
+
+        // Créer un timeline pour gérer les deux animations ensemble
+        menuOpenTween = gsap.timeline();
+        menuOpenTween.add(menuContainerTween, 0);
+        menuOpenTween.add(linksTween, 0);
     }
 
     /**
-     * Animation GSAP pour transformer hamburger en X
+     * Animation GSAP pour fermer le menu avec effet de diffusion (interruptible)
+     */
+    function animateMenuClose() {
+        // Arrêter toute animation d'ouverture en cours
+        if (menuOpenTween) {
+            menuOpenTween.kill();
+            menuOpenTween = null;
+        }
+
+        // Animation des liens du menu (disparition progressive)
+        const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
+        const linksTween = gsap.to(menuLinks, {
+            x: -50,
+            opacity: 0,
+            duration: 0.2,
+            stagger: 0.05,
+            ease: "power2.in"
+        });
+
+        // Animation du conteneur du menu (slide vers la gauche)
+        const menuContainerTween = gsap.to(mobileMenu, {
+            x: "-100%",
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.in",
+            delay: 0.1
+        });
+
+        // Créer un timeline pour gérer les deux animations ensemble
+        menuCloseTween = gsap.timeline();
+        menuCloseTween.add(linksTween, 0);
+        menuCloseTween.add(menuContainerTween, 0);
+    }
+
+    /**
+     * Animation GSAP pour transformer hamburger en X (interruptible)
      */
     function animateToX() {
+        // Arrêter toute animation de bouton en cours
+        if (buttonTween) {
+            buttonTween.kill();
+            buttonTween = null;
+        }
+
+        // Créer un timeline pour l'animation du bouton
+        buttonTween = gsap.timeline();
+        
         // Animation des lignes pour former un X
-        gsap.to(hamburgerLines[0], {
+        buttonTween.to(hamburgerLines[0], {
             rotation: 45,
             y: 8.5,
             duration: 0.15,
             ease: "power2.out"
-        });
+        }, 0);
 
-        gsap.to(hamburgerLines[1], {
+        buttonTween.to(hamburgerLines[1], {
             opacity: 0,
             duration: 0.1,
             ease: "power2.out"
-        });
+        }, 0);
 
-        gsap.to(hamburgerLines[2], {
+        buttonTween.to(hamburgerLines[2], {
             rotation: -45,
             y: -8.5,
             duration: 0.15,
             ease: "power2.out"
-        });
+        }, 0);
     }
 
     /**
-     * Animation GSAP pour revenir au hamburger
+     * Animation GSAP pour revenir au hamburger (interruptible)
      */
     function animateToHamburger() {
-        gsap.to(hamburgerLines[0], {
+        // Arrêter toute animation de bouton en cours
+        if (buttonTween) {
+            buttonTween.kill();
+            buttonTween = null;
+        }
+
+        // Créer un timeline pour l'animation du bouton
+        buttonTween = gsap.timeline();
+        
+        // Animation des lignes pour revenir au hamburger
+        buttonTween.to(hamburgerLines[0], {
             rotation: 0,
             y: 0,
             duration: 0.15,
             ease: "power2.out"
-        });
+        }, 0);
 
-        gsap.to(hamburgerLines[1], {
+        buttonTween.to(hamburgerLines[1], {
             opacity: 1,
             duration: 0.1,
             ease: "power2.out",
             delay: 0.03
-        });
+        }, 0);
 
-        gsap.to(hamburgerLines[2], {
+        buttonTween.to(hamburgerLines[2], {
             rotation: 0,
             y: 0,
             duration: 0.15,
             ease: "power2.out"
-        });
+        }, 0);
     }
 
     /**
@@ -572,26 +642,24 @@ function initializeMobileMenu() {
 
         // Animation GSAP pour revenir au hamburger
         animateToHamburger();
-        
+
         // Animation GSAP pour fermer le menu
         animateMenuClose();
 
-        // Attendre que l'animation se termine avant de supprimer les classes
-        setTimeout(() => {
-            mobileMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+        // Supprimer les classes immédiatement pour permettre l'interruption
+        mobileMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
 
-            // Restaurer le scroll
-            body.style.overflow = '';
-            body.style.position = '';
-            body.style.top = '';
-            body.style.width = '';
+        // Restaurer le scroll
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.top = '';
+        body.style.width = '';
 
-            // Restaurer la position de scroll
-            window.scrollTo(0, parseInt(scrollY));
-        }, 400); // Délai pour laisser l'animation se terminer (0.3s + 0.1s de delay)
+        // Restaurer la position de scroll
+        window.scrollTo(0, parseInt(scrollY));
     }
 }
 
