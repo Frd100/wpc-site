@@ -738,7 +738,8 @@ body {
     .cmp-hero-fbv__content {
         top: 60%;
         width: 80%;
-        padding: 0; /* Supprimer complètement le padding */
+        padding: 0;
+        /* Supprimer complètement le padding */
         text-align: center;
         justify-content: center;
     }
@@ -764,7 +765,7 @@ body {
         letter-spacing: 1px;
         text-transform: uppercase;
         display: block;
-        white-space: normal;
+        white-space: nowrap; /* Forcer le titre sur une seule ligne */
     }
 
     .cmp-hero-fbv__subtitle {
