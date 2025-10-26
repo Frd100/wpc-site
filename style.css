@@ -3614,6 +3614,8 @@ select.form-input {
     min-height: 4rem;
     height: 80px;
     /* Hauteur fixe pour éviter le changement de layout */
+    width: 100%; /* Largeur fixe pour éviter les recalculs */
+    white-space: nowrap; /* Pas de retour à la ligne */
     overflow: visible;
     /* S'assurer que le sous-titre n'est pas affecté par SplitText */
     isolation: isolate;

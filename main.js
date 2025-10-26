@@ -134,15 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (aboutSubtitle) {
             const originalText = aboutSubtitle.textContent;
 
-            // Animation d'écriture lettre par lettre avec fromTo (solution 2)
-            gsap.fromTo(aboutSubtitle, {
-                text: "",
-                textAlign: "left",
-                x: 0
-            }, {
+            // Vider le texte initialement
+            gsap.set(aboutSubtitle, {
+                text: ""
+            });
+
+            // Animation d'écriture lettre par lettre (identique à la hero)
+            gsap.to(aboutSubtitle, {
                 text: originalText,
-                textAlign: "left",
-                x: 0,
                 duration: 2,
                 ease: "none",
                 scrollTrigger: {
