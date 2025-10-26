@@ -75,42 +75,27 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Animation de masquage pour les paragraphes
-        const paragraphs = document.querySelectorAll('.cmp-about-section .about-paragraph');
-        if (paragraphs.length > 0) {
-            console.log('Animation Nanterre: Paragraphes trouvés:', paragraphs.length);
+        // Animation d'écriture pour le sous-titre about (remplace l'ancienne animation SplitText)
+        const aboutSubtitle = document.querySelector('.about-subtitle');
+        if (aboutSubtitle) {
+            const originalAboutText = aboutSubtitle.textContent;
 
-            // SplitText pour chaque paragraphe
-            paragraphs.forEach((paragraph, index) => {
-                const splitParagraph = new SplitText(paragraph, {
-                    type: "words,lines",
-                    wordsClass: "word",
-                    linesClass: "line"
-                });
+            // Vider le texte initialement
+            gsap.set(aboutSubtitle, {
+                text: ""
+            });
 
-                // Masquer les lignes initialement
-                gsap.set(splitParagraph.lines, {
-                    overflow: "hidden"
-                });
-
-                gsap.set(splitParagraph.words, {
-                    y: "100%"
-                });
-
-                // Animation de révélation avec délai pour chaque paragraphe
-                gsap.to(splitParagraph.words, {
-                    y: "0%",
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out",
-                    delay: 0.5 + (index * 0.3), // Délai progressif
-                    scrollTrigger: {
-                        trigger: aboutSection,
-                        start: "top 70%",
-                        end: "bottom 30%",
-                        toggleActions: "play none none none"
-                    }
-                });
+            // Animation d'écriture lettre par lettre
+            gsap.to(aboutSubtitle, {
+                text: originalAboutText,
+                duration: 2,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: aboutSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
+                }
             });
         }
 
@@ -202,29 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Animation d'écriture pour le sous-titre about
-        const aboutSubtitle = document.querySelector('.about-subtitle');
-        if (aboutSubtitle) {
-            const originalAboutText = aboutSubtitle.textContent;
-
-            // Vider le texte initialement
-            gsap.set(aboutSubtitle, {
-                text: ""
-            });
-
-            // Animation d'écriture lettre par lettre
-            gsap.to(aboutSubtitle, {
-                text: originalAboutText,
-                duration: 2,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: aboutSection,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none"
-                }
-            });
-        }
     }
 
     // Initialiser l'effet SplitText pour la hero section
