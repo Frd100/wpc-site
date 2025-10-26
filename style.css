@@ -3583,7 +3583,8 @@ select.form-input {
     margin: 0.25rem 0;
     font-size: 3.5rem;
     /* Augmenté de 3rem à 3.5rem */
-    font-weight: 500;
+    font-weight: 400;
+    /* Réduit de 500 à 400 pour moins de bold */
 }
 
 .about-title-container .word.nanterre-red {
