@@ -995,14 +995,15 @@ body {
     max-width: 100%;
     margin: 0 auto;
     padding: var(--spacing-2xl);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--spacing-4xl);
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .cmp-about-left {
     text-align: left;
+    max-width: 800px;
+    width: 100%;
 }
 
 .cmp-about-right {
