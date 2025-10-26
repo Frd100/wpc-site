@@ -160,7 +160,8 @@
 
 /* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
 #nav-placeholder {
-    min-height: 90px; /* Desktop : légèrement plus grand pour éviter le sursaut */
+    min-height: 90px;
+    /* Desktop : légèrement plus grand pour éviter le sursaut */
     display: block;
     background: #F5F6FA;
     /* Même gris que le hero section */
@@ -169,7 +170,8 @@
 /* Mobile : hauteur réduite */
 @media (max-width: 768px) {
     #nav-placeholder {
-        min-height: 70px; /* Mobile : plus petit */
+        min-height: 70px;
+        /* Mobile : plus petit */
     }
 }
 
@@ -1698,7 +1700,7 @@ body {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #051B2C;
+    background-color: #20222A;
     border-radius: 2px;
     transition: all 0.3s ease;
     transform-origin: center;
