@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Animation d'écriture lettre par lettre (identique à la hero)
             gsap.to(aboutSubtitle, {
                 text: originalText,
-                duration: 2,
+                duration: 1.2, // Réduit de 2 à 1.2 secondes pour une animation plus rapide
                 ease: "none",
                 scrollTrigger: {
                     trigger: aboutSubtitle,
