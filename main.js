@@ -212,11 +212,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 splitElement.appendChild(line2Div);
 
                 console.log('Structure créée:', splitElement);
+                console.log('line1Span:', line1Span);
+                console.log('line2Span:', line2Span);
 
-                // Animation masked line - Timeline GSAP
+                // Animation masked line - Timeline GSAP avec éléments directs
                 const tl = gsap.timeline();
 
-                tl.from(".line span", 1.8, {
+                // Position initiale visible pour debug
+                gsap.set([line1Span, line2Span], { y: 100 });
+
+                // Cibler directement les éléments créés
+                tl.from([line1Span, line2Span], 1.8, {
                     y: 100,
                     ease: "power4.out",
                     delay: 1,
@@ -225,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         amount: 0.3
                     }
                 });
+
+                console.log('Animation lancée');
             } else {
                 // Mobile : Animation normale
                 // Vider les lignes initialement
