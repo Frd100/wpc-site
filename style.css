@@ -3019,36 +3019,6 @@ select.form-input {
     /* Hauteur fixe pour réserver l'espace du sous-titre */
 }
 
-/* Règles spécifiques pour desktop uniquement */
-@media (min-width: 769px) {
-    .cmp-hero-fbv__content {
-        top: 60%;
-        /* Baissé de 50% à 60% pour descendre le contenu */
-    }
-
-    .cmp-hero-fbv__content .container {
-        margin-bottom: 2rem;
-        /* Augmenté de 1rem à 2rem pour plus d'espace */
-        text-align: center !important;
-        /* Centrer le conteneur sur desktop */
-    }
-
-    .cmp-hero-fbv__subtitle {
-        margin: 0 0 var(--spacing-2xl) 0;
-        /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) */
-        text-align: center !important;
-        /* Centrer le sous-titre sur desktop */
-    }
-
-    .cmp-hero-fbv__content .split {
-        text-align: center !important;
-        /* Centré pour desktop */
-        white-space: nowrap;
-        /* S'assurer que le titre reste sur une ligne */
-        display: block;
-        /* Forcer l'affichage en bloc pour le centrage */
-    }
-}
 
 /* Taille de font pour mobile */
 @media (max-width: 768px) {
@@ -3086,6 +3056,37 @@ select.form-input {
         height: 80px;
     }
 
+}
+
+/* Règles spécifiques pour desktop uniquement - APRÈS mobile pour avoir la priorité */
+@media (min-width: 769px) {
+    .cmp-hero-fbv__content {
+        top: 60%;
+        /* Baissé de 50% à 60% pour descendre le contenu */
+    }
+
+    .cmp-hero-fbv__content .container {
+        margin-bottom: 2rem;
+        /* Augmenté de 1rem à 2rem pour plus d'espace */
+        text-align: center;
+        /* Centrer le conteneur sur desktop */
+    }
+
+    .cmp-hero-fbv__subtitle {
+        margin: 0 0 var(--spacing-2xl) 0;
+        /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) */
+        text-align: center;
+        /* Centrer le sous-titre sur desktop */
+    }
+
+    .cmp-hero-fbv__content .split {
+        text-align: center;
+        /* Centré pour desktop */
+        white-space: nowrap;
+        /* S'assurer que le titre reste sur une ligne */
+        display: block;
+        /* Forcer l'affichage en bloc pour le centrage */
+    }
 }
 
 /* ===== PAGE ÉQUIPE ===== */
