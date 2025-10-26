@@ -3570,8 +3570,8 @@ select.form-input {
     -moz-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    height: 100px;
-    padding: 0.3rem 0.8rem;
+    height: 60px;
+    padding: 0.1rem 0.8rem;
     border-radius: 15px;
     display: flex;
     align-items: center;
