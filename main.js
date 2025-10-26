@@ -422,7 +422,7 @@ function initializeMobileMenu() {
     let buttonTimeline = null;
 
     /**
-     * Initialisation de la timeline du menu (réversible)
+     * Initialisation de la timeline du menu (réversible fluide)
      */
     function initMenuTimeline() {
         if (menuTimeline) return; // Déjà initialisée
@@ -433,7 +433,8 @@ function initializeMobileMenu() {
         gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
         gsap.set(menuLinks, { x: -50, opacity: 0 });
         
-        menuTimeline = gsap.timeline({ paused: true });
+        // Timeline avec reversed: true pour animation fluide dans les deux sens
+        menuTimeline = gsap.timeline({ paused: true, reversed: true });
         
         // Animation du conteneur du menu (slide depuis la gauche)
         menuTimeline.to(mobileMenu, {
@@ -454,13 +455,14 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Initialisation de la timeline du bouton (réversible)
+     * Initialisation de la timeline du bouton (réversible fluide)
      */
     function initButtonTimeline() {
         if (buttonTimeline) return; // Déjà initialisée
 
-        buttonTimeline = gsap.timeline({ paused: true });
-
+        // Timeline avec reversed: true pour animation fluide dans les deux sens
+        buttonTimeline = gsap.timeline({ paused: true, reversed: true });
+        
         // Animation des lignes pour former un X
         buttonTimeline.to(hamburgerLines[0], {
             rotation: 45,
@@ -484,12 +486,12 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Contrôle de l'animation du bouton (play/reverse)
+     * Contrôle de l'animation du bouton (play/reverse fluide)
      */
     function toggleButtonAnimation() {
         initButtonTimeline();
-
-        if (isMenuOpen) {
+        
+        if (buttonTimeline.reversed()) {
             buttonTimeline.play(); // Hamburger → X
         } else {
             buttonTimeline.reverse(); // X → Hamburger
@@ -497,12 +499,12 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Contrôle de l'animation du menu (play/reverse)
+     * Contrôle de l'animation du menu (play/reverse fluide)
      */
     function toggleMenuAnimation() {
         initMenuTimeline();
-
-        if (isMenuOpen) {
+        
+        if (menuTimeline.reversed()) {
             menuTimeline.play(); // Ouverture
         } else {
             menuTimeline.reverse(); // Fermeture
