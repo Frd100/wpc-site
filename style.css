@@ -255,15 +255,11 @@
 }
 
 .main-navigation__link::after {
-    content: '';
-    position: absolute;
-    top: calc(100% + 22px);
-    left: 50%;
-    transform: translateX(-50%);
-    height: 5px;
-    background: #2351FF;
-    transition: none;
+    display: none;
+    content: none;
+    background: none;
     width: 0;
+    height: 0;
 }
 
 .main-navigation__link:hover {
@@ -272,8 +268,11 @@
 }
 
 .main-navigation__link:hover::after {
-    width: calc(100% - 2rem);
-    transition: none;
+    display: none;
+    content: none;
+    background: none;
+    width: 0;
+    height: 0;
 }
 
 /* WPC New Section */
@@ -2026,20 +2025,19 @@ body {
     }
 
     .main-navigation__link::after {
-        content: '';
-        position: absolute;
-        top: calc(100% + 22px);
-        left: 50%;
-        transform: translateX(-50%);
-        height: 5px;
-        background: #2351FF;
-        transition: none;
+        display: none;
+        content: none;
+        background: none;
         width: 0;
+        height: 0;
     }
 
     .main-navigation__link:hover::after {
-        width: calc(100% - 2rem);
-        transition: none;
+        display: none;
+        content: none;
+        background: none;
+        width: 0;
+        height: 0;
     }
 
     /* Desktop services section */
@@ -3117,7 +3115,7 @@ select.form-input {
 }
 
 .main-navigation__link.active::after {
-    display: block;
+    display: none;
 }
 
 /* Responsive pour les domaines */
