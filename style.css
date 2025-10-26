@@ -1,12 +1,14 @@
-/* WPC Site CSS */
+/* ===== WPC SITE STYLES ===== */
 
-/* WPC CSS Variables */
+/* ===== CSS VARIABLES ===== */
 :root {
     /* WPC Primary Colors */
     --wpc-blue: #1E4ADE;
     --wpc-blue-light: #1E4ADE;
     --wpc-blue-dark: #1E4ADE;
     --wpc-blue-hero: #1A365D;
+    --wpc-blue-button: #2351FF;
+    --wpc-blue-button-hover: #1A3FE6;
 
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
@@ -138,7 +140,7 @@
     /* 18px en rem */
 }
 
-/* Navigation principale */
+/* ===== NAVIGATION STYLES ===== */
 .main-navigation {
     position: static;
     /* Plus fixe - navigation normale */
@@ -268,7 +270,7 @@
 /* WPC New Section */
 .cmp-new-section {
     width: 100%;
-    background: #2351FF;
+    background: var(--wpc-blue-button);
     padding: 0;
     margin: 0;
     min-height: 350px;
@@ -475,9 +477,8 @@
     display: block;
 }
 
-/* Responsive styles moved to Mobile-First section above */
 
-/* KPMG Exact Base Styles */
+/* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -560,7 +561,7 @@ body {
 }
 
 
-/* KPMG Exact Hero Section */
+/* ===== HERO SECTION STYLES ===== */
 .hero-fbv {
     position: relative;
     min-height: auto;
@@ -633,11 +634,6 @@ body {
     justify-content: flex-end;
 }
 
-@media (max-width: 768px) {
-    .cmp-hero-fbv__content {
-        padding: var(--spacing-lg) var(--spacing-sm);
-    }
-}
 
 .hero-text-container {
     max-width: 500px;
@@ -685,11 +681,6 @@ body {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .cmp-teaser__action-container {
-        text-align: left;
-    }
-}
 
 .cmp-hero-fbv__action-container {
     text-align: center;
@@ -1084,7 +1075,7 @@ body {
     opacity: 0.9;
 }
 
-/* KPMG Exact Footer */
+/* ===== FOOTER STYLES ===== */
 .cmp-footer {
     background: white;
     color: var(--text-primary);
@@ -1174,9 +1165,6 @@ body {
     margin: 0;
 }
 
-/* Responsive styles moved to Mobile-First section above */
-
-/* Responsive styles moved to Mobile-First section above */
 
 /* Footer responsive */
 @media (max-width: 768px) {
@@ -1676,6 +1664,10 @@ body {
         text-align: left;
     }
 
+    .cmp-teaser__action-container {
+        text-align: left;
+    }
+
     .cmp-hero-fbv .cmp-hero-fbv__action-container {
         margin-top: var(--spacing-xl);
         height: auto;
@@ -1687,13 +1679,13 @@ body {
         border-radius: 0;
         font-size: 1.5rem;
         font-weight: 600;
-        background: #2351FF;
+        background: var(--wpc-blue-button);
         color: white;
         padding: var(--spacing-md) var(--spacing-lg);
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
-        background: #1A3FE6;
+        background: var(--wpc-blue-button-hover);
         color: white;
     }
 
@@ -1747,24 +1739,6 @@ body {
 
 }
 
-/* Styles pour le lecteur YouTube */
-
-#playBtn,
-#pauseBtn {
-    background: #1E4ADE;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#playBtn:hover,
-#pauseBtn:hover {
-    background: #0D3BC7;
-}
 
 
 
@@ -1777,37 +1751,9 @@ body {
     }
 }
 
-/* Petits écrans (tablettes) */
-@media (min-width: 481px) and (max-width: 768px) {
-    :root {
-        --banner-height: 0;
-        /* Bandeau supprimé */
-    }
-}
 
-/* Écrans moyens (laptops) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    :root {
-        --banner-height: 0;
-        /* Bandeau supprimé */
-    }
-}
 
-/* Grands écrans (desktop) */
-@media (min-width: 1025px) {
-    :root {
-        --banner-height: 0;
-        /* Bandeau supprimé */
-    }
-}
 
-/* Très grands écrans (4K+) */
-@media (min-width: 1920px) {
-    :root {
-        --banner-height: 0;
-        /* Bandeau supprimé */
-    }
-}
 
 /* ===== DESKTOP ENHANCEMENTS ===== */
 @media (min-width: 769px) {
@@ -2112,7 +2058,6 @@ body {
     line-height: 1.5;
 }
 
-/* Supprimé - plus utilisé */
 
 .cmp-contact-form {
     display: flex;
