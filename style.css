@@ -692,6 +692,7 @@ body {
     z-index: 2;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -741,11 +742,9 @@ body {
         /* Permettre les retours à la ligne */
     }
 
-    /* Stabiliser le bouton plaquette sur desktop */
+    /* Bouton plaquette isolé de l'animation du sous-titre */
     .cmp-hero-fbv__action-container {
-        position: relative;
-        height: 80px;
-        /* Hauteur fixe plus grande pour éviter les mouvements */
+        margin-top: 2rem; /* Espace fixe avec le sous-titre */
         display: flex;
         align-items: center;
         justify-content: center;
