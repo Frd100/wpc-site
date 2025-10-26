@@ -3029,18 +3029,22 @@ select.form-input {
     .cmp-hero-fbv__content .container {
         margin-bottom: 2rem;
         /* Augmenté de 1rem à 2rem pour plus d'espace */
-        text-align: center; /* Centrer le conteneur sur desktop */
+        text-align: center;
+        /* Centrer le conteneur sur desktop */
     }
 
     .cmp-hero-fbv__subtitle {
         margin: 0 0 var(--spacing-2xl) 0;
         /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) */
-        text-align: center; /* Centrer le sous-titre sur desktop */
+        text-align: center;
+        /* Centrer le sous-titre sur desktop */
     }
 
     .cmp-hero-fbv__content .split {
         text-align: center;
         /* Centré pour desktop */
+        white-space: nowrap; /* S'assurer que le titre reste sur une ligne */
+        display: block; /* Forcer l'affichage en bloc pour le centrage */
     }
 }
 
