@@ -210,29 +210,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 splitElement.innerHTML = '';
                 splitElement.appendChild(line1Div);
                 splitElement.appendChild(line2Div);
-                
+
                 console.log('Structure créée:', splitElement);
 
-                // Animation masked line - déclenchement immédiat
-                gsap.fromTo(line1Span,
-                    { y: "100%" },
-                    {
-                        y: "0%",
-                        duration: 0.8,
-                        ease: "power2.out",
-                        delay: 0.5 // Délai initial pour laisser le temps au chargement
-                    }
-                );
+                // Animation masked line - Timeline GSAP
+                const tl = gsap.timeline();
 
-                gsap.fromTo(line2Span,
-                    { y: "100%" },
-                    {
-                        y: "0%",
-                        duration: 0.8,
-                        ease: "power2.out",
-                        delay: 0.8 // Délai après la première ligne
+                tl.from(".line span", 1.8, {
+                    y: 100,
+                    ease: "power4.out",
+                    delay: 1,
+                    skewY: 7,
+                    stagger: {
+                        amount: 0.3
                     }
-                );
+                });
             } else {
                 // Mobile : Animation normale
                 // Vider les lignes initialement
