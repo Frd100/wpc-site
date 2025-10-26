@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     toggleActions: "play none none none"
                 }
             });
-            
+
             // Animation de la deuxième ligne avec délai
             gsap.to(line2, {
                 text: originalLine2,
@@ -193,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: originalText,
                 duration: 2,
                 ease: "none",
-                delay: 1.4,
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
