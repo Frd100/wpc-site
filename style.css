@@ -697,10 +697,11 @@ body {
 }
 
 .cmp-hero-fbv__content .container {
-    margin-bottom: 4rem; /* Augmenter l'espace entre titre et sous-titre */
+    margin-bottom: 4rem;
+    /* Augmenter l'espace entre titre et sous-titre */
     text-align: center;
     max-width: none;
-    height: 120px;
+    height: 180px; /* Augmenter pour accommoder les 2 lignes du titre */
     /* Hauteur fixe comme sur mobile */
     overflow: hidden;
     /* Comme sur mobile */
