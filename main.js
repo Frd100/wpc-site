@@ -75,26 +75,36 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Animation d'écriture pour le sous-titre about (remplace l'ancienne animation SplitText)
+        // Animation d'écriture pour le sous-titre about (approche alternative)
         const aboutSubtitle = document.querySelector('.about-subtitle');
         if (aboutSubtitle) {
             const originalAboutText = aboutSubtitle.textContent;
 
-            // Vider le texte initialement et forcer l'alignement à gauche
-            gsap.set(aboutSubtitle, {
-                text: "",
-                textAlign: "left",
-                x: 0
-            });
+            // Vider le texte initialement
+            aboutSubtitle.textContent = "";
 
-            // Animation d'écriture lettre par lettre avec contrôle de position
+            // Animation d'écriture lettre par lettre avec contrôle CSS
+            let currentText = "";
+            let index = 0;
+
+            const typeWriter = () => {
+                if (index < originalAboutText.length) {
+                    currentText += originalAboutText[index];
+                    aboutSubtitle.textContent = currentText;
+                    index++;
+                    setTimeout(typeWriter, 50); // Vitesse d'écriture
+                }
+            };
+
+            // Déclencher l'animation avec ScrollTrigger
             gsap.fromTo(aboutSubtitle, {
-                text: "",
+                opacity: 0,
                 x: 0
             }, {
-                text: originalAboutText,
-                duration: 2,
-                ease: "none",
+                opacity: 1,
+                x: 0,
+                duration: 0.1,
+                onStart: typeWriter,
                 scrollTrigger: {
                     trigger: aboutSection,
                     start: "top 80%",
