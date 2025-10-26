@@ -679,107 +679,99 @@ body {
     display: block;
 }
 
-/* STRUCTURE PROPRE POUR HERO CONTENT - MOBILE FIRST */
+/* ===== HERO CONTENT - DESKTOP FIRST ===== */
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 55%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95%;
-    text-align: left;
-    padding: var(--spacing-lg) var(--spacing-sm);
+    width: 80%;
+    text-align: center;
+    padding: 0;
     z-index: 2;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    /* Changé de center à flex-start pour mobile */
+    justify-content: center;
 }
 
 .cmp-hero-fbv__content .container {
-    height: 100px;
-    overflow: hidden;
-    text-align: left;
-    margin-bottom: 1rem;
-    width: 100%;
-    /* Assurer la largeur complète */
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: none;
+    height: auto;
+    overflow: visible;
 }
 
 .cmp-hero-fbv__content .split {
-    font-size: clamp(1.8rem, 8vw, 3rem);
-    white-space: nowrap;
-    line-height: 1.1;
-    text-align: left;
+    font-size: 4.2rem;
     font-weight: 700;
     color: #000000;
+    text-align: center;
     margin: 0;
-    text-transform: uppercase;
+    padding: 0;
+    line-height: 1.1;
     letter-spacing: 1px;
+    text-transform: uppercase;
     display: block;
-    /* Forcer le display block */
+    white-space: nowrap;
 }
 
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
-    margin: var(--spacing-md) 0;
+    margin: 0 0 var(--spacing-2xl) 0;
     font-weight: 700;
-    min-height: 4rem;
-    height: 80px;
-    text-align: left;
     color: #000000;
-    /* Explicitement noir */
     line-height: 1.4;
     display: block;
+    text-align: center;
     position: relative;
 }
 
-/* DESKTOP OVERRIDE - TITRE VIERGE */
-@media (min-width: 769px) {
+/* MOBILE OVERRIDE */
+@media (max-width: 768px) {
     .cmp-hero-fbv__content {
-        top: 60%;
-        width: 80%;
-        padding: 0;
-        /* Supprimer complètement le padding */
-        text-align: center;
-        justify-content: center;
+        top: 55%;
+        width: 95%;
+        text-align: left;
+        padding: var(--spacing-lg) var(--spacing-sm);
+        justify-content: flex-start;
     }
 
     .cmp-hero-fbv__content .container {
-        margin-bottom: 2rem;
-        text-align: center;
-        max-width: none;
-        /* Supprimer la limite de 1000px */
-        height: auto;
-        overflow: visible;
+        height: 100px;
+        overflow: hidden;
+        text-align: left;
+        margin-bottom: 1rem;
+        width: 100%;
     }
 
-    /* TITRE VIERGE - AUCUNE ANIMATION, STYLE SIMPLE */
     .cmp-hero-fbv__content .split {
-        font-size: 4.2rem;
-        font-weight: 700;
-        color: #000000;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        line-height: 1.1;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        display: block;
-        white-space: nowrap; /* Forcer le titre sur une seule ligne */
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        text-align: left;
     }
 
     .cmp-hero-fbv__subtitle {
-        margin: 0 0 var(--spacing-2xl) 0;
-        text-align: center;
-        color: #000000;
+        font-size: 1.4rem;
+        margin: var(--spacing-md) 0;
+        min-height: 4rem;
+        height: 80px;
+        text-align: left;
     }
 }
 
 
 .hero-text-container {
-    max-width: 500px;
+    max-width: none; /* Desktop : pas de limite */
     width: 100%;
     /* text-align hérité du parent */
+}
+
+/* MOBILE OVERRIDE pour hero-text-container */
+@media (max-width: 768px) {
+    .hero-text-container {
+        max-width: 500px; /* Mobile : limiter à 500px */
+    }
 }
 
 .cmp-hero-fbv__content-container {
