@@ -1736,13 +1736,6 @@ body {
         /* Alignement à gauche et padding comme la hero section */
     }
 
-    .about-text {
-        order: 1;
-        margin-bottom: var(--spacing-lg);
-        text-align: left;
-        /* Forcer l'alignement à gauche du texte */
-    }
-
     .about-image {
         order: 2;
         width: 100%;
@@ -3501,6 +3494,15 @@ select.form-input {
 
 .about-text {
     flex: 1;
+}
+
+@media (max-width: 768px) {
+    .about-text {
+        order: 1;
+        margin-bottom: var(--spacing-lg);
+        text-align: left;
+        /* Forcer l'alignement à gauche dès le début de l'animation */
+    }
 }
 
 .about-title {
