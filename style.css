@@ -724,7 +724,7 @@ body {
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
     margin: 0 0 var(--spacing-2xl) 0;
-    font-weight: 700;
+    font-weight: 800;
     color: #000000;
     line-height: 1.4;
     display: block;
@@ -741,6 +741,26 @@ body {
         /* Permettre les retours à la ligne */
     }
     
+    /* Stabiliser le bouton plaquette sur desktop */
+    .cmp-hero-fbv__action-container {
+        position: relative;
+        height: 60px; /* Hauteur fixe pour éviter les mouvements */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cmp-hero-fbv__action-container .cmp-hero-fbv__action-link {
+        background: #0066cc; /* Bleu au lieu de blanc */
+        color: white;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .cmp-hero-fbv__action-container .cmp-hero-fbv__action-link:hover {
+        background: #0052a3; /* Bleu plus foncé au hover */
+        color: white;
+    }
 }
 
 /* MOBILE OVERRIDE */
@@ -772,6 +792,7 @@ body {
         min-height: 4rem;
         height: 80px;
         text-align: left;
+        font-weight: 800;
     }
 }
 

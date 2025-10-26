@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isDesktop) {
                 // Desktop : Ajouter le retour à la ligne après "projets"
                 const textWithBreak = originalText.replace('projets en', 'projets<br>en');
-                
+
                 // Desktop : Animation typewriter activée
                 // Vider le texte initialement
                 gsap.set(subtitle, {
