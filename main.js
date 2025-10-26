@@ -428,14 +428,14 @@ function initializeMobileMenu() {
         if (menuTimeline) return; // Déjà initialisée
 
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
-        
+
         // Définir l'état initial du menu (fermé)
         gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
         gsap.set(menuLinks, { x: -50, opacity: 0 });
-        
+
         // Timeline avec reversed: true pour animation fluide dans les deux sens
         menuTimeline = gsap.timeline({ paused: true, reversed: true });
-        
+
         // Animation du conteneur du menu (slide depuis la gauche)
         menuTimeline.to(mobileMenu, {
             x: "0%",
@@ -462,7 +462,7 @@ function initializeMobileMenu() {
 
         // Timeline avec reversed: true pour animation fluide dans les deux sens
         buttonTimeline = gsap.timeline({ paused: true, reversed: true });
-        
+
         // Animation des lignes pour former un X
         buttonTimeline.to(hamburgerLines[0], {
             rotation: 45,
@@ -491,7 +491,7 @@ function initializeMobileMenu() {
     function toggleButtonAnimation() {
         initButtonTimeline();
         
-        if (buttonTimeline.reversed()) {
+        if (isMenuOpen) {
             buttonTimeline.play(); // Hamburger → X
         } else {
             buttonTimeline.reverse(); // X → Hamburger
@@ -504,7 +504,7 @@ function initializeMobileMenu() {
     function toggleMenuAnimation() {
         initMenuTimeline();
         
-        if (menuTimeline.reversed()) {
+        if (isMenuOpen) {
             menuTimeline.play(); // Ouverture
         } else {
             menuTimeline.reverse(); // Fermeture
