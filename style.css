@@ -1693,8 +1693,10 @@ body {
     }
 
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-xl); /* Espacement du bouton sur mobile */
-        height: auto; /* Hauteur auto pour éviter le chevauchement */
+        margin-top: var(--spacing-xl);
+        /* Espacement du bouton sur mobile */
+        height: auto;
+        /* Hauteur auto pour éviter le chevauchement */
     }
 
     .cmp-hero-fbv__action-link {
@@ -3100,6 +3102,11 @@ select.form-input {
         font-size: 1.2rem;
         margin: var(--spacing-md) 0;
         font-weight: 700;
+    }
+
+    .cmp-hero-fbv__action-container {
+        margin-top: var(--spacing-xl); /* Espacement du bouton sur mobile */
+        height: auto; /* Hauteur auto pour éviter le chevauchement */
     }
 }
 
