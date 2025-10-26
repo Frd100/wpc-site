@@ -1633,6 +1633,17 @@ body {
         /* Plus de padding mobile - collé à la navigation */
     }
 
+    /* Supprimer le padding de toutes les sections sur mobile */
+    .cmp-about-section {
+        padding: 0;
+        /* Collé aux autres sections */
+    }
+
+    .cmp-services-section {
+        padding: 0;
+        /* Collé aux autres sections */
+    }
+
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
