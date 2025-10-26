@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Cacher le contenu original et ajouter la structure d'animation
                 gsap.set([line1, line2], { opacity: 0 });
-                
+
                 // Ajouter la structure d'animation
                 splitElement.appendChild(line1Div);
                 splitElement.appendChild(line2Div);
@@ -224,24 +224,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Animation masked line - Timeline GSAP avec éléments directs
                 const tl = gsap.timeline();
 
-                // Position initiale visible pour debug
-                gsap.set([line1Span, line2Span], {
-                    y: 100,
-                    opacity: 1,
-                    visibility: 'visible'
+                // Animation simple et directe
+                gsap.set([line1Span, line2Span], { 
+                    y: "100%",
+                    opacity: 1
                 });
 
                 console.log('Position initiale définie');
 
-                // Cibler directement les éléments créés
-                tl.from([line1Span, line2Span], 1.8, {
-                    y: 100,
-                    ease: "power4.out",
-                    delay: 1,
-                    skewY: 7,
-                    stagger: {
-                        amount: 0.3
-                    }
+                // Animation masked line simple
+                tl.to([line1Span, line2Span], {
+                    y: "0%",
+                    duration: 1.2,
+                    ease: "power3.out",
+                    delay: 0.5,
+                    stagger: 0.2
                 });
 
                 console.log('Animation lancée');

@@ -760,23 +760,21 @@ body {
         height: 80px;
         position: relative;
         overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
     }
 
     .split .line span {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
         font-size: 5rem;
         font-weight: 900;
         line-height: 1.2;
         color: #000000;
         text-align: center;
-        opacity: 1;
-        visibility: visible;
+        white-space: nowrap;
     }
 
     .cmp-hero-fbv__subtitle {
