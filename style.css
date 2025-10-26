@@ -1488,6 +1488,7 @@ body {
     z-index: 10001;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .main-navigation__toggle .material-icons {
@@ -1522,6 +1523,17 @@ body {
     color: white;
 }
 
+/* Effet hover pour le bouton */
+.main-navigation__toggle:hover {
+    background: rgba(5, 27, 44, 1);
+    transform: scale(1.05);
+}
+
+.main-navigation__toggle:focus {
+    outline: 2px solid var(--wpc-blue);
+    outline-offset: 2px;
+}
+
 @media (max-width: 768px) {
 
     /* Cacher les liens de navigation sur mobile par défaut */
@@ -1542,13 +1554,17 @@ body {
         top: var(--spacing-md);
         left: var(--spacing-xs);
         /* Collé à l'extrémité gauche */
-        z-index: 10001;
+        z-index: 10003;
+        /* Z-index plus élevé que le menu */
         background: rgba(5, 27, 44, 0.9);
         border-radius: 50%;
         width: 50px;
         height: 50px;
         align-items: center;
         justify-content: center;
+        border: none;
+        outline: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
 
