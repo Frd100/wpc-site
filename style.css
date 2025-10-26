@@ -688,7 +688,7 @@ body {
     /* Augmenté de var(--spacing-lg) à var(--spacing-xl) */
     position: relative;
     z-index: 10;
-    min-height: 60px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3000,12 +3000,12 @@ select.form-input {
     margin: var(--spacing-lg) 0;
     /* Remis à la valeur originale */
     font-weight: 700;
-    min-height: 4rem;
+    min-height: 3rem;
     display: block;
     text-align: left;
     position: relative;
-    height: 60px;
-    /* Réduit de 80px à 60px */
+    height: 50px;
+    /* Réduit de 60px à 50px pour éviter le chevauchement */
     /* Hauteur fixe pour réserver l'espace du sous-titre */
     overflow: hidden;
 }
@@ -3031,6 +3031,9 @@ select.form-input {
         font-size: 1.2rem;
         margin: var(--spacing-md) 0;
         font-weight: 700;
+        min-height: 3rem;
+        height: 50px;
+        overflow: hidden;
     }
 
 }
