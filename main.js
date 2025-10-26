@@ -210,20 +210,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 line2Span.textContent = originalLine2;
                 line2Div.appendChild(line2Span);
 
-                // Remplacer le contenu du split
-                splitElement.innerHTML = '';
+                // Cacher le contenu original et ajouter la structure d'animation
+                gsap.set([line1, line2], { opacity: 0 });
+                
+                // Ajouter la structure d'animation
                 splitElement.appendChild(line1Div);
                 splitElement.appendChild(line2Div);
 
                 console.log('Structure créée:', splitElement);
-                console.log('line1Span:', line1Span);
-                console.log('line2Span:', line2Span);
+                console.log('line1Span:', line1Span, 'textContent:', line1Span.textContent);
+                console.log('line2Span:', line2Span, 'textContent:', line2Span.textContent);
 
                 // Animation masked line - Timeline GSAP avec éléments directs
                 const tl = gsap.timeline();
 
                 // Position initiale visible pour debug
-                gsap.set([line1Span, line2Span], { 
+                gsap.set([line1Span, line2Span], {
                     y: 100,
                     opacity: 1,
                     visibility: 'visible'
