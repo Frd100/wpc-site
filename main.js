@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function initTitleScrollAnimation() {
         console.log('Animation Titre: Initialisation...');
 
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
-            console.error('GSAP ou SplitText non chargé');
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou plugins non chargés');
             return;
         }
 
-        gsap.registerPlugin(SplitText);
+        gsap.registerPlugin(SplitText, ScrollTrigger);
 
         // Sélectionner le titre
         const titleElement = document.querySelector('.about-title-container h1');
@@ -113,14 +113,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // Rendre le titre visible
         gsap.set(titleElement, { opacity: 1 });
 
-        // Animation exactement comme le site
+        // Animation avec ScrollTrigger - se déclenche au scroll
         gsap.from(wordElements, {
             y: -100,
             opacity: 0,
             rotation: "random(-80, 80)",
             stagger: 0.07,
             duration: 1,
-            ease: "back"
+            ease: "back",
+            scrollTrigger: {
+                trigger: titleElement,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
         });
     }
 
