@@ -1546,10 +1546,12 @@ body {
     .main-navigation__toggle {
         display: flex;
         /* Garder le bouton visible */
-        position: fixed;
-        top: var(--spacing-md);
+        position: absolute;
+        top: 50%;
         left: var(--spacing-xs);
         /* Collé à l'extrémité gauche */
+        transform: translateY(-50%);
+        /* Centrer verticalement */
         z-index: 10003;
         /* Z-index plus élevé que le menu */
         background: transparent;
