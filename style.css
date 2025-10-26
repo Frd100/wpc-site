@@ -725,7 +725,7 @@ body {
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
     margin: 0 0 var(--spacing-2xl) 0;
-    font-weight: 800;
+    font-weight: 600; /* Réduit de 800 à 600 */
     color: #000000;
     line-height: 1.4;
     display: block;
@@ -741,18 +741,18 @@ body {
         white-space: normal;
         /* Permettre les retours à la ligne */
     }
-    
+
     .cmp-hero-fbv__subtitle {
-        overflow: hidden; /* Empêcher l'animation d'impacter le bouton */
-        height: 80px; /* Hauteur fixe pour contenir l'animation */
+        overflow: hidden;
+        /* Empêcher l'animation d'impacter le bouton */
+        height: 80px;
+        /* Hauteur fixe pour contenir l'animation */
     }
 
-    /* Bouton plaquette - même logique que mobile */
+    /* Bouton plaquette - remonté sur desktop */
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-3xl);
-        /* Même que mobile */
+        margin-top: var(--spacing-xl); /* Réduit de 3xl à xl pour remonter */
         height: auto;
-        /* Même que mobile */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -799,12 +799,12 @@ body {
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1.4rem;
+        font-size: 1.6rem; /* Augmenté de 1.4rem à 1.6rem pour mobile */
         margin: var(--spacing-md) 0;
         min-height: 4rem;
         height: 80px;
         text-align: left;
-        font-weight: 800;
+        font-weight: 600; /* Réduit de 800 à 600 */
     }
 }
 
@@ -843,7 +843,7 @@ body {
 .cmp-hero-fbv__subtitle {
     font-family: var(--font-family-primary);
     font-size: 1.25rem;
-    font-weight: 800;
+    font-weight: 600; /* Réduit de 800 à 600 */
     line-height: 1.4;
     margin: 0 0 var(--spacing-xl) 0;
     color: #000000;
