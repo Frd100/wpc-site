@@ -721,7 +721,7 @@ body {
 
 .cmp-hero-fbv__action-link .arrow {
     margin-left: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
     transition: transform 0.3s ease;
 }
@@ -2994,7 +2994,7 @@ select.form-input {
 }
 
 .cmp-hero-fbv__subtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #000000;
     line-height: 1.4;
     margin: var(--spacing-lg) 0;
@@ -3007,7 +3007,6 @@ select.form-input {
     height: 80px;
     /* Augmenté de 50px à 80px pour accommoder le texte multi-lignes */
     /* Hauteur fixe pour réserver l'espace du sous-titre */
-    overflow: hidden;
 }
 
 /* Taille de font pour mobile */
@@ -3028,12 +3027,11 @@ select.form-input {
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin: var(--spacing-md) 0;
         font-weight: 700;
         min-height: 4rem;
         height: 80px;
-        overflow: hidden;
     }
 
 }
@@ -3313,7 +3311,7 @@ select.form-input {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #212529;
     margin: 0;
@@ -3557,7 +3555,7 @@ select.form-input {
 
 .legal-title {
     color: #051B2C;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -3727,7 +3725,7 @@ select.form-input {
 }
 
 .actualite-content h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .actualite-content h3 {
@@ -3840,7 +3838,7 @@ select.form-input {
 }
 
 .article-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .article-content p {
@@ -3918,7 +3916,7 @@ select.form-input {
 
 .btn-secondary .arrow {
     margin-right: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: white;
 }
@@ -3943,7 +3941,7 @@ select.form-input {
     }
 
     .article-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .article-content h3 {
@@ -4017,7 +4015,7 @@ select.form-input {
 }
 
 .legal-title-sub {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .droits-form .form-row {
@@ -4068,7 +4066,7 @@ select.form-input {
     }
 
     body .legal-content .legal-title-main {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         /* Réduit de 1.8rem à 1.3rem */
     }
 
@@ -4093,12 +4091,12 @@ select.form-input {
     }
 
     body .cmp-domaine-pole .cmp-domaine-pole__title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         /* Réduit pour les titres des pôles */
     }
 
     body .cmp-timeline-step .cmp-timeline-step__title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         /* Réduit pour les titres des étapes */
     }
 
@@ -4122,7 +4120,7 @@ select.form-input {
 
 
     body .cmp-services-section .cmp-services-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         /* Réduit pour "Nos expertises au service de votre développement" */
     }
 
