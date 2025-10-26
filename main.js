@@ -134,9 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (aboutSubtitle) {
             const originalText = aboutSubtitle.textContent;
 
-            // Vider le texte initialement
+            // Vider le texte initialement avec contrôle du positionnement
             gsap.set(aboutSubtitle, {
-                text: ""
+                text: "",
+                transformOrigin: "left center" // Point d'origine des transformations
             });
 
             // Animation d'écriture lettre par lettre (identique à la hero)

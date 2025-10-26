@@ -3608,7 +3608,8 @@ select.form-input {
     line-height: 1.4;
     color: #FFFFFF;
     margin: 0;
-    display: block;
+    display: inline-block;
+    /* Contrôle du positionnement */
     text-align: left;
     position: relative;
     min-height: 4rem;
@@ -3616,6 +3617,8 @@ select.form-input {
     /* Hauteur fixe pour éviter le changement de layout */
     width: 100%;
     /* Largeur fixe pour éviter les recalculs */
+    font-kerning: none;
+    /* Désactive le crénage automatique */
     overflow: visible;
     /* S'assurer que le sous-titre n'est pas affecté par SplitText */
     isolation: isolate;
