@@ -679,69 +679,87 @@ body {
     display: block;
 }
 
-/* STRUCTURE HERO CONTENT - RÈGLES GÉNÉRALES */
+/* STRUCTURE PROPRE POUR HERO CONTENT - MOBILE FIRST */
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    padding: var(--spacing-2xl);
+    width: 95%;
+    text-align: left;
+    padding: var(--spacing-lg) var(--spacing-sm);
     z-index: 2;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start; /* Changé de center à flex-start pour mobile */
 }
 
 .cmp-hero-fbv__content .container {
-    text-align: center;
+    height: 100px;
+    overflow: hidden;
+    text-align: left;
     margin-bottom: 1rem;
-    height: auto;
-    overflow: visible;
+    width: 100%; /* Assurer la largeur complète */
 }
 
 .cmp-hero-fbv__content .split {
-    font-size: 4.2rem;
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    white-space: nowrap;
+    line-height: 1.1;
+    text-align: left;
     font-weight: 700;
     color: #000000;
-    line-height: 1.1;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
-    white-space: nowrap;
-    display: block;
+    display: block; /* Forcer le display block */
 }
 
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
-    color: #000000;
-    line-height: 1.4;
-    margin: var(--spacing-lg) 0;
+    margin: var(--spacing-md) 0;
     font-weight: 700;
     min-height: 4rem;
+    height: 80px;
+    text-align: left;
+    color: #000000; /* Explicitement noir */
+    line-height: 1.4;
     display: block;
-    text-align: center;
     position: relative;
 }
 
-/* DESKTOP OVERRIDE */
+/* DESKTOP OVERRIDE - SPÉCIFICITÉ PLUS ÉLEVÉE */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
         top: 60%;
         width: 80%;
         padding: var(--spacing-lg);
+        text-align: center;
+        justify-content: center; /* Centrer le contenu */
     }
 
     .cmp-hero-fbv__content .container {
         margin-bottom: 2rem;
+        text-align: center;
         max-width: 1000px;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* Spécificité plus élevée pour surcharger les règles de base */
+    .cmp-hero-fbv__content .split {
+        text-align: center !important; /* Forcer le centrage */
+        white-space: nowrap;
+        display: block;
+        font-size: 4.2rem;
+        color: #000000; /* Maintenir la couleur noire */
     }
 
     .cmp-hero-fbv__subtitle {
         margin: 0 0 var(--spacing-2xl) 0;
+        text-align: center !important; /* Forcer le centrage */
+        color: #000000; /* Maintenir la couleur noire */
     }
 }
 
@@ -749,7 +767,7 @@ body {
 .hero-text-container {
     max-width: 500px;
     width: 100%;
-    text-align: center;
+    /* text-align hérité du parent */
 }
 
 .cmp-hero-fbv__content-container {
