@@ -776,6 +776,8 @@ body {
         color: #000000;
         text-align: center;
         white-space: nowrap;
+        /* Position initiale cachée */
+        transform: translate(-50%, 150%);
     }
 
     .cmp-hero-fbv__subtitle {
