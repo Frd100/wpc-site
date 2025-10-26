@@ -1548,26 +1548,16 @@ body {
         /* Collé à l'extrémité gauche */
         z-index: 10003;
         /* Z-index plus élevé que le menu */
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 50%;
+        background: transparent;
+        border-radius: 0;
         width: 50px;
         height: 50px;
         align-items: center;
         justify-content: center;
         border: none;
         outline: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(10px);
     }
 
-    /* Styles pour le bouton quand le menu est ouvert */
-    .main-navigation__toggle.active {
-        background: rgba(5, 27, 44, 0.95);
-    }
-
-    .main-navigation__toggle.active .hamburger-line {
-        background-color: white;
-    }
 
 
 }
