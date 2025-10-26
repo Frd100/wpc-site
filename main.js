@@ -193,19 +193,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (isDesktop) {
                 console.log('Desktop: Création animation SplitText avec masque');
-                
+
                 // Premier SplitText : créer les lignes qui bougent (lineChild)
-                new SplitText(splitElement, { 
-                    type: "lines", 
-                    linesClass: "lineChild" 
+                new SplitText(splitElement, {
+                    type: "lines",
+                    linesClass: "lineChild"
                 });
-                
+
                 // Deuxième SplitText : créer les conteneurs avec overflow hidden (lineParent)
-                new SplitText(splitElement, { 
-                    type: "lines", 
-                    linesClass: "lineParent" 
+                new SplitText(splitElement, {
+                    type: "lines",
+                    linesClass: "lineParent"
                 });
-                
+
                 // Animation simple avec yPercent comme dans l'exemple
                 gsap.from(".lineChild", {
                     duration: 0.75,
