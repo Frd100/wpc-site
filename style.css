@@ -733,7 +733,7 @@ body {
 
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
-    margin: 0 0 var(--spacing-2xl) 0;
+    margin: 0 0 var(--spacing-3xl) 0;
     font-weight: 600;
     /* Réduit de 800 à 600 */
     color: #000000;
@@ -789,8 +789,8 @@ body {
 
     /* Bouton plaquette - remonté sur desktop */
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-lg);
-        /* Réduit de xl à lg pour remonter encore plus */
+        margin-top: var(--spacing-2xl);
+        /* Augmenté de lg à 2xl pour descendre le bouton */
         height: auto;
         display: flex;
         align-items: center;
@@ -916,8 +916,8 @@ body {
 
 .cmp-hero-fbv__action-container {
     text-align: center;
-    margin-top: var(--spacing-lg);
-    /* Réduit de 3xl à lg pour remonter le bouton */
+    margin-top: var(--spacing-2xl);
+    /* Augmenté de lg à 2xl pour descendre le bouton */
     position: relative;
     z-index: 10;
     min-height: 50px;
