@@ -160,11 +160,17 @@
 
 /* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
 #nav-placeholder {
-    min-height: 90px; /* Légèrement plus grand pour éviter le sursaut */
-    /* Hauteur approximative de la navigation */
+    min-height: 90px; /* Desktop : légèrement plus grand pour éviter le sursaut */
     display: block;
     background: #F5F6FA;
     /* Même gris que le hero section */
+}
+
+/* Mobile : hauteur réduite */
+@media (max-width: 768px) {
+    #nav-placeholder {
+        min-height: 70px; /* Mobile : plus petit */
+    }
 }
 
 /* Navigation grise sur mobile */
