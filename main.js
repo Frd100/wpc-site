@@ -183,9 +183,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (line1 && line2) {
             const originalLine1 = line1.textContent;
             const originalLine2 = line2.textContent;
+            
+            console.log('Hero: Line1 trouvée:', originalLine1);
+            console.log('Hero: Line2 trouvée:', originalLine2);
 
             // Vérifier si on est sur desktop (largeur >= 769px)
             const isDesktop = window.innerWidth >= 769;
+            console.log('Hero: isDesktop:', isDesktop, 'window.innerWidth:', window.innerWidth);
 
             if (isDesktop) {
                 console.log('Desktop: Création animation masked line');
