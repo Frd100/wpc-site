@@ -74,17 +74,33 @@ document.addEventListener('DOMContentLoaded', function () {
         lineDiv.className = 'line';
 
         // Créer une boîte pour chaque mot
-        words.forEach(word => {
-            const wordSpan = document.createElement('span');
-            wordSpan.className = 'word';
+        words.forEach((word, index) => {
+            // Si c'est "à", créer une ligne avec "à" et "Nanterre" côte à côte
+            if (word === 'à') {
+                const wordRow = document.createElement('div');
+                wordRow.className = 'word-row';
 
-            // Appliquer la classe rouge pour "Nanterre"
-            if (word === 'Nanterre') {
-                wordSpan.className += ' nanterre-red';
+                // Boîte pour "à"
+                const aSpan = document.createElement('span');
+                aSpan.className = 'word';
+                aSpan.textContent = word;
+                wordRow.appendChild(aSpan);
+
+                // Boîte pour "Nanterre"
+                const nanterreSpan = document.createElement('span');
+                nanterreSpan.className = 'word nanterre-red';
+                nanterreSpan.textContent = 'Nanterre';
+                wordRow.appendChild(nanterreSpan);
+
+                lineDiv.appendChild(wordRow);
+            } else if (word !== 'Nanterre') {
+                // Créer une boîte normale pour les autres mots
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'word';
+                wordSpan.textContent = word;
+                lineDiv.appendChild(wordSpan);
             }
-
-            wordSpan.textContent = word;
-            lineDiv.appendChild(wordSpan);
+            // Ignorer "Nanterre" car il est déjà ajouté avec "à"
         });
 
         // Remplacer le contenu du h1 par la div .line
