@@ -884,7 +884,8 @@ body {
     font-weight: 600;
     /* Réduit de 800 à 600 */
     line-height: 1.4;
-    margin: 0 0 var(--spacing-4xl) 0;
+    margin: var(--spacing-6xl) 0 var(--spacing-4xl) 0;
+    /* Margin-top élevé pour descendre beaucoup le sous-titre */
     color: #000000;
     opacity: 0.95;
     text-align: center;
@@ -896,6 +897,7 @@ body {
         font-size: 1.4rem;
         /* Réduit de 1.6rem à 1.4rem pour mobile */
         margin: var(--spacing-md) 0;
+        /* Mobile garde son margin normal */
         min-height: 4rem;
         height: 80px;
         text-align: left;
