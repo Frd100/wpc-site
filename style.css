@@ -994,7 +994,7 @@ body {
 .cmp-about-content {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: var(--spacing-2xl);
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: var(--spacing-4xl);
@@ -3508,10 +3508,10 @@ select.form-input {
 
 /* Style pour le sous-titre about avec animation */
 .about-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.4;
-    color: #000000;
+    color: #FFFFFF;
     margin: var(--spacing-lg) 0;
     display: block;
     text-align: left;
