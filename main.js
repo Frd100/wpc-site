@@ -197,15 +197,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Créer la structure pour l'animation masked line
                 const container = splitElement.parentElement;
 
-                // Créer les divs .line pour chaque ligne
+                // Créer les divs .line pour chaque phrase
                 const line1Div = document.createElement('div');
-                line1Div.className = 'line';
+                line1Div.className = 'line line-1';
                 const line1Span = document.createElement('span');
                 line1Span.textContent = originalLine1;
                 line1Div.appendChild(line1Span);
 
                 const line2Div = document.createElement('div');
-                line2Div.className = 'line';
+                line2Div.className = 'line line-2';
                 const line2Span = document.createElement('span');
                 line2Span.textContent = originalLine2;
                 line2Div.appendChild(line2Span);
@@ -224,22 +224,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Animation masked line - Timeline GSAP avec éléments directs
                 const tl = gsap.timeline();
 
-                // Animation simple et directe
-                gsap.set([line1Span, line2Span], {
+                // Animation masked line distincte pour chaque phrase
+                gsap.set([line1Span, line2Span], { 
                     y: "100%",
                     opacity: 1
                 });
 
                 console.log('Position initiale définie');
 
-                // Animation masked line simple
-                tl.to([line1Span, line2Span], {
+                // Animation de la première phrase
+                tl.to(line1Span, {
                     y: "0%",
-                    duration: 1.2,
+                    duration: 1.0,
                     ease: "power3.out",
-                    delay: 0.5,
-                    stagger: 0.2
+                    delay: 0.3
                 });
+
+                // Animation de la deuxième phrase avec délai
+                tl.to(line2Span, {
+                    y: "0%",
+                    duration: 1.0,
+                    ease: "power3.out",
+                    delay: 0.2
+                }, "-=0.5"); // Commence 0.5s avant la fin de la première
 
                 console.log('Animation lancée');
             } else {
