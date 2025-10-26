@@ -439,19 +439,6 @@ function initializeMobileMenu() {
         });
     });
 
-    // Fermer au clic sur le bouton de fermeture (pseudo-élément)
-    mobileMenu.addEventListener('click', function (e) {
-        // Vérifier si le clic est dans la zone du bouton de fermeture (haut gauche)
-        const rect = mobileMenu.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const clickY = e.clientY - rect.top;
-
-        // Zone du bouton de fermeture (haut gauche, 60px x 60px)
-        if (clickX <= 60 && clickY <= 60) {
-            closeMenu();
-        }
-    });
-
     // Fermer au clic extérieur
     document.addEventListener('click', function (e) {
         if (mobileMenu.classList.contains('active') &&
@@ -481,9 +468,6 @@ function initializeMobileMenu() {
         mobileToggle.setAttribute('aria-expanded', 'true');
         mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
 
-        // Ajouter classe au body pour cacher le bouton toggle
-        body.classList.add('mobile-menu-open');
-
         // Empêcher le scroll du body
         const scrollY = window.scrollY;
         body.style.overflow = 'hidden';
@@ -500,9 +484,6 @@ function initializeMobileMenu() {
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
-
-        // Retirer classe du body pour réafficher le bouton toggle
-        body.classList.remove('mobile-menu-open');
 
         // Restaurer le scroll
         body.style.overflow = '';

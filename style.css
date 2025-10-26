@@ -1342,8 +1342,8 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-top: 5rem;
-        /* Uniquement un padding en haut pour laisser de la place au X */
+        padding-top: 6rem;
+        /* Augmenté pour laisser de l'espace au bouton hamburger */
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
         z-index: 10002;
@@ -1362,32 +1362,6 @@ body {
         /* Pas cliquable */
     }
 
-    /* Bouton de fermeture dans le menu mobile - SEULEMENT à gauche */
-    .main-navigation__links::before {
-        content: "✕";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        /* Pleine largeur */
-        box-sizing: border-box;
-        /* Padding inclus dans la largeur */
-        padding: 0 var(--spacing-xl);
-        /* Padding horizontal uniquement pour uniformiser */
-        height: 4rem;
-        /* Hauteur identique aux liens */
-        display: flex;
-        align-items: center;
-        /* Centre verticalement le X */
-        color: #FFFFFF;
-        font-size: 28px;
-        /* Taille augmentée */
-        font-weight: 300;
-        cursor: pointer;
-        z-index: 10003;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        /* Divider pleine largeur */
-    }
 
 
     body .main-navigation__links .main-navigation__link {
@@ -1520,6 +1494,32 @@ body {
     font-size: 24px;
     color: #051B2C;
     transition: all 0.3s ease;
+    position: absolute;
+}
+
+/* Styles pour le bouton hamburger quand le menu est fermé */
+.main-navigation__toggle .menu-icon {
+    color: #051B2C;
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.main-navigation__toggle .close-icon {
+    color: #051B2C;
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+/* Styles pour le bouton X quand le menu est ouvert */
+.main-navigation__toggle.active .menu-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.main-navigation__toggle.active .close-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+    color: white;
 }
 
 @media (max-width: 768px) {
@@ -1538,37 +1538,20 @@ body {
     .main-navigation__toggle {
         display: flex;
         /* Garder le bouton visible */
-        position: absolute;
+        position: fixed;
+        top: var(--spacing-md);
         left: var(--spacing-xs);
         /* Collé à l'extrémité gauche */
         z-index: 10001;
+        background: rgba(5, 27, 44, 0.9);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
     }
 
-    /* Cacher le bouton toggle quand le menu est ouvert */
-    .mobile-menu-open .main-navigation__toggle {
-        display: none;
-        visibility: hidden;
-        opacity: 0;
-    }
 
-    /* Cacher aussi l'icône close du bouton toggle */
-    .mobile-menu-open .main-navigation__toggle .close-icon {
-        display: none;
-    }
-
-    /* Menu/Close icon toggle */
-    .main-navigation__toggle .close-icon {
-        display: none;
-        /* Cacher l'icône close par défaut */
-    }
-
-    .main-navigation__toggle.active .menu-icon {
-        display: none;
-    }
-
-    .main-navigation__toggle.active .close-icon {
-        display: block;
-    }
 }
 
 /* Desktop navigation links - styles normaux */
