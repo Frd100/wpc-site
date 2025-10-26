@@ -3531,8 +3531,7 @@ select.form-input {
 }
 
 .about-title-container h1 {
-    /* Style pour le titre avec animation de lettres */
-    opacity: 0;
+    /* Style pour le titre avec SplitText */
     display: inline-block;
 }
 

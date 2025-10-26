@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Animation Nanterre: Mobile détecté, initialisation...');
 
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP ou ScrollTrigger non chargé');
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou plugins non chargés');
             return;
         }
 
-        gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        // === NOUVELLE ANIMATION DU TITRE (SANS SPLITTEXT) ===
+        // === ANIMATION DU TITRE AVEC PROTECTEDSPLIT ===
         const titleContainer = document.querySelector('.about-title-container');
         const titleElement = document.querySelector('.about-title-container h1');
 
@@ -39,29 +39,52 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Animation Titre: Element trouvé:', titleElement);
 
         if (titleContainer && titleElement) {
-            // Diviser le titre en mots
-            const originalText = titleElement.textContent;
-            const words = originalText.split(' ');
-            titleElement.innerHTML = '';
+            // Fonction protectedSplit pour protéger certains éléments
+            function protectedSplit(target, vars) {
+                let protected = gsap.utils.toArray(vars.protect || "").map(el => {
+                    return {
+                        el: el,
+                        innerHTML: el.innerHTML
+                    }
+                });
+                let split = new SplitText(target, vars);
+                protected.forEach(data => {
+                    let appendTo;
+                    gsap.utils.toArray(data.el.children).forEach((word, i) => {
+                        let index = split.words.indexOf(word);
+                        if (index >= 0) {
+                            split.words.splice(index, 1);
+                            if (index > 0 && !appendTo) {
+                                appendTo = split.words[index - 1];
+                            }
+                        }
+                    });
+                    data.el.innerHTML = data.innerHTML;
+                    if (appendTo) {
+                        appendTo.appendChild(data.el)
+                    }
+                });
+                return split;
+            }
 
-            // Créer la structure avec .line et .word
-            const lineDiv = document.createElement('div');
-            lineDiv.className = 'line';
+            // Rendre le titre visible
+            gsap.set(titleElement, { opacity: 1 });
 
-            words.forEach(word => {
-                const wordSpan = document.createElement('span');
-                wordSpan.className = 'word';
-                wordSpan.textContent = word;
-                lineDiv.appendChild(wordSpan);
+            // Appliquer SplitText avec protection du span rouge
+            const headlineSplit = protectedSplit(titleElement, {
+                type: "words",
+                wordsClass: "word",
+                protect: ".nanterre-red"
             });
 
-            titleElement.appendChild(lineDiv);
-
-            // Animation de glissement des mots vers le haut
-            console.log('Animation Titre: Configuration de l\'animation...');
-            gsap.to('.about-title-container h1', {
-                opacity: 1,
-                duration: 0.5,
+            // Animation des mots
+            gsap.from(headlineSplit.words, {
+                y: -100,
+                opacity: 0,
+                rotation: "random(-80, 80)",
+                stagger: 0.07,
+                duration: 1,
+                ease: "back",
                 scrollTrigger: {
                     trigger: titleContainer,
                     start: 'top 80%',
@@ -69,24 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     toggleActions: 'play none none none',
                     onStart: () => console.log('Animation Titre: Animation déclenchée!'),
                     onComplete: () => console.log('Animation Titre: Animation terminée!')
-                }
-            });
-
-            // Animation des mots individuels
-            gsap.fromTo('.about-title-container .word', {
-                y: '100%',
-                opacity: 0
-            }, {
-                y: 0,
-                opacity: 1,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: titleContainer,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none none'
                 }
             });
         }
