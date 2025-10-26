@@ -3487,7 +3487,8 @@ select.form-input {
     margin: 0 auto;
     padding: 60px 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    /* Alignement à gauche au lieu de center */
     gap: 40px;
 }
 
@@ -3539,7 +3540,8 @@ select.form-input {
     max-width: 90vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    /* Alignement à gauche au lieu de center */
     border-radius: 9px;
     padding: 2rem 0;
 }
