@@ -767,11 +767,16 @@ body {
 
     .split .line span {
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         font-size: 5rem;
         font-weight: 900;
         line-height: 1.2;
         color: #000000;
         text-align: center;
+        opacity: 1;
+        visibility: visible;
     }
 
     .cmp-hero-fbv__subtitle {

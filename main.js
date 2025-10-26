@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (line1 && line2) {
             const originalLine1 = line1.textContent;
             const originalLine2 = line2.textContent;
-            
+
             console.log('Hero: Line1 trouvée:', originalLine1);
             console.log('Hero: Line2 trouvée:', originalLine2);
 
@@ -223,7 +223,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const tl = gsap.timeline();
 
                 // Position initiale visible pour debug
-                gsap.set([line1Span, line2Span], { y: 100 });
+                gsap.set([line1Span, line2Span], { 
+                    y: 100,
+                    opacity: 1,
+                    visibility: 'visible'
+                });
+
+                console.log('Position initiale définie');
 
                 // Cibler directement les éléments créés
                 tl.from([line1Span, line2Span], 1.8, {
