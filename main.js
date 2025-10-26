@@ -458,13 +458,13 @@ function initializeMobileMenu() {
             duration: 0.15,
             ease: "power2.out"
         });
-        
+
         gsap.to(hamburgerLines[1], {
             opacity: 0,
             duration: 0.1,
             ease: "power2.out"
         });
-        
+
         gsap.to(hamburgerLines[2], {
             rotation: -45,
             y: -8.5,
@@ -483,14 +483,14 @@ function initializeMobileMenu() {
             duration: 0.15,
             ease: "power2.out"
         });
-        
+
         gsap.to(hamburgerLines[1], {
             opacity: 1,
             duration: 0.1,
             ease: "power2.out",
             delay: 0.03
         });
-        
+
         gsap.to(hamburgerLines[2], {
             rotation: 0,
             y: 0,
@@ -553,7 +553,7 @@ function initializeMobileMenu() {
 
         // Animation GSAP pour transformer en X
         animateToX();
-        
+
         // Animation GSAP pour ouvrir le menu avec effet de diffusion
         animateMenuOpen();
 
@@ -570,25 +570,28 @@ function initializeMobileMenu() {
         isMenuOpen = false;
         const scrollY = body.dataset.scrollY || '0';
 
-        mobileMenu.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
-
         // Animation GSAP pour revenir au hamburger
         animateToHamburger();
         
         // Animation GSAP pour fermer le menu
         animateMenuClose();
 
-        // Restaurer le scroll
-        body.style.overflow = '';
-        body.style.position = '';
-        body.style.top = '';
-        body.style.width = '';
+        // Attendre que l'animation se termine avant de supprimer les classes
+        setTimeout(() => {
+            mobileMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
 
-        // Restaurer la position de scroll
-        window.scrollTo(0, parseInt(scrollY));
+            // Restaurer le scroll
+            body.style.overflow = '';
+            body.style.position = '';
+            body.style.top = '';
+            body.style.width = '';
+
+            // Restaurer la position de scroll
+            window.scrollTo(0, parseInt(scrollY));
+        }, 400); // Délai pour laisser l'animation se terminer (0.3s + 0.1s de delay)
     }
 }
 
