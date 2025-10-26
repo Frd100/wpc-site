@@ -192,65 +192,24 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Hero: isDesktop:', isDesktop, 'window.innerWidth:', window.innerWidth);
 
             if (isDesktop) {
-                console.log('Desktop: Création animation masked line');
-                // Desktop : Animation masked line
-                // Créer la structure pour l'animation masked line
-                const container = splitElement.parentElement;
-
-                // Créer les divs .line pour chaque phrase
-                const line1Div = document.createElement('div');
-                line1Div.className = 'line line-1';
-                const line1Span = document.createElement('span');
-                line1Span.textContent = originalLine1;
-                line1Div.appendChild(line1Span);
-
-                const line2Div = document.createElement('div');
-                line2Div.className = 'line line-2';
-                const line2Span = document.createElement('span');
-                line2Span.textContent = originalLine2;
-                line2Div.appendChild(line2Span);
-
-                // Cacher le contenu original et ajouter la structure d'animation
-                gsap.set([line1, line2], { opacity: 0 });
-
-                // Ajouter la structure d'animation
-                splitElement.appendChild(line1Div);
-                splitElement.appendChild(line2Div);
-
-                console.log('Structure créée:', splitElement);
-                console.log('line1Span:', line1Span, 'textContent:', line1Span.textContent);
-                console.log('line2Span:', line2Span, 'textContent:', line2Span.textContent);
-
-                // Animation masked line - Timeline GSAP avec éléments directs
-                const tl = gsap.timeline();
-
-                // Position initiale : texte caché avec opacity et y
-                gsap.set([line1Span, line2Span], { 
-                    opacity: 0,
-                    y: "100%"
+                console.log('Desktop: Création animation SplitText simple');
+                
+                // Utiliser SplitText pour créer les lignes automatiquement
+                new SplitText(splitElement, { 
+                    type: "lines", 
+                    linesClass: "lineChild" 
                 });
-
-                console.log('Position initiale définie - texte caché');
-
-                // Animation de la première phrase
-                tl.to(line1Span, {
-                    opacity: 1,
-                    y: "0%",
-                    duration: 1.0,
+                
+                // Animation simple avec yPercent comme dans l'exemple
+                gsap.from(".lineChild", {
+                    duration: 0.75,
+                    yPercent: 100,
+                    stagger: 0.25,
                     ease: "power3.out",
                     delay: 0.5
                 });
 
-                // Animation de la deuxième phrase avec délai
-                tl.to(line2Span, {
-                    opacity: 1,
-                    y: "0%",
-                    duration: 1.0,
-                    ease: "power3.out",
-                    delay: 0.2
-                }, "-=0.5"); // Commence 0.5s avant la fin de la première
-
-                console.log('Animation lancée');
+                console.log('Animation SplitText lancée');
             } else {
                 // Mobile : Animation normale
                 // Vider les lignes initialement
