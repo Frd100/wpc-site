@@ -417,15 +417,15 @@ function initializeMobileMenu() {
 
     let isMenuOpen = false;
 
-    // Variables pour les animations GSAP
-    let menuAnimation = null;
-    let buttonAnimation = null;
+    // Variables pour les animations GSAP Slide Reveal
+    let menuTimeline = null;
+    let buttonTimeline = null;
 
     /**
-     * Initialisation des animations GSAP
+     * Initialisation des animations GSAP Slide Reveal
      */
-    function initAnimations() {
-        if (menuAnimation && buttonAnimation) return; // Déjà initialisées
+    function initSlideRevealAnimations() {
+        if (menuTimeline && buttonTimeline) return; // Déjà initialisées
 
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
         
@@ -433,47 +433,50 @@ function initializeMobileMenu() {
         gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
         gsap.set(menuLinks, { x: -50, opacity: 0 });
         
-        // Animation du menu (slide depuis la gauche)
-        menuAnimation = gsap.to(mobileMenu, {
-            duration: 0.5,
+        // Timeline du menu avec Slide Reveal
+        menuTimeline = gsap.timeline({ paused: true });
+        
+        // Animation du conteneur du menu (slide depuis la gauche)
+        menuTimeline.fromTo(mobileMenu, {
+            x: "-100%",
+            opacity: 0
+        }, {
             x: "0%",
             opacity: 1,
-            ease: "power4.out",
-            paused: true,
-            onComplete: function() {
-                // Animation des liens après l'ouverture du menu
-                gsap.to(menuLinks, {
-                    x: 0,
-                    opacity: 1,
-                    duration: 0.3,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                });
-            },
-            onReverseComplete: function() {
-                // Remettre les liens à leur position initiale après fermeture
-                gsap.set(menuLinks, { x: -50, opacity: 0 });
-            }
-        });
+            duration: 0.5,
+            ease: "power3.out"
+        }, 0);
 
-        // Animation du bouton hamburger
-        buttonAnimation = gsap.timeline({ paused: true });
+        // Animation des liens du menu (révélation progressive)
+        menuTimeline.fromTo(menuLinks, {
+            x: -50,
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            duration: 0.3,
+            stagger: 0.1,
+            ease: "power2.out"
+        }, 0.2);
+
+        // Timeline du bouton hamburger
+        buttonTimeline = gsap.timeline({ paused: true });
         
         // Animation des lignes pour former un X
-        buttonAnimation.to(hamburgerLines[0], {
+        buttonTimeline.to(hamburgerLines[0], {
             rotation: 45,
             y: 8.5,
             duration: 0.15,
             ease: "power2.out"
         }, 0);
 
-        buttonAnimation.to(hamburgerLines[1], {
+        buttonTimeline.to(hamburgerLines[1], {
             opacity: 0,
             duration: 0.1,
             ease: "power2.out"
         }, 0);
 
-        buttonAnimation.to(hamburgerLines[2], {
+        buttonTimeline.to(hamburgerLines[2], {
             rotation: -45,
             y: -8.5,
             duration: 0.15,
@@ -482,28 +485,28 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Contrôle de l'animation du bouton
+     * Contrôle de l'animation du bouton Slide Reveal
      */
     function toggleButtonAnimation() {
-        initAnimations();
+        initSlideRevealAnimations();
         
         if (isMenuOpen) {
-            buttonAnimation.play(); // Hamburger → X
+            buttonTimeline.play(); // Hamburger → X
         } else {
-            buttonAnimation.reverse(); // X → Hamburger
+            buttonTimeline.reverse(); // X → Hamburger
         }
     }
 
     /**
-     * Contrôle de l'animation du menu
+     * Contrôle de l'animation du menu Slide Reveal
      */
     function toggleMenuAnimation() {
-        initAnimations();
+        initSlideRevealAnimations();
         
         if (isMenuOpen) {
-            menuAnimation.play(); // Ouverture
+            menuTimeline.play(); // Ouverture
         } else {
-            menuAnimation.reverse(); // Fermeture
+            menuTimeline.reverse(); // Fermeture
         }
     }
 
