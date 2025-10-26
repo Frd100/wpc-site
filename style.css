@@ -1644,6 +1644,12 @@ body {
         /* Collé aux autres sections */
     }
 
+    /* Forcer l'alignement à gauche pour le sous-titre about sur mobile */
+    .cmp-about-section .about-subtitle {
+        text-align: left;
+        /* Pour que l'animation commence à gauche comme la hero section */
+    }
+
     .cmp-hero-fbv {
         display: flex;
         flex-direction: column;
