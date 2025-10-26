@@ -31,59 +31,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        const aboutSection = document.querySelector('.cmp-about-section');
+        // === ANIMATION DU TITRE (INDÉPENDANTE) ===
+        const titleContainer = document.querySelector('.about-title-container');
         const splitElement = document.querySelector('.about-title-container .split');
 
-        console.log('Animation Nanterre: Section trouvée:', aboutSection);
-        console.log('Animation Nanterre: Split element trouvé:', splitElement);
+        console.log('Animation Titre: Conteneur trouvé:', titleContainer);
+        console.log('Animation Titre: Split element trouvé:', splitElement);
 
-        if (!aboutSection || !splitElement) {
-            console.log('Animation Nanterre: Éléments non trouvés, arrêt');
-            return;
+        if (titleContainer && splitElement) {
+            // SplitText pour séparer les mots et lignes avec masquage
+            const splitTitle = new SplitText(splitElement, {
+                type: "words,lines",
+                wordsClass: "word",
+                linesClass: "line"
+            });
+
+            // Masquer les lignes initialement SEULEMENT sur le titre
+            gsap.set(splitTitle.lines, {
+                overflow: "hidden"
+            });
+
+            gsap.set(splitTitle.words, {
+                y: "100%"
+            });
+
+            // Animation de révélation avec masquage des lignes pour le titre
+            console.log('Animation Titre: Configuration de l\'animation...');
+            gsap.to(splitTitle.words, {
+                y: "0%",
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: titleContainer, // Trigger spécifique au titre
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none",
+                    onStart: () => console.log('Animation Titre: Animation déclenchée!'),
+                    onComplete: () => {
+                        console.log('Animation Titre: Animation terminée!');
+                        // Restaurer l'overflow normal après l'animation
+                        gsap.set(splitTitle.lines, {
+                            overflow: "visible"
+                        });
+                    }
+                }
+            });
         }
 
-        // SplitText pour séparer les mots et lignes avec masquage
-        const splitTitle = new SplitText(splitElement, {
-            type: "words,lines",
-            wordsClass: "word",
-            linesClass: "line"
-        });
-
-        // Masquer les lignes initialement SEULEMENT sur le titre
-        gsap.set(splitTitle.lines, {
-            overflow: "hidden"
-        });
-
-        gsap.set(splitTitle.words, {
-            y: "100%"
-        });
-
-        // Animation de révélation avec masquage des lignes pour le titre
-        console.log('Animation Nanterre: Configuration de l\'animation...');
-        gsap.to(splitTitle.words, {
-            y: "0%",
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: aboutSection,
-                start: "top 70%",
-                end: "bottom 30%",
-                toggleActions: "play none none none",
-                onStart: () => console.log('Animation Nanterre: Animation déclenchée!'),
-                onComplete: () => {
-                    console.log('Animation Nanterre: Animation terminée!');
-                    // Restaurer l'overflow normal après l'animation pour éviter les conflits
-                    gsap.set(splitTitle.lines, {
-                        overflow: "visible"
-                    });
-                }
-            }
-        });
-
-        // Animation d'écriture pour le sous-titre about (approche alternative)
+        // === ANIMATION DU SOUS-TITRE (INDÉPENDANTE) ===
+        const subtitleContainer = document.querySelector('.about-subtitle-container');
         const aboutSubtitle = document.querySelector('.about-subtitle');
-        if (aboutSubtitle) {
+
+        console.log('Animation Sous-titre: Conteneur trouvé:', subtitleContainer);
+        console.log('Animation Sous-titre: Element trouvé:', aboutSubtitle);
+
+        if (subtitleContainer && aboutSubtitle) {
             const originalAboutText = aboutSubtitle.textContent;
 
             // Vider le texte initialement
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             };
 
-            // Déclencher l'animation avec ScrollTrigger
+            // Déclencher l'animation avec ScrollTrigger INDÉPENDANT
             gsap.fromTo(aboutSubtitle, {
                 opacity: 0,
                 x: 0
@@ -112,10 +115,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 duration: 0.1,
                 onStart: typeWriter,
                 scrollTrigger: {
-                    trigger: aboutSection,
+                    trigger: subtitleContainer, // Trigger spécifique au sous-titre
                     start: "top 80%",
                     end: "bottom 20%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none none",
+                    onStart: () => console.log('Animation Sous-titre: Animation déclenchée!'),
+                    onComplete: () => console.log('Animation Sous-titre: Animation terminée!')
                 }
             });
         }

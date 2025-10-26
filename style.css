@@ -3520,17 +3520,23 @@ select.form-input {
     margin-bottom: 1rem;
 }
 
-/* Conteneurs séparés pour titre et sous-titre about */
+/* Conteneurs séparés pour titre et sous-titre about - COMPLÈTEMENT INDÉPENDANTS */
 .about-title-container {
     /* Conteneur isolé pour le titre avec SplitText */
+    position: relative;
+    z-index: 1;
+    /* Isolation complète du sous-titre */
 }
 
 .about-subtitle-container {
     /* Conteneur isolé pour le sous-titre */
+    position: relative;
+    z-index: 2;
     margin-top: var(--spacing-lg);
+    /* Isolation complète du titre */
 }
 
-/* Style pour le sous-titre about avec animation */
+/* Style pour le sous-titre about avec animation - INDÉPENDANT */
 .about-subtitle {
     font-size: 1.4rem;
     font-weight: 700;
@@ -3544,6 +3550,8 @@ select.form-input {
     height: 80px;
     overflow: visible;
     /* S'assurer que le sous-titre n'est pas affecté par SplitText */
+    isolation: isolate;
+    /* Créer un nouveau contexte d'empilement */
 }
 
 .about-image {
