@@ -721,7 +721,7 @@ body {
 
 .cmp-hero-fbv__action-link .arrow {
     margin-left: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     transition: transform 0.3s ease;
 }
@@ -2994,7 +2994,7 @@ select.form-input {
 }
 
 .cmp-hero-fbv__subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #000000;
     line-height: 1.4;
     margin: var(--spacing-lg) 0;
@@ -3028,7 +3028,7 @@ select.form-input {
     }
 
     .cmp-hero-fbv__subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin: var(--spacing-md) 0;
         font-weight: 700;
         min-height: 4rem;
@@ -3918,7 +3918,7 @@ select.form-input {
 
 .btn-secondary .arrow {
     margin-right: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: white;
 }
@@ -4017,7 +4017,7 @@ select.form-input {
 }
 
 .legal-title-sub {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .droits-form .form-row {
@@ -4098,7 +4098,7 @@ select.form-input {
     }
 
     body .cmp-timeline-step .cmp-timeline-step__title {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         /* Réduit pour les titres des étapes */
     }
 
