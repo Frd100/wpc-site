@@ -134,13 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (aboutSubtitle) {
             const originalText = aboutSubtitle.textContent;
 
-            // Vider le texte initialement
+            // Masquer le texte sans affecter le layout
             gsap.set(aboutSubtitle, {
-                text: ""
+                opacity: 0
             });
 
             // Animation d'écriture lettre par lettre (identique à la hero)
             gsap.to(aboutSubtitle, {
+                opacity: 1,
                 text: originalText,
                 duration: 2,
                 ease: "none",
