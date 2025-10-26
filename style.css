@@ -710,10 +710,6 @@ body {
 }
 
 .cmp-hero-fbv__content .split {
-    font-size: 5rem !important;
-    /* Augmenter la taille du titre */
-    font-weight: 900 !important;
-    /* Augmenter le bold du titre */
     color: #000000;
     text-align: center;
     margin: 0;
@@ -734,6 +730,14 @@ body {
     display: block;
     text-align: center;
     position: relative;
+}
+
+/* DESKTOP SPECIFIC - SPÉCIFICITÉ PLUS ÉLEVÉE */
+@media (min-width: 769px) {
+    .cmp-hero-fbv__content .split {
+        font-size: 5rem;
+        font-weight: 900;
+    }
 }
 
 /* MOBILE OVERRIDE */
