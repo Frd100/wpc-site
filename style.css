@@ -3530,12 +3530,12 @@ select.form-input {
     /* Isolation complète du sous-titre */
 }
 
-.about-title-container .split {
+.about-title-container h1 {
     /* Style pour le titre avec animation de lettres */
     display: inline-block;
 }
 
-.about-title-container .split span {
+.about-title-container h1 span {
     /* Style pour chaque lettre du titre */
     display: inline-block;
     transform: translateY(100%);

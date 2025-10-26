@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // === NOUVELLE ANIMATION DU TITRE (SANS SPLITTEXT) ===
         const titleContainer = document.querySelector('.about-title-container');
-        const titleElement = document.querySelector('.about-title-container .split');
+        const titleElement = document.querySelector('.about-title-container h1');
 
         console.log('Animation Titre: Conteneur trouvé:', titleContainer);
         console.log('Animation Titre: Element trouvé:', titleElement);
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Animation de glissement des lettres vers le haut
             console.log('Animation Titre: Configuration de l\'animation...');
-            gsap.to('.about-title-container .split span', {
+            gsap.to('.about-title-container h1 span', {
                 y: 0,
                 opacity: 1,
                 duration: 0.6,
