@@ -689,22 +689,6 @@ body {
     .cmp-teaser__action-container {
         text-align: left;
     }
-
-
-    /* Bouton bleu sur mobile - spécificité élevée */
-    .cmp-hero-fbv .cmp-hero-fbv__action-link {
-        background: #2351FF;
-        color: white;
-        white-space: nowrap;
-        min-width: max-content;
-        font-size: 1rem;
-        padding: var(--spacing-md) var(--spacing-lg);
-    }
-
-    .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
-        background: #1A3FE6;
-        color: white;
-    }
 }
 
 .cmp-hero-fbv__action-container {
@@ -1694,17 +1678,23 @@ body {
 
     .cmp-hero-fbv .cmp-hero-fbv__action-container {
         margin-top: var(--spacing-xl);
-        /* Espacement du bouton sur mobile - spécificité élevée */
         height: auto;
-        /* Hauteur auto pour éviter le chevauchement - spécificité élevée */
     }
 
-    .cmp-hero-fbv__action-link {
+    .cmp-hero-fbv .cmp-hero-fbv__action-link {
         width: 100%;
         text-align: center;
         border-radius: 0;
         font-size: 1.5rem;
         font-weight: 600;
+        background: #2351FF;
+        color: white;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
+        background: #1A3FE6;
+        color: white;
     }
 
     .cmp-hero-fbv__main-title {
@@ -1754,12 +1744,6 @@ body {
         margin: 0 auto;
     }
 
-    /* Override desktop hero styles for mobile */
-    .cmp-hero-fbv {
-        height: 60vh;
-        min-height: 60vh;
-        background: #F5F6FA;
-    }
 
 }
 
