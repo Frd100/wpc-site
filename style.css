@@ -3545,6 +3545,10 @@ select.form-input {
 
 .about-title-container .line {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .about-title-container .word {
@@ -3560,6 +3564,10 @@ select.form-input {
     height: 50px;
     padding: 1rem;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
 }
 
 .about-title-container sup {

@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const headlineSplit = protectedSplit(titleElement, {
             type: "words",
             wordsClass: "word",
-            protect: ".nanterre-red"
+            protect: ".nanterre-red",
+            minChars: 1  // Inclure les mots d'une seule lettre comme "à"
         });
 
         console.log('Animation Titre: SplitText appliqué, mots:', headlineSplit.words.length);
