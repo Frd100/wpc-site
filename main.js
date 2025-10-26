@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ease: "back",
             scrollTrigger: {
                 trigger: titleElement,
-                start: "top 80%",
+                start: "top 60%",
                 toggleActions: "play none none none"
             }
         });
