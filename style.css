@@ -709,7 +709,7 @@ body {
 
 .cmp-hero-fbv__action-container {
     text-align: center;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-xl); /* Augmenté de var(--spacing-lg) à var(--spacing-xl) */
     position: relative;
     z-index: 10;
     min-height: 60px;
@@ -3035,8 +3035,10 @@ select.form-input {
 /* ===== EFFET SPLIT POUR HERO SECTION ===== */
 .cmp-hero-fbv__content .container {
     text-align: left;
-    margin-bottom: 1rem; /* Remis à 1rem */
-    height: 100px; /* Réduit de 120px à 100px */
+    margin-bottom: 1rem;
+    /* Remis à 1rem */
+    height: 100px;
+    /* Réduit de 120px à 100px */
     /* Hauteur fixe pour réserver l'espace du titre */
     overflow: hidden;
 }
@@ -3057,13 +3059,15 @@ select.form-input {
     font-size: 1.2rem;
     color: #000000;
     line-height: 1.4;
-    margin: var(--spacing-lg) 0; /* Remis à la valeur originale */
+    margin: var(--spacing-lg) 0;
+    /* Remis à la valeur originale */
     font-weight: 700;
     min-height: 4rem;
     display: block;
     text-align: left;
     position: relative;
-    height: 60px; /* Réduit de 80px à 60px */
+    height: 60px;
+    /* Réduit de 80px à 60px */
     /* Hauteur fixe pour réserver l'espace du sous-titre */
     overflow: hidden;
 }
