@@ -682,7 +682,7 @@ body {
 /* ===== HERO CONTENT - DESKTOP FIRST ===== */
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 60%;
+    top: 50%; /* Monter le titre plus haut */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
@@ -762,7 +762,8 @@ body {
 
 
 .hero-text-container {
-    max-width: none; /* Desktop : pas de limite */
+    max-width: none;
+    /* Desktop : pas de limite */
     width: 100%;
     /* text-align hérité du parent */
 }
@@ -770,7 +771,8 @@ body {
 /* MOBILE OVERRIDE pour hero-text-container */
 @media (max-width: 768px) {
     .hero-text-container {
-        max-width: 500px; /* Mobile : limiter à 500px */
+        max-width: 500px;
+        /* Mobile : limiter à 500px */
     }
 }
 
