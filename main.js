@@ -39,29 +39,29 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Animation Titre: Element trouvé:', titleElement);
 
         if (titleContainer && titleElement) {
-            // Diviser le titre en lettres individuelles
+            // Diviser le titre en mots
             const originalText = titleElement.textContent;
-            const letters = originalText.split('');
-            titleElement.textContent = '';
+            const words = originalText.split(' ');
+            titleElement.innerHTML = '';
 
-            // Créer un span pour chaque lettre
-            letters.forEach(letter => {
-                const span = document.createElement('span');
-                span.textContent = letter === ' ' ? '\u00A0' : letter; // Espace insécable
-                span.style.display = 'inline-block';
-                span.style.transform = 'translateY(100%)';
-                span.style.opacity = '0';
-                titleElement.appendChild(span);
+            // Créer la structure avec .line et .word
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'line';
+
+            words.forEach(word => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'word';
+                wordSpan.textContent = word;
+                lineDiv.appendChild(wordSpan);
             });
 
-            // Animation de glissement des lettres vers le haut
+            titleElement.appendChild(lineDiv);
+
+            // Animation de glissement des mots vers le haut
             console.log('Animation Titre: Configuration de l\'animation...');
-            gsap.to('.about-title-container h1 span', {
-                y: 0,
+            gsap.to('.about-title-container h1', {
                 opacity: 1,
-                duration: 0.6,
-                stagger: 0.05,
-                ease: 'power2.out',
+                duration: 0.5,
                 scrollTrigger: {
                     trigger: titleContainer,
                     start: 'top 80%',
@@ -69,6 +69,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     toggleActions: 'play none none none',
                     onStart: () => console.log('Animation Titre: Animation déclenchée!'),
                     onComplete: () => console.log('Animation Titre: Animation terminée!')
+                }
+            });
+
+            // Animation des mots individuels
+            gsap.fromTo('.about-title-container .word', {
+                y: '100%',
+                opacity: 0
+            }, {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: titleContainer,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none none'
                 }
             });
         }
