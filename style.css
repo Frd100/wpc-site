@@ -147,7 +147,8 @@
     top: auto;
     left: auto;
     right: auto;
-    background: #F5F6FA; /* Gris au lieu de blanc */
+    background: #F5F6FA;
+    /* Gris au lieu de blanc */
     padding: var(--spacing-sm) 0 0 0;
     /* Padding top léger */
     margin: 0;
@@ -159,7 +160,7 @@
 
 /* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
 #nav-placeholder {
-    min-height: 80px;
+    min-height: 90px; /* Légèrement plus grand pour éviter le sursaut */
     /* Hauteur approximative de la navigation */
     display: block;
     background: #F5F6FA;
