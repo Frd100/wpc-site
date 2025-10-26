@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Animation de la première ligne
             gsap.to(line1, {
                 text: originalLine1,
-                duration: 0.8,
+                duration: 0.7,
                 ease: "none",
                 scrollTrigger: {
                     trigger: heroSection,
@@ -166,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Animation de la deuxième ligne avec délai
             gsap.to(line2, {
                 text: originalLine2,
-                duration: 0.8,
+                duration: 0.7,
                 ease: "none",
-                delay: 0.8,
+                delay: 0.7,
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: originalText,
                 duration: 2,
                 ease: "none",
+                delay: 1.4,
                 scrollTrigger: {
                     trigger: heroSection,
                     start: "top 80%",
