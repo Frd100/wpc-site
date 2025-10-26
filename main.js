@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const tl = gsap.timeline();
 
                 // Animation simple et directe
-                gsap.set([line1Span, line2Span], { 
+                gsap.set([line1Span, line2Span], {
                     y: "100%",
                     opacity: 1
                 });

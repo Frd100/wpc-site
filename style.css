@@ -757,7 +757,7 @@ body {
 
     .split .line {
         width: 100%;
-        height: 80px;
+        height: 120px;
         position: relative;
         overflow: hidden;
         display: block;
@@ -765,9 +765,9 @@ body {
 
     .split .line span {
         position: absolute;
-        top: 0;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         width: auto;
         font-size: 5rem;
         font-weight: 900;
