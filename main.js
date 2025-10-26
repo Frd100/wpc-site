@@ -73,6 +73,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Animation Titre: SplitText appliqué, mots:', headlineSplit.words.length);
 
+        // Créer manuellement la structure .line pour empiler les mots
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'line';
+
+        // Déplacer tous les mots dans la div .line
+        headlineSplit.words.forEach(word => {
+            lineDiv.appendChild(word);
+        });
+
+        // Remplacer le contenu du h1 par la div .line
+        titleElement.innerHTML = '';
+        titleElement.appendChild(lineDiv);
+
         // Rendre le titre visible
         gsap.set(titleElement, { opacity: 1 });
 

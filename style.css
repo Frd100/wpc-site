@@ -3568,6 +3568,7 @@ select.form-input {
     align-items: center;
     justify-content: center;
     min-width: fit-content;
+    margin: 0.25rem 0;
 }
 
 .about-title-container sup {
