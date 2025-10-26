@@ -684,8 +684,8 @@ body {
 
 .cmp-hero-fbv__action-container {
     text-align: center;
-    margin-top: var(--spacing-2xl);
-    /* Augmenté de var(--spacing-xl) à var(--spacing-2xl) pour éloigner le bouton */
+    margin-top: var(--spacing-3xl);
+    /* Augmenté de var(--spacing-2xl) à var(--spacing-3xl) pour positionner plus bas */
     position: relative;
     z-index: 10;
     min-height: 50px;
@@ -1669,7 +1669,7 @@ body {
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-2xl);
+        margin-top: var(--spacing-3xl);
         height: auto;
     }
 
@@ -1681,7 +1681,7 @@ body {
         font-weight: 600;
         background: var(--wpc-blue-button);
         color: white;
-        padding: var(--spacing-sm) var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-lg);
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
