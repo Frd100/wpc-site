@@ -403,28 +403,80 @@ const WPCClasses = {
 };
 
 /**
- * MOBILE MENU MANAGEMENT
+ * MOBILE MENU MANAGEMENT WITH GSAP ANIMATION
  * Cette fonction est maintenant appelée après le chargement de la nav
  */
 function initializeMobileMenu() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const body = document.body;
+    const hamburgerLines = document.querySelectorAll('.hamburger-line');
 
     // Vérification que les éléments existent avant de continuer
-    if (!mobileToggle || !mobileMenu) return;
+    if (!mobileToggle || !mobileMenu || hamburgerLines.length === 0) return;
+
+    let isMenuOpen = false;
 
     /**
-     * Toggle du menu mobile - Version simple
-     * Juste toggle de classe, CSS gère l'animation
+     * Animation GSAP pour transformer hamburger en X
+     */
+    function animateToX() {
+        // Animation des lignes pour former un X
+        gsap.to(hamburgerLines[0], {
+            rotation: 45,
+            y: 8.5,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+        
+        gsap.to(hamburgerLines[1], {
+            opacity: 0,
+            duration: 0.2,
+            ease: "power2.out"
+        });
+        
+        gsap.to(hamburgerLines[2], {
+            rotation: -45,
+            y: -8.5,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    }
+
+    /**
+     * Animation GSAP pour revenir au hamburger
+     */
+    function animateToHamburger() {
+        gsap.to(hamburgerLines[0], {
+            rotation: 0,
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+        
+        gsap.to(hamburgerLines[1], {
+            opacity: 1,
+            duration: 0.2,
+            ease: "power2.out",
+            delay: 0.1
+        });
+        
+        gsap.to(hamburgerLines[2], {
+            rotation: 0,
+            y: 0,
+            duration: 0.3,
+            ease: "power2.out"
+        });
+    }
+
+    /**
+     * Toggle du menu mobile avec animation GSAP
      */
     mobileToggle.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
 
-        const isOpen = mobileMenu.classList.contains('active');
-
-        if (isOpen) {
+        if (isMenuOpen) {
             closeMenu();
         } else {
             openMenu();
@@ -463,10 +515,14 @@ function initializeMobileMenu() {
     }, 200));
 
     function openMenu() {
+        isMenuOpen = true;
         mobileMenu.classList.add('active');
         mobileToggle.classList.add('active');
         mobileToggle.setAttribute('aria-expanded', 'true');
         mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
+
+        // Animation GSAP pour transformer en X
+        animateToX();
 
         // Empêcher le scroll du body
         const scrollY = window.scrollY;
@@ -478,12 +534,16 @@ function initializeMobileMenu() {
     }
 
     function closeMenu() {
+        isMenuOpen = false;
         const scrollY = body.dataset.scrollY || '0';
 
         mobileMenu.classList.remove('active');
         mobileToggle.classList.remove('active');
         mobileToggle.setAttribute('aria-expanded', 'false');
         mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+
+        // Animation GSAP pour revenir au hamburger
+        animateToHamburger();
 
         // Restaurer le scroll
         body.style.overflow = '';
