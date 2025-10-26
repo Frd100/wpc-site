@@ -692,7 +692,8 @@ body {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Changé de center à flex-start pour mobile */
+    justify-content: flex-start;
+    /* Changé de center à flex-start pour mobile */
 }
 
 .cmp-hero-fbv__content .container {
@@ -700,7 +701,8 @@ body {
     overflow: hidden;
     text-align: left;
     margin-bottom: 1rem;
-    width: 100%; /* Assurer la largeur complète */
+    width: 100%;
+    /* Assurer la largeur complète */
 }
 
 .cmp-hero-fbv__content .split {
@@ -713,7 +715,8 @@ body {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: block; /* Forcer le display block */
+    display: block;
+    /* Forcer le display block */
 }
 
 .cmp-hero-fbv__subtitle {
@@ -723,7 +726,8 @@ body {
     min-height: 4rem;
     height: 80px;
     text-align: left;
-    color: #000000; /* Explicitement noir */
+    color: #000000;
+    /* Explicitement noir */
     line-height: 1.4;
     display: block;
     position: relative;
@@ -736,7 +740,8 @@ body {
         width: 80%;
         padding: var(--spacing-lg);
         text-align: center;
-        justify-content: center; /* Centrer le contenu */
+        justify-content: center;
+        /* Centrer le contenu */
     }
 
     .cmp-hero-fbv__content .container {
@@ -749,17 +754,29 @@ body {
 
     /* Spécificité plus élevée pour surcharger les règles de base */
     .cmp-hero-fbv__content .split {
-        text-align: center !important; /* Forcer le centrage */
+        text-align: center !important;
+        /* Forcer le centrage */
         white-space: nowrap;
         display: block;
         font-size: 4.2rem;
-        color: #000000; /* Maintenir la couleur noire */
+        color: #000000;
+        /* Maintenir la couleur noire */
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    /* Forcer l'alignement des spans à l'intérieur du titre */
+    .cmp-hero-fbv__content .split span {
+        text-align: center !important;
+        display: block;
     }
 
     .cmp-hero-fbv__subtitle {
         margin: 0 0 var(--spacing-2xl) 0;
-        text-align: center !important; /* Forcer le centrage */
-        color: #000000; /* Maintenir la couleur noire */
+        text-align: center !important;
+        /* Forcer le centrage */
+        color: #000000;
+        /* Maintenir la couleur noire */
     }
 }
 
