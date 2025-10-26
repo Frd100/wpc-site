@@ -201,6 +201,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
+
+        // Animation d'écriture pour le sous-titre about
+        const aboutSubtitle = document.querySelector('.about-subtitle');
+        if (aboutSubtitle) {
+            const originalAboutText = aboutSubtitle.textContent;
+
+            // Vider le texte initialement
+            gsap.set(aboutSubtitle, {
+                text: ""
+            });
+
+            // Animation d'écriture lettre par lettre
+            gsap.to(aboutSubtitle, {
+                text: originalAboutText,
+                duration: 2,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: aboutSection,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none"
+                }
+            });
+        }
     }
 
     // Initialiser l'effet SplitText pour la hero section

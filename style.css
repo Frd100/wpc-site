@@ -3506,6 +3506,20 @@ select.form-input {
     margin-bottom: 1rem;
 }
 
+/* Style pour le sous-titre about avec animation */
+.about-subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #000000;
+    margin: var(--spacing-lg) 0;
+    display: block;
+    text-align: left;
+    position: relative;
+    min-height: 4rem;
+    height: 80px;
+}
+
 .about-image {
     flex: 0.6;
     text-align: center;
