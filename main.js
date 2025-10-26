@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const isDesktop = window.innerWidth >= 769;
 
             if (isDesktop) {
+                console.log('Desktop: Création animation masked line');
                 // Desktop : Animation masked line
                 // Créer la structure pour l'animation masked line
                 const container = splitElement.parentElement;
@@ -209,9 +210,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 splitElement.innerHTML = '';
                 splitElement.appendChild(line1Div);
                 splitElement.appendChild(line2Div);
+                
+                console.log('Structure créée:', splitElement);
 
                 // Animation masked line - déclenchement immédiat
-                gsap.fromTo(line1Span, 
+                gsap.fromTo(line1Span,
                     { y: "100%" },
                     {
                         y: "0%",
@@ -220,8 +223,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         delay: 0.5 // Délai initial pour laisser le temps au chargement
                     }
                 );
-                
-                gsap.fromTo(line2Span, 
+
+                gsap.fromTo(line2Span,
                     { y: "100%" },
                     {
                         y: "0%",

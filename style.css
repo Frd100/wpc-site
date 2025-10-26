@@ -755,7 +755,7 @@ body {
         align-items: center;
     }
 
-    .cmp-hero-fbv__content .line {
+    .split .line {
         width: 100%;
         height: 80px;
         position: relative;
@@ -765,7 +765,7 @@ body {
         align-items: center;
     }
 
-    .cmp-hero-fbv__content .line span {
+    .split .line span {
         position: absolute;
         font-size: 5rem;
         font-weight: 900;
