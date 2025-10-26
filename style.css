@@ -2985,10 +2985,11 @@ select.form-input {
     text-align: center;
     margin-bottom: 1rem;
     /* Remis à 1rem */
-    height: 100px;
-    /* Réduit de 120px à 100px */
-    /* Hauteur fixe pour réserver l'espace du titre */
-    overflow: hidden;
+    height: auto;
+    /* Changé de 100px à auto pour desktop */
+    /* Hauteur automatique pour ne pas contraindre le titre */
+    overflow: visible;
+    /* Changé de hidden à visible pour desktop */
 }
 
 .cmp-hero-fbv__content .split {
@@ -3028,6 +3029,13 @@ select.form-input {
         transform: translate(-50%, -50%);
         width: 95%;
         text-align: left;
+    }
+
+    .cmp-hero-fbv__content .container {
+        height: 100px;
+        /* Remettre la hauteur fixe pour mobile */
+        overflow: hidden;
+        /* Remettre overflow hidden pour mobile */
     }
 
     .cmp-hero-fbv__content .split {
