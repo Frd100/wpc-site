@@ -679,87 +679,69 @@ body {
     display: block;
 }
 
-/* STRUCTURE PROPRE POUR HERO CONTENT - MOBILE FIRST */
+/* STRUCTURE HERO CONTENT - RÈGLES GÉNÉRALES */
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95%;
-    text-align: left;
-    padding: var(--spacing-lg) var(--spacing-sm);
+    width: 50%;
+    padding: var(--spacing-2xl);
     z-index: 2;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Changé de center à flex-start pour mobile */
+    justify-content: center;
+    text-align: center;
 }
 
 .cmp-hero-fbv__content .container {
-    height: 100px;
-    overflow: hidden;
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
-    width: 100%; /* Assurer la largeur complète */
+    height: auto;
+    overflow: visible;
 }
 
 .cmp-hero-fbv__content .split {
-    font-size: clamp(1.8rem, 8vw, 3rem);
-    white-space: nowrap;
-    line-height: 1.1;
-    text-align: left;
+    font-size: 4.2rem;
     font-weight: 700;
     color: #000000;
+    line-height: 1.1;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: block; /* Forcer le display block */
+    text-align: center;
+    white-space: nowrap;
+    display: block;
 }
 
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
-    margin: var(--spacing-md) 0;
+    color: #000000;
+    line-height: 1.4;
+    margin: var(--spacing-lg) 0;
     font-weight: 700;
     min-height: 4rem;
-    height: 80px;
-    text-align: left;
-    color: #000000; /* Explicitement noir */
-    line-height: 1.4;
     display: block;
+    text-align: center;
     position: relative;
 }
 
-/* DESKTOP OVERRIDE - SPÉCIFICITÉ PLUS ÉLEVÉE */
+/* DESKTOP OVERRIDE */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
         top: 60%;
         width: 80%;
         padding: var(--spacing-lg);
-        text-align: center;
-        justify-content: center; /* Centrer le contenu */
     }
 
     .cmp-hero-fbv__content .container {
         margin-bottom: 2rem;
-        text-align: center;
         max-width: 1000px;
-        height: auto;
-        overflow: visible;
-    }
-
-    /* Spécificité plus élevée pour surcharger les règles de base */
-    .cmp-hero-fbv__content .split {
-        text-align: center !important; /* Forcer le centrage */
-        white-space: nowrap;
-        display: block;
-        font-size: 4.2rem;
-        color: #000000; /* Maintenir la couleur noire */
     }
 
     .cmp-hero-fbv__subtitle {
         margin: 0 0 var(--spacing-2xl) 0;
-        text-align: center !important; /* Forcer le centrage */
-        color: #000000; /* Maintenir la couleur noire */
     }
 }
 
