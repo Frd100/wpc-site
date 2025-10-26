@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Vérifier si on est sur desktop (largeur >= 769px)
             const isDesktop = window.innerWidth >= 769;
-            
+
             if (isDesktop) {
                 // Desktop : Pas d'animation, texte directement visible
                 gsap.set(line1, { text: originalLine1 });
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Vérifier si on est sur desktop (largeur >= 769px)
             const isDesktop = window.innerWidth >= 769;
-            
+
             if (isDesktop) {
                 // Desktop : Pas d'animation, texte directement visible
                 gsap.set(subtitle, { text: originalText });
