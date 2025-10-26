@@ -703,7 +703,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Changé de center à flex-start pour permettre le margin */
+}
 }
 
 .cmp-hero-fbv__content .container {
@@ -785,8 +787,8 @@ body {
         /* Empêcher l'animation d'impacter le bouton */
         height: 80px;
         /* Hauteur fixe pour contenir l'animation */
-        margin: 0 0 var(--spacing-4xl) 0 !important;
-        /* Force le margin avec !important pour override */
+        margin: 0 0 var(--spacing-4xl) 0;
+        /* Ajout du margin pour descendre le sous-titre */
     }
 
     /* Bouton plaquette - remonté sur desktop */
