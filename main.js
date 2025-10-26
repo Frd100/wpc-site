@@ -63,34 +63,36 @@ document.addEventListener('DOMContentLoaded', function () {
             return split;
         }
 
-        // Appliquer SplitText avec protection du span rouge
-        const headlineSplit = protectedSplit(titleElement, {
-            type: "words",
-            wordsClass: "word",
-            protect: ".nanterre-red",
-            minChars: 1  // Inclure les mots d'une seule lettre comme "à"
-        });
+        // Diviser manuellement le texte en mots pour contrôler chaque mot
+        const originalText = titleElement.textContent;
+        const words = originalText.split(/\s+/); // Diviser par espaces
 
-        console.log('Animation Titre: SplitText appliqué, mots:', headlineSplit.words.length);
+        console.log('Animation Titre: Mots détectés:', words);
 
         // Créer manuellement la structure .line pour empiler les mots
         const lineDiv = document.createElement('div');
         lineDiv.className = 'line';
 
-        // Déplacer tous les mots dans la div .line
-        headlineSplit.words.forEach(word => {
-            lineDiv.appendChild(word);
+        // Créer une boîte pour chaque mot
+        words.forEach(word => {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word';
+            wordSpan.textContent = word;
+            lineDiv.appendChild(wordSpan);
         });
 
         // Remplacer le contenu du h1 par la div .line
         titleElement.innerHTML = '';
         titleElement.appendChild(lineDiv);
 
+        // Récupérer tous les éléments .word pour l'animation
+        const wordElements = lineDiv.querySelectorAll('.word');
+
         // Rendre le titre visible
         gsap.set(titleElement, { opacity: 1 });
 
         // Animation exactement comme le site
-        gsap.from(headlineSplit.words, {
+        gsap.from(wordElements, {
             y: -100,
             opacity: 0,
             rotation: "random(-80, 80)",
