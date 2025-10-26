@@ -191,38 +191,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Desktop : Animation masked line
                 // Créer la structure pour l'animation masked line
                 const container = splitElement.parentElement;
-                
+
                 // Créer les divs .line pour chaque ligne
                 const line1Div = document.createElement('div');
                 line1Div.className = 'line';
                 const line1Span = document.createElement('span');
                 line1Span.textContent = originalLine1;
                 line1Div.appendChild(line1Span);
-                
+
                 const line2Div = document.createElement('div');
                 line2Div.className = 'line';
                 const line2Span = document.createElement('span');
                 line2Span.textContent = originalLine2;
                 line2Div.appendChild(line2Span);
-                
+
                 // Remplacer le contenu du split
                 splitElement.innerHTML = '';
                 splitElement.appendChild(line1Div);
                 splitElement.appendChild(line2Div);
-                
-                // Animation masked line
+
+                // Animation masked line - déclenchement immédiat
                 gsap.fromTo(line1Span, 
                     { y: "100%" },
                     {
                         y: "0%",
                         duration: 0.8,
                         ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: heroSection,
-                            start: "top 80%",
-                            end: "bottom 20%",
-                            toggleActions: "play none none none"
-                        }
+                        delay: 0.5 // Délai initial pour laisser le temps au chargement
                     }
                 );
                 
@@ -232,13 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         y: "0%",
                         duration: 0.8,
                         ease: "power2.out",
-                        delay: 0.3,
-                        scrollTrigger: {
-                            trigger: heroSection,
-                            start: "top 80%",
-                            end: "bottom 20%",
-                            toggleActions: "play none none none"
-                        }
+                        delay: 0.8 // Délai après la première ligne
                     }
                 );
             } else {
