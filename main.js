@@ -192,12 +192,18 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Hero: isDesktop:', isDesktop, 'window.innerWidth:', window.innerWidth);
 
             if (isDesktop) {
-                console.log('Desktop: Création animation SplitText simple');
+                console.log('Desktop: Création animation SplitText avec masque');
                 
-                // Utiliser SplitText pour créer les lignes automatiquement
+                // Premier SplitText : créer les lignes qui bougent (lineChild)
                 new SplitText(splitElement, { 
                     type: "lines", 
                     linesClass: "lineChild" 
+                });
+                
+                // Deuxième SplitText : créer les conteneurs avec overflow hidden (lineParent)
+                new SplitText(splitElement, { 
+                    type: "lines", 
+                    linesClass: "lineParent" 
                 });
                 
                 // Animation simple avec yPercent comme dans l'exemple
@@ -209,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     delay: 0.5
                 });
 
-                console.log('Animation SplitText lancée');
+                console.log('Animation SplitText avec masque lancée');
             } else {
                 // Mobile : Animation normale
                 // Vider les lignes initialement

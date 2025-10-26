@@ -766,6 +766,11 @@ body {
         margin-bottom: 10px;
     }
 
+    /* Masque pour SplitText - comme dans l'exemple */
+    .cmp-hero-fbv__content .split .lineParent {
+        overflow: hidden;
+    }
+
     .cmp-hero-fbv__content .split .line span {
         position: absolute;
         top: 50%;
