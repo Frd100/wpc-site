@@ -770,7 +770,7 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, 150%);
+        transform: translate(-50%, -50%);
         width: max-content;
         font-size: 5rem;
         font-weight: 900;
@@ -778,7 +778,8 @@ body {
         color: #000000;
         text-align: center;
         white-space: nowrap;
-        /* Position initiale cachée avec transform */
+        /* Élément initialement caché pour éviter FOUC */
+        opacity: 0;
     }
 
     .cmp-hero-fbv__subtitle {

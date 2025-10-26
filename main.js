@@ -224,18 +224,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Animation masked line - Timeline GSAP avec éléments directs
                 const tl = gsap.timeline();
 
-                // Position initiale : texte caché immédiatement
+                // Position initiale : texte caché avec opacity et y
                 gsap.set([line1Span, line2Span], { 
-                    transform: "translate(-50%, 150%)",
-                    opacity: 1,
-                    visibility: "visible"
+                    opacity: 0,
+                    y: "100%"
                 });
 
                 console.log('Position initiale définie - texte caché');
 
                 // Animation de la première phrase
                 tl.to(line1Span, {
-                    transform: "translate(-50%, -50%)",
+                    opacity: 1,
+                    y: "0%",
                     duration: 1.0,
                     ease: "power3.out",
                     delay: 0.5
@@ -243,7 +243,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Animation de la deuxième phrase avec délai
                 tl.to(line2Span, {
-                    transform: "translate(-50%, -50%)",
+                    opacity: 1,
+                    y: "0%",
                     duration: 1.0,
                     ease: "power3.out",
                     delay: 0.2
