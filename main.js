@@ -417,23 +417,23 @@ function initializeMobileMenu() {
 
     let isMenuOpen = false;
 
-    // Variables pour les animations GSAP Slide Reveal
+    // Variables pour les animations GSAP Wave
     let menuTimeline = null;
     let buttonTimeline = null;
 
     /**
-     * Initialisation des animations GSAP Slide Reveal
+     * Initialisation des animations GSAP Wave
      */
-    function initSlideRevealAnimations() {
+    function initWaveAnimations() {
         if (menuTimeline && buttonTimeline) return; // Déjà initialisées
 
         const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
         
         // Définir l'état initial du menu
         gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
-        gsap.set(menuLinks, { x: -50, opacity: 0 });
+        gsap.set(menuLinks, { y: 100, opacity: 0, scale: 0.8 });
         
-        // Timeline du menu avec Slide Reveal
+        // Timeline du menu avec Wave Animation
         menuTimeline = gsap.timeline({ paused: true });
         
         // Animation du conteneur du menu (slide depuis la gauche)
@@ -443,52 +443,58 @@ function initializeMobileMenu() {
         }, {
             x: "0%",
             opacity: 1,
-            duration: 0.5,
-            ease: "power3.out"
+            duration: 0.4,
+            ease: "power2.out"
         }, 0);
 
-        // Animation des liens du menu (révélation progressive)
+        // Animation Wave des liens du menu (effet de vague)
         menuTimeline.fromTo(menuLinks, {
-            x: -50,
-            opacity: 0
+            y: 100,
+            opacity: 0,
+            scale: 0.8
         }, {
-            x: 0,
+            y: 0,
             opacity: 1,
-            duration: 0.3,
-            stagger: 0.1,
-            ease: "power2.out"
-        }, 0.2);
+            scale: 1,
+            duration: 0.4,
+            stagger: {
+                amount: 0.3,
+                from: "start"
+            },
+            ease: "back.out(1.7)"
+        }, 0.1);
 
-        // Timeline du bouton hamburger
+        // Timeline du bouton hamburger avec morphing fluide
         buttonTimeline = gsap.timeline({ paused: true });
         
-        // Animation des lignes pour former un X
+        // Animation des lignes pour former un X avec effet de vague
         buttonTimeline.to(hamburgerLines[0], {
             rotation: 45,
             y: 8.5,
-            duration: 0.15,
-            ease: "power2.out"
+            duration: 0.2,
+            ease: "back.out(1.7)"
         }, 0);
 
         buttonTimeline.to(hamburgerLines[1], {
             opacity: 0,
-            duration: 0.1,
+            scale: 0,
+            duration: 0.15,
             ease: "power2.out"
-        }, 0);
+        }, 0.05);
 
         buttonTimeline.to(hamburgerLines[2], {
             rotation: -45,
             y: -8.5,
-            duration: 0.15,
-            ease: "power2.out"
+            duration: 0.2,
+            ease: "back.out(1.7)"
         }, 0);
     }
 
     /**
-     * Contrôle de l'animation du bouton Slide Reveal
+     * Contrôle de l'animation du bouton Wave
      */
     function toggleButtonAnimation() {
-        initSlideRevealAnimations();
+        initWaveAnimations();
         
         if (isMenuOpen) {
             buttonTimeline.play(); // Hamburger → X
@@ -498,10 +504,10 @@ function initializeMobileMenu() {
     }
 
     /**
-     * Contrôle de l'animation du menu Slide Reveal
+     * Contrôle de l'animation du menu Wave
      */
     function toggleMenuAnimation() {
-        initSlideRevealAnimations();
+        initWaveAnimations();
         
         if (isMenuOpen) {
             menuTimeline.play(); // Ouverture
