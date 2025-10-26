@@ -740,25 +740,27 @@ body {
         white-space: normal;
         /* Permettre les retours à la ligne */
     }
-    
+
     /* Stabiliser le bouton plaquette sur desktop */
     .cmp-hero-fbv__action-container {
         position: relative;
-        height: 60px; /* Hauteur fixe pour éviter les mouvements */
+        height: 80px; /* Hauteur fixe plus grande pour éviter les mouvements */
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden; /* Empêcher tout débordement */
     }
-    
+
     .cmp-hero-fbv__action-container .cmp-hero-fbv__action-link {
-        background: #0066cc; /* Bleu au lieu de blanc */
+        background: var(--primary-blue-button); /* Même bleu que mobile */
         color: white;
         position: relative;
         z-index: 1;
+        transform: translateZ(0); /* Force la couche GPU pour stabilité */
     }
-    
+
     .cmp-hero-fbv__action-container .cmp-hero-fbv__action-link:hover {
-        background: #0052a3; /* Bleu plus foncé au hover */
+        background: var(--primary-blue-button-hover); /* Même hover que mobile */
         color: white;
     }
 }
@@ -831,7 +833,7 @@ body {
 .cmp-hero-fbv__subtitle {
     font-family: var(--font-family-primary);
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 1.4;
     margin: 0 0 var(--spacing-xl) 0;
     color: #000000;
