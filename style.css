@@ -1732,7 +1732,8 @@ body {
     .about-container {
         flex-direction: column;
         text-align: left;
-        /* Alignement à gauche comme la hero section */
+        padding: var(--spacing-lg) var(--spacing-sm);
+        /* Alignement à gauche et padding comme la hero section */
     }
 
     .about-text {
@@ -3497,12 +3498,6 @@ select.form-input {
     gap: 40px;
 }
 
-@media (max-width: 768px) {
-    .about-container {
-        padding: var(--spacing-lg) var(--spacing-sm);
-        /* Même padding que la hero section pour cohérence */
-    }
-}
 
 .about-text {
     flex: 1;
