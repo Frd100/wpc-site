@@ -3063,6 +3063,10 @@ select.form-input {
     .cmp-hero-fbv__content {
         top: 60%;
         /* Baissé de 50% à 60% pour descendre le contenu */
+        width: 80%;
+        /* Largeur plus large pour desktop pour ne pas contraindre le titre */
+        padding: var(--spacing-lg);
+        /* Réduire le padding pour donner plus d'espace au titre */
     }
 
     .cmp-hero-fbv__content .container {
@@ -3070,6 +3074,8 @@ select.form-input {
         /* Augmenté de 1rem à 2rem pour plus d'espace */
         text-align: center;
         /* Centrer le conteneur sur desktop */
+        max-width: 1000px;
+        /* Largeur maximale pour éviter que le titre soit trop étalé */
     }
 
     .cmp-hero-fbv__subtitle {
