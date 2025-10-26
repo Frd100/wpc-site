@@ -682,7 +682,8 @@ body {
 /* ===== HERO CONTENT - DESKTOP FIRST ===== */
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 50%; /* Monter le titre plus haut */
+    top: 50%;
+    /* Monter le titre plus haut */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
@@ -798,7 +799,7 @@ body {
     font-weight: 400;
     line-height: 1.4;
     margin: 0 0 var(--spacing-xl) 0;
-    color: var(--text-white);
+    color: #000000;
     opacity: 0.95;
     text-align: center;
 }
@@ -1823,7 +1824,7 @@ body {
     .cmp-hero-fbv__subtitle {
         font-size: 1rem;
         margin-bottom: var(--spacing-md);
-        color: white;
+        color: #000000;
         text-align: left;
     }
 

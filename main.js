@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Vérifier si on est sur desktop (largeur >= 769px)
             const isDesktop = window.innerWidth >= 769;
-            
+
             if (isDesktop) {
                 // Desktop : Animation typewriter activée
                 // Vider les lignes initialement
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Vérifier si on est sur desktop (largeur >= 769px)
             const isDesktop = window.innerWidth >= 769;
-            
+
             if (isDesktop) {
                 // Desktop : Animation typewriter activée
                 // Vider le texte initialement
