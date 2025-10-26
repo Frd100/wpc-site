@@ -263,6 +263,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const isDesktop = window.innerWidth >= 769;
 
             if (isDesktop) {
+                // Desktop : Ajouter le retour à la ligne après "projets"
+                const textWithBreak = originalText.replace('projets en', 'projets<br>en');
+                
                 // Desktop : Animation typewriter activée
                 // Vider le texte initialement
                 gsap.set(subtitle, {
@@ -271,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Animation d'écriture lettre par lettre
                 gsap.to(subtitle, {
-                    text: originalText,
+                    text: textWithBreak,
                     duration: 2,
                     ease: "none",
                     scrollTrigger: {
@@ -282,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             } else {
-                // Mobile : Animation normale
+                // Mobile : Animation normale (sans retour à la ligne)
                 // Vider le texte initialement
                 gsap.set(subtitle, {
                     text: ""
