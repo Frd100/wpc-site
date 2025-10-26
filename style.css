@@ -888,8 +888,8 @@ body {
 
 .cmp-hero-fbv__action-container {
     text-align: center;
-    margin-top: var(--spacing-3xl);
-    /* Augmenté de var(--spacing-2xl) à var(--spacing-3xl) pour positionner plus bas */
+    margin-top: var(--spacing-lg);
+    /* Réduit de 3xl à lg pour remonter le bouton */
     position: relative;
     z-index: 10;
     min-height: 50px;
@@ -1860,7 +1860,7 @@ body {
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-3xl);
+        margin-top: var(--spacing-lg);
         height: auto;
     }
 
