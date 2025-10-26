@@ -697,19 +697,20 @@ body {
 }
 
 .cmp-hero-fbv__content .container {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem; /* Réduire l'espace entre titre et sous-titre */
     /* Augmenter l'espace entre titre et sous-titre */
     text-align: center;
     max-width: none;
-    height: 180px; /* Augmenter pour accommoder les 2 lignes du titre */
+    height: 180px;
+    /* Augmenter pour accommoder les 2 lignes du titre */
     /* Hauteur fixe comme sur mobile */
     overflow: hidden;
     /* Comme sur mobile */
 }
 
 .cmp-hero-fbv__content .split {
-    font-size: 4.2rem;
-    font-weight: 700;
+    font-size: 5rem; /* Augmenter la taille du titre */
+    font-weight: 900; /* Augmenter le bold du titre */
     color: #000000;
     text-align: center;
     margin: 0;
