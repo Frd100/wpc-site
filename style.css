@@ -3520,14 +3520,11 @@ select.form-input {
     margin-bottom: 1rem;
 }
 
-/* Conteneurs séparés pour titre et sous-titre about - COMPLÈTEMENT INDÉPENDANTS */
+/* Conteneurs séparés pour titre et sous-titre about */
 .about-title-container {
-    /* Conteneur isolé pour le titre avec nouvelle animation */
+    /* Conteneur isolé pour le titre */
     position: relative;
     z-index: 1;
-    overflow: hidden;
-    /* Pour l'effet de glissement des lettres */
-    /* Isolation complète du sous-titre */
 }
 
 .about-title-container h1 {
@@ -3535,45 +3532,11 @@ select.form-input {
     display: inline-block;
 }
 
-.about-title-container .container {
-    position: relative;
-    width: 90vw;
-    max-width: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 9px;
-}
-
-.about-title-container .line {
-    overflow: hidden;
-}
-
-.about-title-container .word {
-    border: 1px dashed var(--color-surface-white);
-    background-image: var(--color-text-gradient);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    height: 50px;
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.about-title-container sup {
-    line-height: 0;
-}
-
 .about-subtitle-container {
     /* Conteneur isolé pour le sous-titre */
     position: relative;
     z-index: 2;
     margin-top: var(--spacing-lg);
-    /* Isolation complète du titre */
 }
 
 /* Style pour le sous-titre about avec animation - INDÉPENDANT */

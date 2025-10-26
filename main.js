@@ -12,17 +12,11 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /**
-     * ANIMATION TITRE "NOTRE ANCRAGE À NANTERRE" AVEC GSAP PREPARETEXT
-     * Animation professionnelle avec GSAP sur mobile uniquement
+     * ANIMATION TITRE "NOTRE ANCRAGE À NANTERRE" - VERSION SIMPLIFIÉE
+     * Animation simple et fonctionnelle avec GSAP
      */
     function initTitleScrollAnimation() {
-        // Vérifier si on est sur mobile
-        if (window.innerWidth > 768) {
-            console.log('Animation Nanterre: Desktop détecté, animation désactivée');
-            return;
-        }
-
-        console.log('Animation Nanterre: Mobile détecté, initialisation...');
+        console.log('Animation Titre: Initialisation...');
 
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
             console.error('GSAP ou plugins non chargés');
@@ -31,117 +25,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        // === ANIMATION DU TITRE AVEC PROTECTEDSPLIT ===
-        const titleContainer = document.querySelector('.about-title-container');
+        // Sélectionner le titre
         const titleElement = document.querySelector('.about-title-container h1');
 
-        console.log('Animation Titre: Conteneur trouvé:', titleContainer);
+        if (!titleElement) {
+            console.error('Titre non trouvé');
+            return;
+        }
+
         console.log('Animation Titre: Element trouvé:', titleElement);
 
-        if (titleContainer && titleElement) {
-            // Fonction protectedSplit pour protéger certains éléments
-            function protectedSplit(target, vars) {
-                let protected = gsap.utils.toArray(vars.protect || "").map(el => {
-                    return {
-                        el: el,
-                        innerHTML: el.innerHTML
-                    }
-                });
-                let split = new SplitText(target, vars);
-                protected.forEach(data => {
-                    let appendTo;
-                    gsap.utils.toArray(data.el.children).forEach((word, i) => {
-                        let index = split.words.indexOf(word);
-                        if (index >= 0) {
-                            split.words.splice(index, 1);
-                            if (index > 0 && !appendTo) {
-                                appendTo = split.words[index - 1];
-                            }
+        // Fonction protectedSplit pour protéger le span rouge
+        function protectedSplit(target, vars) {
+            let protected = gsap.utils.toArray(vars.protect || "").map(el => {
+                return {
+                    el: el,
+                    innerHTML: el.innerHTML
+                }
+            });
+            let split = new SplitText(target, vars);
+            protected.forEach(data => {
+                let appendTo;
+                gsap.utils.toArray(data.el.children).forEach((word, i) => {
+                    let index = split.words.indexOf(word);
+                    if (index >= 0) {
+                        split.words.splice(index, 1);
+                        if (index > 0 && !appendTo) {
+                            appendTo = split.words[index - 1];
                         }
-                    });
-                    data.el.innerHTML = data.innerHTML;
-                    if (appendTo) {
-                        appendTo.appendChild(data.el)
                     }
                 });
-                return split;
+                data.el.innerHTML = data.innerHTML;
+                if (appendTo) {
+                    appendTo.appendChild(data.el)
+                }
+            });
+            return split;
+        }
+
+        // Appliquer SplitText avec protection du span rouge
+        const headlineSplit = protectedSplit(titleElement, {
+            type: "words",
+            wordsClass: "word",
+            protect: ".nanterre-red"
+        });
+
+        console.log('Animation Titre: SplitText appliqué, mots:', headlineSplit.words.length);
+
+        // Animation simple et visible
+        gsap.from(headlineSplit.words, {
+            y: -50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: titleElement,
+                start: "top 80%",
+                toggleActions: "play none none none",
+                onStart: () => console.log('Animation Titre: Début animation'),
+                onComplete: () => console.log('Animation Titre: Fin animation')
             }
-
-            // Rendre le titre visible
-            gsap.set(titleElement, { opacity: 1 });
-
-            // Appliquer SplitText avec protection du span rouge
-            const headlineSplit = protectedSplit(titleElement, {
-                type: "words",
-                wordsClass: "word",
-                protect: ".nanterre-red"
-            });
-
-            // Animation des mots
-            gsap.from(headlineSplit.words, {
-                y: -100,
-                opacity: 0,
-                rotation: "random(-80, 80)",
-                stagger: 0.07,
-                duration: 1,
-                ease: "back",
-                scrollTrigger: {
-                    trigger: titleContainer,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none none',
-                    onStart: () => console.log('Animation Titre: Animation déclenchée!'),
-                    onComplete: () => console.log('Animation Titre: Animation terminée!')
-                }
-            });
-        }
-
-        // === ANIMATION DU SOUS-TITRE (INDÉPENDANTE) ===
-        const subtitleContainer = document.querySelector('.about-subtitle-container');
-        const aboutSubtitle = document.querySelector('.about-subtitle');
-
-        console.log('Animation Sous-titre: Conteneur trouvé:', subtitleContainer);
-        console.log('Animation Sous-titre: Element trouvé:', aboutSubtitle);
-
-        if (subtitleContainer && aboutSubtitle) {
-            const originalAboutText = aboutSubtitle.textContent;
-
-            // Vider le texte initialement
-            aboutSubtitle.textContent = "";
-
-            // Animation d'écriture lettre par lettre avec contrôle CSS
-            let currentText = "";
-            let index = 0;
-
-            const typeWriter = () => {
-                if (index < originalAboutText.length) {
-                    currentText += originalAboutText[index];
-                    aboutSubtitle.textContent = currentText;
-                    index++;
-                    setTimeout(typeWriter, 50); // Vitesse d'écriture
-                }
-            };
-
-            // Déclencher l'animation avec ScrollTrigger INDÉPENDANT
-            gsap.fromTo(aboutSubtitle, {
-                opacity: 0,
-                x: 0
-            }, {
-                opacity: 1,
-                x: 0,
-                duration: 0.1,
-                onStart: typeWriter,
-                scrollTrigger: {
-                    trigger: subtitleContainer, // Trigger spécifique au sous-titre
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none",
-                    onStart: () => console.log('Animation Sous-titre: Animation déclenchée!'),
-                    onComplete: () => console.log('Animation Sous-titre: Animation terminée!')
-                }
-            });
-        }
-
+        });
     }
 
     // Initialiser l'animation du titre
