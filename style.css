@@ -3043,8 +3043,10 @@ select.form-input {
     .cmp-hero-fbv__content .split {
         text-align: center;
         /* Centré pour desktop */
-        white-space: nowrap; /* S'assurer que le titre reste sur une ligne */
-        display: block; /* Forcer l'affichage en bloc pour le centrage */
+        white-space: nowrap;
+        /* S'assurer que le titre reste sur une ligne */
+        display: block;
+        /* Forcer l'affichage en bloc pour le centrage */
     }
 }
 
@@ -3064,12 +3066,14 @@ select.form-input {
         /* Remettre la hauteur fixe pour mobile */
         overflow: hidden;
         /* Remettre overflow hidden pour mobile */
+        text-align: left; /* Explicitement aligné à gauche pour mobile */
     }
 
     .cmp-hero-fbv__content .split {
         font-size: clamp(1.8rem, 8vw, 3rem);
         white-space: nowrap;
         line-height: 1.1;
+        text-align: left; /* Explicitement aligné à gauche pour mobile */
     }
 
     .cmp-hero-fbv__subtitle {
