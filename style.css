@@ -735,7 +735,8 @@ body {
 
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
-    margin: 0 0 var(--spacing-4xl) 0;
+    margin: var(--spacing-6xl) 0 var(--spacing-4xl) 0;
+    /* Margin-top élevé pour descendre beaucoup le sous-titre */
     font-weight: 600;
     /* Réduit de 800 à 600 */
     color: #000000;
