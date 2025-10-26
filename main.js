@@ -225,8 +225,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const tl = gsap.timeline();
 
                 // Position initiale : texte caché immédiatement
-                gsap.set([line1Span, line2Span], {
-                    y: "100%",
+                gsap.set([line1Span, line2Span], { 
+                    transform: "translate(-50%, 150%)",
                     opacity: 1,
                     visibility: "visible"
                 });
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Animation de la première phrase
                 tl.to(line1Span, {
-                    y: "0%",
+                    transform: "translate(-50%, -50%)",
                     duration: 1.0,
                     ease: "power3.out",
                     delay: 0.5
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Animation de la deuxième phrase avec délai
                 tl.to(line2Span, {
-                    y: "0%",
+                    transform: "translate(-50%, -50%)",
                     duration: 1.0,
                     ease: "power3.out",
                     delay: 0.2
