@@ -4129,8 +4129,9 @@ select.form-input {
     }
 
     body .cmp-about-section .container {
-        text-align: center;
+        text-align: left;
         margin-bottom: 2rem;
+        /* Alignement à gauche comme la hero section */
     }
 
     body .cmp-about-section .split {
