@@ -275,12 +275,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Animer chaque ligne une par une avec délai
+        // Animer chaque ligne une par une avec des triggers différents
         const lines = titleElement.querySelectorAll('.wpc-line');
-
+        
         lines.forEach((line, index) => {
-            // Créer l'effet de peinture progressive pour chaque ligne avec délai
-            gsap.fromTo(line,
+            // Créer l'effet de peinture progressive pour chaque ligne avec des triggers décalés
+            gsap.fromTo(line, 
                 {
                     clipPath: "inset(0 100% 0 0)" // Commence complètement masqué
                 },
@@ -288,11 +288,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     clipPath: "inset(0 0% 0 0)", // Se révèle complètement
                     duration: 0.8,
                     ease: "power2.out",
-                    delay: index * 0.3, // Délai progressif entre chaque ligne
                     scrollTrigger: {
                         trigger: titleElement,
-                        start: "top 80%",
-                        end: "bottom 20%",
+                        start: `top ${80 - (index * 15)}%`, // Décalage progressif du start
+                        end: `bottom ${20 - (index * 5)}%`, // Décalage progressif du end
                         scrub: 1,
                         toggleActions: "play none none reverse"
                     }
