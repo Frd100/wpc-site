@@ -3724,18 +3724,18 @@ select.form-input {
         gap: 60px;
         align-items: flex-start;
     }
-    
+
     .about-title-container {
         flex: 1;
     }
-    
+
     .about-subtitle-container {
         flex: 1;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
     }
-    
+
     .about-subtitle {
         text-align: right;
         max-width: 400px;
@@ -3837,8 +3837,8 @@ select.form-input {
     -moz-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    height: 100px;
-    /* Augmenté de 80px à 100px */
+    height: 120px;
+    /* Augmenté de 100px à 120px pour correspondre à la nouvelle taille */
     padding: 0.3rem 1.5rem;
     /* Augmenté le padding */
     border-radius: 15px;
@@ -3847,8 +3847,8 @@ select.form-input {
     justify-content: center;
     min-width: fit-content;
     margin: 0.25rem 0;
-    font-size: 3.5rem;
-    /* Augmenté de 3rem à 3.5rem */
+    font-size: 4.5rem;
+    /* Augmenté de 3.5rem à 4.5rem */
     font-weight: 400;
     /* Réduit de 500 à 400 pour moins de bold */
 }
