@@ -766,20 +766,21 @@ function initPageTransition() {
     pageTransition.style.visibility = 'hidden';
     pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to', 'page-transition-leave-to');
 
-    // Détecter TOUS les liens de navigation interne
+    // Détecter TOUS les liens qui peuvent changer de page
     const allLinks = document.querySelectorAll('a[href]');
-    console.log('Liens de navigation détectés:', allLinks.length);
+    console.log('Liens détectés:', allLinks.length);
 
     allLinks.forEach(link => {
         const href = link.getAttribute('href');
 
-        // Détecter les liens internes (pas externes, pas ancres, pas javascript:)
-        if (href &&
+        // Détecter TOUS les liens sauf les ancres et les liens externes
+        if (href && 
+            !href.startsWith('#') && 
             !href.startsWith('http') &&
-            !href.startsWith('#') &&
-            !href.startsWith('javascript:') &&
             !href.startsWith('mailto:') &&
             !href.startsWith('tel:')) {
+            
+            console.log('Lien avec transition:', href, 'Classe:', link.className);
 
             link.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -809,6 +810,8 @@ function initPageTransition() {
                     }, 600); // --transitionFullTime = 0.6s
                 }, 1000); // Attendre que l'animation d'entrée soit terminée
             });
+        } else {
+            console.log('Lien ignoré:', href, 'Classe:', link.className);
         }
     });
 
