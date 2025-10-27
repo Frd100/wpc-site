@@ -59,12 +59,39 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .cmp-wpc-title-section {
-        padding: var(--spacing-4xl) 0;
+        padding: var(--spacing-lg) var(--spacing-sm);
+        /* Même padding que la section hero */
+        text-align: center;
+        /* Centré sur mobile */
+    }
+
+    .cmp-wpc-title-container {
+        justify-content: center;
+        /* Centrer le contenu */
+        padding: 0;
+        /* Supprimer le padding du container */
     }
 
     .cmp-wpc-title {
         font-size: clamp(4rem, 20vw, 12rem);
         line-height: 0.8;
+        margin: 0;
+        /* Supprimer la marge gauche */
+        text-align: center;
+        /* Centrer le texte */
+    }
+
+    /* WEST et PARIS plus gros */
+    .cmp-wpc-title .wpc-line:nth-child(1),
+    .cmp-wpc-title .wpc-line:nth-child(2) {
+        font-size: clamp(4.5rem, 22vw, 13rem);
+        font-weight: 900;
+    }
+
+    /* CONSULTING plus petit */
+    .cmp-wpc-title .wpc-line:nth-child(3) {
+        font-size: clamp(3rem, 16vw, 10rem);
+        font-weight: 800;
     }
 }
 
