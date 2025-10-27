@@ -31,7 +31,7 @@
 /* ===== DESKTOP VERSION - ISOLÉE ===== */
 @media (min-width: 769px) {
     .cmp-wpc-title-section {
-        background-color: #FFFFFF;
+        background-color: #F5F6FA;
         padding: var(--spacing-6xl) 0;
         text-align: left;
         position: relative;
@@ -64,7 +64,7 @@
 /* ===== MOBILE VERSION - ISOLÉE ===== */
 @media (max-width: 768px) {
     .cmp-wpc-title-section {
-        background-color: #FFFFFF;
+        background-color: #F5F6FA;
         padding: var(--spacing-lg) var(--spacing-sm);
         /* Même padding que la section hero */
         text-align: center;
