@@ -729,6 +729,15 @@ function initPageTransition() {
     }
 
     console.log('Page transition trouvée:', pageTransition);
+    
+    // Vérifier que les éléments de transition sont présents
+    const transitionItems = pageTransition.querySelectorAll('.page-transition__item');
+    console.log('Éléments de transition trouvés:', transitionItems.length);
+    
+    if (transitionItems.length === 0) {
+        console.error('Aucun élément .page-transition__item trouvé !');
+        return;
+    }
 
     // Réinitialiser l'état de la transition
     pageTransition.style.opacity = '0';
@@ -751,7 +760,11 @@ function initPageTransition() {
                 // Démarrer l'animation d'entrée
                 pageTransition.style.opacity = '1';
                 pageTransition.style.visibility = 'visible';
-                pageTransition.classList.add('page-transition-enter');
+                
+                // Petit délai pour s'assurer que les styles sont appliqués
+                setTimeout(() => {
+                    pageTransition.classList.add('page-transition-enter');
+                }, 10);
 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
                 setTimeout(() => {
@@ -777,11 +790,14 @@ function initPageTransition() {
             // Démarrer l'animation
             pageTransition.style.opacity = '1';
             pageTransition.style.visibility = 'visible';
-            pageTransition.classList.add('page-transition-enter');
             
-            console.log('Classes après ajout:', pageTransition.className);
-            console.log('Style opacity:', pageTransition.style.opacity);
-            console.log('Style visibility:', pageTransition.style.visibility);
+            // Petit délai pour s'assurer que les styles sont appliqués
+            setTimeout(() => {
+                pageTransition.classList.add('page-transition-enter');
+                console.log('Classes après ajout:', pageTransition.className);
+                console.log('Style opacity:', pageTransition.style.opacity);
+                console.log('Style visibility:', pageTransition.style.visibility);
+            }, 10);
 
             setTimeout(() => {
                 pageTransition.classList.remove('page-transition-enter');

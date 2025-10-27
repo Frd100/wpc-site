@@ -107,20 +107,16 @@
 }
 
 .page-transition.page-transition-enter .page-transition__item {
-    transform: scaleX(0);
-    transform-origin: 100% 100%;
-    transition: none;
-}
-
-.page-transition.page-transition-enter-to .page-transition__item {
-    transform: scale(1) translateZ(0);
+    transform: scaleX(1);
     transform-origin: 0 0;
+    transition: transform var(--transitionTime) ease-out;
 }
 
 /* Animation de sortie */
 .page-transition.page-transition-leave-to .page-transition__item {
-    transform: scaleX(0) translateZ(0);
+    transform: scaleX(0);
     transform-origin: 100% 100%;
+    transition: transform var(--transitionTime) ease-out;
 }
 
 /* Délais pour l'effet de vague */
