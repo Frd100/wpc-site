@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
             yPercent: 100,
             ease: "power4",
             stagger: 0.04,
-            delay: 0.5
+            delay: 0.2
         });
 
         console.log('Animation SplitText lancée avec', linesDataText.words.length, 'mots');

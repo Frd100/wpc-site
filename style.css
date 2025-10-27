@@ -826,20 +826,23 @@ body {
 /* Règles spécifiques pour desktop */
 @media (min-width: 769px) {
     .headline .line {
-        overflow: visible; /* Pas d'overflow hidden sur desktop */
+        overflow: visible;
+        /* Pas d'overflow hidden sur desktop */
     }
-    
+
     .headline .line .text {
-        overflow: hidden; /* Overflow hidden seulement sur le texte */
+        overflow: hidden;
+        /* Overflow hidden seulement sur le texte */
     }
 }
 
 /* Règles spécifiques pour mobile */
 @media (max-width: 768px) {
     .headline .line {
-        overflow: hidden; /* Overflow hidden sur mobile */
+        overflow: hidden;
+        /* Overflow hidden sur mobile */
     }
-    
+
     .headline .line .text {
         overflow: hidden;
     }
