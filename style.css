@@ -86,7 +86,7 @@
     pointer-events: none;
 }
 
-/* Texte WPC sur chaque lame */
+/* Texte WPC sur chaque lame - visible dès le début */
 .rideau-lame .lame-text {
     position: absolute;
     top: 50%;
@@ -101,13 +101,7 @@
     z-index: 10;
     pointer-events: none;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Texte visible quand la lame est ouverte */
-.rideau-lame.rideau-lame-open .lame-text {
-    opacity: 1;
+    opacity: 1; /* Visible dès le début */
 }
 
 .rideau-lame {
