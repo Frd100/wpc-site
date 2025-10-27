@@ -102,72 +102,72 @@
 /* Positionnement et délais pour chaque barre */
 .page-transition__item:first-of-type {
     border-left: none;
-    left: calc(var(--itemWidth) * 1 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 0);
     transition-delay: calc(var(--transitionDelayStep) * 1);
 }
 
 .page-transition__item:nth-of-type(2) {
-    left: calc(var(--itemWidth) * 2 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 1);
     transition-delay: calc(var(--transitionDelayStep) * 2);
 }
 
 .page-transition__item:nth-of-type(3) {
-    left: calc(var(--itemWidth) * 3 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 2);
     transition-delay: calc(var(--transitionDelayStep) * 3);
 }
 
 .page-transition__item:nth-of-type(4) {
-    left: calc(var(--itemWidth) * 4 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 3);
     transition-delay: calc(var(--transitionDelayStep) * 4);
 }
 
 .page-transition__item:nth-of-type(5) {
-    left: calc(var(--itemWidth) * 5 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 4);
     transition-delay: calc(var(--transitionDelayStep) * 5);
 }
 
 .page-transition__item:nth-of-type(6) {
-    left: calc(var(--itemWidth) * 6 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 5);
     transition-delay: calc(var(--transitionDelayStep) * 6);
 }
 
 .page-transition__item:nth-of-type(7) {
-    left: calc(var(--itemWidth) * 7 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 6);
     transition-delay: calc(var(--transitionDelayStep) * 7);
 }
 
 .page-transition__item:nth-of-type(8) {
-    left: calc(var(--itemWidth) * 8 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 7);
     transition-delay: calc(var(--transitionDelayStep) * 8);
 }
 
 .page-transition__item:nth-of-type(9) {
-    left: calc(var(--itemWidth) * 9 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 8);
     transition-delay: calc(var(--transitionDelayStep) * 9);
 }
 
 .page-transition__item:nth-of-type(10) {
-    left: calc(var(--itemWidth) * 10 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 9);
     transition-delay: calc(var(--transitionDelayStep) * 10);
 }
 
 .page-transition__item:nth-of-type(11) {
-    left: calc(var(--itemWidth) * 11 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 10);
     transition-delay: calc(var(--transitionDelayStep) * 11);
 }
 
 .page-transition__item:nth-of-type(12) {
-    left: calc(var(--itemWidth) * 12 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 11);
     transition-delay: calc(var(--transitionDelayStep) * 12);
 }
 
 .page-transition__item:nth-of-type(13) {
-    left: calc(var(--itemWidth) * 13 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 12);
     transition-delay: calc(var(--transitionDelayStep) * 13);
 }
 
 .page-transition__item:nth-of-type(14) {
-    left: calc(var(--itemWidth) * 14 - var(--itemWidth));
+    left: calc(var(--itemWidth) * 13);
     transition-delay: calc(var(--transitionDelayStep) * 14);
 }
 
@@ -201,57 +201,6 @@
 }
 
 
-.page-transition__item:nth-child(2) {
-    transition-delay: calc(var(--transitionDelayStep) * 2);
-}
-
-.page-transition__item:nth-child(3) {
-    transition-delay: calc(var(--transitionDelayStep) * 3);
-}
-
-.page-transition__item:nth-child(4) {
-    transition-delay: calc(var(--transitionDelayStep) * 4);
-}
-
-.page-transition__item:nth-child(5) {
-    transition-delay: calc(var(--transitionDelayStep) * 5);
-}
-
-.page-transition__item:nth-child(6) {
-    transition-delay: calc(var(--transitionDelayStep) * 6);
-}
-
-.page-transition__item:nth-child(7) {
-    transition-delay: calc(var(--transitionDelayStep) * 7);
-}
-
-.page-transition__item:nth-child(8) {
-    transition-delay: calc(var(--transitionDelayStep) * 8);
-}
-
-.page-transition__item:nth-child(9) {
-    transition-delay: calc(var(--transitionDelayStep) * 9);
-}
-
-.page-transition__item:nth-child(10) {
-    transition-delay: calc(var(--transitionDelayStep) * 10);
-}
-
-.page-transition__item:nth-child(11) {
-    transition-delay: calc(var(--transitionDelayStep) * 11);
-}
-
-.page-transition__item:nth-child(12) {
-    transition-delay: calc(var(--transitionDelayStep) * 12);
-}
-
-.page-transition__item:nth-child(13) {
-    transition-delay: calc(var(--transitionDelayStep) * 13);
-}
-
-.page-transition__item:nth-child(14) {
-    transition-delay: calc(var(--transitionDelayStep) * 14);
-}
 
 /* ===== CSS VARIABLES ===== */
 :root {

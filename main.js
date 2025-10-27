@@ -788,7 +788,7 @@ function initPageTransition() {
                 }, 10);
 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
-                // --transitionFullTime = (0.025s * 14) + 0.25s = 0.6s
+                // --transitionFullTime = (0.025s * 14) + 0.25s = 0.6s = 600ms
                 setTimeout(() => {
                     window.location.href = href;
                 }, 600);
