@@ -714,11 +714,10 @@ body {
     /* Réduire l'espace entre titre et sous-titre */
     text-align: center;
     max-width: none;
-    height: 180px;
-    /* Augmenter pour accommoder les 2 lignes du titre */
-    /* Hauteur fixe comme sur mobile */
-    overflow: hidden;
-    /* Comme sur mobile */
+    height: auto;
+    /* Changé de 180px à auto pour permettre au sous-titre de descendre */
+    overflow: visible;
+    /* Changé de hidden à visible pour ne pas couper le sous-titre */
 }
 
 .cmp-hero-fbv__content .split {
