@@ -367,8 +367,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 setActiveNavLink();
                 initializeMobileMenu();
                 
-                // Réinitialiser la transition de page après le chargement de la nav
-                initPageTransition();
+                // Réinitialiser la transition de page APRÈS initializeMobileMenu
+                // pour éviter les conflits d'event listeners
+                setTimeout(() => {
+                    initPageTransition();
+                }, 100);
             }
             return;
         }
@@ -390,8 +393,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     setActiveNavLink();
                     initializeMobileMenu(); // Re-initialize menu logic
                     
-                    // Réinitialiser la transition de page après le chargement de la nav
-                    initPageTransition();
+                    // Réinitialiser la transition de page APRÈS initializeMobileMenu
+                    // pour éviter les conflits d'event listeners
+                    setTimeout(() => {
+                        initPageTransition();
+                    }, 100);
                 }
             })
             .catch(error => {
@@ -782,7 +788,18 @@ function initPageTransition() {
     const allLinks = document.querySelectorAll('a[href]');
     console.log('Liens détectés:', allLinks.length);
 
+    // Supprimer tous les event listeners existants pour éviter les conflits
     allLinks.forEach(link => {
+        // Cloner le lien pour supprimer tous les event listeners
+        const newLink = link.cloneNode(true);
+        link.parentNode.replaceChild(newLink, link);
+    });
+
+    // Re-sélectionner les liens après le clonage
+    const freshLinks = document.querySelectorAll('a[href]');
+    console.log('Liens frais après clonage:', freshLinks.length);
+
+    freshLinks.forEach(link => {
         const href = link.getAttribute('href');
 
         // Détecter TOUS les liens sauf les ancres et les liens externes
