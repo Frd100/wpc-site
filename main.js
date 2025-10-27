@@ -790,7 +790,7 @@ function initPageTransition() {
 
                 // === PARTIE 1: ANIMATION DE SORTIE ===
                 console.log('Début animation de sortie');
-                
+
                 // Afficher le rideau
                 rideauTransition.style.opacity = '1';
                 rideauTransition.style.visibility = 'visible';
@@ -798,7 +798,7 @@ function initPageTransition() {
                 // Démarrer l'animation de sortie
                 setTimeout(() => {
                     rideauTransition.classList.add('rideau-leave');
-                    
+
                     setTimeout(() => {
                         rideauTransition.classList.add('rideau-leave-to');
                     }, 10);
@@ -814,31 +814,30 @@ function initPageTransition() {
     });
 
     // === PARTIE 2: ANIMATION D'ENTRÉE (sur la nouvelle page) ===
-    // Cette partie sera exécutée quand la nouvelle page se charge
-    window.addEventListener('load', function() {
-        console.log('Nouvelle page chargée, début animation d\'entrée');
+    // Vérifier si on arrive d'une navigation (rideau doit être visible)
+    if (document.referrer && window.performance.navigation.type === 0) {
+        console.log('Nouvelle page chargée après clic, début animation d\'entrée');
         
-        // Le rideau est déjà visible (venant de l'ancienne page)
+        // Le rideau doit être visible dès le début
         rideauTransition.style.opacity = '1';
         rideauTransition.style.visibility = 'visible';
         
-        // Démarrer l'animation d'entrée
+        // Mettre le rideau en état fermé initialement
+        rideauTransition.classList.add('rideau-enter');
+        
+        // Démarrer l'animation d'entrée immédiatement
         setTimeout(() => {
-            rideauTransition.classList.add('rideau-enter');
-            
-            setTimeout(() => {
-                rideauTransition.classList.add('rideau-enter-to');
-            }, 10);
-        }, 10);
+            rideauTransition.classList.add('rideau-enter-to');
+        }, 50);
 
         // Cacher le rideau après l'animation d'entrée
         setTimeout(() => {
             console.log('Fin animation d\'entrée, masquage du rideau');
             rideauTransition.style.opacity = '0';
             rideauTransition.style.visibility = 'hidden';
-            rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-enter-active');
-        }, 800); // Durée de l'animation d'entrée
-    });
+            rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to');
+        }, 900); // Durée de l'animation d'entrée + buffer
+    }
 
     // Pas d'animation automatique de sortie au chargement
     // Le rideau reste caché jusqu'à ce qu'on clique sur un lien
