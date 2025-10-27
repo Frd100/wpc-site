@@ -431,6 +431,7 @@
 
 .huge-letters {
     position: relative;
+    text-align: center;
 }
 
 .huge-letters__title {
@@ -443,7 +444,11 @@
     margin: 0;
     padding: 0;
     line-height: 0.9;
-    display: inline-block;
+    display: block;
+}
+
+.huge-letters__title:first-child {
+    margin-bottom: -0.2em;
 }
 
 .huge-letters__title .is-word {
@@ -4421,6 +4426,10 @@ select.form-input {
 
     .huge-letters__title {
         font-size: clamp(3rem, 15vw, 6rem);
+    }
+
+    .huge-letters__title:first-child {
+        margin-bottom: -0.1em;
     }
 
     /* Réduire les distances d'animation sur mobile */
