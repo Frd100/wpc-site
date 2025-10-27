@@ -421,50 +421,19 @@
 .cmp-expertise-section {
     background-color: #FFFFFF;
     padding: var(--spacing-6xl) 0;
-    position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 
-.cmp-expertise-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    padding: 0 var(--spacing-xl);
-    box-sizing: border-box;
-}
-
-/* Desktop rules with higher specificity */
-@media (min-width: 769px) {
-    .cmp-expertise-section .cmp-expertise-title {
-        position: absolute;
-        top: var(--spacing-xl);
-        left: var(--spacing-xl);
-        font-family: var(--font-family-primary);
-        font-size: clamp(4rem, 12vw, 12rem);
-        font-weight: 900;
-        color: #000000;
-        text-transform: uppercase;
-        letter-spacing: -0.02em;
-        margin: 0;
-        padding: 0;
-        line-height: 0.9;
-    }
-
-    .cmp-expertise-section .cmp-expertise-description {
-        position: absolute;
-        bottom: var(--spacing-xl);
-        right: var(--spacing-xl);
-        max-width: 500px;
-        font-family: var(--font-family-primary);
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #000000;
-        margin: 0;
-        padding: 0;
-        font-weight: 400;
-    }
+.cmp-expertise-title {
+    font-family: var(--font-family-primary);
+    font-size: clamp(4rem, 12vw, 12rem);
+    font-weight: 900;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding: 0;
+    line-height: 0.9;
 }
 
 /* Domaines Tags */
@@ -4406,26 +4375,10 @@ select.form-input {
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
         padding: var(--spacing-4xl) 0;
-        min-height: 60vh;
     }
 
-    .cmp-expertise-section .cmp-expertise-title {
-        position: static;
+    .cmp-expertise-title {
         font-size: clamp(3rem, 15vw, 6rem);
-        text-align: center;
-        margin-bottom: var(--spacing-xl);
-        top: auto;
-        left: auto;
-    }
-
-    .cmp-expertise-section .cmp-expertise-description {
-        position: static;
-        max-width: 100%;
-        font-size: 1rem;
-        text-align: center;
-        padding: 0 var(--spacing-md);
-        bottom: auto;
-        right: auto;
     }
 
     body .cmp-about-section-white .cmp-about-section-white__title {
