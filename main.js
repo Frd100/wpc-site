@@ -780,7 +780,7 @@ function initPageTransition() {
                 // Petit délai pour s'assurer que les styles sont appliqués
                 setTimeout(() => {
                     pageTransition.classList.add('page-transition-enter');
-                    
+
                     // Ajouter la classe enter-to après un court délai pour déclencher l'animation
                     setTimeout(() => {
                         pageTransition.classList.add('page-transition-enter-to');
@@ -788,9 +788,10 @@ function initPageTransition() {
                 }, 10);
 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
+                // --transitionFullTime = (0.025s * 14) + 0.25s = 0.6s
                 setTimeout(() => {
                     window.location.href = href;
-                }, 350);
+                }, 600);
             });
         }
     });
