@@ -290,8 +290,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: titleElement,
-                        start: `top ${80 - (index * 15)}%`, // Décalage progressif du start
-                        end: `bottom ${20 - (index * 5)}%`, // Décalage progressif du end
+                        start: `top ${50 - (index * 10)}%`, // Décalage progressif du start - commence plus tard
+                        end: `bottom ${10 - (index * 3)}%`, // Décalage progressif du end
                         scrub: 1,
                         toggleActions: "play none none reverse"
                     }
@@ -464,8 +464,8 @@ const WPCClasses = {
 };
 
 /**
- * MOBILE MENU MANAGEMENT WITH CSS CLIP-PATH ANIMATION
- * Animation professionnelle avec clip-path et transitions décalées
+ * MOBILE MENU MANAGEMENT WITH GSAP ANIMATION
+ * Cette fonction est maintenant appelée après le chargement de la nav
  */
 function initializeMobileMenu() {
     const mobileToggle = document.getElementById('mobile-menu-toggle');
@@ -478,128 +478,177 @@ function initializeMobileMenu() {
 
     let isMenuOpen = false;
 
+    // Variables pour les animations GSAP Slide Reveal
+    let menuTimeline = null;
+    let buttonTimeline = null;
+
     /**
-     * Animation du bouton hamburger avec GSAP
+     * Initialisation des animations GSAP Slide Reveal
+     */
+    function initSlideRevealAnimations() {
+        if (menuTimeline && buttonTimeline) return; // Déjà initialisées
+
+        const menuLinks = mobileMenu.querySelectorAll('.main-navigation__link');
+
+        // Définir l'état initial du menu
+        gsap.set(mobileMenu, { x: "-100%", opacity: 0 });
+        gsap.set(menuLinks, { x: -50, opacity: 0 });
+
+        // Timeline du menu avec Slide Reveal
+        menuTimeline = gsap.timeline({ paused: true });
+
+        // Animation du conteneur du menu (slide depuis la gauche)
+        menuTimeline.fromTo(mobileMenu, {
+            x: "-100%",
+            opacity: 0
+        }, {
+            x: "0%",
+            opacity: 1,
+            duration: 0.5,
+            ease: "power3.out"
+        }, 0);
+
+        // Animation des liens du menu (révélation progressive)
+        menuTimeline.fromTo(menuLinks, {
+            x: -50,
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            duration: 0.3,
+            stagger: 0.1,
+            ease: "power2.out"
+        }, 0.2);
+
+        // Timeline du bouton hamburger
+        buttonTimeline = gsap.timeline({ paused: true });
+
+        // Animation des lignes pour former un X
+        buttonTimeline.to(hamburgerLines[0], {
+            rotation: 45,
+            y: 8.5,
+            duration: 0.15,
+            ease: "power2.out"
+        }, 0);
+
+        buttonTimeline.to(hamburgerLines[1], {
+            opacity: 0,
+            duration: 0.1,
+            ease: "power2.out"
+        }, 0);
+
+        buttonTimeline.to(hamburgerLines[2], {
+            rotation: -45,
+            y: -8.5,
+            duration: 0.15,
+            ease: "power2.out"
+        }, 0);
+    }
+
+    /**
+     * Contrôle de l'animation du bouton Slide Reveal
      */
     function toggleButtonAnimation() {
+        initSlideRevealAnimations();
+
         if (isMenuOpen) {
-            // Hamburger → X
-            gsap.to(hamburgerLines[0], {
-                rotation: 45,
-                y: 8.5,
-                duration: 0.15,
-                ease: "power2.out"
-            });
-            gsap.to(hamburgerLines[1], {
-                opacity: 0,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-            gsap.to(hamburgerLines[2], {
-                rotation: -45,
-                y: -8.5,
-                duration: 0.15,
-                ease: "power2.out"
-            });
+            buttonTimeline.play(); // Hamburger → X
         } else {
-            // X → Hamburger
-            gsap.to(hamburgerLines[0], {
-                rotation: 0,
-                y: 0,
-                duration: 0.15,
-                ease: "power2.out"
-            });
-            gsap.to(hamburgerLines[1], {
-                opacity: 1,
-                duration: 0.1,
-                ease: "power2.out"
-            });
-            gsap.to(hamburgerLines[2], {
-                rotation: 0,
-                y: 0,
-                duration: 0.15,
-                ease: "power2.out"
-            });
+            buttonTimeline.reverse(); // X → Hamburger
         }
     }
 
     /**
-     * Animation du menu avec CSS clip-path
+     * Contrôle de l'animation du menu Slide Reveal
      */
     function toggleMenuAnimation() {
+        initSlideRevealAnimations();
+
         if (isMenuOpen) {
-            // Ouverture du menu
-            mobileMenu.classList.remove('mobile-menu-leave', 'mobile-menu-leave-active', 'mobile-menu-enter-to');
-            mobileMenu.classList.add('mobile-menu-enter', 'mobile-menu-enter-active');
-            
-            // Empêcher le scroll du body
-            body.style.overflow = 'hidden';
-            
-            // Animation du bouton
-            toggleButtonAnimation();
-            
-            // Ajouter la classe enter-to après un court délai pour déclencher les animations des éléments internes
-            setTimeout(() => {
-                mobileMenu.classList.add('mobile-menu-enter-to');
-            }, 50);
+            menuTimeline.play(); // Ouverture
         } else {
-            // Fermeture du menu
-            mobileMenu.classList.remove('mobile-menu-enter', 'mobile-menu-enter-active', 'mobile-menu-enter-to');
-            mobileMenu.classList.add('mobile-menu-leave', 'mobile-menu-leave-active');
-            
-            // Restaurer le scroll du body
-            body.style.overflow = '';
-            
-            // Animation du bouton
-            toggleButtonAnimation();
-            
-            // Retirer les classes après l'animation
-            setTimeout(() => {
-                mobileMenu.classList.remove('mobile-menu-leave', 'mobile-menu-leave-active');
-            }, 300);
+            menuTimeline.reverse(); // Fermeture
         }
     }
 
     /**
-     * Gestionnaire de clic sur le bouton hamburger
+     * Toggle du menu mobile avec animation GSAP
      */
     mobileToggle.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-
-        isMenuOpen = !isMenuOpen;
-        toggleMenuAnimation();
+        toggleMenu();
     });
 
-    /**
-     * Fermeture du menu en cliquant sur le backdrop
-     */
-    mobileMenu.addEventListener('click', function (e) {
-        if (e.target === mobileMenu) {
-            isMenuOpen = false;
-            toggleMenuAnimation();
+    // Fermer au clic sur un lien
+    const menuLinksElements = mobileMenu.querySelectorAll('.main-navigation__link');
+    menuLinksElements.forEach(link => {
+        link.addEventListener('click', function () {
+            // Ne ferme pas immédiatement pour laisser le temps à la navigation de se faire
+        });
+    });
+
+    // Fermer au clic extérieur
+    document.addEventListener('click', function (e) {
+        if (mobileMenu.classList.contains('active') &&
+            !mobileToggle.contains(e.target) &&
+            !mobileMenu.contains(e.target)) {
+            toggleMenu();
         }
     });
 
-    /**
-     * Fermeture du menu avec la touche Escape
-     */
+    // Fermer avec Échap
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && isMenuOpen) {
-            isMenuOpen = false;
-            toggleMenuAnimation();
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            toggleMenu();
         }
     });
 
-    /**
-     * Fermeture du menu lors du redimensionnement vers desktop
-     */
-    window.addEventListener('resize', function () {
-        if (window.innerWidth >= 769 && isMenuOpen) {
-            isMenuOpen = false;
-            toggleMenuAnimation();
+    // Fermer lors du redimensionnement vers desktop
+    window.addEventListener('resize', WPCUtils.debounce(function () {
+        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+            toggleMenu();
         }
-    });
+    }, 200));
+
+    function toggleMenu() {
+        // Basculer l'état
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+            // Ouvrir le menu
+            mobileMenu.classList.add('active');
+            mobileToggle.classList.add('active');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            mobileToggle.setAttribute('aria-label', 'Fermer le menu de navigation');
+
+            // Empêcher le scroll du body
+            const scrollY = window.scrollY;
+            body.style.overflow = 'hidden';
+            body.style.position = 'fixed';
+            body.style.top = `-${scrollY}px`;
+            body.style.width = '100%';
+            body.dataset.scrollY = scrollY;
+        } else {
+            // Fermer le menu
+            mobileMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            mobileToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+
+            // Restaurer le scroll
+            const scrollY = body.dataset.scrollY || '0';
+            body.style.overflow = '';
+            body.style.position = '';
+            body.style.top = '';
+            body.style.width = '';
+            window.scrollTo(0, parseInt(scrollY));
+        }
+
+        // Lancer les animations réversibles
+        toggleButtonAnimation();
+        toggleMenuAnimation();
+    }
 }
 
 
