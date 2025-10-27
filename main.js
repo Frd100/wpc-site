@@ -736,6 +736,38 @@ function createPageTransition() {
     document.body.appendChild(pageTransition);
 
     console.log('Page transition créée automatiquement avec', pageTransition.children.length, 'éléments');
+    
+    // Créer un bouton de test temporaire pour déboguer
+    const testButton = document.createElement('button');
+    testButton.textContent = 'TEST TRANSITION';
+    testButton.style.cssText = `
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 10000000;
+        background: red;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    `;
+    testButton.addEventListener('click', function() {
+        console.log('Test transition déclenché');
+        pageTransition.style.opacity = '1';
+        pageTransition.style.visibility = 'visible';
+        
+        setTimeout(() => {
+            pageTransition.classList.add('page-transition-enter');
+            console.log('Classe page-transition-enter ajoutée');
+            
+            setTimeout(() => {
+                pageTransition.classList.add('page-transition-enter-to');
+                console.log('Classe page-transition-enter-to ajoutée');
+            }, 10);
+        }, 10);
+    });
+    document.body.appendChild(testButton);
+    
     return pageTransition;
 }
 
@@ -751,10 +783,15 @@ function initPageTransition() {
 
     // Vérifier que les éléments de transition sont présents
     const transitionItems = pageTransition.querySelectorAll('.page-transition__item');
+    console.log('Éléments de transition trouvés:', transitionItems.length);
 
     if (transitionItems.length === 0) {
         console.error('Aucun élément .page-transition__item trouvé !');
         return;
+    }
+
+    if (transitionItems.length !== 14) {
+        console.warn('Nombre d\'éléments de transition incorrect:', transitionItems.length, 'au lieu de 14');
     }
 
     // Réinitialiser l'état de la transition
@@ -762,16 +799,25 @@ function initPageTransition() {
     pageTransition.style.visibility = 'hidden';
     pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to', 'page-transition-leave-to');
 
-    // Détecter TOUS les liens (pas seulement .main-navigation__link)
+    // Détecter TOUS les liens de navigation interne
     const allLinks = document.querySelectorAll('a[href]');
     console.log('Tous les liens trouvés:', allLinks.length);
 
     allLinks.forEach(link => {
         const href = link.getAttribute('href');
+        console.log('Lien trouvé:', href, 'Classe:', link.className);
 
-        if (href && href.endsWith('.html') && !href.startsWith('http')) {
+        // Détecter les liens internes (pas externes, pas ancres, pas javascript:)
+        if (href && 
+            !href.startsWith('http') && 
+            !href.startsWith('#') && 
+            !href.startsWith('javascript:') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:')) {
+            
             link.addEventListener('click', function (e) {
                 e.preventDefault();
+                console.log('Transition déclenchée pour:', href);
 
                 // Démarrer l'animation d'entrée
                 pageTransition.style.opacity = '1';
@@ -780,16 +826,19 @@ function initPageTransition() {
                 // Petit délai pour s'assurer que les styles sont appliqués
                 setTimeout(() => {
                     pageTransition.classList.add('page-transition-enter');
+                    console.log('Classe page-transition-enter ajoutée');
 
                     // Ajouter la classe enter-to après un court délai pour déclencher l'animation
                     setTimeout(() => {
                         pageTransition.classList.add('page-transition-enter-to');
+                        console.log('Classe page-transition-enter-to ajoutée');
                     }, 10);
                 }, 10);
 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
                 // --transitionFullTime = (0.025s * 14) + 0.25s = 0.6s = 600ms
                 setTimeout(() => {
+                    console.log('Navigation vers:', href);
                     window.location.href = href;
                 }, 600);
             });
