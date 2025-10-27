@@ -694,7 +694,7 @@ function initializeMobileMenu() {
 // Scroll Animation pour les lettres
 function initScrollAnimation() {
     const scrollElements = document.querySelectorAll('.scroll-animation');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -705,16 +705,16 @@ function initScrollAnimation() {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
     });
-    
+
     scrollElements.forEach(element => {
         observer.observe(element);
     });
-    
+
     console.log('Scroll animation initialisée');
 }
 
 // Initialiser les animations au chargement de la page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimation();
     initPageTransition();
 });
@@ -722,33 +722,44 @@ document.addEventListener('DOMContentLoaded', function() {
 // Page Transition
 function initPageTransition() {
     const pageTransition = document.querySelector('.page-transition');
-    const links = document.querySelectorAll('a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])');
     
     if (!pageTransition) {
         console.error('Page transition element not found');
         return;
     }
     
-    links.forEach(link => {
+    console.log('Page transition trouvée:', pageTransition);
+    
+    // Détecter tous les liens de navigation
+    const navLinks = document.querySelectorAll('.main-navigation__link');
+    console.log('Liens de navigation trouvés:', navLinks.length);
+    
+    navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Vérifier si c'est un lien interne
             const href = this.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+            console.log('Clic sur lien:', href);
+            
+            if (href && href.endsWith('.html')) {
                 e.preventDefault();
+                console.log('Démarrage animation transition');
                 
                 // Démarrer l'animation d'entrée
+                pageTransition.style.opacity = '1';
+                pageTransition.style.visibility = 'visible';
                 pageTransition.classList.add('page-transition-enter');
                 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
                 setTimeout(() => {
+                    console.log('Navigation vers:', href);
                     window.location.href = href;
-                }, 250); // Durée de l'animation d'entrée
+                }, 350); // Durée plus longue pour voir l'effet
             }
         });
     });
     
     // Animation de sortie au chargement de la page
     window.addEventListener('load', function() {
+        console.log('Page chargée, animation de sortie');
         pageTransition.classList.remove('page-transition-enter');
         pageTransition.classList.add('page-transition-leave-to');
         
@@ -757,8 +768,30 @@ function initPageTransition() {
             pageTransition.style.opacity = '0';
             pageTransition.style.visibility = 'hidden';
             pageTransition.classList.remove('page-transition-leave-to');
-        }, 250);
+        }, 350);
     });
+    
+    // Bouton de test
+    const testButton = document.getElementById('test-transition');
+    if (testButton) {
+        testButton.addEventListener('click', function() {
+            console.log('Test transition déclenché');
+            pageTransition.style.opacity = '1';
+            pageTransition.style.visibility = 'visible';
+            pageTransition.classList.add('page-transition-enter');
+            
+            setTimeout(() => {
+                pageTransition.classList.remove('page-transition-enter');
+                pageTransition.classList.add('page-transition-leave-to');
+                
+                setTimeout(() => {
+                    pageTransition.style.opacity = '0';
+                    pageTransition.style.visibility = 'hidden';
+                    pageTransition.classList.remove('page-transition-leave-to');
+                }, 350);
+            }, 350);
+        });
+    }
     
     console.log('Page transition initialisée');
 }
