@@ -3717,6 +3717,31 @@ select.form-input {
     width: 100%;
 }
 
+/* Desktop layout pour about section - titre à gauche, sous-titre à droite */
+@media (min-width: 769px) {
+    .about-text {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+    }
+    
+    .about-title-container {
+        flex: 1;
+    }
+    
+    .about-subtitle-container {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    .about-subtitle {
+        text-align: right;
+        max-width: 400px;
+    }
+}
+
 /* Sections about */
 .about-section {
     background-color: #202229;
