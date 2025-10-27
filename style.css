@@ -68,138 +68,108 @@
     }
 }
 
-/* ===== PAGE TRANSITION ===== */
-.page-transition {
-    --itemWidth: 10.2vw;
-    --transitionTime: 0.25s;
-    --transitionDelayStep: 0.025s;
-    --transitionFullTime: calc(var(--transitionDelayStep) * 14 + var(--transitionTime));
-    height: 200vh;
+/* ===== PAGE TRANSITION - RIDEAU AVEC 10 LAMES DROITES ===== */
+.rideau-transition {
+    --lameWidth: 10vw;
+    --transitionTime: 0.3s;
+    --transitionDelayStep: 0.05s;
+    --transitionFullTime: calc(var(--transitionDelayStep) * 10 + var(--transitionTime));
+    height: 100vh;
     left: 0;
     overflow: hidden;
     position: fixed;
     top: 0;
-    transform: rotate(10deg);
-    transform-origin: top;
-    width: 200vw;
+    width: 100vw;
     z-index: 9999999;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-.page-transition__item {
+.rideau-lame {
     background: #2351FF;
     height: 100%;
     position: absolute;
     top: 0;
-    transform: scaleX(0) translateZ(0);
-    transform-origin: 100% 100%;
-    transition: all var(--transitionTime) ease-in-out;
-    width: var(--itemWidth);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transitionTime) ease-in-out;
+    width: var(--lameWidth);
 }
 
-/* Positionnement et délais pour chaque barre */
-.page-transition__item:first-of-type {
-    border-left: none;
-    left: calc(var(--itemWidth) * 0);
+/* Positionnement des 10 lames */
+.rideau-lame:nth-child(1) {
+    left: calc(var(--lameWidth) * 0);
     transition-delay: calc(var(--transitionDelayStep) * 1);
 }
 
-.page-transition__item:nth-of-type(2) {
-    left: calc(var(--itemWidth) * 1);
+.rideau-lame:nth-child(2) {
+    left: calc(var(--lameWidth) * 1);
     transition-delay: calc(var(--transitionDelayStep) * 2);
 }
 
-.page-transition__item:nth-of-type(3) {
-    left: calc(var(--itemWidth) * 2);
+.rideau-lame:nth-child(3) {
+    left: calc(var(--lameWidth) * 2);
     transition-delay: calc(var(--transitionDelayStep) * 3);
 }
 
-.page-transition__item:nth-of-type(4) {
-    left: calc(var(--itemWidth) * 3);
+.rideau-lame:nth-child(4) {
+    left: calc(var(--lameWidth) * 3);
     transition-delay: calc(var(--transitionDelayStep) * 4);
 }
 
-.page-transition__item:nth-of-type(5) {
-    left: calc(var(--itemWidth) * 4);
+.rideau-lame:nth-child(5) {
+    left: calc(var(--lameWidth) * 4);
     transition-delay: calc(var(--transitionDelayStep) * 5);
 }
 
-.page-transition__item:nth-of-type(6) {
-    left: calc(var(--itemWidth) * 5);
+.rideau-lame:nth-child(6) {
+    left: calc(var(--lameWidth) * 5);
     transition-delay: calc(var(--transitionDelayStep) * 6);
 }
 
-.page-transition__item:nth-of-type(7) {
-    left: calc(var(--itemWidth) * 6);
+.rideau-lame:nth-child(7) {
+    left: calc(var(--lameWidth) * 6);
     transition-delay: calc(var(--transitionDelayStep) * 7);
 }
 
-.page-transition__item:nth-of-type(8) {
-    left: calc(var(--itemWidth) * 7);
+.rideau-lame:nth-child(8) {
+    left: calc(var(--lameWidth) * 7);
     transition-delay: calc(var(--transitionDelayStep) * 8);
 }
 
-.page-transition__item:nth-of-type(9) {
-    left: calc(var(--itemWidth) * 8);
+.rideau-lame:nth-child(9) {
+    left: calc(var(--lameWidth) * 8);
     transition-delay: calc(var(--transitionDelayStep) * 9);
 }
 
-.page-transition__item:nth-of-type(10) {
-    left: calc(var(--itemWidth) * 9);
+.rideau-lame:nth-child(10) {
+    left: calc(var(--lameWidth) * 9);
     transition-delay: calc(var(--transitionDelayStep) * 10);
 }
 
-.page-transition__item:nth-of-type(11) {
-    left: calc(var(--itemWidth) * 10);
-    transition-delay: calc(var(--transitionDelayStep) * 11);
-}
-
-.page-transition__item:nth-of-type(12) {
-    left: calc(var(--itemWidth) * 11);
-    transition-delay: calc(var(--transitionDelayStep) * 12);
-}
-
-.page-transition__item:nth-of-type(13) {
-    left: calc(var(--itemWidth) * 12);
-    transition-delay: calc(var(--transitionDelayStep) * 13);
-}
-
-.page-transition__item:nth-of-type(14) {
-    left: calc(var(--itemWidth) * 13);
-    transition-delay: calc(var(--transitionDelayStep) * 14);
-}
-
-/* État de DÉPART pour l'entrée */
-.page-transition-enter .page-transition__item {
-    transform: scaleX(0) translateZ(0);
-    transform-origin: 100% 100%;
+/* États d'animation */
+.rideau-transition.rideau-enter .rideau-lame {
+    transform: scaleX(0);
+    transform-origin: center;
     transition: none;
 }
 
-/* État FINAL pour l'entrée */
-.page-transition-enter-to .page-transition__item {
-    transform: scaleX(1) translateZ(0);
-    transform-origin: 0 0;
+.rideau-transition.rideau-enter-to .rideau-lame {
+    transform: scaleX(1);
+    transform-origin: center;
     transition: transform var(--transitionTime) ease-in-out;
 }
 
-/* État FINAL pour la sortie */
-.page-transition-leave-to .page-transition__item {
-    transform: scaleX(0) translateZ(0);
-    transform-origin: 100% 100%;
+.rideau-transition.rideau-leave-to .rideau-lame {
+    transform: scaleX(0);
+    transform-origin: center;
 }
 
-.page-transition-leave-active {
+.rideau-transition.rideau-leave-active {
     transition: opacity var(--transitionFullTime) ease-in-out;
 }
 
-/* Animation d'entrée */
-.page-transition.page-transition-enter {
-    opacity: 1;
-    visibility: visible;
-}
 
 
 

@@ -366,12 +366,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 navPlaceholder.innerHTML = window.navCache;
                 setActiveNavLink();
                 initializeMobileMenu();
-                
-                // Réinitialiser la transition de page APRÈS initializeMobileMenu
-                // pour éviter les conflits d'event listeners
-                setTimeout(() => {
-                    initPageTransition();
-                }, 100);
             }
             return;
         }
@@ -392,12 +386,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     navPlaceholder.innerHTML = data;
                     setActiveNavLink();
                     initializeMobileMenu(); // Re-initialize menu logic
-                    
-                    // Réinitialiser la transition de page APRÈS initializeMobileMenu
-                    // pour éviter les conflits d'event listeners
-                    setTimeout(() => {
-                        initPageTransition();
-                    }, 100);
                 }
             })
             .catch(error => {
@@ -731,124 +719,93 @@ document.addEventListener('DOMContentLoaded', function () {
     initPageTransition();
 });
 
-// Fonction pour créer automatiquement la page transition
-function createPageTransition() {
+// Fonction pour créer automatiquement le rideau de transition
+function createRideauTransition() {
     // Créer le conteneur principal
-    const pageTransition = document.createElement('div');
-    pageTransition.className = 'page-transition';
+    const rideauTransition = document.createElement('div');
+    rideauTransition.className = 'rideau-transition';
+    rideauTransition.id = 'mon-rideau';
 
-    // Créer les 14 éléments de transition
-    for (let i = 0; i < 14; i++) {
-        const item = document.createElement('div');
-        item.className = 'page-transition__item';
-        pageTransition.appendChild(item);
+    // Créer les 10 lames
+    for (let i = 0; i < 10; i++) {
+        const lame = document.createElement('div');
+        lame.className = 'rideau-lame';
+        rideauTransition.appendChild(lame);
     }
 
     // Ajouter à la fin du body
-    document.body.appendChild(pageTransition);
+    document.body.appendChild(rideauTransition);
 
-    console.log('Page transition créée automatiquement avec', pageTransition.children.length, 'éléments');
-    return pageTransition;
+    console.log('Rideau de transition créé automatiquement avec', rideauTransition.children.length, 'lames');
+    return rideauTransition;
 }
 
-// Page Transition
+// Page Transition - Rideau avec 10 lames droites
 function initPageTransition() {
-    let pageTransition = document.querySelector('.page-transition');
+    let rideauTransition = document.querySelector('.rideau-transition');
 
-    // Si la transition n'existe pas, la créer automatiquement
-    if (!pageTransition) {
-        console.log('Création automatique de la page transition');
-        pageTransition = createPageTransition();
+    // Si le rideau n'existe pas, le créer automatiquement
+    if (!rideauTransition) {
+        console.log('Création automatique du rideau de transition');
+        rideauTransition = createRideauTransition();
     }
 
-    // Éviter les doublons d'event listeners
-    if (pageTransition.dataset.listenersAdded === 'true') {
-        console.log('Event listeners déjà ajoutés, skip');
+    // Vérifier que les lames sont présentes
+    const lames = rideauTransition.querySelectorAll('.rideau-lame');
+
+    if (lames.length === 0) {
+        console.error('Aucune lame .rideau-lame trouvée !');
         return;
     }
 
-    // Vérifier que les éléments de transition sont présents
-    const transitionItems = pageTransition.querySelectorAll('.page-transition__item');
+    console.log('Lames trouvées:', lames.length);
 
-    if (transitionItems.length === 0) {
-        console.error('Aucun élément .page-transition__item trouvé !');
-        return;
-    }
+    // Réinitialiser l'état du rideau
+    rideauTransition.style.opacity = '0';
+    rideauTransition.style.visibility = 'hidden';
+    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave-to');
 
-    if (transitionItems.length !== 14) {
-        console.warn('Nombre d\'éléments de transition incorrect:', transitionItems.length, 'au lieu de 14');
-    }
-
-    // Réinitialiser l'état de la transition
-    pageTransition.style.opacity = '0';
-    pageTransition.style.visibility = 'hidden';
-    pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to', 'page-transition-leave-to');
-
-    // Détecter TOUS les liens qui peuvent changer de page
+    // Détecter TOUS les liens (pas seulement .main-navigation__link)
     const allLinks = document.querySelectorAll('a[href]');
-    console.log('Liens détectés:', allLinks.length);
+    console.log('Tous les liens trouvés:', allLinks.length);
 
-    // Supprimer tous les event listeners existants pour éviter les conflits
     allLinks.forEach(link => {
-        // Cloner le lien pour supprimer tous les event listeners
-        const newLink = link.cloneNode(true);
-        link.parentNode.replaceChild(newLink, link);
-    });
-
-    // Re-sélectionner les liens après le clonage
-    const freshLinks = document.querySelectorAll('a[href]');
-    console.log('Liens frais après clonage:', freshLinks.length);
-
-    freshLinks.forEach(link => {
         const href = link.getAttribute('href');
 
-        // Détecter TOUS les liens sauf les ancres et les liens externes
-        if (href &&
-            !href.startsWith('#') &&
-            !href.startsWith('http') &&
-            !href.startsWith('mailto:') &&
-            !href.startsWith('tel:')) {
-
-            console.log('Lien avec transition:', href, 'Classe:', link.className);
-
+        if (href && href.endsWith('.html') && !href.startsWith('http')) {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
 
                 // Démarrer l'animation d'entrée
-                pageTransition.style.opacity = '1';
-                pageTransition.style.visibility = 'visible';
+                rideauTransition.style.opacity = '1';
+                rideauTransition.style.visibility = 'visible';
 
                 // Petit délai pour s'assurer que les styles sont appliqués
                 setTimeout(() => {
-                    pageTransition.classList.add('page-transition-enter');
+                    rideauTransition.classList.add('rideau-enter');
 
                     // Ajouter la classe enter-to après un court délai pour déclencher l'animation
                     setTimeout(() => {
-                        pageTransition.classList.add('page-transition-enter-to');
+                        rideauTransition.classList.add('rideau-enter-to');
                     }, 10);
                 }, 10);
 
                 // Animation de sortie avant la navigation
                 setTimeout(() => {
-                    pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to');
-                    pageTransition.classList.add('page-transition-leave-to');
+                    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to');
+                    rideauTransition.classList.add('rideau-leave-to');
 
                     // Naviguer après l'animation de sortie
                     setTimeout(() => {
                         window.location.href = href;
-                    }, 600); // --transitionFullTime = 0.6s
+                    }, 800); // --transitionFullTime = 0.8s
                 }, 1000); // Attendre que l'animation d'entrée soit terminée
             });
-        } else {
-            console.log('Lien ignoré:', href, 'Classe:', link.className);
         }
     });
 
     // Pas d'animation automatique de sortie au chargement
-    // La transition reste cachée jusqu'à ce qu'on clique sur un lien
-
-    // Marquer que les event listeners ont été ajoutés
-    pageTransition.dataset.listenersAdded = 'true';
+    // Le rideau reste caché jusqu'à ce qu'on clique sur un lien
 }
 
 // Export for potential module usage
