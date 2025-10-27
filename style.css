@@ -1634,29 +1634,33 @@ body {
 
     /* Animation d'ouverture du menu avec clip-path */
     .main-navigation__links.mobile-menu-enter-active {
-        animation: menu-clip .5s cubic-bezier(0,.24,.26,.91);
+        animation: menu-clip .5s cubic-bezier(0, .24, .26, .91);
         transition: color 1.2s linear;
     }
 
     .main-navigation__links.mobile-menu-leave-active {
-        animation: menu-clip .3s cubic-bezier(0,.24,.26,.91) reverse;
+        animation: menu-clip .3s cubic-bezier(0, .24, .26, .91) reverse;
     }
 
     @keyframes menu-clip {
-        0% { 
-            clip-path: polygon(0 0,100% 0,100% 0,0 -15%); 
+        0% {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 -15%);
         }
-        25% { 
-            clip-path: polygon(0 0,100% 0,100% 25%,0 10%); 
+
+        25% {
+            clip-path: polygon(0 0, 100% 0, 100% 25%, 0 10%);
         }
-        50% { 
-            clip-path: polygon(0 0,100% 0,100% 50%,0 35%); 
+
+        50% {
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 35%);
         }
-        75% { 
-            clip-path: polygon(0 0,100% 0,100% 75%,0 60%); 
+
+        75% {
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 60%);
         }
-        100% { 
-            clip-path: polygon(0 0,100% 0,100% 100%,0 100%); 
+
+        100% {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
 
@@ -1728,105 +1732,106 @@ body {
     .main-navigation__links.mobile-menu-enter-to .main-navigation__link:nth-child(6) {
         transition-delay: 0.35s;
     }
-        transition: opacity 0.2s ease;
-        position: relative;
-        margin: 0;
-        box-sizing: border-box;
-    }
 
-    /* Styles pour le texte à l'intérieur du lien */
-    .main-navigation__link span {
-        display: block;
-        /* Assure que le span est un bloc pour le centrage */
-    }
+    transition: opacity 0.2s ease;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-    /* Masquer les chevrons (si présents) */
-    .main-navigation__link::after {
-        display: none;
-        content: none;
-        background: none;
-        width: 0;
-        height: 0;
-    }
+/* Styles pour le texte à l'intérieur du lien */
+.main-navigation__link span {
+    display: block;
+    /* Assure que le span est un bloc pour le centrage */
+}
 
-    /* Supprimer tous les effets de stroke sur mobile */
-    .main-navigation__link:hover::after,
-    .main-navigation__link:active::after,
-    .main-navigation__link:focus::after {
-        display: none;
-        content: none;
-        background: none;
-        width: 0;
-        height: 0;
-    }
+/* Masquer les chevrons (si présents) */
+.main-navigation__link::after {
+    display: none;
+    content: none;
+    background: none;
+    width: 0;
+    height: 0;
+}
 
-    body .main-navigation__links .main-navigation__link:hover {
-        color: white;
-        background: none;
-    }
+/* Supprimer tous les effets de stroke sur mobile */
+.main-navigation__link:hover::after,
+.main-navigation__link:active::after,
+.main-navigation__link:focus::after {
+    display: none;
+    content: none;
+    background: none;
+    width: 0;
+    height: 0;
+}
 
-    body .main-navigation__links .main-navigation__link:active {
-        color: white;
-        background: none;
-    }
+body .main-navigation__links .main-navigation__link:hover {
+    color: white;
+    background: none;
+}
 
-    body .main-navigation__links .main-navigation__link:focus {
-        color: white;
-        background: none;
-    }
+body .main-navigation__links .main-navigation__link:active {
+    color: white;
+    background: none;
+}
+
+body .main-navigation__links .main-navigation__link:focus {
+    color: white;
+    background: none;
+}
 
 
 
-    /* Section contact en bas du menu mobile - bandeau gris */
-    .mobile-menu-contact {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: auto;
-        padding: var(--spacing-md) var(--spacing-lg);
-        background: #212529;
-        border-radius: 0;
-        margin-left: calc(-1 * var(--spacing-xl));
-        margin-right: calc(-1 * var(--spacing-xl));
-        margin-bottom: calc(-1 * var(--spacing-xl));
-        width: calc(100% + 2 * var(--spacing-xl));
-        /* S'étendre sur toute la largeur */
-        position: relative;
-        left: calc(-1 * var(--spacing-xl));
-        /* Compenser le padding du parent */
-    }
+/* Section contact en bas du menu mobile - bandeau gris */
+.mobile-menu-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: #212529;
+    border-radius: 0;
+    margin-left: calc(-1 * var(--spacing-xl));
+    margin-right: calc(-1 * var(--spacing-xl));
+    margin-bottom: calc(-1 * var(--spacing-xl));
+    width: calc(100% + 2 * var(--spacing-xl));
+    /* S'étendre sur toute la largeur */
+    position: relative;
+    left: calc(-1 * var(--spacing-xl));
+    /* Compenser le padding du parent */
+}
 
-    /* Animation de la section contact - glissement depuis la gauche */
-    .main-navigation__links.mobile-menu-enter .mobile-menu-contact {
-        opacity: 0;
-        transform: translateX(-2rem);
-    }
+/* Animation de la section contact - glissement depuis la gauche */
+.main-navigation__links.mobile-menu-enter .mobile-menu-contact {
+    opacity: 0;
+    transform: translateX(-2rem);
+}
 
-    .main-navigation__links.mobile-menu-enter-to .mobile-menu-contact {
-        opacity: 1;
-        transform: translateX(0);
-        transition-delay: 0.5s !important;
-    }
+.main-navigation__links.mobile-menu-enter-to .mobile-menu-contact {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.5s !important;
+}
 
-    .mobile-menu-contact__item {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        color: #FFFFFF;
-        font-size: 17px;
-        font-weight: var(--font-weight-medium);
-        cursor: pointer;
-        transition: opacity 0.2s ease;
-    }
+.mobile-menu-contact__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
 
-    .mobile-menu-contact__item:hover {
-        opacity: 0.8;
-    }
+.mobile-menu-contact__item:hover {
+    opacity: 0.8;
+}
 
-    .mobile-menu-contact__item .material-icons {
-        font-size: 20px;
-        color: #FFFFFF;
-    }
+.mobile-menu-contact__item .material-icons {
+    font-size: 20px;
+    color: #FFFFFF;
+}
 }
 
 /* Cacher la section contact mobile sur desktop */
@@ -1891,16 +1896,8 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Cacher les liens de navigation sur mobile par défaut */
-    .main-navigation__links {
-        display: none;
-    }
-
-    /* Afficher le menu quand il est actif */
-    .main-navigation__links.active {
-        display: flex;
-        transform: translateY(0);
-    }
+    /* Le menu est déjà positionné et caché par transform: translateX(-100%) */
+    /* Pas besoin de display: none car cela empêche les animations CSS */
 
     .main-navigation__toggle {
         display: flex;

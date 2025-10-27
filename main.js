@@ -529,7 +529,7 @@ function initializeMobileMenu() {
     function toggleMenuAnimation() {
         if (isMenuOpen) {
             // Ouverture du menu
-            mobileMenu.classList.remove('mobile-menu-leave', 'mobile-menu-leave-active');
+            mobileMenu.classList.remove('mobile-menu-leave', 'mobile-menu-leave-active', 'mobile-menu-enter-to');
             mobileMenu.classList.add('mobile-menu-enter', 'mobile-menu-enter-active');
             
             // Empêcher le scroll du body
@@ -537,9 +537,14 @@ function initializeMobileMenu() {
             
             // Animation du bouton
             toggleButtonAnimation();
+            
+            // Ajouter la classe enter-to après un court délai pour déclencher les animations des éléments internes
+            setTimeout(() => {
+                mobileMenu.classList.add('mobile-menu-enter-to');
+            }, 50);
         } else {
             // Fermeture du menu
-            mobileMenu.classList.remove('mobile-menu-enter', 'mobile-menu-enter-active');
+            mobileMenu.classList.remove('mobile-menu-enter', 'mobile-menu-enter-active', 'mobile-menu-enter-to');
             mobileMenu.classList.add('mobile-menu-leave', 'mobile-menu-leave-active');
             
             // Restaurer le scroll du body
@@ -561,7 +566,7 @@ function initializeMobileMenu() {
     mobileToggle.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        
+
         isMenuOpen = !isMenuOpen;
         toggleMenuAnimation();
     });
