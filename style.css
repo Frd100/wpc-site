@@ -106,8 +106,8 @@
     /* WEST et PARIS plus gros */
     .cmp-wpc-title .wpc-line:nth-child(1),
     .cmp-wpc-title .wpc-line:nth-child(2) {
-        font-size: clamp(5rem, 25vw, 15rem);
-        /* Augmenté de 4.5rem à 5rem et de 22vw à 25vw */
+        font-size: clamp(5.2rem, 26vw, 16rem);
+        /* Légèrement augmenté: +0.2rem, +1vw, +1rem */
         font-weight: 900;
         text-align: center;
         /* Forcer le centrage */
@@ -115,8 +115,8 @@
 
     /* CONSULTING plus petit */
     .cmp-wpc-title .wpc-line:nth-child(3) {
-        font-size: clamp(2.5rem, 14vw, 8rem);
-        /* Réduit de 3rem à 2.5rem et de 16vw à 14vw */
+        font-size: clamp(2.2rem, 13vw, 7.5rem);
+        /* Légèrement réduit: -0.3rem, -1vw, -0.5rem */
         font-weight: 800;
         text-align: center;
         /* Forcer le centrage */
