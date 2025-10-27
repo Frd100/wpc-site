@@ -69,6 +69,8 @@
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
+    --spacing-6xl: 10rem;
 
     /* WPC Responsive Spacing */
     --banner-height: 0;
@@ -743,12 +745,6 @@ body {
     display: block;
     text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-/* Animation Letters Slide Up pour le sous-titre */
-.cmp-hero-fbv__subtitle span {
-    display: inline-block;
 }
 
 /* DESKTOP SPECIFIC - SPÉCIFICITÉ PLUS ÉLEVÉE */

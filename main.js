@@ -257,51 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser l'effet SplitText pour la hero section
     initHeroSplitText();
 
-    /**
-     * ANIMATION LETTERS SLIDE UP POUR LE SOUS-TITRE HERO
-     * Animation de texte avec effet slide up lettre par lettre
-     */
-    function initSubtitleLettersSlideUp() {
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
-            console.error('GSAP ou SplitText non chargé');
-            return;
-        }
-
-        gsap.registerPlugin(SplitText);
-
-        const subtitleElement = document.querySelector('.cmp-hero-fbv__subtitle');
-        if (!subtitleElement) {
-            console.error('Élément sous-titre non trouvé');
-            return;
-        }
-
-        // Diviser le texte en lettres individuelles
-        const splitSubtitle = new SplitText(subtitleElement, { 
-            types: 'chars',
-            tagName: 'span'
-        });
-
-        // Masquer initialement les lettres (positionnées en bas avec opacité 0)
-        gsap.set(splitSubtitle.chars, { 
-            y: 50, 
-            opacity: 0 
-        });
-
-        // Animation slide up avec stagger
-        gsap.to(splitSubtitle.chars, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.03,
-            ease: 'power2.out',
-            delay: 1.5
-        });
-
-        console.log('Animation Letters Slide Up sous-titre initialisée');
-    }
-
-    // Initialiser l'animation Letters Slide Up pour le sous-titre
-    initSubtitleLettersSlideUp();
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
