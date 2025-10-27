@@ -3748,13 +3748,25 @@ select.form-input {
     padding: 0;
 }
 
+/* Desktop layout pour about section */
+@media (min-width: 769px) {
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-6xl) var(--spacing-xl);
+        display: flex;
+        align-items: flex-start;
+        /* Alignement à gauche au lieu de center */
+        gap: 40px;
+    }
+}
+
+/* Règle générale pour about-container */
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-6xl) var(--spacing-xl);
     display: flex;
     align-items: flex-start;
-    /* Alignement à gauche au lieu de center */
     gap: 40px;
 }
 
