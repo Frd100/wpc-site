@@ -385,7 +385,6 @@
     padding: 0;
     position: relative;
     overflow: hidden;
-    white-space: nowrap;
     height: 3rem;
     display: flex;
     flex-direction: column;
@@ -395,9 +394,15 @@
     transition: transform 0.2s ease;
 }
 
-/* Effet de peinture bleue pour le logo texte - uniquement au hover */
-.main-navigation__logo-text::before {
-    content: "WEST PARIS\ACONSULTING";
+.logo-line-1,
+.logo-line-2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-line-1::before,
+.logo-line-2::before {
+    content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
@@ -405,11 +410,6 @@
     height: 100%;
     color: #2351FF;
     overflow: hidden;
-    white-space: pre-line;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     transition: width 0.6s ease;
     font-family: var(--font-family-primary);
     font-size: 0.9rem;
@@ -420,7 +420,8 @@
 }
 
 /* Animation au hover */
-.main-navigation__logo-text:hover::before {
+.main-navigation__logo-text:hover .logo-line-1::before,
+.main-navigation__logo-text:hover .logo-line-2::before {
     width: 100%;
 }
 
@@ -1516,7 +1517,8 @@ body {
         height: 2.5rem;
     }
 
-    .main-navigation__logo-text::before {
+    .logo-line-1::before,
+    .logo-line-2::before {
         font-size: 0.75rem;
     }
 
