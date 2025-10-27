@@ -692,8 +692,8 @@ body {
 /* ===== HERO CONTENT - DESKTOP FIRST ===== */
 .cmp-hero-fbv__content {
     position: absolute;
-    top: 45%;
-    /* Monter le titre plus haut */
+    top: 50%;
+    /* Augmenté de 45% à 50% pour permettre au sous-titre de descendre */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
