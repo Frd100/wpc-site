@@ -845,9 +845,7 @@ body {
 }
 
 .hero-button:hover {
-    background: var(--primary-blue-button-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(35, 81, 255, 0.3);
 }
 
 .hero-button:hover::before {
@@ -856,12 +854,10 @@ body {
 
 .hero-button:active {
     transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(35, 81, 255, 0.2);
 }
 
 .hero-button:focus {
-    outline: 2px solid var(--primary-blue);
-    outline-offset: 2px;
+    outline: none;
 }
 
 .button-text {
