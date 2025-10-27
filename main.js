@@ -694,7 +694,7 @@ function initializeMobileMenu() {
 // Scroll Animation pour les lettres
 function initScrollAnimation() {
     const scrollElements = document.querySelectorAll('.scroll-animation');
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -705,18 +705,63 @@ function initScrollAnimation() {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
     });
-
+    
     scrollElements.forEach(element => {
         observer.observe(element);
     });
-
+    
     console.log('Scroll animation initialisée');
 }
 
-// Initialiser l'animation au scroll
-document.addEventListener('DOMContentLoaded', function () {
+// Initialiser les animations au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimation();
+    initPageTransition();
 });
+
+// Page Transition
+function initPageTransition() {
+    const pageTransition = document.querySelector('.page-transition');
+    const links = document.querySelectorAll('a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])');
+    
+    if (!pageTransition) {
+        console.error('Page transition element not found');
+        return;
+    }
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Vérifier si c'est un lien interne
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                e.preventDefault();
+                
+                // Démarrer l'animation d'entrée
+                pageTransition.classList.add('page-transition-enter');
+                
+                // Après l'animation d'entrée, naviguer vers la nouvelle page
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 250); // Durée de l'animation d'entrée
+            }
+        });
+    });
+    
+    // Animation de sortie au chargement de la page
+    window.addEventListener('load', function() {
+        pageTransition.classList.remove('page-transition-enter');
+        pageTransition.classList.add('page-transition-leave-to');
+        
+        // Masquer complètement après l'animation
+        setTimeout(() => {
+            pageTransition.style.opacity = '0';
+            pageTransition.style.visibility = 'hidden';
+            pageTransition.classList.remove('page-transition-leave-to');
+        }, 250);
+    });
+    
+    console.log('Page transition initialisée');
+}
 
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
