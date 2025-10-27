@@ -733,10 +733,16 @@ function createRideauTransition() {
         rideauTransition.appendChild(lame);
     }
 
+    // Créer le texte WPC
+    const rideauText = document.createElement('div');
+    rideauText.className = 'rideau-text';
+    rideauText.textContent = 'WPC';
+    rideauTransition.appendChild(rideauText);
+
     // Ajouter à la fin du body
     document.body.appendChild(rideauTransition);
 
-    console.log('Rideau de transition créé automatiquement avec', rideauTransition.children.length, 'lames');
+    console.log('Rideau de transition créé automatiquement avec', rideauTransition.children.length - 1, 'lames et le texte WPC');
     return rideauTransition;
 }
 
@@ -763,7 +769,7 @@ function initPageTransition() {
     // Réinitialiser l'état du rideau
     rideauTransition.style.opacity = '0';
     rideauTransition.style.visibility = 'hidden';
-    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave-to');
+    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave-to', 'rideau-text-visible', 'rideau-text-hidden');
 
     // Détecter TOUS les liens (pas seulement .main-navigation__link)
     const allLinks = document.querySelectorAll('a[href]');
@@ -790,16 +796,28 @@ function initPageTransition() {
                     }, 10);
                 }, 10);
 
+                // Afficher le texte WPC quand les lames sont complètement ouvertes
+                setTimeout(() => {
+                    rideauTransition.classList.add('rideau-text-visible');
+                }, 800); // Après que toutes les lames soient ouvertes
+
                 // Animation de sortie avant la navigation
                 setTimeout(() => {
-                    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to');
-                    rideauTransition.classList.add('rideau-leave-to');
+                    // Cacher le texte WPC d'abord
+                    rideauTransition.classList.remove('rideau-text-visible');
+                    rideauTransition.classList.add('rideau-text-hidden');
 
-                    // Naviguer après l'animation de sortie
+                    // Puis fermer les lames
                     setTimeout(() => {
-                        window.location.href = href;
-                    }, 800); // --transitionFullTime = 0.8s
-                }, 1000); // Attendre que l'animation d'entrée soit terminée
+                        rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to');
+                        rideauTransition.classList.add('rideau-leave-to');
+
+                        // Naviguer après l'animation de sortie
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 800); // --transitionFullTime = 0.8s
+                    }, 200); // Petit délai pour cacher le texte avant de fermer les lames
+                }, 1200); // Attendre que le texte soit visible un moment
             });
         }
     });

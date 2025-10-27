@@ -86,6 +86,25 @@
     pointer-events: none;
 }
 
+/* Texte WPC au centre du rideau */
+.rideau-transition .rideau-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(4rem, 15vw, 12rem);
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10;
+    pointer-events: none;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
 .rideau-lame {
     background: #2351FF;
     height: 100%;
@@ -168,6 +187,15 @@
 
 .rideau-transition.rideau-leave-active {
     transition: opacity var(--transitionFullTime) ease-in-out;
+}
+
+/* Animation du texte WPC */
+.rideau-transition.rideau-text-visible .rideau-text {
+    opacity: 1;
+}
+
+.rideau-transition.rideau-text-hidden .rideau-text {
+    opacity: 0;
 }
 
 
