@@ -284,8 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
             scrambleText: {
                 text: "Nous aidons les organisations à transformer leurs projets en réussite concrète grâce à l'expertise étudiante",
                 chars: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-                speed: 0.3,
-                delimiters: " "
+                speed: 0.3
             },
             duration: 3,
             delay: 1
