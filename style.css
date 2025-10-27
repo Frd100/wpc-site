@@ -167,7 +167,7 @@
     transition-delay: calc(var(--transitionDelayStep) * 10);
 }
 
-/* États d'animation */
+/* États d'animation - ENTRÉE (nouvelle page) */
 .rideau-transition.rideau-enter .rideau-lame {
     transform: scaleX(0);
     transform-origin: 100% 100%;
@@ -180,11 +180,24 @@
     transition: transform var(--transitionTime) ease-in-out;
 }
 
+/* États d'animation - SORTIE (ancienne page) */
+.rideau-transition.rideau-leave .rideau-lame {
+    transform: scaleX(1);
+    transform-origin: 0 0;
+    transition: transform var(--transitionTime) ease-in-out;
+}
+
 .rideau-transition.rideau-leave-to .rideau-lame {
     transform: scaleX(0);
     transform-origin: 100% 100%;
 }
 
+/* Animation d'entrée complète */
+.rideau-transition.rideau-enter-active {
+    transition: opacity var(--transitionFullTime) ease-in-out;
+}
+
+/* Animation de sortie complète */
 .rideau-transition.rideau-leave-active {
     transition: opacity var(--transitionFullTime) ease-in-out;
 }

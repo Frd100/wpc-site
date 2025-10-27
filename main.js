@@ -752,7 +752,7 @@ function createRideauTransition() {
     return rideauTransition;
 }
 
-// Page Transition - Rideau avec 10 lames droites
+// Page Transition - Animation en 2 parties
 function initPageTransition() {
     let rideauTransition = document.querySelector('.rideau-transition');
 
@@ -775,7 +775,7 @@ function initPageTransition() {
     // Réinitialiser l'état du rideau
     rideauTransition.style.opacity = '0';
     rideauTransition.style.visibility = 'hidden';
-    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave-to');
+    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave', 'rideau-leave-to', 'rideau-enter-active', 'rideau-leave-active');
 
     // Détecter TOUS les liens (pas seulement .main-navigation__link)
     const allLinks = document.querySelectorAll('a[href]');
@@ -788,27 +788,56 @@ function initPageTransition() {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // Démarrer l'animation d'entrée
+                // === PARTIE 1: ANIMATION DE SORTIE ===
+                console.log('Début animation de sortie');
+                
+                // Afficher le rideau
                 rideauTransition.style.opacity = '1';
                 rideauTransition.style.visibility = 'visible';
 
-                // Petit délai pour s'assurer que les styles sont appliqués
+                // Démarrer l'animation de sortie
                 setTimeout(() => {
-                    rideauTransition.classList.add('rideau-enter');
-
-                    // Ajouter la classe enter-to après un court délai pour déclencher l'animation
+                    rideauTransition.classList.add('rideau-leave');
+                    
                     setTimeout(() => {
-                        rideauTransition.classList.add('rideau-enter-to');
+                        rideauTransition.classList.add('rideau-leave-to');
                     }, 10);
                 }, 10);
 
-                // Navigation pendant la transition
+                // Navigation après l'animation de sortie
                 setTimeout(() => {
-                    // Commencer la navigation pendant que les lames sont ouvertes
+                    console.log('Navigation vers:', href);
                     window.location.href = href;
-                }, 500); // Naviguer au milieu de l'animation d'entrée
+                }, 800); // Attendre que l'animation de sortie soit terminée
             });
         }
+    });
+
+    // === PARTIE 2: ANIMATION D'ENTRÉE (sur la nouvelle page) ===
+    // Cette partie sera exécutée quand la nouvelle page se charge
+    window.addEventListener('load', function() {
+        console.log('Nouvelle page chargée, début animation d\'entrée');
+        
+        // Le rideau est déjà visible (venant de l'ancienne page)
+        rideauTransition.style.opacity = '1';
+        rideauTransition.style.visibility = 'visible';
+        
+        // Démarrer l'animation d'entrée
+        setTimeout(() => {
+            rideauTransition.classList.add('rideau-enter');
+            
+            setTimeout(() => {
+                rideauTransition.classList.add('rideau-enter-to');
+            }, 10);
+        }, 10);
+
+        // Cacher le rideau après l'animation d'entrée
+        setTimeout(() => {
+            console.log('Fin animation d\'entrée, masquage du rideau');
+            rideauTransition.style.opacity = '0';
+            rideauTransition.style.visibility = 'hidden';
+            rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-enter-active');
+        }, 800); // Durée de l'animation d'entrée
     });
 
     // Pas d'animation automatique de sortie au chargement
