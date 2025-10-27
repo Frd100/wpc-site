@@ -452,9 +452,8 @@
 
 .cmp-expertise-description {
     position: absolute;
-    top: 50%;
+    bottom: var(--spacing-xl);
     right: var(--spacing-xl);
-    transform: translateY(-50%);
     max-width: 500px;
     font-family: var(--font-family-primary);
     font-size: 1.1rem;
