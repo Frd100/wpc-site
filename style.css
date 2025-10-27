@@ -3753,7 +3753,7 @@ select.form-input {
     .about-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: var(--spacing-6xl) var(--spacing-xl);
+        padding: var(--spacing-6xl) var(--spacing-lg) var(--spacing-6xl) var(--spacing-lg);
         display: flex;
         align-items: flex-start;
         /* Alignement à gauche au lieu de center */
@@ -3761,11 +3761,11 @@ select.form-input {
     }
 }
 
-/* Règle générale pour about-container - avec padding par défaut */
+/* Règle générale pour about-container - avec padding réduit à gauche */
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-6xl) var(--spacing-xl);
+    padding: var(--spacing-6xl) var(--spacing-lg) var(--spacing-6xl) var(--spacing-lg);
     display: flex;
     align-items: flex-start;
     gap: 40px;
