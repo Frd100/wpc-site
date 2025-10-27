@@ -763,14 +763,21 @@ function createPageTransition() {
             setTimeout(() => {
                 pageTransition.classList.add('page-transition-enter-to');
                 console.log('Classe page-transition-enter-to ajoutée');
-                
-                // Reset après l'animation pour pouvoir retester
+
+                // Animation de sortie après l'animation d'entrée
                 setTimeout(() => {
-                    console.log('Reset de la transition');
+                    console.log('Début animation de sortie');
                     pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to');
-                    pageTransition.style.opacity = '0';
-                    pageTransition.style.visibility = 'hidden';
-                }, 1000);
+                    pageTransition.classList.add('page-transition-leave-to');
+                    
+                    // Reset complet après l'animation de sortie
+                    setTimeout(() => {
+                        console.log('Reset de la transition');
+                        pageTransition.classList.remove('page-transition-leave-to');
+                        pageTransition.style.opacity = '0';
+                        pageTransition.style.visibility = 'hidden';
+                    }, 600); // --transitionFullTime = 0.6s
+                }, 1000); // Attendre que l'animation d'entrée soit terminée
             }, 10);
         }, 10);
     });
@@ -843,12 +850,18 @@ function initPageTransition() {
                     }, 10);
                 }, 10);
 
-                // Après l'animation d'entrée, naviguer vers la nouvelle page
-                // --transitionFullTime = (0.025s * 14) + 0.25s = 0.6s = 600ms
+                // Animation de sortie avant la navigation
                 setTimeout(() => {
-                    console.log('Navigation vers:', href);
-                    window.location.href = href;
-                }, 600);
+                    console.log('Début animation de sortie pour navigation');
+                    pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to');
+                    pageTransition.classList.add('page-transition-leave-to');
+                    
+                    // Naviguer après l'animation de sortie
+                    setTimeout(() => {
+                        console.log('Navigation vers:', href);
+                        window.location.href = href;
+                    }, 600); // --transitionFullTime = 0.6s
+                }, 1000); // Attendre que l'animation d'entrée soit terminée
             });
         }
     });
