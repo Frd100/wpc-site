@@ -309,6 +309,46 @@ document.addEventListener('DOMContentLoaded', function () {
     initHeroSplitText();
 
     /**
+     * ANIMATION SCRAMBLE POUR LE SOUS-TITRE HERO
+     * Animation de texte avec effet scramble sur une seule lettre
+     */
+    function initSubtitleScramble() {
+        if (typeof gsap === 'undefined' || typeof ScrambleTextPlugin === 'undefined') {
+            console.error('GSAP ou ScrambleTextPlugin non chargé');
+            return;
+        }
+
+        gsap.registerPlugin(ScrambleTextPlugin);
+
+        const scrambleElement = document.querySelector('#subtitle-scramble');
+        if (!scrambleElement) {
+            console.error('Élément scramble non trouvé');
+            return;
+        }
+
+        // Animation scramble avec une seule lettre qui change
+        const tl = gsap.timeline({
+            defaults: { ease: "none" }
+        });
+
+        tl.to("#subtitle-scramble", {
+            scrambleText: {
+                text: "Nous aidons les organisations à transformer leurs projets en réussite concrète grâce à l'expertise étudiante",
+                chars: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                speed: 0.3,
+                delimiters: " "
+            },
+            duration: 3,
+            delay: 1
+        });
+
+        console.log('Animation scramble sous-titre initialisée');
+    }
+
+    // Initialiser l'animation scramble pour le sous-titre
+    initSubtitleScramble();
+
+    /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
      * Effet de parallaxe subtil pour l'image bubble dans le conteneur
      * L'image reste dans le conteneur mais bouge légèrement pendant le scroll
