@@ -398,9 +398,17 @@
 .logo-line-2 {
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-.logo-line-1::before,
+.logo-west,
+.logo-line-2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-west::before,
 .logo-line-2::before {
     content: attr(data-text);
     position: absolute;
@@ -419,8 +427,20 @@
     line-height: 1.1;
 }
 
+/* PARIS toujours bleu */
+.logo-paris {
+    color: #2351FF;
+    font-family: var(--font-family-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin-left: 0.2em;
+}
+
 /* Animation au hover */
-.main-navigation__logo-text:hover .logo-line-1::before,
+.main-navigation__logo-text:hover .logo-west::before,
 .main-navigation__logo-text:hover .logo-line-2::before {
     width: 100%;
 }
@@ -1517,8 +1537,12 @@ body {
         height: 2.5rem;
     }
 
-    .logo-line-1::before,
+    .logo-west::before,
     .logo-line-2::before {
+        font-size: 0.75rem;
+    }
+
+    .logo-paris {
         font-size: 0.75rem;
     }
 
