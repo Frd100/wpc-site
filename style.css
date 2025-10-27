@@ -933,13 +933,16 @@ body {
 /* DESKTOP OVERRIDE - Position du titre plus bas */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
-        top: 50%; /* Garder à 50% */
-        transform: translate(-50%, -50%); /* Remettre le centrage normal */
+        top: 50%;
+        /* Garder à 50% */
+        transform: translate(-50%, -50%);
+        /* Remettre le centrage normal */
     }
-    
-    /* Réduire le margin du sous-titre sur desktop */
+
+    /* Position du sous-titre plus bas sur desktop */
     .cmp-hero-fbv__subtitle {
-        margin: var(--spacing-md) 0 var(--spacing-md) 0; /* Réduire de 6xl à md */
+        margin: var(--spacing-2xl) 0 var(--spacing-md) 0;
+        /* Augmenter margin-top pour descendre le sous-titre */
     }
 }
 
