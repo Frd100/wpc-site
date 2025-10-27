@@ -411,6 +411,12 @@
     align-items: flex-start;
     justify-content: center;
     transition: width 0.6s ease;
+    font-family: var(--font-family-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
 }
 
 /* Animation au hover */
@@ -879,16 +885,16 @@ body {
     .hero-minimal {
         padding: var(--spacing-2xl);
     }
-    
+
     .hero-title .line {
         font-size: clamp(4rem, 8vw, 8rem);
         line-height: clamp(4.5rem, 9vw, 9rem);
     }
-    
+
     .hero-button-container {
         margin-top: var(--spacing-3xl);
     }
-    
+
     .hero-button {
         padding: var(--spacing-lg) var(--spacing-2xl);
         font-size: 1.1rem;
@@ -902,16 +908,16 @@ body {
         padding: var(--spacing-lg);
         min-height: 80vh;
     }
-    
+
     .hero-title .line {
         font-size: clamp(2.5rem, 12vw, 6rem);
         line-height: clamp(3rem, 13vw, 7rem);
     }
-    
+
     .hero-button-container {
         margin-top: var(--spacing-xl);
     }
-    
+
     .hero-button {
         padding: var(--spacing-md) var(--spacing-lg);
         font-size: 0.9rem;
@@ -1508,6 +1514,10 @@ body {
         font-size: 0.75rem;
         max-width: 150px;
         height: 2.5rem;
+    }
+
+    .main-navigation__logo-text::before {
+        font-size: 0.75rem;
     }
 
     .main-navigation__toggle {
