@@ -12,7 +12,7 @@
 .cmp-wpc-title-container {
     max-width: 100%;
     margin: 0;
-    padding: 0 var(--spacing-lg);
+    padding: 0 var(--spacing-xl);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -48,7 +48,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: var(--reveal-width, 0%); /* Utilise la variable CSS animée */
+    width: var(--reveal-width, 0%);
+    /* Utilise la variable CSS animée */
     height: 100%;
     color: #2351FF;
     overflow: hidden;

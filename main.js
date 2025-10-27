@@ -277,10 +277,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Animer chaque ligne une par une avec des triggers différents
         const lines = titleElement.querySelectorAll('.wpc-line');
-        
+
         lines.forEach((line, index) => {
             // Créer l'effet de peinture progressive pour chaque ligne avec des triggers décalés
-            gsap.fromTo(line, 
+            gsap.fromTo(line,
                 {
                     "--reveal-width": "0%" // Commence avec 0% de largeur
                 },
