@@ -353,46 +353,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    /**
-     * CENTRALIZED NAVIGATION LOADER
-     * Fetches nav.html and injects it into the placeholder.
-     * This ensures the navigation is consistent across all pages.
-     */
-    function loadNav() {
-        // Check if navigation is already cached
-        if (window.navCache) {
-            const navPlaceholder = document.getElementById('nav-placeholder');
-            if (navPlaceholder) {
-                navPlaceholder.innerHTML = window.navCache;
-                setActiveNavLink();
-                initializeMobileMenu();
-            }
-            return;
-        }
-
-        fetch('nav.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Cache the navigation HTML
-                window.navCache = data;
-
-                const navPlaceholder = document.getElementById('nav-placeholder');
-                if (navPlaceholder) {
-                    navPlaceholder.innerHTML = data;
-                    setActiveNavLink();
-                    initializeMobileMenu(); // Re-initialize menu logic
-                }
-            })
-            .catch(error => {
-                console.error('Error loading navigation:', error);
-                // Optionally, display an error message to the user
-            });
-    }
 
     /**
      * Sets the 'active' class on the current page's navigation link.
@@ -410,8 +370,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Load the navigation as soon as the DOM is ready
-    loadNav();
+    // Initialize navigation functions directly since nav is now in HTML
+    setActiveNavLink();
+    initializeMobileMenu();
 
 
 });
