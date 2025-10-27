@@ -74,10 +74,11 @@
     }
 
     .cmp-wpc-title-container {
-        max-width: 100%;
-        margin: 0;
+        max-width: 95%;
+        /* Même largeur que la hero section */
+        margin: 0 auto;
+        /* Centrer le container */
         padding: 0;
-        /* Supprimer le padding du container */
         display: flex;
         justify-content: center;
         /* Centrer le contenu */
@@ -98,6 +99,8 @@
         position: relative;
         text-align: center;
         /* Centrer le texte */
+        width: 100%;
+        /* Prendre toute la largeur du container */
     }
 
     /* WEST et PARIS plus gros */
@@ -105,12 +108,25 @@
     .cmp-wpc-title .wpc-line:nth-child(2) {
         font-size: clamp(4.5rem, 22vw, 13rem);
         font-weight: 900;
+        text-align: center;
+        /* Forcer le centrage */
     }
 
     /* CONSULTING plus petit */
     .cmp-wpc-title .wpc-line:nth-child(3) {
         font-size: clamp(3rem, 16vw, 10rem);
         font-weight: 800;
+        text-align: center;
+        /* Forcer le centrage */
+    }
+
+    /* CORRECTION ANIMATION BLEUE - Centrer le ::before */
+    .cmp-wpc-title .wpc-line::before {
+        text-align: center;
+        /* Centrer l'animation bleue */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Centrer horizontalement */
     }
 }
 
