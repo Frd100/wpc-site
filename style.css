@@ -111,7 +111,7 @@
     position: absolute;
     top: 0;
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: 100% 100%;
     transition: transform var(--transitionTime) ease-in-out;
     width: var(--lameWidth);
 }
@@ -170,19 +170,19 @@
 /* États d'animation */
 .rideau-transition.rideau-enter .rideau-lame {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: 100% 100%;
     transition: none;
 }
 
 .rideau-transition.rideau-enter-to .rideau-lame {
     transform: scaleX(1);
-    transform-origin: center;
+    transform-origin: 0 0;
     transition: transform var(--transitionTime) ease-in-out;
 }
 
 .rideau-transition.rideau-leave-to .rideau-lame {
     transform: scaleX(0);
-    transform-origin: center;
+    transform-origin: 100% 100%;
 }
 
 .rideau-transition.rideau-leave-active {
