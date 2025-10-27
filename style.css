@@ -934,7 +934,12 @@ body {
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
         top: 50%; /* Garder à 50% */
-        transform: translate(-50%, -40%); /* Modifier translateY de -50% à -40% pour descendre */
+        transform: translate(-50%, -50%); /* Remettre le centrage normal */
+    }
+    
+    /* Réduire le margin du sous-titre sur desktop */
+    .cmp-hero-fbv__subtitle {
+        margin: var(--spacing-md) 0 var(--spacing-md) 0; /* Réduire de 6xl à md */
     }
 }
 
