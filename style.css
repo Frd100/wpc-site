@@ -115,8 +115,8 @@
 
     /* CONSULTING plus petit */
     .cmp-wpc-title .wpc-line:nth-child(3) {
-        font-size: clamp(2.2rem, 13vw, 7.5rem);
-        /* Légèrement réduit: -0.3rem, -1vw, -0.5rem */
+        font-size: clamp(1.8rem, 11vw, 6.5rem);
+        /* Réduit pour avoir la même largeur visuelle que WEST/PARIS */
         font-weight: 800;
         text-align: center;
         /* Forcer le centrage */
