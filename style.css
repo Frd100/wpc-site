@@ -933,7 +933,8 @@ body {
 /* DESKTOP OVERRIDE - Position du titre plus bas */
 @media (min-width: 769px) {
     .cmp-hero-fbv__content {
-        top: 55%; /* Descendu de 50% à 55% */
+        top: 50%; /* Garder à 50% */
+        transform: translate(-50%, -40%); /* Modifier translateY de -50% à -40% pour descendre */
     }
 }
 
