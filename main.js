@@ -257,6 +257,49 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser l'effet SplitText pour la hero section
     initHeroSplitText();
 
+    /**
+     * TEXT COLOR REVEAL ON SCROLL POUR LE TITRE WPC
+     * Effet de révélation de couleur bleue au scroll
+     */
+    function initWpcTitleColorReveal() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou ScrollTrigger non chargé');
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const titleElement = document.querySelector('.cmp-wpc-title');
+        if (!titleElement) {
+            console.error('Titre WPC non trouvé');
+            return;
+        }
+
+        // Créer l'effet de révélation de couleur
+        gsap.fromTo(titleElement, 
+            {
+                color: "#000000" // Couleur de départ (noir)
+            },
+            {
+                color: "#2351FF", // Couleur finale (bleu)
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: titleElement,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    scrub: 1, // Synchronisé avec le scroll
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
+        console.log('Effet Text Color Reveal on Scroll initialisé pour le titre WPC');
+    }
+
+    // Initialiser l'effet de révélation de couleur
+    initWpcTitleColorReveal();
+
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
