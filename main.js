@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initTitleScrollAnimation();
 
     /**
-     * ANIMATION SPLITTEXT AVEC MASQUE POUR HERO SECTION
-     * Animation de révélation progressive des mots avec masque
+     * ANIMATION SPLITTEXT SIMPLE POUR HERO SECTION
+     * Animation de mots qui tombent sans masque
      */
     function initHeroSplitText() {
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        console.log('Animation SplitText avec masque initialisée');
+        console.log('Animation SplitText simple initialisée');
 
         // Animation des mots avec SplitText
         const dataText = document.querySelectorAll(".headline .line .text");
@@ -186,24 +186,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let linesDataText = new SplitText(dataText, { type: "words" });
         
-        // Timeline principale
-        let tl = gsap.timeline();
-        
-        // Animation des mots qui tombent
-        tl.from(linesDataText.words, {
+        // Animation simple des mots qui tombent
+        gsap.from(linesDataText.words, {
             duration: 1.5,
             yPercent: 100,
             ease: "power4",
-            stagger: 0.04
+            stagger: 0.04,
+            delay: 0.5
         });
-
-        // Animation des masques qui apparaissent
-        const dataMask = document.querySelectorAll(".headline .line .mask");
-        tl.to(dataMask, {
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out"
-        }, "-=0.5"); // Commence 0.5s avant la fin de l'animation précédente
 
         console.log('Animation SplitText lancée avec', linesDataText.words.length, 'mots');
     }
