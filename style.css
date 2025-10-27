@@ -420,7 +420,7 @@
 /* WPC Expertise Section */
 .cmp-expertise-section {
     background-color: #FFFFFF;
-    padding: var(--spacing-6xl) 0;
+    padding: var(--spacing-6xl) var(--spacing-md);
     text-align: center;
 }
 
@@ -4374,7 +4374,7 @@ select.form-input {
 
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
-        padding: var(--spacing-4xl) 0;
+        padding: var(--spacing-4xl) var(--spacing-sm);
     }
 
     .cmp-expertise-title {
