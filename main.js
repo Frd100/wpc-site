@@ -275,29 +275,27 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Animer chaque ligne avec un délai progressif
+        // Animer toutes les lignes en même temps
         const lines = titleElement.querySelectorAll('.wpc-line');
         
-        lines.forEach((line, index) => {
-            // Créer l'effet de peinture progressive
-            gsap.fromTo(line, 
-                {
-                    clipPath: "inset(0 100% 0 0)" // Commence complètement masqué
-                },
-                {
-                    clipPath: "inset(0 0% 0 0)", // Se révèle complètement
-                    duration: 1,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: titleElement,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        scrub: 1,
-                        toggleActions: "play none none reverse"
-                    }
+        // Créer l'effet de peinture progressive pour toutes les lignes simultanément
+        gsap.fromTo(lines, 
+            {
+                clipPath: "inset(0 100% 0 0)" // Commence complètement masqué
+            },
+            {
+                clipPath: "inset(0 0% 0 0)", // Se révèle complètement
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: titleElement,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    scrub: 1,
+                    toggleActions: "play none none reverse"
                 }
-            );
-        });
+            }
+        );
 
         console.log('Effet Text Color Reveal on Scroll initialisé pour le titre WPC');
     }

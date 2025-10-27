@@ -20,10 +20,10 @@
 
 .cmp-wpc-title {
     font-family: var(--font-family-primary);
-    font-size: clamp(5rem, 15vw, 16rem);
+    font-size: clamp(4rem, 12vw, 14rem);
     font-weight: 900;
     color: #000000;
-    line-height: 0.7;
+    line-height: 0.9;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
@@ -37,6 +37,7 @@
     padding: 0;
     position: relative;
     overflow: hidden;
+    margin-bottom: 0.1em;
 }
 
 /* Masque pour l'effet de peinture */
