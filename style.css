@@ -1,36 +1,8 @@
 /* ===== WPC SITE STYLES ===== */
 
 /* ===== WPC TITLE SECTION ===== */
-.cmp-wpc-title-section {
-    background-color: #FFFFFF;
-    padding: var(--spacing-6xl) 0;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
 
-.cmp-wpc-title-container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0 var(--spacing-xl);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.cmp-wpc-title {
-    font-family: var(--font-family-primary);
-    font-size: clamp(4rem, 12vw, 14rem);
-    font-weight: 900;
-    color: #000000;
-    line-height: 0.9;
-    margin: 0 0 0 var(--spacing-lg);
-    padding: 0;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-    position: relative;
-}
-
+/* RÈGLES COMMUNES - Pas de conflit entre desktop/mobile */
 .wpc-line {
     display: block;
     margin: 0;
@@ -56,27 +28,74 @@
     white-space: nowrap;
 }
 
-/* Responsive adjustments */
+/* ===== DESKTOP VERSION - ISOLÉE ===== */
+@media (min-width: 769px) {
+    .cmp-wpc-title-section {
+        background-color: #FFFFFF;
+        padding: var(--spacing-6xl) 0;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cmp-wpc-title-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 var(--spacing-xl);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cmp-wpc-title {
+        font-family: var(--font-family-primary);
+        font-size: clamp(4rem, 12vw, 14rem);
+        font-weight: 900;
+        color: #000000;
+        line-height: 0.9;
+        margin: 0 0 0 var(--spacing-lg);
+        padding: 0;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        position: relative;
+    }
+}
+
+/* ===== MOBILE VERSION - ISOLÉE ===== */
 @media (max-width: 768px) {
     .cmp-wpc-title-section {
+        background-color: #FFFFFF;
         padding: var(--spacing-lg) var(--spacing-sm);
         /* Même padding que la section hero */
         text-align: center;
         /* Centré sur mobile */
+        position: relative;
+        overflow: hidden;
     }
 
     .cmp-wpc-title-container {
-        justify-content: center;
-        /* Centrer le contenu */
+        max-width: 100%;
+        margin: 0;
         padding: 0;
         /* Supprimer le padding du container */
+        display: flex;
+        justify-content: center;
+        /* Centrer le contenu */
+        align-items: center;
     }
 
     .cmp-wpc-title {
+        font-family: var(--font-family-primary);
         font-size: clamp(4rem, 20vw, 12rem);
+        font-weight: 900;
+        color: #000000;
         line-height: 0.8;
         margin: 0;
         /* Supprimer la marge gauche */
+        padding: 0;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        position: relative;
         text-align: center;
         /* Centrer le texte */
     }
