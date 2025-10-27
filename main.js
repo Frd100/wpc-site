@@ -724,17 +724,17 @@ function createPageTransition() {
     // Créer le conteneur principal
     const pageTransition = document.createElement('div');
     pageTransition.className = 'page-transition';
-    
+
     // Créer les 14 éléments de transition
     for (let i = 0; i < 14; i++) {
         const item = document.createElement('div');
         item.className = 'page-transition__item';
         pageTransition.appendChild(item);
     }
-    
+
     // Ajouter à la fin du body
     document.body.appendChild(pageTransition);
-    
+
     console.log('Page transition créée automatiquement avec', pageTransition.children.length, 'éléments');
     return pageTransition;
 }
@@ -751,7 +751,7 @@ function initPageTransition() {
 
     // Vérifier que les éléments de transition sont présents
     const transitionItems = pageTransition.querySelectorAll('.page-transition__item');
-    
+
     if (transitionItems.length === 0) {
         console.error('Aucun élément .page-transition__item trouvé !');
         return;
@@ -760,7 +760,7 @@ function initPageTransition() {
     // Réinitialiser l'état de la transition
     pageTransition.style.opacity = '0';
     pageTransition.style.visibility = 'hidden';
-    pageTransition.classList.remove('page-transition-enter', 'page-transition-leave-to');
+    pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to', 'page-transition-leave-to');
 
     // Détecter TOUS les liens (pas seulement .main-navigation__link)
     const allLinks = document.querySelectorAll('a[href]');
@@ -780,12 +780,17 @@ function initPageTransition() {
                 // Petit délai pour s'assurer que les styles sont appliqués
                 setTimeout(() => {
                     pageTransition.classList.add('page-transition-enter');
+                    
+                    // Ajouter la classe enter-to après un court délai pour déclencher l'animation
+                    setTimeout(() => {
+                        pageTransition.classList.add('page-transition-enter-to');
+                    }, 10);
                 }, 10);
 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
                 setTimeout(() => {
                     window.location.href = href;
-                }, 500);
+                }, 350);
             });
         }
     });

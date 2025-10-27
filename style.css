@@ -70,8 +70,8 @@
 
 /* ===== PAGE TRANSITION ===== */
 :root {
-    --transitionTime: 0.5s;
-    --transitionDelayStep: 0.05s;
+    --transitionTime: 0.25s;
+    --transitionDelayStep: 0.025s;
     --colorRed: #2351FF;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .page-transition__item {
-    width: 15vw;
+    width: 10.2vw;
     height: 100%;
     background: var(--colorRed);
     transform: scaleX(0);
