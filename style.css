@@ -3751,7 +3751,7 @@ select.form-input {
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: var(--spacing-6xl) var(--spacing-xl);
     display: flex;
     align-items: flex-start;
     /* Alignement à gauche au lieu de center */
