@@ -421,17 +421,18 @@
 .cmp-expertise-section {
     background-color: #FFFFFF;
     padding: var(--spacing-6xl) var(--spacing-md);
-    text-align: center;
+    text-align: left;
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .huge-letters {
     position: relative;
-    text-align: center;
+    text-align: left;
+    padding-top: var(--spacing-xl);
 }
 
 .huge-letters__title {
@@ -4422,6 +4423,14 @@ select.form-input {
     .cmp-expertise-section {
         padding: var(--spacing-4xl) var(--spacing-sm);
         min-height: 80vh;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .huge-letters {
+        text-align: left;
+        padding-top: var(--spacing-md);
     }
 
     .huge-letters__title {
