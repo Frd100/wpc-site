@@ -366,6 +366,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 navPlaceholder.innerHTML = window.navCache;
                 setActiveNavLink();
                 initializeMobileMenu();
+                
+                // Réinitialiser la transition de page après le chargement de la nav
+                initPageTransition();
             }
             return;
         }
@@ -386,6 +389,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     navPlaceholder.innerHTML = data;
                     setActiveNavLink();
                     initializeMobileMenu(); // Re-initialize menu logic
+                    
+                    // Réinitialiser la transition de page après le chargement de la nav
+                    initPageTransition();
                 }
             })
             .catch(error => {
@@ -749,6 +755,12 @@ function initPageTransition() {
         pageTransition = createPageTransition();
     }
 
+    // Éviter les doublons d'event listeners
+    if (pageTransition.dataset.listenersAdded === 'true') {
+        console.log('Event listeners déjà ajoutés, skip');
+        return;
+    }
+
     // Vérifier que les éléments de transition sont présents
     const transitionItems = pageTransition.querySelectorAll('.page-transition__item');
 
@@ -774,12 +786,12 @@ function initPageTransition() {
         const href = link.getAttribute('href');
 
         // Détecter TOUS les liens sauf les ancres et les liens externes
-        if (href && 
-            !href.startsWith('#') && 
+        if (href &&
+            !href.startsWith('#') &&
             !href.startsWith('http') &&
             !href.startsWith('mailto:') &&
             !href.startsWith('tel:')) {
-            
+
             console.log('Lien avec transition:', href, 'Classe:', link.className);
 
             link.addEventListener('click', function (e) {
@@ -818,7 +830,8 @@ function initPageTransition() {
     // Pas d'animation automatique de sortie au chargement
     // La transition reste cachée jusqu'à ce qu'on clique sur un lien
 
-
+    // Marquer que les event listeners ont été ajoutés
+    pageTransition.dataset.listenersAdded = 'true';
 }
 
 // Export for potential module usage
