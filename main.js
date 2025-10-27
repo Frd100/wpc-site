@@ -719,20 +719,38 @@ document.addEventListener('DOMContentLoaded', function () {
     initPageTransition();
 });
 
+// Fonction pour créer automatiquement la page transition
+function createPageTransition() {
+    // Créer le conteneur principal
+    const pageTransition = document.createElement('div');
+    pageTransition.className = 'page-transition';
+    
+    // Créer les 14 éléments de transition
+    for (let i = 0; i < 14; i++) {
+        const item = document.createElement('div');
+        item.className = 'page-transition__item';
+        pageTransition.appendChild(item);
+    }
+    
+    // Ajouter à la fin du body
+    document.body.appendChild(pageTransition);
+    
+    console.log('Page transition créée automatiquement avec', pageTransition.children.length, 'éléments');
+    return pageTransition;
+}
+
 // Page Transition
 function initPageTransition() {
-    const pageTransition = document.querySelector('.page-transition');
+    let pageTransition = document.querySelector('.page-transition');
 
+    // Si la transition n'existe pas, la créer automatiquement
     if (!pageTransition) {
-        console.error('Page transition element not found');
-        return;
+        console.log('Création automatique de la page transition');
+        pageTransition = createPageTransition();
     }
 
-    console.log('Page transition trouvée:', pageTransition);
-    
     // Vérifier que les éléments de transition sont présents
     const transitionItems = pageTransition.querySelectorAll('.page-transition__item');
-    console.log('Éléments de transition trouvés:', transitionItems.length);
     
     if (transitionItems.length === 0) {
         console.error('Aucun élément .page-transition__item trouvé !');
@@ -750,17 +768,15 @@ function initPageTransition() {
 
     allLinks.forEach(link => {
         const href = link.getAttribute('href');
-        console.log('Lien trouvé:', href, 'Classe:', link.className);
 
         if (href && href.endsWith('.html') && !href.startsWith('http')) {
             link.addEventListener('click', function (e) {
-                console.log('Clic sur lien interne:', href);
                 e.preventDefault();
 
                 // Démarrer l'animation d'entrée
                 pageTransition.style.opacity = '1';
                 pageTransition.style.visibility = 'visible';
-                
+
                 // Petit délai pour s'assurer que les styles sont appliqués
                 setTimeout(() => {
                     pageTransition.classList.add('page-transition-enter');
@@ -768,7 +784,6 @@ function initPageTransition() {
 
                 // Après l'animation d'entrée, naviguer vers la nouvelle page
                 setTimeout(() => {
-                    console.log('Navigation vers:', href);
                     window.location.href = href;
                 }, 500);
             });
@@ -778,41 +793,7 @@ function initPageTransition() {
     // Pas d'animation automatique de sortie au chargement
     // La transition reste cachée jusqu'à ce qu'on clique sur un lien
 
-    // Bouton de test
-    const testButton = document.getElementById('test-transition');
-    if (testButton) {
-        testButton.addEventListener('click', function () {
-            console.log('Test transition déclenché');
 
-            // Réinitialiser d'abord
-            pageTransition.classList.remove('page-transition-enter', 'page-transition-leave-to');
-
-            // Démarrer l'animation
-            pageTransition.style.opacity = '1';
-            pageTransition.style.visibility = 'visible';
-            
-            // Petit délai pour s'assurer que les styles sont appliqués
-            setTimeout(() => {
-                pageTransition.classList.add('page-transition-enter');
-                console.log('Classes après ajout:', pageTransition.className);
-                console.log('Style opacity:', pageTransition.style.opacity);
-                console.log('Style visibility:', pageTransition.style.visibility);
-            }, 10);
-
-            setTimeout(() => {
-                pageTransition.classList.remove('page-transition-enter');
-                pageTransition.classList.add('page-transition-leave-to');
-
-                setTimeout(() => {
-                    pageTransition.style.opacity = '0';
-                    pageTransition.style.visibility = 'hidden';
-                    pageTransition.classList.remove('page-transition-leave-to');
-                }, 500);
-            }, 500);
-        });
-    }
-
-    console.log('Page transition initialisée');
 }
 
 // Export for potential module usage
