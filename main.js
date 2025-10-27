@@ -258,45 +258,50 @@ document.addEventListener('DOMContentLoaded', function () {
     initHeroSplitText();
 
     /**
-     * ANIMATION SCRAMBLE POUR LE SOUS-TITRE HERO
-     * Animation de texte avec effet scramble sur une seule lettre
+     * ANIMATION LETTERS SLIDE UP POUR LE SOUS-TITRE HERO
+     * Animation de texte avec effet slide up lettre par lettre
      */
-    function initSubtitleScramble() {
-        if (typeof gsap === 'undefined' || typeof ScrambleTextPlugin === 'undefined') {
-            console.error('GSAP ou ScrambleTextPlugin non chargé');
+    function initSubtitleLettersSlideUp() {
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
+            console.error('GSAP ou SplitText non chargé');
             return;
         }
 
-        gsap.registerPlugin(ScrambleTextPlugin);
+        gsap.registerPlugin(SplitText);
 
-        const scrambleElement = document.querySelector('#subtitle-scramble');
-        if (!scrambleElement) {
-            console.error('Élément scramble non trouvé');
+        const subtitleElement = document.querySelector('.cmp-hero-fbv__subtitle');
+        if (!subtitleElement) {
+            console.error('Élément sous-titre non trouvé');
             return;
         }
 
-        // Animation scramble avec une seule lettre qui change
-        const tl = gsap.timeline({
-            defaults: { ease: "none" }
+        // Diviser le texte en lettres individuelles
+        const splitSubtitle = new SplitText(subtitleElement, { 
+            types: 'chars',
+            tagName: 'span'
         });
 
-        tl.to("#subtitle-scramble", {
-            scrambleText: {
-                text: "Nous aidons les organisations à transformer leurs projets en réussite concrète grâce à l'expertise étudiante",
-                chars: "x0",
-                speed: 0.3,
-                revealDelay: 1.5,
-                delimiters: " "
-            },
-            duration: 3,
-            delay: 1
+        // Masquer initialement les lettres (positionnées en bas avec opacité 0)
+        gsap.set(splitSubtitle.chars, { 
+            y: 50, 
+            opacity: 0 
         });
 
-        console.log('Animation scramble sous-titre initialisée');
+        // Animation slide up avec stagger
+        gsap.to(splitSubtitle.chars, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.03,
+            ease: 'power2.out',
+            delay: 1.5
+        });
+
+        console.log('Animation Letters Slide Up sous-titre initialisée');
     }
 
-    // Initialiser l'animation scramble pour le sous-titre
-    initSubtitleScramble();
+    // Initialiser l'animation Letters Slide Up pour le sous-titre
+    initSubtitleLettersSlideUp();
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE

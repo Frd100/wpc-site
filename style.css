@@ -743,33 +743,12 @@ body {
     display: block;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-/* Animation scramble pour le sous-titre */
-#subtitle-original {
-    opacity: 0;
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    line-height: inherit;
-}
-
-.subtitle-scramble__text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    line-height: inherit;
-}
-
-.subtitle-scramble__text span {
-    word-break: break-word;
+/* Animation Letters Slide Up pour le sous-titre */
+.cmp-hero-fbv__subtitle span {
+    display: inline-block;
 }
 
 /* DESKTOP SPECIFIC - SPÉCIFICITÉ PLUS ÉLEVÉE */
