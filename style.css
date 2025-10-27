@@ -420,7 +420,7 @@
 /* WPC Expertise Section */
 .cmp-expertise-section {
     background-color: #FFFFFF;
-    padding: var(--spacing-6xl) var(--spacing-md);
+    padding: var(--spacing-6xl) 0;
     text-align: left;
     position: relative;
     min-height: 100vh;
@@ -432,7 +432,7 @@
 .huge-letters {
     position: relative;
     text-align: left;
-    padding-top: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-lg) 0 var(--spacing-lg);
 }
 
 .huge-letters__title {
@@ -4421,7 +4421,7 @@ select.form-input {
 
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
-        padding: var(--spacing-4xl) var(--spacing-sm);
+        padding: var(--spacing-4xl) 0;
         min-height: 80vh;
         text-align: left;
         align-items: flex-start;
@@ -4430,7 +4430,7 @@ select.form-input {
 
     .huge-letters {
         text-align: left;
-        padding-top: var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-md) 0 var(--spacing-md);
     }
 
     .huge-letters__title {
