@@ -372,6 +372,56 @@
     transform: scale(1.05);
 }
 
+/* Nouveau logo texte WPC avec effet bleu */
+.main-navigation__logo-text {
+    font-family: var(--font-family-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 200px;
+    transition: transform 0.2s ease;
+}
+
+/* Effet de peinture bleue pour le logo texte - uniquement au hover */
+.main-navigation__logo-text::before {
+    content: "WEST PARIS\ACONSULTING";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #2351FF;
+    overflow: hidden;
+    white-space: pre-line;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: width 0.6s ease;
+}
+
+/* Animation au hover */
+.main-navigation__logo-text:hover::before {
+    width: 100%;
+}
+
+.main-navigation__logo-text:hover {
+    transform: scale(1.02);
+}
+
 .main-navigation__links {
     display: flex;
     justify-content: flex-start;
@@ -1452,6 +1502,12 @@ body {
         width: 80px;
         /* Réduire la taille du logo sur mobile */
         height: auto;
+    }
+
+    .main-navigation__logo-text {
+        font-size: 0.75rem;
+        max-width: 150px;
+        height: 2.5rem;
     }
 
     .main-navigation__toggle {
