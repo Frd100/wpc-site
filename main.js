@@ -158,100 +158,54 @@ document.addEventListener('DOMContentLoaded', function () {
     initTitleScrollAnimation();
 
     /**
-     * EFFET SPLIT POUR HERO SECTION
-     * Animation de texte avec GSAP SplitText et masquage des lignes
+     * ANIMATION SPLITTEXT AVEC MASQUE POUR HERO SECTION
+     * Animation de révélation progressive des mots avec masque
      */
     function initHeroSplitText() {
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP ou plugins non chargés');
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
+            console.error('GSAP ou SplitText non chargé');
             return;
         }
 
-        gsap.registerPlugin(SplitText, ScrollTrigger);
+        gsap.registerPlugin(SplitText);
 
-        const heroSection = document.querySelector('.cmp-hero-fbv');
-        const splitElement = document.querySelector('.cmp-hero-fbv .split');
-
-        if (!heroSection || !splitElement) {
+        const headline = document.querySelector('.headline');
+        if (!headline) {
+            console.error('Element .headline non trouvé');
             return;
         }
 
-        // Animation d'écriture pour le titre ligne par ligne
-        const line1 = splitElement.querySelector('.line1');
-        const line2 = splitElement.querySelector('.line2');
+        console.log('Animation SplitText avec masque initialisée');
 
-        if (line1 && line2) {
-            const originalLine1 = line1.textContent;
-            const originalLine2 = line2.textContent;
-
-            console.log('Hero: Line1 trouvée:', originalLine1);
-            console.log('Hero: Line2 trouvée:', originalLine2);
-
-            // Vérifier si on est sur desktop (largeur >= 769px)
-            const isDesktop = window.innerWidth >= 769;
-            console.log('Hero: isDesktop:', isDesktop, 'window.innerWidth:', window.innerWidth);
-
-            if (isDesktop) {
-                console.log('Desktop: Création animation SplitText avec masque');
-
-                // Premier SplitText : créer les lignes qui bougent (lineChild)
-                new SplitText(splitElement, {
-                    type: "lines",
-                    linesClass: "lineChild"
-                });
-
-                // Deuxième SplitText : créer les conteneurs avec overflow hidden (lineParent)
-                new SplitText(splitElement, {
-                    type: "lines",
-                    linesClass: "lineParent"
-                });
-
-                // Animation simple avec yPercent comme dans l'exemple
-                gsap.from(".lineChild", {
-                    duration: 0.75,
-                    yPercent: 100,
-                    stagger: 0.25,
-                    ease: "power3.out",
-                    delay: 0.5
-                });
-
-                console.log('Animation SplitText avec masque lancée');
-            } else {
-                // Mobile : Animation normale
-                // Vider les lignes initialement
-                gsap.set(line1, { text: "" });
-                gsap.set(line2, { text: "" });
-
-                // Animation de la première ligne
-                gsap.to(line1, {
-                    text: originalLine1,
-                    duration: 0.7,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                });
-
-                // Animation de la deuxième ligne avec délai
-                gsap.to(line2, {
-                    text: originalLine2,
-                    duration: 0.7,
-                    ease: "none",
-                    delay: 0.7,
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                });
-            }
+        // Animation des mots avec SplitText
+        const dataText = document.querySelectorAll(".headline .line .text");
+        if (dataText.length === 0) {
+            console.error('Aucun élément .text trouvé');
+            return;
         }
 
+        let linesDataText = new SplitText(dataText, { type: "words" });
+        
+        // Timeline principale
+        let tl = gsap.timeline();
+        
+        // Animation des mots qui tombent
+        tl.from(linesDataText.words, {
+            duration: 1.5,
+            yPercent: 100,
+            ease: "power4",
+            stagger: 0.04
+        });
 
+        // Animation des masques qui apparaissent
+        const dataMask = document.querySelectorAll(".headline .line .mask");
+        tl.to(dataMask, {
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.5"); // Commence 0.5s avant la fin de l'animation précédente
+
+        console.log('Animation SplitText lancée avec', linesDataText.words.length, 'mots');
     }
 
     // Initialiser l'effet SplitText pour la hero section
