@@ -863,11 +863,6 @@ body {
 
 /* DESKTOP SPECIFIC - SPÉCIFICITÉ PLUS ÉLEVÉE */
 @media (min-width: 769px) {
-    
-    /* Position du titre plus bas sur desktop */
-    .cmp-hero-fbv__content {
-        top: 55%; /* Augmenté de 50% à 55% pour descendre le titre */
-    }
 
     /* Animation masked line pour le titre desktop */
     .cmp-hero-fbv__content .container {
@@ -932,6 +927,13 @@ body {
         background: var(--primary-blue-button-hover);
         /* Même hover que mobile */
         color: white;
+    }
+}
+
+/* DESKTOP OVERRIDE - Position du titre plus bas */
+@media (min-width: 769px) {
+    .cmp-hero-fbv__content {
+        top: 55%; /* Descendu de 50% à 55% */
     }
 }
 
