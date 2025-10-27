@@ -691,6 +691,33 @@ function initializeMobileMenu() {
 }
 
 
+// Scroll Animation pour les lettres
+function initScrollAnimation() {
+    const scrollElements = document.querySelectorAll('.scroll-animation');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-animation--in-viewport');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    scrollElements.forEach(element => {
+        observer.observe(element);
+    });
+    
+    console.log('Scroll animation initialisée');
+}
+
+// Initialiser l'animation au scroll
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollAnimation();
+});
+
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { WPCUtils, WPCClasses };

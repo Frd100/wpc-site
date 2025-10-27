@@ -422,9 +422,18 @@
     background-color: #FFFFFF;
     padding: var(--spacing-6xl) var(--spacing-md);
     text-align: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cmp-expertise-title {
+.huge-letters {
+    position: relative;
+}
+
+.huge-letters__title {
     font-family: var(--font-family-primary);
     font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 900;
@@ -434,6 +443,36 @@
     margin: 0;
     padding: 0;
     line-height: 0.9;
+    display: inline-block;
+}
+
+.huge-letters__title .is-word {
+    display: inline-block;
+}
+
+.huge-letters__title i {
+    display: inline-block;
+    position: relative;
+}
+
+/* État initial - lettres cachées en bas */
+.huge-letters__title[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(odd) {
+    transform: translateY(10rem);
+}
+
+.huge-letters__title[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(2n) {
+    transform: translateY(20rem);
+}
+
+/* Animation déclenchée au scroll */
+.huge-letters__title.scroll-animation--in-viewport[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(odd) {
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
+}
+
+.huge-letters__title.scroll-animation--in-viewport[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(2n) {
+    transform: translateY(0);
+    transition: transform 0.6s ease-out;
 }
 
 /* Domaines Tags */
@@ -4375,10 +4414,20 @@ select.form-input {
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
         padding: var(--spacing-4xl) var(--spacing-sm);
+        min-height: 80vh;
     }
 
-    .cmp-expertise-title {
+    .huge-letters__title {
         font-size: clamp(3rem, 15vw, 6rem);
+    }
+
+    /* Réduire les distances d'animation sur mobile */
+    .huge-letters__title[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(odd) {
+        transform: translateY(5rem);
+    }
+
+    .huge-letters__title[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(2n) {
+        transform: translateY(10rem);
     }
 
     body .cmp-about-section-white .cmp-about-section-white__title {
