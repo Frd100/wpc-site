@@ -802,16 +802,11 @@ function initPageTransition() {
                     }, 10);
                 }, 10);
 
-                // Animation de sortie avant la navigation
+                // Navigation pendant la transition
                 setTimeout(() => {
-                    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to');
-                    rideauTransition.classList.add('rideau-leave-to');
-
-                    // Naviguer après l'animation de sortie
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 800); // --transitionFullTime = 0.8s
-                }, 1000); // Attendre que l'animation d'entrée soit terminée
+                    // Commencer la navigation pendant que les lames sont ouvertes
+                    window.location.href = href;
+                }, 500); // Naviguer au milieu de l'animation d'entrée
             });
         }
     });

@@ -101,7 +101,8 @@
     z-index: 10;
     pointer-events: none;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    opacity: 1; /* Visible dès le début */
+    opacity: 1;
+    /* Visible dès le début */
 }
 
 .rideau-lame {
