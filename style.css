@@ -761,14 +761,14 @@ body {
         width: 100%;
         height: 90px;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
         display: block;
         margin-bottom: 10px;
     }
 
     /* Masque pour SplitText - comme dans l'exemple */
     .cmp-hero-fbv__content .split .lineParent {
-        overflow: hidden;
+        overflow: visible;
     }
 
     .cmp-hero-fbv__content .split .line span {
@@ -825,7 +825,7 @@ body {
 
     .cmp-hero-fbv__content .container {
         height: 100px;
-        overflow: hidden;
+        overflow: visible;
         text-align: left;
         margin-bottom: 1rem;
         width: 100%;
