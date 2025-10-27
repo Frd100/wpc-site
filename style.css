@@ -1,5 +1,50 @@
 /* ===== WPC SITE STYLES ===== */
 
+/* ===== WPC TITLE SECTION ===== */
+.cmp-wpc-title-section {
+    background-color: #FFFFFF;
+    padding: var(--spacing-6xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cmp-wpc-title-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.cmp-wpc-title {
+    font-family: var(--font-family-primary);
+    font-size: clamp(4rem, 12vw, 12rem);
+    font-weight: 900;
+    color: #000000;
+    line-height: 0.8;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.wpc-line {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cmp-wpc-title-section {
+        padding: var(--spacing-4xl) 0;
+    }
+    
+    .cmp-wpc-title {
+        font-size: clamp(3rem, 15vw, 8rem);
+        line-height: 0.9;
+    }
+}
+
 /* ===== CSS VARIABLES ===== */
 :root {
     /* WPC Primary Colors */
