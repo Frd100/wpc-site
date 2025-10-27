@@ -426,7 +426,7 @@
 
 .cmp-expertise-title {
     font-family: var(--font-family-primary);
-    font-size: clamp(2.5rem, 8vw, 8rem);
+    font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
@@ -4378,7 +4378,7 @@ select.form-input {
     }
 
     .cmp-expertise-title {
-        font-size: clamp(2rem, 10vw, 4rem);
+        font-size: clamp(3rem, 15vw, 6rem);
     }
 
     body .cmp-about-section-white .cmp-about-section-white__title {
