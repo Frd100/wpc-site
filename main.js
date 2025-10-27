@@ -722,26 +722,31 @@ document.addEventListener('DOMContentLoaded', function () {
 // Page Transition
 function initPageTransition() {
     const pageTransition = document.querySelector('.page-transition');
-    
+
     if (!pageTransition) {
         console.error('Page transition element not found');
         return;
     }
-    
+
     console.log('Page transition trouvée:', pageTransition);
+
+    // Réinitialiser l'état de la transition
+    pageTransition.style.opacity = '0';
+    pageTransition.style.visibility = 'hidden';
+    pageTransition.classList.remove('page-transition-enter', 'page-transition-leave-to');
     
-    // Détecter tous les liens de navigation
-    const navLinks = document.querySelectorAll('.main-navigation__link');
-    console.log('Liens de navigation trouvés:', navLinks.length);
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            console.log('Clic sur lien:', href);
-            
-            if (href && href.endsWith('.html')) {
+    // Détecter TOUS les liens (pas seulement .main-navigation__link)
+    const allLinks = document.querySelectorAll('a[href]');
+    console.log('Tous les liens trouvés:', allLinks.length);
+
+    allLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        console.log('Lien trouvé:', href, 'Classe:', link.className);
+        
+        if (href && href.endsWith('.html') && !href.startsWith('http')) {
+            link.addEventListener('click', function(e) {
+                console.log('Clic sur lien interne:', href);
                 e.preventDefault();
-                console.log('Démarrage animation transition');
                 
                 // Démarrer l'animation d'entrée
                 pageTransition.style.opacity = '1';
@@ -752,17 +757,17 @@ function initPageTransition() {
                 setTimeout(() => {
                     console.log('Navigation vers:', href);
                     window.location.href = href;
-                }, 350); // Durée plus longue pour voir l'effet
-            }
-        });
+                }, 350);
+            });
+        }
     });
-    
+
     // Animation de sortie au chargement de la page
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         console.log('Page chargée, animation de sortie');
         pageTransition.classList.remove('page-transition-enter');
         pageTransition.classList.add('page-transition-leave-to');
-        
+
         // Masquer complètement après l'animation
         setTimeout(() => {
             pageTransition.style.opacity = '0';
@@ -770,20 +775,25 @@ function initPageTransition() {
             pageTransition.classList.remove('page-transition-leave-to');
         }, 350);
     });
-    
+
     // Bouton de test
     const testButton = document.getElementById('test-transition');
     if (testButton) {
-        testButton.addEventListener('click', function() {
+        testButton.addEventListener('click', function () {
             console.log('Test transition déclenché');
+            
+            // Réinitialiser d'abord
+            pageTransition.classList.remove('page-transition-enter', 'page-transition-leave-to');
+            
+            // Démarrer l'animation
             pageTransition.style.opacity = '1';
             pageTransition.style.visibility = 'visible';
             pageTransition.classList.add('page-transition-enter');
-            
+
             setTimeout(() => {
                 pageTransition.classList.remove('page-transition-enter');
                 pageTransition.classList.add('page-transition-leave-to');
-                
+
                 setTimeout(() => {
                     pageTransition.style.opacity = '0';
                     pageTransition.style.visibility = 'hidden';
@@ -792,7 +802,7 @@ function initPageTransition() {
             }, 350);
         });
     }
-    
+
     console.log('Page transition initialisée');
 }
 
