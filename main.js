@@ -158,10 +158,10 @@ document.addEventListener('DOMContentLoaded', function () {
     initTitleScrollAnimation();
 
     /**
-     * ANIMATION SPLITTEXT SIMPLE POUR HERO SECTION
-     * Animation de mots qui tombent sans masque
+     * ANIMATION SPLITTEXT POUR NOUVELLE HERO SECTION
+     * Animation de mots qui tombent
      */
-    function initHeroSplitText() {
+    function initNewHeroSplitText() {
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
             console.error('GSAP ou SplitText non chargé');
             return;
@@ -169,37 +169,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
         gsap.registerPlugin(SplitText);
 
-        const headline = document.querySelector('.headline');
-        if (!headline) {
-            console.error('Element .headline non trouvé');
+        const heroTitle = document.querySelector('.hero-title');
+        if (!heroTitle) {
+            console.error('Element .hero-title non trouvé');
             return;
         }
 
-        console.log('Animation SplitText simple initialisée');
+        console.log('Animation SplitText nouvelle hero initialisée');
 
         // Animation des mots avec SplitText
-        const dataText = document.querySelectorAll(".headline .line .text");
+        const dataText = document.querySelectorAll(".hero-title .line .text");
         if (dataText.length === 0) {
             console.error('Aucun élément .text trouvé');
             return;
         }
 
         let linesDataText = new SplitText(dataText, { type: "words" });
-
-        // Animation simple des mots qui tombent
+        
+        // Animation des mots qui tombent
         gsap.from(linesDataText.words, {
             duration: 1.5,
             yPercent: 100,
             ease: "power4",
             stagger: 0.04,
-            delay: 0.2
+            delay: 0.3
         });
 
-        console.log('Animation SplitText lancée avec', linesDataText.words.length, 'mots');
+        console.log('Animation SplitText nouvelle hero lancée avec', linesDataText.words.length, 'mots');
     }
 
-    // Initialiser l'effet SplitText pour la hero section
-    initHeroSplitText();
+    // Initialiser l'animation de la nouvelle hero section
+    initNewHeroSplitText();
+
 
     /**
      * TEXT COLOR REVEAL ON SCROLL POUR LE TITRE WPC

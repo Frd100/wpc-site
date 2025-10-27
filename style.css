@@ -704,369 +704,73 @@ body {
 }
 
 
-/* ===== HERO SECTION STYLES ===== */
-.hero-fbv {
-    position: relative;
-    min-height: auto;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    /* Plus de padding - collé à la navigation */
-}
 
-.cmp-hero-fbv__overlay-bg--cobalt-blue {
-    background: transparent;
-}
-
-.dark-theme {
-    color: var(--text-white);
-}
-
-.cmp-hero-fbv {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    margin-top: 0;
+/* ===== NOUVELLE HERO SECTION MINIMALISTE ===== */
+.hero-minimal {
     background: #F5F6FA;
-    /* Fond gris comme la section du bas */
-}
-
-.cmp-hero-fbv__image {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    width: 100%;
-    max-width: 1000px;
-    height: 70vh;
-    margin: 0;
-    padding: 0;
-}
-
-.cmp-hero-fbv__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
-    margin: 0;
-    padding: 0;
-    display: block;
-}
-
-/* ===== HERO CONTENT - DESKTOP FIRST ===== */
-.cmp-hero-fbv__content {
-    position: absolute;
-    top: 50%;
-    /* Augmenté de 45% à 50% pour permettre au sous-titre de descendre */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    text-align: center;
-    padding: 0;
-    z-index: 2;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* Changé de center à flex-start pour permettre le margin */
-}
-}
-
-.cmp-hero-fbv__content .container {
-    margin-bottom: 0;
-    /* Supprimé complètement pour éviter tout conflit */
-    text-align: center;
-    max-width: none;
-    height: auto;
-    /* Changé de 180px à auto pour permettre au sous-titre de descendre */
-    overflow: visible;
-    /* Changé de hidden à visible pour ne pas couper le sous-titre */
-}
-
-.cmp-hero-fbv__content .split {
-    color: #000000;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    line-height: 1.1;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: block;
-    white-space: nowrap;
-}
-
-/* Animation SplitText simple pour le titre */
-.headline .line {
-    color: #000000;
-    font-size: clamp(2rem, 8vw, 8rem);
-    line-height: clamp(2.5rem, 9vw, 9rem);
-    position: relative;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.headline .line .text {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-}
-
-/* Règles spécifiques pour desktop */
-@media (min-width: 769px) {
-    .headline .line {
-        overflow: visible;
-        /* Pas d'overflow hidden sur desktop */
-    }
-
-    .headline .line .text {
-        overflow: hidden;
-        /* Overflow hidden seulement sur le texte */
-    }
-}
-
-/* Règles spécifiques pour mobile */
-@media (max-width: 768px) {
-    .headline .line {
-        overflow: hidden;
-        /* Overflow hidden sur mobile */
-    }
-
-    .headline .line .text {
-        overflow: hidden;
-    }
-}
-
-.cmp-hero-fbv__subtitle {
-    font-size: 1.4rem;
-    margin: var(--spacing-6xl) 0 var(--spacing-md) 0;
-    /* Margin-top élevé pour descendre beaucoup le sous-titre, margin-bottom réduit au minimum */
-    font-weight: 600;
-    /* Réduit de 800 à 600 */
-    color: #000000;
-    line-height: 1.4;
-    display: block;
-    text-align: center;
-    position: relative;
-}
-
-/* DESKTOP SPECIFIC - SPÉCIFICITÉ PLUS ÉLEVÉE */
-@media (min-width: 769px) {
-
-    /* Animation masked line pour le titre desktop */
-    .cmp-hero-fbv__content .container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cmp-hero-fbv__content .split .line {
-        width: 100%;
-        height: 90px;
-        position: relative;
-        overflow: visible;
-        display: block;
-        margin-bottom: 0;
-        /* Supprimé complètement pour éviter tout conflit */
-    }
-
-    /* Masque pour SplitText - comme dans l'exemple */
-    .cmp-hero-fbv__content .split .lineParent {
-        overflow: visible;
-    }
-
-    .cmp-hero-fbv__content .split .line span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: max-content;
-        font-size: 5rem;
-        font-weight: 900;
-        line-height: 1.1;
-        color: #000000;
-        text-align: center;
-        white-space: nowrap;
-    }
-
-
-    /* Bouton plaquette - remonté sur desktop */
-    .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-md);
-        /* Réduit de 2xl à md pour rapprocher encore plus du sous-titre */
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .cmp-hero-fbv__action-container .cmp-hero-fbv__action-link {
-        background: var(--primary-blue-button);
-        /* Même bleu que mobile */
-        color: white;
-        position: relative;
-        z-index: 1;
-        transform: translateZ(0);
-        /* Force la couche GPU pour stabilité */
-    }
-
-    .cmp-hero-fbv__action-container .cmp-hero-fbv__action-link:hover {
-        background: var(--primary-blue-button-hover);
-        /* Même hover que mobile */
-        color: white;
-    }
-}
-
-/* DESKTOP OVERRIDE - Position du titre plus bas */
-@media (min-width: 769px) {
-    .cmp-hero-fbv__content {
-        top: 50%;
-        /* Garder à 50% */
-        transform: translate(-50%, -50%);
-        /* Remettre le centrage normal */
-    }
-
-    /* Position du sous-titre plus bas sur desktop */
-    .cmp-hero-fbv__subtitle {
-        margin: var(--spacing-2xl) 0 var(--spacing-md) 0;
-        /* Augmenter margin-top pour descendre le sous-titre */
-    }
-}
-
-/* MOBILE OVERRIDE */
-@media (max-width: 768px) {
-    .cmp-hero-fbv__content {
-        top: 55%;
-        width: 95%;
-        text-align: left;
-        padding: var(--spacing-lg) var(--spacing-sm);
-        justify-content: flex-start;
-    }
-
-    .cmp-hero-fbv__content .container {
-        height: 100px;
-        overflow: visible;
-        text-align: left;
-        margin-bottom: 0;
-        /* Supprimé complètement pour éviter tout conflit */
-        width: 100%;
-    }
-
-    .cmp-hero-fbv__content .split {
-        font-size: clamp(1.8rem, 8vw, 3rem);
-        text-align: left;
-    }
-
-}
-
-
-.hero-text-container {
-    max-width: none;
-    /* Desktop : pas de limite */
-    width: 100%;
-    /* text-align hérité du parent */
-}
-
-/* MOBILE OVERRIDE pour hero-text-container */
-@media (max-width: 768px) {
-    .hero-text-container {
-        max-width: 500px;
-        /* Mobile : limiter à 500px */
-    }
-}
-
-
-
-/* MOBILE OVERRIDE pour le sous-titre hero - APRÈS les règles générales */
-@media (max-width: 768px) {
-    .cmp-hero-fbv__subtitle {
-        font-size: 1.4rem;
-        /* Réduit de 1.6rem à 1.4rem pour mobile */
-        margin: var(--spacing-md) 0;
-        /* Mobile garde son margin normal */
-        min-height: 4rem;
-        height: 80px;
-        text-align: left;
-        /* Override le text-align: center de la règle générale */
-        color: #000000;
-        font-weight: 600;
-        /* Réduit de 800 à 600 */
-    }
-}
-
-.cmp-hero-fbv__description {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: var(--spacing-xl);
-    color: var(--text-white);
-    opacity: 0.95;
-    font-weight: var(--font-weight-bold);
-}
-
-
-
-.cmp-hero-fbv__action-container {
-    text-align: center;
-    margin-top: var(--spacing-4xl);
-    /* Augmenté de 2xl à 4xl pour descendre beaucoup plus le bouton */
-    position: relative;
-    z-index: 10;
-    min-height: 50px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;
-    /* Changé de 80px à auto pour éviter le chevauchement */
-    /* Hauteur fixe pour réserver l'espace du bouton */
+    padding: var(--spacing-xl);
 }
 
-.cmp-hero-fbv__action-link {
-    display: inline-block;
-    padding: var(--spacing-md) var(--spacing-2xl);
-    background: var(--wpc-white);
+.hero-container {
+    text-align: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-title {
     color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: none;
-    border-radius: 0;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    min-width: max-content;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
 }
 
-.cmp-hero-fbv__action-link:hover {
-    background: var(--wpc-white);
+.hero-title .line {
     color: #000000;
+    font-size: clamp(3rem, 10vw, 10rem);
+    line-height: clamp(3.5rem, 11vw, 11rem);
+    position: relative;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
 }
 
-.cmp-hero-fbv__action-link .arrow {
-    margin-left: 0.5rem;
-    font-size: 1.4rem;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+.hero-title .line .text {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
-.cmp-hero-fbv__action-link:hover .arrow {
-    transform: translateX(4px);
+/* Desktop */
+@media (min-width: 769px) {
+    .hero-minimal {
+        padding: var(--spacing-2xl);
+    }
+    
+    .hero-title .line {
+        font-size: clamp(4rem, 8vw, 8rem);
+        line-height: clamp(4.5rem, 9vw, 9rem);
+    }
 }
 
-
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-minimal {
+        padding: var(--spacing-lg);
+        min-height: 80vh;
+    }
+    
+    .hero-title .line {
+        font-size: clamp(2.5rem, 12vw, 6rem);
+        line-height: clamp(3rem, 13vw, 7rem);
+    }
+}
 
 /* KPMG Exact Main Content */
 .main.container.responsivegrid {
