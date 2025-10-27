@@ -438,12 +438,12 @@
 .cmp-expertise-title {
     position: absolute;
     top: var(--spacing-xl);
-    right: var(--spacing-xl);
+    left: var(--spacing-xl);
     font-family: var(--font-family-primary);
-    font-size: clamp(3rem, 8vw, 8rem);
+    font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 900;
     color: #000000;
-    text-transform: lowercase;
+    text-transform: uppercase;
     letter-spacing: -0.02em;
     margin: 0;
     padding: 0;
@@ -452,9 +452,10 @@
 
 .cmp-expertise-description {
     position: absolute;
-    bottom: var(--spacing-xl);
-    left: var(--spacing-xl);
-    max-width: 600px;
+    top: 50%;
+    right: var(--spacing-xl);
+    transform: translateY(-50%);
+    max-width: 500px;
     font-family: var(--font-family-primary);
     font-size: 1.1rem;
     line-height: 1.6;
@@ -4408,7 +4409,7 @@ select.form-input {
 
     .cmp-expertise-title {
         position: static;
-        font-size: clamp(2.5rem, 12vw, 4rem);
+        font-size: clamp(3rem, 15vw, 6rem);
         text-align: center;
         margin-bottom: var(--spacing-xl);
     }
