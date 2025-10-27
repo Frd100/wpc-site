@@ -86,8 +86,8 @@
     pointer-events: none;
 }
 
-/* Texte WPC au centre du rideau */
-.rideau-transition .rideau-text {
+/* Texte WPC sur chaque lame */
+.rideau-lame .lame-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -98,11 +98,16 @@
     color: white;
     text-align: center;
     letter-spacing: 0.1em;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
     z-index: 10;
     pointer-events: none;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Texte visible quand la lame est ouverte */
+.rideau-lame.rideau-lame-open .lame-text {
+    opacity: 1;
 }
 
 .rideau-lame {
@@ -189,14 +194,6 @@
     transition: opacity var(--transitionFullTime) ease-in-out;
 }
 
-/* Animation du texte WPC */
-.rideau-transition.rideau-text-visible .rideau-text {
-    opacity: 1;
-}
-
-.rideau-transition.rideau-text-hidden .rideau-text {
-    opacity: 0;
-}
 
 
 

@@ -726,23 +726,29 @@ function createRideauTransition() {
     rideauTransition.className = 'rideau-transition';
     rideauTransition.id = 'mon-rideau';
 
-    // Créer les 10 lames
+    // Texte WPC réparti sur les lames du milieu (lames 4, 5, 6)
+    const wpcText = ['', '', '', 'W', 'P', 'C', '', '', '', ''];
+
+    // Créer les 10 lames avec leur texte
     for (let i = 0; i < 10; i++) {
         const lame = document.createElement('div');
         lame.className = 'rideau-lame';
+        
+        // Ajouter le texte si c'est une lame du milieu
+        if (wpcText[i]) {
+            const lameText = document.createElement('div');
+            lameText.className = 'lame-text';
+            lameText.textContent = wpcText[i];
+            lame.appendChild(lameText);
+        }
+        
         rideauTransition.appendChild(lame);
     }
-
-    // Créer le texte WPC
-    const rideauText = document.createElement('div');
-    rideauText.className = 'rideau-text';
-    rideauText.textContent = 'WPC';
-    rideauTransition.appendChild(rideauText);
 
     // Ajouter à la fin du body
     document.body.appendChild(rideauTransition);
 
-    console.log('Rideau de transition créé automatiquement avec', rideauTransition.children.length - 1, 'lames et le texte WPC');
+    console.log('Rideau de transition créé avec', rideauTransition.children.length, 'lames et texte WPC réparti');
     return rideauTransition;
 }
 
@@ -769,7 +775,13 @@ function initPageTransition() {
     // Réinitialiser l'état du rideau
     rideauTransition.style.opacity = '0';
     rideauTransition.style.visibility = 'hidden';
-    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave-to', 'rideau-text-visible', 'rideau-text-hidden');
+    rideauTransition.classList.remove('rideau-enter', 'rideau-enter-to', 'rideau-leave-to');
+    
+    // Réinitialiser l'état des lames avec texte
+    const lamesAvecTexte = rideauTransition.querySelectorAll('.rideau-lame');
+    lamesAvecTexte.forEach(lame => {
+        lame.classList.remove('rideau-lame-open');
+    });
 
     // Détecter TOUS les liens (pas seulement .main-navigation__link)
     const allLinks = document.querySelectorAll('a[href]');
@@ -796,16 +808,24 @@ function initPageTransition() {
                     }, 10);
                 }, 10);
 
-                // Afficher le texte WPC quand les lames sont complètement ouvertes
-                setTimeout(() => {
-                    rideauTransition.classList.add('rideau-text-visible');
-                }, 800); // Après que toutes les lames soient ouvertes
+                // Afficher le texte sur chaque lame quand elle s'ouvre
+                const lamesAvecTexte = rideauTransition.querySelectorAll('.rideau-lame');
+                lamesAvecTexte.forEach((lame, index) => {
+                    const delay = (index + 1) * 50; // Délai basé sur l'ordre de la lame
+                    setTimeout(() => {
+                        lame.classList.add('rideau-lame-open');
+                    }, delay);
+                });
 
                 // Animation de sortie avant la navigation
                 setTimeout(() => {
-                    // Cacher le texte WPC d'abord
-                    rideauTransition.classList.remove('rideau-text-visible');
-                    rideauTransition.classList.add('rideau-text-hidden');
+                    // Cacher le texte sur chaque lame d'abord
+                    lamesAvecTexte.forEach((lame, index) => {
+                        const delay = (index + 1) * 30; // Délai plus rapide pour la sortie
+                        setTimeout(() => {
+                            lame.classList.remove('rideau-lame-open');
+                        }, delay);
+                    });
 
                     // Puis fermer les lames
                     setTimeout(() => {
@@ -816,8 +836,8 @@ function initPageTransition() {
                         setTimeout(() => {
                             window.location.href = href;
                         }, 800); // --transitionFullTime = 0.8s
-                    }, 200); // Petit délai pour cacher le texte avant de fermer les lames
-                }, 1200); // Attendre que le texte soit visible un moment
+                    }, 300); // Petit délai pour cacher le texte avant de fermer les lames
+                }, 1000); // Attendre que le texte soit visible un moment
             });
         }
     });
