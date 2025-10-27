@@ -811,7 +811,6 @@ body {
     color: #000000;
     font-size: clamp(2rem, 8vw, 8rem);
     line-height: clamp(2.5rem, 9vw, 9rem);
-    overflow: hidden;
     position: relative;
     font-weight: 900;
     text-transform: uppercase;
@@ -820,6 +819,30 @@ body {
 
 .headline .line .text {
     position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Règles spécifiques pour desktop */
+@media (min-width: 769px) {
+    .headline .line {
+        overflow: visible; /* Pas d'overflow hidden sur desktop */
+    }
+    
+    .headline .line .text {
+        overflow: hidden; /* Overflow hidden seulement sur le texte */
+    }
+}
+
+/* Règles spécifiques pour mobile */
+@media (max-width: 768px) {
+    .headline .line {
+        overflow: hidden; /* Overflow hidden sur mobile */
+    }
+    
+    .headline .line .text {
+        overflow: hidden;
+    }
 }
 
 .cmp-hero-fbv__subtitle {

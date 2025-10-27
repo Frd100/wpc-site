@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         let linesDataText = new SplitText(dataText, { type: "words" });
-        
+
         // Animation simple des mots qui tombent
         gsap.from(linesDataText.words, {
             duration: 1.5,
