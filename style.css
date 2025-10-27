@@ -38,6 +38,7 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 0.1em;
+    color: #000000; /* Texte noir visible par défaut */
 }
 
 /* Masque pour l'effet de peinture */
@@ -51,6 +52,7 @@
     color: #2351FF;
     overflow: hidden;
     white-space: nowrap;
+    clipPath: inset(0 100% 0 0); /* Commence complètement masqué */
 }
 
 /* Responsive adjustments */
