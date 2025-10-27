@@ -812,14 +812,6 @@ body {
         white-space: nowrap;
     }
 
-    .cmp-hero-fbv__subtitle {
-        overflow: hidden;
-        /* Empêcher l'animation d'impacter le bouton */
-        height: 80px;
-        /* Hauteur fixe pour contenir l'animation */
-        margin: var(--spacing-6xl) 0 var(--spacing-4xl) 0;
-        /* Margin-top très élevé pour descendre beaucoup le sous-titre */
-    }
 
     /* Bouton plaquette - remonté sur desktop */
     .cmp-hero-fbv__action-container {
@@ -905,18 +897,6 @@ body {
     text-align: center;
 }
 
-.cmp-hero-fbv__subtitle {
-    font-family: var(--font-family-primary);
-    font-size: 1.25rem;
-    font-weight: 600;
-    /* Réduit de 800 à 600 */
-    line-height: 1.4;
-    margin: var(--spacing-6xl) 0 var(--spacing-4xl) 0;
-    /* Margin-top élevé pour descendre beaucoup le sous-titre */
-    color: #000000;
-    opacity: 0.95;
-    text-align: center;
-}
 
 /* MOBILE OVERRIDE pour le sous-titre hero - APRÈS les règles générales */
 @media (max-width: 768px) {

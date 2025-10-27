@@ -251,57 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Animation d'écriture pour le sous-titre
-        const subtitle = document.querySelector('.cmp-hero-fbv__subtitle');
-        if (subtitle) {
-            const originalText = subtitle.textContent;
-
-            // Vérifier si on est sur desktop (largeur >= 769px)
-            const isDesktop = window.innerWidth >= 769;
-
-            if (isDesktop) {
-                // Desktop : Ajouter le retour à la ligne après "projets"
-                const textWithBreak = originalText.replace('projets en', 'projets<br>en');
-
-                // Desktop : Animation typewriter activée
-                // Vider le texte initialement
-                gsap.set(subtitle, {
-                    text: ""
-                });
-
-                // Animation d'écriture lettre par lettre
-                gsap.to(subtitle, {
-                    text: textWithBreak,
-                    duration: 2,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                });
-            } else {
-                // Mobile : Animation normale (sans retour à la ligne)
-                // Vider le texte initialement
-                gsap.set(subtitle, {
-                    text: ""
-                });
-
-                // Animation d'écriture lettre par lettre
-                gsap.to(subtitle, {
-                    text: originalText,
-                    duration: 2,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: heroSection,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                });
-            }
-        }
 
     }
 
