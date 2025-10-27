@@ -736,7 +736,7 @@ function createPageTransition() {
     document.body.appendChild(pageTransition);
 
     console.log('Page transition créée automatiquement avec', pageTransition.children.length, 'éléments');
-    
+
     // Créer un bouton de test temporaire pour déboguer
     const testButton = document.createElement('button');
     testButton.textContent = 'TEST TRANSITION';
@@ -751,23 +751,31 @@ function createPageTransition() {
         border: none;
         cursor: pointer;
     `;
-    testButton.addEventListener('click', function() {
+    testButton.addEventListener('click', function () {
         console.log('Test transition déclenché');
         pageTransition.style.opacity = '1';
         pageTransition.style.visibility = 'visible';
-        
+
         setTimeout(() => {
             pageTransition.classList.add('page-transition-enter');
             console.log('Classe page-transition-enter ajoutée');
-            
+
             setTimeout(() => {
                 pageTransition.classList.add('page-transition-enter-to');
                 console.log('Classe page-transition-enter-to ajoutée');
+                
+                // Reset après l'animation pour pouvoir retester
+                setTimeout(() => {
+                    console.log('Reset de la transition');
+                    pageTransition.classList.remove('page-transition-enter', 'page-transition-enter-to');
+                    pageTransition.style.opacity = '0';
+                    pageTransition.style.visibility = 'hidden';
+                }, 1000);
             }, 10);
         }, 10);
     });
     document.body.appendChild(testButton);
-    
+
     return pageTransition;
 }
 
@@ -808,13 +816,13 @@ function initPageTransition() {
         console.log('Lien trouvé:', href, 'Classe:', link.className);
 
         // Détecter les liens internes (pas externes, pas ancres, pas javascript:)
-        if (href && 
-            !href.startsWith('http') && 
-            !href.startsWith('#') && 
+        if (href &&
+            !href.startsWith('http') &&
+            !href.startsWith('#') &&
             !href.startsWith('javascript:') &&
             !href.startsWith('mailto:') &&
             !href.startsWith('tel:')) {
-            
+
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 console.log('Transition déclenchée pour:', href);

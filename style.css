@@ -180,8 +180,9 @@
 
 /* État FINAL pour l'entrée */
 .page-transition-enter-to .page-transition__item {
-    transform: scale(1) translateZ(0);
+    transform: scaleX(1) translateZ(0);
     transform-origin: 0 0;
+    transition: transform var(--transitionTime) ease-in-out;
 }
 
 /* État FINAL pour la sortie */
