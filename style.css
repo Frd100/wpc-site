@@ -710,9 +710,8 @@ body {
 }
 
 .cmp-hero-fbv__content .container {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     /* Réduire l'espace entre titre et sous-titre */
-    /* Augmenter l'espace entre titre et sous-titre */
     text-align: center;
     max-width: none;
     height: 180px;
@@ -736,8 +735,8 @@ body {
 
 .cmp-hero-fbv__subtitle {
     font-size: 1.4rem;
-    margin: var(--spacing-6xl) 0 var(--spacing-4xl) 0;
-    /* Margin-top élevé pour descendre beaucoup le sous-titre */
+    margin: var(--spacing-6xl) 0 var(--spacing-2xl) 0;
+    /* Margin-top élevé pour descendre beaucoup le sous-titre, margin-bottom réduit */
     font-weight: 600;
     /* Réduit de 800 à 600 */
     color: #000000;
@@ -790,8 +789,8 @@ body {
 
     /* Bouton plaquette - remonté sur desktop */
     .cmp-hero-fbv__action-container {
-        margin-top: var(--spacing-4xl);
-        /* Augmenté de 2xl à 4xl pour descendre beaucoup plus le bouton */
+        margin-top: var(--spacing-2xl);
+        /* Réduit de 4xl à 2xl pour rapprocher du sous-titre */
         height: auto;
         display: flex;
         align-items: center;
