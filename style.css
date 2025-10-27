@@ -863,6 +863,11 @@ body {
 
 /* DESKTOP SPECIFIC - SPÉCIFICITÉ PLUS ÉLEVÉE */
 @media (min-width: 769px) {
+    
+    /* Position du titre plus bas sur desktop */
+    .cmp-hero-fbv__content {
+        top: 55%; /* Augmenté de 50% à 55% pour descendre le titre */
+    }
 
     /* Animation masked line pour le titre desktop */
     .cmp-hero-fbv__content .container {
