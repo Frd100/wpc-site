@@ -710,8 +710,8 @@ body {
 }
 
 .cmp-hero-fbv__content .container {
-    margin-bottom: 0.5rem;
-    /* Réduire l'espace entre titre et sous-titre */
+    margin-bottom: 0;
+    /* Supprimé complètement pour éviter tout conflit */
     text-align: center;
     max-width: none;
     height: auto;
@@ -763,7 +763,8 @@ body {
         position: relative;
         overflow: visible;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        /* Supprimé complètement pour éviter tout conflit */
     }
 
     /* Masque pour SplitText - comme dans l'exemple */
@@ -827,7 +828,8 @@ body {
         height: 100px;
         overflow: visible;
         text-align: left;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+        /* Supprimé complètement pour éviter tout conflit */
         width: 100%;
     }
 
