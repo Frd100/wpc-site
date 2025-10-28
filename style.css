@@ -163,7 +163,7 @@
     top: auto;
     left: auto;
     right: auto;
-    background: #FFFFFF;
+    background: #F5F6FA;
     /* Gris au lieu de blanc */
     padding: var(--spacing-sm) 0 0 0;
     /* Padding top léger */
@@ -171,7 +171,7 @@
     line-height: 1;
     z-index: auto;
     transition: transform 0.3s ease;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid #F5F6FA;
 }
 
 /* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
@@ -179,7 +179,7 @@
     min-height: 90px;
     /* Desktop : légèrement plus grand pour éviter le sursaut */
     display: block;
-    background: #FFFFFF;
+    background: #F5F6FA;
     /* Même gris que le hero section */
 }
 
@@ -194,8 +194,8 @@
 /* Navigation grise sur mobile */
 @media (max-width: 768px) {
     .main-navigation {
-        background: #FFFFFF;
-        border-bottom: 1px solid #FFFFFF;
+        background: #F5F6FA;
+        border-bottom: 1px solid #F5F6FA;
     }
 }
 
@@ -643,7 +643,7 @@ body {
 }
 
 .hero-minimal {
-    background: #FFFFFF;
+    background: #F5F6FA;
     min-height: 60vh;
     display: flex;
     align-items: flex-start;
