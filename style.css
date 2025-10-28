@@ -1,138 +1,13 @@
 /* ===== WPC SITE STYLES ===== */
 
-/* ===== WPC TITLE SECTION ===== */
-
-/* RÈGLES COMMUNES - Pas de conflit entre desktop/mobile */
-.wpc-line {
-    display: block;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 0.1em;
-    color: #000000;
-    /* Texte noir visible par défaut */
+/* ===== NOUVELLE SECTION VIDE ===== */
+.new-empty-section {
+    background-color: #051B2C;
+    min-height: 70vh;
+    width: 100%;
 }
 
-/* Masque pour l'effet de peinture - approche différente */
-.wpc-line::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: var(--reveal-width, 0%);
-    /* Utilise la variable CSS animée */
-    height: 100%;
-    color: #2351FF;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-/* ===== DESKTOP VERSION - ISOLÉE ===== */
-@media (min-width: 769px) {
-    .cmp-wpc-title-section {
-        background-color: #F5F6FA;
-        padding: var(--spacing-6xl) 0;
-        text-align: left;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cmp-wpc-title-container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0 var(--spacing-xl);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .cmp-wpc-title {
-        font-family: var(--font-family-primary);
-        font-size: clamp(4rem, 12vw, 14rem);
-        font-weight: 900;
-        color: #000000;
-        line-height: 0.9;
-        margin: 0 0 0 var(--spacing-lg);
-        padding: 0;
-        text-transform: uppercase;
-        letter-spacing: -0.05em;
-        position: relative;
-    }
-}
-
-/* ===== MOBILE VERSION - ISOLÉE ===== */
-@media (max-width: 768px) {
-    .cmp-wpc-title-section {
-        background-color: #F5F6FA;
-        padding: var(--spacing-lg) var(--spacing-sm);
-        /* Même padding que la section hero */
-        text-align: center;
-        /* Centré sur mobile */
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cmp-wpc-title-container {
-        max-width: 95%;
-        /* Même largeur que la hero section */
-        margin: 0 auto;
-        /* Centrer le container */
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        /* Centrer le contenu */
-        align-items: center;
-    }
-
-    .cmp-wpc-title {
-        font-family: var(--font-family-primary);
-        font-size: clamp(4rem, 20vw, 12rem);
-        font-weight: 900;
-        color: #000000;
-        line-height: 0.8;
-        margin: 0;
-        /* Supprimer la marge gauche */
-        padding: 0;
-        text-transform: uppercase;
-        letter-spacing: -0.05em;
-        position: relative;
-        text-align: center;
-        /* Centrer le texte */
-        width: 100%;
-        /* Prendre toute la largeur du container */
-    }
-
-    /* WEST et PARIS plus gros */
-    .cmp-wpc-title .wpc-line:nth-child(1),
-    .cmp-wpc-title .wpc-line:nth-child(2) {
-        font-size: clamp(5.2rem, 26vw, 16rem);
-        /* Légèrement augmenté: +0.2rem, +1vw, +1rem */
-        font-weight: 900;
-        text-align: center;
-        /* Forcer le centrage */
-    }
-
-    /* CONSULTING plus petit */
-    .cmp-wpc-title .wpc-line:nth-child(3) {
-        font-size: clamp(2rem, 12vw, 7rem);
-        /* Ajusté pour équilibrer avec WEST/PARIS */
-        font-weight: 800;
-        text-align: center;
-        /* Forcer le centrage */
-    }
-
-    /* CORRECTION ANIMATION BLEUE - Animation centrée avec clip-path */
-    .cmp-wpc-title .wpc-line::before {
-        left: 0;
-        width: 100%;
-        /* Prendre toute la largeur */
-        text-align: center;
-        /* Centrer le texte */
-        clip-path: polygon(0 0, var(--reveal-width, 0%) 0, var(--reveal-width, 0%) 100%, 0 100%);
-        /* Animation avec clip-path qui part de la gauche */
-    }
-}
+/* ===== HERO SECTION MINIMALISTE - MOBILE FIRST ===== */
 
 
 
@@ -549,7 +424,7 @@
     padding: var(--spacing-6xl) 0;
     text-align: left;
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -760,10 +635,16 @@ body {
 
 
 
-/* ===== HERO SECTION MINIMALISTE - MOBILE FIRST ===== */
+/* ===== NOUVELLE SECTION VIDE ===== */
+.new-empty-section {
+    background-color: #051B2C;
+    min-height: 70vh;
+    width: 100%;
+}
+
 .hero-minimal {
     background: #F5F6FA;
-    min-height: 80vh;
+    min-height: 60vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -789,7 +670,7 @@ body {
 .hero-title .line {
     color: #000000;
     font-size: clamp(2rem, 10vw, 5rem);
-    line-height: clamp(2.5rem, 11vw, 6rem);
+    line-height: clamp(3rem, 12vw, 7rem);
     position: relative;
     font-weight: 900;
     text-transform: uppercase;
@@ -880,7 +761,7 @@ body {
 @media (max-width: 768px) {
     .hero-title .line {
         font-size: clamp(1.5rem, 8vw, 3rem);
-        line-height: clamp(2rem, 9vw, 4rem);
+        line-height: clamp(2.5rem, 10vw, 4.5rem);
     }
 
     .hero-title .line .text {
@@ -897,13 +778,13 @@ body {
 /* Desktop overrides */
 @media (min-width: 769px) {
     .hero-minimal {
-        min-height: 100vh;
+        min-height: 70vh;
         padding: var(--spacing-2xl);
     }
 
     .hero-title .line {
         font-size: clamp(4rem, 8vw, 8rem);
-        line-height: clamp(4.5rem, 9vw, 9rem);
+        line-height: clamp(5rem, 10vw, 10rem);
     }
 
     .hero-button-container {
@@ -4345,7 +4226,7 @@ select.form-input {
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
         padding: var(--spacing-4xl) 0;
-        min-height: 80vh;
+        min-height: 60vh;
         text-align: left;
         align-items: flex-start;
         justify-content: flex-start;

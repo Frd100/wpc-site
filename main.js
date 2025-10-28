@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Animation des mots qui tombent
         gsap.from(linesDataText.words, {
             duration: 1.5,
-            yPercent: 100,
+            yPercent: 105,
             ease: "power4",
             stagger: 0.04,
             delay: 0.3
