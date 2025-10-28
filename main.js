@@ -186,6 +186,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let linesDataText = new SplitText(dataText, { type: "words" });
 
+        // Ne pas appliquer de styles inline pour respecter le CSS
+        linesDataText.words.forEach(word => {
+            // Supprimer tous les styles inline que SplitText pourrait avoir ajoutés
+            word.style.removeProperty('font-size');
+            word.style.removeProperty('line-height');
+            word.style.removeProperty('font-weight');
+            word.style.removeProperty('text-transform');
+            word.style.removeProperty('letter-spacing');
+        });
+
         // Animation des mots qui tombent
         gsap.from(linesDataText.words, {
             duration: 1.5,

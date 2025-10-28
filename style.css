@@ -760,14 +760,14 @@ body {
 
 
 
-/* ===== NOUVELLE HERO SECTION MINIMALISTE ===== */
+/* ===== HERO SECTION MINIMALISTE - MOBILE FIRST ===== */
 .hero-minimal {
     background: #F5F6FA;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     padding-top: 10vh;
 }
 
@@ -788,8 +788,8 @@ body {
 
 .hero-title .line {
     color: #000000;
-    font-size: clamp(3rem, 10vw, 10rem);
-    line-height: clamp(3.5rem, 11vw, 11rem);
+    font-size: clamp(2rem, 10vw, 5rem);
+    line-height: clamp(2.5rem, 11vw, 6rem);
     position: relative;
     font-weight: 900;
     text-transform: uppercase;
@@ -876,9 +876,28 @@ body {
     transform: translateX(4px);
 }
 
-/* Desktop */
+/* Mobile - Taille du titre hero */
+@media (max-width: 768px) {
+    .hero-title .line {
+        font-size: clamp(1.5rem, 8vw, 3rem);
+        line-height: clamp(2rem, 9vw, 4rem);
+    }
+
+    .hero-title .line .text {
+        font-size: inherit;
+    }
+
+    /* Force aussi sur les éléments générés par SplitText */
+    .hero-title .line span {
+        font-size: inherit;
+        line-height: inherit;
+    }
+}
+
+/* Desktop overrides */
 @media (min-width: 769px) {
     .hero-minimal {
+        min-height: 100vh;
         padding: var(--spacing-2xl);
     }
 
@@ -895,31 +914,6 @@ body {
         padding: var(--spacing-lg) var(--spacing-2xl);
         font-size: 1.1rem;
         min-width: 220px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .hero-minimal {
-        padding: var(--spacing-lg);
-        min-height: 80vh;
-    }
-
-    .hero-title .line {
-        font-size: clamp(2.5rem, 12vw, 6rem);
-        line-height: clamp(3rem, 13vw, 7rem);
-    }
-
-    .hero-button-container {
-        margin-top: var(--spacing-xl);
-    }
-
-    .hero-button {
-        padding: var(--spacing-md) var(--spacing-lg);
-        font-size: 0.9rem;
-        min-width: 180px;
-        width: 100%;
-        max-width: 300px;
     }
 }
 
@@ -3391,25 +3385,6 @@ select.form-input {
     padding-left: 8rem;
 }
 
-.hero-content {
-    text-align: left;
-    color: #212529;
-}
-
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #212529;
-    margin-bottom: 0.5rem;
-}
-
-.hero-subtitle {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #212529;
-    margin: 0;
-}
-
 /* Sections avec background gris */
 .section-gray {
     background-color: #F5F6FA;
@@ -4299,12 +4274,6 @@ select.form-input {
     }
 
     .hero-section .hero-content {
-        text-align: center;
-    }
-
-    .hero-section .hero-content .hero-title {
-        font-size: 2.5rem;
-        /* Réduit de 3rem à 2.5rem */
         text-align: center;
     }
 
