@@ -672,10 +672,10 @@ body {
 
 .hero-title .line {
     color: #000000;
-    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 6.5vw, 3.2rem);
     line-height: clamp(1.6rem, 6vw, 3rem);
     position: relative;
-    font-weight: 900;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     overflow: hidden;
@@ -775,8 +775,8 @@ body {
 /* Mobile - Taille du titre hero */
 @media (max-width: 768px) {
     .hero-title .line {
-        font-size: clamp(1.5rem, 8vw, 3rem);
-        line-height: clamp(2rem, 9.5vw, 3.8rem);
+        font-size: clamp(1.8rem, 9.5vw, 3.8rem);
+        line-height: clamp(1.9rem, 8vw, 3.6rem);
     }
 
     .hero-title .line .text {
@@ -807,8 +807,8 @@ body {
     }
 
     .hero-title .line {
-        font-size: clamp(2rem, 4vw, 3.5rem);
-        line-height: clamp(2.4rem, 5vw, 4.2rem);
+        font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+        line-height: clamp(2.2rem, 5vw, 4rem);
     }
 
     .hero-button-container {
