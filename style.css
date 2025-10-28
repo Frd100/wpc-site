@@ -420,7 +420,7 @@
 
 /* WPC Expertise Section */
 .cmp-expertise-section {
-    background-color: #FFFFFF;
+    background-color: #F5F6FA;
     padding: var(--spacing-6xl) 0;
     text-align: left;
     position: relative;
@@ -1324,7 +1324,7 @@ body {
 
     /* Fond gris pour le hero section sur mobile */
     .cmp-hero-fbv {
-        background: #FFFFFF;
+        background: #F5F6FA;
     }
 }
 
@@ -1736,7 +1736,7 @@ body {
         flex-direction: column;
         min-height: 60vh;
         height: 60vh;
-        background: #FFFFFF;
+        background: #F5F6FA;
         /* Fond gris */
     }
 
@@ -1932,7 +1932,7 @@ body {
         justify-content: flex-start;
         align-items: center;
         margin-top: 0;
-        background: #FFFFFF;
+        background: #F5F6FA;
         /* Compensation appliquée au conteneur parent */
     }
 
@@ -2034,7 +2034,7 @@ body {
 
 .cmp-contact-section {
     padding: var(--spacing-4xl) 0;
-    background: #FFFFFF;
+    background: #F5F6FA;
 }
 
 .cmp-contact-content {
@@ -3276,7 +3276,7 @@ select.form-input {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     overflow: hidden;
-    background-color: #FFFFFF;
+    background-color: #F5F6FA;
     height: 250px;
     display: flex;
     align-items: center;
@@ -3286,7 +3286,7 @@ select.form-input {
 
 /* Sections avec background gris */
 .section-gray {
-    background-color: #FFFFFF;
+    background-color: #F5F6FA;
     padding: 40px 0;
 }
 
