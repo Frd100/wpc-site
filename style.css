@@ -163,7 +163,7 @@
     top: auto;
     left: auto;
     right: auto;
-    background: #F5F6FA;
+    background: #FFFFFF;
     /* Gris au lieu de blanc */
     padding: var(--spacing-sm) 0 0 0;
     /* Padding top léger */
@@ -171,7 +171,7 @@
     line-height: 1;
     z-index: auto;
     transition: transform 0.3s ease;
-    border-bottom: 1px solid #F5F6FA;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 /* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
@@ -179,7 +179,7 @@
     min-height: 90px;
     /* Desktop : légèrement plus grand pour éviter le sursaut */
     display: block;
-    background: #F5F6FA;
+    background: #FFFFFF;
     /* Même gris que le hero section */
 }
 
@@ -194,8 +194,8 @@
 /* Navigation grise sur mobile */
 @media (max-width: 768px) {
     .main-navigation {
-        background: #F5F6FA;
-        border-bottom: 1px solid #F5F6FA;
+        background: #FFFFFF;
+        border-bottom: 1px solid #FFFFFF;
     }
 }
 
@@ -643,7 +643,7 @@ body {
 }
 
 .hero-minimal {
-    background: #F5F6FA;
+    background: #FFFFFF;
     min-height: 60vh;
     display: flex;
     align-items: flex-start;
@@ -670,7 +670,7 @@ body {
 .hero-title .line {
     color: #000000;
     font-size: clamp(2rem, 10vw, 5rem);
-    line-height: clamp(3rem, 12vw, 7rem);
+    line-height: clamp(2.2rem, 10vw, 5.5rem);
     position: relative;
     font-weight: 900;
     text-transform: uppercase;
@@ -682,6 +682,18 @@ body {
     position: relative;
     overflow: hidden;
     display: inline-block;
+}
+
+/* Sous-titre hero */
+.hero-subtitle {
+    font-family: var(--font-family-secondary);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    color: #000000;
+    text-align: center;
+    margin: var(--spacing-xl) auto 0 auto;
+    max-width: 600px;
+    font-weight: 600;
 }
 
 /* Bouton hero avec meilleures pratiques */
@@ -761,11 +773,17 @@ body {
 @media (max-width: 768px) {
     .hero-title .line {
         font-size: clamp(1.5rem, 8vw, 3rem);
-        line-height: clamp(2.5rem, 10vw, 4.5rem);
+        line-height: clamp(1.7rem, 8.5vw, 3.2rem);
     }
 
     .hero-title .line .text {
         font-size: inherit;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        margin: var(--spacing-lg) auto 0 auto;
+        max-width: 90%;
     }
 
     /* Force aussi sur les éléments générés par SplitText */
@@ -784,7 +802,7 @@ body {
 
     .hero-title .line {
         font-size: clamp(4rem, 8vw, 8rem);
-        line-height: clamp(5rem, 10vw, 10rem);
+        line-height: clamp(4.2rem, 8.5vw, 8.5rem);
     }
 
     .hero-button-container {
@@ -1306,7 +1324,7 @@ body {
 
     /* Fond gris pour le hero section sur mobile */
     .cmp-hero-fbv {
-        background: #F5F6FA;
+        background: #FFFFFF;
     }
 }
 
@@ -1718,7 +1736,7 @@ body {
         flex-direction: column;
         min-height: 60vh;
         height: 60vh;
-        background: #F5F6FA;
+        background: #FFFFFF;
         /* Fond gris */
     }
 
@@ -1914,7 +1932,7 @@ body {
         justify-content: flex-start;
         align-items: center;
         margin-top: 0;
-        background: #F5F6FA;
+        background: #FFFFFF;
         /* Compensation appliquée au conteneur parent */
     }
 
@@ -2016,7 +2034,7 @@ body {
 
 .cmp-contact-section {
     padding: var(--spacing-4xl) 0;
-    background: #F5F6FA;
+    background: #FFFFFF;
 }
 
 .cmp-contact-content {
@@ -2026,7 +2044,7 @@ body {
 }
 
 .cmp-contact-form-container {
-    background: #F5F6FA;
+    background: #FFFFFF;
     padding: var(--spacing-3xl);
     border: 1px solid var(--wpc-gray-200);
     border-radius: var(--border-radius-md);
@@ -2256,7 +2274,7 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: 40px 0;
-    background: #F5F6FA;
+    background: #FFFFFF;
 }
 
 .contact-form-container {
@@ -3268,7 +3286,7 @@ select.form-input {
 
 /* Sections avec background gris */
 .section-gray {
-    background-color: #F5F6FA;
+    background-color: #FFFFFF;
     padding: 40px 0;
 }
 
@@ -3363,7 +3381,7 @@ select.form-input {
 .team-avatar {
     width: 200px;
     height: 200px;
-    background-color: #F5F6FA;
+    background-color: #FFFFFF;
     border: none;
     flex-shrink: 0;
     border-radius: 50%;
