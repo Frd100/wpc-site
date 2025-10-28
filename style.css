@@ -827,38 +827,23 @@ body {
 }
 
 .hero-minimal {
+    background: #F5F6FA;
     min-height: 60vh;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     padding: var(--spacing-lg);
     padding-top: 10vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
 }
 
 .hero-container {
-    text-align: left;
+    text-align: center;
     max-width: 1200px;
     width: 100%;
-    margin-left: 0;
-    margin-right: auto;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-title {
-    color: #FFFFFF;
+    color: #000000;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -867,11 +852,11 @@ body {
 }
 
 .hero-title .line {
-    color: #FFFFFF;
-    font-size: clamp(1.5rem, 6.5vw, 3.2rem);
-    line-height: clamp(1.6rem, 6vw, 3rem);
+    color: #000000;
+    font-size: clamp(2rem, 10vw, 5rem);
+    line-height: clamp(3rem, 12vw, 7rem);
     position: relative;
-    font-weight: 600;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
     overflow: hidden;
@@ -883,23 +868,11 @@ body {
     display: inline-block;
 }
 
-/* Sous-titre hero */
-.hero-subtitle {
-    font-family: var(--font-family-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    line-height: 1.6;
-    color: #FFFFFF;
-    text-align: left;
-    margin: var(--spacing-xl) 0 0 0;
-    max-width: 600px;
-    font-weight: 600;
-}
-
 /* Bouton hero avec meilleures pratiques */
 .hero-button-container {
     margin-top: var(--spacing-2xl);
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -971,8 +944,8 @@ body {
 /* Mobile - Taille du titre hero */
 @media (max-width: 768px) {
     .hero-title .line {
-        font-size: clamp(1.8rem, 9.5vw, 3.8rem);
-        line-height: clamp(1.9rem, 8vw, 3.6rem);
+        font-size: clamp(1.5rem, 8vw, 3rem);
+        line-height: clamp(2.5rem, 10vw, 4.5rem);
     }
 
     .hero-title .line .text {
@@ -994,8 +967,8 @@ body {
     }
 
     .hero-title .line {
-        font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-        line-height: clamp(2.2rem, 5vw, 4rem);
+        font-size: clamp(4rem, 8vw, 8rem);
+        line-height: clamp(5rem, 10vw, 10rem);
     }
 
     .hero-button-container {
