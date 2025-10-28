@@ -1,10 +1,102 @@
 /* ===== WPC SITE STYLES ===== */
 
-/* ===== NOUVELLE SECTION VIDE ===== */
+/* ===== NOUVELLE SECTION VIDE AVEC CARTES STICKY ===== */
 .new-empty-section {
     background-color: #051B2C;
-    min-height: 70vh;
+    min-height: 100vh;
     width: 100%;
+    position: relative;
+}
+
+.sticky-cards-container {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.sticky-cards {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: 60%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.sticky-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Cartes alternées bleu/noir */
+.sticky-card.card-1,
+.sticky-card.card-3,
+.sticky-card.card-5 {
+    background: linear-gradient(135deg, #2351FF, #1a3ddb);
+    color: white;
+}
+
+.sticky-card.card-2,
+.sticky-card.card-4 {
+    background: linear-gradient(135deg, #1a1a1a, #000000);
+    color: white;
+}
+
+.sticky-card h3 {
+    font-family: var(--font-family-primary);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin: 0 0 var(--spacing-lg) 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sticky-card p {
+    font-family: var(--font-family-secondary);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    max-width: 80%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sticky-cards-container {
+        padding: var(--spacing-lg);
+    }
+
+    .sticky-cards {
+        width: 95%;
+        height: 50%;
+    }
+
+    .sticky-card {
+        padding: var(--spacing-xl);
+    }
+
+    .sticky-card h3 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .sticky-card p {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        max-width: 90%;
+    }
 }
 
 /* ===== HERO SECTION MINIMALISTE - MOBILE FIRST ===== */
@@ -420,11 +512,11 @@
 
 /* WPC Expertise Section */
 .cmp-expertise-section {
-    background-color: #F5F6FA;
+    background-color: #FFFFFF;
     padding: var(--spacing-6xl) 0;
     text-align: left;
     position: relative;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -635,22 +727,124 @@ body {
 
 
 
-/* ===== NOUVELLE SECTION VIDE ===== */
+/* ===== NOUVELLE SECTION VIDE AVEC CARTES STICKY ===== */
 .new-empty-section {
     background-color: #051B2C;
-    min-height: 70vh;
+    min-height: 100vh;
     width: 100%;
+    position: relative;
+}
+
+.sticky-cards-container {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.sticky-cards {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: 60%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.sticky-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-2xl);
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Cartes alternées bleu/noir */
+.sticky-card.card-1,
+.sticky-card.card-3,
+.sticky-card.card-5 {
+    background: linear-gradient(135deg, #2351FF, #1a3ddb);
+    color: white;
+}
+
+.sticky-card.card-2,
+.sticky-card.card-4 {
+    background: linear-gradient(135deg, #1a1a1a, #000000);
+    color: white;
+}
+
+.sticky-card h3 {
+    font-family: var(--font-family-primary);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin: 0 0 var(--spacing-lg) 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sticky-card p {
+    font-family: var(--font-family-secondary);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    max-width: 80%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sticky-cards-container {
+        padding: var(--spacing-lg);
+    }
+
+    .sticky-cards {
+        width: 95%;
+        height: 50%;
+    }
+
+    .sticky-card {
+        padding: var(--spacing-xl);
+    }
+
+    .sticky-card h3 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .sticky-card p {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        max-width: 90%;
+    }
 }
 
 .hero-minimal {
-    background: #F5F6FA;
     min-height: 60vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     padding: var(--spacing-lg);
     padding-top: 10vh;
-    padding-left: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .hero-container {
@@ -659,10 +853,12 @@ body {
     width: 100%;
     margin-left: 0;
     margin-right: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
-    color: #000000;
+    color: #FFFFFF;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -671,7 +867,7 @@ body {
 }
 
 .hero-title .line {
-    color: #000000;
+    color: #FFFFFF;
     font-size: clamp(1.5rem, 6.5vw, 3.2rem);
     line-height: clamp(1.6rem, 6vw, 3rem);
     position: relative;
@@ -692,7 +888,7 @@ body {
     font-family: var(--font-family-secondary);
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
-    color: #000000;
+    color: #FFFFFF;
     text-align: left;
     margin: var(--spacing-xl) 0 0 0;
     max-width: 600px;
@@ -783,13 +979,6 @@ body {
         font-size: inherit;
     }
 
-    .hero-subtitle {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
-        margin: var(--spacing-lg) 0 0 0;
-        max-width: 90%;
-        text-align: left;
-    }
-
     /* Force aussi sur les éléments générés par SplitText */
     .hero-title .line span {
         font-size: inherit;
@@ -800,10 +989,8 @@ body {
 /* Desktop overrides */
 @media (min-width: 769px) {
     .hero-minimal {
-        min-height: 70vh;
+        min-height: 100vh;
         padding: var(--spacing-2xl);
-        padding-left: var(--spacing-3xl);
-        justify-content: flex-start;
     }
 
     .hero-title .line {
@@ -2050,7 +2237,7 @@ body {
 }
 
 .cmp-contact-form-container {
-    background: #FFFFFF;
+    background: #F5F6FA;
     padding: var(--spacing-3xl);
     border: 1px solid var(--wpc-gray-200);
     border-radius: var(--border-radius-md);
@@ -2280,7 +2467,7 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: 40px 0;
-    background: #FFFFFF;
+    background: #F5F6FA;
 }
 
 .contact-form-container {
@@ -3282,7 +3469,7 @@ select.form-input {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     overflow: hidden;
-    background-color: #F5F6FA;
+    background-color: #FFFFFF;
     height: 250px;
     display: flex;
     align-items: center;
@@ -3387,7 +3574,7 @@ select.form-input {
 .team-avatar {
     width: 200px;
     height: 200px;
-    background-color: #FFFFFF;
+    background-color: #F5F6FA;
     border: none;
     flex-shrink: 0;
     border-radius: 50%;
