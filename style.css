@@ -971,6 +971,10 @@ body {
 
 /* Mobile - Taille du titre hero */
 @media (max-width: 768px) {
+    .hero-minimal {
+        aspect-ratio: 1/1;
+    }
+
     .hero-title .line {
         font-size: clamp(1.8rem, 9.5vw, 3.8rem);
         line-height: clamp(1.9rem, 8vw, 3.6rem);
