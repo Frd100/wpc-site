@@ -2,7 +2,7 @@
 
 /* ===== NOUVELLE SECTION VIDE AVEC CARTES STICKY ===== */
 .new-empty-section {
-    background-color: #051B2C;
+    background-color: #202229;
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -45,7 +45,7 @@
 .sticky-card.card-1,
 .sticky-card.card-3,
 .sticky-card.card-5 {
-    background: linear-gradient(135deg, #2351FF, #1a3ddb);
+    background: var(--primary-blue);
     color: white;
 }
 
@@ -109,12 +109,7 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* WPC Primary Colors */
-    --primary-blue: #2351FF;
-    --primary-blue-light: #2351FF;
-    --primary-blue-dark: #1A3FE6;
-    --primary-blue-hero: #1A365D;
-    --primary-blue-button: #2351FF;
-    --primary-blue-button-hover: #1A3FE6;
+    --primary-blue: #015FB8;
 
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
@@ -139,7 +134,6 @@
     --bg-primary: #FFFFFF;
     --bg-secondary: #FFFFFF;
     --bg-dark: #212529;
-    --bg-blue: #00338D;
 
     /* WPC Fonts */
     --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -369,7 +363,7 @@
     left: 0;
     width: 0%;
     height: 100%;
-    color: #2351FF;
+    color: var(--primary-blue);
     overflow: hidden;
     white-space: pre-line;
     display: flex;
@@ -426,7 +420,7 @@
 }
 
 .main-navigation__link:hover {
-    color: #2351FF;
+    color: var(--primary-blue);
     background: none;
 }
 
@@ -441,7 +435,7 @@
 /* WPC New Section */
 .cmp-new-section {
     width: 100%;
-    background: var(--primary-blue-button);
+    background: var(--primary-blue);
     padding: 0;
     margin: 0;
     min-height: 350px;
@@ -598,7 +592,7 @@
 }
 
 .cmp-domain-tag:hover {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--text-white);
     transform: translateY(-1px);
 }
@@ -615,7 +609,7 @@
 }
 
 .cmp-domain-link:hover {
-    color: var(--primary-blue-dark);
+    color: var(--primary-blue);
 }
 
 .cmp-services-right {
@@ -695,12 +689,12 @@ body {
 }
 
 .cmp-ppc-navigation__userlogin {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--text-white);
 }
 
 .cmp-ppc-navigation__userlogin:hover {
-    background: var(--primary-blue-dark);
+    background: var(--primary-blue);
     color: var(--text-white);
 }
 
@@ -729,7 +723,7 @@ body {
 
 /* ===== NOUVELLE SECTION VIDE AVEC CARTES STICKY ===== */
 .new-empty-section {
-    background-color: #051B2C;
+    background-color: #202229;
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -772,7 +766,7 @@ body {
 .sticky-card.card-1,
 .sticky-card.card-3,
 .sticky-card.card-5 {
-    background: linear-gradient(135deg, #2351FF, #1a3ddb);
+    background: var(--primary-blue);
     color: white;
 }
 
@@ -914,7 +908,7 @@ body {
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md) var(--spacing-xl);
-    background: var(--primary-blue-button);
+    background: var(--primary-blue);
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -1106,7 +1100,7 @@ body {
 }
 
 .cmp-title__link-text:hover {
-    color: var(--primary-blue-dark);
+    color: var(--primary-blue);
 }
 
 .cmp-title__link .material-icons {
@@ -1142,7 +1136,7 @@ body {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-lg);
-    background: #2351FF;
+    background: var(--primary-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1174,14 +1168,14 @@ body {
 }
 
 .cmp-button--primary {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--text-white);
     border-color: var(--primary-blue);
 }
 
 .cmp-button--primary:hover {
-    background: var(--primary-blue-dark);
-    border-color: var(--primary-blue-dark);
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -1193,7 +1187,7 @@ body {
 }
 
 .cmp-button--secondary:hover {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--text-white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -1303,17 +1297,27 @@ body {
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
-    color: var(--text-white);
+    color: #000000;
     margin: 0;
     line-height: 1.2;
+}
+
+/* Blanc uniquement sur index.html */
+body:has(.hero-minimal) .cmp-about-section .cmp-about-title {
+    color: var(--text-white);
 }
 
 .cmp-about-description {
     font-size: var(--font-size-lg);
     line-height: 1.7;
-    color: var(--text-white);
+    color: #000000;
     margin: 0;
     opacity: 0.9;
+}
+
+/* Blanc uniquement sur index.html */
+body:has(.hero-minimal) .cmp-about-section .cmp-about-description {
+    color: var(--text-white);
 }
 
 /* KPMG Exact Contact Section */
@@ -1869,7 +1873,7 @@ body {
 }
 
 .main-navigation__link:hover {
-    color: #2351FF;
+    color: var(--primary-blue);
 }
 
 /* Focus styles for accessibility - only for keyboard navigation */
@@ -1965,13 +1969,13 @@ body {
         border-radius: 0;
         font-size: 1.1rem;
         font-weight: 600;
-        background: var(--primary-blue-button);
+        background: var(--primary-blue);
         color: white;
         padding: var(--spacing-md) var(--spacing-lg);
     }
 
     .cmp-hero-fbv .cmp-hero-fbv__action-link:hover {
-        background: var(--primary-blue-button-hover);
+        background: var(--primary-blue);
         color: white;
     }
 
@@ -1994,7 +1998,7 @@ body {
 
 
     /* Masquer le rectangle bleu derrière l'iframe sur mobile - spécificité élevée */
-    .cmp-about-section .about-image div[style*="background: #0D3BC7"] {
+    .cmp-about-section .about-image div[style*="background: #015FB8"] {
         display: none;
     }
 
@@ -2207,7 +2211,7 @@ body {
 
 /* ===== PAGE CONTACT ===== */
 .cmp-contact-hero {
-    background: #2351FF;
+    background: var(--primary-blue);
     padding: 80px 0 var(--spacing-2xl) 0;
     text-align: center;
 }
@@ -2377,7 +2381,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg) var(--spacing-2xl);
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--wpc-white);
     border: none;
     border-radius: var(--border-radius-sm);
@@ -2392,11 +2396,11 @@ body {
 }
 
 .cmp-contact-submit:hover {
-    background: var(--primary-blue-dark);
+    background: var(--primary-blue);
 }
 
 .cmp-contact-submit:active {
-    background: var(--primary-blue-dark);
+    background: var(--primary-blue);
 }
 
 .cmp-contact-submit .material-icons {
@@ -2436,7 +2440,7 @@ body {
 
 .cmp-privacy-link:hover,
 .cmp-rights-link:hover {
-    color: var(--primary-blue-dark);
+    color: var(--primary-blue);
 }
 
 /* Responsive Contact */
@@ -2573,7 +2577,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: var(--spacing-sm) var(--spacing-lg);
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--wpc-white);
     border: none;
     border-radius: 50px;
@@ -2588,7 +2592,7 @@ body {
 }
 
 .submit-button:hover {
-    background: var(--primary-blue-dark);
+    background: var(--primary-blue);
 }
 
 .checkbox-label {
@@ -2617,7 +2621,7 @@ body {
 
 .privacy-link:hover,
 .rights-link:hover {
-    color: var(--primary-blue-dark);
+    color: var(--primary-blue);
 }
 
 .contact-info {
@@ -2695,7 +2699,7 @@ body {
 
 /* ===== PAGE NOUS REJOINDRE ===== */
 .nous-rejoindre-hero {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--wpc-white);
     padding: var(--spacing-4xl) 0;
     text-align: center;
@@ -2887,7 +2891,7 @@ select.form-input {
 
 /* ===== PAGE NOTRE FONCTIONNEMENT ===== */
 .cmp-fonctionnement-hero {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--wpc-white);
     padding: 0;
     text-align: center;
@@ -3042,7 +3046,7 @@ select.form-input {
     left: 24px;
     right: 24px;
     height: 2px;
-    background: #2351FF;
+    background: var(--primary-blue);
     z-index: 1;
 }
 
@@ -3060,7 +3064,7 @@ select.form-input {
 .cmp-timeline-step__number {
     width: 48px;
     height: 48px;
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--wpc-white);
     border-radius: 50%;
     display: flex;
@@ -3169,7 +3173,7 @@ select.form-input {
 }
 
 .main-navigation__link.active:hover {
-    color: #2351FF;
+    color: var(--primary-blue);
 }
 
 .main-navigation__link.active::after {
@@ -3229,7 +3233,7 @@ select.form-input {
 
 /* ===== PAGE ÉQUIPE ===== */
 .cmp-equipe-hero {
-    background: #2351FF;
+    background: var(--primary-blue);
     color: var(--wpc-white);
     padding: 0;
     text-align: center;
@@ -3489,6 +3493,15 @@ select.form-input {
     padding-left: 8rem;
 }
 
+/* Titres et sous-titres en noir pour les autres pages (pas index) */
+.hero-section .hero-content .hero-title {
+    color: #000000;
+}
+
+.hero-section .hero-content .hero-subtitle {
+    color: #000000;
+}
+
 /* Sections avec background gris */
 .section-gray {
     background-color: #F5F6FA;
@@ -3617,7 +3630,7 @@ select.form-input {
 }
 
 .team-link {
-    color: #0077b6;
+    color: var(--primary-blue);
     text-decoration: none;
     display: inline-block;
     width: 24px;
@@ -3627,7 +3640,7 @@ select.form-input {
 .team-link-icon {
     width: 24px;
     height: 24px;
-    fill: #0077b6;
+    fill: var(--primary-blue);
 }
 
 /* Grille équipe */
@@ -3815,7 +3828,7 @@ select.form-input {
     /* Augmenté de 1.4rem à 1.8rem */
     font-weight: 700;
     line-height: 1.4;
-    color: #FFFFFF;
+    color: #000000;
     margin: 2rem 0 0 0;
     /* Augmenté l'espacement du haut de 0 à 2rem */
     display: inline-block;
@@ -3833,6 +3846,11 @@ select.form-input {
     /* S'assurer que le sous-titre n'est pas affecté par SplitText */
     isolation: isolate;
     /* Créer un nouveau contexte d'empilement */
+}
+
+/* Blanc uniquement sur index.html (après hero-minimal) */
+body:has(.hero-minimal) .cmp-about-section .about-subtitle {
+    color: #FFFFFF;
 }
 
 /* Forcer l'alignement à gauche pour le sous-titre uniquement */
@@ -3997,7 +4015,7 @@ select.form-input {
 }
 
 .cmp-actualite-title:hover {
-    color: #2351FF;
+    color: var(--primary-blue);
     text-decoration: underline;
 }
 
@@ -4023,7 +4041,7 @@ select.form-input {
 }
 
 .actualite-link:hover {
-    color: var(--primary-blue-dark);
+    color: var(--primary-blue);
     text-decoration: underline;
 }
 
@@ -4225,7 +4243,7 @@ select.form-input {
     align-items: center;
     gap: 8px;
     padding: var(--spacing-sm) var(--spacing-xl);
-    background: #2351FF;
+    background: var(--primary-blue);
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -4237,7 +4255,7 @@ select.form-input {
 }
 
 .btn-secondary:hover {
-    background: #0D3BC7;
+    background: var(--primary-blue);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -4435,9 +4453,14 @@ select.form-input {
     body .cmp-about-section .split {
         font-size: 4rem;
         font-weight: 700;
-        color: #ffffff;
+        color: #000000;
         line-height: 1.2;
         margin: 0;
+    }
+
+    /* Blanc uniquement sur index.html */
+    body:has(.hero-minimal) .cmp-about-section .split {
+        color: #ffffff;
     }
 
     body .cmp-about-section .split .nanterre-red {
