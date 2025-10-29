@@ -574,16 +574,26 @@
 /* Sous-titre expertise */
 .cmp-expertise-subtitle {
     font-family: var(--font-family-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    line-height: 1.7;
+    font-size: clamp(2rem, 5.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.5;
     color: #FFFFFF;
     text-align: left;
     margin: var(--spacing-2xl) 0 0 0;
     margin-left: 0;
-    max-width: 800px;
-    opacity: 0.9;
+    max-width: 900px;
+    opacity: 1;
     padding-left: 0;
 }
+
+.cmp-expertise-subtitle .gradient-text {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #38BDF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
 
 /* État initial - lettres cachées en bas */
 .huge-letters__title[animation-direction="below-custom"] .is-word:nth-of-type(odd) i:nth-child(odd) {
