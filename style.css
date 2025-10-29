@@ -506,8 +506,8 @@
 
 /* WPC Expertise Section */
 .cmp-expertise-section {
-    background-color: #FFFFFF;
-    padding: var(--spacing-6xl) 0;
+    background-color: #20222A;
+    padding: var(--spacing-3xl) var(--spacing-lg);
     text-align: left;
     position: relative;
     min-height: 100vh;
@@ -516,17 +516,28 @@
     justify-content: flex-start;
 }
 
+.cmp-expertise-content {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: 0;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .huge-letters {
     position: relative;
     text-align: left;
-    padding: var(--spacing-xl) var(--spacing-lg) 0 var(--spacing-lg);
+    padding: var(--spacing-xl) 0 0 0;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .huge-letters__title {
     font-family: var(--font-family-primary);
     font-size: clamp(4rem, 12vw, 12rem);
     font-weight: 900;
-    color: #000000;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: -0.05em;
     margin: 0;
@@ -543,11 +554,35 @@
     display: inline-block;
 }
 
+.huge-letters__title .is-word:first-child {
+    margin-left: -0.05em;
+    padding-left: 0;
+}
+
 .huge-letters__title i {
     display: inline-block;
     position: relative;
     font-style: normal;
     margin-right: -0.1em;
+}
+
+.huge-letters__title .is-word:first-child i:first-child {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Sous-titre expertise */
+.cmp-expertise-subtitle {
+    font-family: var(--font-family-secondary);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.7;
+    color: #FFFFFF;
+    text-align: left;
+    margin: var(--spacing-2xl) 0 0 0;
+    margin-left: 0;
+    max-width: 800px;
+    opacity: 0.9;
+    padding-left: 0;
 }
 
 /* État initial - lettres cachées en bas */
@@ -1002,6 +1037,10 @@ body {
     .hero-title .line {
         font-size: clamp(2.4rem, 5.5vw, 4.2rem);
         line-height: clamp(2.2rem, 5vw, 4rem);
+    }
+
+    .cmp-expertise-section {
+        padding: var(--spacing-3xl) var(--spacing-2xl);
     }
 
     .hero-button-container {
@@ -4471,20 +4510,21 @@ body:has(.hero-minimal) .cmp-about-section .about-subtitle {
 
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
-        padding: var(--spacing-4xl) 0;
+        padding: var(--spacing-2xl) var(--spacing-lg);
         min-height: 60vh;
         text-align: left;
         align-items: flex-start;
         justify-content: flex-start;
     }
 
-    .huge-letters {
-        text-align: left;
-        padding: var(--spacing-md) var(--spacing-md) 0 var(--spacing-md);
+    .cmp-expertise-content {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .huge-letters__title {
         font-size: clamp(3rem, 15vw, 6rem);
+        color: #FFFFFF;
     }
 
     .huge-letters__title:first-child {
