@@ -827,8 +827,9 @@ body {
 }
 
 .hero-minimal {
+    background: #F5F6FA url('herosection.webp') center/contain no-repeat;
     width: 100%;
-    aspect-ratio: 40/17;
+    aspect-ratio: 2492/1122;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -836,16 +837,6 @@ body {
     padding-top: 10vh;
     position: relative;
     overflow: hidden;
-}
-
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
 }
 
 .hero-container {
@@ -972,7 +963,9 @@ body {
 /* Mobile - Taille du titre hero */
 @media (max-width: 768px) {
     .hero-minimal {
-        aspect-ratio: 1/1;
+        background: #F5F6FA url('herosection_mobile.webp') center/contain no-repeat;
+        width: 100%;
+        aspect-ratio: 1100/1100;
     }
 
     .hero-title .line {
@@ -994,7 +987,7 @@ body {
 /* Desktop overrides */
 @media (min-width: 769px) {
     .hero-minimal {
-        aspect-ratio: 40/17;
+        aspect-ratio: 2492/1122;
         padding: var(--spacing-2xl);
     }
 
