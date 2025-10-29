@@ -629,9 +629,37 @@ function initScrollAnimation() {
     console.log('Scroll animation initialisée');
 }
 
+// Effet de baisse d'exposition sur l'image hero au scroll
+function initHeroExposureEffect() {
+    const heroSection = document.querySelector('.hero-minimal');
+    if (!heroSection) return;
+
+    function updateExposure() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const heroHeight = heroSection.offsetHeight;
+
+        // Calculer la progression du scroll dans la section hero (0 à 1)
+        // L'effet commence dès le début du scroll
+        const scrollProgress = Math.min(scrollTop / heroHeight, 1);
+
+        // Ajuster l'opacité de l'overlay (0 = pas d'overlay, 1 = complètement sombre)
+        // Augmenter progressivement jusqu'à 0.8 (80% de darkening maximum)
+        const opacity = scrollProgress * 0.8;
+
+        heroSection.style.setProperty('--hero-overlay-opacity', opacity);
+    }
+
+    // Mettre à jour au scroll
+    window.addEventListener('scroll', updateExposure, { passive: true });
+
+    // Mettre à jour au chargement
+    updateExposure();
+}
+
 // Initialiser les animations au chargement de la page
 document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimation();
+    initHeroExposureEffect();
 });
 
 
