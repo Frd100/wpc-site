@@ -175,37 +175,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        console.log('Animation SplitText nouvelle hero initialisée');
+        // Utiliser le même effet que la section expertise: apparition par mots (y + opacity)
+        const dataText = document.querySelectorAll('.hero-title .line .text');
+        if (dataText.length === 0) return;
 
-        // Animation des mots avec SplitText
-        const dataText = document.querySelectorAll(".hero-title .line .text");
-        if (dataText.length === 0) {
-            console.error('Aucun élément .text trouvé');
-            return;
-        }
+        const split = new SplitText(dataText, { type: 'words' });
 
-        let linesDataText = new SplitText(dataText, { type: "words" });
-
-        // Ne pas appliquer de styles inline pour respecter le CSS
-        linesDataText.words.forEach(word => {
-            // Supprimer tous les styles inline que SplitText pourrait avoir ajoutés
-            word.style.removeProperty('font-size');
-            word.style.removeProperty('line-height');
-            word.style.removeProperty('font-weight');
-            word.style.removeProperty('text-transform');
-            word.style.removeProperty('letter-spacing');
+        gsap.from(split.words, {
+            duration: 0.6,
+            opacity: 0,
+            y: 40,
+            ease: 'power3.out',
+            stagger: 0.03
         });
-
-        // Animation des mots qui tombent
-        gsap.from(linesDataText.words, {
-            duration: 1.5,
-            yPercent: 105,
-            ease: "power4",
-            stagger: 0.04,
-            delay: 0.3
-        });
-
-        console.log('Animation SplitText nouvelle hero lancée avec', linesDataText.words.length, 'mots');
     }
 
     // Initialiser l'animation de la nouvelle hero section
