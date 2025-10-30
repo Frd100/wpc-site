@@ -506,7 +506,7 @@
 
 /* WPC Expertise Section */
 .cmp-expertise-section {
-    background-color: #000000;
+    background-color: #FFFFFF;
     padding: var(--spacing-3xl) var(--spacing-lg);
     text-align: left;
     position: relative;
@@ -577,7 +577,7 @@
     font-size: clamp(2rem, 5.5vw, 3.5rem);
     font-weight: 700;
     line-height: 1.5;
-    color: #FFFFFF;
+    color: var(--text-primary);
     text-align: left;
     margin: var(--spacing-2xl) 0 0 0;
     margin-left: 0;
