@@ -277,30 +277,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Split en caractères pour une animation granulaire
-        const split = new SplitText(subtitle, { type: 'chars', charsClass: 'char' });
+        // Animation simple par mots pour éviter toute coupure anormale
+        const split = new SplitText(subtitle, { type: 'words' });
 
-        // Préserver le dégradé: si un char est dans un .gradient-text, on lui applique aussi la classe
-        split.chars.forEach(function (char) {
-            if (char.closest('.gradient-text')) {
-                char.classList.add('gradient-text');
-            }
-        });
-
-        gsap.from(split.chars, {
-            duration: 0.5,
-            opacity: 0,
-            scale: 0,
-            y: 80,
-            rotationX: 150,
-            transformOrigin: '0% 50% -50',
-            ease: 'back',
-            stagger: 0.01,
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: subtitle,
                 start: 'top 80%',
                 toggleActions: 'play none none none'
             }
+        });
+
+        tl.from(split.words, {
+            duration: 0.5,
+            opacity: 0,
+            y: 40,
+            ease: 'power3.out',
+            stagger: 0.03
         });
     }
 
@@ -706,7 +699,7 @@ function initHeroExposureEffect() {
 // Initialiser les animations au chargement de la page
 document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimation();
-    initHeroExposureEffect();
+    // Effet exposure désactivé
 });
 
 

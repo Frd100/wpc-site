@@ -136,8 +136,9 @@
     --bg-dark: #212529;
 
     /* WPC Fonts */
-    --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-family-condensed: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-primary: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-condensed: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-secondary: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-family-icons: 'Material Icons', sans-serif;
 
     /* WPC Font Weights */
@@ -249,15 +250,15 @@
     top: auto;
     left: auto;
     right: auto;
-    background: #FFFFFF;
-    /* Blanc */
+    background: #202229;
+    /* Couleur section about */
     padding: var(--spacing-sm) 0 0 0;
     /* Padding top léger */
     margin: 0;
     line-height: 1;
     z-index: auto;
     transition: transform 0.3s ease;
-    border-bottom: 1px solid #F5F6FA;
+    border-bottom: 1px solid transparent;
 }
 
 /* Réserver l'espace pour éviter les sauts de layout - Desktop et Mobile */
@@ -280,8 +281,8 @@
 /* Navigation blanche sur mobile */
 @media (max-width: 768px) {
     .main-navigation {
-        background: #FFFFFF;
-        border-bottom: 1px solid #F5F6FA;
+        background: #202229;
+        border-bottom: 1px solid transparent;
     }
 }
 
@@ -338,7 +339,7 @@
     font-family: var(--font-family-primary);
     font-size: 0.9rem;
     font-weight: 700;
-    color: #000000;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.1;
@@ -398,7 +399,7 @@
 
 
 .main-navigation__link {
-    color: #424651;
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -587,7 +588,7 @@
 }
 
 .cmp-expertise-subtitle .gradient-text {
-    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #38BDF8 100%);
+    background: linear-gradient(90deg, #1E3A8A 0%, #2563EB 50%, #38BDF8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -867,7 +868,7 @@ body {
 
 .hero-minimal {
     --hero-overlay-opacity: 0;
-    background: #F5F6FA url('herosection.webp') center/contain no-repeat;
+    background: #F5F6FA;
     width: 100%;
     aspect-ratio: 2492/1122;
     display: flex;
@@ -879,17 +880,20 @@ body {
     overflow: hidden;
 }
 
-.hero-minimal::before {
-    content: '';
+/* Video background for hero */
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, var(--hero-overlay-opacity));
+    object-fit: cover;
     z-index: 0;
-    transition: background 0.1s ease-out;
-    pointer-events: none;
+    opacity: 1;
+}
+
+.hero-minimal::before {
+    content: none;
 }
 
 .hero-container {
@@ -903,7 +907,7 @@ body {
 }
 
 .hero-title {
-    color: #FFFFFF;
+    color: #000000;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -912,7 +916,7 @@ body {
 }
 
 .hero-title .line {
-    color: #FFFFFF;
+    color: #000000;
     font-size: clamp(1.5rem, 6.5vw, 3.2rem);
     line-height: clamp(1.6rem, 6vw, 3rem);
     position: relative;
@@ -933,7 +937,7 @@ body {
     font-family: var(--font-family-secondary);
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
-    color: #FFFFFF;
+    color: #000000;
     text-align: left;
     margin: var(--spacing-xl) 0 0 0;
     max-width: 600px;
@@ -1016,7 +1020,7 @@ body {
 /* Mobile - Taille du titre hero */
 @media (max-width: 768px) {
     .hero-minimal {
-        background: #F5F6FA url('herosection_mobile.webp') center/contain no-repeat;
+        background: #F5F6FA;
         width: 100%;
         aspect-ratio: 1100/1100;
     }
@@ -1854,7 +1858,7 @@ body {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #20222A;
+    background-color: #FFFFFF;
     border-radius: 2px;
     transition: all 0.15s ease;
     transform-origin: center;
@@ -2106,18 +2110,20 @@ body {
 
     .main-navigation__content {
         justify-content: flex-start;
-        gap: var(--spacing-2xl);
-        padding: var(--spacing-md) 0 var(--spacing-md) 0;
-        padding-left: var(--spacing-xl);
+        gap: var(--spacing-lg);
+        padding: var(--spacing-sm) 0 var(--spacing-sm) 0;
+        padding-left: var(--spacing-lg);
     }
 
     .main-navigation__links {
-        position: static;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: row;
         background: transparent;
         box-shadow: none;
-        transform: none;
         opacity: 1;
         visibility: visible;
         padding: 0;
@@ -2125,14 +2131,14 @@ body {
     }
 
     .main-navigation__link {
-        padding: var(--spacing-sm) var(--spacing-md);
+        padding: var(--spacing-xs) var(--spacing-sm);
         text-align: left;
         border-bottom: none;
         width: auto;
         position: relative;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 600;
-        color: var(--text-primary);
+        color: #FFFFFF;
     }
 
     .main-navigation__link::after {
@@ -3217,7 +3223,7 @@ select.form-input {
 
 /* Navigation active */
 .main-navigation__link.active {
-    color: var(--text-primary);
+    color: #FFFFFF;
     font-weight: 600;
 }
 
@@ -3924,6 +3930,28 @@ body:has(.hero-minimal) .cmp-about-section .about-subtitle {
 }
 
 .hidden {
+    display: none;
+}
+
+/* Empêcher la coupure des très petits mots (ex: "de") */
+.nowrap {
+    white-space: nowrap;
+}
+
+/* Index only: navigation transparente sur la vidéo de la hero */
+body#page-wpc-main .main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: transparent;
+    border-bottom-color: transparent;
+}
+
+body#page-wpc-main #nav-placeholder {
+    background: transparent;
+    min-height: 0;
     display: none;
 }
 
