@@ -260,6 +260,53 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser l'effet de révélation de couleur
     initWpcTitleColorReveal();
 
+    /**
+     * ANIMATION DU SOUS-TITRE DE LA SECTION EXPERTISE
+     * Effet d'apparition au scroll inspiré de l'exemple (sans bouton ni changement de texte)
+     */
+    function initExpertiseSubtitleAnimation() {
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.error('GSAP ou plugins non chargés (expertise subtitle)');
+            return;
+        }
+
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        const subtitle = document.querySelector('.cmp-expertise-subtitle');
+        if (!subtitle) {
+            return;
+        }
+
+        // Split en caractères pour une animation granulaire
+        const split = new SplitText(subtitle, { type: 'chars', charsClass: 'char' });
+
+        // Préserver le dégradé: si un char est dans un .gradient-text, on lui applique aussi la classe
+        split.chars.forEach(function (char) {
+            if (char.closest('.gradient-text')) {
+                char.classList.add('gradient-text');
+            }
+        });
+
+        gsap.from(split.chars, {
+            duration: 0.5,
+            opacity: 0,
+            scale: 0,
+            y: 80,
+            rotationX: 150,
+            transformOrigin: '0% 50% -50',
+            ease: 'back',
+            stagger: 0.01,
+            scrollTrigger: {
+                trigger: subtitle,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+    }
+
+    // Initialiser l'animation du sous-titre expertise
+    initExpertiseSubtitleAnimation();
+
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE
@@ -643,8 +690,8 @@ function initHeroExposureEffect() {
         const scrollProgress = Math.min(scrollTop / heroHeight, 1);
 
         // Ajuster l'opacité de l'overlay (0 = pas d'overlay, 1 = complètement sombre)
-        // Augmenter progressivement jusqu'à 0.8 (80% de darkening maximum)
-        const opacity = scrollProgress * 0.8;
+        // Augmenter progressivement jusqu'à 1.0 (100% de darkening maximum)
+        const opacity = scrollProgress * 1.0;
 
         heroSection.style.setProperty('--hero-overlay-opacity', opacity);
     }
