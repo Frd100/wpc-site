@@ -31,8 +31,11 @@
     <meta name="description"
         content="Rejoignez West Paris Consulting ! Découvrez nos opportunités d'engagement et postulez pour faire partie de notre équipe étudiante de conseil.">
 
-    <!-- WPC Fonts: Satoshi via Fontshare -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- WPC Fonts: Inter via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- WPC Favicon -->
@@ -75,7 +78,6 @@
                         <a href="index.html" class="main-navigation__link"><span>Accueil</span></a>
                         <a href="domaines.html" class="main-navigation__link"><span>Nos Domaines</span></a>
                         <a href="equipe.html" class="main-navigation__link"><span>Notre Équipe</span></a>
-                        <a href="actualites.html" class="main-navigation__link"><span>Actualités</span></a>
                         <a href="contact.html" class="main-navigation__link"><span>Contact</span></a>
                         <a href="nous-rejoindre.html" class="main-navigation__link"><span>Nous rejoindre</span></a>
                     </div>
@@ -86,8 +88,7 @@
         <!-- Hero Section Nous Rejoindre -->
         <div class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">Nous rejoindre</h1>
-                <p class="hero-subtitle">Rejoignez notre association et développez vos compétences.</p>
+                <h1 class="hero-title">Rejoindre WPC</h1>
             </div>
         </div>
 
@@ -96,31 +97,27 @@
             <div id="main-wpc-content" class="cmp-container">
                 <div class="section container responsivegrid">
 
-                    <!-- Section Candidature -->
+                    <!-- Section Texte Intro -->
+                    <div class="nous-rejoindre-text-section">
+                        <div class="nous-rejoindre-text-container">
+                            <p class="nous-rejoindre-intro-text">Rejoindre West Paris Consulting, c'est s'engager
+                                dans une aventure professionnelle enrichissante. Vous développerez des
+                                compétences concrètes en gestion de projet.</p>
+                            <p class="nous-rejoindre-intro-text">Cette expérience vous permettra de mettre en
+                                pratique vos connaissances académiques dans un cadre professionnel et de construire
+                                un réseau solide. Vous contribuerez à des projets de transformation significatifs
+                                tout en enrichissant votre parcours étudiant. Rejoignez-nous et faites partie d'une
+                                communauté d'étudiants motivés et créatifs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Section Formulaire -->
                     <div class="contact-form-section">
                         <div class="contact-form-container">
                             <!-- Iframe Tally -->
                             <iframe src="https://tally.so/r/nPagAb" width="100%" height="900" frameborder="0"
                                 title="Formulaire de candidature" style="border: none;">
                             </iframe>
-
-                            <div class="contact-info">
-                                <div class="contact-info-item">
-                                    <span class="material-icons">email</span>
-                                    <div>
-                                        <strong>Email</strong>
-                                        <p>En attente</p>
-                                    </div>
-                                </div>
-                                <div class="contact-info-item">
-                                    <span class="material-icons">location_on</span>
-                                    <div>
-                                        <strong>Adresse</strong>
-                                        <p>Université Paris Nanterre<br>200 Avenue de la République<br>92000 Nanterre
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -149,7 +146,6 @@
                                 <a href="index.html">Accueil</a>
                                 <a href="domaines.html">Nos Domaines</a>
                                 <a href="equipe.html">Notre Équipe</a>
-                                <a href="actualites.html">Actualités</a>
                                 <a href="contact.html">Contact</a>
                             </div>
                         </div>
@@ -175,6 +171,11 @@
     </div>
     </div>
 
+    <!-- GSAP 3.13.0 + Plugins Premium -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <!-- WPC Scripts -->
     <script src="main.js"></script>
 </body>

@@ -254,28 +254,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
         gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        const subtitle = document.querySelector('.cmp-expertise-subtitle');
-        if (!subtitle) {
+        const subtitles = document.querySelectorAll('.cmp-expertise-subtitle');
+        if (subtitles.length === 0) {
             return;
         }
 
-        // Animation simple par mots pour éviter toute coupure anormale
-        const split = new SplitText(subtitle, { type: 'words' });
+        subtitles.forEach(subtitle => {
+            // Animation simple par mots pour éviter toute coupure anormale
+            const split = new SplitText(subtitle, { type: 'words' });
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: subtitle,
-                start: 'top 80%',
-                toggleActions: 'play none none none'
-            }
-        });
+            // Pour le sous-titre de la section cartes, déclencher plus tard
+            const isCardsSubtitle = subtitle.classList.contains('wpc-domaines-cards-subtitle');
+            const startValue = isCardsSubtitle ? 'top 90%' : 'top 80%';
 
-        tl.from(split.words, {
-            duration: 0.5,
-            opacity: 0,
-            y: 40,
-            ease: 'power3.out',
-            stagger: 0.03
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: subtitle,
+                    start: startValue,
+                    toggleActions: 'play none none none'
+                }
+            });
+
+            tl.from(split.words, {
+                duration: 0.5,
+                opacity: 0,
+                y: 40,
+                ease: 'power3.out',
+                stagger: 0.03
+            });
         });
     }
 
@@ -682,10 +688,338 @@ function initHeroExposureEffect() {
 document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimation();
     // Effet exposure désactivé
+    initStrokeButtons();
 });
 
 
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { WPCUtils, WPCClasses };
+}
+
+// Stroke Button Flair animation (hover ripple)
+function initStrokeButtons() {
+    if (typeof gsap === 'undefined') return;
+
+    class Button {
+        constructor(buttonElement) {
+            this.block = buttonElement;
+            this.init();
+            this.initEvents();
+        }
+
+        init() {
+            const el = gsap.utils.selector(this.block);
+            this.DOM = {
+                button: this.block,
+                flair: el('.button__flair')
+            };
+            this.xSet = gsap.quickSetter(this.DOM.flair, 'xPercent');
+            this.ySet = gsap.quickSetter(this.DOM.flair, 'yPercent');
+        }
+
+        getXY(e) {
+            const { left, top, width, height } = this.DOM.button.getBoundingClientRect();
+            const xTransformer = gsap.utils.pipe(
+                gsap.utils.mapRange(0, width, 0, 100),
+                gsap.utils.clamp(0, 100)
+            );
+            const yTransformer = gsap.utils.pipe(
+                gsap.utils.mapRange(0, height, 0, 100),
+                gsap.utils.clamp(0, 100)
+            );
+            return { x: xTransformer(e.clientX - left), y: yTransformer(e.clientY - top) };
+        }
+
+        initEvents() {
+            this.DOM.button.addEventListener('mouseenter', (e) => {
+                const { x, y } = this.getXY(e);
+                this.xSet(x);
+                this.ySet(y);
+                gsap.to(this.DOM.flair, { scale: 1, duration: 0.4, ease: 'power2.out' });
+            });
+
+            this.DOM.button.addEventListener('mouseleave', (e) => {
+                const { x, y } = this.getXY(e);
+                gsap.killTweensOf(this.DOM.flair);
+                gsap.to(this.DOM.flair, {
+                    xPercent: x > 90 ? x + 20 : x < 10 ? x - 20 : x,
+                    yPercent: y > 90 ? y + 20 : y < 10 ? y - 20 : y,
+                    scale: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            this.DOM.button.addEventListener('mousemove', (e) => {
+                const { x, y } = this.getXY(e);
+                gsap.to(this.DOM.flair, { xPercent: x, yPercent: y, duration: 0.4, ease: 'power2' });
+            });
+        }
+    }
+
+    document.querySelectorAll('[data-block="button"]').forEach((el) => new Button(el));
+
+    /**
+     * EFFET TYPEWRITER POUR LES TITRES HERO (pages non-index)
+     * Animation "machine à écrire" inspirée de Bequant
+     */
+    function initTypewriterHeroTitles() {
+        // Ne rien faire sur la page index
+        if (document.body.id === 'page-wpc-main') {
+            return;
+        }
+
+        // Vérifier que GSAP et SplitText sont chargés
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
+            console.warn('GSAP ou SplitText non chargés - effet typewriter ignoré');
+            return;
+        }
+
+        gsap.registerPlugin(SplitText);
+
+        // Sélectionner tous les titres hero des pages non-index
+        const heroTitles = document.querySelectorAll('.hero-section .hero-title');
+
+        if (heroTitles.length === 0) {
+            return;
+        }
+
+        heroTitles.forEach((titleElement) => {
+            // Découper le texte en caractères avec SplitText
+            const split = new SplitText(titleElement, {
+                type: 'chars,words,lines',
+                charsClass: 'split-chars',
+                wordsClass: 'split-words',
+                linesClass: 'split-lines'
+            });
+
+            // Créer la timeline d'animation
+            const tl = gsap.timeline({
+                delay: 0.3 // Petit délai avant le début de l'animation
+            });
+
+            // Animer chaque caractère avec un effet stagger (un après l'autre)
+            tl.from(split.chars, {
+                duration: 0.002,
+                opacity: 0,
+                ease: 'power1.none',
+                stagger: {
+                    amount: 0.7, // Durée totale de l'animation (0.7s pour tous les caractères)
+                    from: 'start'
+                }
+            });
+        });
+    }
+
+    // Initialiser l'effet typewriter pour les titres hero - DÉSACTIVÉ
+    // initTypewriterHeroTitles();
+
+    /**
+     * ANIMATION D'APPARITION PAR MOTS POUR LES TITRES HERO (pages non-index)
+     * Même effet que pour les sous-titres expertise : apparition par mots avec scroll
+     */
+    function initHeroTitleWordAnimation() {
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou plugins non chargés - animation titre hero ignorée');
+            return;
+        }
+
+        // Ne rien faire sur la page index
+        if (document.body.id === 'page-wpc-main') {
+            return;
+        }
+
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        const heroTitles = document.querySelectorAll('.hero-section .hero-title');
+        if (heroTitles.length === 0) {
+            return;
+        }
+
+        heroTitles.forEach(titleElement => {
+            // Vérifier s'il y a des spans avec style (comme le gradient)
+            const styledSpans = titleElement.querySelectorAll('span[style]');
+            
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: titleElement,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+
+            if (styledSpans.length > 0) {
+                // Pour les titres avec spans stylés, utiliser SplitText pour animer mot par mot
+                styledSpans.forEach((span, index) => {
+                    // Récupérer le style du gradient du span original
+                    const gradientStyle = span.getAttribute('style');
+                    
+                    // Utiliser SplitText sur le span pour animer mot par mot
+                    const split = new SplitText(span, { type: 'words' });
+                    if (split.words && split.words.length > 0) {
+                        // Appliquer le gradient à chaque mot après le split
+                        split.words.forEach(word => {
+                            word.setAttribute('style', gradientStyle);
+                        });
+                        
+                        tl.from(split.words, {
+                            duration: 0.5,
+                            opacity: 0,
+                            y: 40,
+                            ease: 'power3.out',
+                            stagger: 0.03
+                        }, index * 0.03);
+                    } else {
+                        // Si SplitText ne fonctionne pas, animer le span directement
+                        gsap.set(span, { opacity: 0, y: 40 });
+                        tl.to(span, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            ease: 'power3.out'
+                        }, index * 0.03);
+                    }
+                });
+
+                // Pour le reste du texte, wrapper les text nodes et utiliser SplitText
+                Array.from(titleElement.childNodes).forEach(node => {
+                    if (node.nodeType === 3 && node.textContent.trim()) { // Text node
+                        // Wrapper le texte dans un span temporaire pour SplitText
+                        const wrapper = document.createElement('span');
+                        wrapper.textContent = node.textContent;
+                        node.parentNode.replaceChild(wrapper, node);
+                        
+                        // Utiliser SplitText sur le wrapper
+                        const split = new SplitText(wrapper, { type: 'words' });
+                        if (split.words && split.words.length > 0) {
+                            tl.from(split.words, {
+                                duration: 0.5,
+                                opacity: 0,
+                                y: 40,
+                                ease: 'power3.out',
+                                stagger: 0.03
+                            }, '>'); // Débuter après l'animation du span
+                        }
+                    }
+                });
+            } else {
+                // Animation normale si pas de spans stylés
+                const split = new SplitText(titleElement, { type: 'words' });
+
+                tl.from(split.words, {
+                    duration: 0.5,
+                    opacity: 0,
+                    y: 40,
+                    ease: 'power3.out',
+                    stagger: 0.03
+                });
+            }
+        });
+    }
+
+    // Initialiser l'animation des titres hero par mots
+    initHeroTitleWordAnimation();
+
+    /**
+     * EFFET TYPEWRITER POUR LES TITRES AVEC CLASSE .write-02
+     * Animation "machine à écrire" inspirée de Bequant avec ScrollTrigger
+     */
+    function initWrite02Animation() {
+        // Vérifier que GSAP et SplitText sont chargés
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou plugins non chargés - effet .write-02 ignoré');
+            return;
+        }
+
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        // Sélectionner tous les éléments avec la classe .write-02
+        const writeElements = document.querySelectorAll('.write-02');
+
+        if (writeElements.length === 0) {
+            return;
+        }
+
+        writeElements.forEach((element) => {
+            // Découper le texte en caractères avec SplitText
+            const split = new SplitText(element, {
+                type: 'chars,words,lines',
+                charsClass: 'split-chars',
+                wordsClass: 'split-words',
+                linesClass: 'split-lines'
+            });
+
+            // État initial : opacité réduite pour les caractères
+            gsap.set(split.chars, {
+                opacity: 0
+            });
+
+            // Créer la timeline d'animation avec ScrollTrigger
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                }
+            });
+
+            // Animer chaque caractère avec un effet stagger (un après l'autre)
+            tl.from(split.chars, {
+                duration: 0.002,
+                opacity: 0,
+                ease: 'power1.none',
+                delay: 0.2,
+                stagger: {
+                    amount: 0.2, // Durée totale de l'animation (0.2s pour tous les caractères)
+                    from: 'start'
+                }
+            });
+        });
+    }
+
+    // Initialiser l'effet typewriter pour les titres .write-02
+    initWrite02Animation();
+
+    /**
+     * ANIMATION FADE-IN POUR LES CARTES DOMAINES
+     * Les 3 cartes apparaissent en même temps avec un effet fade
+     */
+    function initDomainesCardsAnimation() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou ScrollTrigger non chargés - animation cartes domaines ignorée');
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const cards = document.querySelectorAll('.wpc-domaine-card');
+
+        if (cards.length === 0) {
+            return;
+        }
+
+        // État initial : cartes invisibles
+        gsap.set(cards, {
+            opacity: 0,
+            y: 40
+        });
+
+        // Animation : toutes les cartes apparaissent en même temps
+        gsap.to(cards, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            stagger: 0,
+            scrollTrigger: {
+                trigger: '.wpc-domaines-cards-container',
+                start: 'top 50%',
+                toggleActions: 'play none none none'
+            }
+        });
+    }
+
+    // Initialiser l'animation fade-in des cartes domaines
+    initDomainesCardsAnimation();
 }

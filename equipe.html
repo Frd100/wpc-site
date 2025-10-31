@@ -31,8 +31,11 @@
     <meta name="description"
         content="Découvrez l'équipe dirigeante de West Paris Consulting : des étudiants motivés et compétents au service de l'innovation locale.">
 
-    <!-- WPC Fonts: Satoshi via Fontshare -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- WPC Fonts: Inter via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- WPC Favicon -->
@@ -75,7 +78,6 @@
                         <a href="index.html" class="main-navigation__link"><span>Accueil</span></a>
                         <a href="domaines.html" class="main-navigation__link"><span>Nos Domaines</span></a>
                         <a href="equipe.html" class="main-navigation__link"><span>Notre Équipe</span></a>
-                        <a href="actualites.html" class="main-navigation__link"><span>Actualités</span></a>
                         <a href="contact.html" class="main-navigation__link"><span>Contact</span></a>
                         <a href="nous-rejoindre.html" class="main-navigation__link"><span>Nous rejoindre</span></a>
                     </div>
@@ -97,50 +99,74 @@
                 <div class="section container responsivegrid">
 
                     <!-- Section Équipe -->
-                    <div id="section-wpc-equipe" class="cmp-container section-gray">
+                    <div id="section-wpc-equipe" class="cmp-container">
                         <div class="cmp-equipe-section">
-                            <div class="cmp-equipe-content team-grid">
+                            <div class="cmp-equipe-content team-list">
 
                                 <!-- Président -->
-                                <div class="cmp-membre-card team-card">
-                                    <div class="team-avatar">
+                                <div class="cmp-membre-item team-item">
+                                    <div class="team-item-icon-wrapper">
+                                        <svg class="team-item-icon" width="16" height="16" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 5L13 10L7 15V5Z" fill="white" />
+                                        </svg>
                                     </div>
-                                    <div class="cmp-membre-info team-info">
-                                        <h3 class="cmp-membre-name team-name">Farid Seridj</h3>
-                                        <p class="cmp-membre-role team-role">Président</p>
-                                        <a href="#" class="team-link" rel="noopener noreferrer">
-                                            <img src="linkedin.svg" alt="LinkedIn" class="team-link-icon">
-                                        </a>
-                                    </div>
+                                    <h3 class="cmp-membre-name team-name">Farid Seridj</h3>
+                                    <div class="team-item-separator"></div>
+                                    <p class="cmp-membre-role team-role">Président</p>
                                 </div>
 
                                 <!-- Trésorier -->
-                                <div class="cmp-membre-card team-card">
-                                    <div class="team-avatar">
+                                <div class="cmp-membre-item team-item">
+                                    <div class="team-item-icon-wrapper">
+                                        <svg class="team-item-icon" width="16" height="16" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 5L13 10L7 15V5Z" fill="white" />
+                                        </svg>
                                     </div>
-                                    <div class="cmp-membre-info team-info">
-                                        <h3 class="cmp-membre-name team-name">Wahil Derdega</h3>
-                                        <p class="cmp-membre-role team-role">Trésorier</p>
-                                        <a href="#" class="team-link" rel="noopener noreferrer">
-                                            <img src="linkedin.svg" alt="LinkedIn" class="team-link-icon">
-                                        </a>
-                                    </div>
+                                    <h3 class="cmp-membre-name team-name">Wahil Derdega</h3>
+                                    <div class="team-item-separator"></div>
+                                    <p class="cmp-membre-role team-role">Trésorier</p>
                                 </div>
 
                                 <!-- Secrétaire Général -->
-                                <div class="cmp-membre-card team-card">
-                                    <div class="team-avatar">
+                                <div class="cmp-membre-item team-item">
+                                    <div class="team-item-icon-wrapper">
+                                        <svg class="team-item-icon" width="16" height="16" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 5L13 10L7 15V5Z" fill="white" />
+                                        </svg>
                                     </div>
-                                    <div class="cmp-membre-info team-info">
-                                        <h3 class="cmp-membre-name team-name">Amine Rherbaoui</h3>
-                                        <p class="cmp-membre-role team-role">Secrétaire Général</p>
-                                        <a href="#" class="team-link" rel="noopener noreferrer">
-                                            <img src="linkedin.svg" alt="LinkedIn" class="team-link-icon">
-                                        </a>
-                                    </div>
+                                    <h3 class="cmp-membre-name team-name">Amine Rherbaoui</h3>
+                                    <div class="team-item-separator"></div>
+                                    <p class="cmp-membre-role team-role">Secrétaire Général</p>
                                 </div>
 
+                                <!-- Chef de Projet Junior -->
+                                <div class="cmp-membre-item team-item">
+                                    <div class="team-item-icon-wrapper">
+                                        <svg class="team-item-icon" width="16" height="16" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 5L13 10L7 15V5Z" fill="white" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="cmp-membre-name team-name">Yazid Badache</h3>
+                                    <div class="team-item-separator"></div>
+                                    <p class="cmp-membre-role team-role">Chef de Projet Junior</p>
+                                </div>
 
+                                <!-- Chef de Projet Junior -->
+                                <div class="cmp-membre-item team-item">
+                                    <div class="team-item-icon-wrapper">
+                                        <svg class="team-item-icon" width="16" height="16" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 5L13 10L7 15V5Z" fill="white" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="cmp-membre-name team-name">Alexis Fotsa Meli</h3>
+                                    <div class="team-item-separator"></div>
+                                    <p class="cmp-membre-role team-role">Chef de Projet Junior</p>
+                                </div>
 
                             </div>
                         </div>
@@ -171,7 +197,6 @@
                                 <a href="index.html">Accueil</a>
                                 <a href="domaines.html">Nos Domaines</a>
                                 <a href="equipe.html">Notre Équipe</a>
-                                <a href="actualites.html">Actualités</a>
                                 <a href="contact.html">Contact</a>
                             </div>
                         </div>
@@ -195,6 +220,11 @@
         </footer>
     </div>
 
+    <!-- GSAP 3.13.0 + Plugins Premium -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
 </body>
 

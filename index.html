@@ -31,8 +31,10 @@
     <meta name="description"
         content="West Paris Consulting (WPC) est une association étudiante de l'Université Paris Nanterre qui accompagne entreprises et organisations dans leurs projets de transformation.">
 
-    <!-- WPC Fonts: Satoshi via Fontshare -->
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <!-- WPC Fonts: Inter via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- WPC Favicon -->
@@ -104,7 +106,6 @@
                         <a href="index.html" class="main-navigation__link"><span>Accueil</span></a>
                         <a href="domaines.html" class="main-navigation__link"><span>Nos Domaines</span></a>
                         <a href="equipe.html" class="main-navigation__link"><span>Notre Équipe</span></a>
-                        <a href="actualites.html" class="main-navigation__link"><span>Actualités</span></a>
                         <a href="contact.html" class="main-navigation__link"><span>Contact</span></a>
                         <a href="nous-rejoindre.html" class="main-navigation__link"><span>Nous rejoindre</span></a>
                     </div>
@@ -129,8 +130,10 @@
                 <p class="hero-subtitle">Une équipe étudiante engagée au service<br>
                     de projets concrets.</p>
                 <div class="hero-button-container">
-                    <a href="#contact" class="hero-button">
-                        <span class="button-text">Consulter notre plaquette</span>
+                    <a href="#contact" class="hero-button button button--stroke" data-block="button">
+                        <span class="button__flair"></span>
+                        <span class="button__label" data-label="Consulter notre plaquette">Consulter notre
+                            plaquette</span>
                     </a>
                 </div>
             </div>
@@ -145,40 +148,110 @@
             </div>
         </div>
 
-        <!-- Nouvelle section vide -->
-        <div class="new-empty-section">
-            <div class="cmp-expertise-content">
-                <div class="huge-letters">
-                    <span animation-direction="below-custom" class="huge-letters__title scroll-animation">
-                        <span class="is-word" aria-hidden="true">
-                            <i aria-hidden="true">N</i>
-                            <i aria-hidden="true">O</i>
-                            <i aria-hidden="true">T</i>
-                            <i aria-hidden="true">R</i>
-                            <i aria-hidden="true">E</i>
-                        </span>
-                    </span>
-                    <br>
-                    <span animation-direction="below-custom" class="huge-letters__title scroll-animation">
-                        <span class="is-word" aria-hidden="true">
-                            <i aria-hidden="true">E</i>
-                            <i aria-hidden="true">X</i>
-                            <i aria-hidden="true">P</i>
-                            <i aria-hidden="true">E</i>
-                            <i aria-hidden="true">R</i>
-                            <i aria-hidden="true">T</i>
-                            <i aria-hidden="true">I</i>
-                            <i aria-hidden="true">S</i>
-                            <i aria-hidden="true">E</i>
-                        </span>
-                    </span>
+        <!-- WPC Domaines Section -->
+        <div class="wpc-domaines-cards-section">
+            <div class="wpc-domaines-cards-title-wrapper">
+                <p class="wpc-domaines-cards-subtitle cmp-expertise-subtitle">Trois domaines d'intervention<br>
+                    pour accompagner votre croissance.</p>
+            </div>
+            <div class="wpc-domaines-cards-container">
+                <div class="wpc-domaine-card">
+                    <div class="wpc-domaine-card-content">
+                        <div class="wpc-domaine-card-title-section">
+                            <div class="wpc-domaine-card-header">
+                                <span class="wpc-domaine-card-header-text">Stratégie & Marketing</span>
+                            </div>
+                            <h2 class="wpc-domaine-card-main-title">Notre expertise en stratégie et communication</h2>
+                        </div>
+                        <div class="wpc-domaine-card-description">
+                            <p>Études de marché, création de portefeuilles clients, élaboration de plans de communication.</p>
+                        </div>
+                        <div class="wpc-domaine-card-button-wrapper">
+                            <a href="domaines.html" class="wpc-domaine-card-cta-button button button--stroke" data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label" data-label="En savoir plus">En savoir plus</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wpc-domaine-card">
+                    <div class="wpc-domaine-card-content">
+                        <div class="wpc-domaine-card-title-section">
+                            <div class="wpc-domaine-card-header">
+                                <span class="wpc-domaine-card-header-text">Juridique</span>
+                            </div>
+                            <h2 class="wpc-domaine-card-main-title">Conseil juridique et veille réglementaire</h2>
+                        </div>
+                        <div class="wpc-domaine-card-description">
+                            <p>Rédaction de documents de référence, appui aux démarches administratives, veille juridique et réglementaire.</p>
+                        </div>
+                        <div class="wpc-domaine-card-button-wrapper">
+                            <a href="domaines.html" class="wpc-domaine-card-cta-button button button--stroke" data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label" data-label="En savoir plus">En savoir plus</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wpc-domaine-card">
+                    <div class="wpc-domaine-card-content">
+                        <div class="wpc-domaine-card-title-section">
+                            <div class="wpc-domaine-card-header">
+                                <span class="wpc-domaine-card-header-text">Numérique</span>
+                            </div>
+                            <h2 class="wpc-domaine-card-main-title">Solutions digitales et transformation</h2>
+                        </div>
+                        <div class="wpc-domaine-card-description">
+                            <p>Audit de présence digitale, création de sites web, optimisation des outils collaboratifs.</p>
+                        </div>
+                        <div class="wpc-domaine-card-button-wrapper">
+                            <a href="domaines.html" class="wpc-domaine-card-cta-button button button--stroke" data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label" data-label="En savoir plus">En savoir plus</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Nouvelle section vide -->
+        <div class="new-empty-section">
         </div>
 
         <!-- WPC About Section -->
         <div class="cmp-about-section about-section">
             <div class="cmp-about-container about-container">
+                <!-- Titre NOTRE EXPERTISE -->
+                <div class="wpc-expertise-title-wrapper">
+                    <div class="huge-letters">
+                        <span animation-direction="below-custom" class="huge-letters__title scroll-animation">
+                            <span class="is-word" aria-hidden="true">
+                                <i aria-hidden="true">N</i>
+                                <i aria-hidden="true">O</i>
+                                <i aria-hidden="true">T</i>
+                                <i aria-hidden="true">R</i>
+                                <i aria-hidden="true">E</i>
+                            </span>
+                        </span>
+                        <br>
+                        <span animation-direction="below-custom" class="huge-letters__title scroll-animation">
+                            <span class="is-word" aria-hidden="true">
+                                <i aria-hidden="true">E</i>
+                                <i aria-hidden="true">X</i>
+                                <i aria-hidden="true">P</i>
+                                <i aria-hidden="true">E</i>
+                                <i aria-hidden="true">R</i>
+                                <i aria-hidden="true">T</i>
+                                <i aria-hidden="true">I</i>
+                                <i aria-hidden="true">S</i>
+                                <i aria-hidden="true">E</i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
                 <!-- Contenu texte à gauche -->
                 <div class="cmp-about-text about-text">
                     <div class="about-title-container">
@@ -217,7 +290,6 @@
                                 <a href="index.html">Accueil</a>
                                 <a href="domaines.html">Nos Domaines</a>
                                 <a href="equipe.html">Notre Équipe</a>
-                                <a href="actualites.html">Actualités</a>
                                 <a href="contact.html">Contact</a>
                             </div>
                         </div>
