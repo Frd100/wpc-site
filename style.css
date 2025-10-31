@@ -109,7 +109,7 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* WPC Primary Colors */
-    --primary-blue: #015FB8;
+    --primary-blue: #1A87FF;
 
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
@@ -949,7 +949,7 @@ body {
     text-transform: none;
     letter-spacing: 0.5px;
     border-radius: 9999px;
-    border: 2px solid #1987ff;
+    border: 2px solid #1A87FF;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -2144,7 +2144,7 @@ body {
 
 
     /* Masquer le rectangle bleu derrière l'iframe sur mobile - spécificité élevée */
-    .cmp-about-section .about-image div[style*="background: #015FB8"] {
+    .cmp-about-section .about-image div[style*="background: #1A87FF"] {
         display: none;
     }
 
@@ -3472,7 +3472,7 @@ body .main-navigation .main-navigation__link.active:hover {
 .team-item-icon-wrapper {
     width: 32px;
     height: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 1);
     display: flex;
     align-items: center;
     justify-content: center;
