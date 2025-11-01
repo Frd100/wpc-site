@@ -918,8 +918,8 @@ function initStrokeButtons() {
         });
     }
 
-    // Initialiser l'animation des titres hero par mots
-    initHeroTitleWordAnimation();
+    // Initialiser l'animation des titres hero par mots - DÉSACTIVÉ
+    // initHeroTitleWordAnimation();
 
     /**
      * EFFET TYPEWRITER POUR LES TITRES AVEC CLASSE .write-02
@@ -1022,4 +1022,157 @@ function initStrokeButtons() {
 
     // Initialiser l'animation fade-in des cartes domaines
     initDomainesCardsAnimation();
+
+    /**
+     * ANIMATION DES NOMS DE L'ÉQUIPE
+     * Même effet que le titre hero (apparition par mots)
+     * + Effet fade pour leurs rôles
+     */
+    function initTeamMembersAnimation() {
+        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou plugins non chargés - animation équipe ignorée');
+            return;
+        }
+
+        // Ne rien faire si on n'est pas sur la page équipe
+        if (document.body.id !== 'page-wpc-equipe') {
+            return;
+        }
+
+        gsap.registerPlugin(SplitText, ScrollTrigger);
+
+        const teamItems = document.querySelectorAll('.cmp-membre-item.team-item');
+        if (teamItems.length === 0) {
+            return;
+        }
+
+        teamItems.forEach((item, index) => {
+            const nameElement = item.querySelector('.cmp-membre-name.team-name');
+            const roleElement = item.querySelector('.cmp-membre-role.team-role');
+
+            if (!nameElement || !roleElement) {
+                return;
+            }
+
+            // SplitText sur le nom par mots (comme le titre hero)
+            const split = new SplitText(nameElement, { type: 'words' });
+            
+            if (!split.words || split.words.length === 0) {
+                // Si SplitText ne fonctionne pas, afficher le nom normalement
+                gsap.set(nameElement, { opacity: 1 });
+                gsap.set(roleElement, { opacity: 1 });
+                return;
+            }
+            
+            // État initial : nom invisible avec déplacement, rôle invisible
+            gsap.set(split.words, {
+                opacity: 0,
+                y: 40
+            });
+            
+            gsap.set(roleElement, {
+                opacity: 0
+            });
+
+            // Timeline pour chaque membre
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none',
+                    onEnter: () => {
+                        // S'assurer que l'animation se déclenche
+                    }
+                }
+            });
+
+            // Animation par mots pour le nom (comme le titre hero)
+            tl.to(split.words, {
+                duration: 0.5,
+                opacity: 1,
+                y: 0,
+                ease: 'power3.out',
+                stagger: 0.03
+            });
+
+            // Animation fade pour le rôle (après le nom)
+            tl.to(roleElement, {
+                opacity: 1,
+                duration: 0.5,
+                ease: 'power2.out'
+            }, '-=0.2'); // Commence légèrement avant la fin de l'animation du nom
+        });
+    }
+
+    // Initialiser l'animation des membres de l'équipe
+    initTeamMembersAnimation();
+
+    /**
+     * ANIMATION DES POINTS DE LA CARTE HEXAGONALE
+     * Décale légèrement les animations pour que les points ne pulsent pas tous ensemble
+     */
+    function initAboutMapAnimation() {
+        // Ne rien faire si on n'est pas sur la page index
+        if (document.body.id !== 'page-wpc-main') {
+            return;
+        }
+
+        const dots = document.querySelectorAll('.cmp-about-dot');
+        dots.forEach((dot, i) => {
+            const extra = Math.random() * 1.2;
+            const currentDuration = dot.style.animationDuration || '2.2s';
+            const baseDuration = parseFloat(currentDuration);
+            dot.style.animationDuration = (baseDuration + extra).toFixed(2) + 's';
+        });
+    }
+
+    // Initialiser l'animation de la carte hexagonale
+    initAboutMapAnimation();
+
+    /**
+     * ANIMATION D'APPARITION DE L'IFRAME DU FORMULAIRE DE CANDIDATURE
+     * L'iframe apparaît au scroll avec un effet fade-in + slide-up
+     */
+    function initCandidatureFormAnimation() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou ScrollTrigger non chargés - animation formulaire ignorée');
+            return;
+        }
+
+        // Ne rien faire si on n'est pas sur la page nous-rejoindre
+        if (document.body.id !== 'page-wpc-nous-rejoindre') {
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const formSection = document.querySelector('.contact-form-section');
+        const formIframe = formSection?.querySelector('.contact-form-iframe-wrapper iframe');
+        
+        if (!formSection || !formIframe) {
+            return;
+        }
+
+        // État initial : invisible et légèrement décalé vers le bas
+        gsap.set(formIframe, {
+            opacity: 0,
+            y: 40
+        });
+
+        // Animation au scroll
+        gsap.to(formIframe, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: formSection,
+                start: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    }
+
+    // Initialiser l'animation du formulaire de candidature
+    initCandidatureFormAnimation();
 }
