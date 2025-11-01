@@ -2776,7 +2776,7 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: var(--spacing-4xl) var(--spacing-lg) var(--spacing-4xl) 0;
-    background: #FFFFFF;
+    background: #F5F6FA;
 }
 
 @media (min-width: 769px) {
@@ -2805,7 +2805,10 @@ body {
 .nous-rejoindre-text-wrapper {
     flex: 1;
     max-width: 500px;
-    padding: 0;
+    padding-left: var(--spacing-lg);
+    padding-right: 0;
+    padding-top: var(--spacing-2xl);
+    padding-bottom: 0;
 }
 
 /* Wrapper pour les informations de contact (page contact) */
@@ -2816,7 +2819,7 @@ body {
     padding-right: 0;
     padding-top: var(--spacing-xl);
     padding-bottom: var(--spacing-xl);
-    background: #E8EAED;
+    background: #FFFFFF;
     border-radius: var(--border-radius-md);
     color: var(--text-primary);
     margin-top: calc(var(--spacing-sm) + 0.350rem);
@@ -2826,6 +2829,10 @@ body {
     .contact-info-wrapper {
         padding-left: var(--spacing-2xl);
         padding-right: 0;
+    }
+
+    .nous-rejoindre-text-wrapper {
+        padding-left: var(--spacing-2xl);
     }
 }
 
@@ -3750,11 +3757,11 @@ body .main-navigation .main-navigation__link.active:hover {
 
 .cmp-equipe-intro-text {
     font-family: var(--font-family-secondary);
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
     line-height: 1.6;
     color: var(--text-primary);
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
     max-width: 1200px;
     margin-left: 0;
     margin-right: auto;
@@ -4973,6 +4980,29 @@ body:not(#page-wpc-main) .hero-section {
     .hero-section .hero-content .hero-subtitle {
         text-align: center;
         font-size: 1.1rem;
+    }
+
+    /* Centrer les titres hero sur mobile pour toutes les pages SAUF index */
+    body:not(#page-wpc-main) .hero-section {
+        justify-content: center;
+        align-items: center;
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+
+    body:not(#page-wpc-main) .hero-section .hero-content {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        align-self: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    body:not(#page-wpc-main) .hero-section .hero-content .hero-title {
+        text-align: center;
     }
 
     body .contact-form-container .form-title {
