@@ -288,6 +288,40 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser l'animation du sous-titre expertise
     initExpertiseSubtitleAnimation();
 
+    /**
+     * ANIMATION D'APPARITION POUR LE TEXTE INTRO ÉQUIPE
+     * Animation slide-up simple avec fade-in pour le texte "Découvrez les membres..."
+     */
+    function initEquipeIntroTextAnimation() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou plugins non chargés - animation texte intro équipe ignorée');
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const introTexts = document.querySelectorAll('.cmp-equipe-intro-text, .nous-rejoindre-intro-text');
+        if (introTexts.length === 0) {
+            return;
+        }
+
+        introTexts.forEach(introText => {
+            gsap.from(introText, {
+                opacity: 0,
+                x: 60,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: introText,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                }
+            });
+        });
+    }
+
+    initEquipeIntroTextAnimation();
+
 
     /**
      * PARALLAX EFFECT FOR BUBBLE IMAGE

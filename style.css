@@ -1913,7 +1913,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #20222A;
+        background-color: #1C1C1E;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -1949,7 +1949,7 @@ body {
         /* Hauteur fixe pour un centrage vertical parfait */
         text-align: left;
         width: 100%;
-        color: #FFFFFF;
+        color: #FFFFFF !important;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1;
@@ -1964,9 +1964,10 @@ body {
     }
 
     /* Styles pour le texte à l'intérieur du lien */
-    .main-navigation__link span {
+    body .main-navigation__links .main-navigation__link span {
         display: block;
         /* Assure que le span est un bloc pour le centrage */
+        color: #FFFFFF !important;
     }
 
     /* Masquer les chevrons (si présents) */
@@ -1990,18 +1991,22 @@ body {
     }
 
     body .main-navigation__links .main-navigation__link:hover {
-        color: white;
+        color: #FFFFFF !important;
         background: none;
     }
 
     body .main-navigation__links .main-navigation__link:active {
-        color: white;
+        color: #FFFFFF !important;
         background: none;
     }
 
     body .main-navigation__links .main-navigation__link:focus {
-        color: white;
+        color: #FFFFFF !important;
         background: none;
+    }
+
+    body .main-navigation__links .main-navigation__link.active {
+        color: #FFFFFF !important;
     }
 
 
@@ -2148,6 +2153,14 @@ body {
         outline: none;
     }
 
+    /* Page équipe: hamburger blanc sur mobile */
+    body#page-wpc-equipe .hamburger-line {
+        background-color: #FFFFFF;
+    }
+
+    body#page-wpc-equipe .main-navigation__toggle.active .hamburger-line {
+        background-color: #FFFFFF;
+    }
 
 
 }
@@ -2776,7 +2789,7 @@ body {
 /* ===== NOUVEAU CSS CONTACT ===== */
 .contact-form-section {
     padding: var(--spacing-4xl) var(--spacing-lg) var(--spacing-4xl) 0;
-    background: #F5F6FA;
+    background: #FFFFFF;
 }
 
 @media (min-width: 769px) {
@@ -3735,7 +3748,7 @@ body .main-navigation .main-navigation__link.active:hover {
     padding-left: var(--spacing-lg);
     padding-right: var(--spacing-lg);
     padding-top: var(--spacing-4xl);
-    background: #FFFFFF;
+    background: #1C1C1E;
 }
 
 @media (min-width: 769px) {
@@ -3745,6 +3758,22 @@ body .main-navigation .main-navigation__link.active:hover {
         padding-right: var(--spacing-2xl);
         padding-top: var(--spacing-4xl);
     }
+
+    .cmp-equipe-intro-content {
+        width: 100%;
+        max-width: 1200px;
+        margin-left: 0;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cmp-equipe-intro-text {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: auto;
+    }
 }
 
 .cmp-equipe-intro-content {
@@ -3753,6 +3782,13 @@ body .main-navigation .main-navigation__link.active:hover {
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
+}
+
+@media (min-width: 769px) {
+    .cmp-equipe-intro-content {
+        margin-left: 0;
+        margin-right: auto;
+    }
 }
 
 .cmp-equipe-intro-text {
@@ -4201,12 +4237,15 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
 /* Section texte pour la page nous-rejoindre */
 .nous-rejoindre-intro-text {
     font-family: var(--font-family-secondary);
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-weight: 400;
-    line-height: 1.8;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.6;
     color: var(--text-primary);
-    margin: 0 0 var(--spacing-md) 0;
+    margin: 0;
     text-align: left;
+    max-width: 1200px;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .nous-rejoindre-intro-text:last-child {
@@ -4845,12 +4884,26 @@ body:not(#page-wpc-main) .main-navigation {
     position: static;
 }
 
+/* Page équipe: navigation avec le même fond sombre */
+body#page-wpc-equipe .main-navigation {
+    background: #1C1C1E;
+    border-bottom: 1px solid #1C1C1E;
+}
+
 body:not(#page-wpc-main) .main-navigation__logo-text {
-    color: var(--primary-blue);
+    color: #000000;
+}
+
+body#page-wpc-equipe .main-navigation__logo-text {
+    color: #FFFFFF;
 }
 
 body:not(#page-wpc-main) .main-navigation__link {
     color: var(--text-primary);
+}
+
+body#page-wpc-equipe .main-navigation__link {
+    color: #FFFFFF;
 }
 
 body:not(#page-wpc-main) .main-navigation__link.active {
@@ -4862,13 +4915,35 @@ body:not(#page-wpc-main) .main-navigation__link:hover {
     /* pas d'effet bleu au survol sur les pages internes */
 }
 
+body#page-wpc-equipe .main-navigation__link:hover {
+    color: #FFFFFF;
+}
+
 body:not(#page-wpc-main) .main-navigation__link.active:hover {
+    color: var(--primary-blue);
+}
+
+body#page-wpc-equipe .main-navigation__link.active:hover {
     color: var(--primary-blue);
 }
 
 /* Hero des pages internes en blanc */
 body:not(#page-wpc-main) .hero-section {
     background-color: #FFFFFF;
+    border-bottom: 1px solid #000000;
+}
+
+body#page-wpc-equipe .hero-section {
+    background-color: #1C1C1E;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+body#page-wpc-equipe .hero-section .hero-content .hero-title {
+    color: #FFFFFF;
+}
+
+body#page-wpc-equipe .cmp-equipe-intro-text {
+    color: #FFFFFF;
 }
 
 .mb-0 {
@@ -5003,6 +5078,14 @@ body:not(#page-wpc-main) .hero-section {
 
     body:not(#page-wpc-main) .hero-section .hero-content .hero-title {
         text-align: center;
+    }
+
+    .cmp-equipe-intro-text {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .nous-rejoindre-intro-text {
+        font-size: clamp(2rem, 5vw, 3rem);
     }
 
     body .contact-form-container .form-title {
