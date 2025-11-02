@@ -48,6 +48,57 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialiser l'animation de la nouvelle hero section
     initNewHeroSplitText();
 
+    /**
+     * ANIMATION DES LIGNES HERO
+     * Animation des lignes horizontales dans la section hero
+     */
+    function initHeroLinesAnimation() {
+        if (typeof gsap === 'undefined') {
+            return;
+        }
+
+        const heroLines = document.querySelectorAll('.hero-line');
+        if (heroLines.length === 0) {
+            return;
+        }
+
+        // Animation continue pour chaque ligne : glissement de gauche à droite
+        heroLines.forEach((line, index) => {
+            // Position initiale : à gauche de l'écran
+            gsap.set(line, {
+                x: '-100%',
+                opacity: 0
+            });
+
+            // Timeline pour chaque ligne
+            const tl = gsap.timeline({ repeat: -1 });
+
+            // Phase 1 : Apparition et glissement depuis la gauche
+            tl.to(line, {
+                opacity: 1,
+                x: '0%',
+                duration: 0.8,
+                ease: 'power2.out'
+            })
+                // Phase 2 : Glissement vers la droite jusqu'à sortir de l'écran
+                .to(line, {
+                    x: '100%',
+                    duration: 2,
+                    ease: 'none'
+                })
+                // Phase 3 : Reset et disparition
+                .set(line, {
+                    opacity: 0,
+                    x: '-100%'
+                });
+
+            // Délai entre chaque ligne pour un effet de vague
+            tl.delay(index * 0.3);
+        });
+    }
+
+    initHeroLinesAnimation();
+
 
     /**
      * TEXT COLOR REVEAL ON SCROLL POUR LE TITRE WPC

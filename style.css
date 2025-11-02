@@ -661,28 +661,40 @@ body {
 
 .hero-minimal {
     --hero-overlay-opacity: 0;
-    background: #F5F6FA;
-    width: 100%;
-    aspect-ratio: 2492/1122;
+    background: #FFFFFF;
+    width: 100vw;
+    height: 100vh;
+    aspect-ratio: 16/9;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg);
-    padding-top: 10vh;
     position: relative;
     overflow: hidden;
 }
 
-/* Video background for hero */
-.hero-video {
+/* Lignes animées pour le hero */
+.hero-lines-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     z-index: 0;
-    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-line {
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, rgba(27, 134, 255, 0.4) 50%, transparent 100%);
+    opacity: 0;
+    position: relative;
 }
 
 .hero-minimal::before {
@@ -700,7 +712,7 @@ body {
 }
 
 .hero-title {
-    color: #FFFFFF;
+    color: #000000;
     font-weight: 700;
     text-transform: none;
     letter-spacing: 2px;
@@ -709,7 +721,7 @@ body {
 }
 
 .hero-title .line {
-    color: #FFFFFF;
+    color: #000000;
     font-size: clamp(2.4rem, 9vw, 5.2rem);
     line-height: clamp(2.5rem, 8.5vw, 5rem);
     position: relative;
@@ -732,7 +744,7 @@ body {
     font-family: var(--font-family-secondary);
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
-    color: #FFFFFF;
+    color: #000000;
     text-align: center;
     margin: var(--spacing-md) 0 0 0;
     max-width: 600px;
@@ -923,9 +935,11 @@ body#page-wpc-main .hero-button:focus {
 /* Mobile - Taille du titre hero */
 @media (max-width: 768px) {
     .hero-minimal {
-        background: #F5F6FA;
-        width: 100%;
-        aspect-ratio: 1100/1100;
+        background: #FFFFFF;
+        width: 100vw;
+        height: 100vh;
+        aspect-ratio: 16/9;
+        min-height: 100vh;
     }
 
     .hero-title .line {
@@ -960,7 +974,7 @@ body#page-wpc-main .hero-button:focus {
 /* Desktop overrides */
 @media (min-width: 769px) {
     .hero-minimal {
-        aspect-ratio: 2492/1122;
+        aspect-ratio: 16/9;
         padding: var(--spacing-2xl);
     }
 
@@ -1991,13 +2005,13 @@ body {
         outline: none;
     }
 
-    /* Bouton hamburger blanc sur page index uniquement */
+    /* Bouton hamburger noir sur page index (fond blanc) */
     body#page-wpc-main .hamburger-line {
-        background-color: #FFFFFF;
+        background-color: #000000;
     }
 
     body#page-wpc-main .main-navigation__toggle.active .hamburger-line {
-        background-color: #FFFFFF;
+        background-color: #000000;
     }
 
     /* Page équipe: hamburger blanc sur mobile */
@@ -4739,7 +4753,7 @@ body:has(.hero-minimal) .cmp-about-section .about-subtitle {
     white-space: nowrap;
 }
 
-/* Index only: navigation transparente sur la vidéo de la hero */
+/* Index only: navigation transparente sur le fond blanc */
 body#page-wpc-main .main-navigation {
     position: absolute;
     top: 0;
@@ -4748,6 +4762,22 @@ body#page-wpc-main .main-navigation {
     z-index: 1001;
     background: transparent;
     border-bottom-color: transparent;
+}
+
+body#page-wpc-main .main-navigation__logo-text {
+    color: #000000;
+}
+
+body#page-wpc-main .main-navigation__link {
+    color: #000000;
+}
+
+body#page-wpc-main .main-navigation__link:hover {
+    color: var(--primary-blue);
+}
+
+body#page-wpc-main .main-navigation__link.active {
+    color: var(--primary-blue);
 }
 
 body#page-wpc-main #nav-placeholder {
