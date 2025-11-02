@@ -49,55 +49,109 @@ document.addEventListener('DOMContentLoaded', function () {
     initNewHeroSplitText();
 
     /**
-     * ANIMATION DES LIGNES HERO
-     * Animation des lignes horizontales dans la section hero
+     * EFFETS POUR L'IMAGE BANNER HERO
+     * Parallaxe, zoom au scroll, et animations d'apparition
      */
-    function initHeroLinesAnimation() {
-        if (typeof gsap === 'undefined') {
+    function initBannerEffects() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
             return;
         }
 
-        const heroLines = document.querySelectorAll('.hero-line');
-        if (heroLines.length === 0) {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const bannerImage = document.querySelector('.hero-banner-image');
+        const heroSection = document.querySelector('.hero-minimal');
+
+        if (!bannerImage || !heroSection) {
             return;
         }
 
-        // Animation continue pour chaque ligne : glissement de gauche à droite
-        heroLines.forEach((line, index) => {
-            // Position initiale : à gauche de l'écran
-            gsap.set(line, {
-                x: '-100%',
-                opacity: 0
+        // Animation d'apparition initiale
+        gsap.fromTo(bannerImage,
+            {
+                opacity: 0,
+                scale: 1.15,
+                filter: 'blur(10px)'
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                filter: 'blur(0px)',
+                duration: 1.5,
+                ease: 'power3.out',
+                delay: 0.2
+            }
+        );
+
+        // Effet de parallaxe et zoom léger au scroll
+        gsap.to(bannerImage, {
+            yPercent: 30,
+            scale: 1.1,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: heroSection,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Effet de lumière animée subtile
+        const lightEffect = document.createElement('div');
+        lightEffect.style.cssText = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse 800px 600px at 50% 50%,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 70%
+            );
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+        `;
+        document.querySelector('.hero-banner-container').appendChild(lightEffect);
+
+        // Animation de la lumière
+        gsap.to(lightEffect, {
+            opacity: 0.6,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        // Effet de mouvement léger au hover (si desktop)
+        if (window.innerWidth >= 769) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20;
+                const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
+
+                gsap.to(bannerImage, {
+                    x: x,
+                    y: y,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
             });
 
-            // Timeline pour chaque ligne
-            const tl = gsap.timeline({ repeat: -1 });
-
-            // Phase 1 : Apparition et glissement depuis la gauche
-            tl.to(line, {
-                opacity: 1,
-                x: '0%',
-                duration: 0.8,
-                ease: 'power2.out'
-            })
-                // Phase 2 : Glissement vers la droite jusqu'à sortir de l'écran
-                .to(line, {
-                    x: '100%',
-                    duration: 2,
-                    ease: 'none'
-                })
-                // Phase 3 : Reset et disparition
-                .set(line, {
-                    opacity: 0,
-                    x: '-100%'
+            heroSection.addEventListener('mouseleave', () => {
+                gsap.to(bannerImage, {
+                    x: 0,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out'
                 });
-
-            // Délai entre chaque ligne pour un effet de vague
-            tl.delay(index * 0.3);
-        });
+            });
+        }
     }
 
-    initHeroLinesAnimation();
+    initBannerEffects();
+
 
 
     /**
