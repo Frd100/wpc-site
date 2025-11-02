@@ -942,6 +942,13 @@ body#page-wpc-main .hero-button:focus {
         font-size: inherit;
         line-height: inherit;
     }
+
+    body#page-wpc-main .hero-button {
+        padding: 16px 24px;
+        font-size: 1rem;
+        min-width: auto;
+        font-weight: 500;
+    }
 }
 
 /* Desktop overrides */
@@ -973,13 +980,6 @@ body#page-wpc-main .hero-button:focus {
 
     .hero-button-container {
         margin-top: var(--spacing-xl);
-    }
-
-    .hero-button {
-        padding: 10px 14px;
-        font-size: 0.75rem;
-        min-width: auto;
-        font-weight: 500;
     }
 }
 
@@ -4353,6 +4353,18 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     .wpc-domaine-card {
         padding: var(--spacing-xl);
         min-height: auto;
+    }
+
+    .wpc-domaine-card-main-title {
+        font-size: clamp(1.75rem, 5vw, 2.25rem);
+    }
+
+    .wpc-domaine-card-header-text {
+        font-size: 1.125rem;
+    }
+
+    .wpc-domaine-card-description p {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     }
 }
 
