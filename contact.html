@@ -30,7 +30,11 @@
     <!-- WPC Fonts: Inter via Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Preload Google Fonts CSS for faster loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- WPC Favicon -->
@@ -105,12 +109,15 @@
                                 <div class="contact-email">
                                     <p>contact@westparisconsulting.fr</p>
                                 </div>
-                                <a href="https://www.google.com/maps/place/200+Avenue+de+la+R%C3%A9publique,+92000+Nanterre,+France" target="_blank" rel="noopener noreferrer" class="hero-button button button--stroke" data-block="button">
+                                <a href="https://www.google.com/maps/place/200+Avenue+de+la+R%C3%A9publique,+92000+Nanterre,+France"
+                                    target="_blank" rel="noopener noreferrer" class="hero-button button button--stroke"
+                                    data-block="button">
                                     <span class="button__flair"></span>
-                                    <span class="button__label" data-label="Voir sur Google Maps">Voir sur Google Maps</span>
+                                    <span class="button__label" data-label="Voir sur Google Maps">Voir sur Google
+                                        Maps</span>
                                 </a>
                             </div>
-                            
+
                             <!-- Formulaire à droite -->
                             <div class="contact-form-iframe-wrapper">
                                 <!-- Iframe Tally -->
