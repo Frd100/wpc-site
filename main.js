@@ -1209,4 +1209,83 @@ function initStrokeButtons() {
 
     // Initialiser l'animation du formulaire de candidature
     initCandidatureFormAnimation();
+
+    /**
+     * ANIMATION TIMELINE PROCESSUS
+     * Animation progressive des étapes de la timeline avec effet stagger
+     */
+    function initTimelineAnimation() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou ScrollTrigger non chargés - animation timeline ignorée');
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const timeline = document.querySelector('.cmp-timeline');
+        if (!timeline) {
+            return;
+        }
+
+        const timelineSteps = timeline.querySelectorAll('.cmp-timeline-step');
+        if (timelineSteps.length === 0) {
+            return;
+        }
+
+        // État initial : éléments invisibles et légèrement décalés
+        timelineSteps.forEach(step => {
+            const number = step.querySelector('.cmp-timeline-step__number');
+            const title = step.querySelector('.cmp-timeline-step__title');
+            const description = step.querySelector('.cmp-timeline-step__description');
+
+            gsap.set([number, title, description], {
+                opacity: 0
+            });
+
+            gsap.set(number, {
+                scale: 0,
+                rotation: -180
+            });
+
+            gsap.set([title, description], {
+                y: 30,
+                opacity: 0
+            });
+        });
+
+        // Animation au scroll avec effet stagger
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: timeline,
+                start: 'top 80%',
+                toggleActions: 'play none none none'
+            }
+        });
+
+        timelineSteps.forEach((step, index) => {
+            const number = step.querySelector('.cmp-timeline-step__number');
+            const title = step.querySelector('.cmp-timeline-step__title');
+            const description = step.querySelector('.cmp-timeline-step__description');
+
+            // Animation du numéro avec scale et rotation
+            tl.to(number, {
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                duration: 0.6,
+                ease: 'back.out(1.7)'
+            }, index * 0.15);
+
+            // Animation du titre et description avec fade-in et slide-up
+            tl.to([title, description], {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: 'power3.out'
+            }, index * 0.15 + 0.3);
+        });
+    }
+
+    // Initialiser l'animation de la timeline
+    initTimelineAnimation();
 }

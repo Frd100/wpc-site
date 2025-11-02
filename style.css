@@ -488,10 +488,10 @@
 /* WPC Expertise Section */
 .cmp-expertise-section {
     background-color: #FFFFFF;
-    padding: var(--spacing-3xl) var(--spacing-lg);
+    padding: var(--spacing-2xl) var(--spacing-lg);
     text-align: left;
     position: relative;
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -514,6 +514,11 @@
     margin-left: 0;
 }
 
+/* Réduire padding en haut pour titre NOS PROCESSUS */
+.cmp-about-section:has(.wpc-expertise-title-wrapper) .huge-letters {
+    padding: 0;
+}
+
 .huge-letters__title {
     font-family: var(--font-family-primary);
     font-size: clamp(4rem, 12vw, 12rem);
@@ -525,6 +530,12 @@
     padding: 0;
     line-height: 0.9;
     display: block;
+}
+
+/* Réduire la taille du titre NOS PROCESSUS et couleur noire */
+.cmp-about-section:has(.wpc-expertise-title-wrapper) .huge-letters__title {
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: var(--text-primary);
 }
 
 .huge-letters__title:first-child {
@@ -1133,7 +1144,7 @@ body {
     }
 
     .cmp-expertise-section {
-        padding: var(--spacing-3xl) var(--spacing-2xl);
+        padding: var(--spacing-2xl) var(--spacing-2xl);
     }
 
     body:not(#page-wpc-main) .hero-section {
@@ -1423,6 +1434,14 @@ body {
     min-height: 100vh;
 }
 
+/* Section NOS PROCESSUS avec background blanc */
+.cmp-about-section:has(.wpc-expertise-title-wrapper) {
+    background: var(--wpc-white);
+    color: var(--text-primary);
+    padding: 0 0 var(--spacing-2xl) 0;
+    min-height: auto;
+}
+
 .cmp-about-content {
     max-width: 100%;
     margin: 0 auto;
@@ -1655,7 +1674,7 @@ body:has(.hero-minimal) .cmp-about-section .cmp-about-description {
     color: var(--text-primary);
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
     margin: 0;
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .cmp-footer__container {
@@ -3452,7 +3471,7 @@ select.form-input {
 .cmp-processus-section {
     width: 100%;
     margin: 0;
-    padding: var(--spacing-4xl) 0;
+    padding: var(--spacing-2xl) 0;
     background: var(--wpc-white);
 }
 
@@ -3485,20 +3504,13 @@ select.form-input {
     gap: var(--spacing-lg);
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) var(--spacing-lg);
     overflow-x: auto;
     position: relative;
 }
 
 .cmp-timeline::before {
-    content: '';
-    position: absolute;
-    top: 70px;
-    left: 24px;
-    right: 24px;
-    height: 2px;
-    background: var(--primary-blue);
-    z-index: 1;
+    display: none;
 }
 
 .cmp-timeline-step {
@@ -3506,11 +3518,10 @@ select.form-input {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-width: 200px;
+    min-width: 160px;
     position: relative;
     flex: 1;
 }
-
 
 .cmp-timeline-step__number {
     width: 48px;
@@ -3527,6 +3538,7 @@ select.form-input {
     z-index: 2;
     position: relative;
     margin-bottom: var(--spacing-lg);
+    font-family: var(--font-family-primary);
 }
 
 .cmp-timeline-step__content {
@@ -3534,18 +3546,33 @@ select.form-input {
 }
 
 .cmp-timeline-step__title {
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-primary);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-weight: var(--font-weight-semibold);
     color: var(--text-primary);
     margin: 0 0 var(--spacing-sm) 0;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .cmp-timeline-step__description {
-    font-size: 0.875rem;
+    font-family: var(--font-family-secondary);
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
     line-height: 1.5;
     color: var(--text-secondary);
     margin: 0;
+}
+
+/* Style pour timeline dans section about (fond sombre) */
+.cmp-about-section .cmp-timeline::before {
+    display: none;
+}
+
+.cmp-about-section .cmp-timeline-step__title {
+    color: var(--text-primary);
+}
+
+.cmp-about-section .cmp-timeline-step__description {
+    color: var(--text-secondary);
 }
 
 /* Fil d'Ariane */
@@ -4234,6 +4261,11 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     padding: 40px 0;
 }
 
+.cmp-processus-section.section-gray {
+    background-color: var(--wpc-white);
+    padding: var(--spacing-2xl) 0;
+}
+
 /* Section texte pour la page nous-rejoindre */
 .nous-rejoindre-intro-text {
     font-family: var(--font-family-secondary);
@@ -4260,14 +4292,15 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     position: relative;
 }
 
-/* Titre NOTRE EXPERTISE dans section About */
+/* Titre NOS PROCESSUS dans section About */
 .wpc-expertise-title-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0;
+    margin-left: var(--spacing-lg);
+    text-align: left;
     position: relative;
     z-index: 10;
-    padding: var(--spacing-4xl) 0 0 0;
+    padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg);
 }
 
 .wpc-domaines-cards-title-wrapper {
@@ -4373,7 +4406,7 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
 
 .wpc-domaine-card-description p {
     font-family: var(--font-family-secondary);
-    font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+    font-size: clamp(1.125rem, 1.8vw, 1.375rem);
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
@@ -4930,12 +4963,12 @@ body#page-wpc-equipe .main-navigation__link.active:hover {
 /* Hero des pages internes en blanc */
 body:not(#page-wpc-main) .hero-section {
     background-color: #FFFFFF;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 body#page-wpc-equipe .hero-section {
     background-color: #1C1C1E;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 body#page-wpc-equipe .hero-section .hero-content .hero-title {
@@ -4944,6 +4977,10 @@ body#page-wpc-equipe .hero-section .hero-content .hero-title {
 
 body#page-wpc-equipe .cmp-equipe-intro-text {
     color: #FFFFFF;
+}
+
+body#page-wpc-equipe .cmp-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .mb-0 {
@@ -5155,8 +5192,8 @@ body#page-wpc-equipe .cmp-equipe-intro-text {
 
     /* WPC Expertise Section - Mobile */
     .cmp-expertise-section {
-        padding: var(--spacing-2xl) var(--spacing-lg);
-        min-height: 60vh;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        min-height: 40vh;
         text-align: left;
         align-items: flex-start;
         justify-content: flex-start;
@@ -5170,6 +5207,11 @@ body#page-wpc-equipe .cmp-equipe-intro-text {
     .huge-letters__title {
         font-size: clamp(3rem, 15vw, 6rem);
         color: #FFFFFF;
+    }
+
+    /* Titre NOS PROCESSUS en noir sur mobile */
+    .cmp-about-section:has(.wpc-expertise-title-wrapper) .huge-letters__title {
+        color: var(--text-primary);
     }
 
     .huge-letters__title:first-child {
