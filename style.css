@@ -489,6 +489,12 @@ body {
     padding: 0;
 }
 
+/* Correction pour l'avertissement H1UserAgentFontSizeInSection */
+/* Les h1 dans les sections doivent avoir une font-size explicite */
+section h1 {
+    font-size: inherit;
+}
+
 /* Compenser la navigation fixe sur desktop */
 @media (min-width: 769px) {
     body {
