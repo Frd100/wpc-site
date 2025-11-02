@@ -1211,6 +1211,53 @@ function initStrokeButtons() {
     initCandidatureFormAnimation();
 
     /**
+     * ANIMATION FORMULAIRE DE CONTACT
+     * Même effet d'apparition que le formulaire de candidature
+     */
+    function initContactFormAnimation() {
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+            console.warn('GSAP ou ScrollTrigger non chargés - animation formulaire contact ignorée');
+            return;
+        }
+
+        // Ne rien faire si on n'est pas sur la page contact
+        if (document.body.id !== 'page-wpc-contact') {
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const formSection = document.querySelector('.contact-form-section');
+        const formIframe = formSection?.querySelector('.contact-form-iframe-wrapper iframe');
+        
+        if (!formSection || !formIframe) {
+            return;
+        }
+
+        // État initial : invisible et légèrement décalé vers le bas
+        gsap.set(formIframe, {
+            opacity: 0,
+            y: 40
+        });
+
+        // Animation au scroll
+        gsap.to(formIframe, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: formSection,
+                start: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
+    }
+
+    // Initialiser l'animation du formulaire de contact
+    initContactFormAnimation();
+
+    /**
      * ANIMATION TIMELINE PROCESSUS
      * Animation progressive des étapes de la timeline avec effet stagger
      */

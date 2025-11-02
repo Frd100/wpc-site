@@ -109,7 +109,7 @@
 /* ===== CSS VARIABLES ===== */
 :root {
     /* WPC Primary Colors */
-    --primary-blue: #1A87FF;
+    --primary-blue: #1B86FF;
 
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
@@ -579,7 +579,7 @@
 }
 
 .cmp-expertise-subtitle .gradient-text {
-    background: linear-gradient(90deg, #1E3A8A 0%, #2563EB 50%, #38BDF8 100%);
+    background: linear-gradient(90deg, #1B86FF 0%, #1B86FF 50%, #1B86FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -952,7 +952,7 @@ body {
     align-items: center;
     gap: var(--spacing-xs);
     padding: 10px 14px;
-    background: #FFFFFF;
+    background: #E8EAED;
     color: #000000;
     text-decoration: none;
     font-weight: 500;
@@ -960,7 +960,7 @@ body {
     text-transform: none;
     letter-spacing: 0.5px;
     border-radius: 9999px;
-    border: 2px solid #1A87FF;
+    border: 2px solid #1B86FF;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -1022,7 +1022,7 @@ body {
 /* Spécifique au bouton de la hero: forcer le fond blanc et le texte noir
    (ce bloc vient APRÈS .button pour gagner la cascade) */
 .button.hero-button {
-    background: #FFFFFF;
+    background: #E8EAED;
     color: #000000;
     border: none;
 }
@@ -1030,9 +1030,20 @@ body {
 .button.hero-button:hover,
 .button.hero-button:active,
 .button.hero-button:focus {
-    background: #FFFFFF;
+    background: #E8EAED;
     color: #000000;
     border: none;
+}
+
+/* Bouton "Nous contacter" sur la page index uniquement - blanc par défaut */
+body#page-wpc-main .hero-button {
+    background: #FFFFFF;
+}
+
+body#page-wpc-main .hero-button:hover,
+body#page-wpc-main .hero-button:active,
+body#page-wpc-main .hero-button:focus {
+    background: #FFFFFF;
 }
 
 .button--stroke:after {
@@ -2172,6 +2183,15 @@ body {
         outline: none;
     }
 
+    /* Bouton hamburger blanc sur page index uniquement */
+    body#page-wpc-main .hamburger-line {
+        background-color: #FFFFFF;
+    }
+
+    body#page-wpc-main .main-navigation__toggle.active .hamburger-line {
+        background-color: #FFFFFF;
+    }
+
     /* Page équipe: hamburger blanc sur mobile */
     body#page-wpc-equipe .hamburger-line {
         background-color: #FFFFFF;
@@ -2320,7 +2340,7 @@ body {
 
 
     /* Masquer le rectangle bleu derrière l'iframe sur mobile - spécificité élevée */
-    .cmp-about-section .about-image div[style*="background: #1A87FF"] {
+    .cmp-about-section .about-image div[style*="background: #1B86FF"] {
         display: none;
     }
 
@@ -2901,30 +2921,6 @@ body {
     margin: 0 0 var(--spacing-xs) 0;
 }
 
-.contact-google-maps-button {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md) var(--spacing-lg);
-    background: transparent;
-    border: 1px solid var(--text-primary);
-    border-radius: var(--border-radius-sm);
-    color: var(--text-primary);
-    text-decoration: none;
-    font-family: var(--font-family-secondary);
-    font-size: clamp(0.9375rem, 1.3vw, 1rem);
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.contact-google-maps-button:hover {
-    background: var(--text-primary);
-    color: #FFFFFF;
-}
-
-.contact-google-maps-button .material-icons {
-    font-size: 1.25rem;
-}
 
 /* Wrapper pour l'iframe à droite */
 .contact-form-iframe-wrapper {
@@ -3087,7 +3083,7 @@ body {
 }
 
 .contact-info-item .material-icons {
-    color: #051A2C;
+    color: var(--primary-blue);
     font-size: 1.25rem;
     margin-top: 2px;
 }
@@ -3207,14 +3203,14 @@ body {
 
 .form-input[type="file"]:hover {
     border-color: var(--primary-blue);
-    background: #f0f9ff;
+    background: rgba(27, 134, 255, 0.1);
 }
 
 .form-input[type="file"]:focus {
     border-color: var(--primary-blue);
-    background: #f0f9ff;
+    background: rgba(27, 134, 255, 0.1);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(3, 61, 204, 0.1);
+    box-shadow: 0 0 0 3px rgba(27, 134, 255, 0.1);
 }
 
 select.form-input {
@@ -3254,7 +3250,7 @@ select.form-input {
 }
 
 .checkbox-label a:hover {
-    color: #1e40af;
+    color: var(--primary-blue);
 }
 
 /* Responsive pour nous rejoindre */
@@ -4156,13 +4152,13 @@ body .main-navigation .main-navigation__link.active:hover {
 
 .cmp-member-linkedin .material-icons {
     font-size: 20px;
-    color: #0077B5;
+    color: var(--primary-blue);
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .cmp-member-linkedin .material-icons:hover {
-    color: #005885;
+    color: var(--primary-blue);
 }
 
 /* Responsive pour l'organigramme */
@@ -4266,6 +4262,21 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     padding: var(--spacing-2xl) 0;
 }
 
+/* Section mentions légales avec background blanc */
+#section-wpc-mentions-legales.section-gray {
+    background-color: var(--wpc-white);
+}
+
+/* Section politique de confidentialité avec background blanc */
+#section-wpc-confidentialite.section-gray {
+    background-color: var(--wpc-white);
+}
+
+/* Section exercer mes droits avec background blanc */
+#section-wpc-exercer-droits.section-gray {
+    background-color: var(--wpc-white);
+}
+
 /* Section texte pour la page nous-rejoindre */
 .nous-rejoindre-intro-text {
     font-family: var(--font-family-secondary);
@@ -4306,20 +4317,20 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
 .wpc-domaines-cards-title-wrapper {
     width: 100%;
     max-width: 1200px;
-    margin-left: 0;
+    margin-left: auto;
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
-    text-align: left;
+    text-align: center;
 }
 
 .wpc-domaines-cards-subtitle {
-    text-align: left;
-    margin: var(--spacing-2xl) 0 0 0;
-    margin-left: 0;
+    text-align: center;
+    margin: var(--spacing-2xl) auto 0 auto;
     max-width: 900px;
     opacity: 1;
-    padding-left: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
     color: #FFFFFF;
 }
 
@@ -4591,7 +4602,7 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
 
 /* Boutons */
 .btn-primary {
-    background: #051B2C;
+    background: var(--primary-blue);
     color: white;
     padding: 15px 30px;
     border: none;
@@ -4644,7 +4655,7 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     margin: 0 0 5px 0;
     font-size: 22px;
     font-weight: 600;
-    color: #051B2C;
+    color: var(--primary-blue);
 }
 
 .team-role {
@@ -5009,7 +5020,7 @@ body#page-wpc-equipe .cmp-footer {
 }
 
 .legal-title {
-    color: #051B2C;
+    color: var(--primary-blue);
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 10px;
