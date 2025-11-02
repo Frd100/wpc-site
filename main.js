@@ -156,46 +156,6 @@ document.addEventListener('DOMContentLoaded', function () {
      * TEXT COLOR REVEAL ON SCROLL POUR LE TITRE WPC
      * Effet de peinture progressive de bleu au scroll
      */
-    function initWpcTitleColorReveal() {
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            return;
-        }
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        const titleElement = document.querySelector('.cmp-wpc-title');
-        if (!titleElement) {
-            return;
-        }
-
-        // Animer chaque ligne une par une avec des triggers différents
-        const lines = titleElement.querySelectorAll('.wpc-line');
-
-        lines.forEach((line, index) => {
-            // Créer l'effet de peinture progressive pour chaque ligne avec des triggers décalés
-            gsap.fromTo(line,
-                {
-                    "--reveal-width": "0%" // Commence avec 0% de largeur
-                },
-                {
-                    "--reveal-width": "100%", // Se révèle complètement
-                    duration: 0.8,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: titleElement,
-                        start: `top ${50 - (index * 10)}%`, // Décalage progressif du start - commence plus tard
-                        end: `bottom ${10 - (index * 3)}%`, // Décalage progressif du end
-                        scrub: 1,
-                        toggleActions: "play none none reverse"
-                    }
-                }
-            );
-        });
-
-    }
-
-    // Initialiser l'effet de révélation de couleur
-    initWpcTitleColorReveal();
 
     /**
      * ANIMATION DU SOUS-TITRE DE LA SECTION EXPERTISE
@@ -276,26 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initEquipeIntroTextAnimation();
 
 
-    /**
-     * PARALLAX EFFECT FOR BUBBLE IMAGE
-     * Effet de parallaxe subtil pour l'image bubble dans le conteneur
-     * L'image reste dans le conteneur mais bouge légèrement pendant le scroll
-     */
-    const bubbleImage = document.querySelector('.cmp-hero-fbv__image');
-    const heroSection = document.querySelector('.cmp-hero-fbv');
-
-    if (bubbleImage && heroSection) {
-        window.addEventListener('scroll', function () {
-            const scrolled = window.pageYOffset;
-            const heroRect = heroSection.getBoundingClientRect();
-
-            // Effet de parallaxe seulement si la section est visible
-            if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
-                const rate = scrolled * 0.3; // Vitesse de parallaxe plus lente
-                bubbleImage.style.transform = `translateX(-50%) translateY(${rate}px)`;
-            }
-        });
-    }
 
     /**
      * SMOOTH SCROLLING
@@ -401,37 +341,8 @@ const WPCUtils = {
         };
     },
 
-    // Check if element is in viewport
-    isInViewport: function (element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    },
-
-    // Get element offset
-    getOffset: function (element) {
-        const rect = element.getBoundingClientRect();
-        return {
-            top: rect.top + window.scrollY,
-            left: rect.left + window.scrollX
-        };
-    }
 };
 
-// WPC CSS Classes for JavaScript
-const WPCClasses = {
-    mobileMenuOpen: 'mobile-menu-open',
-    headerScrolled: 'header--scrolled',
-    headerHidden: 'header--hidden',
-    languageSelectorOpen: 'language-selector--open',
-    searchFormOpen: 'search-form--open',
-    animateIn: 'animate-in',
-    lazy: 'lazy'
-};
 
 /**
  * MOBILE MENU MANAGEMENT WITH GSAP ANIMATION
@@ -649,12 +560,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initStrokeButtons();
 });
 
-
-// Export for potential module usage
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { WPCUtils, WPCClasses };
-}
-
 // Stroke Button Flair animation (hover ripple)
 function initStrokeButtons() {
     if (typeof gsap === 'undefined') return;
@@ -720,64 +625,6 @@ function initStrokeButtons() {
 
 
 
-    /**
-     * EFFET TYPEWRITER POUR LES TITRES AVEC CLASSE .write-02
-     * Animation "machine à écrire" inspirée de Bequant avec ScrollTrigger
-     */
-    function initWrite02Animation() {
-        // Vérifier que GSAP et SplitText sont chargés
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            return;
-        }
-
-        gsap.registerPlugin(SplitText, ScrollTrigger);
-
-        // Sélectionner tous les éléments avec la classe .write-02
-        const writeElements = document.querySelectorAll('.write-02');
-
-        if (writeElements.length === 0) {
-            return;
-        }
-
-        writeElements.forEach((element) => {
-            // Découper le texte en caractères avec SplitText
-            const split = new SplitText(element, {
-                type: 'chars,words,lines',
-                charsClass: 'split-chars',
-                wordsClass: 'split-words',
-                linesClass: 'split-lines'
-            });
-
-            // État initial : opacité réduite pour les caractères
-            gsap.set(split.chars, {
-                opacity: 0
-            });
-
-            // Créer la timeline d'animation avec ScrollTrigger
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                }
-            });
-
-            // Animer chaque caractère avec un effet stagger (un après l'autre)
-            tl.from(split.chars, {
-                duration: 0.002,
-                opacity: 0,
-                ease: 'power1.none',
-                delay: 0.2,
-                stagger: {
-                    amount: 0.2, // Durée totale de l'animation (0.2s pour tous les caractères)
-                    from: 'start'
-                }
-            });
-        });
-    }
-
-    // Initialiser l'effet typewriter pour les titres .write-02
-    initWrite02Animation();
 
     /**
      * ANIMATION FADE-IN POUR LES CARTES DOMAINES
