@@ -3,7 +3,7 @@
 **Date de l'audit :** 2025  
 **Auditeur :** Expert Développement Web HTML/CSS/JS  
 **Version du site analysée :** Actuelle  
-**Dernière mise à jour :** Après correction des `!important` en CSS (8 occurrences) et nettoyage des fichiers non utilisés
+**Dernière mise à jour :** Après corrections multiples : `!important`, nettoyage fichiers, suppression Twitter, organisation images
 
 ---
 
@@ -28,15 +28,17 @@
 - Structure HTML5 sémantique correcte
 - Utilisation de GSAP pour des animations modernes
 - Présence de données structurées (Schema.org)
-- Mise en place de meta tags Open Graph et Twitter Cards
+- Mise en place de meta tags Open Graph (Twitter Cards supprimés - pas de compte Twitter)
 - Sitemap XML et robots.txt présents
 - Design responsive mobile-first
 - Bonne organisation des fichiers
+- ✅ Code cohérent : pas de références à des réseaux sociaux inexistants
 
 ### Points à Améliorer ⚠️
 - ✅ **CORRIGÉ** : Tous les `!important` ont été retirés du CSS (8 occurrences corrigées)
 - ✅ **CORRIGÉ** : Fichiers non utilisés supprimés (herosection.webp, herosection_mobile.webp, banner.jpg, videohero.mp4, .pages.yml, assets/images, content)
 - ✅ **CORRIGÉ** : Références mises à jour dans tous les fichiers HTML (herosection.webp → banner.webp)
+- ✅ **CORRIGÉ** : Suppression des meta tags Twitter Cards (association n'a pas de compte Twitter)
 - Images non optimisées (pas de lazy loading, pas de srcset)
 - Absence d'attributs `alt` descriptifs sur plusieurs images
 - Sitemap incomplet (manque `nous-rejoindre.html`)
@@ -62,7 +64,7 @@
    - Meta viewport présent pour le responsive
    - Charset UTF-8 déclaré
    - Meta description présente sur toutes les pages
-   - Open Graph et Twitter Cards configurés
+   - ✅ Open Graph configuré (Twitter Cards supprimés - cohérent avec l'absence de compte Twitter)
 
 3. **Données Structurées**
    - Schema.org Organization bien implémenté
@@ -295,8 +297,9 @@
 
 1. **Meta Tags Complets**
    - Title et description sur toutes les pages
-   - Open Graph et Twitter Cards présents
+   - ✅ Open Graph présent (Twitter Cards supprimés - association n'a pas de compte Twitter)
    - URLs canoniques (implicites)
+   - ✅ Code cohérent : pas de références à des réseaux sociaux inexistants
 
 2. **Sitemap XML**
    - Fichier présent et bien structuré
@@ -325,14 +328,15 @@
 
 2. **✅ Images OG - PARTIELLEMENT CORRIGÉ**
    ```html
-   <!-- ✅ Référence mise à jour : herosection.webp → banner.webp -->
-   <meta property="og:image" content="banner.webp">
+   <!-- ✅ Référence mise à jour : herosection.webp → images/banner.webp -->
+   <meta property="og:image" content="images/banner.webp">
    ```
    - ✅ **CORRIGÉ** : Références mises à jour dans tous les fichiers HTML (7 pages)
+   - ✅ **CORRIGÉ** : Images organisées dans le dossier `images/`
    - ⚠️ **À améliorer** : Utiliser une URL absolue au lieu d'une URL relative
    - **Recommandation** : Remplacer par URL absolue
    ```html
-   <meta property="og:image" content="https://westparisconsulting.fr/banner.webp">
+   <meta property="og:image" content="https://westparisconsulting.fr/images/banner.webp">
    ```
 
 3. **Canonical URLs**
@@ -351,7 +355,7 @@
 
 - [x] Meta title et description
 - [x] Open Graph
-- [x] Twitter Cards
+- [x] Twitter Cards (supprimés - pas de compte Twitter) ✅
 - [⚠️] URLs canoniques explicites
 - [⚠️] Images OG en URL absolue
 - [⚠️] Sitemap complet
@@ -646,9 +650,17 @@
      - `herosection.webp`, `herosection_mobile.webp`, `banner.jpg`, `videohero.mp4`, `.pages.yml`
      - Dossiers : `assets/images/`, `content/`
    - **Action effectuée** : Références mises à jour dans tous les fichiers HTML (7 pages)
-     - `herosection.webp` → `banner.webp` dans les meta tags og:image et twitter:image
+     - `herosection.webp` → `images/banner.webp` dans les meta tags og:image
 
-3. **Compléter les Informations Manquantes**
+3. **✅ Suppression des Références Twitter - CORRIGÉ**
+   - **Impact** : Code cohérent avec la présence réelle sur les réseaux sociaux
+   - **Statut** : ✅ **TERMINÉ**
+   - **Action effectuée** : Suppression de tous les meta tags Twitter Cards des 7 fichiers HTML
+     - Suppression de `twitter:url`, `twitter:title`, `twitter:description`, `twitter:creator`, `twitter:card`, `twitter:image`
+     - Suppression de la référence `@WestParisConsulting` inexistante
+   - **Résultat** : Code plus propre, seuls les meta tags Open Graph sont conservés (fonctionnent pour LinkedIn, Facebook, etc.)
+
+4. **Compléter les Informations Manquantes**
    - **Impact** : Crédibilité et conformité légale
    - **Effort** : Faible
    - **Fichiers** : `mentions-legales.html`, `confidentialite.html`
@@ -718,6 +730,8 @@ Le site West Paris Consulting présente une **base solide** avec :
 Cependant, plusieurs **améliorations importantes** sont nécessaires :
 - ✅ **Suppression des `!important` en CSS** - **CORRIGÉ** (8 occurrences)
 - ✅ **Nettoyage des fichiers non utilisés** - **CORRIGÉ** (fichiers et dossiers supprimés, références mises à jour)
+- ✅ **Suppression des références Twitter** - **CORRIGÉ** (pas de compte Twitter - code cohérent)
+- ✅ **Organisation des images** - **CORRIGÉ** (images/ et icons/ créés)
 - **Complétion des informations manquantes**
 - **Optimisation des images**
 - **Amélioration de l'accessibilité**
