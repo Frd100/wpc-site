@@ -270,6 +270,11 @@
     transform: scale(1.02);
 }
 
+/* Désactiver l'effet hover du logo sur la page index */
+body#page-wpc-main .main-navigation__logo-text:hover {
+    transform: none;
+}
+
 .main-navigation__links {
     display: flex;
     justify-content: flex-start;
@@ -3518,19 +3523,18 @@ select.form-input {
     color: var(--primary-blue);
 }
 
-/* Exception pour la page index : lien actif au survol reste blanc */
-#page-wpc-main .main-navigation__link.active:hover {
-    color: #FFFFFF;
-}
-
 /* Renforcer la couleur au survol de l'élément actif, toutes pages */
 body .main-navigation .main-navigation__link.active:hover {
     color: var(--primary-blue);
 }
 
-/* Exception pour la page index */
+/* Exception pour la page index : pas d'effet hover, garde la couleur actuelle */
+#page-wpc-main .main-navigation__link.active:hover {
+    color: var(--primary-blue);
+}
+
 #page-wpc-main .main-navigation .main-navigation__link.active:hover {
-    color: #FFFFFF;
+    color: var(--primary-blue);
 }
 
 .main-navigation__link.active::after {
@@ -4803,7 +4807,7 @@ body#page-wpc-main .main-navigation__link {
 }
 
 body#page-wpc-main .main-navigation__link:hover {
-    color: var(--primary-blue);
+    color: #000000;
 }
 
 body#page-wpc-main .main-navigation__link.active {
