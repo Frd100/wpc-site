@@ -15,21 +15,10 @@
     /* WPC Neutrals */
     --wpc-white: #FFFFFF;
     --wpc-black: #000000;
-    --wpc-gray-100: #F8F9FA;
-    --wpc-gray-200: #E9ECEF;
-    --wpc-gray-300: #DEE2E6;
-    --wpc-gray-400: #CED4DA;
-    --wpc-gray-500: #ADB5BD;
-    --wpc-gray-600: #6C757D;
-    --wpc-gray-700: #495057;
-    --wpc-gray-800: #343A40;
-    --wpc-gray-900: #212529;
 
     /* WPC Text Colors */
     --text-primary: #212529;
-    --text-secondary: #6C757D;
     --text-white: #FFFFFF;
-    --text-muted: #ADB5BD;
 
     /* WPC Background Colors */
     --bg-primary: #FFFFFF;
@@ -644,12 +633,10 @@ body {
 /* WPC Language Selector */
 .cmp-lang-selector__toggle-btn {
     background: transparent;
-    border: 1px solid var(--wpc-gray-300);
     cursor: pointer;
 }
 
 .cmp-lang-selector__toggle-btn:hover {
-    background: var(--wpc-gray-100);
     border-color: var(--primary-blue);
 }
 
@@ -659,7 +646,6 @@ body {
 
 .cmp-lang-selector__chevron-icon {
     font-size: var(--font-size-sm);
-    color: var(--text-secondary);
 }
 
 
@@ -1148,7 +1134,6 @@ body#page-wpc-main .hero-button:focus {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
-    border: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-expertise-item:hover {
@@ -1286,7 +1271,6 @@ body#page-wpc-main .hero-button:focus {
 .cmp-nanterre-description {
     font-size: var(--font-size-lg);
     line-height: 1.7;
-    color: var(--text-secondary);
     margin-bottom: var(--spacing-2xl);
 }
 
@@ -2497,7 +2481,6 @@ body {
 .cmp-contact-form-container {
     background: #F5F6FA;
     padding: var(--spacing-3xl);
-    border: 1px solid var(--wpc-gray-200);
     border-radius: var(--border-radius-md);
     width: 100%;
     margin: 0;
@@ -2507,7 +2490,6 @@ body {
 
 .cmp-contact-mandatory {
     font-size: var(--font-size-sm);
-    color: var(--text-secondary);
     font-style: italic;
     margin: 0 0 var(--spacing-md) 0;
     text-align: left;
@@ -2526,7 +2508,6 @@ body {
 .cmp-contact-description {
     font-size: 17px;
     line-height: 1.6;
-    color: var(--text-secondary);
     margin-bottom: var(--spacing-2xl);
     text-align: left;
 }
@@ -2537,7 +2518,6 @@ body {
     gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--wpc-gray-200);
     flex-shrink: 0;
 }
 
@@ -2562,7 +2542,6 @@ body {
 
 .cmp-contact-info-item p {
     margin: 0;
-    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -2597,7 +2576,6 @@ body {
 .cmp-form-select,
 .cmp-form-textarea {
     padding: var(--spacing-md);
-    border: 1px solid var(--wpc-gray-300);
     border-radius: var(--border-radius-sm);
     font-size: 17px;
     font-family: var(--font-family-primary);
@@ -2657,7 +2635,6 @@ body {
     cursor: pointer;
     font-size: var(--font-size-sm);
     line-height: 1.5;
-    color: var(--text-secondary);
 }
 
 .cmp-checkbox {
@@ -2856,7 +2833,6 @@ body {
 .form-description {
     font-size: 0.875rem;
     line-height: 1.5;
-    color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
     text-align: left;
 }
@@ -2891,7 +2867,6 @@ body {
 .form-group select,
 .form-group textarea {
     padding: var(--spacing-sm);
-    border: 1px solid var(--wpc-gray-300);
     border-radius: var(--border-radius-sm);
     font-size: 0.875rem;
     font-family: var(--font-family-primary);
@@ -2949,10 +2924,6 @@ body {
     accent-color: var(--primary-blue);
 }
 
-.checkbox-text {
-    color: var(--text-secondary);
-}
-
 .privacy-link,
 .rights-link {
     color: var(--primary-blue);
@@ -2970,7 +2941,6 @@ body {
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
     padding-top: var(--spacing-md);
-    border-top: 1px solid var(--wpc-gray-200);
 }
 
 .contact-info-item {
@@ -2997,7 +2967,6 @@ body {
 
 .contact-info-item p {
     margin: 0;
-    color: var(--text-secondary);
     font-size: 0.75rem;
     line-height: 1.4;
 }
@@ -3187,7 +3156,6 @@ select.form-input {
 
 .last-updated {
     text-align: center;
-    color: var(--text-secondary);
     font-style: italic;
     margin-bottom: var(--spacing-xl);
     font-size: 0.9rem;
@@ -3196,7 +3164,6 @@ select.form-input {
 .confidentialite-section {
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid var(--wpc-gray-200);
 }
 
 .confidentialite-section:last-child {
@@ -3347,7 +3314,6 @@ select.form-input {
 }
 
 .cmp-domaine-pole__services li {
-    color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
     padding-left: var(--spacing-md);
     position: relative;
@@ -3386,7 +3352,6 @@ select.form-input {
 .cmp-processus-description {
     font-size: 1.125rem;
     line-height: 1.6;
-    color: var(--text-secondary);
     margin: 0 0 var(--spacing-3xl) 0;
     text-align: center;
 }
@@ -3452,7 +3417,6 @@ select.form-input {
     font-family: var(--font-family-secondary);
     font-size: clamp(0.875rem, 1.4vw, 1rem);
     line-height: 1.5;
-    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -3463,10 +3427,6 @@ select.form-input {
 
 .cmp-about-section .cmp-timeline-step__title {
     color: var(--text-primary);
-}
-
-.cmp-about-section .cmp-timeline-step__description {
-    color: var(--text-secondary);
 }
 
 /* Fil d'Ariane */
@@ -3515,7 +3475,6 @@ select.form-input {
 .cmp-fonctionnement-simple {
     margin-bottom: var(--spacing-3xl);
     padding-bottom: var(--spacing-2xl);
-    border-bottom: 1px solid var(--wpc-gray-200);
 }
 
 .cmp-fonctionnement-simple:last-of-type {
@@ -3533,7 +3492,6 @@ select.form-input {
 .cmp-fonctionnement-simple__text {
     font-size: var(--font-size-lg);
     line-height: 1.7;
-    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -3900,7 +3858,6 @@ body .main-navigation .main-navigation__link.active:hover {
 .cmp-membre-description {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-secondary);
     margin: 0;
 }
 
