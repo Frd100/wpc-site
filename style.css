@@ -1980,7 +1980,7 @@ body {
     }
 
     .main-navigation__toggle.active .hamburger-line {
-        background-color: #000000;
+        background-color: #FFFFFF;
         border: none;
         outline: none;
     }
