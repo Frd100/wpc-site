@@ -3811,6 +3811,10 @@ body .main-navigation .main-navigation__link.active:hover {
 
 /* Responsive pour l'équipe */
 @media (max-width: 768px) {
+    .cmp-equipe-section {
+        padding-right: 0;
+    }
+
     .cmp-equipe-hero__title {
         font-size: 2.5rem;
     }
