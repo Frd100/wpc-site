@@ -1,6 +1,0 @@
-media:
-  - name: images
-    label: Images
-    input: assets/images
-    output: /assets/images
-    extensions: [jpg, jpeg, png, gif, webp, svg]

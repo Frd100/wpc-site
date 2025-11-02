@@ -1836,7 +1836,7 @@ body {
         /* Hauteur fixe pour un centrage vertical parfait */
         text-align: left;
         width: 100%;
-        color: #FFFFFF !important;
+        color: #FFFFFF;
         font-size: 1.25rem;
         font-weight: 600;
         line-height: 1;
@@ -1850,11 +1850,21 @@ body {
         box-sizing: border-box;
     }
 
+    /* Augmenter la spécificité pour surcharger les règles desktop */
+    body .main-navigation__links.active .main-navigation__link {
+        color: #FFFFFF;
+    }
+
     /* Styles pour le texte à l'intérieur du lien */
     body .main-navigation__links .main-navigation__link span {
         display: block;
         /* Assure que le span est un bloc pour le centrage */
-        color: #FFFFFF !important;
+        color: #FFFFFF;
+    }
+
+    /* Augmenter la spécificité pour surcharger les règles desktop */
+    body .main-navigation__links.active .main-navigation__link span {
+        color: #FFFFFF;
     }
 
     /* Masquer les chevrons (si présents) */
@@ -1878,28 +1888,52 @@ body {
     }
 
     body .main-navigation__links .main-navigation__link:hover {
-        color: #FFFFFF !important;
+        color: #FFFFFF;
+        background: none;
+    }
+
+    /* Augmenter la spécificité pour surcharger les règles desktop */
+    body .main-navigation__links.active .main-navigation__link:hover {
+        color: #FFFFFF;
         background: none;
     }
 
     body .main-navigation__links .main-navigation__link:active {
-        color: #FFFFFF !important;
+        color: #FFFFFF;
+        background: none;
+    }
+
+    /* Augmenter la spécificité pour surcharger les règles desktop */
+    body .main-navigation__links.active .main-navigation__link:active {
+        color: #FFFFFF;
         background: none;
     }
 
     body .main-navigation__links .main-navigation__link:focus {
-        color: #FFFFFF !important;
+        color: #FFFFFF;
+        background: none;
+    }
+
+    /* Augmenter la spécificité pour surcharger les règles desktop */
+    body .main-navigation__links.active .main-navigation__link:focus {
+        color: #FFFFFF;
         background: none;
     }
 
     /* Lien actif en blanc dans le menu mobile (fond sombre) */
     body .main-navigation__links .main-navigation__link.active {
-        color: #FFFFFF !important;
+        color: #FFFFFF;
+    }
+
+    /* Augmenter la spécificité pour surcharger les règles desktop */
+    body .main-navigation__links.active .main-navigation__link.active {
+        color: #FFFFFF;
     }
 
     /* Exception : liens actifs en bleu pour les pages non-index dans le menu mobile ouvert */
-    body:not(#page-wpc-main):not(#page-wpc-equipe) .main-navigation__links .main-navigation__link.active {
-        color: var(--primary-blue) !important;
+    /* Spécificité élevée : body + 2 IDs + 2 classes + 1 pseudo-classe */
+    body:not(#page-wpc-main):not(#page-wpc-equipe) .main-navigation__links.active .main-navigation__link.active {
+        color: var(--primary-blue);
     }
 
 
@@ -4856,7 +4890,14 @@ body#page-wpc-equipe .main-navigation__link {
 }
 
 body:not(#page-wpc-main) .main-navigation__link.active {
-    color: var(--primary-blue) !important;
+    color: var(--primary-blue);
+}
+
+/* Augmenter la spécificité pour desktop uniquement (hors menu mobile) */
+@media (min-width: 769px) {
+    body:not(#page-wpc-main) .main-navigation .main-navigation__link.active {
+        color: var(--primary-blue);
+    }
 }
 
 body:not(#page-wpc-main) .main-navigation__link:hover {
