@@ -1,104 +1,5 @@
 /* ===== WPC SITE STYLES ===== */
 
-/* ===== NOUVELLE SECTION VIDE AVEC CARTES STICKY ===== */
-.new-empty-section {
-    background-color: #202229;
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
-.sticky-cards-container {
-    position: relative;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-xl);
-}
-
-.sticky-cards {
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    height: 60%;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.sticky-card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: var(--spacing-2xl);
-    box-sizing: border-box;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Cartes alternées bleu/noir */
-.sticky-card.card-1,
-.sticky-card.card-3,
-.sticky-card.card-5 {
-    background: var(--primary-blue);
-    color: white;
-}
-
-.sticky-card.card-2,
-.sticky-card.card-4 {
-    background: linear-gradient(135deg, #1a1a1a, #000000);
-    color: white;
-}
-
-.sticky-card h3 {
-    font-family: var(--font-family-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    margin: 0 0 var(--spacing-lg) 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.sticky-card p {
-    font-family: var(--font-family-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    line-height: 1.6;
-    margin: 0;
-    opacity: 0.9;
-    max-width: 80%;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .sticky-cards-container {
-        padding: var(--spacing-lg);
-    }
-
-    .sticky-cards {
-        width: 95%;
-        height: 50%;
-    }
-
-    .sticky-card {
-        padding: var(--spacing-xl);
-    }
-
-    .sticky-card h3 {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-        margin-bottom: var(--spacing-md);
-    }
-
-    .sticky-card p {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
-        max-width: 90%;
-    }
-}
-
 /* ===== HERO SECTION MINIMALISTE - MOBILE FIRST ===== */
 
 
@@ -757,105 +658,6 @@ body {
 }
 
 
-
-/* ===== NOUVELLE SECTION VIDE AVEC CARTES STICKY ===== */
-.new-empty-section {
-    background-color: #202229;
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
-.sticky-cards-container {
-    position: relative;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-xl);
-}
-
-.sticky-cards {
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    height: 60%;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.sticky-card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: var(--spacing-2xl);
-    box-sizing: border-box;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Cartes alternées bleu/noir */
-.sticky-card.card-1,
-.sticky-card.card-3,
-.sticky-card.card-5 {
-    background: var(--primary-blue);
-    color: white;
-}
-
-.sticky-card.card-2,
-.sticky-card.card-4 {
-    background: linear-gradient(135deg, #1a1a1a, #000000);
-    color: white;
-}
-
-.sticky-card h3 {
-    font-family: var(--font-family-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    margin: 0 0 var(--spacing-lg) 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.sticky-card p {
-    font-family: var(--font-family-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    line-height: 1.6;
-    margin: 0;
-    opacity: 0.9;
-    max-width: 80%;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .sticky-cards-container {
-        padding: var(--spacing-lg);
-    }
-
-    .sticky-cards {
-        width: 95%;
-        height: 50%;
-    }
-
-    .sticky-card {
-        padding: var(--spacing-xl);
-    }
-
-    .sticky-card h3 {
-        font-size: clamp(1.5rem, 6vw, 2.5rem);
-        margin-bottom: var(--spacing-md);
-    }
-
-    .sticky-card p {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
-        max-width: 90%;
-    }
-}
 
 .hero-minimal {
     --hero-overlay-opacity: 0;
@@ -3901,7 +3703,17 @@ body .main-navigation .main-navigation__link.active:hover {
     justify-self: start;
 }
 
+.cmp-membre-item .cmp-membre-name.team-name a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 .cmp-membre-item.team-item:hover .cmp-membre-name.team-name {
+    color: var(--primary-blue);
+}
+
+.cmp-membre-item.team-item:hover .cmp-membre-name.team-name a {
     color: var(--primary-blue);
 }
 
