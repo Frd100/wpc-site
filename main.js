@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function initNewHeroSplitText() {
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
-            console.error('GSAP ou SplitText non chargé');
             return;
         }
 
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const heroTitle = document.querySelector('.hero-title');
         if (!heroTitle) {
-            console.error('Element .hero-title non trouvé');
             return;
         }
 
@@ -160,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function initWpcTitleColorReveal() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP ou ScrollTrigger non chargé');
             return;
         }
 
@@ -168,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const titleElement = document.querySelector('.cmp-wpc-title');
         if (!titleElement) {
-            console.error('Titre WPC non trouvé');
             return;
         }
 
@@ -196,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function () {
             );
         });
 
-        console.log('Effet Text Color Reveal on Scroll initialisé pour le titre WPC');
     }
 
     // Initialiser l'effet de révélation de couleur
@@ -208,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function initExpertiseSubtitleAnimation() {
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP ou plugins non chargés (expertise subtitle)');
             return;
         }
 
@@ -254,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function initEquipeIntroTextAnimation() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou plugins non chargés - animation texte intro équipe ignorée');
             return;
         }
 
@@ -648,40 +641,11 @@ function initScrollAnimation() {
         observer.observe(element);
     });
 
-    console.log('Scroll animation initialisée');
-}
-
-// Effet de baisse d'exposition sur l'image hero au scroll
-function initHeroExposureEffect() {
-    const heroSection = document.querySelector('.hero-minimal');
-    if (!heroSection) return;
-
-    function updateExposure() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const heroHeight = heroSection.offsetHeight;
-
-        // Calculer la progression du scroll dans la section hero (0 à 1)
-        // L'effet commence dès le début du scroll
-        const scrollProgress = Math.min(scrollTop / heroHeight, 1);
-
-        // Ajuster l'opacité de l'overlay (0 = pas d'overlay, 1 = complètement sombre)
-        // Augmenter progressivement jusqu'à 1.0 (100% de darkening maximum)
-        const opacity = scrollProgress * 1.0;
-
-        heroSection.style.setProperty('--hero-overlay-opacity', opacity);
-    }
-
-    // Mettre à jour au scroll
-    window.addEventListener('scroll', updateExposure, { passive: true });
-
-    // Mettre à jour au chargement
-    updateExposure();
 }
 
 // Initialiser les animations au chargement de la page
 document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimation();
-    // Effet exposure désactivé
     initStrokeButtons();
 });
 
@@ -754,166 +718,7 @@ function initStrokeButtons() {
 
     document.querySelectorAll('[data-block="button"]').forEach((el) => new Button(el));
 
-    /**
-     * EFFET TYPEWRITER POUR LES TITRES HERO (pages non-index)
-     * Animation "machine à écrire" inspirée de Bequant
-     */
-    function initTypewriterHeroTitles() {
-        // Ne rien faire sur la page index
-        if (document.body.id === 'page-wpc-main') {
-            return;
-        }
 
-        // Vérifier que GSAP et SplitText sont chargés
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined') {
-            console.warn('GSAP ou SplitText non chargés - effet typewriter ignoré');
-            return;
-        }
-
-        gsap.registerPlugin(SplitText);
-
-        // Sélectionner tous les titres hero des pages non-index
-        const heroTitles = document.querySelectorAll('.hero-section .hero-title');
-
-        if (heroTitles.length === 0) {
-            return;
-        }
-
-        heroTitles.forEach((titleElement) => {
-            // Découper le texte en caractères avec SplitText
-            const split = new SplitText(titleElement, {
-                type: 'chars,words,lines',
-                charsClass: 'split-chars',
-                wordsClass: 'split-words',
-                linesClass: 'split-lines'
-            });
-
-            // Créer la timeline d'animation
-            const tl = gsap.timeline({
-                delay: 0.3 // Petit délai avant le début de l'animation
-            });
-
-            // Animer chaque caractère avec un effet stagger (un après l'autre)
-            tl.from(split.chars, {
-                duration: 0.002,
-                opacity: 0,
-                ease: 'power1.none',
-                stagger: {
-                    amount: 0.7, // Durée totale de l'animation (0.7s pour tous les caractères)
-                    from: 'start'
-                }
-            });
-        });
-    }
-
-    // Initialiser l'effet typewriter pour les titres hero - DÉSACTIVÉ
-    // initTypewriterHeroTitles();
-
-    /**
-     * ANIMATION D'APPARITION PAR MOTS POUR LES TITRES HERO (pages non-index)
-     * Même effet que pour les sous-titres expertise : apparition par mots avec scroll
-     */
-    function initHeroTitleWordAnimation() {
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou plugins non chargés - animation titre hero ignorée');
-            return;
-        }
-
-        // Ne rien faire sur la page index
-        if (document.body.id === 'page-wpc-main') {
-            return;
-        }
-
-        gsap.registerPlugin(SplitText, ScrollTrigger);
-
-        const heroTitles = document.querySelectorAll('.hero-section .hero-title');
-        if (heroTitles.length === 0) {
-            return;
-        }
-
-        heroTitles.forEach(titleElement => {
-            // Vérifier s'il y a des spans avec style (comme le gradient)
-            const styledSpans = titleElement.querySelectorAll('span[style]');
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: titleElement,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                }
-            });
-
-            if (styledSpans.length > 0) {
-                // Pour les titres avec spans stylés, utiliser SplitText pour animer mot par mot
-                styledSpans.forEach((span, index) => {
-                    // Récupérer le style du gradient du span original
-                    const gradientStyle = span.getAttribute('style');
-
-                    // Utiliser SplitText sur le span pour animer mot par mot
-                    const split = new SplitText(span, { type: 'words' });
-                    if (split.words && split.words.length > 0) {
-                        // Appliquer le gradient à chaque mot après le split
-                        split.words.forEach(word => {
-                            word.setAttribute('style', gradientStyle);
-                        });
-
-                        tl.from(split.words, {
-                            duration: 0.5,
-                            opacity: 0,
-                            y: 40,
-                            ease: 'power3.out',
-                            stagger: 0.03
-                        }, index * 0.03);
-                    } else {
-                        // Si SplitText ne fonctionne pas, animer le span directement
-                        gsap.set(span, { opacity: 0, y: 40 });
-                        tl.to(span, {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.5,
-                            ease: 'power3.out'
-                        }, index * 0.03);
-                    }
-                });
-
-                // Pour le reste du texte, wrapper les text nodes et utiliser SplitText
-                Array.from(titleElement.childNodes).forEach(node => {
-                    if (node.nodeType === 3 && node.textContent.trim()) { // Text node
-                        // Wrapper le texte dans un span temporaire pour SplitText
-                        const wrapper = document.createElement('span');
-                        wrapper.textContent = node.textContent;
-                        node.parentNode.replaceChild(wrapper, node);
-
-                        // Utiliser SplitText sur le wrapper
-                        const split = new SplitText(wrapper, { type: 'words' });
-                        if (split.words && split.words.length > 0) {
-                            tl.from(split.words, {
-                                duration: 0.5,
-                                opacity: 0,
-                                y: 40,
-                                ease: 'power3.out',
-                                stagger: 0.03
-                            }, '>'); // Débuter après l'animation du span
-                        }
-                    }
-                });
-            } else {
-                // Animation normale si pas de spans stylés
-                const split = new SplitText(titleElement, { type: 'words' });
-
-                tl.from(split.words, {
-                    duration: 0.5,
-                    opacity: 0,
-                    y: 40,
-                    ease: 'power3.out',
-                    stagger: 0.03
-                });
-            }
-        });
-    }
-
-    // Initialiser l'animation des titres hero par mots - DÉSACTIVÉ
-    // initHeroTitleWordAnimation();
 
     /**
      * EFFET TYPEWRITER POUR LES TITRES AVEC CLASSE .write-02
@@ -922,7 +727,6 @@ function initStrokeButtons() {
     function initWrite02Animation() {
         // Vérifier que GSAP et SplitText sont chargés
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou plugins non chargés - effet .write-02 ignoré');
             return;
         }
 
@@ -981,7 +785,6 @@ function initStrokeButtons() {
      */
     function initDomainesCardsAnimation() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou ScrollTrigger non chargés - animation cartes domaines ignorée');
             return;
         }
 
@@ -1024,7 +827,6 @@ function initStrokeButtons() {
      */
     function initTeamMembersAnimation() {
         if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou plugins non chargés - animation équipe ignorée');
             return;
         }
 
@@ -1129,7 +931,6 @@ function initStrokeButtons() {
      */
     function initCandidatureFormAnimation() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou ScrollTrigger non chargés - animation formulaire ignorée');
             return;
         }
 
@@ -1176,7 +977,6 @@ function initStrokeButtons() {
      */
     function initContactFormAnimation() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou ScrollTrigger non chargés - animation formulaire contact ignorée');
             return;
         }
 
@@ -1223,7 +1023,6 @@ function initStrokeButtons() {
      */
     function initTimelineAnimation() {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('GSAP ou ScrollTrigger non chargés - animation timeline ignorée');
             return;
         }
 

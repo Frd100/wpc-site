@@ -1277,7 +1277,6 @@ body#page-wpc-main .hero-button:focus {
 
 /* WPC About Section */
 .cmp-about-section {
-    background: #0e1013;
     color: var(--text-white);
     padding: var(--spacing-4xl) 0;
     margin: 0;
@@ -2070,7 +2069,7 @@ body {
     }
 
     body#page-wpc-main .main-navigation__toggle.active .hamburger-line {
-        background-color: #000000;
+        background-color: #FFFFFF;
     }
 
     /* Page équipe: hamburger blanc sur mobile */
@@ -4493,9 +4492,6 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     transition: background 0.2s ease;
 }
 
-.btn-primary:hover {
-    background: #0a2a3f;
-}
 
 /* Cartes équipe */
 .team-card {
@@ -5098,10 +5094,6 @@ body#page-wpc-equipe .cmp-footer {
         color: #ffffff;
     }
 
-    body .cmp-about-section .split .nanterre-red {
-        color: #dc2626;
-        font-weight: 800;
-    }
 
 
     /* WPC Expertise Section - Mobile */
