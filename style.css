@@ -1892,8 +1892,14 @@ body {
         background: none;
     }
 
+    /* Lien actif en blanc dans le menu mobile (fond sombre) */
     body .main-navigation__links .main-navigation__link.active {
         color: #FFFFFF !important;
+    }
+
+    /* Exception : liens actifs en bleu pour les pages non-index dans le menu mobile ouvert */
+    body:not(#page-wpc-main):not(#page-wpc-equipe) .main-navigation__links .main-navigation__link.active {
+        color: var(--primary-blue) !important;
     }
 
 
@@ -4850,7 +4856,7 @@ body#page-wpc-equipe .main-navigation__link {
 }
 
 body:not(#page-wpc-main) .main-navigation__link.active {
-    color: var(--primary-blue);
+    color: var(--primary-blue) !important;
 }
 
 body:not(#page-wpc-main) .main-navigation__link:hover {
