@@ -949,6 +949,12 @@ body#page-wpc-main .hero-button:focus {
         min-width: auto;
         font-weight: 500;
     }
+
+    /* Augmenter la taille de tous les boutons hero-button sur mobile */
+    .hero-button {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
 }
 
 /* Desktop overrides */

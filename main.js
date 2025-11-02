@@ -11,151 +11,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    /**
-     * ANIMATION TITRE "NOTRE ANCRAGE À NANTERRE" - VERSION SIMPLIFIÉE
-     * Animation simple et fonctionnelle avec GSAP
-     */
-    function initTitleScrollAnimation() {
-        console.log('Animation Titre: Initialisation...');
-
-        if (typeof gsap === 'undefined' || typeof SplitText === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP ou plugins non chargés');
-            return;
-        }
-
-        gsap.registerPlugin(SplitText, ScrollTrigger);
-
-        // Sélectionner le titre
-        const titleElement = document.querySelector('.about-title-container h1');
-
-        if (!titleElement) {
-            console.error('Titre non trouvé');
-            return;
-        }
-
-        console.log('Animation Titre: Element trouvé:', titleElement);
-
-        // Fonction protectedSplit pour protéger le span rouge
-        function protectedSplit(target, vars) {
-            let protected = gsap.utils.toArray(vars.protect || "").map(el => {
-                return {
-                    el: el,
-                    innerHTML: el.innerHTML
-                }
-            });
-            let split = new SplitText(target, vars);
-            protected.forEach(data => {
-                let appendTo;
-                gsap.utils.toArray(data.el.children).forEach((word, i) => {
-                    let index = split.words.indexOf(word);
-                    if (index >= 0) {
-                        split.words.splice(index, 1);
-                        if (index > 0 && !appendTo) {
-                            appendTo = split.words[index - 1];
-                        }
-                    }
-                });
-                data.el.innerHTML = data.innerHTML;
-                if (appendTo) {
-                    appendTo.appendChild(data.el)
-                }
-            });
-            return split;
-        }
-
-        // Diviser manuellement le texte en mots pour contrôler chaque mot
-        const originalText = titleElement.textContent;
-        const words = originalText.split(/\s+/); // Diviser par espaces
-
-        console.log('Animation Titre: Mots détectés:', words);
-
-        // Créer manuellement la structure .line pour empiler les mots
-        const lineDiv = document.createElement('div');
-        lineDiv.className = 'line';
-
-        // Créer une boîte pour chaque mot
-        words.forEach((word, index) => {
-            // Si c'est "à", créer une ligne avec "à" et "Nanterre" côte à côte
-            if (word === 'à') {
-                const wordRow = document.createElement('div');
-                wordRow.className = 'word-row';
-
-                // Boîte pour "à"
-                const aSpan = document.createElement('span');
-                aSpan.className = 'word';
-                aSpan.textContent = word;
-                wordRow.appendChild(aSpan);
-
-                // Boîte pour "Nanterre"
-                const nanterreSpan = document.createElement('span');
-                nanterreSpan.className = 'word nanterre-red';
-                nanterreSpan.textContent = 'Nanterre';
-                wordRow.appendChild(nanterreSpan);
-
-                lineDiv.appendChild(wordRow);
-            } else if (word !== 'Nanterre') {
-                // Créer une boîte normale pour les autres mots
-                const wordSpan = document.createElement('span');
-                wordSpan.className = 'word';
-                wordSpan.textContent = word;
-                lineDiv.appendChild(wordSpan);
-            }
-            // Ignorer "Nanterre" car il est déjà ajouté avec "à"
-        });
-
-        // Remplacer le contenu du h1 par la div .line
-        titleElement.innerHTML = '';
-        titleElement.appendChild(lineDiv);
-
-        // Récupérer tous les éléments .word pour l'animation
-        const wordElements = lineDiv.querySelectorAll('.word');
-
-        // Rendre le titre visible
-        gsap.set(titleElement, { opacity: 1 });
-
-        // Animation avec ScrollTrigger - se déclenche au scroll
-        gsap.from(wordElements, {
-            y: -100,
-            opacity: 0,
-            rotation: "random(-80, 80)",
-            stagger: 0.07,
-            duration: 1,
-            ease: "back",
-            scrollTrigger: {
-                trigger: titleElement,
-                start: "top 60%",
-                toggleActions: "play none none none"
-            }
-        });
-
-        // === ANIMATION DU SOUS-TITRE (TYPEWRITER COMME HERO) ===
-        const aboutSubtitle = document.querySelector('.about-subtitle');
-
-        if (aboutSubtitle) {
-            const originalText = aboutSubtitle.textContent;
-
-            // Vider le texte initialement avec contrôle du positionnement
-            gsap.set(aboutSubtitle, {
-                text: "",
-                transformOrigin: "left center" // Point d'origine des transformations
-            });
-
-            // Animation d'écriture lettre par lettre (identique à la hero)
-            gsap.to(aboutSubtitle, {
-                text: originalText,
-                duration: 1.2, // Réduit de 2 à 1.2 secondes pour une animation plus rapide
-                ease: "none",
-                scrollTrigger: {
-                    trigger: aboutSubtitle,
-                    start: "top 70%",
-                    toggleActions: "play none none none"
-                }
-            });
-        }
-    }
-
-    // Initialiser l'animation du titre
-    initTitleScrollAnimation();
 
     /**
      * ANIMATION SPLITTEXT POUR NOUVELLE HERO SECTION
@@ -874,7 +729,7 @@ function initStrokeButtons() {
         heroTitles.forEach(titleElement => {
             // Vérifier s'il y a des spans avec style (comme le gradient)
             const styledSpans = titleElement.querySelectorAll('span[style]');
-            
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: titleElement,
@@ -888,7 +743,7 @@ function initStrokeButtons() {
                 styledSpans.forEach((span, index) => {
                     // Récupérer le style du gradient du span original
                     const gradientStyle = span.getAttribute('style');
-                    
+
                     // Utiliser SplitText sur le span pour animer mot par mot
                     const split = new SplitText(span, { type: 'words' });
                     if (split.words && split.words.length > 0) {
@@ -896,7 +751,7 @@ function initStrokeButtons() {
                         split.words.forEach(word => {
                             word.setAttribute('style', gradientStyle);
                         });
-                        
+
                         tl.from(split.words, {
                             duration: 0.5,
                             opacity: 0,
@@ -923,7 +778,7 @@ function initStrokeButtons() {
                         const wrapper = document.createElement('span');
                         wrapper.textContent = node.textContent;
                         node.parentNode.replaceChild(wrapper, node);
-                        
+
                         // Utiliser SplitText sur le wrapper
                         const split = new SplitText(wrapper, { type: 'words' });
                         if (split.words && split.words.length > 0) {
@@ -1090,20 +945,20 @@ function initStrokeButtons() {
 
             // SplitText sur le nom par mots (comme le titre hero)
             const split = new SplitText(nameElement, { type: 'words' });
-            
+
             if (!split.words || split.words.length === 0) {
                 // Si SplitText ne fonctionne pas, afficher le nom normalement
                 gsap.set(nameElement, { opacity: 1 });
                 gsap.set(roleElement, { opacity: 1 });
                 return;
             }
-            
+
             // État initial : nom invisible avec déplacement, rôle invisible
             gsap.set(split.words, {
                 opacity: 0,
                 y: 40
             });
-            
+
             gsap.set(roleElement, {
                 opacity: 0
             });
@@ -1182,7 +1037,7 @@ function initStrokeButtons() {
 
         const formSection = document.querySelector('.contact-form-section');
         const formIframe = formSection?.querySelector('.contact-form-iframe-wrapper iframe');
-        
+
         if (!formSection || !formIframe) {
             return;
         }
@@ -1229,7 +1084,7 @@ function initStrokeButtons() {
 
         const formSection = document.querySelector('.contact-form-section');
         const formIframe = formSection?.querySelector('.contact-form-iframe-wrapper iframe');
-        
+
         if (!formSection || !formIframe) {
             return;
         }
