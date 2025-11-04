@@ -226,11 +226,11 @@
 /* Nouveau logo texte WPC avec effet bleu */
 .main-navigation__logo-text {
     font-family: var(--font-family-primary);
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: #FFFFFF;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.05em;
     line-height: 1.1;
     margin: 0;
     padding: 0;
@@ -1519,13 +1519,14 @@ body {
     }
 
     .main-navigation__logo-text {
-        font-size: 0.75rem;
+        font-size: 2rem;
         max-width: 150px;
         height: 2.5rem;
+        letter-spacing: -0.05em;
     }
 
     .main-navigation__logo-text::before {
-        font-size: 0.75rem;
+        font-size: 2rem;
     }
 
     .main-navigation__toggle {
@@ -4441,6 +4442,10 @@ body#page-wpc-equipe .main-navigation__link {
     color: #FFFFFF;
 }
 
+body#page-wpc-equipe .main-navigation__link.active {
+    color: var(--primary-blue);
+}
+
 body:not(#page-wpc-main) .main-navigation__link.active {
     color: var(--primary-blue);
 }
@@ -4457,7 +4462,7 @@ body:not(#page-wpc-main) .main-navigation__link:hover {
 }
 
 body#page-wpc-equipe .main-navigation__link:hover {
-    color: #FFFFFF;
+    color: var(--primary-blue);
 }
 
 body:not(#page-wpc-main) .main-navigation__link.active:hover {
