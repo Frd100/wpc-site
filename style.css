@@ -1663,19 +1663,13 @@ body {
         background: none;
     }
 
-    /* Lien actif en blanc dans le menu mobile (fond sombre) */
+    /* Lien actif en bleu dans le menu mobile */
     body .main-navigation__links .main-navigation__link.active {
-        color: #FFFFFF;
+        color: var(--primary-blue);
     }
 
     /* Augmenter la spécificité pour surcharger les règles desktop */
     body .main-navigation__links.active .main-navigation__link.active {
-        color: #FFFFFF;
-    }
-
-    /* Exception : liens actifs en bleu pour les pages non-index dans le menu mobile ouvert */
-    /* Spécificité élevée : body + 2 IDs + 2 classes + 1 pseudo-classe */
-    body:not(#page-wpc-main):not(#page-wpc-equipe) .main-navigation__links.active .main-navigation__link.active {
         color: var(--primary-blue);
     }
 
@@ -3218,9 +3212,9 @@ select.form-input {
     background: none;
 }
 
-/* Exception pour la page index : lien actif reste blanc */
+/* Lien actif en bleu sur toutes les pages */
 #page-wpc-main .main-navigation__link.active {
-    color: #FFFFFF;
+    color: var(--primary-blue);
 }
 
 .main-navigation__link:visited {
