@@ -4459,8 +4459,7 @@ body:not(#page-wpc-main) .main-navigation__link.active {
 }
 
 body:not(#page-wpc-main) .main-navigation__link:hover {
-    color: inherit;
-    /* pas d'effet bleu au survol sur les pages internes */
+    color: var(--primary-blue);
 }
 
 body#page-wpc-equipe .main-navigation__link:hover {
