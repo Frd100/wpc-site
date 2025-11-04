@@ -600,7 +600,7 @@ section h1 {
 }
 
 .hero-title {
-    color: #000000;
+    color: #ffffff;
     font-weight: 700;
     text-transform: none;
     letter-spacing: 2px;
@@ -609,7 +609,7 @@ section h1 {
 }
 
 .hero-title .line {
-    color: #000000;
+    color: #ffffff;
     font-size: clamp(2.4rem, 9vw, 5.2rem);
     line-height: clamp(2.5rem, 8.5vw, 5rem);
     position: relative;
@@ -632,7 +632,7 @@ section h1 {
     font-family: var(--font-family-secondary);
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
     margin: var(--spacing-md) 0 0 0;
     max-width: 600px;
@@ -4007,6 +4007,25 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     text-align: left;
 }
 
+.wpc-domaine-card-description ul {
+    font-family: var(--font-family-secondary);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    padding-left: 1.5rem;
+    text-align: left;
+    list-style-type: disc;
+}
+
+.wpc-domaine-card-description li {
+    margin-bottom: 0.5rem;
+}
+
+.wpc-domaine-card-description li:last-child {
+    margin-bottom: 0;
+}
+
 /* Wrapper pour le bouton */
 .wpc-domaine-card-button-wrapper {
     text-align: center;
@@ -4055,6 +4074,10 @@ body:not(#page-wpc-main) .hero-section .hero-subtitle {
     }
 
     .wpc-domaine-card-description p {
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    }
+
+    .wpc-domaine-card-description ul {
         font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     }
 }
